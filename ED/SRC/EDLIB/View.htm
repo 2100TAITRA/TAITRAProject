@@ -1,0 +1,38 @@
+<a id="txView">
+<script>
+window.onload = fnShow;
+function fnShow()
+{
+	var strName = GetParam("MainName",GetAllParamStr());
+	if(strName != "")
+		document.all["txView"].innerHTML = opener.document.all[strName].value;
+}
+
+function GetAllParamStr()
+{
+	var strParam = "";
+	var pUrl = unescape(this.location);
+	if( pUrl != -1 )
+	{
+		var i = pUrl.indexOf("?");
+		if(i != -1)
+			strParam = pUrl.substr(i+1); 
+	}
+	return strParam;
+}
+function GetParam(argName,argStr)
+{
+	var arrParams = argStr.split("&");
+	var strans = "";
+	for(var i=0; i<arrParams.length; i++)
+	{
+		if(arrParams[i].indexOf(argName) != -1)
+		{
+			var Pmain = arrParams[i].split("=");
+			strans = Pmain[1]; 
+		}
+	}
+	return strans;
+}
+
+</script>

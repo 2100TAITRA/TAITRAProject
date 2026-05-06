@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR483D" targetNamespace="http://tempuri.org/EDR483D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR483D.xsd" xmlns:mstns="http://tempuri.org/EDR483D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR483D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR483L">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SECT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="REASON" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT1" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT2" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT3" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT4" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT5" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT6" type="xs:double" minOccurs="0" />
+							<xs:element name="COUNT7" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT8" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT9" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT10" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT11" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT12" type="xs:double" minOccurs="0" />
+							<xs:element name="PAGE" type="xs:string" minOccurs="0" />
+							<xs:element name="TOTAL" type="xs:double" minOccurs="0" />
+							<xs:element name="TOTALTOTAL" type="xs:double" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

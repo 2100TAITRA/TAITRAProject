@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKT900D" targetNamespace="http://tempuri.org/AKT900D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKT900D.xsd" xmlns:mstns="http://tempuri.org/AKT900D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKT900D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SOURCE_ORGNO" type="xs:string" minOccurs="0" />
+							<xs:element name="REPORT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="ORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="ORG_BUSINESS" type="xs:string" minOccurs="0" />
+							<xs:element name="ORG_REFORM" type="xs:string" minOccurs="0" />
+							<xs:element name="REASON" type="xs:string" minOccurs="0" />
+							<xs:element name="PRINCIPAL" type="xs:string" minOccurs="0" />
+							<xs:element name="UNIT" type="xs:string" minOccurs="0" />
+							<xs:element name="APPR_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="APPR_METHOD" type="xs:string" minOccurs="0" />
+							<xs:element name="DIFFICULTY" minOccurs="0" type="xs:string" />
+							<xs:element name="MEMBERS" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_SNO" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_ENO" type="xs:string" minOccurs="0" />
+							<xs:element name="CRT_SDATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CRT_EDATE" type="xs:string" minOccurs="0" />
+							<xs:element name="VOL_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="PAGE_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="MEDIA_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_STATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="IS_FAKE" type="xs:string" minOccurs="0" />
+							<xs:element name="DIGEST" type="xs:string" minOccurs="0" />
+							<xs:element name="MISSION" type="xs:string" minOccurs="0" />
+							<xs:element name="CHARACTERISTIC" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_LIMIT" type="xs:string" minOccurs="0" />
+							<xs:element name="OTHERS" type="xs:string" minOccurs="0" />
+							<xs:element name="RELATIVE_RPT" type="xs:string" minOccurs="0" />
+							<xs:element name="RPT_DESC" type="xs:string" minOccurs="0" />
+							<xs:element name="CONCLUSION" type="xs:string" minOccurs="0" />
+							<xs:element name="SUGGESTION" type="xs:string"></xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

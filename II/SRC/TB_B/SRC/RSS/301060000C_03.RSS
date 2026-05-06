@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>人民陳情</title>
+    <description>人民陳情</description>
+    <link>http://192.168.1.247/TB_A/TB1/TBI100.aspx</link>
+    <language>UTF-8</language>
+    <pubDate>Thu, 03 Jan 2008 12:11:10 GMT</pubDate>
+    <lastBuildDate>Thu, 03 Jan 2008 12:11:10 GMT</lastBuildDate>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <skipDays>
+      <day>saturday</day>
+      <day>sunday</day>
+    </skipDays>
+    <skipHours>
+      <hour>19</hour>
+      <hour>20</hour>
+      <hour>21</hour>
+    </skipHours>
+    <category>人民陳情</category>
+    <generator>電子公佈欄系統</generator>
+    <ttl>1440</ttl>
+    <item>
+      <title>測試發布電子公佈欄主旨</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09600853</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09600853/09600853.ZIP" length="2577" type="ZIP" />
+      <category>人民陳情</category>
+      <guid>09600853</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:10 GMT</pubDate>
+    </item>
+    <item>
+      <title>測試發布電子公佈欄主旨</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09600854</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09600854/09600854.ZIP" length="2577" type="ZIP" />
+      <category>人民陳情</category>
+      <guid>09600854</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>測試發布電子公佈欄主旨</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09600855</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09600855/09600855.ZIP" length="2577" type="ZIP" />
+      <category>人民陳情</category>
+      <guid>09600855</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>「生質柴油抗暖化、月抽汽車好運來」 使用再生能源抗暖化 民眾大力支持生質柴油B1 (中央社)</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09600857</link>
+      <category>人民陳情</category>
+      <guid>09600857</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>1</title>
+      <description>&lt;DIV&gt;2&lt;/DIV&gt;</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09600858</link>
+      <category>人民陳情</category>
+      <guid>09600858</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>測試發布電子公佈欄主旨</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09600859</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09600859/09600859.DI" length="958" type="DI" />
+      <category>人民陳情</category>
+      <guid>09600859</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>test全機關</title>
+      <description>&lt;DIV&gt;test全機關&lt;/DIV&gt;</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700001</link>
+      <category>人民陳情</category>
+      <guid>09700001</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>test本單位</title>
+      <description>&lt;DIV&gt;test本單位&lt;/DIV&gt;</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700002</link>
+      <category>人民陳情</category>
+      <guid>09700002</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>test其他</title>
+      <description>test其他
+&lt;DIV&gt;&lt;/DIV&gt;</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700003</link>
+      <category>人民陳情</category>
+      <guid>09700003</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>test群組</title>
+      <description>&lt;DIV&gt;test群組&lt;/DIV&gt;</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700004</link>
+      <category>人民陳情</category>
+      <guid>09700004</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>test</title>
+      <description>&lt;DIV&gt;&lt;/DIV&gt;</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700005</link>
+      <category>人民陳情</category>
+      <guid>09700005</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>測試windows vista by stella</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700006</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700006/09700006.ZIP" length="946" type="ZIP" />
+      <category>人民陳情</category>
+      <guid>09700006</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>測試windows vista by stella</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700007</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700007/09700007.DI" length="1027" type="DI" />
+      <category>人民陳情</category>
+      <guid>09700007</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>測試windows vista</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700008</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700008/09700008.ZIP" length="946" type="ZIP" />
+      <category>人民陳情</category>
+      <guid>09700008</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>紙本</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700009</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700009/09700009.DI" length="935" type="DI" />
+      <category>人民陳情</category>
+      <guid>09700009</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>test</title>
+      <description>&lt;DIV&gt;test&lt;/DIV&gt;</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700011</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700011/09700011.ZIP" length="200" type="ZIP" />
+      <category>人民陳情</category>
+      <guid>09700011</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:16 GMT</pubDate>
+    </item>
+    <item>
+      <title>紙本1</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700012</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700012/09700012.ZIP" length="861" type="ZIP" />
+      <category>人民陳情</category>
+      <guid>09700012</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>紙本2</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700013</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700013/09700013.ZIP" length="861" type="ZIP" />
+      <category>人民陳情</category>
+      <guid>09700013</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>紙本</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700014</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700014/09700014.DI" length="935" type="DI" />
+      <category>人民陳情</category>
+      <guid>09700014</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>紙本123</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700015</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700015/09700015.ZIP" length="861" type="ZIP" />
+      <category>人民陳情</category>
+      <guid>09700015</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>紙本</title>
+      <description>(空白)</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700016</link>
+      <enclosure url="http://192.168.1.247/TB_A/RSS/09700016/09700016.DI" length="935" type="DI" />
+      <category>人民陳情</category>
+      <guid>09700016</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:17 GMT</pubDate>
+    </item>
+    <item>
+      <title>1</title>
+      <description>&lt;DIV&gt;&lt;/DIV&gt;</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09700017</link>
+      <category>人民陳情</category>
+      <guid>09700017</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:17 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

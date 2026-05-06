@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR484D" targetNamespace="http://tempuri.org/EDR484D.xsd" xmlns:mstns="http://tempuri.org/EDR484D.xsd" xmlns="http://tempuri.org/EDR484D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR484D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR484D" msprop:Generator_UserDSName="EDR484D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR484L1" msprop:Generator_TableClassName="EDR484L1DataTable" msprop:Generator_TableVarName="tableEDR484L1" msprop:Generator_RowChangedName="EDR484L1RowChanged" msprop:Generator_TablePropName="EDR484L1" msprop:Generator_RowDeletingName="EDR484L1RowDeleting" msprop:Generator_RowChangingName="EDR484L1RowChanging" msprop:Generator_RowEvHandlerName="EDR484L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR484L1RowDeleted" msprop:Generator_RowClassName="EDR484L1Row" msprop:Generator_UserTableName="EDR484L1" msprop:Generator_RowEvArgName="EDR484L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YEARMONTH" msprop:Generator_ColumnVarNameInTable="columnYEARMONTH" msprop:Generator_ColumnPropNameInRow="YEARMONTH" msprop:Generator_ColumnPropNameInTable="YEARMONTHColumn" msprop:Generator_UserColumnName="YEARMONTH" type="xs:string" minOccurs="0" />
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_P13" msprop:Generator_ColumnVarNameInTable="columnISSUE_P13" msprop:Generator_ColumnPropNameInRow="ISSUE_P13" msprop:Generator_ColumnPropNameInTable="ISSUE_P13Column" msprop:Generator_UserColumnName="ISSUE_P13" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_CANT_E" msprop:Generator_ColumnVarNameInTable="columnISSUE_CANT_E" msprop:Generator_ColumnPropNameInRow="ISSUE_CANT_E" msprop:Generator_ColumnPropNameInTable="ISSUE_CANT_EColumn" msprop:Generator_UserColumnName="ISSUE_CANT_E" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_BY_E" msprop:Generator_ColumnVarNameInTable="columnISSUE_BY_E" msprop:Generator_ColumnPropNameInRow="ISSUE_BY_E" msprop:Generator_ColumnPropNameInTable="ISSUE_BY_EColumn" msprop:Generator_UserColumnName="ISSUE_BY_E" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_BY_TB" msprop:Generator_ColumnVarNameInTable="columnISSUE_BY_TB" msprop:Generator_ColumnPropNameInRow="ISSUE_BY_TB" msprop:Generator_ColumnPropNameInTable="ISSUE_BY_TBColumn" msprop:Generator_UserColumnName="ISSUE_BY_TB" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_DAYS" msprop:Generator_ColumnVarNameInTable="columnISSUE_DAYS" msprop:Generator_ColumnPropNameInRow="ISSUE_DAYS" msprop:Generator_ColumnPropNameInTable="ISSUE_DAYSColumn" msprop:Generator_UserColumnName="ISSUE_DAYS" type="xs:double" minOccurs="0" />
+              <xs:element name="CLOSE_RCV" msprop:Generator_ColumnVarNameInTable="columnCLOSE_RCV" msprop:Generator_ColumnPropNameInRow="CLOSE_RCV" msprop:Generator_ColumnPropNameInTable="CLOSE_RCVColumn" msprop:Generator_UserColumnName="CLOSE_RCV" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSE_PRCV" msprop:Generator_ColumnVarNameInTable="columnCLOSE_PRCV" msprop:Generator_ColumnPropNameInRow="CLOSE_PRCV" msprop:Generator_ColumnPropNameInTable="CLOSE_PRCVColumn" msprop:Generator_UserColumnName="CLOSE_PRCV" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSE_ESIGN_PRCV" msprop:Generator_ColumnVarNameInTable="columnCLOSE_ESIGN_PRCV" msprop:Generator_ColumnPropNameInRow="CLOSE_ESIGN_PRCV" msprop:Generator_ColumnPropNameInTable="CLOSE_ESIGN_PRCVColumn" msprop:Generator_UserColumnName="CLOSE_ESIGN_PRCV" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSE_NEWBYOU" msprop:Generator_ColumnVarNameInTable="columnCLOSE_NEWBYOU" msprop:Generator_ColumnPropNameInRow="CLOSE_NEWBYOU" msprop:Generator_ColumnPropNameInTable="CLOSE_NEWBYOUColumn" msprop:Generator_UserColumnName="CLOSE_NEWBYOU" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSE_ESIGN" msprop:Generator_ColumnVarNameInTable="columnCLOSE_ESIGN" msprop:Generator_ColumnPropNameInRow="CLOSE_ESIGN" msprop:Generator_ColumnPropNameInTable="CLOSE_ESIGNColumn" msprop:Generator_UserColumnName="CLOSE_ESIGN" type="xs:int" minOccurs="0" />
+              <xs:element name="ESIGNPERCENT" msprop:Generator_ColumnVarNameInTable="columnESIGNPERCENT" msprop:Generator_ColumnPropNameInRow="ESIGNPERCENT" msprop:Generator_ColumnPropNameInTable="ESIGNPERCENTColumn" msprop:Generator_UserColumnName="ESIGNPERCENT" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR472D" targetNamespace="http://tempuri.org/EDR472D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR472D.xsd" xmlns:mstns="http://tempuri.org/EDR472D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR472D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR472Y">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="CNT01" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT02" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT03" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT04" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT05" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT06" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT07" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT08" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT09" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT10" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT11" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT12" type="xs:int" minOccurs="0" />
+							<xs:element name="CNTALL" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EDR472M">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="CNT01" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT02" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT03" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT04" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT05" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT06" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT07" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT08" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT09" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT10" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT11" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT12" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT13" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT14" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT15" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT16" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT17" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT18" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT19" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT20" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT21" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT22" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT23" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT24" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT25" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT26" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT27" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT28" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT29" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT30" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT31" type="xs:int" minOccurs="0" />
+							<xs:element name="CNTALL" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

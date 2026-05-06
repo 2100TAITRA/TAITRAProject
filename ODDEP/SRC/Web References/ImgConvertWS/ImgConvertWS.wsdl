@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://2100T.com.tw" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://2100T.com.tw/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://2100T.com.tw" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://2100T.com.tw">
+      <s:element name="WebFileIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCollection" type="tns:ArrayOfArgFile" />
+            <s:element minOccurs="1" maxOccurs="1" name="argDeleteSource" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argOverWrite" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRemoteService" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArgFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="argFile" nillable="true" type="tns:argFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="argFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToPath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebFileIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebFileIOResult" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfErr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Err" nillable="true" type="tns:Err" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Err">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrIdx" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebFileIO2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCollection" type="tns:ArrayOfArgFile" />
+            <s:element minOccurs="1" maxOccurs="1" name="argDeleteSource" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argOverWrite" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRemoteService" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsPartial" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PartNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalParts" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebFileIO2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebFileIO2Result" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPartialSize">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPartialSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPartialSizeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebFileIoCopyFilesForCowrok">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSrcPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDestPath" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebFileIoCopyFilesForCowrokResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebFileIoCopyFilesForCowrokResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MergeFilesForCoworkDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDestEnvFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCoworkDataInfo" type="tns:ArrayOfArgCoworkFlowData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArgCoworkFlowData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="argCoworkFlowData" nillable="true" type="tns:argCoworkFlowData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="argCoworkFlowData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PathName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgIdList" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreviousMsgId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Thread" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MergeFilesForCoworkDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MergeFilesForCoworkDocInfoResult" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebFileDirPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSearchPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSearchType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebFileDirPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebFileDirPathResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryFPTState">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryFPTStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryFPTStateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PDFConvert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DiFile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AttFiles" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileIOWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UploadPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PateInstructed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="MergeFile" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="UploadResource" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrintXSL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAMLart" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RtnObj">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="rtnErr" type="tns:ArrayOfErr" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileList" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileSizeList" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PDFConvertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PDFConvertResult" type="tns:RtnObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FullPDFConvert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DiFile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AttFiles" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileIOWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UploadPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PateInstructed" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="MergeFile" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="UploadResource" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="PrintXSL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAMLart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiverDocType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSecret" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bStamp" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSealMart" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bPageNo" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bBarcode" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FullPDFConvertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FullPDFConvertResult" type="tns:RtnObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryState">
+        <s:complexType />
+      </s:element>
+      <s:element name="QueryStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryStateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImgConvert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ApplyBarcode" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Barcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BarcodeText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ApplyOriginalFileName" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginalFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ApplySealMark" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SealMarkFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SealMarkDimension" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Colorful" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="OutputImgFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OutputImgStartPO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileIOWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DirPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAMLart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DraftFolder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImgConvertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImgConvertResult" type="tns:RtnObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ODFConvert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TranFile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileIOWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UploadPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAMLart" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ODFConvertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ODFConvertResult" type="tns:RtnObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearPrintQeue">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearPrintQeueResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="KillAgentConsole">
+        <s:complexType />
+      </s:element>
+      <s:element name="KillAgentConsoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SmegDraftConvert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ApplyBarcode" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Barcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BarcodeText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ApplyOriginalFileName" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginalFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ApplySealMark" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SealMarkFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SealMarkDimension" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Colorful" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="OutputImgFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OutputImgStartPO" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileIOWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DirPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAMLart" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SmegDraftConvertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SmegDraftConvertResult" type="tns:RtnObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImgConvertTest">
+        <s:complexType />
+      </s:element>
+      <s:element name="ImgConvertTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImgConvertTestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetQueryStateIdle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetQueryStateIdleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetQueryStateIdleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="RtnObj" nillable="true" type="tns:RtnObj" />
+    </s:schema>
+    <s:schema targetNamespace="http://2100T.com.tw/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WebFileIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WebFileIO" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WebFileIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIO2SoapIn">
+    <wsdl:part name="parameters" element="tns:WebFileIO2" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIO2SoapOut">
+    <wsdl:part name="parameters" element="tns:WebFileIO2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetPartialSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPartialSize" />
+  </wsdl:message>
+  <wsdl:message name="GetPartialSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPartialSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokSoapIn">
+    <wsdl:part name="parameters" element="tns:WebFileIoCopyFilesForCowrok" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokSoapOut">
+    <wsdl:part name="parameters" element="tns:WebFileIoCopyFilesForCowrokResponse" />
+  </wsdl:message>
+  <wsdl:message name="MergeFilesForCoworkDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:MergeFilesForCoworkDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="MergeFilesForCoworkDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:MergeFilesForCoworkDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebFileDirPath" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebFileDirPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryFPTStateSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryFPTState" />
+  </wsdl:message>
+  <wsdl:message name="QueryFPTStateSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryFPTStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="PDFConvertSoapIn">
+    <wsdl:part name="parameters" element="tns:PDFConvert" />
+  </wsdl:message>
+  <wsdl:message name="PDFConvertSoapOut">
+    <wsdl:part name="parameters" element="tns:PDFConvertResponse" />
+  </wsdl:message>
+  <wsdl:message name="FullPDFConvertSoapIn">
+    <wsdl:part name="parameters" element="tns:FullPDFConvert" />
+  </wsdl:message>
+  <wsdl:message name="FullPDFConvertSoapOut">
+    <wsdl:part name="parameters" element="tns:FullPDFConvertResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryStateSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryState" />
+  </wsdl:message>
+  <wsdl:message name="QueryStateSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertSoapIn">
+    <wsdl:part name="parameters" element="tns:ImgConvert" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertSoapOut">
+    <wsdl:part name="parameters" element="tns:ImgConvertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ODFConvertSoapIn">
+    <wsdl:part name="parameters" element="tns:ODFConvert" />
+  </wsdl:message>
+  <wsdl:message name="ODFConvertSoapOut">
+    <wsdl:part name="parameters" element="tns:ODFConvertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintQeueSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearPrintQeue" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintQeueSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearPrintQeueResponse" />
+  </wsdl:message>
+  <wsdl:message name="KillAgentConsoleSoapIn">
+    <wsdl:part name="parameters" element="tns:KillAgentConsole" />
+  </wsdl:message>
+  <wsdl:message name="KillAgentConsoleSoapOut">
+    <wsdl:part name="parameters" element="tns:KillAgentConsoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="SmegDraftConvertSoapIn">
+    <wsdl:part name="parameters" element="tns:SmegDraftConvert" />
+  </wsdl:message>
+  <wsdl:message name="SmegDraftConvertSoapOut">
+    <wsdl:part name="parameters" element="tns:SmegDraftConvertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertTestSoapIn">
+    <wsdl:part name="parameters" element="tns:ImgConvertTest" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertTestSoapOut">
+    <wsdl:part name="parameters" element="tns:ImgConvertTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetQueryStateIdleSoapIn">
+    <wsdl:part name="parameters" element="tns:SetQueryStateIdle" />
+  </wsdl:message>
+  <wsdl:message name="SetQueryStateIdleSoapOut">
+    <wsdl:part name="parameters" element="tns:SetQueryStateIdleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPartialSizeHttpGetIn" />
+  <wsdl:message name="GetPartialSizeHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSrcPath" type="s:string" />
+    <wsdl:part name="argDestPath" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSearchPath" type="s:string" />
+    <wsdl:part name="argSearchType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryFPTStateHttpGetIn" />
+  <wsdl:message name="QueryFPTStateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PDFConvertHttpGetIn">
+    <wsdl:part name="DiFile" type="s:string" />
+    <wsdl:part name="AttFiles" type="s1:StringArray" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="UploadPath" type="s:string" />
+    <wsdl:part name="PateInstructed" type="s:string" />
+    <wsdl:part name="MergeFile" type="s:string" />
+    <wsdl:part name="UploadResource" type="s:string" />
+    <wsdl:part name="PrintXSL" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PDFConvertHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="FullPDFConvertHttpGetIn">
+    <wsdl:part name="DiFile" type="s:string" />
+    <wsdl:part name="AttFiles" type="s1:StringArray" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="UploadPath" type="s:string" />
+    <wsdl:part name="PateInstructed" type="s:string" />
+    <wsdl:part name="MergeFile" type="s:string" />
+    <wsdl:part name="UploadResource" type="s:string" />
+    <wsdl:part name="PrintXSL" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+    <wsdl:part name="ReceiverDocType" type="s:string" />
+    <wsdl:part name="OrgName" type="s:string" />
+    <wsdl:part name="bSecret" type="s:string" />
+    <wsdl:part name="bStamp" type="s:string" />
+    <wsdl:part name="bSealMart" type="s:string" />
+    <wsdl:part name="bPageNo" type="s:string" />
+    <wsdl:part name="bBarcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FullPDFConvertHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="QueryStateHttpGetIn" />
+  <wsdl:message name="QueryStateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertHttpGetIn">
+    <wsdl:part name="FilePath" type="s:string" />
+    <wsdl:part name="ApplyBarcode" type="s:string" />
+    <wsdl:part name="Barcode" type="s:string" />
+    <wsdl:part name="BarcodeText" type="s:string" />
+    <wsdl:part name="ApplyOriginalFileName" type="s:string" />
+    <wsdl:part name="OriginalFileName" type="s:string" />
+    <wsdl:part name="ApplySealMark" type="s:string" />
+    <wsdl:part name="SealMarkFileName" type="s:string" />
+    <wsdl:part name="SealMarkDimension" type="s:string" />
+    <wsdl:part name="Colorful" type="s:string" />
+    <wsdl:part name="OutputImgFileName" type="s:string" />
+    <wsdl:part name="OutputImgStartPO" type="s:string" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="DirPath" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+    <wsdl:part name="DraftFolder" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="ODFConvertHttpGetIn">
+    <wsdl:part name="TranFile" type="s:string" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="UploadPath" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ODFConvertHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintQeueHttpGetIn" />
+  <wsdl:message name="ClearPrintQeueHttpGetOut" />
+  <wsdl:message name="KillAgentConsoleHttpGetIn" />
+  <wsdl:message name="KillAgentConsoleHttpGetOut" />
+  <wsdl:message name="SmegDraftConvertHttpGetIn">
+    <wsdl:part name="FilePath" type="s:string" />
+    <wsdl:part name="ApplyBarcode" type="s:string" />
+    <wsdl:part name="Barcode" type="s:string" />
+    <wsdl:part name="BarcodeText" type="s:string" />
+    <wsdl:part name="ApplyOriginalFileName" type="s:string" />
+    <wsdl:part name="OriginalFileName" type="s:string" />
+    <wsdl:part name="ApplySealMark" type="s:string" />
+    <wsdl:part name="SealMarkFileName" type="s:string" />
+    <wsdl:part name="SealMarkDimension" type="s:string" />
+    <wsdl:part name="Colorful" type="s:string" />
+    <wsdl:part name="OutputImgFileName" type="s:string" />
+    <wsdl:part name="OutputImgStartPO" type="s:string" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="DirPath" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SmegDraftConvertHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertTestHttpGetIn" />
+  <wsdl:message name="ImgConvertTestHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetQueryStateIdleHttpGetIn">
+    <wsdl:part name="ProcessID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetQueryStateIdleHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetPartialSizeHttpPostIn" />
+  <wsdl:message name="GetPartialSizeHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSrcPath" type="s:string" />
+    <wsdl:part name="argDestPath" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSearchPath" type="s:string" />
+    <wsdl:part name="argSearchType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryFPTStateHttpPostIn" />
+  <wsdl:message name="QueryFPTStateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PDFConvertHttpPostIn">
+    <wsdl:part name="DiFile" type="s:string" />
+    <wsdl:part name="AttFiles" type="s1:StringArray" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="UploadPath" type="s:string" />
+    <wsdl:part name="PateInstructed" type="s:string" />
+    <wsdl:part name="MergeFile" type="s:string" />
+    <wsdl:part name="UploadResource" type="s:string" />
+    <wsdl:part name="PrintXSL" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PDFConvertHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="FullPDFConvertHttpPostIn">
+    <wsdl:part name="DiFile" type="s:string" />
+    <wsdl:part name="AttFiles" type="s1:StringArray" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="UploadPath" type="s:string" />
+    <wsdl:part name="PateInstructed" type="s:string" />
+    <wsdl:part name="MergeFile" type="s:string" />
+    <wsdl:part name="UploadResource" type="s:string" />
+    <wsdl:part name="PrintXSL" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+    <wsdl:part name="ReceiverDocType" type="s:string" />
+    <wsdl:part name="OrgName" type="s:string" />
+    <wsdl:part name="bSecret" type="s:string" />
+    <wsdl:part name="bStamp" type="s:string" />
+    <wsdl:part name="bSealMart" type="s:string" />
+    <wsdl:part name="bPageNo" type="s:string" />
+    <wsdl:part name="bBarcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FullPDFConvertHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="QueryStateHttpPostIn" />
+  <wsdl:message name="QueryStateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertHttpPostIn">
+    <wsdl:part name="FilePath" type="s:string" />
+    <wsdl:part name="ApplyBarcode" type="s:string" />
+    <wsdl:part name="Barcode" type="s:string" />
+    <wsdl:part name="BarcodeText" type="s:string" />
+    <wsdl:part name="ApplyOriginalFileName" type="s:string" />
+    <wsdl:part name="OriginalFileName" type="s:string" />
+    <wsdl:part name="ApplySealMark" type="s:string" />
+    <wsdl:part name="SealMarkFileName" type="s:string" />
+    <wsdl:part name="SealMarkDimension" type="s:string" />
+    <wsdl:part name="Colorful" type="s:string" />
+    <wsdl:part name="OutputImgFileName" type="s:string" />
+    <wsdl:part name="OutputImgStartPO" type="s:string" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="DirPath" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+    <wsdl:part name="DraftFolder" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="ODFConvertHttpPostIn">
+    <wsdl:part name="TranFile" type="s:string" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="UploadPath" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ODFConvertHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="ClearPrintQeueHttpPostIn" />
+  <wsdl:message name="ClearPrintQeueHttpPostOut" />
+  <wsdl:message name="KillAgentConsoleHttpPostIn" />
+  <wsdl:message name="KillAgentConsoleHttpPostOut" />
+  <wsdl:message name="SmegDraftConvertHttpPostIn">
+    <wsdl:part name="FilePath" type="s:string" />
+    <wsdl:part name="ApplyBarcode" type="s:string" />
+    <wsdl:part name="Barcode" type="s:string" />
+    <wsdl:part name="BarcodeText" type="s:string" />
+    <wsdl:part name="ApplyOriginalFileName" type="s:string" />
+    <wsdl:part name="OriginalFileName" type="s:string" />
+    <wsdl:part name="ApplySealMark" type="s:string" />
+    <wsdl:part name="SealMarkFileName" type="s:string" />
+    <wsdl:part name="SealMarkDimension" type="s:string" />
+    <wsdl:part name="Colorful" type="s:string" />
+    <wsdl:part name="OutputImgFileName" type="s:string" />
+    <wsdl:part name="OutputImgStartPO" type="s:string" />
+    <wsdl:part name="FileIOWS" type="s:string" />
+    <wsdl:part name="DirPath" type="s:string" />
+    <wsdl:part name="SAMLart" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SmegDraftConvertHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnObj" />
+  </wsdl:message>
+  <wsdl:message name="ImgConvertTestHttpPostIn" />
+  <wsdl:message name="ImgConvertTestHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetQueryStateIdleHttpPostIn">
+    <wsdl:part name="ProcessID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetQueryStateIdleHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="T2100FileIoServiceSoap">
+    <wsdl:operation name="WebFileIO">
+      <wsdl:input message="tns:WebFileIOSoapIn" />
+      <wsdl:output message="tns:WebFileIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIO2">
+      <wsdl:input message="tns:WebFileIO2SoapIn" />
+      <wsdl:output message="tns:WebFileIO2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartialSize">
+      <wsdl:input message="tns:GetPartialSizeSoapIn" />
+      <wsdl:output message="tns:GetPartialSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <wsdl:input message="tns:WebFileIoCopyFilesForCowrokSoapIn" />
+      <wsdl:output message="tns:WebFileIoCopyFilesForCowrokSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MergeFilesForCoworkDocInfo">
+      <wsdl:input message="tns:MergeFilesForCoworkDocInfoSoapIn" />
+      <wsdl:output message="tns:MergeFilesForCoworkDocInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <wsdl:input message="tns:GetWebFileDirPathSoapIn" />
+      <wsdl:output message="tns:GetWebFileDirPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryFPTState">
+      <wsdl:input message="tns:QueryFPTStateSoapIn" />
+      <wsdl:output message="tns:QueryFPTStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PDFConvert">
+      <wsdl:input message="tns:PDFConvertSoapIn" />
+      <wsdl:output message="tns:PDFConvertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FullPDFConvert">
+      <wsdl:input message="tns:FullPDFConvertSoapIn" />
+      <wsdl:output message="tns:FullPDFConvertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryState">
+      <wsdl:input message="tns:QueryStateSoapIn" />
+      <wsdl:output message="tns:QueryStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvert">
+      <wsdl:input message="tns:ImgConvertSoapIn" />
+      <wsdl:output message="tns:ImgConvertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ODFConvert">
+      <wsdl:input message="tns:ODFConvertSoapIn" />
+      <wsdl:output message="tns:ODFConvertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintQeue">
+      <wsdl:input message="tns:ClearPrintQeueSoapIn" />
+      <wsdl:output message="tns:ClearPrintQeueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KillAgentConsole">
+      <wsdl:input message="tns:KillAgentConsoleSoapIn" />
+      <wsdl:output message="tns:KillAgentConsoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SmegDraftConvert">
+      <wsdl:input message="tns:SmegDraftConvertSoapIn" />
+      <wsdl:output message="tns:SmegDraftConvertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvertTest">
+      <wsdl:input message="tns:ImgConvertTestSoapIn" />
+      <wsdl:output message="tns:ImgConvertTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetQueryStateIdle">
+      <wsdl:input message="tns:SetQueryStateIdleSoapIn" />
+      <wsdl:output message="tns:SetQueryStateIdleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="T2100FileIoServiceHttpGet">
+    <wsdl:operation name="GetPartialSize">
+      <wsdl:input message="tns:GetPartialSizeHttpGetIn" />
+      <wsdl:output message="tns:GetPartialSizeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <wsdl:input message="tns:WebFileIoCopyFilesForCowrokHttpGetIn" />
+      <wsdl:output message="tns:WebFileIoCopyFilesForCowrokHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <wsdl:input message="tns:GetWebFileDirPathHttpGetIn" />
+      <wsdl:output message="tns:GetWebFileDirPathHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpGetIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryFPTState">
+      <wsdl:input message="tns:QueryFPTStateHttpGetIn" />
+      <wsdl:output message="tns:QueryFPTStateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PDFConvert">
+      <wsdl:input message="tns:PDFConvertHttpGetIn" />
+      <wsdl:output message="tns:PDFConvertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FullPDFConvert">
+      <wsdl:input message="tns:FullPDFConvertHttpGetIn" />
+      <wsdl:output message="tns:FullPDFConvertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryState">
+      <wsdl:input message="tns:QueryStateHttpGetIn" />
+      <wsdl:output message="tns:QueryStateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvert">
+      <wsdl:input message="tns:ImgConvertHttpGetIn" />
+      <wsdl:output message="tns:ImgConvertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ODFConvert">
+      <wsdl:input message="tns:ODFConvertHttpGetIn" />
+      <wsdl:output message="tns:ODFConvertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintQeue">
+      <wsdl:input message="tns:ClearPrintQeueHttpGetIn" />
+      <wsdl:output message="tns:ClearPrintQeueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KillAgentConsole">
+      <wsdl:input message="tns:KillAgentConsoleHttpGetIn" />
+      <wsdl:output message="tns:KillAgentConsoleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SmegDraftConvert">
+      <wsdl:input message="tns:SmegDraftConvertHttpGetIn" />
+      <wsdl:output message="tns:SmegDraftConvertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvertTest">
+      <wsdl:input message="tns:ImgConvertTestHttpGetIn" />
+      <wsdl:output message="tns:ImgConvertTestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetQueryStateIdle">
+      <wsdl:input message="tns:SetQueryStateIdleHttpGetIn" />
+      <wsdl:output message="tns:SetQueryStateIdleHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="T2100FileIoServiceHttpPost">
+    <wsdl:operation name="GetPartialSize">
+      <wsdl:input message="tns:GetPartialSizeHttpPostIn" />
+      <wsdl:output message="tns:GetPartialSizeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <wsdl:input message="tns:WebFileIoCopyFilesForCowrokHttpPostIn" />
+      <wsdl:output message="tns:WebFileIoCopyFilesForCowrokHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <wsdl:input message="tns:GetWebFileDirPathHttpPostIn" />
+      <wsdl:output message="tns:GetWebFileDirPathHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpPostIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryFPTState">
+      <wsdl:input message="tns:QueryFPTStateHttpPostIn" />
+      <wsdl:output message="tns:QueryFPTStateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PDFConvert">
+      <wsdl:input message="tns:PDFConvertHttpPostIn" />
+      <wsdl:output message="tns:PDFConvertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FullPDFConvert">
+      <wsdl:input message="tns:FullPDFConvertHttpPostIn" />
+      <wsdl:output message="tns:FullPDFConvertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryState">
+      <wsdl:input message="tns:QueryStateHttpPostIn" />
+      <wsdl:output message="tns:QueryStateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvert">
+      <wsdl:input message="tns:ImgConvertHttpPostIn" />
+      <wsdl:output message="tns:ImgConvertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ODFConvert">
+      <wsdl:input message="tns:ODFConvertHttpPostIn" />
+      <wsdl:output message="tns:ODFConvertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintQeue">
+      <wsdl:input message="tns:ClearPrintQeueHttpPostIn" />
+      <wsdl:output message="tns:ClearPrintQeueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KillAgentConsole">
+      <wsdl:input message="tns:KillAgentConsoleHttpPostIn" />
+      <wsdl:output message="tns:KillAgentConsoleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SmegDraftConvert">
+      <wsdl:input message="tns:SmegDraftConvertHttpPostIn" />
+      <wsdl:output message="tns:SmegDraftConvertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvertTest">
+      <wsdl:input message="tns:ImgConvertTestHttpPostIn" />
+      <wsdl:output message="tns:ImgConvertTestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetQueryStateIdle">
+      <wsdl:input message="tns:SetQueryStateIdleHttpPostIn" />
+      <wsdl:output message="tns:SetQueryStateIdleHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="T2100FileIoServiceSoap" type="tns:T2100FileIoServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WebFileIO">
+      <soap:operation soapAction="http://2100T.com.tw/WebFileIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIO2">
+      <soap:operation soapAction="http://2100T.com.tw/WebFileIO2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartialSize">
+      <soap:operation soapAction="http://2100T.com.tw/GetPartialSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <soap:operation soapAction="http://2100T.com.tw/WebFileIoCopyFilesForCowrok" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MergeFilesForCoworkDocInfo">
+      <soap:operation soapAction="http://2100T.com.tw/MergeFilesForCoworkDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <soap:operation soapAction="http://2100T.com.tw/GetWebFileDirPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://2100T.com.tw/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFPTState">
+      <soap:operation soapAction="http://2100T.com.tw/QueryFPTState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PDFConvert">
+      <soap:operation soapAction="http://2100T.com.tw/PDFConvert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FullPDFConvert">
+      <soap:operation soapAction="http://2100T.com.tw/FullPDFConvert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryState">
+      <soap:operation soapAction="http://2100T.com.tw/QueryState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvert">
+      <soap:operation soapAction="http://2100T.com.tw/ImgConvert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ODFConvert">
+      <soap:operation soapAction="http://2100T.com.tw/ODFConvert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintQeue">
+      <soap:operation soapAction="http://2100T.com.tw/ClearPrintQeue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KillAgentConsole">
+      <soap:operation soapAction="http://2100T.com.tw/KillAgentConsole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SmegDraftConvert">
+      <soap:operation soapAction="http://2100T.com.tw/SmegDraftConvert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvertTest">
+      <soap:operation soapAction="http://2100T.com.tw/ImgConvertTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetQueryStateIdle">
+      <soap:operation soapAction="http://2100T.com.tw/SetQueryStateIdle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T2100FileIoServiceSoap12" type="tns:T2100FileIoServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WebFileIO">
+      <soap12:operation soapAction="http://2100T.com.tw/WebFileIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIO2">
+      <soap12:operation soapAction="http://2100T.com.tw/WebFileIO2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartialSize">
+      <soap12:operation soapAction="http://2100T.com.tw/GetPartialSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <soap12:operation soapAction="http://2100T.com.tw/WebFileIoCopyFilesForCowrok" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MergeFilesForCoworkDocInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/MergeFilesForCoworkDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <soap12:operation soapAction="http://2100T.com.tw/GetWebFileDirPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFPTState">
+      <soap12:operation soapAction="http://2100T.com.tw/QueryFPTState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PDFConvert">
+      <soap12:operation soapAction="http://2100T.com.tw/PDFConvert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FullPDFConvert">
+      <soap12:operation soapAction="http://2100T.com.tw/FullPDFConvert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryState">
+      <soap12:operation soapAction="http://2100T.com.tw/QueryState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvert">
+      <soap12:operation soapAction="http://2100T.com.tw/ImgConvert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ODFConvert">
+      <soap12:operation soapAction="http://2100T.com.tw/ODFConvert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintQeue">
+      <soap12:operation soapAction="http://2100T.com.tw/ClearPrintQeue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KillAgentConsole">
+      <soap12:operation soapAction="http://2100T.com.tw/KillAgentConsole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SmegDraftConvert">
+      <soap12:operation soapAction="http://2100T.com.tw/SmegDraftConvert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvertTest">
+      <soap12:operation soapAction="http://2100T.com.tw/ImgConvertTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetQueryStateIdle">
+      <soap12:operation soapAction="http://2100T.com.tw/SetQueryStateIdle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T2100FileIoServiceHttpGet" type="tns:T2100FileIoServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetPartialSize">
+      <http:operation location="/GetPartialSize" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <http:operation location="/WebFileIoCopyFilesForCowrok" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <http:operation location="/GetWebFileDirPath" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFPTState">
+      <http:operation location="/QueryFPTState" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PDFConvert">
+      <http:operation location="/PDFConvert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FullPDFConvert">
+      <http:operation location="/FullPDFConvert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryState">
+      <http:operation location="/QueryState" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvert">
+      <http:operation location="/ImgConvert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ODFConvert">
+      <http:operation location="/ODFConvert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintQeue">
+      <http:operation location="/ClearPrintQeue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="KillAgentConsole">
+      <http:operation location="/KillAgentConsole" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SmegDraftConvert">
+      <http:operation location="/SmegDraftConvert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvertTest">
+      <http:operation location="/ImgConvertTest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetQueryStateIdle">
+      <http:operation location="/SetQueryStateIdle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T2100FileIoServiceHttpPost" type="tns:T2100FileIoServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetPartialSize">
+      <http:operation location="/GetPartialSize" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <http:operation location="/WebFileIoCopyFilesForCowrok" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <http:operation location="/GetWebFileDirPath" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryFPTState">
+      <http:operation location="/QueryFPTState" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PDFConvert">
+      <http:operation location="/PDFConvert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FullPDFConvert">
+      <http:operation location="/FullPDFConvert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryState">
+      <http:operation location="/QueryState" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvert">
+      <http:operation location="/ImgConvert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ODFConvert">
+      <http:operation location="/ODFConvert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPrintQeue">
+      <http:operation location="/ClearPrintQeue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="KillAgentConsole">
+      <http:operation location="/KillAgentConsole" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="SmegDraftConvert">
+      <http:operation location="/SmegDraftConvert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgConvertTest">
+      <http:operation location="/ImgConvertTest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetQueryStateIdle">
+      <http:operation location="/SetQueryStateIdle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="T2100FileIoService">
+    <wsdl:port name="T2100FileIoServiceSoap" binding="tns:T2100FileIoServiceSoap">
+      <soap:address location="https://win10test01/ImgConvert/ImgConvertWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T2100FileIoServiceSoap12" binding="tns:T2100FileIoServiceSoap12">
+      <soap12:address location="https://win10test01/ImgConvert/ImgConvertWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T2100FileIoServiceHttpGet" binding="tns:T2100FileIoServiceHttpGet">
+      <http:address location="https://win10test01/ImgConvert/ImgConvertWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T2100FileIoServiceHttpPost" binding="tns:T2100FileIoServiceHttpPost">
+      <http:address location="https://win10test01/ImgConvert/ImgConvertWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

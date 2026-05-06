@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4701_VACD" targetNamespace="http://tempuri.org/EDR4701_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR4701_VACD.xsd" xmlns="http://tempuri.org/EDR4701_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4701_VACD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR4701_VACD" msprop:Generator_UserDSName="EDR4701_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4701_VAC_DETAIL" msprop:Generator_TableClassName="EDR4701_VAC_DETAILDataTable" msprop:Generator_TableVarName="tableEDR4701_VAC_DETAIL" msprop:Generator_RowChangedName="EDR4701_VAC_DETAILRowChanged" msprop:Generator_TablePropName="EDR4701_VAC_DETAIL" msprop:Generator_RowDeletingName="EDR4701_VAC_DETAILRowDeleting" msprop:Generator_RowChangingName="EDR4701_VAC_DETAILRowChanging" msprop:Generator_RowEvHandlerName="EDR4701_VAC_DETAILRowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4701_VAC_DETAILRowDeleted" msprop:Generator_RowClassName="EDR4701_VAC_DETAILRow" msprop:Generator_UserTableName="EDR4701_VAC_DETAIL" msprop:Generator_RowEvArgName="EDR4701_VAC_DETAILRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO" msprop:Generator_ColumnPropNameInRow="DEPT_NO" msprop:Generator_ColumnPropNameInTable="DEPT_NOColumn" msprop:Generator_UserColumnName="DEPT_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="RCV_DATE" msprop:Generator_ColumnVarNameInTable="columnRCV_DATE" msprop:Generator_ColumnPropNameInRow="RCV_DATE" msprop:Generator_ColumnPropNameInTable="RCV_DATEColumn" msprop:Generator_UserColumnName="RCV_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="NEW_TIME" msprop:Generator_ColumnVarNameInTable="columnNEW_TIME" msprop:Generator_ColumnPropNameInRow="NEW_TIME" msprop:Generator_ColumnPropNameInTable="NEW_TIMEColumn" msprop:Generator_UserColumnName="NEW_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="TX_TIME" msprop:Generator_ColumnVarNameInTable="columnTX_TIME" msprop:Generator_ColumnPropNameInRow="TX_TIME" msprop:Generator_ColumnPropNameInTable="TX_TIMEColumn" msprop:Generator_UserColumnName="TX_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="OWN_OU_ID" msprop:Generator_ColumnVarNameInTable="columnOWN_OU_ID" msprop:Generator_ColumnPropNameInRow="OWN_OU_ID" msprop:Generator_ColumnPropNameInTable="OWN_OU_IDColumn" msprop:Generator_UserColumnName="OWN_OU_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="OWN_OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOWN_OU_NAME" msprop:Generator_ColumnPropNameInRow="OWN_OU_NAME" msprop:Generator_ColumnPropNameInTable="OWN_OU_NAMEColumn" msprop:Generator_UserColumnName="OWN_OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="USE_DATE" msprop:Generator_ColumnVarNameInTable="columnUSE_DATE" msprop:Generator_ColumnPropNameInRow="USE_DATE" msprop:Generator_ColumnPropNameInTable="USE_DATEColumn" msprop:Generator_UserColumnName="USE_DATE" type="xs:double" minOccurs="0" />
+              <xs:element name="CLOSE_TYPE" msprop:Generator_ColumnVarNameInTable="columnCLOSE_TYPE" msprop:Generator_ColumnPropNameInRow="CLOSE_TYPE" msprop:Generator_ColumnPropNameInTable="CLOSE_TYPEColumn" msprop:Generator_UserColumnName="CLOSE_TYPE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EDR4701_VAC_SUMMARY" msprop:Generator_TableClassName="EDR4701_VAC_SUMMARYDataTable" msprop:Generator_TableVarName="tableEDR4701_VAC_SUMMARY" msprop:Generator_TablePropName="EDR4701_VAC_SUMMARY" msprop:Generator_RowDeletingName="EDR4701_VAC_SUMMARYRowDeleting" msprop:Generator_RowChangingName="EDR4701_VAC_SUMMARYRowChanging" msprop:Generator_RowEvHandlerName="EDR4701_VAC_SUMMARYRowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4701_VAC_SUMMARYRowDeleted" msprop:Generator_UserTableName="EDR4701_VAC_SUMMARY" msprop:Generator_RowChangedName="EDR4701_VAC_SUMMARYRowChanged" msprop:Generator_RowEvArgName="EDR4701_VAC_SUMMARYRowChangeEvent" msprop:Generator_RowClassName="EDR4701_VAC_SUMMARYRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="OWN_OU_ID" msprop:Generator_ColumnVarNameInTable="columnOWN_OU_ID" msprop:Generator_ColumnPropNameInRow="OWN_OU_ID" msprop:Generator_ColumnPropNameInTable="OWN_OU_IDColumn" msprop:Generator_UserColumnName="OWN_OU_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="OWN_OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOWN_OU_NAME" msprop:Generator_ColumnPropNameInRow="OWN_OU_NAME" msprop:Generator_ColumnPropNameInTable="OWN_OU_NAMEColumn" msprop:Generator_UserColumnName="OWN_OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE" msprop:Generator_ColumnVarNameInTable="columnISSUE" msprop:Generator_ColumnPropNameInRow="ISSUE" msprop:Generator_ColumnPropNameInTable="ISSUEColumn" msprop:Generator_UserColumnName="ISSUE" type="xs:string" minOccurs="0" />
+              <xs:element name="STORE" msprop:Generator_ColumnVarNameInTable="columnSTORE" msprop:Generator_ColumnPropNameInRow="STORE" msprop:Generator_ColumnPropNameInTable="STOREColumn" msprop:Generator_UserColumnName="STORE" type="xs:string" minOccurs="0" />
+              <xs:element name="ELSE" msprop:Generator_ColumnVarNameInTable="columnELSE" msprop:Generator_ColumnPropNameInRow="ELSE" msprop:Generator_ColumnPropNameInTable="ELSEColumn" msprop:Generator_UserColumnName="ELSE" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL_DATE" msprop:Generator_ColumnVarNameInTable="columnTOTAL_DATE" msprop:Generator_ColumnPropNameInRow="TOTAL_DATE" msprop:Generator_ColumnPropNameInTable="TOTAL_DATEColumn" msprop:Generator_UserColumnName="TOTAL_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="AVG_DATE" msprop:Generator_ColumnVarNameInTable="columnAVG_DATE" msprop:Generator_ColumnPropNameInRow="AVG_DATE" msprop:Generator_ColumnPropNameInTable="AVG_DATEColumn" msprop:Generator_UserColumnName="AVG_DATE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

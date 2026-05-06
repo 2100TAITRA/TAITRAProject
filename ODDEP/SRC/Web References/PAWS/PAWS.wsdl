@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPAFileSrvInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="srgOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPAFileSrvInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPAFileSrvInfoResult" type="tns:PAFileSrvClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PAFileSrvClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebService" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPersonalSeq">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonalSeqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonalSeqResult" type="tns:PersonalSeqResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonalSeqResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arrPersonalSeq" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewPersonalDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argData" type="tns:ArrayOfPersonalDocData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonalDocData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PersonalDocData" nillable="true" type="tns:PersonalDocData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PersonalDocData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasteDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasteTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasteType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromOrgNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromOrgName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromWord" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InchargeOuId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasteOuId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasteOuName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasteUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnOuId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SysId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeetDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeetWeek" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeetTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotifyState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DraftNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attach" type="tns:ArrayOfPersonalDocAttach" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPersonalDocAttach">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PersonalDocAttach" nillable="true" type="tns:PersonalDocAttach" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PersonalDocAttach">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AttType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewPersonalDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewPersonalDocResult" type="tns:PADataResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PADataResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeletePersonalDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPersonalSeq" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePersonalDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletePersonalDocResult" type="tns:PADataResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchPersonalData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchPersonalDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchPersonalDataResult" type="tns:PASearchResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PASearchResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonalDocDatas" type="tns:ArrayOfPersonalDocData" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PAFileSrvClass" nillable="true" type="tns:PAFileSrvClass" />
+      <s:element name="PersonalSeqResult" nillable="true" type="tns:PersonalSeqResult" />
+      <s:element name="PADataResult" nillable="true" type="tns:PADataResult" />
+      <s:element name="PASearchResult" nillable="true" type="tns:PASearchResult" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPAFileSrvInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPAFileSrvInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPAFileSrvInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPAFileSrvInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonalSeqSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonalSeq" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonalSeqSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonalSeqResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewPersonalDocSoapIn">
+    <wsdl:part name="parameters" element="tns:NewPersonalDoc" />
+  </wsdl:message>
+  <wsdl:message name="NewPersonalDocSoapOut">
+    <wsdl:part name="parameters" element="tns:NewPersonalDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePersonalDocSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePersonalDoc" />
+  </wsdl:message>
+  <wsdl:message name="DeletePersonalDocSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePersonalDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchPersonalDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchPersonalData" />
+  </wsdl:message>
+  <wsdl:message name="SearchPersonalDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchPersonalDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPAFileSrvInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="srgOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPAFileSrvInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:PAFileSrvClass" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonalSeqHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="iCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonalSeqHttpGetOut">
+    <wsdl:part name="Body" element="tns:PersonalSeqResult" />
+  </wsdl:message>
+  <wsdl:message name="DeletePersonalDocHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argPersonalSeq" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="DeletePersonalDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:PADataResult" />
+  </wsdl:message>
+  <wsdl:message name="SearchPersonalDataHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchPersonalDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:PASearchResult" />
+  </wsdl:message>
+  <wsdl:message name="GetPAFileSrvInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="srgOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPAFileSrvInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:PAFileSrvClass" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonalSeqHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="iCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonalSeqHttpPostOut">
+    <wsdl:part name="Body" element="tns:PersonalSeqResult" />
+  </wsdl:message>
+  <wsdl:message name="DeletePersonalDocHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argPersonalSeq" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="DeletePersonalDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:PADataResult" />
+  </wsdl:message>
+  <wsdl:message name="SearchPersonalDataHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchPersonalDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:PASearchResult" />
+  </wsdl:message>
+  <wsdl:portType name="PAWSSoap">
+    <wsdl:operation name="GetPAFileSrvInfo">
+      <wsdl:input message="tns:GetPAFileSrvInfoSoapIn" />
+      <wsdl:output message="tns:GetPAFileSrvInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalSeq">
+      <wsdl:input message="tns:GetPersonalSeqSoapIn" />
+      <wsdl:output message="tns:GetPersonalSeqSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewPersonalDoc">
+      <wsdl:input message="tns:NewPersonalDocSoapIn" />
+      <wsdl:output message="tns:NewPersonalDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalDoc">
+      <wsdl:input message="tns:DeletePersonalDocSoapIn" />
+      <wsdl:output message="tns:DeletePersonalDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPersonalData">
+      <wsdl:input message="tns:SearchPersonalDataSoapIn" />
+      <wsdl:output message="tns:SearchPersonalDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PAWSHttpGet">
+    <wsdl:operation name="GetPAFileSrvInfo">
+      <wsdl:input message="tns:GetPAFileSrvInfoHttpGetIn" />
+      <wsdl:output message="tns:GetPAFileSrvInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalSeq">
+      <wsdl:input message="tns:GetPersonalSeqHttpGetIn" />
+      <wsdl:output message="tns:GetPersonalSeqHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalDoc">
+      <wsdl:input message="tns:DeletePersonalDocHttpGetIn" />
+      <wsdl:output message="tns:DeletePersonalDocHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPersonalData">
+      <wsdl:input message="tns:SearchPersonalDataHttpGetIn" />
+      <wsdl:output message="tns:SearchPersonalDataHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PAWSHttpPost">
+    <wsdl:operation name="GetPAFileSrvInfo">
+      <wsdl:input message="tns:GetPAFileSrvInfoHttpPostIn" />
+      <wsdl:output message="tns:GetPAFileSrvInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalSeq">
+      <wsdl:input message="tns:GetPersonalSeqHttpPostIn" />
+      <wsdl:output message="tns:GetPersonalSeqHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalDoc">
+      <wsdl:input message="tns:DeletePersonalDocHttpPostIn" />
+      <wsdl:output message="tns:DeletePersonalDocHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPersonalData">
+      <wsdl:input message="tns:SearchPersonalDataHttpPostIn" />
+      <wsdl:output message="tns:SearchPersonalDataHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PAWSSoap" type="tns:PAWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPAFileSrvInfo">
+      <soap:operation soapAction="http://tempuri.org/GetPAFileSrvInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalSeq">
+      <soap:operation soapAction="http://tempuri.org/GetPersonalSeq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPersonalDoc">
+      <soap:operation soapAction="http://tempuri.org/NewPersonalDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalDoc">
+      <soap:operation soapAction="http://tempuri.org/DeletePersonalDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPersonalData">
+      <soap:operation soapAction="http://tempuri.org/SearchPersonalData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PAWSSoap12" type="tns:PAWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPAFileSrvInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetPAFileSrvInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalSeq">
+      <soap12:operation soapAction="http://tempuri.org/GetPersonalSeq" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPersonalDoc">
+      <soap12:operation soapAction="http://tempuri.org/NewPersonalDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalDoc">
+      <soap12:operation soapAction="http://tempuri.org/DeletePersonalDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPersonalData">
+      <soap12:operation soapAction="http://tempuri.org/SearchPersonalData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PAWSHttpGet" type="tns:PAWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetPAFileSrvInfo">
+      <http:operation location="/GetPAFileSrvInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalSeq">
+      <http:operation location="/GetPersonalSeq" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalDoc">
+      <http:operation location="/DeletePersonalDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPersonalData">
+      <http:operation location="/SearchPersonalData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PAWSHttpPost" type="tns:PAWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetPAFileSrvInfo">
+      <http:operation location="/GetPAFileSrvInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalSeq">
+      <http:operation location="/GetPersonalSeq" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalDoc">
+      <http:operation location="/DeletePersonalDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPersonalData">
+      <http:operation location="/SearchPersonalData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PAWS">
+    <wsdl:port name="PAWSSoap" binding="tns:PAWSSoap">
+      <soap:address location="https://docvip.fdat.com.tw/PA/PALIB/PAWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PAWSSoap12" binding="tns:PAWSSoap12">
+      <soap12:address location="https://docvip.fdat.com.tw/PA/PALIB/PAWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PAWSHttpGet" binding="tns:PAWSHttpGet">
+      <http:address location="https://docvip.fdat.com.tw/PA/PALIB/PAWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PAWSHttpPost" binding="tns:PAWSHttpPost">
+      <http:address location="https://docvip.fdat.com.tw/PA/PALIB/PAWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

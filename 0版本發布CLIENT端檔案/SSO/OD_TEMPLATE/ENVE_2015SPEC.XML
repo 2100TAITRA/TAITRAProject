@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 電子封裝檔 SYSTEM "104_erencaps_utf8.dtd" [
+	<!ENTITY % 基本標籤 SYSTEM "104_basic_a_utf8.ent">
+	<!ENTITY % 線上簽核標籤 SYSTEM "104_sign_utf8.ent">
+	<!ENTITY % 檔管標籤 SYSTEM "104_records_utf8.ent">
+]>
+<電子封裝檔>
+	<封裝檔內容 Id="Wrap">
+		<封裝檔資訊>電子檔案</封裝檔資訊>
+		<電子檔案>
+			<線上簽核 Id="Aol">
+				<線上簽核流程 Id="FlowInfo"/>
+				<線上簽核資訊 Id="Sol"/>
+			</線上簽核>
+		</電子檔案>
+	</封裝檔內容>
+</電子封裝檔>

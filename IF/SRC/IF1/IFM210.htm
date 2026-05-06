@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN">
+<script language="javascript">
+window.onload = fnOnLoad;
+function fnOnLoad()
+{
+	var strParam = "";
+	var pUrl = unescape(this.location);
+	if( pUrl != -1 )
+	{
+		var i = pUrl.indexOf("?");
+		if(i != -1)
+			strParam = pUrl.substring(i); 
+	}
+	//1100504	Joe		1100473		弱掃修正Client DOM XSS
+	//navbar.location = "IFM210T1.aspx" + strParam;
+	//viewer.location = "IFM210.aspx" + strParam;
+	//1110718 Kevin 1110629 配合弱掃移除權杖
+	//navbar.location = "IFM210T1.aspx" + encodeURI(strParam);
+	//viewer.location = "IFM210.aspx" + encodeURI(strParam);
+	navbar.location = "IFM210T1.aspx";
+	viewer.location = "IFM210.aspx";
+}
+function CloseWin(argMsg)
+{
+	opener = parent;
+	if(argMsg)
+		if(argMsg != "")
+			alert(argMsg);
+	close();
+}
+</script>
+<HTML>
+	<HEAD>
+		<TITLE>IFM210 單位及角色維護作業</TITLE>
+		<meta http-equiv="Content-Type" content="text/html; charset=big5">
+	</HEAD>
+
+	<FRAMESET frameSpacing="1" cols="300,*">
+		<FRAME border="1" name="navbar" marginWidth="0" marginHeight="0" src="" scrolling="no">
+		<FRAME name="viewer" src="">
+		<NOFRAMES>
+			<BODY>
+				<P>This page uses frames, but your browser doesn't support them.</P>
+			</BODY>
+		</NOFRAMES>
+	</FRAMESET>
+</HTML>

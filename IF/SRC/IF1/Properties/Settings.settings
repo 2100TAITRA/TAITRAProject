@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="IF1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="IF1_AgtSync_AgtSync" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://sysdeva/AgentSync/327020000I/AgtSync.asmx</Value>
+    </Setting>
+    <Setting Name="IF1_RAWS_RAWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/T2100RA/RAWS.asmx</Value>
+    </Setting>
+    <Setting Name="IF1_SCWS_SCWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/sc/scws.asmx</Value>
+    </Setting>
+    <Setting Name="IF1_WS_ODMSSP" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/odmssp/odmssp.asmx</Value>
+    </Setting>
+    <Setting Name="IF1_OdcWS_OdcDataServiceImplService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/GTFP/NAER/services/OdcDataService</Value>
+    </Setting>
+    <Setting Name="IF1_DLWS_DLWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docvip.fdat.com.tw/DL/DLLIB/DLWS.asmx</Value>
+    </Setting>
+	<Setting Name="IF1_WebFileIO_T2100FileIoService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docfile.fdat.com.tw/webfileio_t/t2100fileioservice.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

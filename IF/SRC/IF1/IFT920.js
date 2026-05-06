@@ -1,0 +1,1382 @@
+/*
+DATE    SA		PRG		MGR_NO			DESC
+1030915 Kevin	Kevin_C	1030710 		II轉IF
+1040309	Kevin	Kevin_C	1030573			修正.NET 4.5 取得憑證序號為正序，與舊有程式行為不符
+1040728	Kevin	Kevin	1030160			新增支援外呈外會補簽
+1040917	Leslie	Kevin	1040758			增進效能調整補簽方式
+1050127	Kevin	Kevin	1050023			修正遺漏多MSG問題
+1051109	Kevin	Kevin	1050087         二代系統升級
+1060801 Kevin   Kevin                   修正無補簽公文無法還卡問題，先排除無效資料行
+1090924 Kevin 	Kevin	1090703 		104年法規公文改用SHA2加簽
+1100201	Leslie	Joe		1090927			取消使用document.activeElement
+1140513 Leslie 	Zen		1140331			調整至工作站補簽
+*/
+/*****************************************************************************
+*
+*   Declaration 區
+* 
+*****************************************************************************/
+var IsServerHandling = new Boolean();
+IsServerHandling = false;
+
+var gLastReason = "";	//紀錄使用者前次輸入之代還原因
+var bIsCheckReason = false;
+var gSAMUser = "";
+
+//紀錄Call WebService物件的id
+var wsDuplicateID;
+
+//指定DataGrid欄位
+var strTableFields = new Array("_lbRead", "_txInput1", "_txInput2");
+
+//1051109 Kevin 1050087 二代系統升級
+//if (document.all.tbTool)
+//	document.all.tbTool.onbuttonclick = jf_ToolBarHandle;
+//
+////1040917 Kevin 1040758 增加DataGrid用toolbar
+//if (document.all.dgDoc)
+//	document.all.tbSelect.onbuttonclick = jf_ToolBarHandle;
+
+/*****************************************************************************
+*
+*   OnLoad 區
+* 
+*****************************************************************************/
+function ClientOnLoad()
+{
+}
+
+/*****************************************************************************
+*
+*   Client Button 處理區
+* 
+*****************************************************************************/
+//1100201	Joe		1090927		取消使用document.activeElement
+// function ClientButtonControl()
+function ClientButtonControl(e)
+{
+    // var xObjectName = document.activeElement.id;
+    var xObjectName = e.target.id;
+
+    var pNo = xObjectName.substring(8, xObjectName.indexOf("_btHelp"));
+    var btHelp;
+
+    //取得確實按下的是哪個？鍵
+    if (document.all["dgCard__ctl" + pNo + "_btFLD_TYPE"] != null)
+    {
+        btHelp = document.all["dgCard__ctl" + pNo + "_btHelp"].id;
+        CurrOrgIdObj = document.all["dgCard__ctl" + pNo + "_txInput1"];
+    }
+
+    if (IsServerHandling)
+        return;
+
+    //檢查是否TimeOut
+    if (jf_IsTimeOut())
+    {
+        Page_BlockSubmit = true;
+        return;
+    }
+
+    switch (xObjectName)
+    {
+        case btHelp:
+            break;
+    }
+}
+
+/*****************************************************************************
+*
+*   ToolBar Button 處理區
+* 
+*****************************************************************************/
+//1051109 Kevin 1050087 二代系統升級
+//function jf_ToolBarHandle()
+function jf_ToolBarHandle(event)
+{
+    var xObjectName;
+    var evBtn;
+
+    if (IsServerHandling)
+        return;
+
+    //檢查是否TimeOut
+    if (jf_IsTimeOut())
+    {
+        Page_BlockSubmit = true;
+        return;
+    }
+
+    //1051109 Kevin 1050087 二代系統升級
+    //xObjectName = window.event.srcNode.getAttribute("ID");
+    xObjectName = event.target.id;
+
+    switch (xObjectName)
+    {
+        case "btSave":
+            //1051109 Kevin 1050087 二代系統升級 Start
+            Page_BlockSubmit = true;
+            if (ResignBeforeNew())
+            {
+                nowCert = '';
+                var sc = new SmartCard();
+                sc.getCert().then(function (rslt)
+                {
+                    sc.reset();
+                    if (rslt.success)
+                    {
+
+                        nowCert = rslt.cert.certb64;
+                        jf_ShowModal("IFT920C2.htm", "300", "300");
+                    }
+                    else if (!!rslt.errMsg)
+                    {
+                        alert(rslt.errMsg);
+                    }
+                })
+                    .fail(function (rslt)
+                    {
+                        sc.reset();
+                        alert(rslt.errMsg);
+                    });
+            }
+            /*
+            Page_BlockSubmit = true;
+            
+            //1040917 Kevin 1040758 增進效能調整補簽方式
+            var bSelected = false;
+            for (var iDg = 2; iDg <= document.all.dgDoc.rows.length ; iDg++)
+            {
+                if (document.all["dgDoc__ctl" + iDg + "_cbSelect"].checked)
+                {
+                    bSelected = true;
+                }
+            }
+            if (!bSelected)
+            {
+                alert("請選擇欲補簽公文。");
+                return;
+            }
+
+            //檢核補簽時之憑證，是否與"讀取憑證"時為同一張卡，以避免補簽之憑證未通過憑證有效性驗證
+            var sLastCard = document.all["txCardInfo"].value;	//執行"讀取憑證"時的卡片，先紀錄起來
+
+            //1040917 Kevin 1040758 增進效能調整補簽方式 Start
+            //var ResignList = document.all["nDocList"].value;
+            //var Items = ResignList.split(";");
+            //var nCounter = Items.length;
+            //1040917 Kevin 1040758 End
+
+            var nAccount = new String(document.all["nAccount"].value);
+            var sMapName = new String(ReadCard());
+
+            //檢核補簽時之憑證，是否與"讀取憑證"時為同一張卡，以避免補簽之憑證未通過憑證有效性驗證
+            if (document.all["txCardInfo"].value != sLastCard)
+            {
+                alert("欲執行補簽之憑證，尚未經過「讀取憑證」程序，不允許執行補簽。");
+                return;
+            }
+
+            //代理還卡之補簽檢核
+            var strReason = new String(jf_Trim(document.all["txReSignReason"].value));
+            gSAMUser = sMapName.toUpperCase();	//紀錄目前憑證的使用者帳號
+            //如果目前使用者與被瀏覽的資料的帳號相同,則不需檢查
+            if (sMapName.toUpperCase() != nAccount.toUpperCase() && bIsCheckReason)
+            {
+                if (strReason == "")	//表示有勾代理還卡，代理原因應不為空
+                {
+                    alert("代理還卡時，其代理原因不可為空白。");
+                    return;
+                }
+            }
+            else if (sMapName.toUpperCase() != nAccount.toUpperCase())
+            {
+                alert("此憑證並未與帳號[" + nAccount + "]鏈結,不允許執行補簽");
+                return;
+            }
+
+            //1040917 Kevin 1040758 增進效能調整補簽方式 
+            //if (nCounter > 1)
+            if (document.all.dgDoc)
+            {
+                //驗證PINCODE
+                if (!VerifyPin())
+                    return;
+            }
+            setTimeout("ResignFunction()", 500);
+            jf_ToolBarSubmit();
+            */
+            //1051109 Kevin 1050087 End
+            break;
+        case "btCancel":
+            Page_BlockSubmit = !jf_ConfirmCancel();
+            jf_ToolBarSubmit();
+            break;
+        case "btOpen":
+            //1051109 Kevin 1050087 二代系統升級
+            Page_BlockSubmit = true;
+            var strUrl = "";
+            strUrl = "IFT920C1.aspx";
+            jf_OpenChildWin(strUrl, "SII020", 700, 500);
+            break;
+        case "btAccess":
+            //1051109 Kevin 1050087 二代系統升級 Start
+            //Page_BlockSubmit = false;
+            //document.all.hUserName.value = ReadCard();
+            //if (document.all.hUserName.value == "")
+            //    Page_BlockSubmit = true;
+            //jf_ToolBarSubmit();
+            Page_BlockSubmit = true;
+            var sc = new SmartCard();
+            sc.getCert().then(function (rslt)
+            {
+                sc.reset();
+
+                if (rslt.success)
+                {
+
+                    var arWSParam = new Array(2);
+                    arWSParam[0] = rslt.cert.certb64;
+                    arWSParam[1] = document.all.H_txOrgNo.value;
+
+                    var wsRet = jf_CallW(document.all.H_txAuthWs.value, "GetMOICAMapAccount", false, arWSParam);
+                    if (jf_IsWebServiceSuccess(wsRet))
+                    {
+
+                        if (wsRet.value == "")
+                            alert("此卡片尚未與帳號鏈結");
+
+                        document.all.txCardInfo.value = rslt.cert.certb64;
+                        document.all.hUserName.value = wsRet.value.split("|")[1];
+
+                        Page_BlockSubmit = false;
+                        jf_ToolBarSubmit(xObjectName);
+                    }
+                    else
+                    {
+                        alert("呼叫失敗:" + wsRet.value.m_strErrMsg);
+                    }
+                }
+                else if (!!rslt.errMsg)
+                {
+                    alert("讀取憑證失敗(1)。\n\n失敗訊息:" + rslt.errMsg);
+                }
+            })
+                .fail(function (rslt)
+                {
+                    sc.reset();
+                    alert("讀取憑證失敗(2)。\n\n失敗訊息:" + errMsg);
+                });
+            //1051109 Kevin 1050087 End
+            break;
+        //1040917 Kevin 1040758 增加dg用Toolbar
+        //以下屬於DataGrid ToolBar
+        case "btSelectAll":
+            Page_BlockSubmit = true;
+            jf_SelectAll("dgDoc", "_cbSelect");
+            break;
+        case "btSelectInverse":
+            Page_BlockSubmit = true;
+            jf_SelectInverse("dgDoc", "_cbSelect");
+            break;
+        case "btSelectClear":
+            Page_BlockSubmit = true;
+            jf_SelectClear("dgDoc", "_cbSelect");
+            break;
+    }
+}
+
+/*****************************************************************************
+*
+*  Call Web Service 處理區
+* 
+*****************************************************************************/
+//處理呼叫WebService回傳值
+function OnWSResult(argResult)
+{
+    //webserver回傳後動作
+    if (argResult.id == wsDuplicateID)
+    {
+        if (jf_IsWebServiceSuccess(argResult))
+        {
+            //document.all["txKeyFld"].value = jf_Trim(argResult.value.RtnStr);
+        }
+        else
+        {
+            //document.all["txReadOnly"].value = "";
+        }
+    }
+}
+
+/*****************************************************************************
+*
+*  Call Child Window 處理區
+* 
+*****************************************************************************/
+//處理呼叫子視窗回傳值
+function CallBack(argCallerId)
+{
+    if (argCallerId == "IFT920C1")
+    {
+        document.all["hUserName"].value = jf_Trim(document.all.lbReturnValue.options[0].value);
+        Page_BlockSubmit = false;
+        jf_OpenButtonSubmit();
+    }
+
+    //1051109 Kevin 1050087 二代系統升級
+    if (argCallerId == "IFT920C2")
+    {
+        pincode = document.all.lbReturnValue.options[0].value;
+        if (pincode != '')
+            ResignNew();
+    }
+
+    //清空lbReturnValue物件
+    if (document.all["lbReturnValue"].options != null)
+        document.all["lbReturnValue"].options.length = 0;
+}
+
+/*****************************************************************************
+*
+*  Custom 區(各程式專用function請寫在此)
+* 
+*****************************************************************************/
+
+//1051109 Kevin 1050087 二代系統升級 Start
+var nowCert;
+function ResignBeforeNew()
+{
+    bReSignAllSelect = true;
+
+    iMsgNow = 0;
+    iMsgTotal = 0;
+    AllMsg = '';
+    strWebFileIO = '';
+
+    //1140513 Zen 1140331 調整至工作站補簽
+    arrDgOrgNo = [];
+    arrDgDocNo = [];
+    arrDgMsgId = [];
+    arrDgComeOthers = [];
+    arrDgDocPath = [];
+
+    for (var i = 2; i <= document.all.dgDoc.rows.length; i++)
+    {
+        //1060801 Kevin 修正無補簽公文無法還卡問題，先排除無效資料行
+        if (document.all["dgDoc__ctl" + i + "_lbDocNo"].textContent == '')
+            continue;
+
+        if (!document.all["dgDoc__ctl" + i + "_cbSelect"].checked)
+        {
+            bReSignAllSelect = false;
+            continue;
+        }
+        if (strWebFileIO == '')
+            strWebFileIO = document.all["dgDoc__ctl" + i + "_lbWebFileIO"].textContent;
+
+        var DocNo = document.all["dgDoc__ctl" + i + "_lbDocNo"].textContent;
+        var MsgId = document.all["dgDoc__ctl" + i + "_lbMsgId"].textContent;
+
+        //1140513 Zen 1140331 調整至工作站補簽
+        var arrSingleDocMsgid = MsgId.replace(/\s/g, ";").split(";");
+        for (var jDocMsg = 0; jDocMsg < arrSingleDocMsgid.length; jDocMsg++)
+        {
+            var singleMsg = arrSingleDocMsgid[jDocMsg];
+
+            arrDgOrgNo.push(document.all["dgDoc__ctl" + i + "_lbOrgno"].textContent);
+            arrDgDocNo.push(document.all["dgDoc__ctl" + i + "_lbDocNo"].textContent);
+            arrDgMsgId.push(singleMsg);
+            arrDgComeOthers.push(document.all["dgDoc__ctl" + i + "_lbComeOthers"].textContent);
+            arrDgDocPath.push(document.all["dgDoc__ctl" + i + "_lbDocPath"].textContent);
+        }
+
+        iMsgTotal += MsgId.replace(/\s/g, ";").split(";").length;
+        AllMsg += MsgId.replace(/\s/g, ";") + ";";
+    }
+
+    if (iMsgTotal == 0)
+    {
+
+        if (bReSignAllSelect)
+        {
+
+            UpdateCardInfo();//無補簽公文 直接還卡
+            fnHideMessageBlock();
+            IsServerHandling = true;
+            jf_ShowWaitState();
+            Page_BlockSubmit = false;
+            jf_ToolBarSubmit("btSave");
+            return false;
+        }
+        else
+        {
+            signFail("請選擇欲補簽公文。");
+            return false;
+        }
+    }
+    return true;
+}
+
+function ResignNew()
+{
+    try
+    {
+        fnShowMessage("待補簽資料準備中...");
+        //檢核補簽時之憑證，是否與"讀取憑證"時為同一張卡，以避免補簽之憑證未通過憑證有效性驗證
+        if (document.all.txCardInfo.value != nowCert)
+        {
+
+            signFail("欲執行補簽之憑證，尚未經過「讀取憑證」程序，不允許執行補簽。");
+            return;
+        }
+        //1140513 Zen 1140331 調整至工作站補簽
+        var wsRet;
+        var arWSParam;
+        if (document.all['H_DocsignByWorkStation'].value != 'Y')
+        {
+            arWSParam = new Array(2);
+            arWSParam[0] = document.all.txCardInfo.value;
+            arWSParam[1] = document.all.H_txOrgNo.value;
+
+            wsRet = jf_CallW(document.all.H_txAuthWs.value, "GetMOICAMapAccount", false, arWSParam);
+        }
+        else
+        {
+            var arWSParam = new Array(6);
+            arWSParam[0] = arrDgOrgNo;
+            arWSParam[1] = arrDgDocNo;
+            arWSParam[2] = arrDgMsgId;
+            arWSParam[3] = arrDgComeOthers;
+            arWSParam[4] = arrDgDocPath;
+            arWSParam[5] = strWebFileIO;
+
+            wsRet = jf_CallWA(strWebSfolderUrl, "wksGetResignSignInfo", false, arWSParam, true);
+        }
+
+        if (jf_IsWebServiceSuccess(wsRet))
+        {
+
+            if (wsRet.value == "")
+            {
+                signFail("此卡片尚未與帳號鏈結。");
+                return;
+            }
+
+            var UserName = document.all.nAccount.value.toUpperCase();
+            var CardUser = wsRet.value.split("|")[1].toUpperCase();
+
+            //憑證使用者與補簽使用者不同
+            if (UserName != CardUser && document.all.cbProxyReturn.checked)
+            {
+                //增加代理還卡之補簽檢核
+                if (jf_Trim(document.all.txReSignReason.value) == "")
+                {
+                    signFail("代理還卡時，其代理原因不可為空白。");
+                    return;
+                }
+            }
+            else if (UserName != CardUser) //憑證使用者與補簽使用者不同
+            {
+                signFail("此憑證[" + CardUser + "]並未與帳號[" + UserName + "]鏈結,不允許執行補簽");
+                return;
+            }
+        }
+        else
+        {
+
+            signFail("呼叫失敗:" + wsRet.value.m_strErrMsg);
+            return;
+        }
+
+        var arWSParam = new Array(2);
+        arWSParam[0] = document.all.H_txOrgNo.value;
+        arWSParam[1] = AllMsg;
+
+        var wsRet = jf_CallWA(strWebFileIO, "GetResignSignInfo", false, arWSParam, true);
+        if (jf_IsWebServiceSuccess(wsRet))
+        {
+            if (wsRet.value.m_bSuccess)
+            {
+
+                //II_LEGAL_CA 略過
+                arrSignWait = wsRet.value.RtnStr.split(";");
+                dbSignMsg = "";
+                doSignMsg = "";
+                doSignWait = "";
+                doSignCert = "";
+                uSignature = "";
+
+                //1140513 Zen 1140331 調整至工作站補簽
+                arrDoSignMsg = [];
+                arrDoSignSi = [];
+                arrDoSignature = [];
+
+                doSignatureErr = "";
+                doSignature();
+            }
+            else
+            {
+                signFail("呼叫失敗:" + wsRet.value.m_strErrMsg);
+                return;
+            }
+        }
+    }
+    catch (e)
+    {
+
+        signFail("ResignFunction Err:" + e.message);
+        return;
+    }
+}
+
+var bReSignAllSelect;
+
+var iMsgTotal;
+var iMsgNow;
+
+var strWebFileIO;
+var AllMsg;
+
+//1140513 Zen 1140331 調整至工作站補簽
+var strWebSfolderUrl = document.all.H_WebSfolderUrl.value;
+let arrDgOrgNo = [];
+let arrDgDocNo = [];
+let arrDgMsgId = [];
+let arrDgComeOthers = [];
+let arrDgDocPath = [];
+
+var pincode;
+var arrSignWait;
+var dbSignMsg;
+var doSignMsg;
+var doSignWait;
+var doSignCert;
+var uSignature;
+var doSignatureErr;
+
+//1140513 Zen 1140331 調整至工作站補簽
+let arrDoSignMsg = [];
+let arrDoSignSi = [];
+let arrDoSignature = [];
+
+function signFail(ErrMsg)
+{
+    bReSignAllSelect = false;
+    fnShowMessage(ErrMsg);
+    jf_ShowMsg(ErrMsg, "");
+    fnHideMessageBlock();
+}
+
+function signSuccess()
+{
+    if (doSignatureErr)
+    {
+        signFail(doSignatureErr, "");
+        return;
+    }
+
+    fnShowMessage("檢核憑證有效性...");
+    if (!checkCertValidity())
+        return;
+
+    fnShowMessage("更新公文封裝檔中...");
+    if (!UpdateResignInfo())
+        return;
+
+    fnShowMessage("更新公文基資中...");
+    if (!UpdateDocInfo())
+        return;
+
+    fnShowMessage("還卡中...");
+    if (bReSignAllSelect)
+        UpdateCardInfo();
+
+    jf_ShowMsg("補簽完成，共" + iMsgTotal + "份流程。", "");
+
+    fnHideMessageBlock();
+    IsServerHandling = true;
+    jf_ShowWaitState();
+    Page_BlockSubmit = false;
+    jf_ToolBarSubmit("btSave");
+}
+
+function doSignature()
+{
+    if (iMsgNow >= iMsgTotal)
+        return;
+
+    fnShowMessage("目前進度:" + (iMsgNow + 1) + "/" + iMsgTotal + "流程補簽中...");
+
+    var strErrMsg = arrSignWait[iMsgNow].split("@")[1];
+    if (strErrMsg.indexOf("ERR-") != -1)
+    {
+        if (strErrMsg.indexOf("目前已有補簽記錄") != -1)
+        {
+            dbSignMsg += arrSignWait[iMsgNow].split("@")[0] + ";";
+        }
+        else
+        {
+            doSignatureErr += arrSignWait[iMsgNow].split("@")[0] + "發生錯誤:" + arrSignWait[iMsgNow].split("@")[1] + ";\r\n";
+
+        }
+        if (iMsgNow == iMsgTotal - 1)
+            signSuccess();
+        else
+        {
+            iMsgNow++;
+            setTimeout(doSignature, 500);
+        }
+    }
+    else
+    {
+
+        var sc = new SmartCard();
+
+        //1090924 Kevin 1090703 104年法規公文改用SHA2加簽 Start
+        //sc.makeSignature(arrSignWait[iMsgNow].split("@")[1], 'base64', pincode, 'SHA1').then(function (rslt)
+        // 由取得測試用待簽內容, 由其格式判定叫用加簽函式時使用的參數!
+        let sTobeSignB64 = arrSignWait[iMsgNow].split("@")[1];
+
+        /*
+         * 叫用_getHashAlgorithm()以判定回傳待簽內容使用的hashAlgorithm及encode
+         */
+        let hashInfo = _getHashAlgorithm(sTobeSignB64);
+        if (typeof hashInfo.alg == 'string' && hashInfo.alg.length)
+        {
+            $('#hashAlgShow').val('hashAlg=' + hashInfo.alg + ', encode=' + hashInfo.encode);
+        }
+        else
+        {
+            $('#hashAlgShow').val('ERROR!');
+        }
+
+        if (typeof hashInfo.alg == 'string' && hashInfo.alg.length) 
+        {
+            /*
+             * 取得叫用sc.makeSignature之_encode及_hashAlg參數值.
+             */
+            let _encode = hashInfo.encode;
+            let _hashAlg = hashInfo.alg;
+            if (_encode == 'hashBase64')
+            {
+                _hashAlg = ''; // 若eoncode為'hashBase64', 跨平台網頁元件會自行判定hash algorithm, 故給空字串.
+            }
+
+            // 叫用跨平台網頁元件簽章函式sc.makeSignature, 傳入 _encode 及 _hashAlg 參數.
+            sc.makeSignature(arrSignWait[iMsgNow].split("@")[1], _encode, pincode, _hashAlg).then(function (rslt)
+            //1090924 Kevin 1090703 End
+            {
+                sc.reset();
+
+                if (rslt.success)
+                {
+
+                    dbSignMsg += arrSignWait[iMsgNow].split("@")[0] + ";";
+                    doSignMsg += arrSignWait[iMsgNow].split("@")[0] + ";";
+                    doSignWait += arrSignWait[iMsgNow].split("@")[1] + ";";
+                    doSignCert += rslt.certb64 + ";";
+                    uSignature += rslt.signature + ";";
+                    //1140513 Zen 1140331 調整至工作站補簽
+                    arrDoSignMsg.push(arrSignWait[iMsgNow].split("@")[0]);
+                    arrDoSignSi.push(arrSignWait[iMsgNow].split("@")[1]);
+                    arrDoSignature.push(rslt.signature);
+                    doSignCert = rslt.certb64;
+
+                    if (iMsgNow == iMsgTotal - 1)
+                        signSuccess();
+                    else
+                    {
+                        iMsgNow++;
+                        setTimeout(doSignature, 500);
+                    }
+                }
+                else if (!!rslt.errMsg)
+                {
+                    signFail(rslt.errMsg)
+                }
+            })
+                .fail(function (rslt)
+                {
+                    sc.reset();
+                    signFail(rslt.errMsg);
+                });
+            //1090924 Kevin 1090703 104年法規公文改用SHA2加簽
+        }
+    }
+}
+
+function checkCertValidity()
+{
+    var arWSParam = new Array(3);
+    arWSParam[0] = document.all.txCardInfo.value;
+    arWSParam[1] = '2';
+    arWSParam[2] = document.all.H_txOrgNo.value;
+
+    var wsRet = jf_CallW(document.all.H_txAuthWs.value, "CheckCertificateValidity", false, arWSParam, true);
+    if (jf_IsWebServiceSuccess(wsRet))
+    {
+        if (wsRet.value == 0)
+        {
+
+            return true;
+        }
+        else
+        {
+
+            switch (wsRet.value)
+            {
+                case -1:
+                    signFail("憑證已過效期");
+                    break;
+                case -2:
+                    signFail("憑證CA簽章驗證失敗");
+                    break;
+                case -3:
+                    signFail("憑證已廢止");
+                    break;
+                case -4:
+                    signFail("憑證用途錯誤");
+                    break;
+                case -5:
+                    signFail("機關憑證失效");
+                    break;
+                case -6:
+                    signFail("機關憑證未鏈結");
+                    break;
+                default:
+                    signFail("驗證憑證發生未預期錯誤");
+                    break;
+            }
+            return false;
+        }
+    }
+}
+
+function UpdateResignInfo()
+{
+    if (doSignMsg == "")
+        return true;
+
+    //1140513 Zen 1140331 調整至工作站補簽
+    var wsRet;
+    var arWSParam;
+    var arWSParam = new Array(6);
+    if (document.all['H_DocsignByWorkStation'].value != 'Y')
+    {
+        arWSParam[0] = document.all.H_txOrgNo.value;
+        arWSParam[1] = doSignMsg;
+        arWSParam[2] = jf_Trim(document.all.txReSignReason.value);
+        arWSParam[3] = doSignWait;
+        arWSParam[4] = uSignature;
+        arWSParam[5] = doSignCert;
+    }
+    else
+    {
+        let arrDoOrgNo = [];
+        let arrDoDocNo = [];
+        let arrDoComeOthers = [];
+        let arrDoDocPath = [];
+
+        for (var iMsg = 0; iMsg < arrDoSignMsg.length; iMsg++)
+        {
+            let msgIdIndex = arrDgMsgId.indexOf(arrDoSignMsg[iMsg]);
+            if (msgIdIndex !== -1)
+            {
+                arrDoOrgNo.push(arrDgOrgNo[msgIdIndex]);
+                arrDoDocNo.push(arrDgDocNo[msgIdIndex]);
+                arrDoComeOthers.push(arrDgComeOthers[msgIdIndex]);
+                arrDoDocPath.push(arrDgDocPath[msgIdIndex]);
+            }
+            else
+            {
+                signFail(`無法取得MsgId對應基資:${msgId}` + wsRet.value.m_strErrMsg);
+                return false;
+            }
+        }
+
+        arWSParam = new Array(10);
+        arWSParam[0] = arrDoOrgNo;//string[] argOrgNo
+        arWSParam[1] = arrDoDocNo; //string[] argDocNo
+        arWSParam[2] = arrDoSignMsg; //string[] argMsgId
+        arWSParam[3] = arrDoComeOthers;//string[] argComeOthers
+        arWSParam[4] = jf_Trim(document.all.txReSignReason.value); //string sSignReason
+        arWSParam[5] = arrDoSignSi; //string[] resignSI
+        arWSParam[6] = arrDoSignature; //string[] signatureValue
+        arWSParam[7] = doSignCert; //string signCert
+        arWSParam[8] = arrDoDocPath; //string[] argDocPath
+        arWSParam[9] = strWebFileIO; //string argFileServerWS
+
+        wsRet = jf_CallWA(strWebSfolderUrl, "wksUpdateResignInfo", false, arWSParam, true);
+    }
+    if (jf_IsWebServiceSuccess(wsRet))
+    {
+        if (!wsRet.value.m_bSuccess)
+        {
+
+            signFail("呼叫失敗:" + wsRet.value.m_strErrMsg);
+            return false;
+        }
+    }
+    return true;
+}
+
+function UpdateDocInfo()
+{
+    var ErrMsg = '';
+
+    for (var i = 2; i <= document.all.dgDoc.rows.length; i++)
+    {
+
+        if (!document.all["dgDoc__ctl" + i + "_cbSelect"].checked)
+            continue;
+
+        var DocNo = document.all["dgDoc__ctl" + i + "_lbDocNo"].textContent;
+        var MsgId = document.all["dgDoc__ctl" + i + "_lbMsgId"].textContent.replace(/\s/g, ";");
+
+        if (dbSignMsg.indexOf(MsgId) == -1)
+        {
+            ErrMsg += "文號" + DocNo + "未完成封裝檔更新，不更新資料庫。\r\n";
+            continue;
+        }
+
+        var arWSParam = new Array(2);
+        arWSParam[0] = DocNo;
+        arWSParam[1] = MsgId;
+        var wsRet = jf_CallWS("IFT920WS.asmx", "UpdateWTREStatus", false, arWSParam);
+        if (jf_IsWebServiceSuccess(wsRet))
+        {
+            if (!wsRet.value.RtnBool)
+            {
+                ErrMsg += "更新資料庫失敗，" + wsRet.value.m_strErrMsg + "\r\n";
+            }
+        }
+    }
+    if (ErrMsg != "")
+    {
+
+        signFail(ErrMsg);
+        return false;
+    }
+    else
+        return true;
+}
+
+function UpdateCardInfo()
+{
+    fnShowMessage("註記還卡中...");
+
+    var CardList = document.all["nCardList"].value;
+    var Items2 = CardList.split(";");
+    if (Items2.length > 1)
+    {
+        for (var i = 0; i < Items2.length - 1; i++)
+        {
+            var Item2 = Items2[i].split("-");
+            var CardId = Item2[0];
+            var UserName = Item2[1];
+            var cbReturnId = Item2[2];
+
+            var arWSParam = new Array(2);
+            arWSParam[0] = CardId;
+            arWSParam[1] = UserName;
+
+            if (document.all[cbReturnId].checked)
+            {
+                var wsRet = jf_CallWS("IFT920WS.asmx", "UpdateBOCDStatus", false, arWSParam);
+                if (jf_IsWebServiceSuccess(wsRet))
+                {
+                    if (!wsRet.value.RtnBool)
+                    {
+                        jf_ShowMsg("呼叫UpdateBOCDStatus失敗:" + wsRet.value.m_strErrMsg, "");
+                    }
+                }
+            }
+        }
+    }
+}
+
+//1090924 Kevin 1090703 104年法規公文改用SHA2加簽
+function _getHashAlgorithm(sTobeSignB64)
+{
+    let HASHALG_SHA1 = 'SHA1';
+    let HASHALG_SHA256 = 'SHA256';
+    let sHashHeaderb64_SHA1 = 'MCEwCQYFKw4DAhoFAAQU'; // 2017.1.18 - 若回傳待簽資料SHA1 hash, 則header為此值!
+    let sHashHeaderb64_SHA256 = 'MDEwDQYJYIZIAWUDBAIBBQAEI'; // 2017.3.16 - 若回傳待簽資料SHA256 hash, 則header為此值!
+    let sXMLToBeSignHeaderb64 = 'PFNpZ25lZEluZm8+PENhbm9uaWNhbGl6YXRpb25NZXRob2Q'; // 2020.2.20 - 1090154 Eric, 確認是否為XML待簽內容: <SignedInfo><CanonicalizationMethod...  
+    let sHashAlg_SHA1 = 'http://www.w3.org/2000/09/xmldsig#sha1';
+    let sHashAlg_SHA256 = 'http://www.w3.org/2001/04/xmlenc#sha256';
+
+    let fHashSign = false;
+    let _hashAlg = '';
+    if (sTobeSignB64.indexOf(sHashHeaderb64_SHA1) == 0)
+    {
+        _hashAlg = HASHALG_SHA1;
+        fHashSign = true;
+    }
+    else if (sTobeSignB64.indexOf(sHashHeaderb64_SHA256) == 0)
+    {
+        _hashAlg = HASHALG_SHA256;
+        fHashSign = true;
+    }
+    else if (sTobeSignB64.indexOf(sXMLToBeSignHeaderb64) == -1)
+    {
+        console.log('無效的待簽XML內容!');
+        return { alg: '', encode: '' };
+    }
+
+    if (!fHashSign)
+    {
+        let sTobeSignXML = Base64.decode(sTobeSignB64);
+        if (!!sTobeSignXML && sTobeSignXML.length)
+        {
+            if (sTobeSignXML.indexOf(sHashAlg_SHA1) !== -1)
+            {
+                _hashAlg = HASHALG_SHA1;
+            }
+            else if (sTobeSignXML.indexOf(sHashAlg_SHA256) !== -1)
+            {
+                _hashAlg = HASHALG_SHA256;
+            }
+        }
+    }
+    return { alg: _hashAlg, encode: fHashSign ? 'hashBase64' : 'base64' };
+}
+
+
+/*
+function ReadCard()
+{
+    var ret = document.all.ocx.Init("");
+    if (ret == false)
+    {
+        alert("封裝元件初始化失敗,無法進行憑證鏈結");
+        return "";
+    }
+    document.all.ocx.SetUIMode(false);
+
+    ret = document.all.ocx.IsSmartCardAvailable(1);	// GCA =0; MOICA =1; Temp =2;
+
+    if (ret == false)
+    {
+        alert("請先插入智慧卡!!");
+        Page_BlockSubmit = true;
+        return "";
+    }
+    ret = document.all.ocx.SetMode(3);
+    if (ret == false)
+    {
+        alert('封裝元件SetMode(3)失敗');
+        return false;
+    }
+
+    var cert = document.all.ocx.GetSignerBase64Cert();
+    document.all.txCardInfo.value = cert;
+
+    var artifact = document.all.SsoArtifact.value;
+    var ret;
+    ret = document.all.sso.SetTargetUser(artifact);
+    if (ret == false)
+    {
+        alert("SetTargetUser fail");
+        return "";
+    }
+    //1040309	Kevin	Kevin_C	1030573			元件更新，GetCertMapAccount加入新參數"機關代碼"
+    //ret = document.all.sso.GetCertMapAccount(cert);
+    ret = document.all.sso.GetCertMapAccount(cert, document.all["H_txOrgNo"].value);
+
+    if (ret == "")
+        alert("此卡片尚未與帳號鏈結");
+    return ret.split("|")[1];
+}
+
+function ResignFunction()
+{
+    var bReSignAllPass = false;
+
+    //1040917 Kevin 1040758 增進效能調整補簽方式
+    var bReSignAllSelect = true;
+
+    //1040917 Kevin 1040758 增進效能調整補簽方式 Start
+    ////計算待補簽公文清單
+    //var ResignList = document.all["nDocList"].value;
+    //var Items = ResignList.split(";");
+    //var nCounter = Items.length;
+    //1040917 Kevin 1040758 End
+
+    var artifact = document.all.SsoArtifact.value;
+    ret = document.all.sso.SetTargetUser(artifact);
+    if (ret == false)
+    {
+        //1040917 Kevin 1040758 沒有文號
+        //alert("公文[" + DocNo + "]補簽失敗:SetTargetUser fail");
+        alert("公文補簽失敗:SetTargetUser fail");
+        return;
+    }
+
+    if (gCertCA != "")
+    {
+        var LegalCA = document.all.sso.GetEnvSet("II_LEGAL_CA");
+        if (LegalCA.indexOf(gCertCA) < 0)
+        {
+            alert('您目前使用之憑證之憑證機構,與系統設定可補簽之憑證機構[' + LegalCA + ']不符,請插入正確卡片');
+            fnHideMessageBlock();
+            return;
+        }
+    }
+
+    //取得目前憑證所對應之使用者資訊
+    var UserInfo = IFT920.GetReSignUserInfo(artifact, gSAMUser).value;
+
+    if (UserInfo[0].indexOf("ERR-") != -1)
+    {
+        alert(UserInfo[0]);
+        fnHideMessageBlock();
+        return;
+    }
+
+    var sSignAcc = UserInfo[0];//UserInfo[0]	帳號
+    var sSignName = UserInfo[1];//UserInfo[1]	姓名
+    var sSignDept = UserInfo[2];//UserInfo[2]	單位
+    var sSignRole = UserInfo[3];//UserInfo[3]	角色
+    var sSignTitle = UserInfo[4];//UserInfo[4]	職稱
+    var sSignTime = UserInfo[5];//UserInfo[5]	補簽時間		
+
+    //1040917 Kevin 1040758 增進效能調整補簽方式
+    var sSignReason = document.all["txReSignReason"].value;
+
+    //1040917 Kevin 1040758 增進效能調整補簽方式 Start
+    //if (nCounter > 1)
+    //{
+    //	for (var i = 0; i < Items.length - 1; i++)
+    //	{
+    //		var Item = Items[i].split("-");
+    //		var DocNo = Item[0];
+    //		var MsgId = Item[1];
+    //		//1040728 Kevin 1030160 新增支援外呈外會補簽
+    //		var strOrgno = Item[4];
+    //		var strComeOthers = Item[5];
+    //
+    //		if (MsgId == "")
+    //			continue;
+    //
+    //		fnShowMessage("目前進度:" + (i + 1) + "/" + (Items.length) + ",公文[" + DocNo + "]補簽中...");
+    //		//下載封裝檔
+    //		var sWorkPath = "C:\\temp\\work\\";
+    //		ret = document.all.sso.DownloadDocument(artifact, DocNo, sWorkPath);
+    //		if (ret == false)
+    //		{
+    //			alert("公文[" + DocNo + "]補簽失敗:DownloadDocument fail");
+    //			break;
+    //		}
+    //
+    //		//增加檢核封裝檔版本，以配合使用不同函式進行補簽
+    //		var VerNo = document.all.ocx.GetEnvelopeVersion(sWorkPath + DocNo + "-X.XML");
+    //		if (VerNo == "1.2")	//99年以前版本
+    //		{
+    //			ret = document.all.ocx.ResignDocument2(sWorkPath + DocNo + "-X.XML", DocNo, MsgId, document.all.LoanDate.value, document.all["txReSignReason"].value);
+    //		}
+    //		else	//99年法規修正後版本
+    //		{
+    //			//1040728 Kevin 1030160 新增支援外呈外會補簽
+    //			//ret = document.all.ocx.ResignDocument_2010SPEC(sWorkPath + DocNo + "-X.XML", DocNo, MsgId, document.all["txReSignReason"].value, sSignTime, sSignDept, sSignTitle, sSignName, sSignAcc, sSignRole);
+    //			ret = document.all.ocx.ResignDocument_ComeOthers(sWorkPath + DocNo + "-X.XML", strOrgno, DocNo, MsgId, strComeOthers, document.all["txReSignReason"].value, sSignTime, sSignDept, sSignTitle, sSignName, sSignAcc, sSignRole);
+    //		}
+    //		if (ret == false)
+    //		{
+    //			alert("公文[" + DocNo + "]補簽失敗:ResignDocument fail");
+    //			break;
+    //		}
+    //
+    //		var remotePath = document.all.sso.GetDocRemotePath(DocNo);
+    //		var webFileIO = document.all.sso.GetDocWebFileIOUrl(DocNo);
+    //		ret = document.all.sso.UploadDocument(
+    //						artifact,
+    //						DocNo,
+    //						webFileIO,
+    //						remotePath,
+    //						sWorkPath + DocNo + "-X.XML",
+    //						0);
+    //		if (ret == false)
+    //		{
+    //			alert("公文[" + DocNo + "]補簽失敗:UploadDocument fail");
+    //			break;
+    //		}
+    //
+    //		var arWSParam = new Array(2);
+    //		arWSParam[0] = DocNo;
+    //		arWSParam[1] = MsgId;
+    //		var wsRet = jf_CallWS("IFT920WS.asmx", "UpdateWTREStatus", false, arWSParam);
+    //		if (jf_IsWebServiceSuccess(wsRet))
+    //		{
+    //			if (!wsRet.value.RtnBool)
+    //			{
+    //				jf_ShowMsg("呼叫UpdateWTREStatus失敗:" + wsRet.value.m_strErrMsg, "");
+    //			}
+    //			//若公文已補簽過則不重複補簽
+    //			document.all["nDocList"].value = document.all["nDocList"].value.replace("-" + MsgId, "-");
+    //		}
+    //	}
+    //	bReSignAllPass = true;	//以上作業完全做完時，才算完整的還卡完成
+    //}
+
+    //有公文補簽紀錄
+    var WorkPath = "C:\\temp\\work\\";
+
+    //1040917 Kevin 1040758 調整計數方式 Start
+    var iDocTotal = 0;
+    var iDocNow = 1;
+    var iDocDone = 0;
+    for (var iDg = 2; iDg <= document.all.dgDoc.rows.length; iDg++)
+    {
+        if (document.all["dgDoc__ctl" + iDg + "_cbSelect"].checked)
+            iDocTotal++;
+    }
+    //1040917 Kevin 1040758 End
+
+    if (document.all.dgDoc)
+    {
+        for (var iDg = 2; iDg <= document.all.dgDoc.rows.length; iDg++)
+        {
+            if (!document.all["dgDoc__ctl" + iDg + "_cbSelect"].checked)
+            {
+                bReSignAllSelect = false;
+                continue;
+            }
+
+            var DocNo = document.all["dgDoc__ctl" + iDg + "_lbDocNo"].innerText;
+            var MsgId = document.all["dgDoc__ctl" + iDg + "_lbNo"].innerText;
+            var BorDate = document.all["dgDoc__ctl" + iDg + "_lbBorDate"].innerText;
+            var strOrgno = document.all["dgDoc__ctl" + iDg + "_lbOrgno"].innerText;
+            var strComeOthers = document.all["dgDoc__ctl" + iDg + "_lbComeOthers"].innerText;
+
+            //1040917 Kevin 1040758 調整計數方式
+            //fnShowMessage("目前進度:" + (iDg - 1) + "/" + (document.all.dgDoc.rows.length - 1) + ",公文[" + DocNo + "]補簽中...");
+            fnShowMessage("目前進度:" + iDocNow + "/" + iDocTotal + ",公文[" + DocNo + "]補簽中...");
+            iDocNow++;
+
+            var DocXmlPath = WorkPath + DocNo + "-X.XML";
+            var strDocPath = document.all["dgDoc__ctl" + iDg + "_lbDocPath"].innerText;
+            var strWebFileIO = document.all["dgDoc__ctl" + iDg + "_lbWebFileIO"].innerText;
+            if (!fnDownloadDocXml(strDocPath, DocNo + "-X.XML", DocNo + ".SI", WorkPath, strWebFileIO))
+                break;
+
+            var arrMsgId = MsgId.replace(/\ /g, ";").split(";");
+            for (var iMsgId = 0; iMsgId < arrMsgId.length - 1; iMsgId++)
+            {
+                var MsgId = arrMsgId[iMsgId];
+
+                //增加檢核封裝檔版本，以配合使用不同函式進行補簽
+                var VerNo = document.all.ocx.GetEnvelopeVersion(DocXmlPath);
+
+                if (VerNo == "1.2")//99年以前版本
+                {
+                    ret = document.all.ocx.ResignDocument2(DocXmlPath, DocNo, MsgId, BorDate, sSignReason);
+                }
+                else//99年法規修正後版本
+                {
+                    ret = document.all.ocx.ResignDocument_ComeOthers(DocXmlPath, strOrgno, DocNo, MsgId, strComeOthers, sSignReason, sSignTime, sSignDept, sSignTitle, sSignName, sSignAcc, sSignRole);
+                }
+                if (ret == false)
+                {
+                    alert("公文[" + DocNo + "]補簽失敗:ResignDocument fail");
+                    break;
+                }
+            }
+
+            var remotePath = document.all.sso.GetDocRemotePath(DocNo);
+            var webFileIO = document.all.sso.GetDocWebFileIOUrl(DocNo);
+
+            ret = document.all.sso.UploadDocument(artifact, DocNo, webFileIO, remotePath, DocXmlPath, 0);
+
+            if (ret == false)
+            {
+                alert("公文[" + DocNo + "]補簽失敗:UploadDocument fail");
+                break;
+            }
+
+            //重新取得所有流程
+            //1050127 Kevin 1050023 修正遺漏多MSG問題
+            //MsgId = document.all["dgDoc__ctl" + iDg + "_lbNo"].innerText;
+            MsgId = document.all["dgDoc__ctl" + iDg + "_lbNo"].innerText.replace(/\ /g, ";");
+
+            var arWSParam = new Array(2);
+            arWSParam[0] = DocNo;
+            arWSParam[1] = MsgId;
+            var wsRet = jf_CallWS("IFT920WS.asmx", "UpdateWTREStatus", false, arWSParam);
+            if (jf_IsWebServiceSuccess(wsRet))
+            {
+                if (!wsRet.value.RtnBool)
+                {
+                    jf_ShowMsg("呼叫UpdateWTREStatus失敗:" + wsRet.value.m_strErrMsg, "");
+                    break;
+                }
+            }
+
+            //1040917 Kevin 1040758 調整計數方式
+            iDocDone++;
+        }
+        if (bReSignAllSelect)
+            bReSignAllPass = true;	//以上作業完全做完時以及選擇全部公文時，才算完整的還卡完成
+    }
+        //1040917 Kevin 1040758 增進效能調整補簽方式 End
+    else //修正借卡人員，未簽核過任何公文直接還卡會造成還卡異常的BUG
+    {
+        bReSignAllPass = true;
+    }
+    //增加檢核是否均還卡補簽完成
+    if (bReSignAllPass)
+    {
+        fnShowMessage("註記還卡中...");
+        var CardList = document.all["nCardList"].value;
+        var Items2 = CardList.split(";");
+        var nCounter2 = Items2.length;
+        if (nCounter2 > 1)
+        {
+            for (var i = 0; i < Items2.length - 1; i++)
+            {
+                var Item2 = Items2[i].split("-");
+                var CardId = Item2[0];
+                var UserName = Item2[1];
+                var cbReturnId = Item2[2];
+                var arWSParam = new Array(2);
+                arWSParam[0] = CardId;
+                arWSParam[1] = UserName;
+                if (document.all[cbReturnId].checked)
+                {
+                    var wsRet = jf_CallWS("IFT920WS.asmx", "UpdateBOCDStatus", false, arWSParam);
+                    if (jf_IsWebServiceSuccess(wsRet))
+                    {
+                        if (!wsRet.value.RtnBool)
+                        {
+                            jf_ShowMsg("呼叫UpdateBOCDStatus失敗:" + wsRet.value.m_strErrMsg, "");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    fnHideMessageBlock();
+    Page_BlockSubmit = false;
+    document.all.ToolBarSenderID.value = "btCancel";
+    IsServerHandling = true;
+    jf_ShowWaitState();
+    __doPostBack("tbTool", 0);
+}
+*/
+//1051109 Kevin 1050087 End
+
+//處理代理還卡之行為
+function SetReSignReason(obj)
+{
+    if (obj.checked)
+    {
+        bIsCheckReason = true;
+        document.all["txReSignReason"].value = gLastReason;
+        document.all["lbReSignReason"].className = "RequireField";
+        document.all["txReSignReason"].className = "RequireField";
+    }
+    else
+    {
+        bIsCheckReason = false;
+        gLastReason = document.all["txReSignReason"].value;
+        document.all["txReSignReason"].value = "本人還卡";
+        document.all["lbReSignReason"].className = "InputFieldLabel";
+        document.all["txReSignReason"].className = "InputFieldText";
+    }
+}
+
+/*
+var gCertCA = "";
+function VerifyPin()
+{
+    ret = document.all.ocx.Init("Caesar");
+    ret = document.all.ocx.IsSmartCardAvailable(1);
+    //GCA	=0;
+    //MOICA	=1;
+    //Temp	=2;
+    if (ret == false)
+    {
+        alert('請插入智慧卡');
+        return false;
+    }
+
+    ret = document.all.ocx.SetMode(3);
+    //SERVER_HSM		=0;
+    //SERVER_CERTSTORE	=1;
+    //CLIENT_GCA		=2;
+    //CLIENT_MOICA		=3;
+    //CLIENT_TEMP		=4;
+    //CLIENT_CERTSTORE	=5;
+    //CLIENT_JOB		=6;
+    if (ret == false)
+    {
+        alert('封裝元件SetMode(3)失敗');
+        return false;
+    }
+    //}
+
+    var sFeatures = "dialogHeight: 130px; dialogWidth: 250px; dialogTop: 300px; dialogLeft: 300px; edge: Raised; center: Yes; help: No; resizable: No; status: No";
+    var sPin = window.showModalDialog("IFT920C2.htm", "sadfasfd", sFeatures);
+    fnShowMessage("驗證密碼中...");
+    ret = document.all.ocx.VerifyPIN(sPin)
+    fnHideMessageBlock();
+
+    if (ret == false)
+    {
+        alert("密碼錯誤!!!");
+        return false;
+    }
+
+    gCertCA = document.all.ocx.GetCertCAName();
+
+    return true;
+}
+*/
+
+function fnShowMessage(sMessage)
+{
+    //1051109 Kevin 1050087 二代系統升級
+    //window.status = sMessage;
+    //1051109 Kevin 1050087 二代系統升級
+    //spanMsg.innerText = sMessage;
+    spanMsg.textContent = sMessage;
+    tbOpenMsg.style.display = '';
+    tbOpenMsg.style.pixelTop = (document.body.clientHeight / 2) - (tbOpenMsg.offsetHeight / 2) + (document.body.scrollTop);
+    tbOpenMsg.style.pixelLeft = (document.body.clientWidth / 2) - (tbOpenMsg.offsetWidth / 2) + (document.body.scrollLeft);
+}
+
+function fnHideMessageBlock()
+{
+    tbOpenMsg.style.display = 'none';
+}
+
+//1051109 Kevin 1050087 二代系統升級
+/*
+//1040917 Kevin 1040758 自行下載SI
+function fnDownloadDocXml(strDocPath, strDocXml, strDocSI, strWorkPath, strWebFileIO)
+{
+    var soap = new ActiveXObject("WSWrapper.WebFileIO");
+
+    var serviceURL = strWebFileIO;
+
+    if (document.all.II_USE_SSL && document.all.II_USE_SSL.value == "Y")
+        serviceURL = serviceURL.replace("http://", "https://");
+
+    try
+    {
+        soap.Init(serviceURL);
+        soap.AddFile(strDocPath, strDocXml);
+        soap.AddFile(strDocPath, strDocSI);
+        soap.Download(document.all["SsoArtifact"].value, false, strWorkPath);
+    }
+    catch (e)
+    {
+        var strErrMsg = e.message;
+        if (soap.hasError)
+            strErrMsg += soap.ErrorMessage;
+        alert("連接伺服器" + serviceURL + "下載檔案失敗，錯誤訊息為:" + strErrMsg);
+        return false;
+    }
+    return true;
+}
+*/

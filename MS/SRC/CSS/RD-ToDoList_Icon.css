@@ -1,0 +1,591 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ToDoList Icon mode CSS*/
+
+/* 2016.5.12 */
+#tdl_icon_list_content {
+  width: calc(100% - 40px); /* calc(100% - 25px); 2017.3.31 */
+  height: 100%;
+	background-color: #DDD;
+	overflow: hidden; /* 2017.4.19 - Eric Peng */
+}
+
+.todolist_icon {
+  /*width: 100%;
+  height: 100%;*/
+  display: block;
+  
+  /* 2016.5.12 */
+  background-color: #CCC;
+}
+
+/* 公文夾檢視樣式 */
+.folderList { 
+  list-style:none; 
+  margin:0 !important; 
+  padding:0;
+  height:35px;
+  border-bottom:1px solid #eee;
+}
+
+/* single folder */
+.folderList > li { 
+  float:left;	 
+  text-indent:0;
+  padding:0;
+  margin:0 !important;
+  list-style-image:none !important;
+}
+
+.folderList > li > div {
+ width: 256px;
+ overflow-y: auto;
+}
+
+/* 文件夾標題樣式 */
+.folderList > li > div > a, .folderList > li > div > p {
+  font-size:18px;
+  font-weight: bold;
+  display: block;
+  height: 2em; /*36px;*/
+  line-height:2em; /*36px*/
+  width: 254px;
+  text-align:center;	
+  text-decoration:none;
+  /*color:#000; 20170420*/
+  color:#444; /*20170420*/
+  padding:0;
+  margin:0 1px;	
+  /*position:relative;
+  top:1px;*/
+  background: #2ab0ed; /* Old browsers */
+  background: -moz-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f5fc), color-stop(50%,#bfe8f9), color-stop(51%,#9fd8ef), color-stop(100%,#2ab0ed)); /*Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%); /*  Chrome10+,Safari5.1+ */
+  /*background: -o-linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%); Opera11.10+ */
+  background: -ms-linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%); /* IE10+ */
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', endColorstr='#2ab0ed',GradientType=0 ); *//* IE6-9 */
+  background: linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%); /* W3C */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/*20170419*/
+.folderList > li > div > p {
+	background: #cbe7f7;
+}
+
+/* 2017.4 - color-scheme */
+.cs-ly .folderList > li > div > p {
+	background: #fcf3d8;
+}
+.cs-lg .folderList > li > div > p {
+	background: #e0ecb8;
+}
+.cs-lp .folderList > li > div > p {
+	background: #fae4f1;
+}
+
+/* 2014.1 - 代理公文文件夾 */
+.folderList > li.proxyFolder > div > p {
+	/*color: #f00; 20170420*/
+	/*font-size: 16px; 20170420*/
+}
+
+.folderList .folder_title_btn_l,  .folderList .folder_title_btn_r {
+    background-color: #fff;
+    opacity: 0.5;
+    background-image: url(../IMAGE/SSO/icons-18-black.png);
+    -moz-background-size: 776px 18px;
+    -o-background-size: 776px 18px;
+    -webkit-background-size: 776px 18px;
+    background-size: 776px 18px;
+    width: 18px;
+    height: 18px;
+    display: inline;
+    margin-top: 6px;
+    background-repeat: no-repeat;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.folderList > li > div > p:first-child {
+  position: relative;  
+}
+
+.folderList .unreadCount {
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.folderList .unreadCount > img {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
+/*#todolist_icon_cntr .ui-li-count {
+  position: relative;
+  top: 60px;
+  left: 25%;
+  right: 0%;
+}*/
+
+.folderList .ui-count {
+  background-color: #CDC;
+  color: #44F;
+  width: 18px;
+  height: 18px;
+  display: inline;
+  /*margin-top: 3px;*/
+  border-radius: 9px;
+  padding: 1px 3px;
+  font-size: 12px;
+}
+
+.folder_title_btn_l {
+    float: left;
+	background-position: -144px 50%;
+    margin-left: 4px;
+}
+.folder_title_btn_r {
+    float: right;
+	background-position: -108px 50%;
+    margin-right: 4px;
+}
+
+.folioList {
+  /*overflow-y:auto;
+  overflow-x:hidden;*/
+  overflow: hidden;
+  /*width: 100%;*/
+  width: 254px;
+  background-color: #ddd; /* 2011.9.30 */
+  border-left: #eee 1px solid;
+  border-right: #eee 1px solid;
+	position: relative; /* 2012.7.16 */
+}
+
+/* 2016.8.24 - Eric, 文件夾內項目置中顯示 */
+.folioList > .folioListContent {
+	width: 100%;
+}
+
+/*.folioList > div {
+  overflowy-y: auto;
+}*/
+
+.folioList ul, #search-list, .search-list {
+  list-style:none;
+  margin: auto;
+  padding: 10px 0;
+  width:205px;
+}
+
+/* 2015.1 */
+.folioList a.folioLink, ul#search-list a.folioLink,  ul.search-list a.folioLink {
+	-webkit-touch-callout: none !important;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+/* 2019.6.11 - 1080412 - Eric Peng, 鐵道特定文件夾文號指定用色 */
+.folioList a.folioLink.rrbSpecColor, ul#search-list a.folioLink.rrbSpecColor,  ul.search-list a.folioLink.rrbSpecColor {
+  color: #666666;
+}
+
+#search-list, .search-list {
+	width:98%; /*2016.4 - 235px; */
+}
+
+/* 2012.8.21 */
+/* css({'height':"540px", "overflow-y":"auto", "overflow-x":"hidden", "margin-top":"15px"}); // 600-(47+5) */
+#search-list, .search-list {
+	padding-top: 0px;
+	/*background-color: #eee;*/
+	
+	/* 2012.12.6 - iOS native scroll */
+	/*overflow-y: auto;*/
+	overflow-y: scroll;
+	overflow-x: hidden;
+	
+	-webkit-overflow-scrolling: touch; /* 2012.12.6 - iOS navitve scroll */
+	
+	margin-top: 15px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.folderList_singlemode {
+  width: 250px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.folioList_singlemode {
+  overflow: visible;
+}
+
+.folioList li, #search-list li, .search-list li {
+  float: none;
+  text-indent:0;
+  padding:0;
+  margin:10px 6px;
+  list-style-image:none !important;
+}
+
+#search-list li,  .search-list li {
+	width: 95%; /*2016.4 - 193px;*/
+	margin:10px auto;
+}
+
+.folioList li:first-child {
+  margin-top: 0px;
+}
+
+.folioList li:last-child {
+  margin-bottom: 0px;
+}
+
+/* 公文夾圖示樣式 */
+.folioList li > .item .content, .search-list .item .content {
+  position: relative;
+  overflow: hidden;
+  /*border: 1px solid black;*/
+  width: 95%; /*2016.4 - 200px; */
+  height: 135px;
+  margin: auto;
+}
+
+.item > .content > .subject > span {
+	width: 100%;
+  text-overflow: ellipsis;
+  text-shadow: none; /*20170420*/
+}
+
+/* 2012.8.23 - for 待辦事項圖示/清單切換鍵 */
+#iconPane, #listPane {
+	position: relative;
+	
+	/* 2016.5.12 */
+    background: transparent;
+}
+
+#iconPane .tdl_rt_toolbar, #listPane .tdl_rt_toolbar {
+  position: absolute;
+  right: 2.6em; /*25px; 2017.4 - modify */
+  top:0px;
+  /*width: 80px;*/
+  height: 36px;
+  margin-top: -8px;
+  
+  background-image: linear-gradient(#396B9E /*{b-bup-background-start}*/, #5F9CC5 /*{b-bup-background-end}*/);
+  border-radius: 0 0 .5em .5em;
+  border: 1px solid #396B9E;
+  
+  -webkit-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+}
+
+#iconPane .tdl_rt_toolbar {
+  width: 45px;
+}
+
+#listPane .tdl_rt_toolbar {
+  /* 1110314	Leslie[1110167]	[考試院]UI調整 */
+  /*width: 45px;*/
+  min-width: 80px;
+}
+
+.aaaaa-bbbbb{
+	background-image: -webkit-linear-gradient(#5F9CC5 /*{b-bup-background-start}*/, #396B9E /*{b-bup-background-end}*/);
+}
+
+.tdl_rt_toolbar span.ui-btn-inner {
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 5px;
+}
+
+.tdl_rt_toolbar .icon {
+	width: 16px;
+	height: 16px;
+	margin: 13px 0 0 16px;
+	/*background-color: #fff;*/
+	color: #ff8;
+	font-weight: 800;
+	text-shadow: none;
+	font-size: larger;
+	cursor: pointer;
+}
+
+#btn_listmode {
+	background: transparent url('../IMAGE/SSO/tdl_listmode.png') 0 0 no-repeat;
+	float: left;
+}
+
+#btn_iconmode {
+	background: transparent url('../IMAGE/SSO/tdl_iconmode.png') 0 0 no-repeat;
+	float: left;
+}
+
+#red_light
+{
+	background: transparent url('../IMAGE/ART/Todo-LightRed.png') 0 0 no-repeat;
+	float: left;
+}
+#yellow_light
+{
+	background: transparent url('../IMAGE/ART/Todo-LightYellow.png') 0 0 no-repeat;
+	float: left;
+}
+#white_light 
+{
+	background: transparent url('../IMAGE/ART/Todo-LightWhite.png') 0 0 no-repeat;
+	float: left;
+}
+#green_light
+{
+	background: transparent url('../IMAGE/ART/Todo-LightGreen.png') 0 0 no-repeat;
+	float: left;
+}
+#purple_light
+{
+	background: transparent url('../IMAGE/ART/Todo-LightPurple.png') 0 0 no-repeat;
+	float: left;
+}
+
+#btn_batchsubmit {
+  border-radius: 9px;
+  background-color: #194b7e;
+	
+  background-repeat: no-repeat;
+  background-image: url(../IMAGE/SSO/icons-18-white.png) /*{global-icon-set}*/;
+  background-position: -289px -1px;
+  float: left;
+}
+
+div.btn_reload {
+	background-image: url(../IMAGE/SSO/icons-18-white.png) /*{global-icon-set}*/;
+	background-repeat: no-repeat;
+	background-color: #194b7e;
+	background-position: -325px -1px;
+	border-radius: 9px;
+	float: left;
+}
+
+#iconPane .tdl_rt_tb_hidden {
+	display: none;
+}
+/* End of 待辦事項圖示/清單切換鍵 */
+
+#iconPane .normal_item, .item {
+  /*background: transparent url('IMAGE/SSO/folder_bkg2.png') 50% 50% no-repeat;*/
+  /* 2011.9.30 change bkgnd color */
+  background-color: #fff;
+  /*background-color: rgb(43,241,236);*/
+  /*border: 1px dotted red;*/
+  border-radius: 6px;
+  -webkit-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+}
+
+#iconPane .notify_item, #search-list .notify_item, .search-list .notify_item {
+  background-color: #ffd;
+}
+
+/* 2015.1 - SignType="W"類待辦實作調整 */
+#iconPane .notify_item .urlLink, #search-list .notify_item .urlLink, .search-list .notify_item .urlLink {
+  text-decoration: underline;
+  color: rgb(0,0,255);
+  cursor: pointer;
+	margin: 5px 0px 0px 5px;
+	font-weight: bold;
+}
+
+#iconPane .item:active,  #search-list .item:active{
+  -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+  -moz-box-shadow: 0 0 0 rgba(0,0,0,0);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  border-right: 1px solid rgba(0,0,0,0.3);
+}
+
+#iconPane .urgent_item, #search-list .urgent_item {
+  /*background: transparent url('../IMAGE/SSO/folder_bkg_red.png');*/
+  /*background-color: rgb(240,122,255);*/
+  /*20170411 Kevin 更改標題列配色*/
+  /*background-color: #00f; 20170411*//* 2015.6 - 速件公文 background color green -> blue */ 
+  background-color: rgb(202,229,255); /*20170411*/
+  /*-webkit-box-shadow: 4px 4px 2px rgba(0,0,0, 0.5); 20170411*/
+  /*-moz-box-shadow: 4px 4px 2px rgba(0,0,0, 0.5); 20170411*/
+  /*box-shadow: 4px 4px 2px rgba(0,0,0, 0.5); 20170411*/
+  /*color: #fff; 20170411*/
+  /*text-shadow: 0 1px 0 #666; 20170411*/
+}
+
+#iconPane .most_urgent_item, #search-list .most_urgent_item {
+  /*20170411 Kevin 更改標題列配色*/
+  /*background-color: #F00; 20170411*/
+  background-color: rgb(255,169,169); /*20170411*/
+  /*-webkit-box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5); 20170411*/
+  /*-moz-box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5); 20170411*/
+  /*box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5); 20170411*/
+  /*color: #fff; 20170411*/
+  /*text-shadow: 0 1px 0 #888; 20170411*/
+}
+
+#iconPane .secret_item,  #search-list .secret_item{
+  /*background: transparent url('../IMAGE/SSO/folder_bkg_yellow.png');*/
+  /*background-color: rgb(229,233,28);*/
+  /*20170411 Kevin 更改標題列配色*/
+  background-color: #fffb8e; /*20170411*/
+  /*-webkit-box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5); 20170411*/
+  /*-moz-box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5); 20170411*/
+  /*box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5); 20170411*/
+  /*text-shadow: 0 1px 0 #eee; 20170411*/
+}
+
+#iconPane .working_item, #search-list .working_item {
+  opacity : .50;
+  /*-webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  transform: rotate(-2deg);*/
+  -webkit-box-shadow: 2px 2px 3px rgba(0,0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 3px rgba(0,0, 0, 0.3);
+  box-shadow: 2px 2px 3px rgba(0,0, 0, 0.3);
+}
+
+#iconPane .opened_normal_item, #search-list .opened_normal_item {
+  /*background: #fff url("../IMAGE/SSO/white_corner.png") 100% 100% no-repeat; 20170411*/
+  background: #fff url(../IMAGE/ART/Todo-IconFolderWhite.png) 100% 100% no-repeat; /*20170411*/
+}
+
+/* 2015.6 - 速件公文 background color green -> blue */
+/* 速件: 藍色 */
+#iconPane .opened_urgent_item, #search-list .opened_urgent_item {
+  /*background: #00f url("../IMAGE/SSO/blue_corner.png") 100% 100% no-repeat; 20170411*/
+  background: rgb(202,229,255) url(../IMAGE/ART/Todo-IconFolderBlue.png) 100% 100% no-repeat; /*20170411*/
+  /*color: #fff; 20170411*/
+  /*{b-body-shadow-x}*//*{b-body-shadow-y}*//*{b-body-shadow-radius}*//*{b-body-shadow-color}*/
+  /*text-shadow: 0 1px 0 #666; 20170411*/
+}
+
+/* 最速件: 紅色 */
+#iconPane .opened_most_urgent_item, #search-list .opened_most_urgent_item {
+  /*background: rgb(240,122,255) url("../IMAGE/SSO/red_corner.png") 100% 100% no-repeat;*/
+  /*background: #f00 url("../IMAGE/SSO/red_corner.png") 100% 100% no-repeat; 20170411*/
+  background: rgb(255,169,169) url(../IMAGE/ART/Todo-IconFolderRed.png) 100% 100% no-repeat; /*20170411*/
+  /*color: #fff; 20170411*/ /* 2016.10.14 */
+  /*text-shadow: 0 1px 0 #f88;20170411*/
+}
+
+/* 密等以上: 黃色 */
+#iconPane .opened_secret_item, #search-list .opened_secret_item {
+  /*background: rgb(229,233,28) url("../IMAGE/SSO/yellow_corner.png") 100% 100% no-repeat; 20170411*/
+  /*background: rgb(247,245,187) url(../IMAGE/ART/Todo-IconFolderYellow.png) 100% 100% no-repeat; 20170420*//*20170411*/
+  background: #fffb8e url(../IMAGE/ART/Todo-IconFolderYellow.png) 100% 100% no-repeat; /*20170420*/
+}
+
+
+#iconPane .most_urgent_item a, #leftBottomPane .urgent_item a,
+#iconPane .opened_urgent_item a, #leftBottomPane .opened_most_urgent_item a,
+#search-list .most_urgent_item a, #search-list .urgent_item a,
+#search-list .opened_urgent_item a, #search-list .opened_most_urgent_item a{
+  /*color: #fff; 20170411*/
+}
+
+.notclosed_item {
+  /*background: transparent url('../IMAGE/SSO/folder_bkg_opened.png');*/
+	opacity: .5;
+}
+
+.hidden_item {
+  display: none;
+}
+
+#iconPane .most_heavy_shadow {
+  /*-webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  transform: rotate(-2deg);*/
+  -webkit-box-shadow: 2px 2px 3px rgba(0,0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 3px rgba(0,0, 0, 0.3);
+  box-shadow: 2px 2px 3px rgba(0,0, 0, 0.3);
+}
+
+.late_item {
+  -webkit-box-shadow: 2px 2px 3px rgba(128, 0, 128, 0.8);
+  -moz-box-shadow: 2px 2px 3px rgba(128, 0, 128, 0.8);
+  box-shadow: 2px 2px 3px rgba(128, 0, 128, 0.8);
+}
+
+.create_new_item {
+  background: #fff;
+  border: 2px dashed #000;
+  cursor: pointer;
+}
+
+.dueDate_item {
+  
+}
+
+.item .lights {
+  /*margin-top: 0;
+  margin-right: 6px;*/
+  padding-right: 10px;
+  float: right;
+}
+
+.item .lights img {
+  width:12px;
+  height:12px;
+  margin:auto;
+  padding: 2px;
+  /*border: 1px dashed red;*/
+}
+
+.content .docNo {
+  position: absolute;
+  overflow: hidden;
+	font-weight: bold;
+  /*font-size: smaller;*/
+  left: 5px;
+  top: 2px;
+}
+
+.content .subject {
+  position: absolute;
+  overflow: hidden;
+  left: 7px;
+  top: 1.5em;
+  width: calc(100% - 1em);
+}
+
+.content .clerk {
+  position: absolute;
+  overflow: hidden;
+  left: 5px;
+  top: 110px;
+  /*Height: 20px;*/
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 16px;
+}
+
+.content .clerk > * {
+  display: inline;
+  float: left;
+}
+
+.content .clerk > p {
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+
+
+/* End of ToDoList Icon mode CSS */

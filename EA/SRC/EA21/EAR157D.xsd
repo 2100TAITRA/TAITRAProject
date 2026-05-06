@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR157D" targetNamespace="http://tempuri.org/EAR157D.xsd" xmlns:mstns="http://tempuri.org/EAR157D.xsd" xmlns="http://tempuri.org/EAR157D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR157D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EAR157D" msprop:Generator_UserDSName="EAR157D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EAR157L1" msprop:Generator_TableClassName="EAR157L1DataTable" msprop:Generator_TableVarName="tableEAR157L1" msprop:Generator_TablePropName="EAR157L1" msprop:Generator_RowDeletingName="EAR157L1RowDeleting" msprop:Generator_RowChangingName="EAR157L1RowChanging" msprop:Generator_RowEvHandlerName="EAR157L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EAR157L1RowDeleted" msprop:Generator_UserTableName="EAR157L1" msprop:Generator_RowChangedName="EAR157L1RowChanged" msprop:Generator_RowEvArgName="EAR157L1RowChangeEvent" msprop:Generator_RowClassName="EAR157L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT01" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT01" msprop:Generator_ColumnPropNameInRow="FILE_CNT01" msprop:Generator_ColumnPropNameInTable="FILE_CNT01Column" msprop:Generator_UserColumnName="FILE_CNT01" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT02" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT02" msprop:Generator_ColumnPropNameInRow="FILE_CNT02" msprop:Generator_ColumnPropNameInTable="FILE_CNT02Column" msprop:Generator_UserColumnName="FILE_CNT02" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT03" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT03" msprop:Generator_ColumnPropNameInRow="FILE_CNT03" msprop:Generator_ColumnPropNameInTable="FILE_CNT03Column" msprop:Generator_UserColumnName="FILE_CNT03" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT04" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT04" msprop:Generator_ColumnPropNameInRow="FILE_CNT04" msprop:Generator_ColumnPropNameInTable="FILE_CNT04Column" msprop:Generator_UserColumnName="FILE_CNT04" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT05" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT05" msprop:Generator_ColumnPropNameInRow="FILE_CNT05" msprop:Generator_ColumnPropNameInTable="FILE_CNT05Column" msprop:Generator_UserColumnName="FILE_CNT05" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT06" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT06" msprop:Generator_ColumnPropNameInRow="FILE_CNT06" msprop:Generator_ColumnPropNameInTable="FILE_CNT06Column" msprop:Generator_UserColumnName="FILE_CNT06" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT07" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT07" msprop:Generator_ColumnPropNameInRow="FILE_CNT07" msprop:Generator_ColumnPropNameInTable="FILE_CNT07Column" msprop:Generator_UserColumnName="FILE_CNT07" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT08" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT08" msprop:Generator_ColumnPropNameInRow="FILE_CNT08" msprop:Generator_ColumnPropNameInTable="FILE_CNT08Column" msprop:Generator_UserColumnName="FILE_CNT08" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT09" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT09" msprop:Generator_ColumnPropNameInRow="FILE_CNT09" msprop:Generator_ColumnPropNameInTable="FILE_CNT09Column" msprop:Generator_UserColumnName="FILE_CNT09" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT10" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT10" msprop:Generator_ColumnPropNameInRow="FILE_CNT10" msprop:Generator_ColumnPropNameInTable="FILE_CNT10Column" msprop:Generator_UserColumnName="FILE_CNT10" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT11" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT11" msprop:Generator_ColumnPropNameInRow="FILE_CNT11" msprop:Generator_ColumnPropNameInTable="FILE_CNT11Column" msprop:Generator_UserColumnName="FILE_CNT11" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT12" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT12" msprop:Generator_ColumnPropNameInRow="FILE_CNT12" msprop:Generator_ColumnPropNameInTable="FILE_CNT12Column" msprop:Generator_UserColumnName="FILE_CNT12" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT13" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT13" msprop:Generator_ColumnPropNameInRow="FILE_CNT13" msprop:Generator_ColumnPropNameInTable="FILE_CNT13Column" msprop:Generator_UserColumnName="FILE_CNT13" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT14" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT14" msprop:Generator_ColumnPropNameInRow="FILE_CNT14" msprop:Generator_ColumnPropNameInTable="FILE_CNT14Column" msprop:Generator_UserColumnName="FILE_CNT14" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT15" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT15" msprop:Generator_ColumnPropNameInRow="FILE_CNT15" msprop:Generator_ColumnPropNameInTable="FILE_CNT15Column" msprop:Generator_UserColumnName="FILE_CNT15" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT16" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT16" msprop:Generator_ColumnPropNameInRow="FILE_CNT16" msprop:Generator_ColumnPropNameInTable="FILE_CNT16Column" msprop:Generator_UserColumnName="FILE_CNT16" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT17" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT17" msprop:Generator_ColumnPropNameInRow="FILE_CNT17" msprop:Generator_ColumnPropNameInTable="FILE_CNT17Column" msprop:Generator_UserColumnName="FILE_CNT17" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT18" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT18" msprop:Generator_ColumnPropNameInRow="FILE_CNT18" msprop:Generator_ColumnPropNameInTable="FILE_CNT18Column" msprop:Generator_UserColumnName="FILE_CNT18" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT19" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT19" msprop:Generator_ColumnPropNameInRow="FILE_CNT19" msprop:Generator_ColumnPropNameInTable="FILE_CNT19Column" msprop:Generator_UserColumnName="FILE_CNT19" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT20" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT20" msprop:Generator_ColumnPropNameInRow="FILE_CNT20" msprop:Generator_ColumnPropNameInTable="FILE_CNT20Column" msprop:Generator_UserColumnName="FILE_CNT20" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT21" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT21" msprop:Generator_ColumnPropNameInRow="FILE_CNT21" msprop:Generator_ColumnPropNameInTable="FILE_CNT21Column" msprop:Generator_UserColumnName="FILE_CNT21" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT22" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT22" msprop:Generator_ColumnPropNameInRow="FILE_CNT22" msprop:Generator_ColumnPropNameInTable="FILE_CNT22Column" msprop:Generator_UserColumnName="FILE_CNT22" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT23" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT23" msprop:Generator_ColumnPropNameInRow="FILE_CNT23" msprop:Generator_ColumnPropNameInTable="FILE_CNT23Column" msprop:Generator_UserColumnName="FILE_CNT23" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT24" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT24" msprop:Generator_ColumnPropNameInRow="FILE_CNT24" msprop:Generator_ColumnPropNameInTable="FILE_CNT24Column" msprop:Generator_UserColumnName="FILE_CNT24" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT25" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT25" msprop:Generator_ColumnPropNameInRow="FILE_CNT25" msprop:Generator_ColumnPropNameInTable="FILE_CNT25Column" msprop:Generator_UserColumnName="FILE_CNT25" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT26" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT26" msprop:Generator_ColumnPropNameInRow="FILE_CNT26" msprop:Generator_ColumnPropNameInTable="FILE_CNT26Column" msprop:Generator_UserColumnName="FILE_CNT26" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT27" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT27" msprop:Generator_ColumnPropNameInRow="FILE_CNT27" msprop:Generator_ColumnPropNameInTable="FILE_CNT27Column" msprop:Generator_UserColumnName="FILE_CNT27" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT28" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT28" msprop:Generator_ColumnPropNameInRow="FILE_CNT28" msprop:Generator_ColumnPropNameInTable="FILE_CNT28Column" msprop:Generator_UserColumnName="FILE_CNT28" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT29" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT29" msprop:Generator_ColumnPropNameInRow="FILE_CNT29" msprop:Generator_ColumnPropNameInTable="FILE_CNT29Column" msprop:Generator_UserColumnName="FILE_CNT29" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT30" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT30" msprop:Generator_ColumnPropNameInRow="FILE_CNT30" msprop:Generator_ColumnPropNameInTable="FILE_CNT30Column" msprop:Generator_UserColumnName="FILE_CNT30" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT31" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT31" msprop:Generator_ColumnPropNameInRow="FILE_CNT31" msprop:Generator_ColumnPropNameInTable="FILE_CNT31Column" msprop:Generator_UserColumnName="FILE_CNT31" type="xs:string" minOccurs="0" />
+              <xs:element name="SUM" msprop:Generator_ColumnVarNameInTable="columnSUM" msprop:Generator_ColumnPropNameInRow="SUM" msprop:Generator_ColumnPropNameInTable="SUMColumn" msprop:Generator_UserColumnName="SUM" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

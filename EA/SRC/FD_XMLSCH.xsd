@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" standalone="yes" ?>
+<xsd:schema id="ROWSET" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xsd:element name="ROWSET" msdata:IsDataSet="true" msdata:Locale="zh-TW">
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element name="ROW">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="檔案目錄傳送名稱" type="xsd:string" minOccurs="0" msdata:Ordinal="0" />
+							<xsd:element name="功能" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							<xsd:element name="案由" type="xsd:string" minOccurs="0" msdata:Ordinal="2" nillable="true" />
+							<xsd:element name="並列案由" type="xsd:string" minOccurs="0" msdata:Ordinal="3" nillable="true" default="並列案由預設值" />
+							<xsd:element name="其他案由" type="xsd:string" minOccurs="0" msdata:Ordinal="4" nillable="true" />
+							<xsd:element name="案名" type="xsd:string" minOccurs="0" msdata:Ordinal="5" nillable="true" />
+							<xsd:element name="相關案件" type="xsd:string" minOccurs="0" msdata:Ordinal="6" nillable="true" />
+							<xsd:element name="主要發文者" type="xsd:string" minOccurs="0" msdata:Ordinal="7" />
+							<xsd:element name="主要來文者" type="xsd:string" minOccurs="0" msdata:Ordinal="8" />
+							<xsd:element name="次要發文者" type="xsd:string" minOccurs="0" msdata:Ordinal="9" />
+							<xsd:element name="次要來文者" type="xsd:string" minOccurs="0" msdata:Ordinal="10" />
+							<xsd:element name="發文者之補正" type="xsd:string" minOccurs="0" msdata:Ordinal="11" />
+							<xsd:element name="來文者之補正" type="xsd:string" minOccurs="0" msdata:Ordinal="12" />
+							<xsd:element name="文別" type="xsd:string" minOccurs="0" msdata:Ordinal="13" />
+							<xsd:element name="本別" type="xsd:string" minOccurs="0" msdata:Ordinal="14" />
+							<xsd:element name="密等" type="xsd:string" minOccurs="0" msdata:Ordinal="15" />
+							<xsd:element name="解密條件" type="xsd:string" minOccurs="0" msdata:Ordinal="16" />
+							<xsd:element name="保存年限" type="xsd:string" minOccurs="0" msdata:Ordinal="17" />
+							<xsd:element name="應用限制" type="xsd:string" minOccurs="0" msdata:Ordinal="18" />
+							<xsd:element name="保存狀況" type="xsd:string" minOccurs="0" msdata:Ordinal="19" />
+							<xsd:element name="調整後之保存年限" type="xsd:string" minOccurs="0" msdata:Ordinal="20" />
+							<xsd:element name="保存年限調整原因" type="xsd:string" minOccurs="0" msdata:Ordinal="21" />
+							<xsd:element name="核准銷毀文號" type="xsd:string" minOccurs="0" msdata:Ordinal="22" />
+							<xsd:element name="銷毀日期" type="xsd:string" minOccurs="0" msdata:Ordinal="23" />
+							<xsd:element name="解密日期" type="xsd:string" minOccurs="0" msdata:Ordinal="24" />
+							<xsd:element name="移轉註記" type="xsd:string" minOccurs="0" msdata:Ordinal="25" />
+							<xsd:element name="延長移轉屆滿日期" type="xsd:string" minOccurs="0" msdata:Ordinal="26" />
+							<xsd:element name="移轉日期" type="xsd:string" minOccurs="0" msdata:Ordinal="27" />
+							<xsd:element name="發文字號" type="xsd:string" minOccurs="0" msdata:Ordinal="28" />
+							<xsd:element name="收文字號" type="xsd:string" minOccurs="0" msdata:Ordinal="29" />
+							<xsd:element name="來文字號" type="xsd:string" minOccurs="0" msdata:Ordinal="30" />
+							<xsd:element name="年度號" type="xsd:string" minOccurs="0" msdata:Ordinal="31" />
+							<xsd:element name="分類號" type="xsd:string" minOccurs="0" msdata:Ordinal="32" />
+							<xsd:element name="案次號" type="xsd:string" minOccurs="0" msdata:Ordinal="33" />
+							<xsd:element name="卷次號" type="xsd:string" minOccurs="0" msdata:Ordinal="34" />
+							<xsd:element name="目次號" type="xsd:string" minOccurs="0" msdata:Ordinal="35" />
+							<xsd:element name="電子媒體編號" type="xsd:string" minOccurs="0" msdata:Ordinal="36" />
+							<xsd:element name="電子檔案路徑" type="xsd:string" minOccurs="0" msdata:Ordinal="37" />
+							<xsd:element name="電子檔案名稱" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="電子檔案名稱_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="num" type="xsd:string" default="1" />
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="微縮編號" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="微縮編號_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="文件產生日期" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="文件產生日期_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="媒體型式" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="媒體型式_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="數量" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="數量_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="計量單位" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="計量單位_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="附件名稱" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="附件名稱_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="num" type="xsd:string" default="1" />
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="附件媒體型式" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="附件媒體型式_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="num" type="xsd:string" default="1" />
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="附件數量" minOccurs="2" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="附件數量_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="num" type="xsd:string" default="1" />
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="附件單位" minOccurs="2" maxOccurs="unbounded" nillable="false">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="附件單位_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="num" type="xsd:string" default="1" />
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="主題" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="主題_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="num" type="xsd:string" default="1" />
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="附註" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:simpleContent msdata:ColumnName="附註_Text" msdata:Ordinal="1">
+										<xsd:extension base="xsd:string">
+											<xsd:attribute name="num" type="xsd:string" default="1" />
+											<xsd:attribute name="ROW_Id" type="xsd:int" use="prohibited" />
+										</xsd:extension>
+									</xsd:simpleContent>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="ROW_Id" msdata:AutoIncrement="true" type="xsd:int" msdata:AllowDBNull="false" use="prohibited" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" />
+						<xsd:attribute name="num" type="xsd:string" msdata:AutoIncrement="false" msdata:AutoIncrementStep="1" msdata:AutoIncrementSeed="1" />
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+		</xsd:complexType>
+		<xsd:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xsd:selector xpath=".//ROW" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:unique>
+		<xsd:keyref name="ROW_附註" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//附註" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_主題" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//主題" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_附件單位" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//附件單位" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_附件數量" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//附件數量" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_附件媒體型式" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//附件媒體型式" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_附件名稱" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//附件名稱" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_電子檔案名稱" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//電子檔案名稱" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_微縮編號" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//微縮編號" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_文件產生日期" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//文件產生日期" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_媒體型式" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//媒體型式" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_數量" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//數量" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+		<xsd:keyref name="ROW_計量單位" refer="Constraint1" msdata:IsNested="true">
+			<xsd:selector xpath=".//計量單位" />
+			<xsd:field xpath="@ROW_Id" />
+		</xsd:keyref>
+	</xsd:element>
+</xsd:schema>

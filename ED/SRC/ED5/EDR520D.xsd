@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR520D" targetNamespace="http://tempuri.org/EDR520D.xsd" elementFormDefault="qualified"
+	xmlns="http://tempuri.org/EDR520D.xsd" xmlns:mstns="http://tempuri.org/EDR520D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="EDR520L1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="POST_DATE" type="xs:string" />
+				<xs:element name="COUNT_NAME" type="xs:string" />
+				<xs:element name="COUNT_NO" type="xs:int" />
+				<xs:element name="ORG_NAME" type="xs:string" />
+				<xs:element name="REGION_NAME" type="xs:string" />
+				<xs:element name="CLASS_NAME" type="xs:string" />
+				<xs:element name="SUBCLASS_NAME" type="xs:string" />
+				<xs:element name="GROUP_NAME" type="xs:string" />
+				<xs:element name="BULK_NO" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<!--meta name="viewport" content="width=640">
+	<meta name="scale" content="1.0"-->
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<title>段落屬性頁面</title>
+</head>
+<body>
+<section id="paraProperty" data-role="dialog">
+    <header data-role="header">
+        <h1 style="margin-top:-8px;margin-bottom:0px">段落屬性設定</h1>
+    </header>
+	<div data-role="content" class="ui-grid-a" style="height:350px;width:97%">
+		<div class="ui-block-a">
+			<fieldset class="ui-field-contain">
+				<label for="zhFont"><div style="float:left">中文<br/>字型</div><div style="float:left">：</div></label>
+				<select id="zhFont">
+					<option value="標楷體">標楷體</option>
+					<option value="黑體">黑體</option>
+					<option value="細明體">細明體</option>
+				</select>
+			</fieldset>
+			<fieldset class="ui-field-contain">
+				<label for="enFont">英數<br/>字型：</label>
+				<select id="enFont">
+					<option value="Times New Roman">Times New Roman</option>
+					<option value="Arial">Arial</option>
+					<option value="San serif">San serif</option>
+				</select>
+			</fieldset>
+			<fieldset class="ui-field-contain">
+				<label for="fontSize">字型<br/>大小：</label>
+				<select id="fontSize">
+					<option value="9pt">9級</option>
+					<option value="10pt">10級</option>
+					<option value="11pt">11級</option>
+					<option value="12pt">12級</option>
+					<option value="14pt">14級</option>
+					<option value="16pt">16級</option>
+					<option value="18pt">18級</option>
+					<option value="20pt">20級</option>
+					<option value="24pt">24級</option>
+					<option value="28pt">28級</option>
+					<option value="32pt">32級</option>
+					<option value="36pt">36級</option>
+					<option value="48pt">48級</option>
+				</select>
+			</fieldset>
+			<fieldset class="ui-field-contain">
+				<label for="boldStyle">粗體</label>
+				<select id="boldStyle" data-role="slider">
+					<option value="">正常</option>
+					<option value="bolder">粗體</option>
+				</select>
+			</fieldset>
+			<fieldset class="ui-field-contain">
+				<label for="italicStyle">斜體</label>
+				<select id="italicStyle" data-role="slider">
+					<option value="">正常</option>
+					<option value="italic">斜體</option>
+				</select>
+			</fieldset>
+			<fieldset class="ui-field-contain">
+				<label for="underlineStyle">底線</label>
+				<select id="underlineStyle" data-role="slider">
+					<option value="">正常</option>
+					<option value="underline">底線</option>
+				</select>
+			</fieldset>
+			<div style="position:absolute; left:60%; top:195px; width:200px">
+				<label class="ui-slider">上下標：</label>
+				<select id="superStyle" data-role="slider">
+					<option value="">正常</option>
+					<option value="super">上標</option>
+				</select><br/>
+				<select id="subStyle" data-role="slider">
+					<option value="">正常</option>
+					<option value="sub">下標</option>
+				</select>
+			</div>
+		</div>
+		<div class="ui-block-b">
+			<fieldset class="ui-field-contain">
+				<label for="lineHeight">行高：</label>
+				<select id="lineHeight">
+					<option value="1">1.0倍</option>
+					<option value="1.1">1.1倍</option>
+					<option value="1.2">1.2倍</option>
+					<option value="1.3">1.3倍</option>
+					<option value="1.4">1.4倍</option>
+					<option value="1.5">1.5倍</option>
+					<option value="1.6">1.6倍</option>
+					<option value="1.7">1.7倍</option>
+					<option value="1.8">1.8倍</option>
+					<option value="1.9">1.9倍</option>
+					<option value="2">2.0倍</option>
+					<option value="2.1">2.1倍</option>
+					<option value="2.2">2.2倍</option>
+					<option value="2.3">2.3倍</option>
+					<option value="2.4">2.4倍</option>
+					<option value="2.5">2.5倍</option>
+				</select>
+			</fieldset>
+			<fieldset data-role="fieldcontain">
+				<label for="distBefore">與上段間距：</label>
+				<select id="distBefore">
+					<option value="0mm">0mm</option>
+					<option value="1mm">1mm</option>
+					<option value="2mm">2mm</option>
+					<option value="3mm">3mm</option>
+					<option value="4mm">4mm</option>
+					<option value="5mm">5mm</option>
+					<option value="6mm">6mm</option>
+					<option value="7mm">7mm</option>
+					<option value="8mm">8mm</option>
+					<option value="9mm">9mm</option>
+					<option value="10mm">10mm</option>
+				</select>
+			</fieldset>
+			<fieldset data-role="fieldcontain">
+				<label for="distAfter">與下段間距：</label>
+				<select id="distAfter">
+					<option value="0mm">0mm</option>
+					<option value="1mm">1mm</option>
+					<option value="2mm">2mm</option>
+					<option value="3mm">3mm</option>
+					<option value="4mm">4mm</option>
+					<option value="5mm">5mm</option>
+					<option value="6mm">6mm</option>
+					<option value="7mm">7mm</option>
+					<option value="8mm">8mm</option>
+					<option value="9mm">9mm</option>
+					<option value="10mm">10mm</option>
+				</select>
+			</fieldset>
+			<fieldset data-role="fieldcontain">
+				<label for="distStart">與左邊界間距</label>
+				<select id="distStart">
+					<option value="0mm">0mm</option>
+					<option value="1mm">1mm</option>
+					<option value="2mm">2mm</option>
+					<option value="3mm">3mm</option>
+					<option value="4mm">4mm</option>
+					<option value="5mm">5mm</option>
+					<option value="6mm">6mm</option>
+					<option value="7mm">7mm</option>
+					<option value="8mm">8mm</option>
+					<option value="9mm">9mm</option>
+					<option value="10mm">10mm</option>
+				</select>
+			</fieldset>
+			<fieldset data-role="fieldcontain">
+				<label for="distEnd">與右邊界間距</label>
+				<select id="distEnd">
+					<option value="0mm">0mm</option>
+					<option value="1mm">1mm</option>
+					<option value="2mm">2mm</option>
+					<option value="3mm">3mm</option>
+					<option value="4mm">4mm</option>
+					<option value="5mm">5mm</option>
+					<option value="6mm">6mm</option>
+					<option value="7mm">7mm</option>
+					<option value="8mm">8mm</option>
+					<option value="9mm">9mm</option>
+					<option value="10mm">10mm</option>
+				</select>
+			</fieldset>
+		</div>
+	</div>
+	<footer data-role="footer">
+		<div style="position:absolute;left:8px;bottom:12px;width:47%;display:inline-block">
+			<a id="cancel" data-role="button" data-theme="c">取消</a>
+		</div>
+		<div style="position:absolute;left:50%;bottom:12px;width:47%;display:inline-block">
+			<a id="ok" data-role="button" data-theme="b">確定</a>
+		</div>
+    </footer>
+</section>
+</body>
+</html>

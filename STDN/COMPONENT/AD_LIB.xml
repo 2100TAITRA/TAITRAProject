@@ -1,0 +1,3435 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AD_LIB</name>
+    </assembly>
+    <members>
+        <member name="T:ii.AdLib.LogFile">
+            <summary>
+            Log檔內容組成及寫入檔案 1030903 Kevin 1020726 新增
+            </summary>
+        </member>
+        <member name="P:ii.AdLib.LogFile.LogPath">
+            <summary>
+            Log檔路徑
+            </summary>
+        </member>
+        <member name="P:ii.AdLib.LogFile.LogFileName">
+            <summary>
+            Log檔檔名
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.LogFile.WriteLogFile">
+            <summary>
+            寫出Log檔案
+            </summary>
+            <returns>true,false</returns>
+        </member>
+        <member name="M:ii.AdLib.LogFile.InsertLogString(System.String,System.String)">
+            <summary>
+            加一訊息字串至Log字串中
+            </summary>
+            <param name="type">訊息別:I(訊息),W(警告),E(錯誤)</param>
+            <param name="desp">訊息</param>
+            <returns>true,false</returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetPWDHashCode(System.String)">
+            <summary>
+            取得經加密編碼後之密碼字串
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetMaxRole(ii.AdLib.AD_Account,System.String)">
+            <summary>
+            取得特定使用者所扮演及所代理之所有角色中，其單位與傳入之單位相同，最大且為正式之角色
+            且若使用者所扮演或所代理之角色中，有一層決行之單位時一併列入比對
+            </summary>
+            <param name="argAcc">使用者帳號物件</param>
+            <param name="argOuId">指定之單位代碼</param>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetMaxRole(System.Collections.ArrayList)">
+            <summary>
+            程式目的:取得特定角色中最大且為正式角色回傳
+            目前系統於角色代碼的設定前兩碼固定為OD，考量之後客戶若需整合其他系統，
+            另訂定角色代碼前兩碼為其他代碼時，應於GetMaxRole函式加入註解，提醒若有上述需求
+            應於規畫時再檢核是否會在GetMaxRole處理時造成影響
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetActiveRole(System.String)">
+            <summary>
+            取得ActiveRole(AD_Role)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetAccountMappedByArtifact(System.String)">
+            <summary>
+            取得Account(string)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetAccountByArtifact(System.String)">
+            <summary>
+            取得Account(AD_Account)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetTargetRole(System.String,System.String,System.String)">
+            <summary>
+            取出最適合角色
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstUnit">
+            <summary>
+            取得所有一般的一級單位
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstUnit(ii.AdLib.AD_LIB.EnumGetUnitType)">
+            <summary>
+            取得一級單位，可選擇取一般,虛擬,或全部。
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.IsFirstUnit(ii.AdLib.AD_Unit)">
+            <summary>
+            判斷是否為第一級單位
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetTwoLevelUnit">
+            <summary>
+            取得兩層一般單位
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetAllUnit(ii.AdLib.AD_LIB.EnumGetUnitType)">
+            <summary>
+            取得所有單位，依下列方式排列
+            第一組
+            第一組 - 第一科
+            第一組 - 第二科
+            第二組
+            ......
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetRootOrg">
+            <summary>
+            回傳目前使用者所屬機關代碼
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetAccountOfWithDuplicateRole(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            取得某單位下的帳號，若有指定角色(可取得重覆的角色代碼)，則只取該角色下的帳號 ，並依帳號排序。
+            使用情況1: GetAccountOf(單位代碼, "", True,  False)： 取得某單位底下所有帳號，含子單位。
+            使用情況2: GetAccountOf(單位代碼, "", False, False)：取得某單位下第一層的帳號，不含子單位。
+            使用情況3: GetAccountOf(單位代碼, 角色代碼, False, False)：取得某單位下某個角色底下的所有帳號。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+            <param name="argRoleCode">角色代碼</param>
+            <param name="argSubTree">是否要取得單位的所有下屬帳號，若否則只取第一層帳號。</param>
+            <param name="argDuplicate">是否要保留重複的帳號</param>
+            <returns>AD_Account陣列</returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetAccountOf(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            取得某單位下的帳號，若有指定角色，則只取該角色下的帳號 ，並依帳號排序。
+            使用情況1: GetAccountOf(單位代碼, "", True,  False)： 取得某單位底下所有帳號，含子單位。
+            使用情況2: GetAccountOf(單位代碼, "", False, False)：取得某單位下第一層的帳號，不含子單位。
+            使用情況3: GetAccountOf(單位代碼, 角色代碼, False, False)：取得某單位下某個角色底下的所有帳號。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+            <param name="argRoleCode">角色代碼</param>
+            <param name="argSubTree">是否要取得單位的所有下屬帳號，若否則只取第一層帳號。</param>
+            <param name="argDuplicate">是否要保留重複的帳號</param>
+            <returns>AD_Account陣列</returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetTypeOfTheUnit(System.String)">
+            <summary>
+            傳入單位代碼，以取得該單位的種類名稱(CommonUnit, VirtualUnit)，所傳入的
+            單位代碼不存在，則回傳Null。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetTypeOfTheUnit(ii.AdLib.AD_Unit)">
+            <summary>
+            傳入AD_Unit，以取得該單位的種類名稱(CommonUnit, VirtualUnit)，所傳入的
+            單位代碼不存在，則回傳Null。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUserInfoBelongToUnit(System.String,System.Int32)">
+            <summary>
+            取得直隸某單位之人員的代碼與名稱(不重複)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUpLevelUnitOfAccount(System.String)">
+            <summary>
+            此函式"只限"應用在AD中人員物件處於單位物件之下的情況
+            此時將依傳入的帳號找出其之上的單位物件後以AD_Unit型態傳回
+            </summary>
+            <param name="argAccount">人員帳號</param>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUpLevelFirstUnitOfAccount(System.String)">
+            <summary>
+            此函式"只限"應用在AD中人員物件處於單位物件之下的情況
+            此時將依傳入的帳號找出其之上的"一級單位"物件後以AD_Unit型態傳回
+            </summary>
+            <param name="argAccount">人員帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetPrivsOf(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            取得屬於所傳入物件參數的權利資料。
+            所傳入的物件之SchemaClassName可為機關、單位、角色或帳號。
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetEnvSettingOf(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            取得屬於所傳入物件參數的環境設定資料。
+            所傳入的物件之SchemaClassName可為機關、單位、角色或帳號。
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.BuildEnvSettingsReturnValue(System.String[],System.Char)">
+            <summary>
+            取出環境變數回傳value
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetPrivHolder(System.String)">
+            <summary>
+            傳入所選擇的權利代碼，所得為該權利的擁有者。
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.BuildPrivHolderReturnValue(System.String,System.String,System.String,System.String,System.Char,System.Collections.ArrayList,System.Collections.ArrayList)">
+            <summary>
+            建立PrivHolder回傳值
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetArtifactActiveRole(System.String)">
+            <summary>
+            取得ActiveRole之資訊(string[])並Cache住
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetArtifactAccount(System.String)">
+            <summary>
+            取得Account之資訊(string)並Cache住
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.ResetCacheFlag">
+            <summary>
+            紀錄最近一次清除Cache的時間
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.CompareCacheFlag">
+            <summary>
+            紀錄最近一次清除Cache的時間
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.ClearCacheByType(System.String,System.String,System.String,System.String)">
+            <summary>
+            依照條件清除Cache
+            </summary>
+            <param name="argKey">可傳入機關代碼、單位、角色、帳號</param>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetAccountWithCache(System.String)">
+            <summary>
+            使用CACHE或根據DirectoryEntry重新產生AD_Account物件以取得Account(AD_Account)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetRoleWithCache(System.String,System.String,System.String)">
+            <summary>
+            使用CACHE或根據DirectoryEntry重新產生AD_Role物件以取得Role(AD_Role)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUnitWithCache(System.String)">
+            <summary>
+            使用CACHE或根據DirectoryEntry重新產生AD_Unit物件以取得Unit(AD_Unit)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUnitCollectionWithCache(System.String,T2100.DB.DBCommand,System.Int32,ii.AdLib.AD_LIB.EnumGetUnitType)">
+            <summary>
+            使用CACHE或根據單位鍵值重新產生AD_UnitCollection物件以取得UnitCollection(AD_UnitCollection)
+            </summary>
+            <param name="argDeptKey">機關代碼或單位鍵值</param>
+            <param name="argCmd"></param>
+            <param name="argSub">取得下層單位之層數</param>
+            <param name="argType">單位類型</param>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUnitCollectionWithCache(System.String[],T2100.DB.DBCommand,System.String)">
+            <summary>
+            使用CACHE或根據DirectoryEntry重新產生AD_UnitCollection物件以取得UnitCollection(AD_UnitCollection)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUserAddress(System.String,System.String,System.String)">
+            <summary>
+            取得使用者IP
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetRoleAddress(System.String,System.String,System.String)">
+            <summary>
+            取得使用者IP
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstUnitOfSubUnit(System.String)">
+            <summary>
+            傳入子單位代碼，以取得此單位之上的一級單位
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstUnitOfSubUnit(ii.AdLib.AD_Unit)">
+            <summary>
+            傳入子單位物件，以取得此單位之上的一級單位
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstUnitOfRole(ii.AdLib.AD_Role)">
+            <summary>
+            傳入角色物件，以取得此角色之上的一級單位
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstUnitOfAccount(System.String)">
+            <summary>
+            傳入帳號，以取得此人員的所有一級單位，如無法取得則引發Exception。(支援多機關架構)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstUnitOfAccount(ii.AdLib.AD_Account)">
+            <summary>
+            傳入帳號物件，以取得此人員的所有一級單位，如無法取得則引發Exception。(支援多機關架構)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetSimpAccount(System.String)">
+            <summary>
+            取得帳號的基本資訊，如名稱等
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetSimpAccountOf(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            取得某單位下的帳號，若有指定角色，則只取該角色下的帳號 ，並依帳號排序。
+            使用情況1: GetAccountOf(單位代碼, "", True,  False)： 取得某單位底下所有帳號，含子單位。
+            使用情況2: GetAccountOf(單位代碼, "", False, False)：取得某單位下第一層的帳號，不含子單位。
+            使用情況3: GetAccountOf(單位代碼, 角色代碼, False, False)：取得某單位下某個角色底下的所有帳號。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+            <param name="argRoleCode">角色代碼</param>
+            <param name="argSubTree">是否要取得單位的所有下屬帳號，若否則只取第一層帳號。</param>
+            <param name="argDuplicate">是否要保留重複的帳號</param>
+            <returns>AD_SimpAccount陣列</returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstSimpUnit">
+            <summary>
+            取得所有一般的一級單位的基本資料
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstSimpUnit(ii.AdLib.AD_LIB.EnumGetUnitType)">
+            <summary>
+            取得一級單位的基本資料，可選擇取一般,虛擬,或全部。
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetSubUnitRole(System.String,System.Boolean)">
+            <summary>
+            取得單位底下所有角色
+            </summary>
+            <returns></returns>// Joe 0951214 新增
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUnitRolesByID(System.String,System.String)">
+            <summary>
+            依單位及角色代碼取得角色集合
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.IsFirstSimpUnit(ii.AdLib.AD_SimpUnit)">
+            <summary>
+            判斷是否為第一級單位
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetFirstSimpUnitOfAccount(System.String)">
+            <summary>
+            傳入帳號，以取得此人員的所有一級單位，如無法取得則引發Exception。(支援多機關架構)
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.IsRoleUnderUnit(System.String,System.String)">
+            <summary>
+            判斷角色是否位於此單位之下
+            </summary>
+            <param name="argUnitCode">單位代碼，不存在或空白時將回傳false</param>
+            <param name="argRoleCode">角色代碼，不存在或空白時將回傳false</param>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.IsRoleUnderUnit(System.String,System.String[],System.Boolean)">
+            <summary>
+            判斷角色是否位於此單位之下
+            </summary>
+            <param name="argUnitCode">單位代碼，不存在或空白時將回傳false</param>
+            <param name="argRoleCode">角色代碼，不存在或空白時將回傳false</param>
+            <param name="argIsAllRoleNeedExist">是否所傳入的角色皆存在才回傳true</param>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUserKeyByAccount(System.String,System.String)">
+            <summary>
+            取得指定帳號之識別碼，若傳入之機關代碼為空字串，則以帳號為條件取得第一個符合之使用者
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetUserIdentityOfWithDuplicateRole(System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            取得某單位下的帳號，若有指定角色，則只取該角色下的帳號 ，並依帳號排序。
+            使用情況1: GetAccountOf(單位代碼, "", True,  False)： 取得某單位底下所有帳號，含子單位。
+            使用情況2: GetAccountOf(單位代碼, "", False, False)：取得某單位下第一層的帳號，不含子單位。
+            使用情況3: GetAccountOf(單位代碼, 角色代碼, False, False)：取得某單位下某個角色底下的所有帳號。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+            <param name="argRoleCode">角色代碼</param>
+            <param name="argSubTree">是否要取得單位的所有下屬帳號，若否則只取第一層帳號。</param>
+            <param name="argDuplicate">是否要保留重複的帳號</param>
+            <returns>帳號鍵值陣列</returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetAccountOfWithDuplicateRole(System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            取得某單位下的帳號，若有指定角色，則只取該角色下的帳號 ，並依帳號排序。
+            使用情況1: GetAccountOf(單位代碼, "", True,  False)： 取得某單位底下所有帳號，含子單位。
+            使用情況2: GetAccountOf(單位代碼, "", False, False)：取得某單位下第一層的帳號，不含子單位。
+            使用情況3: GetAccountOf(單位代碼, 角色代碼, False, False)：取得某單位下某個角色底下的所有帳號。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+            <param name="argRoleCode">角色代碼</param>
+            <param name="argSubTree">是否要取得單位的所有下屬帳號，若否則只取第一層帳號。</param>
+            <param name="argDuplicate">是否要保留重複的帳號</param>
+            <returns>帳號陣列</returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.fnGetAAsCache">
+            <summary>
+            傳回整個應用程式集的物件
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.fnBuildAAsCache">
+            <summary>
+            產生應用程式集物件, 並存到Application中當作Cache
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetNumericValue(System.Object)">
+            <summary>
+            由物件取出數字，若物件內容無法轉換為數字，則回傳0 1030903 Kevin 1020726 新增
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.GetStringValue(System.Object)">
+            <summary>
+            由物件取出字串內容並去掉頭尾空白，若物件為null，則回傳空字串 1030903 Kevin 1020726 新增
+            </summary>
+        </member>
+        <member name="P:ii.AdLib.AD_LIB.Cryptor._key">
+            <summary>
+            金鑰
+            </summary>
+        </member>
+        <member name="P:ii.AdLib.AD_LIB.Cryptor._iv">
+            <summary>
+            向量值
+            </summary>
+        </member>
+        <member name="P:ii.AdLib.AD_LIB.Cryptor._Enc">
+            <summary>
+            加密檢核
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.Cryptor.CreateEncryptor(System.Byte[])">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.Cryptor.CreateDecryptor(System.Byte[])">
+            <summary>
+            解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ii.AdLib.AD_LIB.AESCryptService._key">
+            <summary>
+            金鑰
+            </summary>
+        </member>
+        <member name="F:ii.AdLib.AD_LIB.AESCryptService._iv">
+            <summary>
+            向量值
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.AESCryptService.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.AESCryptService.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.AESCryptService.Encrypt(System.Byte[])">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.AdLib.AD_LIB.AESCryptService.Decrypt(System.Byte[])">
+            <summary>
+            解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.AdLib.AD_RoleCollection.SortByCode">
+            <summary>
+            依角色代碼displayName排列。
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_Unit.#ctor(System.Data.DataRow)">
+            <summary>
+            使用DEPT資料列新增AD_Unit 1030502 Kevin 1030345
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_Unit.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            手動新增AD_Unit 1030502 Kevin 1030345
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_Unit.SetUnitValue(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            供手動新增AD_Unit、使用DEPT資料列新增AD_Unit叫用 1030502 Kevin 1030345
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_PrivilegeCollection.#ctor(System.String,T2100.DB.DBCommand)">
+            <summary>
+            1.取得帳號本身俱備權利
+            2.使用者扮演角色，各角色俱備權利
+            3.使用者角色所屬單位所俱備權利
+            4.代理得來之權利
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_SimpUnitCollection.SortByCode">
+            <summary>
+            --虛擬單位在前，以降冪排列。一般單位在後，以升冪排列。
+            改為呼叫SortByRank()
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_SimpUnitCollection.SortByRank">
+            <summary>
+            依displayRank排列。
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_UnitCollection.SortByCode">
+            <summary>
+            --虛擬單位在前，以降冪排列。一般單位在後，以升冪排列。
+            改為呼叫SortByRank()
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_UnitCollection.SortByRank">
+            <summary>
+            依displayRank排列。
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_UnitCollection.buildUnit(T2100.DB.DBCommand,System.Collections.ArrayList)">
+            <summary>
+            批次新增單位，僅支援DEPT_IDENTITY初始化 1030502 Kevin 1030345
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_Proxy.GetProxyRole">
+            <summary>
+            取得被代理的角色物件
+            </summary>
+        </member>
+        <member name="M:ii.AdLib.AD_Proxy.GetProxyUnit">
+            <summary>
+            取得被代理角色的所屬單位物件
+            </summary>
+        </member>
+        <member name="P:ii.AdLib.AD_Proxy.SourceOrgno">
+            <summary>
+            被代理之角色所屬機關代碼
+            </summary>
+        </member>
+        <member name="P:ii.AdLib.AD_Account.IsMidOffice">
+            <summary>
+            內政部專用屬性，依EMPLOYEE.IS_MIDOFFICE='1'時為true
+            </summary>
+        </member>
+        <member name="P:ii.AdLib.AD_Account.ProxysOf">
+            <summary>
+            代理那些人
+            </summary>
+        </member>
+        <member name="T:ii.ADUtility">
+            <summary>
+            Summary description for II_LIB.
+            </summary>
+            
+        </member>
+        <member name="M:ii.ADUtility.GetRoleWithUnitNo(System.String,System.Boolean)">
+            <summary>
+            傳入單位代碼 傳回底下所有子單位。
+            </summary>
+            <param name="argUnitNo"></param>
+            <param name="bSubUnit">只傳回下一層或傳回全部資訊 </param>
+            <returns></returns>// Joe 0951214 新增
+        </member>
+        <member name="M:ii.ADUtility.GetEnableRoleWithDuplicateRoleNo(System.String,System.String)">
+            <summary>
+            取得指令單位、角色代碼的AD物件(含重覆角色代碼)
+            </summary>
+        </member>
+        <member name="M:ii.ADUtility.GetUnitWithCode(System.String)">
+            <summary>
+            傳入單位代碼以取得相對應的單位物件。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+            <returns>單位物件</returns>
+        </member>
+        <member name="M:ii.ADUtility.GetDisableUnitWithOrgCode(System.String)">
+            <summary>
+            取得停用的單位，若傳入的單位代碼為空白，則傳回全部的停用單位
+            </summary>
+            <param name="argOrgCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAllSubUnitOfUnit(System.String)">
+            <summary>
+            傳入單位代碼以取得所有的下屬單位(DirectoryEntry物件)，若無此單位則回傳null。不含已停用的單位。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+            <returns>ArrayList: DirectoryEntry Array</returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAllParentUnitOfUser(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            傳入帳號物件以取得所有的上屬單位(DirectoryEntry物件)，若無此人員則回傳null。不含已停用的單位。
+            </summary>
+            <param name="argAccountCode">帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAccount(System.String)">
+            <summary>
+            傳入帳號以取得帳號物件。於多機關架構或ASP架構下，傳入值皆不帶prefix
+            </summary>
+            <param name="argAccountCN"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetPrivilege(System.String)">
+            <summary>
+            取得權利物件
+            </summary>
+            <param name="argPrivCN"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAppSys(System.String)">
+            <summary>
+            取得應用系統物件
+            </summary>
+            <param name="argAppSysCN"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetServer(System.String)">
+            <summary>
+            取得伺服器物件
+            </summary>
+            <param name="argServerCN"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetSubUnitAndRole(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            取得某單位底下的子單位和角色
+            排序原則為, 角色在前單位在後, 角色以代碼排序, 單位以DisplayRank排序
+            </summary>
+            <param name="argUnit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetRoleOccupant(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            取得所有扮演某角色的帳號
+            </summary>
+            <param name="argUnit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAllRootOrg">
+            <summary>
+            多機關架構下, 會取得OrgPath位置下的機關物件
+            ASP架構下, 只會取得一個機關物件(目前ASP架構下, 同一層下只會有一個機關物件)
+            使用前, "須"指定機關代碼或權杖
+            
+            請注意!!! 與GetAllOrg()之用法與結果略有不同
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAllOrg">
+            <summary>
+            多機關架構下, 會取得OrgPath位置下的所有機關物件
+            ASP架構下, 亦會取出OrgInfo底下所有機關物件
+            使用前, 無須指定機關代碼或權杖
+            
+            請注意!!! 與GetAllRootOrg()之用法與結果略有不同
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAllRootOrgForOneMan(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            傳入帳號物件，取得此帳號所屬的所有機關物件
+            </summary>
+            <param name="argDe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAddressBook(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            傳入一個DirectoryEntry物件，以回傳其底下的通訊錄物件
+            </summary>
+            <param name="argDe">SchemaClass只能為組織、單位或帳號</param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetRootAddressBook">
+            <summary>
+            取得放置所有通訊錄的Container物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.CreateContainer(System.String)">
+            <summary>
+            傳入一物件的DN, 若此物件不存在, 則建立之(型態為Container)
+            </summary>
+            <param name="argDN"></param>
+        </member>
+        <member name="M:ii.ADUtility.GetRootTempCard">
+            <summary>
+            取得放置所有臨時卡片出借紀錄的Container物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.IsUserBelongToUnit(System.DirectoryServices.DirectoryEntry,System.DirectoryServices.DirectoryEntry,System.Boolean)">
+            <summary>
+            傳入人員物件與單位物件，判斷此人員是否隸屬於此單位。
+            </summary>
+            <param name="argUserEntry">人員物件</param>
+            <param name="argUnitEntry">單位物件</param>
+            <param name="argIncNoUsed">單位的狀態為停用時，是否仍成立</param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.IsUnitBelongToUnit(System.DirectoryServices.DirectoryEntry,System.DirectoryServices.DirectoryEntry,System.Boolean,System.Boolean)">
+            <summary>
+            傳入2個單位物件(DirectoryEntry)，分別為A和B，判斷B單位物件是否隸屬於A單位物件。
+            </summary>
+            <param name="argParentEntry">A單位</param>
+            <param name="argChildEntry">B單位</param>
+            <param name="argIsIncNoUsed">B單位的狀態為停用時，是否仍成立</param>
+            <param name="argIsIncSelf">A單位若等於B單位時，是否成立</param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.IsUserPlayRole(System.DirectoryServices.DirectoryEntry,System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            傳入人員與角色單位，判斷此人員是否有扮演此角色。
+            </summary>
+            <param name="argUserEntry"></param>
+            <param name="argRoleEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.DelTree(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            刪除所傳入的DirectoryEntry物件以及其底下的物件。
+            </summary>
+            <param name="RootEntry"></param>
+        </member>
+        <member name="M:ii.ADUtility.GetEnvSetting(System.DirectoryServices.DirectoryEntry,System.String)">
+            <summary>
+            取得所傳入物件的專屬的環境設定
+            </summary>
+            <param name="argEntry">物件</param>
+            <param name="argPara">變數名稱</param>
+            <returns>設定值</returns>
+        </member>
+        <member name="M:ii.ADUtility.GetEnvSetting(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            取得所傳入之物件的專屬的所有環境設定
+            </summary>
+            <param name="argEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.fnGetDirectoryEntry(System.String)">
+            <summary>
+            取得AD物件
+            </summary>
+            <param name="path">AD物件的path</param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.fnClearURCache">
+            <summary>
+            將放在Application中的單位與角色資料清除掉
+            </summary>
+        </member>
+        <member name="M:ii.ADUtility.fnBuildAAsCache">
+            <summary>
+            產生應用程式集物件, 並存到Application中當作Cache
+            </summary>
+        </member>
+        <member name="M:ii.ADUtility.fnGetAAsCache">
+            <summary>
+            傳回整個應用程式集的物件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.IsOrgEntry(System.DirectoryServices.DirectoryEntry,ii.ADUtility)">
+            <summary>
+            判斷傳入的ParentEntry物件是否為機關物件
+            </summary>
+            <returns>找不到丟出Exception</returns>
+        </member>
+        <member name="M:ii.ADUtility.GetParentSourceOrgNo(System.DirectoryServices.DirectoryEntry,ii.ADUtility)">
+            <summary>
+            取出DirectoryEntry物件(含)之最上層物件的機關代碼
+            若不要從傳入的DirectoryEntry物件開始找，請傳入Parent物件
+            </summary>
+        </member>
+        <member name="M:ii.ADUtility.GetPlayRoles(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            傳入帳號物件，以取得其所扮演的角色，若其角色有設定順序
+            則依該順序傳回，否則依AD儲存的順序
+            </summary>
+            <param name="argAccEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAccountOfWithDuplicateRole(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            取得某單位下的帳號，若有指定角色，則只取該角色下的帳號 ，並依帳號排序。
+            使用情況1: GetAccountOf(單位代碼, "", True,  False)： 取得某單位底下所有帳號，含子單位。
+            使用情況2: GetAccountOf(單位代碼, "", False, False)：取得某單位下第一層的帳號，不含子單位。
+            使用情況3: GetAccountOf(單位代碼, 角色代碼, False, False)：取得某單位下某個角色底下的所有帳號。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+            <param name="argRoleCode">角色代碼</param>
+            <param name="argSubTree">是否要取得單位的所有下屬帳號，若否則只取第一層帳號。</param>
+            <param name="argDuplicate">是否要保留重複的帳號</param>
+            <returns>DirectoryEntry陣列</returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAccountOf(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            取得某單位下的帳號，若有指定角色，則只取該角色下的帳號 ，並依帳號排序。
+            使用情況1: GetAccountOf(單位代碼, "", True,  False)： 取得某單位底下所有帳號，含子單位。
+            使用情況2: GetAccountOf(單位代碼, "", False, False)：取得某單位下第一層的帳號，不含子單位。
+            使用情況3: GetAccountOf(單位代碼, 角色代碼, False, False)：取得某單位下某個角色底下的所有帳號。
+            </summary>
+            <param name="argUnitCode">單位代碼</param>
+            <param name="argRoleCode">角色代碼</param>
+            <param name="argSubTree">是否要取得單位的所有下屬帳號，若否則只取第一層帳號。</param>
+            <param name="argDuplicate">是否要保留重複的帳號</param>
+            <returns>DirectoryEntry陣列</returns>
+        </member>
+        <member name="M:ii.ADUtility.GetFirstUnitOfSubUnit(System.String)">
+            <summary>
+            傳入子單位代碼，以取得此單位之上的一級單位
+            </summary>
+            <param name="argSubUnitCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetFirstUnitOfRole(System.String,System.String)">
+            <summary>
+            傳入單位與角色代碼，以取得此角色之上的一級單位，如無法取得則回傳null
+            </summary>
+            <param name="argUnitCode"></param>
+            <param name="argRoleCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetFirstUnitOfRole(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            傳入角色物件，以取得此角色之上的一級單位，如無法取得則回傳null
+            </summary>
+            <param name="argRoleEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetFirstUnitOfAccount(System.String)">
+            <summary>
+            傳入帳號，以取得此人員的所有一級單位，如無法取得則回傳null
+            </summary>
+            <param name="argAccount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetFirstUnitOfAccount(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            傳入帳號物件，以取得此人員的所有一級單位，如無法取得則回傳null。(支援多機關架構)
+            </summary>
+            <param name="argAccEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetName(System.DirectoryServices.DirectoryEntry)">
+            <summary>
+            取得名稱(適用於機關,單位,角色,帳號,程式集)
+            </summary>
+            <param name="argEntry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetSystemMode">
+            <summary>
+            ASP架構，取得目前系統模式(ASP, 多機關)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetPrefix(System.String)">
+            <summary>
+            ASP架構，取得傳入之機關代碼所對應的preifx
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetPrefix">
+            <summary>
+             ASP架構，依m_strArtifact或m_strSourceOrgNo取得目前所對應的preifx
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.ConvertToSamAccountName(System.String,System.String)">
+            <summary>
+            傳入帳號(使用者所使用的帳號字串, 於ASP架構下不帶prefix)
+            回傳AD中帳號實際字串(於ASP架構下此字串冠有prefix ex:A_250090)
+            </summary>
+            <param name="argOrgNo"></param>
+            <param name="argAccount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.ConvertToSamAccountName(System.String)">
+            <summary>
+            傳入帳號(使用者所使用的帳號字串, 於ASP架構下不帶prefix)
+            回傳AD中帳號實際字串(於ASP架構下此字串冠有prefix ex:A_250090)
+            使用前需設定m_strSourceOrgNo
+            </summary>
+            <param name="argAccount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.ConvertToAccount(System.String)">
+            <summary>
+            傳入AD中帳號實際字串(於ASP架構下此字串冠有prefix ex:A_250090)
+            回傳帳號(使用者所使用的帳號字串, 不帶prefix)
+            </summary>
+            <param name="argSamAccountName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ii.ADUtility.GetAllUserWhoPlayRole">
+            <summary>
+            取得所有有扮演角色的帳號物件
+            ASP架構下, 只會取出目前adUtil所指定的機關下的帳號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ii.RankCompare">
+            <summary>
+            排序物件, 作為ArrayList.Sort之用, ArrayList中的內容須與Active DirectoryEntry相關
+            若內容為AD的Path, 則CompType須指定為String, 其他如下
+            	AD的Path      --> String
+            	AppSetObj物件 --> Appset
+            	AppObj物件    --> App
+            	AD物件        ---> DirectoryEntry
+            排序比對的內容為AD物件的屬性, 預設為displayRank
+            </summary>
+        </member>
+        <member name="T:ii.UnitCompare">
+            <summary>
+            若ObjectType為UnitCode，則adUtil不可為null。
+            </summary>
+        </member>
+        <member name="T:WS.AuthWS">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.#ctor(System.String)">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetRoleMailCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserEmailCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.WriteAccessLogCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetMOICAMapAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.QueryMOICACertStatusCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserInfo2Completed">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ResetAPPMapCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetAccountNameCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetAccountNameWithOrgNoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUpLevelUnitOfAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUpLevelFirstUnitOfAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ResetServerDispCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.CheckCertificateValidityCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.UpdateUserEnvSetCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetCardLoanInfoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.RegistIPWithArtifactCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.RegistIPWithArtifactAndMachineTypeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.CheckServerStateCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.SyncUserMapCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.SyncActiveRoleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.SyncMachineTypeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.LinkCertCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.CheckServerIsAliveCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetIPByArtifactCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetNLBServerStateCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.CheckCertLinkCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ForgotPWDCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetCaptchaModeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GenCaptchaCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.PdaRegisterCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.PdaLogonCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetWebMethodInfoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetArtifactByIPCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.LogonChkCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetAccountMappedByArtifactCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.UpdateCertMapOfAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.UpdateCertMapCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.RemoveCertFromMapCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.LogonByCertCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ChangeActiveRoleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetActiveRoleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.LogonByPasswordWithLimitsAndOrgNoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.LogonByPasswordWithLimitsAndOrgNoAndMachineTypeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.LogonByPasswordWithLimitsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.LogonByPasswordCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.BOCACheckSSOCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ServerStatusCheckCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.LogoutCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.LogoutBySSOCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserBulletinCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserBulletinNewCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetSpotLightMsgCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserProgramsJSONCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserProgramsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserProgramsExCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserProgramsWithAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ResetAAsCacheCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ResetURCacheCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ResetAllURCacheCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ResetCacheByTypeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetSOURCE_ORGNOCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetEnvSettingCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserShortcutCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserShortcutNewCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserAddressCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserAddressWithArtifactCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetUserAddressWithMachineTypeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetRoleAddressCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetRoleAddressWithMachineTypeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetAllUserAddressCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetAllUserAddressWithMachineTypeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetProxyUserAddressCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.GetProxyUserAddressWithMachineTypeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ChangePasswordWithOrgNoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.ChangePasswordCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.DownloadUserStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.DownloadUnitStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.DownloadOrgStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.UploadUserStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.UploadUnitStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.UploadOrgStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.WinLogonWithOrgNoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.UserOrgSwitchCompleted">
+            <remarks/>
+        </member>
+        <member name="E:WS.AuthWS.WinLogonCompleted">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetRoleMail(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetRoleMail(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetRoleMail(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetRoleMailAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetRoleMailAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserEmail(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserEmail(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserEmail(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserEmailAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserEmailAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.WriteAccessLog(WS.AccessCategory,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginWriteAccessLog(WS.AccessCategory,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndWriteAccessLog(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.WriteAccessLogAsync(WS.AccessCategory,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.WriteAccessLogAsync(WS.AccessCategory,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetMOICAMapAccount(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetMOICAMapAccount(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetMOICAMapAccount(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetMOICAMapAccountAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetMOICAMapAccountAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.QueryMOICACertStatus(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginQueryMOICACertStatus(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndQueryMOICACertStatus(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.QueryMOICACertStatusAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.QueryMOICACertStatusAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserInfo2(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserInfo2(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserInfo2(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserInfo2Async(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserInfo2Async(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetAPPMap">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginResetAPPMap(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndResetAPPMap(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetAPPMapAsync">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetAPPMapAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAccountName(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetAccountName(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetAccountName(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAccountNameAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAccountNameAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAccountNameWithOrgNo(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetAccountNameWithOrgNo(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetAccountNameWithOrgNo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAccountNameWithOrgNoAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAccountNameWithOrgNoAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUpLevelUnitOfAccount(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUpLevelUnitOfAccount(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUpLevelUnitOfAccount(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUpLevelUnitOfAccountAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUpLevelUnitOfAccountAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUpLevelFirstUnitOfAccount(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUpLevelFirstUnitOfAccount(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUpLevelFirstUnitOfAccount(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUpLevelFirstUnitOfAccountAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUpLevelFirstUnitOfAccountAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetServerDisp">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginResetServerDisp(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndResetServerDisp(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetServerDispAsync">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetServerDispAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckCertificateValidity(System.String,System.Int32,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginCheckCertificateValidity(System.String,System.Int32,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndCheckCertificateValidity(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckCertificateValidityAsync(System.String,System.Int32,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckCertificateValidityAsync(System.String,System.Int32,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UpdateUserEnvSet(System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginUpdateUserEnvSet(System.String,System.String,System.String,System.Boolean,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndUpdateUserEnvSet(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UpdateUserEnvSetAsync(System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UpdateUserEnvSetAsync(System.String,System.String,System.String,System.Boolean,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetCardLoanInfo(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetCardLoanInfo(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetCardLoanInfo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetCardLoanInfoAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetCardLoanInfoAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.RegistIPWithArtifact(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginRegistIPWithArtifact(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndRegistIPWithArtifact(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.RegistIPWithArtifactAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.RegistIPWithArtifactAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.RegistIPWithArtifactAndMachineType(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginRegistIPWithArtifactAndMachineType(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndRegistIPWithArtifactAndMachineType(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.RegistIPWithArtifactAndMachineTypeAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.RegistIPWithArtifactAndMachineTypeAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckServerState(WS.ServerStateSync,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginCheckServerState(WS.ServerStateSync,System.Boolean,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndCheckServerState(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckServerStateAsync(WS.ServerStateSync,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckServerStateAsync(WS.ServerStateSync,System.Boolean,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.SyncUserMap(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginSyncUserMap(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndSyncUserMap(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.SyncUserMapAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.SyncUserMapAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.SyncActiveRole(System.String,System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginSyncActiveRole(System.String,System.String,System.String,System.String,System.Boolean,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndSyncActiveRole(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.SyncActiveRoleAsync(System.String,System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.SyncActiveRoleAsync(System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.SyncMachineType(System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginSyncMachineType(System.String,System.String,System.String,System.Boolean,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndSyncMachineType(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.SyncMachineTypeAsync(System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.SyncMachineTypeAsync(System.String,System.String,System.String,System.Boolean,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LinkCert(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginLinkCert(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndLinkCert(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LinkCertAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LinkCertAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckServerIsAlive">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginCheckServerIsAlive(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndCheckServerIsAlive(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckServerIsAliveAsync">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckServerIsAliveAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetIPByArtifact(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetIPByArtifact(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetIPByArtifact(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetIPByArtifactAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetIPByArtifactAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetNLBServerState(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetNLBServerState(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetNLBServerState(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetNLBServerStateAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetNLBServerStateAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckCertLink(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginCheckCertLink(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndCheckCertLink(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckCertLinkAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CheckCertLinkAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ForgotPWD(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginForgotPWD(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndForgotPWD(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ForgotPWDAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ForgotPWDAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetCaptchaMode">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetCaptchaMode(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetCaptchaMode(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetCaptchaModeAsync">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetCaptchaModeAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GenCaptcha">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGenCaptcha(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGenCaptcha(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GenCaptchaAsync">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GenCaptchaAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.PdaRegister(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginPdaRegister(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndPdaRegister(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.PdaRegisterAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.PdaRegisterAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.PdaLogon(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginPdaLogon(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndPdaLogon(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.PdaLogonAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.PdaLogonAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetWebMethodInfo(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetWebMethodInfo(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetWebMethodInfo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetWebMethodInfoAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetWebMethodInfoAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetArtifactByIP(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetArtifactByIP(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetArtifactByIP(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetArtifactByIPAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetArtifactByIPAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonChk(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginLogonChk(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndLogonChk(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonChkAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonChkAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAccountMappedByArtifact(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetAccountMappedByArtifact(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetAccountMappedByArtifact(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAccountMappedByArtifactAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAccountMappedByArtifactAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UpdateCertMapOfAccount(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginUpdateCertMapOfAccount(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndUpdateCertMapOfAccount(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UpdateCertMapOfAccountAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UpdateCertMapOfAccountAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UpdateCertMap(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginUpdateCertMap(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndUpdateCertMap(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UpdateCertMapAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UpdateCertMapAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.RemoveCertFromMap(System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginRemoveCertFromMap(System.String,System.Byte[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndRemoveCertFromMap(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.RemoveCertFromMapAsync(System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.RemoveCertFromMapAsync(System.String,System.Byte[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByCert(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginLogonByCert(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndLogonByCert(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByCertAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByCertAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ChangeActiveRole(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginChangeActiveRole(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndChangeActiveRole(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ChangeActiveRoleAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ChangeActiveRoleAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetActiveRole(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetActiveRole(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetActiveRole(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetActiveRoleAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetActiveRoleAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordWithLimitsAndOrgNo(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginLogonByPasswordWithLimitsAndOrgNo(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndLogonByPasswordWithLimitsAndOrgNo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordWithLimitsAndOrgNoAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordWithLimitsAndOrgNoAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordWithLimitsAndOrgNoAndMachineType(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginLogonByPasswordWithLimitsAndOrgNoAndMachineType(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndLogonByPasswordWithLimitsAndOrgNoAndMachineType(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordWithLimitsAndOrgNoAndMachineTypeAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordWithLimitsAndOrgNoAndMachineTypeAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordWithLimits(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginLogonByPasswordWithLimits(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndLogonByPasswordWithLimits(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordWithLimitsAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordWithLimitsAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPassword(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginLogonByPassword(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndLogonByPassword(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogonByPasswordAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BOCACheckSSO(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginBOCACheckSSO(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndBOCACheckSSO(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BOCACheckSSOAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BOCACheckSSOAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ServerStatusCheck">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginServerStatusCheck(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndServerStatusCheck(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ServerStatusCheckAsync">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ServerStatusCheckAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.Logout(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginLogout(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndLogout(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogoutAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogoutAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogoutBySSO(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginLogoutBySSO(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndLogoutBySSO(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogoutBySSOAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.LogoutBySSOAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserBulletin(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserBulletin(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserBulletin(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserBulletinAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserBulletinAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserBulletinNew(System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserBulletinNew(System.String,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserBulletinNew(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserBulletinNewAsync(System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserBulletinNewAsync(System.String,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetSpotLightMsg(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetSpotLightMsg(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetSpotLightMsg(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetSpotLightMsgAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetSpotLightMsgAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsJSON(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserProgramsJSON(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserProgramsJSON(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsJSONAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsJSONAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserPrograms(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserPrograms(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserPrograms(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsEx(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserProgramsEx(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserProgramsEx(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsExAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsExAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsWithAccount(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserProgramsWithAccount(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserProgramsWithAccount(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsWithAccountAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserProgramsWithAccountAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetAAsCache">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginResetAAsCache(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndResetAAsCache(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetAAsCacheAsync">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetAAsCacheAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetURCache">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginResetURCache(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndResetURCache(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetURCacheAsync">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetURCacheAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetAllURCache">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginResetAllURCache(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndResetAllURCache(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetAllURCacheAsync">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetAllURCacheAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetCacheByType(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginResetCacheByType(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndResetCacheByType(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetCacheByTypeAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ResetCacheByTypeAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetSOURCE_ORGNO(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetSOURCE_ORGNO(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetSOURCE_ORGNO(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetSOURCE_ORGNOAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetSOURCE_ORGNOAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetEnvSetting(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetEnvSetting(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetEnvSetting(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetEnvSettingAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetEnvSettingAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserShortcut(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserShortcut(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserShortcut(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserShortcutAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserShortcutAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserShortcutNew(System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserShortcutNew(System.String,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserShortcutNew(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserShortcutNewAsync(System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserShortcutNewAsync(System.String,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserAddress(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserAddress(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserAddress(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserAddressAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserAddressAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserAddressWithArtifact(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserAddressWithArtifact(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserAddressWithArtifact(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserAddressWithArtifactAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserAddressWithArtifactAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserAddressWithMachineType(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetUserAddressWithMachineType(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetUserAddressWithMachineType(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserAddressWithMachineTypeAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetUserAddressWithMachineTypeAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetRoleAddress(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetRoleAddress(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetRoleAddress(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetRoleAddressAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetRoleAddressAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetRoleAddressWithMachineType(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetRoleAddressWithMachineType(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetRoleAddressWithMachineType(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetRoleAddressWithMachineTypeAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetRoleAddressWithMachineTypeAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAllUserAddress(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetAllUserAddress(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetAllUserAddress(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAllUserAddressAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAllUserAddressAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAllUserAddressWithMachineType(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetAllUserAddressWithMachineType(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetAllUserAddressWithMachineType(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAllUserAddressWithMachineTypeAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetAllUserAddressWithMachineTypeAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetProxyUserAddress(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetProxyUserAddress(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetProxyUserAddress(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetProxyUserAddressAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetProxyUserAddressAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetProxyUserAddressWithMachineType(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginGetProxyUserAddressWithMachineType(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndGetProxyUserAddressWithMachineType(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetProxyUserAddressWithMachineTypeAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.GetProxyUserAddressWithMachineTypeAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ChangePasswordWithOrgNo(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginChangePasswordWithOrgNo(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndChangePasswordWithOrgNo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ChangePasswordWithOrgNoAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ChangePasswordWithOrgNoAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ChangePassword(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginChangePassword(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndChangePassword(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ChangePasswordAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.ChangePasswordAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.DownloadUserStampBox(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginDownloadUserStampBox(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndDownloadUserStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.DownloadUserStampBoxAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.DownloadUserStampBoxAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.DownloadUnitStampBox(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginDownloadUnitStampBox(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndDownloadUnitStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.DownloadUnitStampBoxAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.DownloadUnitStampBoxAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.DownloadOrgStampBox(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginDownloadOrgStampBox(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndDownloadOrgStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.DownloadOrgStampBoxAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.DownloadOrgStampBoxAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UploadUserStampBox(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginUploadUserStampBox(System.String,System.String,System.String[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndUploadUserStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UploadUserStampBoxAsync(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UploadUserStampBoxAsync(System.String,System.String,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UploadUnitStampBox(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginUploadUnitStampBox(System.String,System.String,System.String[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndUploadUnitStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UploadUnitStampBoxAsync(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UploadUnitStampBoxAsync(System.String,System.String,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UploadOrgStampBox(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginUploadOrgStampBox(System.String,System.String,System.String[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndUploadOrgStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UploadOrgStampBoxAsync(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UploadOrgStampBoxAsync(System.String,System.String,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.WinLogonWithOrgNo(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginWinLogonWithOrgNo(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndWinLogonWithOrgNo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.WinLogonWithOrgNoAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.WinLogonWithOrgNoAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UserOrgSwitch(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginUserOrgSwitch(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndUserOrgSwitch(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UserOrgSwitchAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.UserOrgSwitchAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.WinLogon(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.BeginWinLogon(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.EndWinLogon(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.WinLogonAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.WinLogonAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:WS.AuthWS.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:WS.AccessCategory">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.LogonByPassword">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.LogonByCert">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.WrongPassword">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.DisableAccount">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.LockAccount">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.WrongSetting">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.InitEnveFail">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.VerifySigFail">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.BindFail">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.Logout">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.AccessTarget">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.LeaveAccount">
+            <remarks/>
+        </member>
+        <member name="F:WS.AccessCategory.ModifyAccount">
+            <remarks/>
+        </member>
+        <member name="T:WS.RetMsg">
+            <remarks/>
+        </member>
+        <member name="P:WS.RetMsg.m_bSuccess">
+            <remarks/>
+        </member>
+        <member name="P:WS.RetMsg.m_strErrMsg">
+            <remarks/>
+        </member>
+        <member name="P:WS.RetMsg.m_enumMsgStatus">
+            <remarks/>
+        </member>
+        <member name="T:WS.EnumMsgStatus">
+            <remarks/>
+        </member>
+        <member name="F:WS.EnumMsgStatus.DocStatusRead">
+            <remarks/>
+        </member>
+        <member name="F:WS.EnumMsgStatus.DocStatusNone">
+            <remarks/>
+        </member>
+        <member name="F:WS.EnumMsgStatus.DocStatusOffline">
+            <remarks/>
+        </member>
+        <member name="T:WS.IpInfo">
+            <remarks/>
+        </member>
+        <member name="P:WS.IpInfo.User">
+            <remarks/>
+        </member>
+        <member name="P:WS.IpInfo.IP">
+            <remarks/>
+        </member>
+        <member name="P:WS.IpInfo.MType">
+            <remarks/>
+        </member>
+        <member name="P:WS.IpInfo.Artifact">
+            <remarks/>
+        </member>
+        <member name="T:WS.RtnIPInfo">
+            <remarks/>
+        </member>
+        <member name="P:WS.RtnIPInfo.csIpInfo">
+            <remarks/>
+        </member>
+        <member name="P:WS.RtnIPInfo.ErrMsg">
+            <remarks/>
+        </member>
+        <member name="T:WS.ShortcutInfo">
+            <remarks/>
+        </member>
+        <member name="P:WS.ShortcutInfo.ShortcutLink">
+            <remarks/>
+        </member>
+        <member name="T:WS.UtyRtnShortcut">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnShortcut.m_bSuccess">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnShortcut.m_bRedirect">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnShortcut.m_strErrPageQueryStr">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnShortcut.m_strErrSource">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnShortcut.m_strErrMsg">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnShortcut.m_strErrStack">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnShortcut.m_strMsg">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnShortcut.Rtn">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnShortcut.nTotal">
+            <remarks/>
+        </member>
+        <member name="T:WS.BulletinInfo">
+            <remarks/>
+        </member>
+        <member name="P:WS.BulletinInfo.PublishDate">
+            <remarks/>
+        </member>
+        <member name="P:WS.BulletinInfo.Path">
+            <remarks/>
+        </member>
+        <member name="P:WS.BulletinInfo.Subject">
+            <remarks/>
+        </member>
+        <member name="P:WS.BulletinInfo.AttachFile">
+            <remarks/>
+        </member>
+        <member name="T:WS.UtyRtnBulletin">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnBulletin.m_bSuccess">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnBulletin.m_bRedirect">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnBulletin.m_strErrPageQueryStr">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnBulletin.m_strErrSource">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnBulletin.m_strErrMsg">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnBulletin.m_strErrStack">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnBulletin.m_strMsg">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnBulletin.Rtn">
+            <remarks/>
+        </member>
+        <member name="P:WS.UtyRtnBulletin.nTotal">
+            <remarks/>
+        </member>
+        <member name="T:WS.ServerInfo">
+            <remarks/>
+        </member>
+        <member name="P:WS.ServerInfo.m_ServerName">
+            <remarks/>
+        </member>
+        <member name="P:WS.ServerInfo.m_ServerIP">
+            <remarks/>
+        </member>
+        <member name="P:WS.ServerInfo.m_isAlive">
+            <remarks/>
+        </member>
+        <member name="P:WS.ServerInfo.m_LastUpdate">
+            <remarks/>
+        </member>
+        <member name="T:WS.ServerState">
+            <remarks/>
+        </member>
+        <member name="P:WS.ServerState.MapServerState">
+            <remarks/>
+        </member>
+        <member name="T:WS.DictionaryEntry">
+            <remarks/>
+        </member>
+        <member name="P:WS.DictionaryEntry.Key">
+            <remarks/>
+        </member>
+        <member name="P:WS.DictionaryEntry.Value">
+            <remarks/>
+        </member>
+        <member name="T:WS.SyncUserInfo">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_strArtifact">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_strAccount">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_strActiveRoleOU">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_strActiveRoleNo">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_strAddress">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_strLogonTime">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_strSourceOrgNo">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_arrAccessTarget">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_strMachineType">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserInfo.m_strMainOrgNo">
+            <remarks/>
+        </member>
+        <member name="T:WS.DictionaryEntrySync">
+            <remarks/>
+        </member>
+        <member name="P:WS.DictionaryEntrySync.Key">
+            <remarks/>
+        </member>
+        <member name="P:WS.DictionaryEntrySync.Value">
+            <remarks/>
+        </member>
+        <member name="T:WS.SyncUserPool">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserPool.MapArtifact">
+            <remarks/>
+        </member>
+        <member name="P:WS.SyncUserPool.MapIP">
+            <remarks/>
+        </member>
+        <member name="T:WS.ServerStateSync">
+            <remarks/>
+        </member>
+        <member name="P:WS.ServerStateSync.userPool">
+            <remarks/>
+        </member>
+        <member name="P:WS.ServerStateSync.serverPool">
+            <remarks/>
+        </member>
+        <member name="T:WS.RetMsgBorrowCard">
+            <remarks/>
+        </member>
+        <member name="P:WS.RetMsgBorrowCard.m_DsRet">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetRoleMailCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetRoleMailCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetRoleMailCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserEmailCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserEmailCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserEmailCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.WriteAccessLogCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.WriteAccessLogCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.WriteAccessLogCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetMOICAMapAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetMOICAMapAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetMOICAMapAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.QueryMOICACertStatusCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.QueryMOICACertStatusCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.QueryMOICACertStatusCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserInfo2CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserInfo2CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserInfo2CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetAPPMapCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAccountNameCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAccountNameCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetAccountNameCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAccountNameWithOrgNoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAccountNameWithOrgNoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetAccountNameWithOrgNoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUpLevelUnitOfAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUpLevelUnitOfAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUpLevelUnitOfAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUpLevelFirstUnitOfAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUpLevelFirstUnitOfAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUpLevelFirstUnitOfAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetServerDispCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.CheckCertificateValidityCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.CheckCertificateValidityCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.CheckCertificateValidityCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.UpdateUserEnvSetCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.UpdateUserEnvSetCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.UpdateUserEnvSetCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetCardLoanInfoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetCardLoanInfoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetCardLoanInfoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.RegistIPWithArtifactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.RegistIPWithArtifactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.RegistIPWithArtifactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.RegistIPWithArtifactAndMachineTypeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.RegistIPWithArtifactAndMachineTypeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.RegistIPWithArtifactAndMachineTypeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.CheckServerStateCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.CheckServerStateCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.CheckServerStateCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.SyncUserMapCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.SyncActiveRoleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.SyncMachineTypeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LinkCertCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LinkCertCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.LinkCertCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.CheckServerIsAliveCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.CheckServerIsAliveCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.CheckServerIsAliveCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetIPByArtifactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetIPByArtifactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetIPByArtifactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetNLBServerStateCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetNLBServerStateCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetNLBServerStateCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.CheckCertLinkCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.CheckCertLinkCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.CheckCertLinkCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ForgotPWDCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.ForgotPWDCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.ForgotPWDCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetCaptchaModeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetCaptchaModeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetCaptchaModeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GenCaptchaCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GenCaptchaCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GenCaptchaCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.PdaRegisterCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.PdaRegisterCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.PdaRegisterCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.PdaLogonCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.PdaLogonCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.PdaLogonCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetWebMethodInfoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetWebMethodInfoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetWebMethodInfoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetArtifactByIPCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetArtifactByIPCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetArtifactByIPCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonChkCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonChkCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.LogonChkCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAccountMappedByArtifactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAccountMappedByArtifactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetAccountMappedByArtifactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.UpdateCertMapOfAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.UpdateCertMapOfAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.UpdateCertMapOfAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.UpdateCertMapCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.UpdateCertMapCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.UpdateCertMapCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.RemoveCertFromMapCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.RemoveCertFromMapCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.RemoveCertFromMapCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByCertCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByCertCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.LogonByCertCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ChangeActiveRoleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.ChangeActiveRoleCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.ChangeActiveRoleCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetActiveRoleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetActiveRoleCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetActiveRoleCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByPasswordWithLimitsAndOrgNoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByPasswordWithLimitsAndOrgNoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.LogonByPasswordWithLimitsAndOrgNoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByPasswordWithLimitsAndOrgNoAndMachineTypeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByPasswordWithLimitsAndOrgNoAndMachineTypeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.LogonByPasswordWithLimitsAndOrgNoAndMachineTypeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByPasswordWithLimitsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByPasswordWithLimitsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.LogonByPasswordWithLimitsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByPasswordCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogonByPasswordCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.LogonByPasswordCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.BOCACheckSSOCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.BOCACheckSSOCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.BOCACheckSSOCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ServerStatusCheckCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.ServerStatusCheckCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.ServerStatusCheckCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogoutCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogoutCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.LogoutCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogoutBySSOCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.LogoutBySSOCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.LogoutBySSOCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserBulletinCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserBulletinCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserBulletinCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserBulletinNewCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserBulletinNewCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserBulletinNewCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetSpotLightMsgCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetSpotLightMsgCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetSpotLightMsgCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserProgramsJSONCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserProgramsJSONCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserProgramsJSONCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserProgramsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserProgramsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserProgramsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserProgramsExCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserProgramsExCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserProgramsExCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserProgramsWithAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserProgramsWithAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserProgramsWithAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetAAsCacheCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetAAsCacheCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.ResetAAsCacheCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetURCacheCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetURCacheCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.ResetURCacheCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetAllURCacheCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetAllURCacheCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.ResetAllURCacheCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetCacheByTypeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.ResetCacheByTypeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.ResetCacheByTypeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetSOURCE_ORGNOCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetSOURCE_ORGNOCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetSOURCE_ORGNOCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetEnvSettingCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetEnvSettingCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetEnvSettingCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserShortcutCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserShortcutCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserShortcutCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserShortcutNewCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserShortcutNewCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserShortcutNewCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserAddressCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserAddressCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserAddressCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserAddressWithArtifactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserAddressWithArtifactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserAddressWithArtifactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserAddressWithMachineTypeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetUserAddressWithMachineTypeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetUserAddressWithMachineTypeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetRoleAddressCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetRoleAddressCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetRoleAddressCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetRoleAddressWithMachineTypeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetRoleAddressWithMachineTypeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetRoleAddressWithMachineTypeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAllUserAddressCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAllUserAddressCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetAllUserAddressCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAllUserAddressWithMachineTypeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetAllUserAddressWithMachineTypeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetAllUserAddressWithMachineTypeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetProxyUserAddressCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetProxyUserAddressCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetProxyUserAddressCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetProxyUserAddressWithMachineTypeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.GetProxyUserAddressWithMachineTypeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.GetProxyUserAddressWithMachineTypeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ChangePasswordWithOrgNoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.ChangePasswordWithOrgNoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.ChangePasswordWithOrgNoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.ChangePasswordCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.ChangePasswordCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.ChangePasswordCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.DownloadUserStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.DownloadUserStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.DownloadUserStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.DownloadUnitStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.DownloadUnitStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.DownloadUnitStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.DownloadOrgStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.DownloadOrgStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.DownloadOrgStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.UploadUserStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.UploadUserStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.UploadUserStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.UploadUnitStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.UploadUnitStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.UploadUnitStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.UploadOrgStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.UploadOrgStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.UploadOrgStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.WinLogonWithOrgNoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.WinLogonWithOrgNoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.WinLogonWithOrgNoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.UserOrgSwitchCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.UserOrgSwitchCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.UserOrgSwitchCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:WS.WinLogonCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:WS.WinLogonCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:WS.WinLogonCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 電子封裝檔 SYSTEM "附件三.DTD" [
+	<!ENTITY % 基本標籤 SYSTEM "94_檔案基本標籤.ent">
+	<!ENTITY % 交換用標籤 SYSTEM "94_檔案交換用標籤.ent">
+	<!ENTITY % 內部用標籤 SYSTEM "94_檔管內部用標籤.ent">
+]>
+<電子封裝檔>
+	<封裝檔內容 Id="Wrap">
+		<封裝檔資訊>電子檔案</封裝檔資訊>
+		<電子檔案>
+			<線上簽核流程 Id="FlowInfo"/>
+			<線上簽核資訊 Id="Sol"/>
+		</電子檔案>
+	</封裝檔內容>
+</電子封裝檔>

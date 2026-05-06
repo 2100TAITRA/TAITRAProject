@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR710D" targetNamespace="http://tempuri.org/AKR710D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR710D.xsd" xmlns:mstns="http://tempuri.org/AKR710D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR710D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PLAN_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUEORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CRT_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="RMVSEC_COND" type="xs:string" minOccurs="0" />
+							<xs:element name="RMVSEC_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_CATEGORY" type="xs:string" minOccurs="0" />
+							<xs:element name="GroupUnit" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

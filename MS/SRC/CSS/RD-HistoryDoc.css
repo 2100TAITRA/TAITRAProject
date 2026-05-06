@@ -1,0 +1,298 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#historyDocWorkspace {
+    background: transparent;
+}
+
+#historyDocWorkspace .sub_content,  #aki800ListWorkspace .sub_content{
+    /* 2016.5.12 
+    background-color: #EEE; */
+    background-color: transparent;
+    
+    overflow-y: auto;
+    height: 100%; /*calc(100% - 0.8em - 2px); */
+    padding: 0;
+}
+
+#history_leftBottomPane, #history_leftTopPane, #querydoc_leftTopPane {
+    position: relative;
+}
+
+#history_leftTopPane, #querydoc_leftTopPane {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* 2016.5.12 
+    background: #ddd; */
+    background: transparent;
+}
+
+#history_leftBottomPane {
+    /* 2016.5. 12
+    background: #ddd; */
+    
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#history_icon_list_content {
+    width: calc(100% - 25px);
+    height: 100%;
+}
+
+#history_todolistToolbar .selector_wrapper {
+    width: 50%;
+    padding-left: 1em;
+}
+
+#history_todolistToolbar .history_doc_classify {
+    background-image: none;
+    background-color: transparent;
+    padding-left: 2em;
+    margin-top: -0.4em;
+}
+
+.history_todolist_container, .querydoc_todolist_container {
+    margin: 0 1em; /*0 2em 0 1em; 2017.4.5 - modify */
+    overflow: hidden;
+    height: calc(100% - 3.2em); /* 92%; 2017.4.5 - modified */
+}
+
+#history_todolist_tb,  #querydoc_todolist_tb {
+    border-collapse: collapse;
+    border-radius: 5px;
+    width: 100%;
+    display: table;
+}
+
+#history_todolist_tb thead, #history_todolist_tb thead tr, #history_todolist_tb thead th,
+#querydoc_todolist_tb thead, #querydoc_todolist_tb thead tr, #querydoc_todolist_tb thead th{
+    border-right: 1px solid #fff;
+}
+
+#history_todolist_tb thead th,
+#querydoc_todolist_tb thead th
+{
+    padding: 1px 2px;
+    margin: 0 2px 3px 0;
+    /*background: #e0e0e0; 20170419*//* #e4f5fc; 2017.4 - modify */
+	background: #cbe7f7; /*20170419*/
+    /*background: -moz-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f5fc), color-stop(50%,#bfe8f9), color-stop(51%,#9fd8ef), color-stop(100%,#2ab0ed));
+    background: -webkit-linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%);
+    background: linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%);*/
+    border-radius: 2px; /*5px; 2017.4 - modify */
+    box-shadow: 1px 1px 1px #888; /*1px 3px 3px #006666; 2017.4 */
+    position: relative;
+}
+
+/* 2017.4 - color-scheme */
+.cs-ly #history_todolist_tb thead th, .cs-ly #querydoc_todolist_tb thead th
+{
+	background: #fcf3d8;
+}
+.cs-lg #history_todolist_tb thead th, .cs-lg #querydoc_todolist_tb thead th
+{
+	background: #e0ecb8;
+}
+.cs-lp #history_todolist_tb thead th, .cs-lp #querydoc_todolist_tb thead th
+{
+	background: #fae4f1;
+}
+
+#history_todolist_tb thead th > a, #history_todolist_tb thead th > div > a,
+#querydoc_todolist_tb thead th > a, #querydoc_todolist_tb thead th > div > a
+{
+    text-decoration: none;
+    /*color: #00f; 20170413*/
+	color: #333; /*20170413*/
+    font-size: larger;
+}
+
+/* 2017.4 - add */
+#querydoc_todolist_tb tbody td {
+    border: 1px solid #fff;
+}
+
+#history_todolist_tb tbody img,
+#querydoc_todolist_tb tbody img
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#history_todolist_tb thead th div.sortIcon,
+#querydoc_todolist_tb thead th div.sortIcon
+{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    background: transparent;
+    border-radius: 8px;
+    opacity: 0.8;
+}
+
+#history_todolist_tb .docno_header,
+#querydoc_todolist_tb .docno_header
+{
+    width: 5em;
+    text-align: center;
+}
+
+#history_todolist_tb .docno,
+#querydoc_todolist_tb .docno
+{
+    text-align: center;
+    font-weight: 800;
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+}
+
+#history_todolist_tb tbody td input,
+#querydoc_todolist_tb tbody td input
+{
+    border: none;
+    background-color: #ddd;
+}
+
+
+#history_leftTopPane .searchView_Folder {
+    text-align: center;
+}
+
+#history_leftTopPane .searchView_Folder .selector_wrapper {
+    width: 95%;
+}
+
+#history-search-list, #querydoc-search-list {
+    padding-top: 0px;
+    /* background-color: #eee; */
+    /* overflow-y: auto; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#history_selectedClass_seacrh {
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    text-indent: 5px;
+}
+
+#history_selectedClass_seacrh {
+    border-radius: 0.5em;
+    font-weight: 800;
+    text-shadow: 0 1px 1px #fff;
+    display: inline;
+}
+
+#history_leftTopPane .search-wrapper > form,
+#querydoc_leftTopPane .search-wrapper > form
+{
+    width: calc(100% - 2em);
+    margin-left: 0.5em;
+}
+
+#history_leftTopPane .selector_wrapper > span {
+    right: 7.5%;
+}
+
+#querydoc_leftTopPane .selector_wrapper > span
+{
+    right: 3%;
+}
+
+#history_leftTopPane .searchViewContent {
+    background-color: #CFF;
+    margin-right: 24px;
+}
+
+#history-search-list li,
+#querydoc-search-list li
+{
+    float: none;
+    text-indent: 0;
+    padding: 0;
+    margin: 10px 6px;
+    list-style-image: none !important;
+}
+
+#history-search-list li,
+#querydoc-search-list li
+{
+    width: 95%;
+    margin: 10px auto;
+}
+
+/* icon模式 */
+.history_todolist_icon {
+    display: block;
+    background-color: #CCC;
+}
+
+#history_leftTopPane .tdl_rt_toolbar,  #history_leftBottomPane .tdl_rt_toolbar {
+    position: absolute;
+    right: 25px;
+    top: 0px;
+    width: 45px;
+    height: 36px;
+    margin-top: -8px;
+    background-image: linear-gradient(#396B9E /*{b-bup-background-start}*/, #5F9CC5 /*{b-bup-background-end}*/);
+    border-radius: 0 0 .5em .5em;
+    border: 1px solid #396B9E;
+    -webkit-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+    -moz-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+    box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+}
+
+#history_todolistToolbar .tdl_rt_toolbar {
+    width: 45px;
+}
+
+#btn_history_iconmode {
+    background: transparent url('../IMAGE/SSO/tdl_iconmode.png') 0 0 no-repeat;
+    float: left;
+}
+
+#btn_history_listmode {
+    background: transparent url('../IMAGE/SSO/tdl_listmode.png') 0 0 no-repeat;
+    float: left;
+}
+
+/* 公文預覽窗格內容 */
+.cmdForDoc .cmdForEDoc, .comForDoc .cmdForPDoc {
+    display: none;    
+}
+
+.cmdForDoc .cmdItem.docInfoItem {
+    /*background-image: gradient(linear,left top,left bottom, color-stop(0, #74B042), color-stop(1, #56A00E));*/
+    background-image: linear-gradient(#FCEDA7 /*{e-bup-background-start}*/, #FADB4E /*{e-bup-background-end}*/); /* 明黃 */
+    color: #444;
+    position: relative;
+}
+
+.cmdForDoc .cmdItem.draftItem {
+    background-image: linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+    position: relative;
+    color: #444;
+}
+
+.cmdForDoc .cmdItem.attItem {
+    background-image: linear-gradient(#ffffff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); 
+    position: relative;
+    color: #444;
+}
+
+.cmdForDoc .cmdForAttach {
+    margin-top: 5px;
+}

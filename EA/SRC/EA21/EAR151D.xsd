@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAR151D" targetNamespace="http://tempuri.org/EAR151D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/EAR151D.xsd" xmlns:mstns="http://tempuri.org/EAR151D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAR151D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="DELAY_FILEATT">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="EXTFILE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="TX_DESC" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="SEQ_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_DESC" type="xs:string" minOccurs="0" />
+							<xs:element name="MEDIA_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="MEDIA_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_UNIT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_FLAG" type="xs:string" minOccurs="0" />
+							<xs:element name="DE_EXTFILE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DE_FILE_DATE" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

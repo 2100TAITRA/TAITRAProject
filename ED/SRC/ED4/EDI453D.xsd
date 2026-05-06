@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDI453D" targetNamespace="http://tempuri.org/EDI453D.xsd" xmlns:mstns="http://tempuri.org/EDI453D.xsd" xmlns="http://tempuri.org/EDI453D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDI453D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDI453D" msprop:Generator_UserDSName="EDI453D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDI453L" msprop:Generator_TableClassName="EDI453LDataTable" msprop:Generator_TableVarName="tableEDI453L" msprop:Generator_RowChangedName="EDI453LRowChanged" msprop:Generator_TablePropName="EDI453L" msprop:Generator_RowDeletingName="EDI453LRowDeleting" msprop:Generator_RowChangingName="EDI453LRowChanging" msprop:Generator_RowEvHandlerName="EDI453LRowChangeEventHandler" msprop:Generator_RowDeletedName="EDI453LRowDeleted" msprop:Generator_RowClassName="EDI453LRow" msprop:Generator_UserTableName="EDI453L" msprop:Generator_RowEvArgName="EDI453LRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FURTHER_STATE" msprop:Generator_ColumnVarNameInTable="columnFURTHER_STATE" msprop:Generator_ColumnPropNameInRow="FURTHER_STATE" msprop:Generator_ColumnPropNameInTable="FURTHER_STATEColumn" msprop:Generator_UserColumnName="FURTHER_STATE" type="xs:string" minOccurs="0" />
+              <xs:element name="FURTHER_REASON" msprop:Generator_ColumnVarNameInTable="columnFURTHER_REASON" msprop:Generator_ColumnPropNameInRow="FURTHER_REASON" msprop:Generator_ColumnPropNameInTable="FURTHER_REASONColumn" msprop:Generator_UserColumnName="FURTHER_REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="FURTHER_DOCNO" msprop:Generator_ColumnVarNameInTable="columnFURTHER_DOCNO" msprop:Generator_ColumnPropNameInRow="FURTHER_DOCNO" msprop:Generator_ColumnPropNameInTable="FURTHER_DOCNOColumn" msprop:Generator_UserColumnName="FURTHER_DOCNO" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="FROMORG_NAME" msprop:Generator_ColumnVarNameInTable="columnFROMORG_NAME" msprop:Generator_ColumnPropNameInRow="FROMORG_NAME" msprop:Generator_ColumnPropNameInTable="FROMORG_NAMEColumn" msprop:Generator_UserColumnName="FROMORG_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CLOSE_DATE" msprop:Generator_ColumnVarNameInTable="columnCLOSE_DATE" msprop:Generator_ColumnPropNameInRow="CLOSE_DATE" msprop:Generator_ColumnPropNameInTable="CLOSE_DATEColumn" msprop:Generator_UserColumnName="CLOSE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="FURTHER_TYPE" msprop:Generator_ColumnVarNameInTable="columnFURTHER_TYPE" msprop:Generator_ColumnPropNameInRow="FURTHER_TYPE" msprop:Generator_ColumnPropNameInTable="FURTHER_TYPEColumn" msprop:Generator_UserColumnName="FURTHER_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO" msprop:Generator_ColumnPropNameInRow="DEPT_NO" msprop:Generator_ColumnPropNameInTable="DEPT_NOColumn" msprop:Generator_UserColumnName="DEPT_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FULL_DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnFULL_DEPT_NAME" msprop:Generator_ColumnPropNameInRow="FULL_DEPT_NAME" msprop:Generator_ColumnPropNameInTable="FULL_DEPT_NAMEColumn" msprop:Generator_UserColumnName="FULL_DEPT_NAME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

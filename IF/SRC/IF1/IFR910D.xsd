@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IFR910D" targetNamespace="http://tempuri.org/IFR910D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/IFR910D.xsd" xmlns:mstns="http://tempuri.org/IFR910D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="IFR910D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="IFR910L">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="CARD_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="STATUS" type="xs:string" minOccurs="0" />
+							<xs:element name="BORROW_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="REPLY_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="LEAD_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="BORROW_REASON" type="xs:string" minOccurs="0" />
+							<xs:element name="SERIAL_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="EXPIRA_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ENTRY_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ENTRY_USER" type="xs:string" minOccurs="0" />
+							<xs:element name="DESC" type="xs:string" minOccurs="0" />
+							<xs:element name="SOURCE_ORGNO" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="IFR910L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="CARD_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="SOURCE_ORGNO" type="xs:string" minOccurs="0" />
+							<xs:element name="BORROW_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="REPLY_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="LEAD_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="BORROW_REASON" type="xs:string" minOccurs="0" />
+							<xs:element name="DESC" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

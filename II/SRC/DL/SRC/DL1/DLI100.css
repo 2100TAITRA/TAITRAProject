@@ -1,0 +1,141 @@
+#hiddenDiv {
+    
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    visibility: hidden;
+    top: 0px;
+    left: 0px;
+}
+
+#BaseTable {
+    
+    position: absolute;
+    width: 100%;
+    height: 383px;
+    top: 50px;
+}
+
+#lbOutSide1 {
+    
+    Width: 70px;
+    
+    
+}
+
+#txOutIssueNo {
+    
+    Width: 76px;
+    
+    
+}
+
+#lbOutSide2 {
+    
+    
+    
+}
+
+#txOutDate {
+    
+    Width: 55px;
+    
+    
+}
+
+#lbOutSide3 {
+    
+    Width: 70px;
+    
+    
+}
+
+#txOutIdentifyCode {
+    
+    Width: 76px;
+    
+    
+}
+
+#lbOutSide0 {
+    Width: 400px;
+    Height: 16px;
+    
+    
+    
+}
+
+#td1 {
+    width: 10%;
+    height: 69px;
+}
+
+#td2 {
+    
+    height: 69px;
+    valign: top;
+    align: center;
+}
+
+#div1 {
+    display: table;
+}
+
+#div2, #div3, #div4, #div5 {
+    display: table-row;
+    text-align: left;
+}
+
+#FieldSet {
+    width: 90%;
+    height: 80px;
+}
+
+#tbTool {
+
+}
+
+
+#dg1 {
+    Width: 100%;
+    Height: 92px;
+    BackColor: White;
+    BorderStyle: None;
+    BorderColor: #DEDFDE;
+    ForeColor: Black;
+    BorderWidth: 1px;
+}
+
+
+
+   .custom-combobox {
+        position: relative;
+        display: inline-block;
+    }
+
+    .custom-combobox-toggle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: -1px;
+        padding: 0;
+    }
+
+    .custom-combobox-input {
+        margin: 0;
+        /*padding: 1px 2px;*/
+		font-weight:normal;
+		color: Navy;
+    }
+	
+	.ui-widget{
+		font-size:1em;
+	}
+	
+	.ui-autocomplete {
+    max-height: 10em;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+

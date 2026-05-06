@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR148D" targetNamespace="http://tempuri.org/EDR148D.xsd" xmlns:mstns="http://tempuri.org/EDR148D.xsd" xmlns="http://tempuri.org/EDR148D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR148D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR148D" msprop:Generator_UserDSName="EDR148D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR148L1" msprop:Generator_TableClassName="EDR148L1DataTable" msprop:Generator_TableVarName="tableEDR148L1" msprop:Generator_TablePropName="EDR148L1" msprop:Generator_RowDeletingName="EDR148L1RowDeleting" msprop:Generator_RowChangingName="EDR148L1RowChanging" msprop:Generator_RowEvHandlerName="EDR148L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR148L1RowDeleted" msprop:Generator_UserTableName="EDR148L1" msprop:Generator_RowChangedName="EDR148L1RowChanged" msprop:Generator_RowEvArgName="EDR148L1RowChangeEvent" msprop:Generator_RowClassName="EDR148L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="RCV_TYPE_P_CNT" msprop:Generator_ColumnVarNameInTable="columnRCV_TYPE_P_CNT" msprop:Generator_ColumnPropNameInRow="RCV_TYPE_P_CNT" msprop:Generator_ColumnPropNameInTable="RCV_TYPE_P_CNTColumn" msprop:Generator_UserColumnName="RCV_TYPE_P_CNT" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="RATIO_P" msprop:Generator_ColumnVarNameInTable="columnRATIO_P" msprop:Generator_ColumnPropNameInRow="RATIO_P" msprop:Generator_ColumnPropNameInTable="RATIO_PColumn" msprop:Generator_UserColumnName="RATIO_P" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="RCV_TYPE_E_CNT" msprop:Generator_ColumnVarNameInTable="columnRCV_TYPE_E_CNT" msprop:Generator_ColumnPropNameInRow="RCV_TYPE_E_CNT" msprop:Generator_ColumnPropNameInTable="RCV_TYPE_E_CNTColumn" msprop:Generator_UserColumnName="RCV_TYPE_E_CNT" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="RATIO_E" msprop:Generator_ColumnVarNameInTable="columnRATIO_E" msprop:Generator_ColumnPropNameInRow="RATIO_E" msprop:Generator_ColumnPropNameInTable="RATIO_EColumn" msprop:Generator_UserColumnName="RATIO_E" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="SUM" msprop:Generator_ColumnVarNameInTable="columnSUM" msprop:Generator_ColumnPropNameInRow="SUM" msprop:Generator_ColumnPropNameInTable="SUMColumn" msprop:Generator_UserColumnName="SUM" type="xs:string" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

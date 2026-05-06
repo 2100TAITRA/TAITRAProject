@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR231D" targetNamespace="http://tempuri.org/EAR231D.xsd" xmlns:mstns="http://tempuri.org/EAR231D.xsd" xmlns="http://tempuri.org/EAR231D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR231D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EAR231D" msprop:Generator_UserDSName="EAR231D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DOC_MAIN" msprop:Generator_TableClassName="DOC_MAINDataTable" msprop:Generator_TableVarName="tableDOC_MAIN" msprop:Generator_RowChangedName="DOC_MAINRowChanged" msprop:Generator_TablePropName="DOC_MAIN" msprop:Generator_RowDeletingName="DOC_MAINRowDeleting" msprop:Generator_RowChangingName="DOC_MAINRowChanging" msprop:Generator_RowEvHandlerName="DOC_MAINRowChangeEventHandler" msprop:Generator_RowDeletedName="DOC_MAINRowDeleted" msprop:Generator_RowClassName="DOC_MAINRow" msprop:Generator_UserTableName="DOC_MAIN" msprop:Generator_RowEvArgName="DOC_MAINRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FILE_YEAR" msprop:Generator_ColumnVarNameInTable="columnFILE_YEAR" msprop:Generator_ColumnPropNameInRow="FILE_YEAR" msprop:Generator_ColumnPropNameInTable="FILE_YEARColumn" msprop:Generator_UserColumnName="FILE_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CLS" msprop:Generator_ColumnVarNameInTable="columnFILE_CLS" msprop:Generator_ColumnPropNameInRow="FILE_CLS" msprop:Generator_ColumnPropNameInTable="FILE_CLSColumn" msprop:Generator_UserColumnName="FILE_CLS" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CASE" msprop:Generator_ColumnVarNameInTable="columnFILE_CASE" msprop:Generator_ColumnPropNameInRow="FILE_CASE" msprop:Generator_ColumnPropNameInTable="FILE_CASEColumn" msprop:Generator_UserColumnName="FILE_CASE" type="xs:string" minOccurs="0" />
+              <xs:element name="CASE_NAME" msprop:Generator_ColumnVarNameInTable="columnCASE_NAME" msprop:Generator_ColumnPropNameInRow="CASE_NAME" msprop:Generator_ColumnPropNameInTable="CASE_NAMEColumn" msprop:Generator_UserColumnName="CASE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="KEEP_YEAR" msprop:Generator_ColumnVarNameInTable="columnKEEP_YEAR" msprop:Generator_ColumnPropNameInRow="KEEP_YEAR" msprop:Generator_ColumnPropNameInTable="KEEP_YEARColumn" msprop:Generator_UserColumnName="KEEP_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="VOL_COUNT" msprop:Generator_ColumnVarNameInTable="columnVOL_COUNT" msprop:Generator_ColumnPropNameInRow="VOL_COUNT" msprop:Generator_ColumnPropNameInTable="VOL_COUNTColumn" msprop:Generator_UserColumnName="VOL_COUNT" type="xs:int" minOccurs="0" />
+              <xs:element name="SEQ_COUNT" msprop:Generator_ColumnVarNameInTable="columnSEQ_COUNT" msprop:Generator_ColumnPropNameInRow="SEQ_COUNT" msprop:Generator_ColumnPropNameInTable="SEQ_COUNTColumn" msprop:Generator_UserColumnName="SEQ_COUNT" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

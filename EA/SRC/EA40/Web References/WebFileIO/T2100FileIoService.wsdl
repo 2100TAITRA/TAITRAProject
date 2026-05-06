@@ -1,0 +1,2741 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://2100T.com.tw" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://2100T.com.tw/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://2100T.com.tw" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://2100T.com.tw">
+      <s:element name="WebFileIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCollection" type="tns:ArrayOfArgFile" />
+            <s:element minOccurs="1" maxOccurs="1" name="argDeleteSource" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argOverWrite" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRemoteService" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArgFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="argFile" nillable="true" type="tns:argFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="argFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToPath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebFileIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebFileIOResult" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfErr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Err" nillable="true" type="tns:Err" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Err">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrIdx" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebFileIO2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCollection" type="tns:ArrayOfArgFile" />
+            <s:element minOccurs="1" maxOccurs="1" name="argDeleteSource" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argOverWrite" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRemoteService" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsPartial" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PartNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalParts" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebFileIO2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebFileIO2Result" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPartialSize">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPartialSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPartialSizeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebFileIoCopyFilesForCowrok">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSrcPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDestPath" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebFileIoCopyFilesForCowrokResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebFileIoCopyFilesForCowrokResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MergeFilesForCoworkDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDestEnvFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCoworkDataInfo" type="tns:ArrayOfArgCoworkFlowData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArgCoworkFlowData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="argCoworkFlowData" nillable="true" type="tns:argCoworkFlowData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="argCoworkFlowData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PathName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgIdList" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreviousMsgId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Thread" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MergeFilesForCoworkDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MergeFilesForCoworkDocInfoResult" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebFileDirPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSearchPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSearchType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebFileDirPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebFileDirPathResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateDraftEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWorkFilename" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPincode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnRoot">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_bRedirect" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrPageQueryStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrStack" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UtyRtnString">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RtnStr" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdateDraftEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDraftEnvelopeResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignDraftEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignDraftEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SignDraftEnvelopeResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWorkFilename" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPincode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateEnvelopeResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SignEnvelopeResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResignSignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResignSignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetResignSignInfoResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSignReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resignSI" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signatureValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signCert" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateResignInfoResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveChildDocTempData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveChildDocTempDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveChildDocTempDataResult" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCOMDocMergeStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocMsgId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCOMDocMergeStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCOMDocMergeStatusResult" type="tns:UtyRtnCOMDocMergeStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnCOMDocMergeStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mergeStateCode" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="removeTmpContent" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdateCOMDocEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocMsgId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPincode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCOMDocEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateCOMDocEnvelopeResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserEnvSetting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argParaType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserEnvSettingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserEnvSettingResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocInfoListByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocInfoListByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocInfoListByJSONResult" type="tns:UtyRtnDocInfos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnDocInfos">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetOnLineApplyDocUnvByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOnLineApplyDocUnvByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOnLineApplyDocUnvByJSONResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocUnvDataByJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocUnvDataByJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocUnvDataByJSONResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocInfoResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImgRotate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="Angle" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImgRotateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImgRotateResult" type="tns:UtyRtnBool" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnBool">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="RtnBool" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ImgSlice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImgSliceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImgSliceResult" type="tns:UtyRtnImgList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnImgList">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ImgList" type="tns:ArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CheckCalledBySelf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HostName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCalledBySelfResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckCalledBySelfResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFileExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckFileExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckFileExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteExceptionLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteExceptionLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckTSV2File">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argFileInfo" type="tns:ArrayOfFileInfoList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFileInfoList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FileInfoList" nillable="true" type="tns:FileInfoList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FileInfoList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PageCnt" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RtnClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrInfoList" type="tns:ArrayOfErrInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfErrInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ErrInfo" nillable="true" type="tns:ErrInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrFile" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckTSV2FileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckTSV2FileResult" type="tns:RtnClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFolderInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFolderInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFolderInfoResult" type="tns:RtnDirInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RtnDirInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="SubDirList" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="FileList" type="tns:ArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetFileHash">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="arFile" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileHashResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileHashResult" type="tns:RtnHashInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RtnHashInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="rtnHash" type="tns:ArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="EnvelopedComTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnvelopedComTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EnvelopedComTestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getpacthsaize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argpath" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getpacthsaizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getpacthsaizeResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType" />
+      <s:element name="UtyRtnString" nillable="true" type="tns:UtyRtnString" />
+      <s:element name="ArrayOfErr" nillable="true" type="tns:ArrayOfErr" />
+      <s:element name="UtyRtnCOMDocMergeStatus" nillable="true" type="tns:UtyRtnCOMDocMergeStatus" />
+      <s:element name="UtyRtnDocInfos" nillable="true" type="tns:UtyRtnDocInfos" />
+      <s:element name="UtyRtnBool" nillable="true" type="tns:UtyRtnBool" />
+      <s:element name="UtyRtnImgList" nillable="true" type="tns:UtyRtnImgList" />
+      <s:element name="RtnDirInfo" nillable="true" type="tns:RtnDirInfo" />
+      <s:element name="RtnHashInfo" nillable="true" type="tns:RtnHashInfo" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+    <s:schema targetNamespace="http://2100T.com.tw/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WebFileIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WebFileIO" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WebFileIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIO2SoapIn">
+    <wsdl:part name="parameters" element="tns:WebFileIO2" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIO2SoapOut">
+    <wsdl:part name="parameters" element="tns:WebFileIO2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetPartialSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPartialSize" />
+  </wsdl:message>
+  <wsdl:message name="GetPartialSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPartialSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokSoapIn">
+    <wsdl:part name="parameters" element="tns:WebFileIoCopyFilesForCowrok" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokSoapOut">
+    <wsdl:part name="parameters" element="tns:WebFileIoCopyFilesForCowrokResponse" />
+  </wsdl:message>
+  <wsdl:message name="MergeFilesForCoworkDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:MergeFilesForCoworkDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="MergeFilesForCoworkDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:MergeFilesForCoworkDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebFileDirPath" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebFileDirPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDraftEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDraftEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDraftEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDraftEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignDraftEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:SignDraftEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="SignDraftEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:SignDraftEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:SignEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="SignEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:SignEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResignSignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetResignSignInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetResignSignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetResignSignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateResignInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveChildDocTempDataSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveChildDocTempData" />
+  </wsdl:message>
+  <wsdl:message name="RemoveChildDocTempDataSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveChildDocTempDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCOMDocMergeStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCOMDocMergeStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetCOMDocMergeStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCOMDocMergeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCOMDocEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCOMDocEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCOMDocEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCOMDocEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEnvSettingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserEnvSetting" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEnvSettingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserEnvSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoListByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocInfoListByJSON" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoListByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocInfoListByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOnLineApplyDocUnvByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOnLineApplyDocUnvByJSON" />
+  </wsdl:message>
+  <wsdl:message name="GetOnLineApplyDocUnvByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOnLineApplyDocUnvByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocUnvDataByJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocUnvDataByJSON" />
+  </wsdl:message>
+  <wsdl:message name="GetDocUnvDataByJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocUnvDataByJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImgRotateSoapIn">
+    <wsdl:part name="parameters" element="tns:ImgRotate" />
+  </wsdl:message>
+  <wsdl:message name="ImgRotateSoapOut">
+    <wsdl:part name="parameters" element="tns:ImgRotateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImgSliceSoapIn">
+    <wsdl:part name="parameters" element="tns:ImgSlice" />
+  </wsdl:message>
+  <wsdl:message name="ImgSliceSoapOut">
+    <wsdl:part name="parameters" element="tns:ImgSliceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCalledBySelfSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCalledBySelf" />
+  </wsdl:message>
+  <wsdl:message name="CheckCalledBySelfSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCalledBySelfResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckFileExistSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckFileExist" />
+  </wsdl:message>
+  <wsdl:message name="CheckFileExistSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckFileExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteExceptionLogSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteExceptionLog" />
+  </wsdl:message>
+  <wsdl:message name="WriteExceptionLogSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteExceptionLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTSV2FileSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTSV2File" />
+  </wsdl:message>
+  <wsdl:message name="CheckTSV2FileSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTSV2FileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFolderInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFolderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHashSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileHash" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHashSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileHashResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnvelopedComTestSoapIn">
+    <wsdl:part name="parameters" element="tns:EnvelopedComTest" />
+  </wsdl:message>
+  <wsdl:message name="EnvelopedComTestSoapOut">
+    <wsdl:part name="parameters" element="tns:EnvelopedComTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="getpacthsaizeSoapIn">
+    <wsdl:part name="parameters" element="tns:getpacthsaize" />
+  </wsdl:message>
+  <wsdl:message name="getpacthsaizeSoapOut">
+    <wsdl:part name="parameters" element="tns:getpacthsaizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPartialSizeHttpGetIn" />
+  <wsdl:message name="GetPartialSizeHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSrcPath" type="s:string" />
+    <wsdl:part name="argDestPath" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSearchPath" type="s:string" />
+    <wsdl:part name="argSearchType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDraftEnvelopeHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argUserName" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argWorkFilename" type="s:string" />
+    <wsdl:part name="argFlags" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argPincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDraftEnvelopeHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="SignDraftEnvelopeHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argUserName" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argSignValue" type="s:string" />
+    <wsdl:part name="argSignCert" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SignDraftEnvelopeHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEnvelopeHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argWorkFilename" type="s:string" />
+    <wsdl:part name="argFlags" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argPincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEnvelopeHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="SignEnvelopeHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argSignValue" type="s:string" />
+    <wsdl:part name="argSignCert" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SignEnvelopeHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetResignSignInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResignSignInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResignInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="sSignReason" type="s:string" />
+    <wsdl:part name="resignSI" type="s:string" />
+    <wsdl:part name="signatureValue" type="s:string" />
+    <wsdl:part name="signCert" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResignInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="RemoveChildDocTempDataHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argDocFilePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveChildDocTempDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfErr" />
+  </wsdl:message>
+  <wsdl:message name="GetCOMDocMergeStatusHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argMainDocNo" type="s:string" />
+    <wsdl:part name="argMainDocMsgId" type="s:string" />
+    <wsdl:part name="argFlags" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCOMDocMergeStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnCOMDocMergeStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCOMDocEnvelopeHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argMainDocNo" type="s:string" />
+    <wsdl:part name="argMainDocMsgId" type="s:string" />
+    <wsdl:part name="argFlags" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argPincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCOMDocEnvelopeHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEnvSettingHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argParaType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEnvSettingHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoListByJSONHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocList" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoListByJSONHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnDocInfos" />
+  </wsdl:message>
+  <wsdl:message name="GetOnLineApplyDocUnvByJSONHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOnLineApplyDocUnvByJSONHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetDocUnvDataByJSONHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocUnvDataByJSONHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="ImgRotateHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="Path" type="s:string" />
+    <wsdl:part name="FileName" type="s1:StringArray" />
+    <wsdl:part name="Angle" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImgRotateHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnBool" />
+  </wsdl:message>
+  <wsdl:message name="ImgSliceHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="Path" type="s:string" />
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImgSliceHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnImgList" />
+  </wsdl:message>
+  <wsdl:message name="CheckCalledBySelfHttpGetIn">
+    <wsdl:part name="HostName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCalledBySelfHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckFileExistHttpGetIn">
+    <wsdl:part name="argFilePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckFileExistHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WriteExceptionLogHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argMsg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteExceptionLogHttpGetOut" />
+  <wsdl:message name="GetFolderInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnDirInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHashHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="arFile" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHashHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnHashInfo" />
+  </wsdl:message>
+  <wsdl:message name="EnvelopedComTestHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnvelopedComTestHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getpacthsaizeHttpGetIn">
+    <wsdl:part name="argpath" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="getpacthsaizeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPartialSizeHttpPostIn" />
+  <wsdl:message name="GetPartialSizeHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSrcPath" type="s:string" />
+    <wsdl:part name="argDestPath" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSearchPath" type="s:string" />
+    <wsdl:part name="argSearchType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebFileDirPathHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnyType" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDraftEnvelopeHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argUserName" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argWorkFilename" type="s:string" />
+    <wsdl:part name="argFlags" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argPincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDraftEnvelopeHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="SignDraftEnvelopeHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argUserName" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argSignValue" type="s:string" />
+    <wsdl:part name="argSignCert" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SignDraftEnvelopeHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEnvelopeHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argWorkFilename" type="s:string" />
+    <wsdl:part name="argFlags" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argPincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEnvelopeHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="SignEnvelopeHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argSignValue" type="s:string" />
+    <wsdl:part name="argSignCert" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SignEnvelopeHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetResignSignInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetResignSignInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResignInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="sSignReason" type="s:string" />
+    <wsdl:part name="resignSI" type="s:string" />
+    <wsdl:part name="signatureValue" type="s:string" />
+    <wsdl:part name="signCert" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResignInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="RemoveChildDocTempDataHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argDocFilePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveChildDocTempDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfErr" />
+  </wsdl:message>
+  <wsdl:message name="GetCOMDocMergeStatusHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argMainDocNo" type="s:string" />
+    <wsdl:part name="argMainDocMsgId" type="s:string" />
+    <wsdl:part name="argFlags" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCOMDocMergeStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnCOMDocMergeStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCOMDocEnvelopeHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMsgId" type="s:string" />
+    <wsdl:part name="argMainDocNo" type="s:string" />
+    <wsdl:part name="argMainDocMsgId" type="s:string" />
+    <wsdl:part name="argFlags" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argPincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCOMDocEnvelopeHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEnvSettingHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argParaType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEnvSettingHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoListByJSONHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocList" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoListByJSONHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnDocInfos" />
+  </wsdl:message>
+  <wsdl:message name="GetOnLineApplyDocUnvByJSONHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOnLineApplyDocUnvByJSONHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetDocUnvDataByJSONHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocUnvDataByJSONHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="ImgRotateHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="Path" type="s:string" />
+    <wsdl:part name="FileName" type="s1:StringArray" />
+    <wsdl:part name="Angle" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImgRotateHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnBool" />
+  </wsdl:message>
+  <wsdl:message name="ImgSliceHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="Path" type="s:string" />
+    <wsdl:part name="FileName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImgSliceHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnImgList" />
+  </wsdl:message>
+  <wsdl:message name="CheckCalledBySelfHttpPostIn">
+    <wsdl:part name="HostName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCalledBySelfHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckFileExistHttpPostIn">
+    <wsdl:part name="argFilePath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckFileExistHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WriteExceptionLogHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argMsg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteExceptionLogHttpPostOut" />
+  <wsdl:message name="GetFolderInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnDirInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHashHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="arFile" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetFileHashHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnHashInfo" />
+  </wsdl:message>
+  <wsdl:message name="EnvelopedComTestHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnvelopedComTestHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getpacthsaizeHttpPostIn">
+    <wsdl:part name="argpath" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="getpacthsaizeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="T2100FileIoServiceSoap">
+    <wsdl:operation name="WebFileIO">
+      <wsdl:input message="tns:WebFileIOSoapIn" />
+      <wsdl:output message="tns:WebFileIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIO2">
+      <wsdl:input message="tns:WebFileIO2SoapIn" />
+      <wsdl:output message="tns:WebFileIO2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartialSize">
+      <wsdl:input message="tns:GetPartialSizeSoapIn" />
+      <wsdl:output message="tns:GetPartialSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <wsdl:input message="tns:WebFileIoCopyFilesForCowrokSoapIn" />
+      <wsdl:output message="tns:WebFileIoCopyFilesForCowrokSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MergeFilesForCoworkDocInfo">
+      <wsdl:input message="tns:MergeFilesForCoworkDocInfoSoapIn" />
+      <wsdl:output message="tns:MergeFilesForCoworkDocInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <wsdl:input message="tns:GetWebFileDirPathSoapIn" />
+      <wsdl:output message="tns:GetWebFileDirPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDraftEnvelope">
+      <wsdl:input message="tns:UpdateDraftEnvelopeSoapIn" />
+      <wsdl:output message="tns:UpdateDraftEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignDraftEnvelope">
+      <wsdl:input message="tns:SignDraftEnvelopeSoapIn" />
+      <wsdl:output message="tns:SignDraftEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvelope">
+      <wsdl:input message="tns:UpdateEnvelopeSoapIn" />
+      <wsdl:output message="tns:UpdateEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignEnvelope">
+      <wsdl:input message="tns:SignEnvelopeSoapIn" />
+      <wsdl:output message="tns:SignEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResignSignInfo">
+      <wsdl:input message="tns:GetResignSignInfoSoapIn" />
+      <wsdl:output message="tns:GetResignSignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResignInfo">
+      <wsdl:input message="tns:UpdateResignInfoSoapIn" />
+      <wsdl:output message="tns:UpdateResignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChildDocTempData">
+      <wsdl:input message="tns:RemoveChildDocTempDataSoapIn" />
+      <wsdl:output message="tns:RemoveChildDocTempDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCOMDocMergeStatus">
+      <wsdl:input message="tns:GetCOMDocMergeStatusSoapIn" />
+      <wsdl:output message="tns:GetCOMDocMergeStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCOMDocEnvelope">
+      <wsdl:input message="tns:UpdateCOMDocEnvelopeSoapIn" />
+      <wsdl:output message="tns:UpdateCOMDocEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEnvSetting">
+      <wsdl:input message="tns:GetUserEnvSettingSoapIn" />
+      <wsdl:output message="tns:GetUserEnvSettingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoListByJSON">
+      <wsdl:input message="tns:GetDocInfoListByJSONSoapIn" />
+      <wsdl:output message="tns:GetDocInfoListByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineApplyDocUnvByJSON">
+      <wsdl:input message="tns:GetOnLineApplyDocUnvByJSONSoapIn" />
+      <wsdl:output message="tns:GetOnLineApplyDocUnvByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocUnvDataByJSON">
+      <wsdl:input message="tns:GetDocUnvDataByJSONSoapIn" />
+      <wsdl:output message="tns:GetDocUnvDataByJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <wsdl:input message="tns:GetDocInfoSoapIn" />
+      <wsdl:output message="tns:GetDocInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgRotate">
+      <wsdl:input message="tns:ImgRotateSoapIn" />
+      <wsdl:output message="tns:ImgRotateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgSlice">
+      <wsdl:input message="tns:ImgSliceSoapIn" />
+      <wsdl:output message="tns:ImgSliceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCalledBySelf">
+      <wsdl:input message="tns:CheckCalledBySelfSoapIn" />
+      <wsdl:output message="tns:CheckCalledBySelfSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileExist">
+      <wsdl:input message="tns:CheckFileExistSoapIn" />
+      <wsdl:output message="tns:CheckFileExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteExceptionLog">
+      <wsdl:input message="tns:WriteExceptionLogSoapIn" />
+      <wsdl:output message="tns:WriteExceptionLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTSV2File">
+      <wsdl:input message="tns:CheckTSV2FileSoapIn" />
+      <wsdl:output message="tns:CheckTSV2FileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <wsdl:input message="tns:GetFolderInfoSoapIn" />
+      <wsdl:output message="tns:GetFolderInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileHash">
+      <wsdl:input message="tns:GetFileHashSoapIn" />
+      <wsdl:output message="tns:GetFileHashSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnvelopedComTest">
+      <wsdl:input message="tns:EnvelopedComTestSoapIn" />
+      <wsdl:output message="tns:EnvelopedComTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getpacthsaize">
+      <wsdl:input message="tns:getpacthsaizeSoapIn" />
+      <wsdl:output message="tns:getpacthsaizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="T2100FileIoServiceHttpGet">
+    <wsdl:operation name="GetPartialSize">
+      <wsdl:input message="tns:GetPartialSizeHttpGetIn" />
+      <wsdl:output message="tns:GetPartialSizeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <wsdl:input message="tns:WebFileIoCopyFilesForCowrokHttpGetIn" />
+      <wsdl:output message="tns:WebFileIoCopyFilesForCowrokHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <wsdl:input message="tns:GetWebFileDirPathHttpGetIn" />
+      <wsdl:output message="tns:GetWebFileDirPathHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDraftEnvelope">
+      <wsdl:input message="tns:UpdateDraftEnvelopeHttpGetIn" />
+      <wsdl:output message="tns:UpdateDraftEnvelopeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignDraftEnvelope">
+      <wsdl:input message="tns:SignDraftEnvelopeHttpGetIn" />
+      <wsdl:output message="tns:SignDraftEnvelopeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvelope">
+      <wsdl:input message="tns:UpdateEnvelopeHttpGetIn" />
+      <wsdl:output message="tns:UpdateEnvelopeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignEnvelope">
+      <wsdl:input message="tns:SignEnvelopeHttpGetIn" />
+      <wsdl:output message="tns:SignEnvelopeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResignSignInfo">
+      <wsdl:input message="tns:GetResignSignInfoHttpGetIn" />
+      <wsdl:output message="tns:GetResignSignInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResignInfo">
+      <wsdl:input message="tns:UpdateResignInfoHttpGetIn" />
+      <wsdl:output message="tns:UpdateResignInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChildDocTempData">
+      <wsdl:input message="tns:RemoveChildDocTempDataHttpGetIn" />
+      <wsdl:output message="tns:RemoveChildDocTempDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCOMDocMergeStatus">
+      <wsdl:input message="tns:GetCOMDocMergeStatusHttpGetIn" />
+      <wsdl:output message="tns:GetCOMDocMergeStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCOMDocEnvelope">
+      <wsdl:input message="tns:UpdateCOMDocEnvelopeHttpGetIn" />
+      <wsdl:output message="tns:UpdateCOMDocEnvelopeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEnvSetting">
+      <wsdl:input message="tns:GetUserEnvSettingHttpGetIn" />
+      <wsdl:output message="tns:GetUserEnvSettingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoListByJSON">
+      <wsdl:input message="tns:GetDocInfoListByJSONHttpGetIn" />
+      <wsdl:output message="tns:GetDocInfoListByJSONHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineApplyDocUnvByJSON">
+      <wsdl:input message="tns:GetOnLineApplyDocUnvByJSONHttpGetIn" />
+      <wsdl:output message="tns:GetOnLineApplyDocUnvByJSONHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocUnvDataByJSON">
+      <wsdl:input message="tns:GetDocUnvDataByJSONHttpGetIn" />
+      <wsdl:output message="tns:GetDocUnvDataByJSONHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <wsdl:input message="tns:GetDocInfoHttpGetIn" />
+      <wsdl:output message="tns:GetDocInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgRotate">
+      <wsdl:input message="tns:ImgRotateHttpGetIn" />
+      <wsdl:output message="tns:ImgRotateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgSlice">
+      <wsdl:input message="tns:ImgSliceHttpGetIn" />
+      <wsdl:output message="tns:ImgSliceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCalledBySelf">
+      <wsdl:input message="tns:CheckCalledBySelfHttpGetIn" />
+      <wsdl:output message="tns:CheckCalledBySelfHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileExist">
+      <wsdl:input message="tns:CheckFileExistHttpGetIn" />
+      <wsdl:output message="tns:CheckFileExistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteExceptionLog">
+      <wsdl:input message="tns:WriteExceptionLogHttpGetIn" />
+      <wsdl:output message="tns:WriteExceptionLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <wsdl:input message="tns:GetFolderInfoHttpGetIn" />
+      <wsdl:output message="tns:GetFolderInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileHash">
+      <wsdl:input message="tns:GetFileHashHttpGetIn" />
+      <wsdl:output message="tns:GetFileHashHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnvelopedComTest">
+      <wsdl:input message="tns:EnvelopedComTestHttpGetIn" />
+      <wsdl:output message="tns:EnvelopedComTestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getpacthsaize">
+      <wsdl:input message="tns:getpacthsaizeHttpGetIn" />
+      <wsdl:output message="tns:getpacthsaizeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpGetIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="T2100FileIoServiceHttpPost">
+    <wsdl:operation name="GetPartialSize">
+      <wsdl:input message="tns:GetPartialSizeHttpPostIn" />
+      <wsdl:output message="tns:GetPartialSizeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <wsdl:input message="tns:WebFileIoCopyFilesForCowrokHttpPostIn" />
+      <wsdl:output message="tns:WebFileIoCopyFilesForCowrokHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <wsdl:input message="tns:GetWebFileDirPathHttpPostIn" />
+      <wsdl:output message="tns:GetWebFileDirPathHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDraftEnvelope">
+      <wsdl:input message="tns:UpdateDraftEnvelopeHttpPostIn" />
+      <wsdl:output message="tns:UpdateDraftEnvelopeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignDraftEnvelope">
+      <wsdl:input message="tns:SignDraftEnvelopeHttpPostIn" />
+      <wsdl:output message="tns:SignDraftEnvelopeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvelope">
+      <wsdl:input message="tns:UpdateEnvelopeHttpPostIn" />
+      <wsdl:output message="tns:UpdateEnvelopeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignEnvelope">
+      <wsdl:input message="tns:SignEnvelopeHttpPostIn" />
+      <wsdl:output message="tns:SignEnvelopeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResignSignInfo">
+      <wsdl:input message="tns:GetResignSignInfoHttpPostIn" />
+      <wsdl:output message="tns:GetResignSignInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResignInfo">
+      <wsdl:input message="tns:UpdateResignInfoHttpPostIn" />
+      <wsdl:output message="tns:UpdateResignInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChildDocTempData">
+      <wsdl:input message="tns:RemoveChildDocTempDataHttpPostIn" />
+      <wsdl:output message="tns:RemoveChildDocTempDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCOMDocMergeStatus">
+      <wsdl:input message="tns:GetCOMDocMergeStatusHttpPostIn" />
+      <wsdl:output message="tns:GetCOMDocMergeStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCOMDocEnvelope">
+      <wsdl:input message="tns:UpdateCOMDocEnvelopeHttpPostIn" />
+      <wsdl:output message="tns:UpdateCOMDocEnvelopeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEnvSetting">
+      <wsdl:input message="tns:GetUserEnvSettingHttpPostIn" />
+      <wsdl:output message="tns:GetUserEnvSettingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoListByJSON">
+      <wsdl:input message="tns:GetDocInfoListByJSONHttpPostIn" />
+      <wsdl:output message="tns:GetDocInfoListByJSONHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineApplyDocUnvByJSON">
+      <wsdl:input message="tns:GetOnLineApplyDocUnvByJSONHttpPostIn" />
+      <wsdl:output message="tns:GetOnLineApplyDocUnvByJSONHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocUnvDataByJSON">
+      <wsdl:input message="tns:GetDocUnvDataByJSONHttpPostIn" />
+      <wsdl:output message="tns:GetDocUnvDataByJSONHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <wsdl:input message="tns:GetDocInfoHttpPostIn" />
+      <wsdl:output message="tns:GetDocInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgRotate">
+      <wsdl:input message="tns:ImgRotateHttpPostIn" />
+      <wsdl:output message="tns:ImgRotateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgSlice">
+      <wsdl:input message="tns:ImgSliceHttpPostIn" />
+      <wsdl:output message="tns:ImgSliceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCalledBySelf">
+      <wsdl:input message="tns:CheckCalledBySelfHttpPostIn" />
+      <wsdl:output message="tns:CheckCalledBySelfHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileExist">
+      <wsdl:input message="tns:CheckFileExistHttpPostIn" />
+      <wsdl:output message="tns:CheckFileExistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteExceptionLog">
+      <wsdl:input message="tns:WriteExceptionLogHttpPostIn" />
+      <wsdl:output message="tns:WriteExceptionLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <wsdl:input message="tns:GetFolderInfoHttpPostIn" />
+      <wsdl:output message="tns:GetFolderInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileHash">
+      <wsdl:input message="tns:GetFileHashHttpPostIn" />
+      <wsdl:output message="tns:GetFileHashHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnvelopedComTest">
+      <wsdl:input message="tns:EnvelopedComTestHttpPostIn" />
+      <wsdl:output message="tns:EnvelopedComTestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getpacthsaize">
+      <wsdl:input message="tns:getpacthsaizeHttpPostIn" />
+      <wsdl:output message="tns:getpacthsaizeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpPostIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="T2100FileIoServiceSoap" type="tns:T2100FileIoServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WebFileIO">
+      <soap:operation soapAction="http://2100T.com.tw/WebFileIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIO2">
+      <soap:operation soapAction="http://2100T.com.tw/WebFileIO2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartialSize">
+      <soap:operation soapAction="http://2100T.com.tw/GetPartialSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <soap:operation soapAction="http://2100T.com.tw/WebFileIoCopyFilesForCowrok" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MergeFilesForCoworkDocInfo">
+      <soap:operation soapAction="http://2100T.com.tw/MergeFilesForCoworkDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <soap:operation soapAction="http://2100T.com.tw/GetWebFileDirPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDraftEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/UpdateDraftEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignDraftEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/SignDraftEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/UpdateEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/SignEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResignSignInfo">
+      <soap:operation soapAction="http://2100T.com.tw/GetResignSignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResignInfo">
+      <soap:operation soapAction="http://2100T.com.tw/UpdateResignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChildDocTempData">
+      <soap:operation soapAction="http://2100T.com.tw/RemoveChildDocTempData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCOMDocMergeStatus">
+      <soap:operation soapAction="http://2100T.com.tw/GetCOMDocMergeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCOMDocEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/UpdateCOMDocEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEnvSetting">
+      <soap:operation soapAction="http://2100T.com.tw/GetUserEnvSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoListByJSON">
+      <soap:operation soapAction="http://2100T.com.tw/GetDocInfoListByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineApplyDocUnvByJSON">
+      <soap:operation soapAction="http://2100T.com.tw/GetOnLineApplyDocUnvByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocUnvDataByJSON">
+      <soap:operation soapAction="http://2100T.com.tw/GetDocUnvDataByJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <soap:operation soapAction="http://2100T.com.tw/GetDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgRotate">
+      <soap:operation soapAction="http://2100T.com.tw/ImgRotate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgSlice">
+      <soap:operation soapAction="http://2100T.com.tw/ImgSlice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCalledBySelf">
+      <soap:operation soapAction="http://2100T.com.tw/CheckCalledBySelf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileExist">
+      <soap:operation soapAction="http://2100T.com.tw/CheckFileExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExceptionLog">
+      <soap:operation soapAction="http://2100T.com.tw/WriteExceptionLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTSV2File">
+      <soap:operation soapAction="http://2100T.com.tw/CheckTSV2File" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <soap:operation soapAction="http://2100T.com.tw/GetFolderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileHash">
+      <soap:operation soapAction="http://2100T.com.tw/GetFileHash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnvelopedComTest">
+      <soap:operation soapAction="http://2100T.com.tw/EnvelopedComTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getpacthsaize">
+      <soap:operation soapAction="http://2100T.com.tw/getpacthsaize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://2100T.com.tw/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T2100FileIoServiceSoap12" type="tns:T2100FileIoServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WebFileIO">
+      <soap12:operation soapAction="http://2100T.com.tw/WebFileIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIO2">
+      <soap12:operation soapAction="http://2100T.com.tw/WebFileIO2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartialSize">
+      <soap12:operation soapAction="http://2100T.com.tw/GetPartialSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <soap12:operation soapAction="http://2100T.com.tw/WebFileIoCopyFilesForCowrok" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MergeFilesForCoworkDocInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/MergeFilesForCoworkDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <soap12:operation soapAction="http://2100T.com.tw/GetWebFileDirPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDraftEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/UpdateDraftEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignDraftEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/SignDraftEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/UpdateEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/SignEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResignSignInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/GetResignSignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResignInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/UpdateResignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChildDocTempData">
+      <soap12:operation soapAction="http://2100T.com.tw/RemoveChildDocTempData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCOMDocMergeStatus">
+      <soap12:operation soapAction="http://2100T.com.tw/GetCOMDocMergeStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCOMDocEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/UpdateCOMDocEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEnvSetting">
+      <soap12:operation soapAction="http://2100T.com.tw/GetUserEnvSetting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoListByJSON">
+      <soap12:operation soapAction="http://2100T.com.tw/GetDocInfoListByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineApplyDocUnvByJSON">
+      <soap12:operation soapAction="http://2100T.com.tw/GetOnLineApplyDocUnvByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocUnvDataByJSON">
+      <soap12:operation soapAction="http://2100T.com.tw/GetDocUnvDataByJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/GetDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgRotate">
+      <soap12:operation soapAction="http://2100T.com.tw/ImgRotate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgSlice">
+      <soap12:operation soapAction="http://2100T.com.tw/ImgSlice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCalledBySelf">
+      <soap12:operation soapAction="http://2100T.com.tw/CheckCalledBySelf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileExist">
+      <soap12:operation soapAction="http://2100T.com.tw/CheckFileExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExceptionLog">
+      <soap12:operation soapAction="http://2100T.com.tw/WriteExceptionLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTSV2File">
+      <soap12:operation soapAction="http://2100T.com.tw/CheckTSV2File" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/GetFolderInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileHash">
+      <soap12:operation soapAction="http://2100T.com.tw/GetFileHash" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnvelopedComTest">
+      <soap12:operation soapAction="http://2100T.com.tw/EnvelopedComTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getpacthsaize">
+      <soap12:operation soapAction="http://2100T.com.tw/getpacthsaize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T2100FileIoServiceHttpGet" type="tns:T2100FileIoServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetPartialSize">
+      <http:operation location="/GetPartialSize" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <http:operation location="/WebFileIoCopyFilesForCowrok" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <http:operation location="/GetWebFileDirPath" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDraftEnvelope">
+      <http:operation location="/UpdateDraftEnvelope" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignDraftEnvelope">
+      <http:operation location="/SignDraftEnvelope" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvelope">
+      <http:operation location="/UpdateEnvelope" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignEnvelope">
+      <http:operation location="/SignEnvelope" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResignSignInfo">
+      <http:operation location="/GetResignSignInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResignInfo">
+      <http:operation location="/UpdateResignInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChildDocTempData">
+      <http:operation location="/RemoveChildDocTempData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCOMDocMergeStatus">
+      <http:operation location="/GetCOMDocMergeStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCOMDocEnvelope">
+      <http:operation location="/UpdateCOMDocEnvelope" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEnvSetting">
+      <http:operation location="/GetUserEnvSetting" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoListByJSON">
+      <http:operation location="/GetDocInfoListByJSON" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineApplyDocUnvByJSON">
+      <http:operation location="/GetOnLineApplyDocUnvByJSON" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocUnvDataByJSON">
+      <http:operation location="/GetDocUnvDataByJSON" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <http:operation location="/GetDocInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgRotate">
+      <http:operation location="/ImgRotate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgSlice">
+      <http:operation location="/ImgSlice" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCalledBySelf">
+      <http:operation location="/CheckCalledBySelf" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileExist">
+      <http:operation location="/CheckFileExist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExceptionLog">
+      <http:operation location="/WriteExceptionLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <http:operation location="/GetFolderInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileHash">
+      <http:operation location="/GetFileHash" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnvelopedComTest">
+      <http:operation location="/EnvelopedComTest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getpacthsaize">
+      <http:operation location="/getpacthsaize" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T2100FileIoServiceHttpPost" type="tns:T2100FileIoServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetPartialSize">
+      <http:operation location="/GetPartialSize" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <http:operation location="/WebFileIoCopyFilesForCowrok" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebFileDirPath">
+      <http:operation location="/GetWebFileDirPath" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDraftEnvelope">
+      <http:operation location="/UpdateDraftEnvelope" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignDraftEnvelope">
+      <http:operation location="/SignDraftEnvelope" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvelope">
+      <http:operation location="/UpdateEnvelope" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignEnvelope">
+      <http:operation location="/SignEnvelope" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResignSignInfo">
+      <http:operation location="/GetResignSignInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResignInfo">
+      <http:operation location="/UpdateResignInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveChildDocTempData">
+      <http:operation location="/RemoveChildDocTempData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCOMDocMergeStatus">
+      <http:operation location="/GetCOMDocMergeStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCOMDocEnvelope">
+      <http:operation location="/UpdateCOMDocEnvelope" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEnvSetting">
+      <http:operation location="/GetUserEnvSetting" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfoListByJSON">
+      <http:operation location="/GetDocInfoListByJSON" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnLineApplyDocUnvByJSON">
+      <http:operation location="/GetOnLineApplyDocUnvByJSON" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocUnvDataByJSON">
+      <http:operation location="/GetDocUnvDataByJSON" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <http:operation location="/GetDocInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgRotate">
+      <http:operation location="/ImgRotate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgSlice">
+      <http:operation location="/ImgSlice" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCalledBySelf">
+      <http:operation location="/CheckCalledBySelf" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckFileExist">
+      <http:operation location="/CheckFileExist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteExceptionLog">
+      <http:operation location="/WriteExceptionLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <http:operation location="/GetFolderInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileHash">
+      <http:operation location="/GetFileHash" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnvelopedComTest">
+      <http:operation location="/EnvelopedComTest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getpacthsaize">
+      <http:operation location="/getpacthsaize" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="T2100FileIoService">
+    <wsdl:port name="T2100FileIoServiceSoap" binding="tns:T2100FileIoServiceSoap">
+      <soap:address location="http://localhost/WebFileIO/T2100FileIoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T2100FileIoServiceSoap12" binding="tns:T2100FileIoServiceSoap12">
+      <soap12:address location="http://localhost/WebFileIO/T2100FileIoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T2100FileIoServiceHttpGet" binding="tns:T2100FileIoServiceHttpGet">
+      <http:address location="http://localhost/WebFileIO/T2100FileIoService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T2100FileIoServiceHttpPost" binding="tns:T2100FileIoServiceHttpPost">
+      <http:address location="http://localhost/WebFileIO/T2100FileIoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

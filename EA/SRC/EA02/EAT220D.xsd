@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAT220D" targetNamespace="http://tempuri.org/EAT220D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/EAT220D.xsd" xmlns:mstns="http://tempuri.org/EAT220D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAT220D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EAT220">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="COM_STATUS" type="xs:string" minOccurs="0" />
+							<xs:element name="VOLUME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CLS" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_NO_WORD" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_NO_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_UNIT" type="xs:string" minOccurs="0" />
+							<xs:element name="MEDIA_DESP" type="xs:string" minOccurs="0" />
+							<xs:element name="REM_DESP" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

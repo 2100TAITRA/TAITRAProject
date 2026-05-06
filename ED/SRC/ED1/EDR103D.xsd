@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR103D" targetNamespace="http://tempuri.org/EDR103D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR103D.xsd" xmlns:mstns="http://tempuri.org/EDR103D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR103D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR103L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="MONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="MAIL_COUNT" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EDR103L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="COUNT01" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT02" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT03" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT04" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT05" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT06" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT07" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT08" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT09" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT10" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT11" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT12" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT13" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT14" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT15" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT16" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT17" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT18" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT19" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT20" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT21" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT22" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT23" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT24" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT25" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT26" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT27" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT28" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT29" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT30" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT31" type="xs:string" minOccurs="0" />
+							<xs:element name="DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNTBY" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNTBYNO" type="xs:string" minOccurs="0" />
+							<xs:element name="TOTAL" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

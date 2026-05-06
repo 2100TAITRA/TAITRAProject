@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<title>列印簽核公文</title>
+</head>
+<body>
+	<div id="dlgPrintFolio" data-role="dialog" data-transition="slidedown">
+		<h1 style="margin-top:-8px;margin-bottom:10px;">列印</h1>
+		<div style="width:40%; height:520px; display:inline-block; float:left; margin-right:10px;">
+			<label for="chkAllDrafts" data-corners="false">全選</label>
+			<input id="chkAllDrafts" type="checkbox" data-theme="c">
+			<div style="background-color:lightgray; height:416px; overflow-y:scroll">
+				<ul id="itemList" data-role="listview" data-theme="c" data-corners="false" data-mini="true" style="margin:0px;">
+				</ul>
+			</div>
+			<label for="chkSyncOpts">套用相同文別的選項設定</label>
+			<input id="chkSyncOpts" type="checkbox">
+		</div>
+		<div style="background-color:lightgray; color:black; width:58%; height:520px; display:inline-block; float:left; position:relative; overflow:hidden;">
+			<div class="ui-slide-pane-left ui-slide-pane-active">
+				<div data-role="fieldcontain">
+					<label for="printXsl">列印格式:</label>
+					<select id="printXsl" data-mini="true">
+						<option value="2101函稿(橫式).xsl" selected>2101函稿(橫式)</option>
+						<option value="2201函(橫式).xsl">2201函(橫式)</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="printFont">列印字型:</label>
+					<select id="printFont" data-mini="true">
+						<option value="標楷體" selected>標楷體(預設)</option>
+						<!-- 1110222	Leslie[1101532]	配合顯自造字型，統一為標楷體與細明體 -->
+						<!-- <option value="新細明體">新細明體</option> -->
+						<option value="細明體">細明體</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain" style="margin-bottom:0.2em;">
+					<label for="printLineHeight">列印行高:</label>
+					<select id="printLineHeight" data-mini="true">
+						<option value="1.0">1.0</option>
+						<option value="1.1">1.1</option>
+						<option value="1.2">1.2</option>
+						<option value="1.3">1.3</option>
+						<option value="1.4">1.4</option>
+						<option value="1.5" selected>1.5(預設)</option>
+						<option value="1.6">1.6</option>
+						<option value="1.7">1.7</option>
+						<option value="1.8">1.8</option>
+						<option value="1.9">1.9</option>
+						<option value="2.0">2.0</option>
+						<option value="2.1">2.1</option>
+						<option value="2.2">2.2</option>
+						<option value="2.3">2.3</option>
+						<option value="2.4">2.4</option>
+						<option value="2.5">2.5</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain" style="margin-left:25%; margin-top:.2em;">
+					<label for="applyCustom">套用自訂的排版參數</label>
+					<input type="checkbox" id="applyCustom" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="applyTCMode">檢視模式:</label>
+					<select id="applyTCMode" data-mini="true">
+						<option value="1">1.追蹤修訂模式</option>
+						<option value="2">2.精簡修訂模式</option>
+						<option value="3" selected>3.完稿模式</option>
+					</select>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="printRange" class="ui-select">列印範圍:</label>
+					<div data-role="controlgroup" data-type="horizontal" data-mini="true" id="printRange" style="display:inline-block; width:78%">
+						<label for="printRangeAll">全部</label>
+						<input type="radio" name="printRangeA" id="printRangeAll" data-theme="c" data-mini="true" checked>
+						<label for="printRangeSelect">選擇:</label>
+						<input type="radio" name="printRangeA" id="printRangeSelect" data-theme="c" data-mini="true">
+						<input type="text" id="printRangeSelection" data-theme="c" data-mini="true">
+					</div>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="printPurpose" class="ui-select">列印用途:</label>
+					<div id="printPurpose" style="display:inline-block; width:78%">
+						<label for="printForCheck">繕校及簽核用</label>
+						<input type="radio" name="printPurposeChoose" id="printForCheck" data-theme="c" data-mini="true" checked>
+						<label for="printForDispatch">發文用</label>
+						<input type="radio" name="printPurposeChoose" id="printForDispatch" data-theme="c" data-mini="true">
+					</div>
+				</div>
+				<div data-role="fieldcontain" style="margin-bottom:0px;">
+					<label for="receivers" class="ui-select">受文機關或單位:</label>
+					<div id="receivers" style="display:inline-block; width:78%">
+						<label for="receiverSingle">單選</label>
+						<input type="radio" name="receiverChoose" id="receiverSingle" data-theme="c" data-mini="true" checked>
+						<select id="receiverSelect" data-mini="true">
+						</select><br>
+						<label for="receiverMulti">複選</label>
+						<input type="radio" name="receiverChoose" id="receiverMulti" data-theme="c" data-mini="true">
+						<a id="receiverPickup" data-role="button" data-theme="b" data-mini="true" data-iconpos="right" data-icon="arrow-r" style="display:inline-block; width:30%">選取</a>
+					</div>
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:48%; margin:0px 22%;">
+					<label for="keepSecret">正本行文單位保密</label>
+					<input type="checkbox" id="keepSecret" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:48%; margin:0px 22%;">
+					<label for="keepSecret2">副本行文單位保密</label>
+					<input type="checkbox" id="keepSecret2" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:30%; margin:0px 0px 0px 8%;">
+					<label for="sealMark">騎縫章</label>
+					<input type="checkbox" id="sealMark" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:40%; margin:0px;">
+					<label for="sealMarkSamePos">維持在一致位置</label>
+					<input type="checkbox" id="sealMarkSamePos" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:30%; margin:0px 0px 0px 8%;">
+					<label for="barcode">條碼</label>
+					<input type="checkbox" id="barcode" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:30%; margin:0px;">
+					<label for="pgNo">頁碼</label>
+					<input type="checkbox" id="pgNo" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:30%; margin:0px 0px 0px 8%;">
+					<label for="bothSide">雙面列印</label>
+					<input type="checkbox" id="bothSide" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:41%; margin:0px;"><!-- 1100326 Raymond 1090927 fix for iOS Safari 「列印簽核物件資訊頁」最後一字會折行問題 width:40%->41% -->
+					<label for="chkPrintSignObjPages">列印簽核物件資訊頁</label>
+					<input type="checkbox" id="chkPrintSignObjPages" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:30%; margin:0px 0px 0px 8%;"><!-- 1111024 Raymond 1110864 合併1101468, 新增"顯示完整意見"選項 -->
+					<label for="showAllComments">顯示完整意見</label>
+					<input type="checkbox" id="showAllComments" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:49%; margin:0px 0px 0px 39%;">
+					<label for="filterNUK">僅顯示會辦單位長官意見</label>
+					<input type="checkbox" id="filterNUK" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:54%; margin:0px 0px 0px 39%;"><!-- 1141014 Raymond 1141229 新增列印簽核物件資訊頁(內部意見) -->
+					<label for="filterTAITRA">列印簽核物件資訊頁(內部意見)</label>
+					<input type="checkbox" id="filterTAITRA" data-theme="c" data-mini="true">
+				</div>
+				<!--div data-role="fieldcontain" style="display:inline-block; width:30%; margin:0px 0px 0px 8%;">
+					<label for="draftFileName">本文檔名</label>
+					<input type="checkbox" id="draftFileName" data-theme="c" data-mini="true">
+				</div-->
+				<div data-role="fieldcontain" style="display:inline-block; width:auto; margin:0px 0px 0px 8%;">
+					<label for="dispatchConUnits">會辦單位分繕列印</label>
+					<input type="checkbox" id="dispatchConUnits" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" class="ui-hide-label" style="display:inline-block; width:50%; margin:0px; vertical-align:top;"><!-- 1110722 Raymond 1110416 新增色彩模式選項for密件附件可匯出頁面以套用浮水印功能 -->
+					<fieldset data-role="controlgroup" data-type="horizontal" style="width:auto">
+						<label for="asColor">彩色模式</label>
+						<input type="radio" id="asColor" name="colorMode" data-theme="c" data-mini="true" checked>
+						<label for="asMono">單色模式</label>
+						<input type="radio" id="asMono" name="colorMode" data-theme="c" data-mini="true">
+					</fieldset>
+				</div>
+				<div data-role="fieldcontain" style="display:block; text-align:center; vertical-align:middle">
+					<span id="msg"></span>
+				</div>
+			</div>
+			<div class="ui-slide-pane-right">
+				<a id="btnBack" data-role="button" data-theme="a" data-icon="arrow-l" style="width:30%">返回</a><hr/>
+				<div data-role="fieldcontain" style="display:inline-block; width:70%; margin:0px;">
+					<label for="onlyPaper">僅顯示紙本發文方式之受文者</label>
+					<input type="checkbox" id="onlyPaper" data-theme="c" data-mini="true">
+				</div>
+				<div data-role="fieldcontain" style="display:inline-block; width:30%; margin:0px;">
+					<label for="selectAll">全選</label>
+					<input type="checkbox" id="selectAll" data-theme="c" data-mini="true">
+				</div>
+				<!-- 1061201 Raymond 1061150 新增搜尋受文者功能 -->
+				<div data-role="fieldcontain" style="display:inline-block; width:60%; margin:0px;">
+					<label for="searchKey">搜尋：</label>
+					<input id="searchKey" data-theme="c" data-mini="true">
+					<a data-role="button" data-icon="search" id="btnSearchReceivers" data-mini="true" style="width:auto; height:1em; box-sizing:content-box; padding-right:2px"></a>
+					<div data-role="popup" id="searchReceiversResult"></div>
+				</div>
+				<table>
+					<thead style="background-color:gray; color:white; display:block">
+						<tr>
+							<th style="width:29px; border-right:1px solid lightgray;">序</th><!-- 1121027 Raymond 1120790 新增顯示「序」欄 -->
+							<th style="width:200px; border-right:1px solid lightgray;">受文者</th>
+							<th style="width:100px; border-right:1px solid lightgray;">發文方式</th>
+							<th style="width:71px;">本別</th>
+						</tr>
+					</thead>
+					<tbody style="display:block; overflow-y:auto; height:340px">
+						<tr style="background-color:white;">
+							<td>1</td>
+							<td><label for="receiver1">受文機關A</label><input type="checkbox" id="receiver1" data-theme="none"></td>
+							<td>電子交換</td>
+							<td>正本</td>
+						</tr>
+						<tr style="background-color:lightblue;">
+							<td>2</td>
+							<td><label for="receiver2">受文機關B</label><input type="checkbox" id="receiver2" data-theme="none"></td>
+							<td>郵寄</td>
+							<td>正本</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<footer style="position:absolute; bottom:0px; width:100%; margin-left:-16px; clear:both;">
+			<div style="width:49%;display:inline-block">
+				<a id="cancel" data-role="button" data-corners="false" data-theme="c" style="color:#222;">取消</a>
+			</div>
+			<div style="width:49%;display:inline-block">
+				<a id="ok" data-role="button" data-corners="false" data-theme="b">確定</a>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

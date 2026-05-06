@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDC521D" targetNamespace="http://tempuri.org/EDC521D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDC521D.xsd" xmlns:mstns="http://tempuri.org/EDC521D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDC521D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDC521">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SEQ_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CLASS_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CLASS_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="ALONE_COUNT" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <title>電子公文系統-登入</title>
+  <!--1110816 Kevin 1101532 支援自造字-->
+  <link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.045"/>
+  <!-- initial-scale, maximun-scale, user-scalable setting 可取消 Mobile Safari double-tap 上方工具列時自動縮放網頁的行為 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon" sizes="152x152" href="IMAGE/touch-icon-ipad-retina.png" /> <!-- 2017.1.17 - add for iPad desktop icon -->
+    <link rel="apple-touch-icon" sizes="167x167" href="IMAGE/touch-icon-ipadpro-retina.png" /> <!-- 2017.1.17 - add for iPad desktop icon -->
+  <link rel="stylesheet" href="Lib/JQM/classic-theme.css?ver=5.0.105.045" />
+  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.icons-1.4.5.css?ver=5.0.105.045" />
+  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.structure-1.4.5.css?ver=5.0.105.045" /> 
+  
+  <!-- SSO/AOL 3rdParty - simpleModal dialog -->
+  <link rel="stylesheet" href="CSS/jquery-simplemodal.basic.css?ver=5.0.105.045" />
+  
+  <link rel="stylesheet" href="CSS/RD-jqm-docs.css?ver=5.0.105.045" /> <!-- demo公布欄 scheme & color -->
+
+  <!-- 2015.7.14 - 使用 MobiScroll v2.9.5 -->
+  <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
+  <!-- <link rel="stylesheet" href="Lib/mobiscroll/css/mobiscroll_wfh.css?ver=5.0.105.045"  rel="stylesheet" type="text/css" /> -->
+  
+  <link rel="stylesheet" href="CSS/RD-Login.css?ver=5.0.105.045" /> <!-- 登入頁面 -->
+  <link rel="stylesheet" href="CSS/RD-SSO.css?ver=5.0.105.045" /> <!-- 訊息單一入口 -->
+  
+  <style>
+	/**
+	* Fix for iPad iOS7 slight scroll on 100% body height
+	* http://stackoverflow.com/questions/19012135/ios-7-ipad-safari-landscape-innerheight-outerheight-layout-issue
+	*/
+   @media (orientation:landscape) {
+	   html.ipad.ios7 > body {
+		   position: fixed;
+		   bottom: 0;
+		   width: 100%;
+		   height: 672px !important;
+	   }
+   }
+  </style>
+  
+  <script src="Lib/jquery.min.js?ver=5.0.105.045"></script>
+  <script src="Lib/jquery_pack_wfh.js?ver=5.0.105.045"></script>
+  <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll_wfh.js?ver=5.0.105.045"></script> -->
+  <script src="Lib/iScrollMenu_wfh.js?ver=5.0.105.045"></script> <!-- 1140908	Leslie[1141206]	補上缺漏的JS參照 -->
+  <script src="2100Rsrc/SSO_CONFIG.js?ver=5.0.105.045"></script> <!-- 2014.9 - 公文系統Config檔 --><!--1070907 Kevin 因應弱掃調整資料夾名稱-->
+  <script src="Lib/RD-SysUtilM.js?ver=5.0.105.045"></script> <!-- Eric Added, 儲存系統設定資訊 -->
+  <script src="Lib/RD-MSUtil_wfh.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-WebServicesM.js?ver=5.0.105.045"></script>
+  <script src="Lib/WFH_G4.js?ver=5.0.105.045"></script>
+  <script src="Lib/WFH_G2.js?ver=5.0.105.045"></script>
+  <script src="Lib/WFH_G5.js?ver=5.0.105.045"></script>
+  <script type="module" src="Lib/BoundsJDataView.js?ver=5.0.105.045"></script>	<!-- 1140109	Leslie[1131229]	升級第三方套件，用這個負責以Module方式載入jdataview(2.5.0) -->
+  <link rel="stylesheet" href="CSS/jquery-ui-autocomplete.css?ver=5.0.105.045" />
+</head>
+<body>
+  <span id="httpObject" style="display:none"></span>
+  <div data-role="page" id="home" data-theme="b"></div>
+  <div id="login" class="login_slidedown">
+	  <div class="main" data-role="content" id="mainContent">
+		  <div class="upper-part"></div>
+		  <div class="middle-part ui-grid-b">
+		  	  <!-- 20210929	Leslie[1100944]	Merge首頁機關客製化Logo區域 -->
+		  	  <div id="OrgTitle" class="ui-block-b ImgTitle"></div>
+			  <!--20170321 Kevin 新增首頁圖示-->
+			  <div id="LoginTitle"></div>
+			  <div class="input_panel ui-block-b ui-page-theme-e" id="LoginMain">
+				  <div id="orgid_wrapper" class="selector_wrapper ui-field-contain" data-type="horizontal" data-theme="e">
+					<input id="orgid_input" type="text" size='10' readonly='readonly' data-theme="e" />
+					<span class="ui-icon-arrow-d" style="pointer-events:none"></span>
+				  </div>
+				  <div class="ui-field-contain" data-mini="true">
+					<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" style="margin-left:5%">
+					  <input type="radio" name="radio-choice-login-type" id="radio-choice-loginbyAccount" value="login-choice-account" checked="checked" />
+					  <label for="radio-choice-loginbyAccount">帳號密碼</label>
+					  <input type="radio" name="radio-choice-login-type" id="radio-choice-loginbyCert" value="login-choice-cert"  />
+					  <label for="radio-choice-loginbyCert">智慧卡</label>
+					  <input type="radio" name="radio-choice-login-type" id="radio-choice-loginbyMobileMoica" value="login-choice-moica"  />
+					  <label for="radio-choice-loginbyMobileMoica">行動自然人憑證</label>
+					  <a href="RD-DlgResetPassword.html?ver=5.0.105.045"  data-rel="dialog" data-transition="slidedown"  id="lkResetPWD">忘記密碼</a>
+					  <a href="#" style="display:none" id="lkQRCode">QRCode驗證</a>
+					</fieldset>
+				  </div>
+				  <div class="userid_wrapper ui-field-contain" data-type="horizontal">
+					  <label for="userid">帳　號：</label>
+					  <input id="in_userid" name="userid" type='text' value="" autocomplete="off" />
+				  </div>
+				  <div class="password_wrapper ui-field-contain" data-type="horizontal">
+					  <label for="password">密　碼：</label>
+					  <input id="in_password" name="password" type='password' autocomplete="off" />
+				  </div>
+				  <!-- 20220307	Leslie[1101521]	新增圖型驗證功能 -->
+				  <div class="password_wrapper ui-field-contain" id="verifyCodeContain" data-type="horizontal">
+					  <label for="verifyCode">驗證碼：</label>
+					  <input id="in_verifyCode" name="verifyCode" type='text' autocomplete="off" maxlength="5" />
+					  <img src=""/>
+					  <a href=""  data-rel="dialog" id="lkVerifyCode">重取</a>
+				  </div>
+				  <div><!--class="ui-grid-a"-->
+					  <!--div class="ui-block-a"></div-->
+					  <div>
+						  <input type="submit" value="登　　入" id="btn_login" data-theme="b" />
+					  </div>
+				  </div>
+				  <div id="gotoOfflineLoginPage" style="display:none"><!-- 1130808 Raymond 1130313 合併1111007(1100394), 新增切換至離線版登入頁面 -->
+					  <a href="SSO_Offline.html" data-role="button" data-theme="a" data-rel="external" target="_self">離線版公文製作</a>
+				  </div>
+			  </div>
+		  </div>
+		  <div class="bottom_part"></div>
+	  </div>
+  </div> <!--div data-role="page" id="login" ... -->
+  <div id="blankBlackPage" data-role="page" data-theme="a" style="width:100%;height:100%;">
+		<div data-role="content" id="blankPageContent" style="padding: 60px 1em 1em 1em;">
+			<a data-rel="back" href="#home" class="ui-btn ui-btn-inline ui-btn-c">back</a>
+		</div>
+  </div>
+  <a id="lnkChagnePasswordDlg" href="RD-DlgChangePassword.html?ver=5.0.105.045" data-rel="dialog" data-transition="slidedown" style="display:none;"></a>
+  <div id="SDPMode_curtain"><span>本系統不支援手機直式模式，<br>請轉為橫式後重載網頁．</span></div>
+</body>
+</html>

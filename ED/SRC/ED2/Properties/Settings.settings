@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ED2.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ED2_ODMSSP_ODMSSP" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docvip.fdat.com.tw/ODMSSP/ODMSSP.asmx</Value>
+    </Setting>
+    <Setting Name="ED2_SmegWS_SmegWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docvip.fdat.com.tw/SMEG/SmegWS.asmx</Value>
+    </Setting>
+    <Setting Name="ED2_ImgConvertWS_T2100FileIoService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://win7test02/imgConvert/imgconvertws.asmx</Value>
+    </Setting>
+    <Setting Name="ED2_EDWS_EDWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/ED/EDLIB/EDWS.asmx</Value>
+    </Setting>
+    <Setting Name="ED2_TAWS_TAWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docvip.fdat.com.tw/TA/TAWS.asmx</Value>
+    </Setting>
+    <Setting Name="ED2_WebSFolder_T2100WebSFolder" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://win10test01.fdat.com.tw/WebSFolder/WebSFolder.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>  
+<head>
+  <title>輔助分文檢索</title>
+  <!--link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet"-->  
+  <link href="css/jquery-ui.css?ver=5.0.105.045" rel="stylesheet">  
+  <style>  
+  .root_panel {
+    overflow-y: hidden; 
+    overflow-x: hidden; 
+    top:0px; 
+    left:0px; 
+    height:99.9%; 
+    width:100%; 
+    /*background-color: #f3f3f3 */ /*{b-page-background-color}*/; 
+    background: rgb(219, 241, 255);
+    position:absolute; 
+    border: none;
+  }
+  
+  #top_tool_bar { 
+    width: calc(100% - 2em); 
+    height:150px; 
+    padding: 0.5em; 
+    background: transparent;
+    border-style: solid;
+    border-color: #888;
+    position: relative;
+  }  
+
+  #top_tool_bar .filter-mode {
+    display: inline-block;
+  }
+
+  #top_tool_bar .search_target_header {
+    margin-left: 1.5em;
+  }
+  
+  #top_tool_bar .tb_line {
+    display: inline-block;
+    width: 100%;
+    margin-top: 0.2em;
+  }
+
+  #top_tool_bar div.search-target {
+    display: inline-block;
+  }
+
+  #top_tool_bar .tb_top_part, #top_tool_bar .tb_content, #top_tool_bar .tb_bottom_part {
+    display: inline-block;
+    width: 100%
+  }
+
+  #top_tool_bar .tb_top_part {
+    border-bottom: solid 1px;
+    padding-bottom: 0.2em;
+  }
+
+  #top_tool_bar .tb_top_part button.active_btn {
+    font-weight: 800;
+    background-color: rgb(143, 213, 253);
+  }
+
+  #top_tool_bar .tb_bottom_part {
+    bottom: .5em;
+    left: 50%;
+    position: absolute;
+    width: auto;
+  }
+
+  #top_tool_bar #topic, #top_tool_bar #default_key_words {
+    background-color: #EEE;
+  }
+
+  #top_tool_bar .container {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  .container .box {
+    border: 3px solid #666;
+    background-color: #ddd;
+    border-radius: .2em;
+    padding: 2px;
+    cursor: move;
+  }
+
+  div.page_close_panel {
+    display:inline-block; 
+    position:absolute; 
+    bottom: .5em; right: .7em;
+  }
+
+  div.page_close_panel button {
+    width: 5em;
+  }
+  
+  .filter-mode > .ui-button, .query-mode > .ui-button {
+    padding: 0.1em 1em;
+  }
+
+  .content_view { 
+    width: 100%; 
+    height:calc(100% - 120px - 1em); 
+    /*border-style: solid;*/
+    /*border-color: #888;*/ 
+    display:block; 
+    margin-top: .5em;
+    position: relative;
+  }
+
+  .doc_content {
+    width: calc(50% - 1em); 
+    height: calc(100% - 1.5em); 
+    /*padding: .5em;*/
+    display:inline-block; 
+    border: solid 1px #888;
+    background-color: #FFF;
+    background-size: cover;
+    background-position: center;
+    /*padding-left: 0.3em;*/
+    overflow-x: hidden;
+  }
+
+  #doc_left { 
+    padding-left: 0.25em;
+    /*background: #CCCC44; 
+    background-image: url('css/images/P-0006.png');*/
+  }
+
+  #doc_right { 
+    padding-left: 0.5em;
+    position: relative; /* 2024.6.26 - Eric added */
+    /*background: #CCCC44; 
+    background-image: url('css/images/P-0004.png');*/
+  }
+
+  .content_view .doc_no {
+    position: absolute;
+    right: 1.5em;
+    top: 0.25em;
+    color: #00f;
+    font-weight: 800;
+    font-size: 1.2em;
+    background-color: #ededed;
+  }
+
+  .doc_content img {
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .ui-dialog .ui-dialog-titlebar {
+    background-color:  rgb(143, 213, 253); /*rgb(219, 241, 255);*/
+  }
+
+  /*#dialog_keywords.ui-dialog-content {
+    background-color: rgb(219, 241, 255);
+  }*/
+
+  #dialog_keywords.ui-dialog-content table { /*, #dialog_sim_docs.ui-dialog-content table {*/
+    background-color: #fff;
+  }
+
+  /* 隱藏dialog右上角close button */
+  button.ui-dialog-titlebar-close {
+    display: none;
+  }
+
+  .ui-dialog-content + .ui-dialog-buttonpane {
+    margin-top: 0em;
+  }
+
+  /* #dialog_keywords next sibling */
+  /*#dialog_keywords + div.ui-dialog-buttonpane {*/
+  div:has(> #dialog_keywords), #dialog_keywords + div.ui-dialog-buttonpane {
+    background: rgb(219, 241, 255);
+  }
+
+  #dialog_keywords + div.ui-dialog-buttonpane {
+    border-color: #888;
+  }
+
+  .ui-dialog .ui-dialog-buttonpane button {
+    margin-top: 0em;
+    margin-bottom: 0em;
+  }
+
+  .keyphrase-controls label.ui-state-active, .aki800-controls label.ui-state-active {
+    background: #ededed;
+    color: black;
+    border: 1px solid #cccccc;
+  }
+
+  table.tbl_custom_key, table.tbl_sim_docs {
+    border: solid 1px #888;
+  }
+
+  table.tbl_custom_key thead,  table.tbl_sim_docs thead {
+    background: #eee;
+    border: solid 1px #ccc;
+  }
+
+  table.tbl_custom_key thead td:nth-child(1) {
+    width: 2.5em;
+  }
+
+  table.tbl_custom_key thead td:nth-child(2) {
+    width: 10em;
+  }
+
+  table.tbl_custom_key td,  table.tbl_sim_docs td{
+    border: solid 1px #ccc;
+  }
+
+  #dialog_sim_docs .top_tool_bar {
+    display: inline-block;
+    width: 100%;
+    height: 2.5em;
+    position: relative;
+  }
+
+  #dialog_sim_docs .top_tool_bar > span {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+  }
+
+  #dialog_sim_docs #sim_doc_filter {
+    width: 200px;
+    margin: 10px;
+    display: inline-block;
+    left: 4.5em;
+  }
+
+  #dialog_sim_docs .tbl_sim_docs {
+    width: 100%;
+  }
+
+  #dialog_sim_docs .dialog-content {
+    max-height: 75vh;
+    height: calc(600px - 12em);
+    overflow-y: auto;
+  }
+
+  table.tbl_sim_docs td {
+    text-align: center;
+  }
+
+  table.tbl_sim_docs td:nth-child(5) {
+    text-align: left;
+  }
+
+  table.tbl_sim_docs tbody tr:nth-child(even) {
+    background: rgb(219, 241, 255);
+  }
+
+  table.tbl_sim_docs tbody tr.selected { /*:nth-child(3) { */
+    background:  #00f; /*rgb(143, 213, 253);*/
+    color: #fff;
+  }
+  span.highlight_keyword {
+    color: red;
+  }
+  
+  /* for loading spinner */
+  .modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 196, 196, 196, .5 ) 
+                url('UmVz/jquery.mobile-1.4.5/images/ajax-loader.gif') 
+                50% 50% 
+                no-repeat;
+  }
+  /* When the body has the loading class, we turn the scrollbar off with overflow:hidden */
+  body.loading .modal {
+    overflow: hidden;   
+  }
+
+  /* Anytime the body has the loading class, our modal element will be visible */
+  body.loading .modal {
+    display: block;
+  }
+
+  /*#doc_right { */
+    /*background: #AA66AA;*/
+  /*}*/
+  </style> 
+  <link rel="stylesheet" href="CSS/RD-AOL.css?ver=5.0.105.045"/>
+  <!--script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script-->  
+  <script src="Lib/jquery.js?ver=5.0.105.045"></script>
+  <script src="Lib/jQUI/jquery-ui.js?ver=5.0.105.045"></script>
+  <script src="2100Rsrc/SSO_CONFIG.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-Utility.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-SysUtil.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-AlternativeLogger.js?ver=5.0.105.045"></script>
+  <script src="Lib/utf7.js?ver=5.0.105.045"></script>
+  <!-- <script src="Lib/RD-jdataview.js"></script> --> <!-- 1140109	Leslie[1131229]	升級第三方套件 -->
+  <script type="module"  src="Lib/BoundsJDataView.js?ver=5.0.105.045"></script>	<!-- 1140109	Leslie[1131229]	升級第三方套件，用這個負責以Module方式載入jdataview(2.5.0) -->
+  <script src="Lib/RD-WebServices.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-soapclient.js?ver=5.0.105.045"></script>
+  <script src="Lib/AIPredict/statistics.js?ver=5.0.105.045"></script> <!-- 計算k-sim使用 -->
+  <!--script src="Lib/AIPredict/DEV_RcvDocIfr_data.js"></script--> <!-- 測試用資料檔, 整合DB前使用 -->
+  <script src="Lib/RD-SimDoc.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-DocCompare.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-DIModelView.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-Layout.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-FolioView.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-Edit.js?ver=5.0.105.045"></script>
+  <script src="Lib/JsBarcode/JsBarcode.code39.min.js?ver=5.0.105.045"></script>
+</head>  
+<body class="root_panel">
+     <div id="top_tool_bar" class="ui-widget-content">  
+        <div class="tb_top_part">
+            <button id="keyword_btn" style="margin-bottom: 0.2em;" class="active_btn">關鍵詞篩選</button>
+            <button id="aki800_btn">透過 AKI800 查詢</button>
+        </div>
+        <div class="tb_content">
+            <div class="header" style="padding-top:0.2em; display:inline-block;">
+                <div class="keyphrase-controls" style="display:inherit;">
+                    <!--span style="visibility: hidden;">篩選方式：</span-->
+                    <span>　篩選方式：</span>
+                    <!--div class="filter-mode" style="visibility: hidden;"-->
+                    <div class="filter-mode">
+                        <!--legend>篩選方式：</legend-->
+                        <input class="radio_1" type="radio" name="radio-1" id="radio-1" checked>
+                        <label for="radio-1">全文</label>
+                        <input class="radio_1"  type="radio" name="radio-1" id="radio-2">
+                        <label for="radio-2">語意</label>
+                    </div>
+
+                    <span class="search_target_header">標的：</span>
+                    <!--div class="filter-mode" style="visibility: hidden;"-->
+                    <div class="search-target">
+                        <!--legend>標的：</legend-->
+                        <input class="checkbox_1" type="checkbox" name="srch_target" id="cb_st_1" checked>
+                        <label for="cb_st_1">主題</label>
+                        <input class="checkbox_1"  type="checkbox" name="srch_target" id="cb_st_2">
+                        <label for="cb_st_2">關鍵詞</label>
+                    </div>
+
+                    <div class="tb_line">
+                        <span>　　　主題：</span>
+                        <input id="topic" value="" placeholder="本件公文無主題" size="50" readonly></input>
+                    </div>
+
+                    <div class="tb_line">
+                        <span>　　關鍵詞：</span>
+                        <input id="key_words" type="text" value="" placeholder="本文無關鍵詞，請自行輸入" size="50"></input>
+                        <button id="btn_getRelativeDoc">重新篩選</button>
+                        <button id="custom_keywords">自訂...</button>
+                    </div>
+                    <div class="tb_line">
+                        <span>候選關鍵詞：</span>
+                        <input id="default_key_words" value="" placeholder="本件公文無候選關鍵詞" size="50" readonly></input>
+                        <!--div class="container">
+                            <div draggable="true" class="box">測試字串A</div>
+                            <div draggable="true" class="box">測試B</div>
+                            <div draggable="true" class="box">人權議題CCC</div>
+                        </div-->
+                    </div>
+                </div>
+                <div class="aki800-controls tb_line" style="display:none;">
+                    <div class="tb_line">
+                        <button id="doQuery">直接查詢</button>
+                        <button id="openAKI800">帶入AKI800查詢</button>
+                    </div>
+                    <div class="tb_line" >
+                        <input id="query_text" type="text" size="50" value="數位人權研討會;數位暴力;人權議題" >
+                        <div class="query-mode" style="display:inline-block;">
+                            <!--legend>篩選方式：</legend-->
+                            <input class="radio_a" type="radio" name="radio-a" id="radio-keyword" checked>
+                            <label for="radio-a">關鍵詞</label>
+                            <input class="radio_a" type="radio" name="radio-a" id="radio-wordno">
+                            <label for="radio-b">相關字號</label>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="tb_bottom_part tb_line">
+            <div class="navigator" style="display:inline-block;">
+                <button id="btn_prev_doc">上一筆</button>
+                <button id="btn_next_doc">下一筆</button>
+                <button id="btn_sim_docs" style="margin-left:1em;">相似公文列表...</button>
+                <label for="incharge_ou">權責單位：</label>
+                <!--div class="dropdown" style="display:inline;width:10em;">祕書處</div-->
+                <select name="incharge_ou" id="incharge_ou" style="min-width:10em;">
+                    <option value="12">秘書處</option>
+                    <option value="13">會計室</option>
+                    <option value="14">○政司</option>
+                    <option value="15">役政處</option>
+                </select>
+            </div>
+        </div>
+        <div class="page_close_panel"><button id="btn_confirm">帶回</button></div>
+     </div>  
+     <div id="aol" class="content_view">
+        <div id="doc_left" class="doc_content">
+			<div class="ui-controlgroup-controls" style="position:fixed; z-index:1; width:auto">
+				<select id="zoomSelect">
+					<option value="100" selected>100%</option>
+					<option value="0">符合視窗</option>
+					<option value="-1">符合寬度</option>
+					<option value="-2">原尺寸</option>
+					<!--option value="-3">全視窗</option-->
+				</select>
+				<button id="zoomOut">-</button>
+				<button id="zoomIn">+</button>
+			</div>
+			<div id="iso" style="position:relative">
+				<a class="btnFlipLeft ui-btn ui-corner-all" title="前一頁"></a>
+				<a class="btnFlipRight ui-btn ui-corner-all" title="下一頁"></a>
+				<div class="contentPane">
+					<div class="viewPort">
+						<div class="pages" style="width:220mm; background:none; transform-style:flat">
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div id="doc_right" class="doc_content">
+            <!--相似公文來文畫面-->
+            <!--img src="css/images/p-0005.jpg" alt="a dog"-->
+			<div class="ui-controlgroup-controls" style="position:fixed; z-index:1; width:auto">
+				<select id="zoomSelect">
+					<option value="100" selected>100%</option>
+					<option value="0">符合視窗</option>
+					<option value="-1">符合寬度</option>
+					<option value="-2">原尺寸</option>
+					<!--option value="-3">全視窗</option-->
+				</select>
+				<button id="zoomOut">-</button>
+				<button id="zoomIn">+</button>
+			</div>
+			<div id="iso" style="position:relative">
+				<a class="btnFlipLeft ui-btn ui-corner-all" title="前一頁"></a>
+				<a class="btnFlipRight ui-btn ui-corner-all" title="下一頁"></a>
+				<div class="contentPane">
+					<div class="viewPort">
+						<div class="pages" style="width:220mm; background:none; transform-style:flat">
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="doc_no">參考公文 文號：1119999999</div>
+        </div>
+     </div>
+     <div id="dialog_keywords" title="自訂關鍵詞">
+        <table class="tbl_custom_key">
+            <thead>
+                <tr class="infoHead">
+                    <td>選取</td>
+                    <td>關鍵詞</td>
+                    <td>類型</td>
+                </tr>               
+            </thead>
+            <tbody></tbody>
+        </table>
+     </div>
+
+     <div id="dialog_sim_docs" title="相似公文列表">
+        <div class="top_tool_bar"> <!-- slider bar for 門檻值篩選 -->
+            <span>門檻值：</span>
+            <div id="sim_doc_filter" name="sim_doc_filter"></div>
+        </div>
+        <div class="dialog-content">
+            <table class="tbl_sim_docs">
+                <thead>
+                    <tr class="infoHead">
+                        <td style="width: 1.5em">序</td>
+                        <td style="width: 11m">文號</td>
+                        <td style="width: 3em">收創文日</td>
+                        <td style="width: 5em">來文者</td>
+                        <td style="width: 5em">權責單位</td>
+                        <td style="width: 50em">主旨</td>
+                        <td style="width: 15em">主題</td>
+                        <td style="width: 3em">參照窗格</td>
+                    </tr>               
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+     </div>
+     <div class="modal"><!-- Place at bottom of page --></div>
+</body>  
+</html> 

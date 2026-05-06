@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TBR100D" targetNamespace="http://tempuri.org/TBR100D.xsd" xmlns:mstns="http://tempuri.org/TBR100D.xsd" xmlns="http://tempuri.org/TBR100D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TBR100D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="TBR100D" msprop:Generator_UserDSName="TBR100D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TBR100L" msprop:Generator_TableClassName="TBR100LDataTable" msprop:Generator_TableVarName="tableTBR100L" msprop:Generator_TablePropName="TBR100L" msprop:Generator_RowDeletingName="TBR100LRowDeleting" msprop:Generator_RowChangingName="TBR100LRowChanging" msprop:Generator_RowEvHandlerName="TBR100LRowChangeEventHandler" msprop:Generator_RowDeletedName="TBR100LRowDeleted" msprop:Generator_UserTableName="TBR100L" msprop:Generator_RowChangedName="TBR100LRowChanged" msprop:Generator_RowEvArgName="TBR100LRowChangeEvent" msprop:Generator_RowClassName="TBR100LRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT" msprop:Generator_ColumnVarNameInTable="columnDEPT" msprop:Generator_ColumnPropNameInRow="DEPT" msprop:Generator_ColumnPropNameInTable="DEPTColumn" msprop:Generator_UserColumnName="DEPT" type="xs:string" minOccurs="0" />
+              <xs:element name="PASTE_INSIDE" msprop:Generator_ColumnVarNameInTable="columnPASTE_INSIDE" msprop:Generator_ColumnPropNameInRow="PASTE_INSIDE" msprop:Generator_ColumnPropNameInTable="PASTE_INSIDEColumn" msprop:Generator_UserColumnName="PASTE_INSIDE" type="xs:integer" minOccurs="0" />
+              <xs:element name="PASTE_OUTSIDE" msprop:Generator_ColumnVarNameInTable="columnPASTE_OUTSIDE" msprop:Generator_ColumnPropNameInRow="PASTE_OUTSIDE" msprop:Generator_ColumnPropNameInTable="PASTE_OUTSIDEColumn" msprop:Generator_UserColumnName="PASTE_OUTSIDE" type="xs:integer" minOccurs="0" />
+              <xs:element name="EMAIL_INSIDE" msprop:Generator_ColumnVarNameInTable="columnEMAIL_INSIDE" msprop:Generator_ColumnPropNameInRow="EMAIL_INSIDE" msprop:Generator_ColumnPropNameInTable="EMAIL_INSIDEColumn" msprop:Generator_UserColumnName="EMAIL_INSIDE" type="xs:integer" minOccurs="0" />
+              <xs:element name="EMAIL_OUTSIDE" msprop:Generator_ColumnVarNameInTable="columnEMAIL_OUTSIDE" msprop:Generator_ColumnPropNameInRow="EMAIL_OUTSIDE" msprop:Generator_ColumnPropNameInTable="EMAIL_OUTSIDEColumn" msprop:Generator_UserColumnName="EMAIL_OUTSIDE" type="xs:integer" minOccurs="0" />
+              <xs:element name="PASTE_SUM" msprop:Generator_ColumnVarNameInTable="columnPASTE_SUM" msprop:Generator_ColumnPropNameInRow="PASTE_SUM" msprop:Generator_ColumnPropNameInTable="PASTE_SUMColumn" msprop:Generator_UserColumnName="PASTE_SUM" type="xs:integer" minOccurs="0" />
+              <xs:element name="EMAIL_SUM" msprop:Generator_ColumnVarNameInTable="columnEMAIL_SUM" msprop:Generator_ColumnPropNameInRow="EMAIL_SUM" msprop:Generator_ColumnPropNameInTable="EMAIL_SUMColumn" msprop:Generator_UserColumnName="EMAIL_SUM" type="xs:integer" minOccurs="0" />
+              <xs:element name="ALL_SUM" msprop:Generator_ColumnVarNameInTable="columnALL_SUM" msprop:Generator_ColumnPropNameInRow="ALL_SUM" msprop:Generator_ColumnPropNameInTable="ALL_SUMColumn" msprop:Generator_UserColumnName="ALL_SUM" type="xs:integer" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TBR110L" msprop:Generator_TableClassName="TBR110LDataTable" msprop:Generator_TableVarName="tableTBR110L" msprop:Generator_TablePropName="TBR110L" msprop:Generator_RowDeletingName="TBR110LRowDeleting" msprop:Generator_RowChangingName="TBR110LRowChanging" msprop:Generator_RowEvHandlerName="TBR110LRowChangeEventHandler" msprop:Generator_RowDeletedName="TBR110LRowDeleted" msprop:Generator_UserTableName="TBR110L" msprop:Generator_RowChangedName="TBR110LRowChanged" msprop:Generator_RowEvArgName="TBR110LRowChangeEvent" msprop:Generator_RowClassName="TBR110LRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT" msprop:Generator_ColumnVarNameInTable="columnDEPT" msprop:Generator_ColumnPropNameInRow="DEPT" msprop:Generator_ColumnPropNameInTable="DEPTColumn" msprop:Generator_UserColumnName="DEPT" type="xs:string" minOccurs="0" />
+              <xs:element name="SIGN" msprop:Generator_ColumnVarNameInTable="columnSIGN" msprop:Generator_ColumnPropNameInRow="SIGN" msprop:Generator_ColumnPropNameInTable="SIGNColumn" msprop:Generator_UserColumnName="SIGN" type="xs:integer" minOccurs="0" />
+              <xs:element name="PASTE" msprop:Generator_ColumnVarNameInTable="columnPASTE" msprop:Generator_ColumnPropNameInRow="PASTE" msprop:Generator_ColumnPropNameInTable="PASTEColumn" msprop:Generator_UserColumnName="PASTE" type="xs:integer" minOccurs="0" />
+              <xs:element name="SIGN_EMAIL" msprop:Generator_ColumnVarNameInTable="columnSIGN_EMAIL" msprop:Generator_ColumnPropNameInRow="SIGN_EMAIL" msprop:Generator_ColumnPropNameInTable="SIGN_EMAILColumn" msprop:Generator_UserColumnName="SIGN_EMAIL" type="xs:integer" minOccurs="0" />
+              <xs:element name="PASTE_EMAIL" msprop:Generator_ColumnVarNameInTable="columnPASTE_EMAIL" msprop:Generator_ColumnPropNameInRow="PASTE_EMAIL" msprop:Generator_ColumnPropNameInTable="PASTE_EMAILColumn" msprop:Generator_UserColumnName="PASTE_EMAIL" type="xs:integer" minOccurs="0" />
+              <xs:element name="PASTE_SUM" msprop:Generator_ColumnVarNameInTable="columnPASTE_SUM" msprop:Generator_ColumnPropNameInRow="PASTE_SUM" msprop:Generator_ColumnPropNameInTable="PASTE_SUMColumn" msprop:Generator_UserColumnName="PASTE_SUM" type="xs:integer" minOccurs="0" />
+              <xs:element name="EMAIL_SUM" msprop:Generator_ColumnVarNameInTable="columnEMAIL_SUM" msprop:Generator_ColumnPropNameInRow="EMAIL_SUM" msprop:Generator_ColumnPropNameInTable="EMAIL_SUMColumn" msprop:Generator_UserColumnName="EMAIL_SUM" type="xs:integer" minOccurs="0" />
+              <xs:element name="ALL_SUM" msprop:Generator_ColumnVarNameInTable="columnALL_SUM" msprop:Generator_ColumnPropNameInRow="ALL_SUM" msprop:Generator_ColumnPropNameInTable="ALL_SUMColumn" msprop:Generator_UserColumnName="ALL_SUM" type="xs:integer" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TBR140L" msprop:Generator_TableClassName="TBR140LDataTable" msprop:Generator_TableVarName="tableTBR140L" msprop:Generator_TablePropName="TBR140L" msprop:Generator_RowDeletingName="TBR140LRowDeleting" msprop:Generator_RowChangingName="TBR140LRowChanging" msprop:Generator_RowEvHandlerName="TBR140LRowChangeEventHandler" msprop:Generator_RowDeletedName="TBR140LRowDeleted" msprop:Generator_UserTableName="TBR140L" msprop:Generator_RowChangedName="TBR140LRowChanged" msprop:Generator_RowEvArgName="TBR140LRowChangeEvent" msprop:Generator_RowClassName="TBR140LRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SIGNDATE" msprop:Generator_ColumnVarNameInTable="columnSIGNDATE" msprop:Generator_ColumnPropNameInRow="SIGNDATE" msprop:Generator_ColumnPropNameInTable="SIGNDATEColumn" msprop:Generator_UserColumnName="SIGNDATE" type="xs:string" minOccurs="0" />
+              <xs:element name="PASTE_OUTSIDE" msprop:Generator_ColumnVarNameInTable="columnPASTE_OUTSIDE" msprop:Generator_ColumnPropNameInRow="PASTE_OUTSIDE" msprop:Generator_ColumnPropNameInTable="PASTE_OUTSIDEColumn" msprop:Generator_UserColumnName="PASTE_OUTSIDE" type="xs:integer" minOccurs="0" />
+              <xs:element name="PASTE_INSIDE" msprop:Generator_ColumnVarNameInTable="columnPASTE_INSIDE" msprop:Generator_ColumnPropNameInRow="PASTE_INSIDE" msprop:Generator_ColumnPropNameInTable="PASTE_INSIDEColumn" msprop:Generator_UserColumnName="PASTE_INSIDE" type="xs:integer" minOccurs="0" />
+              <xs:element name="EMAIL_INSIDE" msprop:Generator_ColumnVarNameInTable="columnEMAIL_INSIDE" msprop:Generator_ColumnPropNameInRow="EMAIL_INSIDE" msprop:Generator_ColumnPropNameInTable="EMAIL_INSIDEColumn" msprop:Generator_UserColumnName="EMAIL_INSIDE" type="xs:integer" minOccurs="0" />
+              <xs:element name="PASTE_SUM" msprop:Generator_ColumnVarNameInTable="columnPASTE_SUM" msprop:Generator_ColumnPropNameInRow="PASTE_SUM" msprop:Generator_ColumnPropNameInTable="PASTE_SUMColumn" msprop:Generator_UserColumnName="PASTE_SUM" type="xs:integer" minOccurs="0" />
+              <xs:element name="EMAIL_SUM" msprop:Generator_ColumnVarNameInTable="columnEMAIL_SUM" msprop:Generator_ColumnPropNameInRow="EMAIL_SUM" msprop:Generator_ColumnPropNameInTable="EMAIL_SUMColumn" msprop:Generator_UserColumnName="EMAIL_SUM" type="xs:integer" minOccurs="0" />
+              <xs:element name="ALL_SUM" msprop:Generator_ColumnVarNameInTable="columnALL_SUM" msprop:Generator_ColumnPropNameInRow="ALL_SUM" msprop:Generator_ColumnPropNameInTable="ALL_SUMColumn" msprop:Generator_UserColumnName="ALL_SUM" type="xs:integer" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TBR120L" msprop:Generator_TableClassName="TBR120LDataTable" msprop:Generator_TableVarName="tableTBR120L" msprop:Generator_TablePropName="TBR120L" msprop:Generator_RowDeletingName="TBR120LRowDeleting" msprop:Generator_RowChangingName="TBR120LRowChanging" msprop:Generator_RowEvHandlerName="TBR120LRowChangeEventHandler" msprop:Generator_RowDeletedName="TBR120LRowDeleted" msprop:Generator_UserTableName="TBR120L" msprop:Generator_RowChangedName="TBR120LRowChanged" msprop:Generator_RowEvArgName="TBR120LRowChangeEvent" msprop:Generator_RowClassName="TBR120LRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="SignBulletinNum" msprop:Generator_ColumnVarNameInTable="columnSignBulletinNum" msprop:Generator_ColumnPropNameInRow="SignBulletinNum" msprop:Generator_ColumnPropNameInTable="SignBulletinNumColumn" msprop:Generator_UserColumnName="SignBulletinNum" type="xs:string" minOccurs="0" />
+              <xs:element name="NoSignBulletinNum" msprop:Generator_ColumnVarNameInTable="columnNoSignBulletinNum" msprop:Generator_ColumnPropNameInRow="NoSignBulletinNum" msprop:Generator_ColumnPropNameInTable="NoSignBulletinNumColumn" msprop:Generator_UserColumnName="NoSignBulletinNum" type="xs:string" minOccurs="0" />
+              <xs:element name="AllBulletinNum" msprop:Generator_ColumnVarNameInTable="columnAllBulletinNum" msprop:Generator_ColumnPropNameInRow="AllBulletinNum" msprop:Generator_ColumnPropNameInTable="AllBulletinNumColumn" msprop:Generator_UserColumnName="AllBulletinNum" type="xs:string" minOccurs="0" />
+              <xs:element name="SingPercent" msprop:Generator_ColumnVarNameInTable="columnSingPercent" msprop:Generator_ColumnPropNameInRow="SingPercent" msprop:Generator_ColumnPropNameInTable="SingPercentColumn" msprop:Generator_UserColumnName="SingPercent" type="xs:string" minOccurs="0" />
+              <xs:element name="DeptName" msprop:Generator_ColumnVarNameInTable="columnDeptName" msprop:Generator_ColumnPropNameInRow="DeptName" msprop:Generator_ColumnPropNameInTable="DeptNameColumn" msprop:Generator_UserColumnName="DeptName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TBR130L" msprop:Generator_TableClassName="TBR130LDataTable" msprop:Generator_TableVarName="tableTBR130L" msprop:Generator_TablePropName="TBR130L" msprop:Generator_RowDeletingName="TBR130LRowDeleting" msprop:Generator_RowChangingName="TBR130LRowChanging" msprop:Generator_RowEvHandlerName="TBR130LRowChangeEventHandler" msprop:Generator_RowDeletedName="TBR130LRowDeleted" msprop:Generator_UserTableName="TBR130L" msprop:Generator_RowChangedName="TBR130LRowChanged" msprop:Generator_RowEvArgName="TBR130LRowChangeEvent" msprop:Generator_RowClassName="TBR130LRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ACCOUNT" msprop:Generator_ColumnVarNameInTable="columnACCOUNT" msprop:Generator_ColumnPropNameInRow="ACCOUNT" msprop:Generator_ColumnPropNameInTable="ACCOUNTColumn" msprop:Generator_UserColumnName="ACCOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="CNTNUM" msprop:Generator_ColumnVarNameInTable="columnCNTNUM" msprop:Generator_ColumnPropNameInRow="CNTNUM" msprop:Generator_ColumnPropNameInTable="CNTNUMColumn" msprop:Generator_UserColumnName="CNTNUM" type="xs:string" minOccurs="0" />
+              <xs:element name="DocNo" msprop:Generator_ColumnVarNameInTable="columnDocNo" msprop:Generator_ColumnPropNameInRow="DocNo" msprop:Generator_ColumnPropNameInTable="DocNoColumn" msprop:Generator_UserColumnName="DocNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Subject" msprop:Generator_ColumnVarNameInTable="columnSubject" msprop:Generator_ColumnPropNameInRow="Subject" msprop:Generator_ColumnPropNameInTable="SubjectColumn" msprop:Generator_UserColumnName="Subject" type="xs:string" minOccurs="0" />
+              <xs:element name="SignDate" msprop:Generator_ColumnVarNameInTable="columnSignDate" msprop:Generator_ColumnPropNameInRow="SignDate" msprop:Generator_ColumnPropNameInTable="SignDateColumn" msprop:Generator_UserColumnName="SignDate" type="xs:string" minOccurs="0" />
+              <xs:element name="Sign" msprop:Generator_ColumnVarNameInTable="columnSign" msprop:Generator_ColumnPropNameInRow="Sign" msprop:Generator_ColumnPropNameInTable="SignColumn" msprop:Generator_UserColumnName="Sign" type="xs:string" minOccurs="0" />
+              <xs:element name="Line" msprop:Generator_ColumnVarNameInTable="columnLine" msprop:Generator_ColumnPropNameInRow="Line" msprop:Generator_ColumnPropNameInTable="LineColumn" msprop:Generator_UserColumnName="Line" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TBR120_RRBL2" msprop:Generator_TableClassName="TBR120_RRBL2DataTable" msprop:Generator_TableVarName="tableTBR120_RRBL2" msprop:Generator_TablePropName="TBR120_RRBL2" msprop:Generator_RowDeletingName="TBR120_RRBL2RowDeleting" msprop:Generator_RowChangingName="TBR120_RRBL2RowChanging" msprop:Generator_RowEvHandlerName="TBR120_RRBL2RowChangeEventHandler" msprop:Generator_RowDeletedName="TBR120_RRBL2RowDeleted" msprop:Generator_UserTableName="TBR120_RRBL2" msprop:Generator_RowChangedName="TBR120_RRBL2RowChanged" msprop:Generator_RowEvArgName="TBR120_RRBL2RowChangeEvent" msprop:Generator_RowClassName="TBR120_RRBL2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPTNAME" msprop:Generator_ColumnVarNameInTable="columnDEPTNAME" msprop:Generator_ColumnPropNameInRow="DEPTNAME" msprop:Generator_ColumnPropNameInTable="DEPTNAMEColumn" msprop:Generator_UserColumnName="DEPTNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PERSON" msprop:Generator_ColumnVarNameInTable="columnPERSON" msprop:Generator_ColumnPropNameInRow="PERSON" msprop:Generator_ColumnPropNameInTable="PERSONColumn" msprop:Generator_UserColumnName="PERSON" type="xs:string" minOccurs="0" />
+              <xs:element name="SignPercent" msprop:Generator_ColumnVarNameInTable="columnSignPercent" msprop:Generator_ColumnPropNameInRow="SignPercent" msprop:Generator_ColumnPropNameInTable="SignPercentColumn" msprop:Generator_UserColumnName="SignPercent" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

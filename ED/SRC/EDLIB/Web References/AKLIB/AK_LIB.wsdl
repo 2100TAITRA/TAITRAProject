@@ -1,0 +1,2641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkPlan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPlanNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkPlanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkPlanResult" type="tns:PlanClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlanClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlanNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlanType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlanStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlanDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Docs" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsErr" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrName" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrType" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrCode" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMessage" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTrace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TargetSite" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRedirect" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChkPlanVol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPlanNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCls" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileVol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkPlanVolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkPlanVolResult" type="tns:PlanClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanDoc_PlanNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPlanNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanDoc_PlanNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlanDoc_PlanNoResult" type="tns:PlanClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanDoc_Vol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPlanNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCls" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileVol" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanDoc_VolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlanDoc_VolResult" type="tns:PlanClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanDoc_DocNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPlanNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPlanDoc_DocNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPlanDoc_DocNoResult" type="tns:PlanClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkCodeNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCodeType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCodeNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CodeClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodeNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodeType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodeDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodeMap" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChkCodeNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkCodeNoResult" type="tns:CodeClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkDocState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChkDocStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkDocStateResult" type="tns:DocClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCKA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argClsNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FileCls">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClsName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeepYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplyLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GenCase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClsLvl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLS_KEY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Stop_Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCKAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCKAResult" type="tns:FileCls" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFieldValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argTblName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argKeyName" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argKeyValue" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRtnFldName" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrdFldName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RtnData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField0" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField1" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField2" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField3" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField4" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField5" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField6" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField7" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField8" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RtnField9" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFieldValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFieldValueResult" type="tns:RtnData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaxVolSeq">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCls" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argVol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocFileType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FileVolSeq">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VolNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeqNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMaxVolSeqResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMaxVolSeqResult" type="tns:FileVolSeq" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMonDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ComNo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ComType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Com_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckMonDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMonDocResult" type="tns:ComNo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCaseMain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCls" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FileCase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CaseYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClsNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClsName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckCaseMainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCaseMainResult" type="tns:FileCase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetComNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argChildNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrComNo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ComNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetComNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetComNoResult" type="tns:ArrComNo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAcceptedComNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argChildNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAcceptedComNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAcceptedComNoResult" type="tns:ArrComNo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplyDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCls" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileVol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileSeq" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ApplyInfoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalVol" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalDoc" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPage" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Volume" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttSeq" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsSec" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetApplyDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplyDocInfoResult" type="tns:ApplyInfoClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argHaveDept" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argHaveSec" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDept" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeptStru2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDeptsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeptsResult" type="tns:DeptStru2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDeptNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubUnitResult" type="tns:DeptStru2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnitAllUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argSubTree" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EmpStru2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SectName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SectNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUnitAllUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnitAllUsersResult" type="tns:EmpStru2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeptAllUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDeptNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeptAllUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeptAllUsersResult" type="tns:EmpStru2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Empoly">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmpDeptNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpDeptName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpSectNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpSectName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpMail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoResult" type="tns:Empoly" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkPlanDocNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPlanNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAttSeq" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlanDocClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileCls" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileCase" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileVol" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromSubject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChkPlanDocNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkPlanDocNoResult" type="tns:PlanDocClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkPlanDocFileNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCls" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileVol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileSeq" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PlanDocFileClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromSubject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChkPlanDocFileNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkPlanDocFileNoResult" type="tns:PlanDocFileClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileNoSep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocInfoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeepDesp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeepYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttScan" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileSeq" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BorrowEmpName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChkDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkDocInfoResult" type="tns:DocInfoClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkUserDocPriv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDeptNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMgrNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RtnStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChkUserDocPrivResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkUserDocPrivResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnBool">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RtnBool" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckPIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPIDResult" type="tns:UtyRtnBool" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUniqueCls">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argClsNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRcvDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUniqueClsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUniqueClsResult" type="tns:FileCls" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="PlanClass" nillable="true" type="tns:PlanClass" />
+      <s:element name="CodeClass" nillable="true" type="tns:CodeClass" />
+      <s:element name="DocClass" nillable="true" type="tns:DocClass" />
+      <s:element name="FileCls" nillable="true" type="tns:FileCls" />
+      <s:element name="RtnData" nillable="true" type="tns:RtnData" />
+      <s:element name="FileVolSeq" nillable="true" type="tns:FileVolSeq" />
+      <s:element name="ComNo" nillable="true" type="tns:ComNo" />
+      <s:element name="FileCase" nillable="true" type="tns:FileCase" />
+      <s:element name="ArrComNo" nillable="true" type="tns:ArrComNo" />
+      <s:element name="ApplyInfoClass" nillable="true" type="tns:ApplyInfoClass" />
+      <s:element name="DeptStru2" nillable="true" type="tns:DeptStru2" />
+      <s:element name="EmpStru2" nillable="true" type="tns:EmpStru2" />
+      <s:element name="Empoly" nillable="true" type="tns:Empoly" />
+      <s:element name="PlanDocClass" nillable="true" type="tns:PlanDocClass" />
+      <s:element name="PlanDocFileClass" nillable="true" type="tns:PlanDocFileClass" />
+      <s:element name="DocInfoClass" nillable="true" type="tns:DocInfoClass" />
+      <s:element name="UtyRtnString" nillable="true" type="tns:UtyRtnString" />
+      <s:element name="UtyRtnBool" nillable="true" type="tns:UtyRtnBool" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkPlan" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanVolSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkPlanVol" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanVolSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkPlanVolResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_PlanNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlanDoc_PlanNo" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_PlanNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlanDoc_PlanNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_VolSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlanDoc_Vol" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_VolSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlanDoc_VolResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_DocNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPlanDoc_DocNo" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_DocNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPlanDoc_DocNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkCodeNoSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkCodeNo" />
+  </wsdl:message>
+  <wsdl:message name="ChkCodeNoSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkCodeNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocStateSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkDocState" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocStateSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkDocStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCKASoapIn">
+    <wsdl:part name="parameters" element="tns:GetCKA" />
+  </wsdl:message>
+  <wsdl:message name="GetCKASoapOut">
+    <wsdl:part name="parameters" element="tns:GetCKAResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxVolSeqSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxVolSeq" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxVolSeqSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxVolSeqResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckMonDocSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckMonDoc" />
+  </wsdl:message>
+  <wsdl:message name="CheckMonDocSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckMonDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseMainSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCaseMain" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseMainSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCaseMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetComNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetComNo" />
+  </wsdl:message>
+  <wsdl:message name="GetComNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetComNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAcceptedComNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAcceptedComNo" />
+  </wsdl:message>
+  <wsdl:message name="GetAcceptedComNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAcceptedComNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplyDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplyDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetApplyDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplyDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepts" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubUnit" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnitAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnitAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeptAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeptAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocNoSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkPlanDocNo" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocNoSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkPlanDocNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocFileNoSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkPlanDocFileNo" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocFileNoSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkPlanDocFileNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkUserDocPrivSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkUserDocPriv" />
+  </wsdl:message>
+  <wsdl:message name="ChkUserDocPrivSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkUserDocPrivResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPIDSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPID" />
+  </wsdl:message>
+  <wsdl:message name="CheckPIDSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUniqueClsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUniqueCls" />
+  </wsdl:message>
+  <wsdl:message name="GetUniqueClsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUniqueClsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanHttpGetOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanVolHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+    <wsdl:part name="argFileYear" type="s:string" />
+    <wsdl:part name="argFileCls" type="s:string" />
+    <wsdl:part name="argFileCase" type="s:string" />
+    <wsdl:part name="argFileVol" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanVolHttpGetOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_PlanNoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_PlanNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_VolHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+    <wsdl:part name="argFileYear" type="s:string" />
+    <wsdl:part name="argFileCls" type="s:string" />
+    <wsdl:part name="argFileCase" type="s:string" />
+    <wsdl:part name="argFileVol" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_VolHttpGetOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_DocNoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_DocNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkCodeNoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argCodeType" type="s:string" />
+    <wsdl:part name="argCodeNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkCodeNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:CodeClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocStateHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocStateHttpGetOut">
+    <wsdl:part name="Body" element="tns:DocClass" />
+  </wsdl:message>
+  <wsdl:message name="GetCKAHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argClsNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCKAHttpGetOut">
+    <wsdl:part name="Body" element="tns:FileCls" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldValueHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argTblName" type="s:string" />
+    <wsdl:part name="argKeyName" type="s1:StringArray" />
+    <wsdl:part name="argKeyValue" type="s1:StringArray" />
+    <wsdl:part name="argRtnFldName" type="s1:StringArray" />
+    <wsdl:part name="argOrdFldName" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnData" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxVolSeqHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argYear" type="s:string" />
+    <wsdl:part name="argCls" type="s:string" />
+    <wsdl:part name="argCase" type="s:string" />
+    <wsdl:part name="argVol" type="s:string" />
+    <wsdl:part name="argDocFileType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxVolSeqHttpGetOut">
+    <wsdl:part name="Body" element="tns:FileVolSeq" />
+  </wsdl:message>
+  <wsdl:message name="CheckMonDocHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckMonDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:ComNo" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseMainHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argYear" type="s:string" />
+    <wsdl:part name="argCls" type="s:string" />
+    <wsdl:part name="argCase" type="s:string" />
+    <wsdl:part name="argKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseMainHttpGetOut">
+    <wsdl:part name="Body" element="tns:FileCase" />
+  </wsdl:message>
+  <wsdl:message name="GetComNoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argChildNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetComNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrComNo" />
+  </wsdl:message>
+  <wsdl:message name="GetAcceptedComNoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argChildNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAcceptedComNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrComNo" />
+  </wsdl:message>
+  <wsdl:message name="GetApplyDocInfoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argFileYear" type="s:string" />
+    <wsdl:part name="argFileCls" type="s:string" />
+    <wsdl:part name="argFileCase" type="s:string" />
+    <wsdl:part name="argFileVol" type="s:string" />
+    <wsdl:part name="argFileSeq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetApplyDocInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ApplyInfoClass" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argHaveDept" type="s:string" />
+    <wsdl:part name="argHaveSec" type="s:string" />
+    <wsdl:part name="argDept" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DeptStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitHttpGetOut">
+    <wsdl:part name="Body" element="tns:DeptStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitNo" type="s:string" />
+    <wsdl:part name="argRoleNo" type="s:string" />
+    <wsdl:part name="argSubTree" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:EmpStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:EmpStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:Empoly" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocNoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argAttSeq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:PlanDocClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocFileNoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argFileYear" type="s:string" />
+    <wsdl:part name="argFileCls" type="s:string" />
+    <wsdl:part name="argFileCase" type="s:string" />
+    <wsdl:part name="argFileVol" type="s:string" />
+    <wsdl:part name="argFileSeq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocFileNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:PlanDocFileClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocInfoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argFileNoSep" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DocInfoClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkUserDocPrivHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+    <wsdl:part name="argMgrNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkUserDocPrivHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="CheckPIDHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnBool" />
+  </wsdl:message>
+  <wsdl:message name="GetUniqueClsHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argClsNo" type="s:string" />
+    <wsdl:part name="argRcvDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUniqueClsHttpGetOut">
+    <wsdl:part name="Body" element="tns:FileCls" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanHttpPostOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanVolHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+    <wsdl:part name="argFileYear" type="s:string" />
+    <wsdl:part name="argFileCls" type="s:string" />
+    <wsdl:part name="argFileCase" type="s:string" />
+    <wsdl:part name="argFileVol" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanVolHttpPostOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_PlanNoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_PlanNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_VolHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+    <wsdl:part name="argFileYear" type="s:string" />
+    <wsdl:part name="argFileCls" type="s:string" />
+    <wsdl:part name="argFileCase" type="s:string" />
+    <wsdl:part name="argFileVol" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_VolHttpPostOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_DocNoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPlanDoc_DocNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:PlanClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkCodeNoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argCodeType" type="s:string" />
+    <wsdl:part name="argCodeNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkCodeNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:CodeClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocStateHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocStateHttpPostOut">
+    <wsdl:part name="Body" element="tns:DocClass" />
+  </wsdl:message>
+  <wsdl:message name="GetCKAHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argClsNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCKAHttpPostOut">
+    <wsdl:part name="Body" element="tns:FileCls" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldValueHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argTblName" type="s:string" />
+    <wsdl:part name="argKeyName" type="s1:StringArray" />
+    <wsdl:part name="argKeyValue" type="s1:StringArray" />
+    <wsdl:part name="argRtnFldName" type="s1:StringArray" />
+    <wsdl:part name="argOrdFldName" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnData" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxVolSeqHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argYear" type="s:string" />
+    <wsdl:part name="argCls" type="s:string" />
+    <wsdl:part name="argCase" type="s:string" />
+    <wsdl:part name="argVol" type="s:string" />
+    <wsdl:part name="argDocFileType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxVolSeqHttpPostOut">
+    <wsdl:part name="Body" element="tns:FileVolSeq" />
+  </wsdl:message>
+  <wsdl:message name="CheckMonDocHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckMonDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:ComNo" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseMainHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argYear" type="s:string" />
+    <wsdl:part name="argCls" type="s:string" />
+    <wsdl:part name="argCase" type="s:string" />
+    <wsdl:part name="argKey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseMainHttpPostOut">
+    <wsdl:part name="Body" element="tns:FileCase" />
+  </wsdl:message>
+  <wsdl:message name="GetComNoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argChildNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetComNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrComNo" />
+  </wsdl:message>
+  <wsdl:message name="GetAcceptedComNoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argChildNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAcceptedComNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrComNo" />
+  </wsdl:message>
+  <wsdl:message name="GetApplyDocInfoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argFileYear" type="s:string" />
+    <wsdl:part name="argFileCls" type="s:string" />
+    <wsdl:part name="argFileCase" type="s:string" />
+    <wsdl:part name="argFileVol" type="s:string" />
+    <wsdl:part name="argFileSeq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetApplyDocInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ApplyInfoClass" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argHaveDept" type="s:string" />
+    <wsdl:part name="argHaveSec" type="s:string" />
+    <wsdl:part name="argDept" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DeptStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitHttpPostOut">
+    <wsdl:part name="Body" element="tns:DeptStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitNo" type="s:string" />
+    <wsdl:part name="argRoleNo" type="s:string" />
+    <wsdl:part name="argSubTree" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:EmpStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:EmpStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:Empoly" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocNoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPlanNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argAttSeq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:PlanDocClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocFileNoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argFileYear" type="s:string" />
+    <wsdl:part name="argFileCls" type="s:string" />
+    <wsdl:part name="argFileCase" type="s:string" />
+    <wsdl:part name="argFileVol" type="s:string" />
+    <wsdl:part name="argFileSeq" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkPlanDocFileNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:PlanDocFileClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocInfoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argFileNoSep" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkDocInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DocInfoClass" />
+  </wsdl:message>
+  <wsdl:message name="ChkUserDocPrivHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+    <wsdl:part name="argMgrNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkUserDocPrivHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="CheckPIDHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argPID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnBool" />
+  </wsdl:message>
+  <wsdl:message name="GetUniqueClsHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argClsNo" type="s:string" />
+    <wsdl:part name="argRcvDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUniqueClsHttpPostOut">
+    <wsdl:part name="Body" element="tns:FileCls" />
+  </wsdl:message>
+  <wsdl:portType name="WSAK_LIBSoap">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlan">
+      <wsdl:input message="tns:ChkPlanSoapIn" />
+      <wsdl:output message="tns:ChkPlanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanVol">
+      <wsdl:input message="tns:ChkPlanVolSoapIn" />
+      <wsdl:output message="tns:ChkPlanVolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_PlanNo">
+      <wsdl:input message="tns:GetPlanDoc_PlanNoSoapIn" />
+      <wsdl:output message="tns:GetPlanDoc_PlanNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_Vol">
+      <wsdl:input message="tns:GetPlanDoc_VolSoapIn" />
+      <wsdl:output message="tns:GetPlanDoc_VolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_DocNo">
+      <wsdl:input message="tns:GetPlanDoc_DocNoSoapIn" />
+      <wsdl:output message="tns:GetPlanDoc_DocNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkCodeNo">
+      <wsdl:input message="tns:ChkCodeNoSoapIn" />
+      <wsdl:output message="tns:ChkCodeNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocState">
+      <wsdl:input message="tns:ChkDocStateSoapIn" />
+      <wsdl:output message="tns:ChkDocStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCKA">
+      <wsdl:input message="tns:GetCKASoapIn" />
+      <wsdl:output message="tns:GetCKASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValue">
+      <wsdl:input message="tns:GetFieldValueSoapIn" />
+      <wsdl:output message="tns:GetFieldValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxVolSeq">
+      <wsdl:input message="tns:GetMaxVolSeqSoapIn" />
+      <wsdl:output message="tns:GetMaxVolSeqSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMonDoc">
+      <wsdl:input message="tns:CheckMonDocSoapIn" />
+      <wsdl:output message="tns:CheckMonDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCaseMain">
+      <wsdl:input message="tns:CheckCaseMainSoapIn" />
+      <wsdl:output message="tns:CheckCaseMainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComNo">
+      <wsdl:input message="tns:GetComNoSoapIn" />
+      <wsdl:output message="tns:GetComNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAcceptedComNo">
+      <wsdl:input message="tns:GetAcceptedComNoSoapIn" />
+      <wsdl:output message="tns:GetAcceptedComNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplyDocInfo">
+      <wsdl:input message="tns:GetApplyDocInfoSoapIn" />
+      <wsdl:output message="tns:GetApplyDocInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <wsdl:input message="tns:GetDeptsSoapIn" />
+      <wsdl:output message="tns:GetDeptsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得指定的一級單位下所有二級單位代碼名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetSubUnitSoapIn" />
+      <wsdl:output message="tns:GetSubUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某單位所屬人員帳號名稱，可指定角色</wsdl:documentation>
+      <wsdl:input message="tns:GetUnitAllUsersSoapIn" />
+      <wsdl:output message="tns:GetUnitAllUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <wsdl:input message="tns:GetDeptAllUsersSoapIn" />
+      <wsdl:output message="tns:GetDeptAllUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocNo">
+      <wsdl:input message="tns:ChkPlanDocNoSoapIn" />
+      <wsdl:output message="tns:ChkPlanDocNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocFileNo">
+      <wsdl:input message="tns:ChkPlanDocFileNoSoapIn" />
+      <wsdl:output message="tns:ChkPlanDocFileNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocInfo">
+      <wsdl:input message="tns:ChkDocInfoSoapIn" />
+      <wsdl:output message="tns:ChkDocInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkUserDocPriv">
+      <wsdl:input message="tns:ChkUserDocPrivSoapIn" />
+      <wsdl:output message="tns:ChkUserDocPrivSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPID">
+      <wsdl:input message="tns:CheckPIDSoapIn" />
+      <wsdl:output message="tns:CheckPIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUniqueCls">
+      <wsdl:input message="tns:GetUniqueClsSoapIn" />
+      <wsdl:output message="tns:GetUniqueClsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSAK_LIBHttpGet">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpGetIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlan">
+      <wsdl:input message="tns:ChkPlanHttpGetIn" />
+      <wsdl:output message="tns:ChkPlanHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanVol">
+      <wsdl:input message="tns:ChkPlanVolHttpGetIn" />
+      <wsdl:output message="tns:ChkPlanVolHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_PlanNo">
+      <wsdl:input message="tns:GetPlanDoc_PlanNoHttpGetIn" />
+      <wsdl:output message="tns:GetPlanDoc_PlanNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_Vol">
+      <wsdl:input message="tns:GetPlanDoc_VolHttpGetIn" />
+      <wsdl:output message="tns:GetPlanDoc_VolHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_DocNo">
+      <wsdl:input message="tns:GetPlanDoc_DocNoHttpGetIn" />
+      <wsdl:output message="tns:GetPlanDoc_DocNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkCodeNo">
+      <wsdl:input message="tns:ChkCodeNoHttpGetIn" />
+      <wsdl:output message="tns:ChkCodeNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocState">
+      <wsdl:input message="tns:ChkDocStateHttpGetIn" />
+      <wsdl:output message="tns:ChkDocStateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCKA">
+      <wsdl:input message="tns:GetCKAHttpGetIn" />
+      <wsdl:output message="tns:GetCKAHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValue">
+      <wsdl:input message="tns:GetFieldValueHttpGetIn" />
+      <wsdl:output message="tns:GetFieldValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxVolSeq">
+      <wsdl:input message="tns:GetMaxVolSeqHttpGetIn" />
+      <wsdl:output message="tns:GetMaxVolSeqHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMonDoc">
+      <wsdl:input message="tns:CheckMonDocHttpGetIn" />
+      <wsdl:output message="tns:CheckMonDocHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCaseMain">
+      <wsdl:input message="tns:CheckCaseMainHttpGetIn" />
+      <wsdl:output message="tns:CheckCaseMainHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComNo">
+      <wsdl:input message="tns:GetComNoHttpGetIn" />
+      <wsdl:output message="tns:GetComNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAcceptedComNo">
+      <wsdl:input message="tns:GetAcceptedComNoHttpGetIn" />
+      <wsdl:output message="tns:GetAcceptedComNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplyDocInfo">
+      <wsdl:input message="tns:GetApplyDocInfoHttpGetIn" />
+      <wsdl:output message="tns:GetApplyDocInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <wsdl:input message="tns:GetDeptsHttpGetIn" />
+      <wsdl:output message="tns:GetDeptsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得指定的一級單位下所有二級單位代碼名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetSubUnitHttpGetIn" />
+      <wsdl:output message="tns:GetSubUnitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某單位所屬人員帳號名稱，可指定角色</wsdl:documentation>
+      <wsdl:input message="tns:GetUnitAllUsersHttpGetIn" />
+      <wsdl:output message="tns:GetUnitAllUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <wsdl:input message="tns:GetDeptAllUsersHttpGetIn" />
+      <wsdl:output message="tns:GetDeptAllUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoHttpGetIn" />
+      <wsdl:output message="tns:GetUserInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocNo">
+      <wsdl:input message="tns:ChkPlanDocNoHttpGetIn" />
+      <wsdl:output message="tns:ChkPlanDocNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocFileNo">
+      <wsdl:input message="tns:ChkPlanDocFileNoHttpGetIn" />
+      <wsdl:output message="tns:ChkPlanDocFileNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocInfo">
+      <wsdl:input message="tns:ChkDocInfoHttpGetIn" />
+      <wsdl:output message="tns:ChkDocInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkUserDocPriv">
+      <wsdl:input message="tns:ChkUserDocPrivHttpGetIn" />
+      <wsdl:output message="tns:ChkUserDocPrivHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPID">
+      <wsdl:input message="tns:CheckPIDHttpGetIn" />
+      <wsdl:output message="tns:CheckPIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUniqueCls">
+      <wsdl:input message="tns:GetUniqueClsHttpGetIn" />
+      <wsdl:output message="tns:GetUniqueClsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSAK_LIBHttpPost">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpPostIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlan">
+      <wsdl:input message="tns:ChkPlanHttpPostIn" />
+      <wsdl:output message="tns:ChkPlanHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanVol">
+      <wsdl:input message="tns:ChkPlanVolHttpPostIn" />
+      <wsdl:output message="tns:ChkPlanVolHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_PlanNo">
+      <wsdl:input message="tns:GetPlanDoc_PlanNoHttpPostIn" />
+      <wsdl:output message="tns:GetPlanDoc_PlanNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_Vol">
+      <wsdl:input message="tns:GetPlanDoc_VolHttpPostIn" />
+      <wsdl:output message="tns:GetPlanDoc_VolHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_DocNo">
+      <wsdl:input message="tns:GetPlanDoc_DocNoHttpPostIn" />
+      <wsdl:output message="tns:GetPlanDoc_DocNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkCodeNo">
+      <wsdl:input message="tns:ChkCodeNoHttpPostIn" />
+      <wsdl:output message="tns:ChkCodeNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocState">
+      <wsdl:input message="tns:ChkDocStateHttpPostIn" />
+      <wsdl:output message="tns:ChkDocStateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCKA">
+      <wsdl:input message="tns:GetCKAHttpPostIn" />
+      <wsdl:output message="tns:GetCKAHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValue">
+      <wsdl:input message="tns:GetFieldValueHttpPostIn" />
+      <wsdl:output message="tns:GetFieldValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxVolSeq">
+      <wsdl:input message="tns:GetMaxVolSeqHttpPostIn" />
+      <wsdl:output message="tns:GetMaxVolSeqHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMonDoc">
+      <wsdl:input message="tns:CheckMonDocHttpPostIn" />
+      <wsdl:output message="tns:CheckMonDocHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCaseMain">
+      <wsdl:input message="tns:CheckCaseMainHttpPostIn" />
+      <wsdl:output message="tns:CheckCaseMainHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComNo">
+      <wsdl:input message="tns:GetComNoHttpPostIn" />
+      <wsdl:output message="tns:GetComNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAcceptedComNo">
+      <wsdl:input message="tns:GetAcceptedComNoHttpPostIn" />
+      <wsdl:output message="tns:GetAcceptedComNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplyDocInfo">
+      <wsdl:input message="tns:GetApplyDocInfoHttpPostIn" />
+      <wsdl:output message="tns:GetApplyDocInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <wsdl:input message="tns:GetDeptsHttpPostIn" />
+      <wsdl:output message="tns:GetDeptsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得指定的一級單位下所有二級單位代碼名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetSubUnitHttpPostIn" />
+      <wsdl:output message="tns:GetSubUnitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某單位所屬人員帳號名稱，可指定角色</wsdl:documentation>
+      <wsdl:input message="tns:GetUnitAllUsersHttpPostIn" />
+      <wsdl:output message="tns:GetUnitAllUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <wsdl:input message="tns:GetDeptAllUsersHttpPostIn" />
+      <wsdl:output message="tns:GetDeptAllUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoHttpPostIn" />
+      <wsdl:output message="tns:GetUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocNo">
+      <wsdl:input message="tns:ChkPlanDocNoHttpPostIn" />
+      <wsdl:output message="tns:ChkPlanDocNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocFileNo">
+      <wsdl:input message="tns:ChkPlanDocFileNoHttpPostIn" />
+      <wsdl:output message="tns:ChkPlanDocFileNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocInfo">
+      <wsdl:input message="tns:ChkDocInfoHttpPostIn" />
+      <wsdl:output message="tns:ChkDocInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkUserDocPriv">
+      <wsdl:input message="tns:ChkUserDocPrivHttpPostIn" />
+      <wsdl:output message="tns:ChkUserDocPrivHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPID">
+      <wsdl:input message="tns:CheckPIDHttpPostIn" />
+      <wsdl:output message="tns:CheckPIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUniqueCls">
+      <wsdl:input message="tns:GetUniqueClsHttpPostIn" />
+      <wsdl:output message="tns:GetUniqueClsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSAK_LIBSoap" type="tns:WSAK_LIBSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlan">
+      <soap:operation soapAction="http://tempuri.org/ChkPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanVol">
+      <soap:operation soapAction="http://tempuri.org/ChkPlanVol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_PlanNo">
+      <soap:operation soapAction="http://tempuri.org/GetPlanDoc_PlanNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_Vol">
+      <soap:operation soapAction="http://tempuri.org/GetPlanDoc_Vol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_DocNo">
+      <soap:operation soapAction="http://tempuri.org/GetPlanDoc_DocNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkCodeNo">
+      <soap:operation soapAction="http://tempuri.org/ChkCodeNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocState">
+      <soap:operation soapAction="http://tempuri.org/ChkDocState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCKA">
+      <soap:operation soapAction="http://tempuri.org/GetCKA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValue">
+      <soap:operation soapAction="http://tempuri.org/GetFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxVolSeq">
+      <soap:operation soapAction="http://tempuri.org/GetMaxVolSeq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMonDoc">
+      <soap:operation soapAction="http://tempuri.org/CheckMonDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCaseMain">
+      <soap:operation soapAction="http://tempuri.org/CheckCaseMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComNo">
+      <soap:operation soapAction="http://tempuri.org/GetComNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAcceptedComNo">
+      <soap:operation soapAction="http://tempuri.org/GetAcceptedComNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplyDocInfo">
+      <soap:operation soapAction="http://tempuri.org/GetApplyDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <soap:operation soapAction="http://tempuri.org/GetDepts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <soap:operation soapAction="http://tempuri.org/GetSubUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <soap:operation soapAction="http://tempuri.org/GetUnitAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <soap:operation soapAction="http://tempuri.org/GetDeptAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocNo">
+      <soap:operation soapAction="http://tempuri.org/ChkPlanDocNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocFileNo">
+      <soap:operation soapAction="http://tempuri.org/ChkPlanDocFileNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocInfo">
+      <soap:operation soapAction="http://tempuri.org/ChkDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkUserDocPriv">
+      <soap:operation soapAction="http://tempuri.org/ChkUserDocPriv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPID">
+      <soap:operation soapAction="http://tempuri.org/CheckPID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUniqueCls">
+      <soap:operation soapAction="http://tempuri.org/GetUniqueCls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSAK_LIBSoap12" type="tns:WSAK_LIBSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlan">
+      <soap12:operation soapAction="http://tempuri.org/ChkPlan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanVol">
+      <soap12:operation soapAction="http://tempuri.org/ChkPlanVol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_PlanNo">
+      <soap12:operation soapAction="http://tempuri.org/GetPlanDoc_PlanNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_Vol">
+      <soap12:operation soapAction="http://tempuri.org/GetPlanDoc_Vol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_DocNo">
+      <soap12:operation soapAction="http://tempuri.org/GetPlanDoc_DocNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkCodeNo">
+      <soap12:operation soapAction="http://tempuri.org/ChkCodeNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocState">
+      <soap12:operation soapAction="http://tempuri.org/ChkDocState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCKA">
+      <soap12:operation soapAction="http://tempuri.org/GetCKA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValue">
+      <soap12:operation soapAction="http://tempuri.org/GetFieldValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxVolSeq">
+      <soap12:operation soapAction="http://tempuri.org/GetMaxVolSeq" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMonDoc">
+      <soap12:operation soapAction="http://tempuri.org/CheckMonDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCaseMain">
+      <soap12:operation soapAction="http://tempuri.org/CheckCaseMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComNo">
+      <soap12:operation soapAction="http://tempuri.org/GetComNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAcceptedComNo">
+      <soap12:operation soapAction="http://tempuri.org/GetAcceptedComNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplyDocInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetApplyDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <soap12:operation soapAction="http://tempuri.org/GetDepts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <soap12:operation soapAction="http://tempuri.org/GetSubUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <soap12:operation soapAction="http://tempuri.org/GetUnitAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <soap12:operation soapAction="http://tempuri.org/GetDeptAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocNo">
+      <soap12:operation soapAction="http://tempuri.org/ChkPlanDocNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocFileNo">
+      <soap12:operation soapAction="http://tempuri.org/ChkPlanDocFileNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocInfo">
+      <soap12:operation soapAction="http://tempuri.org/ChkDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkUserDocPriv">
+      <soap12:operation soapAction="http://tempuri.org/ChkUserDocPriv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPID">
+      <soap12:operation soapAction="http://tempuri.org/CheckPID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUniqueCls">
+      <soap12:operation soapAction="http://tempuri.org/GetUniqueCls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSAK_LIBHttpGet" type="tns:WSAK_LIBHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlan">
+      <http:operation location="/ChkPlan" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanVol">
+      <http:operation location="/ChkPlanVol" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_PlanNo">
+      <http:operation location="/GetPlanDoc_PlanNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_Vol">
+      <http:operation location="/GetPlanDoc_Vol" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_DocNo">
+      <http:operation location="/GetPlanDoc_DocNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkCodeNo">
+      <http:operation location="/ChkCodeNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocState">
+      <http:operation location="/ChkDocState" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCKA">
+      <http:operation location="/GetCKA" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValue">
+      <http:operation location="/GetFieldValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxVolSeq">
+      <http:operation location="/GetMaxVolSeq" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMonDoc">
+      <http:operation location="/CheckMonDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCaseMain">
+      <http:operation location="/CheckCaseMain" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComNo">
+      <http:operation location="/GetComNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAcceptedComNo">
+      <http:operation location="/GetAcceptedComNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplyDocInfo">
+      <http:operation location="/GetApplyDocInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <http:operation location="/GetDepts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <http:operation location="/GetSubUnit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <http:operation location="/GetUnitAllUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <http:operation location="/GetDeptAllUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <http:operation location="/GetUserInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocNo">
+      <http:operation location="/ChkPlanDocNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocFileNo">
+      <http:operation location="/ChkPlanDocFileNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocInfo">
+      <http:operation location="/ChkDocInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkUserDocPriv">
+      <http:operation location="/ChkUserDocPriv" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPID">
+      <http:operation location="/CheckPID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUniqueCls">
+      <http:operation location="/GetUniqueCls" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSAK_LIBHttpPost" type="tns:WSAK_LIBHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlan">
+      <http:operation location="/ChkPlan" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanVol">
+      <http:operation location="/ChkPlanVol" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_PlanNo">
+      <http:operation location="/GetPlanDoc_PlanNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_Vol">
+      <http:operation location="/GetPlanDoc_Vol" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanDoc_DocNo">
+      <http:operation location="/GetPlanDoc_DocNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkCodeNo">
+      <http:operation location="/ChkCodeNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocState">
+      <http:operation location="/ChkDocState" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCKA">
+      <http:operation location="/GetCKA" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValue">
+      <http:operation location="/GetFieldValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxVolSeq">
+      <http:operation location="/GetMaxVolSeq" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMonDoc">
+      <http:operation location="/CheckMonDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCaseMain">
+      <http:operation location="/CheckCaseMain" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComNo">
+      <http:operation location="/GetComNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAcceptedComNo">
+      <http:operation location="/GetAcceptedComNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplyDocInfo">
+      <http:operation location="/GetApplyDocInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <http:operation location="/GetDepts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <http:operation location="/GetSubUnit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <http:operation location="/GetUnitAllUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <http:operation location="/GetDeptAllUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <http:operation location="/GetUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocNo">
+      <http:operation location="/ChkPlanDocNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPlanDocFileNo">
+      <http:operation location="/ChkPlanDocFileNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDocInfo">
+      <http:operation location="/ChkDocInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkUserDocPriv">
+      <http:operation location="/ChkUserDocPriv" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPID">
+      <http:operation location="/CheckPID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUniqueCls">
+      <http:operation location="/GetUniqueCls" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSAK_LIB">
+    <wsdl:port name="WSAK_LIBSoap" binding="tns:WSAK_LIBSoap">
+      <soap:address location="http://localhost/ODDEP/lib/AK_LIB.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSAK_LIBSoap12" binding="tns:WSAK_LIBSoap12">
+      <soap12:address location="http://localhost/ODDEP/lib/AK_LIB.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSAK_LIBHttpGet" binding="tns:WSAK_LIBHttpGet">
+      <http:address location="http://localhost/ODDEP/lib/AK_LIB.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSAK_LIBHttpPost" binding="tns:WSAK_LIBHttpPost">
+      <http:address location="http://localhost/ODDEP/lib/AK_LIB.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

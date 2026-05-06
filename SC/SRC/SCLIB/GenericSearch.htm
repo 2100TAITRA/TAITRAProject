@@ -1,0 +1,143 @@
+<link rel="stylesheet" href="../../../STDN/LIB/CSS/jquery-simplemodal.basic.css" />
+<!-- 1080905	Leslie[1080339]	配合更新jQuery版本，修改參照寫法(拿掉版號) -->
+<!-- <script src="../../../STDN/LIB/jquery-2.2.1.min.js"></script> -->
+<script src="../../../STDN/LIB/jquery.js"></script>
+<script src="../../../STDN/LIB/jquery.simplemodal-1.4.4.js"></script> <!-- 子(對話)視窗元件 (mSSO / DemoMP 皆使用) -->
+<link rel="stylesheet" href="../../../STDN/LIB/jquery-ui.css">
+<script src="../../../STDN/LIB/jquery-ui.js"></script>
+<script src="../../../STDN/LIB/Template_Util.js"></script>
+<style>
+	.custom-combobox {
+        position: relative;
+        display: inline-block;
+    }
+
+    .custom-combobox-toggle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: -1px;
+        padding: 0;
+    }
+
+    .custom-combobox-input {
+        margin: 0;
+        /*padding: 1px 2px;*/
+		font-weight:normal;
+		color: Navy;
+    }
+	
+	.ui-widget{
+		font-size:1em;
+	}
+	
+	.ui-autocomplete {
+    max-height: 10em;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+</style>
+<Div id="SetupBtn" class="BannerBtn" >設定</Div>
+<Div class="BannerMenu" style="display:none">
+	<div class="dTR">
+		<div class="dTD" id="RptTitle" style="margin: 10px 5px 10px 5px;text-align: center;color:#ffffff;">
+			<SPAN>報表格式設定</SPAN>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="PDForDOC">
+			<input type="radio" id="rdPDF" name="PrintType" value="PDF"><label for="rdPDF">PDF</label>
+			<input type="radio" id="rdDOC" name="PrintType" value="WORD"  checked="checked"><label for="rdDOC">ODT</label>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="KCTitle" style="margin: 10px 5px 10px 5px;text-align: center;color:#ffffff;">
+			<SPAN>資料清除設定</SPAN>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="KeepOrClear">
+			<input type="radio" id="rdKeep" name="KeepClear" value="Keep"><label for="rdKeep">保留</label>
+			<input type="radio" id="rdClear" name="KeepClear" value="Clean" checked="checked"><label for="rdClear">清除</label>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD"  style="margin: 10px 5px 10px 5px;text-align: center;color:#ffffff;">
+			<SPAN>字型比例％</SPAN>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="FontZoom">
+			<input id="nmFontZoom" style="width: 6.6em;" min="50" max="200" step="5" readonly />
+			<br>
+			<input type="button" id="btSetDefault" value="預設值" style="padding: 0.41em;margin: 0em 0em 0em 0em;"/>
+			<input type="button" id="btSaveFontSet" value="儲存" style="margin: 0 -3px 0 -3px;/><!-- margin: 0px 0px 0px 2px;  style="padding: .1em 0em;margin: 0px 0px 2px 0px;width: 3em;"-->
+		</div>
+	</div>
+</Div>
+
+<DIV style="Z-INDEX: 104; BORDER: black 1px solid; POSITION: absolute; DISPLAY: none; TOP: 221px; LEFT: 783px;BACKGROUND-COLOR:#FFFFFF;"
+ id="lbToolTip" data-From=""></DIV>
+<script>
+$(function() {
+	if(jf_ReadCookie("Mode") == "Keep" )
+		$("#rdKeep").prop('checked',true);
+	//1070515	Leslie[1070293]	恢復報表格式設定，但改為ODF
+	if(jf_ReadCookie("FORMAT") == "PDF" )
+		$("#rdPDF").prop('checked',true);
+    //1080923	Leslie[1080339]	配合更新jQueryUI版本，修改宣告寫法
+    //$( "#PDForDOC" ).buttonset();
+    $( "#PDForDOC").controlgroup().find("input").checkboxradio({icon:false});
+	try{
+	jf_SaveCookieWithExpire('ISO_CONVERT_URL',GetSSOPage().SSO_CONFIG.getIsoConvertURLs().join(';'));	//將工作站網站存入Cookie中
+	}
+	catch(e){}
+	//1070515	Leslie[1070293]	恢復報表格式設定，但改為ODF	--END--
+	//1080923	Leslie[1080339]	配合更新jQueryUI版本，修改宣告寫法
+	//$( "#KeepOrClear" ).buttonset();
+	$( "#KeepOrClear" ).controlgroup().find("input").checkboxradio({icon:false});
+	
+  });
+  
+  $( ".BannerBtn" ).click(function() {
+		var options = {direction: 'right'};
+      $(".BannerMenu").toggle('slide',options,500);
+  });
+  
+  $( ".BannerMenu input:not('#nmFontZoom')" ).click(function(){
+	var options = {direction: 'right'};
+    $(".BannerMenu").hide('slide',options,500);
+  })
+
+  $(".BannerMenu input[name=KeepClear]").click(function () {
+      jf_SaveCookieWithExpire('Mode', this.value);
+  })
+  
+  //1070515	Leslie[1070293]	恢復報表格式設定，但改為ODF
+  $(".BannerMenu input[name=PrintType]").click(function () {
+      jf_SaveCookieWithExpire('FORMAT', this.value);
+  })
+
+function jf_ReadCookie(argCookieName)
+{
+	var namex = argCookieName + "=";
+
+	if (document.cookie.length == 0) { return null; }
+	nameat = document.cookie.indexOf(namex);
+	if (nameat == -1) { return null; } // 找不到 name 時
+	ValueAt = nameat + namex.length;
+	endPos = document.cookie.indexOf(";", ValueAt);
+	if (endPos == -1) { return document.cookie.substring(ValueAt); }
+	else { return document.cookie.substring(ValueAt, endPos); }
+}
+</script>
+<!-- 2015.1 - Eric Peng, ASPX網頁程式dlg框架 -->
+<div id="dlgASPXPage" style="display:none;width:99%;height:99%;padding:0px;">
+	<div class="pane" style="width:101%;height:101%;overflow-y: hidden;overflow-x:hidden; -webkit-overflow-scrolling:touch;">
+	  <iframe class="aspx_page_content" style="width:99%;height:99%;"></iframe>
+	</div>
+	<a class="closeBtn" style="display:none"></a>
+</div><!-- <div id="dlgASPXPage" ... -->
+<div class="footStatus"></div>
+<div id="dlgMessage" title=""><p></p></div>

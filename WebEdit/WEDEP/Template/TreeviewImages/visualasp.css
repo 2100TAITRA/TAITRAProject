@@ -1,0 +1,20 @@
+
+.TreeView			{color:#000000; font-size:8pt; font-family: arial} 
+A.TreeView:LINK		{Text-Decoration: none; color:#4682b4; font-size:8pt; font-family: arial} 
+A.TreeView:VISITED	{Text-Decoration: none; color:#4682b4; font-size:8pt; font-family: arial} 
+A.TreeView:HOVER	{Text-Decoration: underline; color:#4682b4; font-size:8pt; font-family: arial}
+
+.ListView			{color:#000000; font-size:8pt; font-family: arial} 
+A.ListView:LINK		{Text-Decoration: none; color:#000000; font-size:8pt; font-family: arial} 
+A.ListView:VISITED	{Text-Decoration: none; color:#000000; font-size:8pt; font-family: arial} 
+A.ListView:HOVER	{Text-Decoration: none; color:#4682b4; font-size:8pt; font-family: arial}
+
+.MonthView			{color:#000000; font-size:9pt; font-family: arial} 
+A.MonthView:LINK	{Text-Decoration: none; color:#000000; font-size:9pt; font-family: arial} 
+A.MonthView:VISITED {Text-Decoration: none; color:#000000; font-size:9pt; font-family: arial} 
+A.MonthView:HOVER	{background:#808080;Text-Decoration: none; font-size:9pt; color:#ffffff; font-family: arial}
+
+.TabView			{color:#000000; font-size:8pt; font-family: arial} 
+A.TabView:LINK		{Text-Decoration: none; color:#000000; font-size:8pt; font-family: arial} 
+A.TabView:VISITED	{Text-Decoration: none; color:#000000; font-size:8pt; font-family: arial}
+A.TabView:HOVER		{Text-Decoration: underline; color:#4682b4; font-size:8pt; font-family: arial}

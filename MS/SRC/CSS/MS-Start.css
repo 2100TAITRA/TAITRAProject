@@ -1,0 +1,894 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*1110222	Leslie[1101532]	[考試院]新增可顯示自造字的WebFont設定*/
+/* 1110817 Kevin 1101532 移動至CSS_CONFIG.css*/
+/*1110222	Leslie[1101532]	[考試院]新增可顯示自造字的WebFont設定	==END== */
+
+/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 */
+:root {
+    --bs-blue: #1e88e5;
+    --bs-indigo: #6610f2;
+    --bs-purple: #7460ee;
+    --bs-pink: #e83e8c;
+    --bs-red: #fc4b6c;
+    --bs-orange: #fb8c00;
+    --bs-yellow: #ffb22b;
+    --bs-green: #20c997;
+    --bs-teal: #00c3aa;
+    --bs-cyan: #26c6da;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #1e88e5;
+    --bs-secondary: #6c757d;
+    --bs-success: #20c997;
+    --bs-info: #26c6da;
+    --bs-warning: #ffb22b;
+    --bs-danger: #fc4b6c;
+    --bs-light: #f8f9fa;
+    --bs-dark: #353C48;
+    --bs-indigo: #6610f2;
+    --bs-purple: #7460ee;
+    --bs-pink: #e83e8c;
+    --bs-orange: #fb8c00;
+    --bs-teal: #00c3aa;
+    --bs-primary-rgb: 30, 136, 229;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success-rgb: 32, 201, 151;
+    --bs-info-rgb: 38, 198, 218;
+    --bs-warning-rgb: 255, 178, 43;
+    --bs-danger-rgb: 252, 75, 108;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark-rgb: 53, 60, 72;
+    --bs-indigo-rgb: 102, 16, 242;
+    --bs-purple-rgb: 116, 96, 238;
+    --bs-pink-rgb: 232, 62, 140;
+    --bs-orange-rgb: 251, 140, 0;
+    --bs-teal-rgb: 0, 195, 170;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+    --bs-body-color-rgb: 33, 37, 41;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang TC", "Heiti TC", "微軟正黑體", "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #212529;
+    --bs-body-bg: #fff;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("../Font/fa-solid-900.eot");
+    src: url("../Font/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../Font/fa-solid-900.woff2") format("woff2"), url("../Font/fa-solid-900.woff") format("woff"), url("../Font/fa-solid-900.ttf") format("truetype"), url("../Font/fa-solid-900.svg#fontawesome") format("svg");
+}
+/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 ==END== */
+
+/*
+  CSS for 首頁(原工具箱頁)
+*/
+#startContainer {
+	background: transparent;
+}
+
+/*20170411*/
+#StartCotent
+{
+	height: 100%;
+	/*width: calc(100% - 2.5em);*/
+	/*background-color: #eee;*/
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.6);
+	overflow: hidden;
+}
+
+/* 20170321 Kevin 套美工 */
+.StartLogo {
+	height: 50px;
+	float: left;
+	margin: 15px 15px 5px 15px;
+}
+
+/* 20170321 Kevin 套美工 */
+.StartMain {
+	/* 1110314	Leslie[1110167]	[考試院]UI調整，#ccc > #cccccc40 */
+	background-image: linear-gradient(#cccccc40, #eef2f3);
+	float: left;
+	box-shadow: 3px 0 3px rgba(0,0,0,.15);
+	/* 1110314	Leslie[1110167]	[考試院]UI調整，0px 15px 15px 15px > 15px 15px 15px 15px */
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段
+	margin: 15px 15px 15px 15px;
+    overflow-x: auto;
+    overflow-y: auto;*/
+    margin: 0.8%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+    border-radius: 20px;
+    /* 1110314	Leslie[1110167]	[考試院]UI調整 */
+    /* background-color: white; */
+}
+
+.StartMain .ztree {
+    overflow-x: hidden;	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段，auto > hidden*.
+    overflow-y: auto;
+    /* 1110314	Leslie[1110167]	[考試院]UI調整 */
+	position: relative;
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段*/
+	max-height: 85vh;
+}
+
+#StartLogo{
+	width: 100%;
+    height: 70px;
+}
+
+#StartLogoL {
+	background-image:url(../IMAGE/ART/Start-Program.png);
+	background-repeat: no-repeat;
+	width:calc(35% - 40px);
+}
+
+/* 2017.4 - color scheme */
+.cs-ly #StartLogoL {
+	background-image:url(../IMAGE/ART/CS-LY/Start-Program.png); 
+}
+.cs-lg #StartLogoL {
+	background-image:url(../IMAGE/ART/CS-LG/Start-Program.png); 
+}
+.cs-lp #StartLogoL {
+	background-image:url(../IMAGE/ART/CS-LP/Start-Program.png); 
+}
+
+#StartLogoM {
+	background-image:url(../IMAGE/ART/Start-Todo.png); 
+	background-repeat  : no-repeat;
+	width:calc(35% - 40px);
+}
+
+/* 2017.4 - color scheme */
+.cs-ly #StartLogoM {
+	background-image:url(../IMAGE/ART/CS-LY/Start-Todo.png); 
+}
+.cs-lg #StartLogoM {
+	background-image:url(../IMAGE/ART/CS-LG/Start-Todo.png); 
+}
+.cs-lp #StartLogoM {
+	background-image:url(../IMAGE/ART/CS-LP/Start-Todo.png); 
+}
+
+#StartLogoR {
+	background-image:url(../IMAGE/ART/Start-Short.png); 
+	background-repeat  : no-repeat;
+	width:calc(30% - 40px);
+}
+
+/* 2017.4 - color scheme */
+.cs-ly #StartLogoR {
+	background-image:url(../IMAGE/ART/CS-LY/Start-Short.png); 
+}
+.cs-lg #StartLogoR {
+	background-image:url(../IMAGE/ART/CS-LG/Start-Short.png); 
+}
+.cs-lp #StartLogoR {
+	background-image:url(../IMAGE/ART/CS-LP/Start-Short.png); 
+}
+
+#StartMain{
+	width: 100%;
+    height: 100%;
+}
+
+#StartL {
+	/* 20170321 Kevin 套美工 
+    width: 300px;
+  height: 100%;
+  float:left;
+  overflow-x:auto;
+  overflow-y:auto;
+	*/
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段	
+	height: calc(97% - 100px);
+	width:calc(32% - 40px);
+	-webkit-overflow-scrolling: touch;
+	padding:15px;*/
+	height: 90vh;
+	width: calc(31vw - 10px);
+	-webkit-overflow-scrolling: touch;
+}
+
+#StartL .Filter {
+	/* 1110314	Leslie[1110167]	[考試院]UI調整 */
+    /* width: calc(100% - 20px); */
+	/* 1110818	Leslie	width: calc(10vw - 10px);*/
+	width: calc(14vw - 20px);
+    height: 40px;
+    text-align:center;
+    /* 1110314	Leslie[1110167]	[考試院]UI調整 */
+    /* margin:10px; */
+    position: absolute;
+    top: 4px;	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段，9 > 4*/
+    right: 15px;
+}
+
+/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段*/
+#StartL .Filter .ui-input-search{
+	border-color: #d5e9fa !important;
+    background-color: #fefefe !important;
+}
+
+#StartM {
+	/* 20170321 Kevin 套美工
+    width: 40%;
+  height: 100%;
+  float:left;
+  padding-top: 50px;
+  overflow-x:auto;
+  overflow-y:auto;
+	*/
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段
+	height: calc(100% - 100px);
+	width:calc(35% - 40px);*/
+	height: 90vh;
+	width: calc(32vw - 15px);
+	overflow: hidden; /*修正瀏覽器放大時會有scrollbar*/
+}
+
+#StartR {
+	/* 20170321 Kevin 套美工
+    width: 300px;
+  height: 100%;
+  float:left;
+    padding: 10px;
+  padding-top: 50px;
+  overflow-x:auto;
+  overflow-y:auto;
+	*/
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段
+    height: calc(100% - 130px);
+	width:calc(30% - 40px);*/
+	height: 90vh;
+	width: calc(31vw - 10px);
+	/* 1110314	Leslie[1110167]	[考試院]UI調整，15px > 4px 15px 15px 15px */
+	/* padding: 4px 15px 15px 15px;	*/	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段*/
+	-webkit-overflow-scrolling: touch;
+	/*1110804	Leslie	修正右邊捷徑選單外觀，以避免顯示捷徑時過長 */
+	overflow-y:auto;
+}
+
+#StartImpFlot {
+	width: calc(100% - 50px);
+	height:150px;
+	text-align:center;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+#StartTodoFlot {
+	width: calc(100% - 20px);
+	height:400px;
+	margin:10px;
+	text-shadow: 0 /*{b-page-shadow-x}*/ 0 /*{b-page-shadow-y}*/ 0 /*{b-page-shadow-radius}*/ #fff /*{b-page-shadow-color}*/;
+}
+
+/*20170413*/
+#StartTodoMemo .FlotMemo{
+	height:20px;
+	position: absolute;
+	top: 10px;
+    right: 30px;
+    /* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段，grey > #ccc*/
+	border:1px solid #ccc;
+	border-radius: 3px;
+	text-shadow: none;
+}
+
+#popupPanel-popup {
+    left: auto !important;
+    right: 0 !important;
+}
+
+#popupPanel {
+	width: auto;
+	border:0;
+    /*margin: -1px 0; 20170413*/
+    margin: 0px; /*20170413*/
+    height: 100%;
+}
+
+#popupPanel .ui-btn {
+    margin: 1em 15px;
+}
+
+/* 1110324	Leslie[1101537]	增加所屬機關帳號切換選單*/
+.ztree.UpUserLink,
+.ztree.Upztree {
+    border: 1px solid #617775;
+    background: rgba(255,255,255,.95);
+    overflow-y: auto;
+    overflow-x: auto;
+    margin: 15px; /*20170413*/
+    background-image: linear-gradient(#ccc, #eef2f3); /*20170413*/
+    box-shadow: 3px 0 3px rgba(0,0,0,.15); /*20170413*/
+	border-radius: 10px; /*20170413*/
+	max-height: 30vh;  /* 1110217 Leslie 修正快速選單高度 */
+}
+
+#popupPanel-screen{
+    background-color: black;
+}
+
+.upMenuPanel
+{
+	position: fixed;
+	top: 60px;
+    right: 60px;
+    /* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段
+	height: 600px;*/
+	min-height: 600px;
+	max-height: 90vh; /* 1110217 Leslie 修正快速選單高度 */
+    width: 400px;
+    background-color: white;
+	border: 1px;
+    border-style: solid;
+	border-radius: 10px;
+	box-shadow: 4px 4px 1px rgba(16,16,16,0.5);
+	background-image: linear-gradient(#4cade5, #eef2f3);
+}
+
+/* 2017.4 - color scheme */
+.cs-ly .upMenuPanel {
+    background-image: linear-gradient(#e5c565, #f2f3ee);
+}
+.cs-lp .upMenuPanel {
+    background-image: linear-gradient(#e88bc2, #f2eef3);
+}
+.cs-lg .upMenuPanel {
+    background-image: linear-gradient(#97b531, #f8f3ee);
+}
+
+#ColorSwitchTitle {
+	margin: 15px 15px 0px 15px;
+    font-size: 14pt;
+    font-weight: bold;
+	width: 280px;
+}
+
+.ColorSwitch{
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+	float: left;
+	border-width: 2px;
+    border-style: solid;
+	border-color: white;
+	border-radius: 5px;
+}
+
+#ColorSwitchLB{
+	background-color: #4cade5;
+}
+
+#ColorSwitchLG{
+	background-color: #97b531;
+}
+
+#ColorSwitchLP{
+	background-color: #e88bc2;
+}
+
+#ColorSwitchLY{
+	background-color: #e5c565;
+}
+
+/*.cs-lb套在#ColorSwitchLB需要同時符合*/
+.cs-lb#ColorSwitchLB{
+	border-color: red;
+}
+
+.cs-ly #ColorSwitchLY {
+    border-color: red;
+}
+
+.cs-lg #ColorSwitchLG {
+    border-color: red;
+}
+
+.cs-lp #ColorSwitchLP {
+    border-color: red;
+}
+
+/*1101220 David 下方有支援手機模式，取消原有的調整首頁寬度邏輯*/
+/*@media screen and (max-width: 1200) and (orientation: landscape){
+	
+	#StartLogoL, #StartL {width: 270px;}
+	#StartLogoM, #StartM {width: 400px;}
+	#StartLogoR, #StartR {width: 250px;}
+	
+	#StartImpFlot {width: 370px;margin-left: 10px;}
+	#StartTodoFlot {width: 370px;height: 350px;}
+
+	.StartLogo {
+		margin: 20px 10px 10px 10px;
+	}
+	.StartMain {
+		margin: 0px 10px 5px 10px;
+	}
+	
+	.upMenuPanel
+	{
+		position: fixed;
+		top: 140px;
+		left: 315px;
+		height: 520px;
+		width: 375px;
+	}
+}*/
+
+/*1100218 David 1090927 新增手機模式*/
+/*1101220 David 使用圓餅圖當寬度小於1015時畫面會跑版，改以1024為固定寬度模式判斷*/
+/*@media screen and (max-width: 1000px) and (max-height: 450px) and (orientation: landscape) {*/
+@media screen and (max-width: 1025px) and (orientation: landscape) {
+	#StartCotent{
+		overflow:auto;
+	}
+	#StartLogo{
+		width:1024px;
+	}
+	 #StartMain{
+		width:1024px;
+		height:768px;
+	 }
+
+	.StartLogo {
+		margin: 20px 10px 10px 10px;
+	}
+	.StartMain {
+		margin: 0px 10px 5px 10px;
+	}
+	
+	.upMenuPanel
+	{
+		position: fixed;
+		top: 140px;
+		left: 315px;
+		height: 520px;
+		width: 375px;
+	}
+}
+
+/*1090306	Leslie[1081088]	新增Log功能*/
+#LogProcess {
+	position: absolute;
+	bottom: 0px;
+	/*1111107	Leslie[1110334]	配合新增的安裝包下載鈕，調整寬度*/
+	width:100%;
+}
+
+#LogProcess .LogProcessBtn {
+	margin: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    float: left;
+    width: 50px;
+    height: 50px;
+    line-height: 24px;
+	text-align: center;
+	background-color: gainsboro;
+	cursor: pointer;
+}
+
+#LogProcess .LogProcessBtn:hover {
+    border-color: coral;
+	background-color: ghostwhite;
+}
+
+#LogProcess .LogProcessBtn:active {
+    border-color: red;
+}
+
+/*1090812	Leslie[1090473]	配合公布欄區塊改為非同步，增加「載入中」*/
+#StartR .LoadBulletin{
+	text-align: center;
+	font-size: 150%;
+	font-weight: 700;
+	background: url("/ms/image/sso/loading.gif");
+	background-repeat: no-repeat;
+	background-position: calc(50% + 60px);
+	background-size: 30px;
+}
+
+/*1100810	Leslie[1100580]	Merge 新增MP客製化待辦資訊*/
+/*定義欄位線條*/
+/* 1110314	Leslie[1110167]	[考試院]UI調整 */
+/* 
+.StartTodo > div:first-child{ 
+     border-top: thick double black; 
+}
+
+.StartTodo > .ST-FolderSum{ 
+	border-top: thin solid; 
+    border-bottom: thin solid; 
+    border-color: black; 
+    padding: 2px; 
+} */
+
+/* 1110314	Leslie[1110167]	[考試院]UI調整 */
+#StartTodoCnt {
+	margin: 20px;
+	padding: 0px;
+	position: relative;
+	overflow:auto; 
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段，90% > 85vh*/
+	max-height:85vh;
+	font-size: 120%;
+	display:none;
+	/*font-family: "2100-Font-Ming"; 1110816 由classic-theme管理*/
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段*/
+	margin: 1em;
+	border-top: thin solid #ccc;
+}
+
+#StartTodoTitle{
+	color: #e4e4e4;
+	background-color:#456f9a;
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段
+	border:thin groove;
+	line-height:44px;*/
+	line-height:43px;
+	border-bottom: none;
+	/*font-size:120%;*/	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 */
+	text-shadow: none;
+    font-weight: bold;
+}
+
+#StartTodoTitle::before{
+	/*content:"　"; */	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 */
+}
+
+.StartTodo{
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 
+	border:thin groove;*/
+	border:thin solid #ccc;
+	line-height:44px;
+}
+
+.ST-TopBorder{
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 
+	border-top: thin solid;
+	border-color: black;*/
+	border-top: thin solid #ccc;
+}
+
+/*可展開的黃色標題列*/
+/* 1110314	Leslie[1110167]	[考試院]UI調整 */
+.ST-Title{
+    font-weight: bold;
+    /* background: #ffFE77; */
+	/* cursor: pointer; */
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 
+	border:thin groove;*/
+	border-top: thin solid #ccc;
+	line-height:44px;
+	background-color: #fefefe;	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段，eee > fefefe*/
+}
+
+.ST-Title::before{
+	content:"　";
+}
+
+.ST-Title::after{
+	/* content:"▼"; */
+    right:10px;
+    position: absolute;
+}
+
+.ST-FolderSum{
+	color: black;
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 
+	border:thin groove;
+	background-color: #eee; */
+	border-top:thin solid #ccc;
+	background-color: #fefefe;
+	line-height:44px;
+}
+
+.ST-Delay::before,.ST-Prog::before, .ST-Folder::before{
+    content:"　　";
+}
+
+.ST-FolderSum::before{
+    content:"　　";
+}
+
+.ST-FolderSum:hover {
+	text-decoration:none; 
+	background-color: #E7E7E7;
+}
+
+/*公文夾，顯示藍色*/
+.ST-Delay,.ST-Prog,.ST-Folder{
+    /* color: blue; */
+    cursor: pointer;
+    /* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 
+	background-color: #eee;
+	border:thin groove;*/
+	font-weight: bold;
+    background-color: #fefefe;
+    border-top: thin solid #ccc;
+	line-height:44px;
+}
+
+/*公文夾SubFolder*/
+.ST-SubFolder{
+    display: inline-block;
+}
+
+.ST-SubFolder::before{
+    content:"　";
+}
+
+.ST-Folder:hover {
+	text-decoration:none; 
+	background-color: #E7E7E7;
+}
+
+/*連動特定作業，顯示綠色*/
+.ST-Prog {
+    /* color: green; */
+    cursor: pointer;
+}
+
+/*逾時類型，顯示紅色*/
+.ST-Delay {
+    /* color: red; */
+    cursor: pointer;
+}
+
+/*數字定位*/
+.ST-NUM{
+    /* position: absolute;
+    display: inline-block;
+	right: 20%; */
+	margin-right: 1.5em;
+	float:right;
+}
+
+.ST-Hide{
+	display: none;
+}
+
+.ST-TodoTitle{
+	font-weight: bold;
+    /* background: #ffFE77; */
+	/* cursor: pointer; */
+	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 
+	border:thin groove; */
+	border-top: thin solid #ccc;
+	line-height:44px;
+	border-bottom: none;
+	background-color: #fefefe;	/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段，eee > fefefe */
+}
+
+.ST-TodoTitle::before{
+	content:"　";
+}
+
+#ListTB .ui-first-child > a.ui-btn.ui-btn-c.ui-btn-up-c,
+#ListBU .ui-first-child > a.ui-btn.ui-btn-c.ui-btn-up-c,
+#ListPA .ui-first-child > a.ui-btn.ui-btn-c.ui-btn-up-c
+{
+	color: #e4e4e4;
+	background-color:#456f9a;
+	text-shadow:none;
+	font-size:1.5em;
+	line-height:0.5;
+}
+
+#ListPA a.ui-btn,#ListBU a.ui-btn,#ListTB a.ui-btn
+{
+	font-size: 1.2em;
+	line-height:0.9;
+}
+
+.ui-menu .ui-state-active{
+	margin:0 !important;
+	color: #ffffff90 !important;
+}
+/* 1110314	Leslie[1110167]	[考試院]UI調整 ==END== */
+/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 */
+#StartR ul[id*='List']{ /*1110804	Leslie	修正右邊捷徑選單外觀，加上[id*='List']*/
+	margin:19.2px !important;
+}
+
+#StartR .bg-fr{
+	background-color: #fefefe;
+}
+
+#StartR .bg-fr:hover {
+	text-decoration:none; 
+	background-color: #E7E7E7;
+}
+
+/*1110804	Leslie	修正右邊捷徑選單外觀，以避免顯示捷徑時過長 */
+#treeShort {
+	max-height: 28vh;
+}
+
+/*//1110624	Leslie[1110629]	新增by機關的客製化設定*/
+/*.ztree a[title="公文檢索區"] span.node_name:before {*/
+.ztree .IconSearch span.node_name:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f002\2002";
+}
+
+.ztree .IconFolder span.node_name:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f07C\2002";
+}
+/*//1110624	Leslie[1110629]	新增by機關的客製化設定 --END--*/
+
+.ztree a[title="創稿"] span.node_name:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f044\2002";
+}
+
+.alert-primary, .ztree > li > a{
+    color: #125289 !important;
+    background-color: #d2e7fa !important;
+    background-image: var(--bs-gradient);
+    cursor: default;
+}
+
+.alert-danger, #StartTodoTitle {
+    color: #972d41 !important;
+    background-color: #fedbe2 !important;
+    background-image: var(--bs-gradient);
+    border-color: #fec9d3;
+}
+
+.alert-indigo {
+  color: #3d0a91 !important;
+  background-color: #e0cffc !important;
+  background-image: var(--bs-gradient);
+  border-color: #d1b7fb;
+}
+
+.alert-info {
+  color: #177783 !important;
+  background-color: #d4f4f8 !important;
+  background-image: var(--bs-gradient);
+  border-color: #beeef4;
+}
+
+.alert-orange {
+  color: #975400 !important;
+  background-color: #fee8cc !important;
+  background-image: var(--bs-gradient);
+  border-color: #feddb3;
+}
+
+.ztree > li > a span.node_name:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\2002\f0c9\2002";
+}
+
+.alert-indigo:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f658\2002";
+}
+
+.alert-danger:before,#StartTodoTitle:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\2002\f0f3\2002";
+}
+
+.alert-info:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f1ea\2002";
+}
+
+.alert-orange:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f674\2002";
+}
+
+.ST-NUM {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1;
+  /*color: var(--bs-gray-100);*/
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  background-color: #eaeaea82;
+  background-image: var(--bs-gradient);
+  margin-top:1%;
+}
+
+.bg-orange {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-orange-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.rounded-pill {
+    /*border-radius: 1rem !important;*/
+}
+
+.bg-danger {
+  font-weight:bold;
+    --bs-bg-opacity: 0.3;
+    background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+    color:#972d41;
+}
+
+.bg-indigo {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-indigo-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-info {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-num {
+  color: var(--bs-gray-100);
+  background-image: var(--bs-gradient);
+}
+
+.date_info.ExamUI {
+    font-size: 150%;
+    margin-top: 6px;
+}
+/* 1110402	Leslie[1110167]	[考試院]UI調整，第二階段 ==END==*/
+
+/* 1110823	Leslie	MP待辦的右鍵選單的最大高度 (8/30 才能完整生效的設定，Chrome 105版)
+ul.context-menu-list.context-menu-root>li ul.context-menu-list {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+ul.context-menu-list.context-menu-root>li ul.context-menu-list:has(ul.context-menu-list) {
+	overflow-y:unset;
+}*/
+
+/*1110913	Leslie[1110652]	圖餅圖標籤的醒目顯示*/
+.showPieLabel{
+	z-index: 1000;
+	background-color: #cf0000;
+}
+
+/*1140814	Leslie[1140873]	新增可自訂的NEW圖標*/
+.ui-icon-custom-new:after{
+	background-image: url(../IMAGE/SSO/NEW.png);
+	background-color: unset;
+	background-size: 2.5em;
+	border-radius: 0em;
+	width: 2.5em;
+}
+
+.ui-btn-icon-right.ui-icon-custom-new{
+	padding-right: 3.5em;
+}

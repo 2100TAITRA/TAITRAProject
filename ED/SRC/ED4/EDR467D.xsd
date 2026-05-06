@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR467D" targetNamespace="http://tempuri.org/EDR467D.xsd" elementFormDefault="qualified"
+	xmlns="http://tempuri.org/EDR467D.xsd" xmlns:mstns="http://tempuri.org/EDR467D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Main">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DOC_NO" type="xs:string" />
+				<xs:element name="SUBJECT" type="xs:string" />
+				<xs:element name="ODEPT_NAME" type="xs:string" />
+				<xs:element name="PTY_NAME" type="xs:string" />
+				<xs:element name="DUE_DATE" type="xs:string" />
+				<xs:element name="PDUE_DATE" type="xs:string" />
+				<xs:element name="RPSEMP_NAME" type="xs:string" />
+				<xs:element name="CDEPT_NAME" type="xs:string" />
+				<xs:element name="CDEPT_NO" type="xs:string" />
+				<xs:element name="START_DATE" type="xs:string" />
+				<xs:element name="END_DATE" type="xs:string" />
+				<xs:element name="COWORK_DAYS" type="xs:string" />
+				<xs:element name="EMP_NAME" type="xs:string" />
+				<xs:element name="OWN_USER_ID" type="xs:string" />
+        <xs:element name="OU_ID" type="xs:string" />
+        <xs:element name="SPD_NO" type="xs:string" />
+        <xs:element name="NEW_TIME" type="xs:string" />
+        <xs:element name="TX_TIME" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

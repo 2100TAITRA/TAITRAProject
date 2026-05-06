@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR489" targetNamespace="http://tempuri.org/EDR489.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR489.xsd" xmlns:mstns="http://tempuri.org/EDR489.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR489" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR489L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="YEARMONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="PRCV_PSIGN_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="PRCV_ESIGN_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="PRCV_E2PSIGN_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="ERCV_PSIGN_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="ERCV_ESIGN_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="ERCV_E2PSIGN_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="NEW_PSIGN_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="NEW_ESIGN_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="NEW_E2PSIGN_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SUB_OU_ID" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

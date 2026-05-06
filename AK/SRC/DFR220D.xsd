@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DFR220D" targetNamespace="http://tempuri.org/DFR220D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/DFR220D.xsd" xmlns:mstns="http://tempuri.org/DFR220D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="DFR220D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="DFR220L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="M1_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M1_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M2_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M2_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M3_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M3_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M4_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M4_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M5_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M5_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M6_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M6_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M7_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M7_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M8_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M8_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M9_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M9_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M10_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M10_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M11_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M11_P" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M12_D" type="xs:decimal" minOccurs="0" />
+							<xs:element name="M12_P" type="xs:decimal" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

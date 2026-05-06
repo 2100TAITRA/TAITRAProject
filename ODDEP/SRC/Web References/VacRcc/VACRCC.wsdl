@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://2100T.com.tw" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://2100T.com.tw" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://2100T.com.tw">
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReCloseDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRccFromNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCloseDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReCloseDateResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReCloseDateSoapIn">
+    <wsdl:part name="parameters" element="tns:ReCloseDate" />
+  </wsdl:message>
+  <wsdl:message name="ReCloseDateSoapOut">
+    <wsdl:part name="parameters" element="tns:ReCloseDateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VacRccSoap">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReCloseDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">提供公文系統發文結案時呼叫，透過此WS跟改支改辦系統進行結案介接</wsdl:documentation>
+      <wsdl:input message="tns:ReCloseDateSoapIn" />
+      <wsdl:output message="tns:ReCloseDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VacRccSoap" type="tns:VacRccSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://2100T.com.tw/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReCloseDate">
+      <soap:operation soapAction="http://2100T.com.tw/ReCloseDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VacRccSoap12" type="tns:VacRccSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReCloseDate">
+      <soap12:operation soapAction="http://2100T.com.tw/ReCloseDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VacRcc">
+    <wsdl:port name="VacRccSoap" binding="tns:VacRccSoap">
+      <soap:address location="https://docvip.fdat.com.tw/VAC/VACRCC.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VacRccSoap12" binding="tns:VacRccSoap12">
+      <soap12:address location="https://docvip.fdat.com.tw/VAC/VACRCC.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

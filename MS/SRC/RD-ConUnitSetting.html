@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<title>會稿單位設定</title>
+</head>
+<body>
+	<div id="dlgConUnitSetting" data-role="dialog" data-transition="slidedown" style="overflow:hidden; width:calc(100% - 16px); overflow-y:auto"><!-- 1100825 Raymond 1100718 修正Chrome下將設定->外觀->字型大小調整為"大"或"非常大"時,會稿單位子視窗無法向下捲動,導致按不到確定鈕的問題 -->
+		<div class="ui-slide-pane-left ui-slide-pane-active" style="width: 100%;">
+			<h1 style="margin-top:2px;margin-bottom:8px;">會稿單位設定</h1><!-- 1100825 Raymond 1100718 配合微調margin-bottom:10px->8px -->
+			<!-- 1140724 Raymond 1140865 合併1111204, 線上版會稿單位設定子視窗改成ASPX, 離線版續用原來的HTML但改為無單位選單 -->
+			<!--a id="extSetting" data-role="button" data-inline="true" data-mini="true" data-corners="false" style="position:absolute; right:10px; top:2px">會稿批次設定</a>
+			<div style="width:40%; display:inline-block; float:left; margin-right:10px;">
+				<label data-theme="b" data-corners="false" style="margin:0px; padding:.2em; background-color:#3366cc; color:white; font-size:14pt; text-align:center">可選擇會辦單位</label>
+				<div style="background-color:#ccffff; color:black; text-align:center">
+					<a id="addListItem" data-role="button" data-mini="true" data-corners="false" data-theme="b" data-inline="true">加入</a>
+					<div style="height:245px; overflow-y:scroll">
+						<ul id="list" data-role="listview" data-theme="c" data-divider-theme="b"></ul>
+					</div>
+				</div>
+			</div-->
+			<div style="width:100%; display:inline-block; float:left;"><!-- 1140724 Raymond 1140865 合併1111204, 離線版續用原來的HTML但改為無單位選單, 調整寬度 -->
+				<label data-theme="b" data-corners="false" style="margin:0px; padding:.2em; background-color:#3366cc; color:white; font-size:14pt; text-align:center">會簽稿資訊編輯區</label>
+				<div style="background-color:#ccffff; color:black">
+					<div data-role="fieldcontain" style="margin:0px; padding:6px .2em;">
+						<label for="wordlist" style="width:30%">會辦詞彙：</label>
+						<select id="wordlist" data-theme="e" style="width:70%" data-inline="true" data-mini="true">
+						</select>
+					</div>
+					<div>(如會辦單位不在選單內，請自行輸入)</div>
+					<div>
+						<input id="txtAddItem" data-inline="true" style="width:310px"><a id="addItem" data-role="button" data-mini="true" data-corners="false" data-theme="b" data-inline="true">加入</a><!-- 1100825 Raymond 1100718 配合微調input width:210px --><!-- 1140724 Raymond 1140865 合併1111204, 離線版續用原來的HTML但改為無單位選單, 再調整寬度 -->
+					</div>
+					<div>
+						<a id="delItem" data-role="button" data-mini="true" data-corners="false" data-theme="c" data-inline="true">移除</a>
+						<a id="moveUp" data-role="button" data-mini="true" data-corners="false" data-theme="c" data-inline="true">上移</a>
+						<a id="moveDown" data-role="button" data-mini="true" data-corners="false" data-theme="c" data-inline="true">下移</a>
+					</div>
+					<div style="height:124px; overflow-y:scroll">
+						<ul id="list2" data-role="listview"></ul>
+					</div>
+				</div>
+				<div data-role="fieldcontain" style="display:none; margin:0"><!-- 1110608 Raymond 1110283 新增「額外產生簽稿會核單」核取方塊選項 -->
+					<label for="chkGenExtraCon" data-corners="false">額外產生簽稿會核單</label>
+					<input id="chkGenExtraCon" type="checkbox" data-corners="false" data-theme="c" checked>
+				</div>
+			</div>
+			<footer style="width:100%; clear:both; height:53px"><!-- 1100825 Raymond 1100718 配合微調height:53px -->
+				<div style="width:49.5%;display:inline-block">
+					<a id="cancel" data-role="button" data-corners="false" data-theme="c" style="color:#222; margin-bottom:0">取消</a><!-- 1100825 Raymond 1100718 配合微調margin-bottom:0 -->
+				</div>
+				<div style="width:49.5%;display:inline-block; position:absolute; right:0px">
+					<a id="ok" data-role="button" data-corners="false" data-theme="b" style="margin-bottom:0">確定</a><!-- 1100825 Raymond 1100718 配合微調margin-bottom:0 -->
+				</div>
+			</footer>
+		</div>
+		<div class="ui-slide-pane-right" style="width:100%">
+			<iframe style="width:100%; height:417px;"></iframe><!-- 1100825 Raymond 1100718 配合微調height:422px->417px -->
+			<a id="extdlg_close_btn" style="display:none"></a>
+		</div>
+	</div>
+</body>
+</html>

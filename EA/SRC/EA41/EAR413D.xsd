@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAR413D" targetNamespace="http://tempuri.org/EAR413D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/EAR413D.xsd" xmlns:mstns="http://tempuri.org/EAR413D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAR413D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EAR413">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="VAL1" type="xs:string" minOccurs="0" />
+							<xs:element name="N01" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N02" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N03" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N04" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N05" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N06" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N07" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N08" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N09" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N10" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N11" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N12" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N13" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N14" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N15" type="xs:decimal" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EAR413L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FILECASE" type="xs:string" minOccurs="0" />
+							<xs:element name="N01" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N02" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N03" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N04" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N05" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N06" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N07" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N08" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N09" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N10" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N11" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N12" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N13" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N14" type="xs:decimal" minOccurs="0" />
+							<xs:element name="N15" type="xs:decimal" minOccurs="0" />
+							<xs:element name="FILE_VOL" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

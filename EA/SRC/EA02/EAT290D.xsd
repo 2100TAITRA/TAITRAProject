@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAT290D" targetNamespace="http://tempuri.org/EAT290D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/EAT290D.xsd" xmlns:mstns="http://tempuri.org/EAT290D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAT290D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Detail">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SEQ_NO" type="xs:int" minOccurs="0" />
+							<xs:element name="WSCAN_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SCAN" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

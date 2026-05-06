@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--		99_msg.dtd     訊息    2010.01.08   -->
+<!ELEMENT 	orgid	(#PCDATA)>
+<!ELEMENT 	unitid	(#PCDATA)>
+<!ELEMENT	 orgname	(#PCDATA)>
+<!ELEMENT 	exchangeid	(#PCDATA)>
+<!ELEMENT	 processid	(#PCDATA)>
+<!ELEMENT	 applicationid	(#PCDATA)>
+<!ELEMENT 	msgtime	(#PCDATA)>
+<!ELEMENT	 msgcode	(#PCDATA)>
+<!ELEMENT 	msgnote	(#PCDATA)>
+<!ELEMENT 	object	(orgid,unitid,orgname)>
+<!ATTLIST	 object  type	(addressbook)  "addressbook">
+<!ELEMENT 	senderinfo		(object)>
+<!ELEMENT	 receiverinfo		(object)>
+<!ELEMENT g2b2c-msg	(senderinfo,receiverinfo,exchangeid,
+processid,applicationid?,msgtime,msgcode,msgnote)>
+<!-- /g2b2c-msg -->

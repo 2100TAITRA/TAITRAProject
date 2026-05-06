@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR246D" targetNamespace="http://tempuri.org/EDR246D.xsd" xmlns:mstns="http://tempuri.org/EDR246D.xsd" xmlns="http://tempuri.org/EDR246D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR246D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR246D" msprop:Generator_UserDSName="EDR246D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR246L1" msprop:Generator_TableClassName="EDR246L1DataTable" msprop:Generator_TableVarName="tableEDR246L1" msprop:Generator_TablePropName="EDR246L1" msprop:Generator_RowDeletingName="EDR246L1RowDeleting" msprop:Generator_RowChangingName="EDR246L1RowChanging" msprop:Generator_RowEvHandlerName="EDR246L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR246L1RowDeleted" msprop:Generator_UserTableName="EDR246L1" msprop:Generator_RowChangedName="EDR246L1RowChanged" msprop:Generator_RowEvArgName="EDR246L1RowChangeEvent" msprop:Generator_RowClassName="EDR246L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OU_ID" msprop:Generator_ColumnVarNameInTable="columnOU_ID" msprop:Generator_ColumnPropNameInRow="OU_ID" msprop:Generator_ColumnPropNameInTable="OU_IDColumn" msprop:Generator_UserColumnName="OU_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_FNAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_FNAME" msprop:Generator_ColumnPropNameInRow="DEPT_FNAME" msprop:Generator_ColumnPropNameInTable="DEPT_FNAMEColumn" msprop:Generator_UserColumnName="DEPT_FNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_COUNT" msprop:Generator_ColumnVarNameInTable="columnISSUE_COUNT" msprop:Generator_ColumnPropNameInRow="ISSUE_COUNT" msprop:Generator_ColumnPropNameInTable="ISSUE_COUNTColumn" msprop:Generator_UserColumnName="ISSUE_COUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="RCV_COUNT" msprop:Generator_ColumnVarNameInTable="columnRCV_COUNT" msprop:Generator_ColumnPropNameInRow="RCV_COUNT" msprop:Generator_ColumnPropNameInTable="RCV_COUNTColumn" msprop:Generator_UserColumnName="RCV_COUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="DISTRIBUTE_COUNT" msprop:Generator_ColumnVarNameInTable="columnDISTRIBUTE_COUNT" msprop:Generator_ColumnPropNameInRow="DISTRIBUTE_COUNT" msprop:Generator_ColumnPropNameInTable="DISTRIBUTE_COUNTColumn" msprop:Generator_UserColumnName="DISTRIBUTE_COUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="JUDGE_COUNT" msprop:Generator_ColumnVarNameInTable="columnJUDGE_COUNT" msprop:Generator_ColumnPropNameInRow="JUDGE_COUNT" msprop:Generator_ColumnPropNameInTable="JUDGE_COUNTColumn" msprop:Generator_UserColumnName="JUDGE_COUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="STORE_COUNT" msprop:Generator_ColumnVarNameInTable="columnSTORE_COUNT" msprop:Generator_ColumnPropNameInRow="STORE_COUNT" msprop:Generator_ColumnPropNameInTable="STORE_COUNTColumn" msprop:Generator_UserColumnName="STORE_COUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTAL_PERCENT" msprop:Generator_ColumnVarNameInTable="columnTOTAL_PERCENT" msprop:Generator_ColumnPropNameInRow="TOTAL_PERCENT" msprop:Generator_ColumnPropNameInTable="TOTAL_PERCENTColumn" msprop:Generator_UserColumnName="TOTAL_PERCENT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR496D" targetNamespace="http://tempuri.org/EDR496D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR496D.xsd" xmlns:mstns="http://tempuri.org/EDR496D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR496D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="MainTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SeqNo" type="xs:string" minOccurs="0" />
+							<xs:element name="DocNo" type="xs:string" minOccurs="0" />
+							<xs:element name="Subject" type="xs:string" minOccurs="0" />
+							<xs:element name="RcvDate" type="xs:string" minOccurs="0" />
+							<xs:element name="OuName" type="xs:string" minOccurs="0" />
+							<xs:element name="EmpName" type="xs:string" minOccurs="0" />
+							<xs:element name="PDueDate" type="xs:string" minOccurs="0" />
+							<xs:element name="DueDate" type="xs:string" minOccurs="0" />
+							<xs:element name="ExtTimes" type="xs:string" minOccurs="0" />
+							<xs:element name="ExtDays" type="xs:string" minOccurs="0" />
+							<xs:element name="ExtReason" type="xs:string" minOccurs="0" />
+							<xs:element name="DeptSort" type="xs:string" minOccurs="0" />
+							<xs:element name="YearMonth" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="GroupSumUp">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OuName" type="xs:string" minOccurs="0" />
+							<xs:element name="OTDocTotal" type="xs:string" minOccurs="0" />
+							<xs:element name="OTDocPDue" type="xs:string" minOccurs="0" />
+							<xs:element name="OTDocDue" type="xs:string" minOccurs="0" />
+							<xs:element name="DeptSort" type="xs:string" minOccurs="0" />
+							<xs:element name="YearMonth" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

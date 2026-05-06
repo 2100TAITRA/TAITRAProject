@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR401D" targetNamespace="http://tempuri.org/EDR401D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR401D.xsd" xmlns:mstns="http://tempuri.org/EDR401D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR401D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR401L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="MONTH1" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH2" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH3" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH4" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH5" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH6" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH7" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH8" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH9" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH10" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH11" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH12" type="xs:int" minOccurs="0" />
+							<xs:element name="SUMBYDEPT" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

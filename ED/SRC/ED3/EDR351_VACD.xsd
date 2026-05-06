@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR351_VACD" targetNamespace="http://tempuri.org/EDR351_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR351_VACD.xsd" xmlns="http://tempuri.org/EDR351_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR351_VACD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR351_VACD" msprop:Generator_UserDSName="EDR351_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR351_VACL1" msprop:Generator_TableClassName="EDR351_VACL1DataTable" msprop:Generator_TableVarName="tableEDR351_VACL1" msprop:Generator_RowChangedName="EDR351_VACL1RowChanged" msprop:Generator_TablePropName="EDR351_VACL1" msprop:Generator_RowDeletingName="EDR351_VACL1RowDeleting" msprop:Generator_RowChangingName="EDR351_VACL1RowChanging" msprop:Generator_RowEvHandlerName="EDR351_VACL1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR351_VACL1RowDeleted" msprop:Generator_RowClassName="EDR351_VACL1Row" msprop:Generator_UserTableName="EDR351_VACL1" msprop:Generator_RowEvArgName="EDR351_VACL1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:int" minOccurs="0" />
+              <xs:element name="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO" msprop:Generator_ColumnPropNameInRow="DEPT_NO" msprop:Generator_ColumnPropNameInTable="DEPT_NOColumn" msprop:Generator_UserColumnName="DEPT_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

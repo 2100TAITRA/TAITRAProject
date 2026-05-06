@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDI411D" targetNamespace="http://tempuri.org/EDI411D.xsd" xmlns:mstns="http://tempuri.org/EDI411D.xsd" xmlns="http://tempuri.org/EDI411D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDI411D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDI411D" msprop:Generator_UserDSName="EDI411D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AUDITDOC_MAIN_RPT" msprop:Generator_TableClassName="AUDITDOC_MAIN_RPTDataTable" msprop:Generator_TableVarName="tableAUDITDOC_MAIN_RPT" msprop:Generator_RowChangedName="AUDITDOC_MAIN_RPTRowChanged" msprop:Generator_TablePropName="AUDITDOC_MAIN_RPT" msprop:Generator_RowDeletingName="AUDITDOC_MAIN_RPTRowDeleting" msprop:Generator_RowChangingName="AUDITDOC_MAIN_RPTRowChanging" msprop:Generator_RowEvHandlerName="AUDITDOC_MAIN_RPTRowChangeEventHandler" msprop:Generator_RowDeletedName="AUDITDOC_MAIN_RPTRowDeleted" msprop:Generator_RowClassName="AUDITDOC_MAIN_RPTRow" msprop:Generator_UserTableName="AUDITDOC_MAIN_RPT" msprop:Generator_RowEvArgName="AUDITDOC_MAIN_RPTRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="SOURCE_ORGNAME" msprop:Generator_ColumnVarNameInTable="columnSOURCE_ORGNAME" msprop:Generator_ColumnPropNameInRow="SOURCE_ORGNAME" msprop:Generator_ColumnPropNameInTable="SOURCE_ORGNAMEColumn" msprop:Generator_UserColumnName="SOURCE_ORGNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="RCV_DATE" msprop:Generator_ColumnVarNameInTable="columnRCV_DATE" msprop:Generator_ColumnPropNameInRow="RCV_DATE" msprop:Generator_ColumnPropNameInTable="RCV_DATEColumn" msprop:Generator_UserColumnName="RCV_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_NO_WORD" msprop:Generator_ColumnVarNameInTable="columnFROM_NO_WORD" msprop:Generator_ColumnPropNameInRow="FROM_NO_WORD" msprop:Generator_ColumnPropNameInTable="FROM_NO_WORDColumn" msprop:Generator_UserColumnName="FROM_NO_WORD" type="xs:string" minOccurs="0" />
+              <xs:element name="AUDIT_DATE" msprop:Generator_ColumnVarNameInTable="columnAUDIT_DATE" msprop:Generator_ColumnPropNameInRow="AUDIT_DATE" msprop:Generator_ColumnPropNameInTable="AUDIT_DATEColumn" msprop:Generator_UserColumnName="AUDIT_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="AUDIT_REASON" msprop:Generator_ColumnVarNameInTable="columnAUDIT_REASON" msprop:Generator_ColumnPropNameInRow="AUDIT_REASON" msprop:Generator_ColumnPropNameInTable="AUDIT_REASONColumn" msprop:Generator_UserColumnName="AUDIT_REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="DEAUDIT_DATE" msprop:Generator_ColumnVarNameInTable="columnDEAUDIT_DATE" msprop:Generator_ColumnPropNameInRow="DEAUDIT_DATE" msprop:Generator_ColumnPropNameInTable="DEAUDIT_DATEColumn" msprop:Generator_UserColumnName="DEAUDIT_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="DEAUDIT_REASON" msprop:Generator_ColumnVarNameInTable="columnDEAUDIT_REASON" msprop:Generator_ColumnPropNameInRow="DEAUDIT_REASON" msprop:Generator_ColumnPropNameInTable="DEAUDIT_REASONColumn" msprop:Generator_UserColumnName="DEAUDIT_REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="WORK_DAYS" msprop:Generator_ColumnVarNameInTable="columnWORK_DAYS" msprop:Generator_ColumnPropNameInRow="WORK_DAYS" msprop:Generator_ColumnPropNameInTable="WORK_DAYSColumn" msprop:Generator_UserColumnName="WORK_DAYS" type="xs:string" minOccurs="0" />
+              <xs:element name="CLOSE_DATE" msprop:Generator_ColumnVarNameInTable="columnCLOSE_DATE" msprop:Generator_ColumnPropNameInRow="CLOSE_DATE" msprop:Generator_ColumnPropNameInTable="CLOSE_DATEColumn" msprop:Generator_UserColumnName="CLOSE_DATE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EDI411L1_315240000H" msprop:Generator_TableClassName="EDI411L1_315240000HDataTable" msprop:Generator_TableVarName="tableEDI411L1_315240000H" msprop:Generator_RowChangedName="EDI411L1_315240000HRowChanged" msprop:Generator_TablePropName="EDI411L1_315240000H" msprop:Generator_RowDeletingName="EDI411L1_315240000HRowDeleting" msprop:Generator_RowChangingName="EDI411L1_315240000HRowChanging" msprop:Generator_RowEvHandlerName="EDI411L1_315240000HRowChangeEventHandler" msprop:Generator_RowDeletedName="EDI411L1_315240000HRowDeleted" msprop:Generator_RowClassName="EDI411L1_315240000HRow" msprop:Generator_UserTableName="EDI411L1_315240000H" msprop:Generator_RowEvArgName="EDI411L1_315240000HRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="RCV_DATE" msprop:Generator_ColumnVarNameInTable="columnRCV_DATE" msprop:Generator_ColumnPropNameInRow="RCV_DATE" msprop:Generator_ColumnPropNameInTable="RCV_DATEColumn" msprop:Generator_UserColumnName="RCV_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="FROMORG_DATE" msprop:Generator_ColumnVarNameInTable="columnFROMORG_DATE" msprop:Generator_ColumnPropNameInRow="FROMORG_DATE" msprop:Generator_ColumnPropNameInTable="FROMORG_DATEColumn" msprop:Generator_UserColumnName="FROMORG_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="SOURCE_ORGNAME" msprop:Generator_ColumnVarNameInTable="columnSOURCE_ORGNAME" msprop:Generator_ColumnPropNameInRow="SOURCE_ORGNAME" msprop:Generator_ColumnPropNameInTable="SOURCE_ORGNAMEColumn" msprop:Generator_UserColumnName="SOURCE_ORGNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="PTY_NAME" msprop:Generator_ColumnVarNameInTable="columnPTY_NAME" msprop:Generator_ColumnPropNameInRow="PTY_NAME" msprop:Generator_ColumnPropNameInTable="PTY_NAMEColumn" msprop:Generator_UserColumnName="PTY_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="B_TYPE_NAME" msprop:Generator_ColumnVarNameInTable="columnB_TYPE_NAME" msprop:Generator_ColumnPropNameInRow="B_TYPE_NAME" msprop:Generator_ColumnPropNameInTable="B_TYPE_NAMEColumn" msprop:Generator_UserColumnName="B_TYPE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CASE_NO" msprop:Generator_ColumnVarNameInTable="columnCASE_NO" msprop:Generator_ColumnPropNameInRow="CASE_NO" msprop:Generator_ColumnPropNameInTable="CASE_NOColumn" msprop:Generator_UserColumnName="CASE_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="CLOSE_DATE" msprop:Generator_ColumnVarNameInTable="columnCLOSE_DATE" msprop:Generator_ColumnPropNameInRow="CLOSE_DATE" msprop:Generator_ColumnPropNameInTable="CLOSE_DATEColumn" msprop:Generator_UserColumnName="CLOSE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="DUE_DATE" msprop:Generator_ColumnVarNameInTable="columnDUE_DATE" msprop:Generator_ColumnPropNameInRow="DUE_DATE" msprop:Generator_ColumnPropNameInTable="DUE_DATEColumn" msprop:Generator_UserColumnName="DUE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="DEAUDIT_DATE" msprop:Generator_ColumnVarNameInTable="columnDEAUDIT_DATE" msprop:Generator_ColumnPropNameInRow="DEAUDIT_DATE" msprop:Generator_ColumnPropNameInTable="DEAUDIT_DATEColumn" msprop:Generator_UserColumnName="DEAUDIT_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="CHILD_DOC_NO" msprop:Generator_ColumnVarNameInTable="columnCHILD_DOC_NO" msprop:Generator_ColumnPropNameInRow="CHILD_DOC_NO" msprop:Generator_ColumnPropNameInTable="CHILD_DOC_NOColumn" msprop:Generator_UserColumnName="CHILD_DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DEAUDIT_REASON" msprop:Generator_ColumnVarNameInTable="columnDEAUDIT_REASON" msprop:Generator_ColumnPropNameInRow="DEAUDIT_REASON" msprop:Generator_ColumnPropNameInTable="DEAUDIT_REASONColumn" msprop:Generator_UserColumnName="DEAUDIT_REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="DEAUDIT_REMARK" msprop:Generator_ColumnVarNameInTable="columnDEAUDIT_REMARK" msprop:Generator_ColumnPropNameInRow="DEAUDIT_REMARK" msprop:Generator_ColumnPropNameInTable="DEAUDIT_REMARKColumn" msprop:Generator_UserColumnName="DEAUDIT_REMARK" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_NO_WORD" msprop:Generator_ColumnVarNameInTable="columnFROM_NO_WORD" msprop:Generator_ColumnPropNameInRow="FROM_NO_WORD" msprop:Generator_ColumnPropNameInTable="FROM_NO_WORDColumn" msprop:Generator_UserColumnName="FROM_NO_WORD" type="xs:string" minOccurs="0" />
+              <xs:element name="AUDIT_DATE" msprop:Generator_ColumnVarNameInTable="columnAUDIT_DATE" msprop:Generator_ColumnPropNameInRow="AUDIT_DATE" msprop:Generator_ColumnPropNameInTable="AUDIT_DATEColumn" msprop:Generator_UserColumnName="AUDIT_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="AUDIT_REASON" msprop:Generator_ColumnVarNameInTable="columnAUDIT_REASON" msprop:Generator_ColumnPropNameInRow="AUDIT_REASON" msprop:Generator_ColumnPropNameInTable="AUDIT_REASONColumn" msprop:Generator_UserColumnName="AUDIT_REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="WORK_DAYS" msprop:Generator_ColumnVarNameInTable="columnWORK_DAYS" msprop:Generator_ColumnPropNameInRow="WORK_DAYS" msprop:Generator_ColumnPropNameInTable="WORK_DAYSColumn" msprop:Generator_UserColumnName="WORK_DAYS" type="xs:string" minOccurs="0" />
+              <xs:element name="COMBINE_TYPE" msprop:Generator_ColumnVarNameInTable="columnCOMBINE_TYPE" msprop:Generator_ColumnPropNameInRow="COMBINE_TYPE" msprop:Generator_ColumnPropNameInTable="COMBINE_TYPEColumn" msprop:Generator_UserColumnName="COMBINE_TYPE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

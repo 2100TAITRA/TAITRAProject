@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallPetitionWS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDeptName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCloseType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPdfPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallPetitionWSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallPetitionWSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallPetitionWSSoapIn">
+    <wsdl:part name="parameters" element="tns:CallPetitionWS" />
+  </wsdl:message>
+  <wsdl:message name="CallPetitionWSSoapOut">
+    <wsdl:part name="parameters" element="tns:CallPetitionWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CallPetitionWSHttpGetIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argCaseNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argDeptName" type="s:string" />
+    <wsdl:part name="argCloseType" type="s:string" />
+    <wsdl:part name="argPdfPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CallPetitionWSHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CallPetitionWSHttpPostIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argCaseNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argDeptName" type="s:string" />
+    <wsdl:part name="argCloseType" type="s:string" />
+    <wsdl:part name="argPdfPath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CallPetitionWSHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="PetitionWSSoap">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallPetitionWS">
+      <wsdl:input message="tns:CallPetitionWSSoapIn" />
+      <wsdl:output message="tns:CallPetitionWSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PetitionWSHttpGet">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpGetIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallPetitionWS">
+      <wsdl:input message="tns:CallPetitionWSHttpGetIn" />
+      <wsdl:output message="tns:CallPetitionWSHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PetitionWSHttpPost">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpPostIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallPetitionWS">
+      <wsdl:input message="tns:CallPetitionWSHttpPostIn" />
+      <wsdl:output message="tns:CallPetitionWSHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PetitionWSSoap" type="tns:PetitionWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallPetitionWS">
+      <soap:operation soapAction="http://tempuri.org/CallPetitionWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PetitionWSSoap12" type="tns:PetitionWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallPetitionWS">
+      <soap12:operation soapAction="http://tempuri.org/CallPetitionWS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PetitionWSHttpGet" type="tns:PetitionWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallPetitionWS">
+      <http:operation location="/CallPetitionWS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PetitionWSHttpPost" type="tns:PetitionWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallPetitionWS">
+      <http:operation location="/CallPetitionWS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PetitionWS">
+    <wsdl:port name="PetitionWSSoap" binding="tns:PetitionWSSoap">
+      <soap:address location="https://docvip.fdat.com.tw/TA/PetitionWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PetitionWSSoap12" binding="tns:PetitionWSSoap12">
+      <soap12:address location="https://docvip.fdat.com.tw/TA/PetitionWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PetitionWSHttpGet" binding="tns:PetitionWSHttpGet">
+      <http:address location="https://docvip.fdat.com.tw/TA/PetitionWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PetitionWSHttpPost" binding="tns:PetitionWSHttpPost">
+      <http:address location="https://docvip.fdat.com.tw/TA/PetitionWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

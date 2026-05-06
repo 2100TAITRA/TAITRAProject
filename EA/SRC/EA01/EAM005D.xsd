@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAM005D" targetNamespace="http://tempuri.org/EAM005D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/EAM005D.xsd" xmlns:mstns="http://tempuri.org/EAM005D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAM005D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="CLASS_REL_CLASS">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CLS_DATAINFO" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CLASS_REL_ITEM">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ITEM_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="ITEM_NAME" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CLASS_REMARK">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ENTRY_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ENTRY_USER" type="xs:string" minOccurs="0" />
+							<xs:element name="REMARK" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

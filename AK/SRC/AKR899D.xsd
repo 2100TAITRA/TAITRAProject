@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR899D" targetNamespace="http://tempuri.org/AKR899D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR899D.xsd" xmlns:mstns="http://tempuri.org/AKR899D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR899D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="AKR899L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FILE_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CLS" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CASE" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY1" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE1" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY2" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE2" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY3" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE3" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY4" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE4" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY5" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE5" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY6" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE6" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY7" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE7" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY8" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE8" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY9" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE9" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY10" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE10" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY11" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE11" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPLY12" type="xs:decimal" minOccurs="0" />
+							<xs:element name="APPROVE12" type="xs:decimal" minOccurs="0" />
+							<xs:element name="CLS_KEY" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

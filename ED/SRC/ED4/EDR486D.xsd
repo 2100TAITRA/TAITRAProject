@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR486D" targetNamespace="http://tempuri.org/EDR486D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR486D.xsd" xmlns:mstns="http://tempuri.org/EDR486D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR486D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR486L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FADOC_P" type="xs:int" minOccurs="0" />
+							<xs:element name="FATELE_P" type="xs:int" minOccurs="0" />
+							<xs:element name="ORGDOC_P" type="xs:int" minOccurs="0" />
+							<xs:element name="ORGTELE_P" type="xs:int" minOccurs="0" />
+							<xs:element name="EMAILDOC_P" type="xs:int" minOccurs="0" />
+							<xs:element name="EMAILTELE_P" type="xs:int" minOccurs="0" />
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FADOC_E" type="xs:int" minOccurs="0" />
+							<xs:element name="FATELE_E" type="xs:int" minOccurs="0" />
+							<xs:element name="ORGDOC_E" type="xs:int" minOccurs="0" />
+							<xs:element name="ORGTELE_E" type="xs:int" minOccurs="0" />
+							<xs:element name="EMAILDOC_E" type="xs:int" minOccurs="0" />
+							<xs:element name="EMAILTELE_E" type="xs:int" minOccurs="0" />
+							<xs:element name="YEARMONTH" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EDR486L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="ORGRCVDOC" type="xs:int" minOccurs="0" />
+							<xs:element name="ORGRCVTELE" type="xs:int" minOccurs="0" />
+							<xs:element name="NEWDOC" type="xs:int" minOccurs="0" />
+							<xs:element name="NEWTELE" type="xs:int" minOccurs="0" />
+							<xs:element name="NOCLOSEDOC" type="xs:int" minOccurs="0" />
+							<xs:element name="NOCLOSETELE" type="xs:int" minOccurs="0" />
+							<xs:element name="FACOWORKDOC" type="xs:int" minOccurs="0" />
+							<xs:element name="TOFADOC" type="xs:int" minOccurs="0" />
+							<xs:element name="TOFATELE" type="xs:int" minOccurs="0" />
+							<xs:element name="FACOWORKTELE" type="xs:int" minOccurs="0" />
+							<xs:element name="YEARMONTH" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

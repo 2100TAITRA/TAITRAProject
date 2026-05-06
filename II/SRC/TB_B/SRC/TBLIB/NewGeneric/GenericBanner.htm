@@ -1,0 +1,213 @@
+<table class="V3_GenericBannerCaption"; cellpadding="0"; cellspacing="0"; id="Table1" bgcolor="#FEE4E3">
+	<tr>
+		<td height="68">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" ID="Table2">
+		  		<tr>
+		  			<td width="800px" height="68" valign="top" background="../IMAGE/UI_images/top_bg_03.gif">
+						<img src="../IMAGE/UI_images/Page_01_01.gif" height="68" alt="">
+					</td>
+				</tr>	
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="31" valign="top">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" ID="Table3">
+			<tr>
+				<td height="31" valign="top" bgcolor="#D4D0C7"></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="560" valign="top">
+			<table width="1004" border="0" cellpadding="0" cellspacing="0" ID="Table4">
+				<tr>
+					<td height="560" valign="top" background="../IMAGE/UI_images/BG-02.jpg" background-attachment="fixed" background-repeat"no-repeat"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td height="20" valign="top">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" ID="Table5">
+				<tr>
+		    			<td height="20" valign="top" bgcolor="#EB0C0D"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<div id="oMenuContainer" style="z-index:101; left:expression(screen.width-200); width=200px; position:absolute; align:right; TOP:expression(this.offsetParent.offsetTop);"></div>
+<style type="text/css">
+<!--
+body 
+{
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+	.SetlabelCss{background-color:black ;cursor: hand; color: #FFFFFF; width: 100; height:25; TOP: 0px; text-align: center; z-index: 7; border: "0 solid"; border-color: "#000000";font-size: 12pt;}
+	.LeavelabelCss{background-color:black ;cursor: hand; color: #FFFFFF; width: 80; height:25; TOP: 0px; text-align: center; z-index: 7; border: "0 solid"; border-color: "#000000";font-size: 12pt;}
+	.TRCss {background-color:black ;cursor: hand; color: #FFFFFF;width: 100; height:25;font-size: 10pt;text-align: center; z-index:10;}
+	.TRHidden {display: none;width: 80; height:25;font-size: 10pt;text-align: center; z-index:10;}
+	.TRVisible {display: block;width: 80; height:25;font-size: 10pt;text-align: center; z-index:10;}
+	.TableContainerCss{position: absolute ; display: none;cursor: hand; color: #FFFFFF; text-align: center; z-index:10; border: "0 solid"; border-color: "#000000";font-size: 10pt; width: 180; height: 50;}
+	.TableCss{position: absolute; cursor: hand; color: #FFFFFF; left: 0px;text-align: left; z-index:10; border: "0 solid"; border-color: "#000000";font-size: 10pt;}
+</style>
+<script>
+function jf_MenuInit()
+{
+	oMenuContainer.innerHTML='<span class="SetlabelCss" id="oMenu" onmouseOver="fnMouseEnter()">設　定</span>';
+	oMenuContainer.innerHTML+='<span id="Contain1" class="TableContainerCss">';
+	oMenuContainer.innerHTML+='</span>';
+	oMenuContainer.innerHTML+='<span class="LeavelabelCss" onclick="jf_ConfirmExit();">離　開</span>';
+	document.all.tbTool.style.zIndex=1;
+}
+
+//Show two modes for User to choose
+function fnMouseEnter()
+{
+	var oContain1=eval("Contain1");
+	oContain1.style.top=25;
+	oContain1.style.display="block";
+	oContain1.style.left=0;
+	//單隻測試用document.body.offsetWidth
+	oContain1.innerHTML=
+	'<TABLE id="tbMode" class="TableCss" onmouseleave="TableClose()" cellpadding="0" cellspacing="0">'+
+		'<TR class="TRCss">'+
+			'<TD class="TRCss" id="oMode1" onmouseEnter="ShowModeItem()">預覽格式設定</TD>'+
+			'<TD id="oColor1"><IMG style="display:none" id="oImg1" src="../../../STD/IMAGE/flyout_red.gif"></TD>'+
+			'<TD id="oColor3""><IMG style="display:none" id="oImg3" src="../../../STD/IMAGE/flyout_red.gif"></TD>'+
+			'<TD class="TRHidden" id="oItem1" onclick="fnFormat()" onmouseOver="fnFocusColor()" onmouseOut="fnFocusOut()">PDF預覽</TD>'+
+			'<TD class="TRHidden" id="oItem3" onclick="fnClean()" onmouseOver="fnFocusColor()" onmouseOut="fnFocusOut()">保留模式</TD>'+
+		'</TR>'+
+		'<TR class="TRCss">'+
+			'<TD class="TRCss" id="oMode2" onmouseEnter="ShowModeItem()">資料清除設定</TD>'+
+			'<TD id="oColor2"><IMG style="display:none" id="oImg2" src="../../../STD/IMAGE/flyout_red.gif"></TD>'+
+			'<TD id="oColor4"><IMG style="display:none" id="oImg4" src="../../../STD/IMAGE/flyout_red.gif"></TD>'+
+			'<TD class="TRHidden" id="oItem2" onclick="fnFormat()" onmouseOver="fnFocusColor()" onmouseOut="fnFocusOut()">WORD預覽</TD>'+
+			'<TD class="TRHidden" id="oItem4" onclick="fnClean()" onmouseOver="fnFocusColor()" onmouseOut="fnFocusOut()">清除模式</TD>'+
+		'</TR>'+
+	'</TABLE>';
+}
+
+function TableClose()
+{
+	eval("tbMode").style.display="none";
+}
+
+//Show detail items of 2 modes
+function ShowModeItem()
+{
+	oWorkItem=event.srcElement;
+	if (oWorkItem.innerHTML=="預覽格式設定")
+	{
+		eval("oMode1").style.backgroundColor = "LightGrey";
+		eval("oMode2").style.backgroundColor = "black";
+		eval("oItem1").className="TRVisible";	//PDF type
+		eval("oItem2").className="TRVisible";	//WORD type
+		eval("oItem3").className="TRHidden";	//keep mode
+		eval("oItem4").className="TRHidden";	//Clean mode
+		if(jf_ReadCookie("FORMAT") == "PDF")
+		{
+			document.all["oImg1"].style.display = "block";
+			document.all["oImg2"].style.display = "none";
+			document.all["oImg3"].style.display = "none";
+			document.all["oImg4"].style.display = "none";
+		}
+		else
+		{
+			document.all["oImg1"].style.display = "none";
+			document.all["oImg2"].style.display = "block";
+			document.all["oImg3"].style.display = "none";
+			document.all["oImg4"].style.display = "none";
+		}
+	}
+	else if (oWorkItem.innerHTML=="資料清除設定")
+	{
+		eval("oMode1").style.backgroundColor = "black";
+		eval("oMode2").style.backgroundColor = "LightGrey";
+		eval("oItem1").className="TRHidden";
+		eval("oItem2").className="TRHidden";
+		eval("oItem3").className="TRVisible";
+		eval("oItem4").className="TRVisible";
+		if(jf_ReadCookie("Mode") == "Keep" )
+		{
+			document.all["oImg1"].style.display = "none";
+			document.all["oImg2"].style.display = "none";
+			document.all["oImg3"].style.display = "block";
+			document.all["oImg4"].style.display = "none";
+		}
+		else
+		{
+			document.all["oImg1"].style.display = "none";
+			document.all["oImg2"].style.display = "none";
+			document.all["oImg3"].style.display = "none";
+			document.all["oImg4"].style.display = "block";
+		}
+	}
+}
+
+function fnFocusColor()
+{
+	if (event.srcElement.id=="oItem1")
+	{
+		eval("oItem1").style.backgroundColor = "LightGrey";
+		eval("oColor1").style.backgroundColor = "LightGrey";
+	}
+	else if (event.srcElement.id=="oItem2")
+	{
+		eval("oItem2").style.backgroundColor = "LightGrey";
+		eval("oColor2").style.backgroundColor = "LightGrey";
+	}
+	else if (event.srcElement.id=="oItem3")
+	{
+		eval("oItem3").style.backgroundColor = "LightGrey";
+		eval("oColor3").style.backgroundColor = "LightGrey";
+	}
+	else if (event.srcElement.id=="oItem4")
+	{
+		eval("oItem4").style.backgroundColor = "LightGrey";
+		eval("oColor4").style.backgroundColor = "LightGrey";
+	}
+}
+
+function fnFocusOut()
+{
+	eval("oItem1").style.backgroundColor = "black";
+	eval("oItem2").style.backgroundColor = "black";
+	eval("oItem3").style.backgroundColor = "black";
+	eval("oItem4").style.backgroundColor = "black";
+	eval("oColor1").style.backgroundColor = "black";
+	eval("oColor2").style.backgroundColor = "black";
+	eval("oColor3").style.backgroundColor = "black";
+	eval("oColor4").style.backgroundColor = "black";
+}
+
+//set Cookie "FORMAT" property
+function fnFormat()
+{
+	oWorkItem=event.srcElement;
+	if (oWorkItem.id=="oItem1")
+		jf_SaveCookieWithExpire('FORMAT', 'PDF');
+	else if (oWorkItem.id=="oItem2")
+		jf_SaveCookieWithExpire('FORMAT', 'WORD');
+	TableClose();
+	//alert("已設定報表為 " + jf_ReadCookie("FORMAT") + " 模式");
+}
+
+//Set Cookie "Mode" property
+function fnClean()
+{
+	oWorkItem=event.srcElement;
+	if (oWorkItem.id=="oItem3")
+		jf_SaveCookieWithExpire('Mode', 'Keep');
+	else if (oWorkItem.id=="oItem4")
+		jf_SaveCookieWithExpire('Mode', 'Clean');
+	TableClose();
+	//alert("已設定系統為 " + jf_ReadCookie("Mode") + " 模式");
+}
+</script>

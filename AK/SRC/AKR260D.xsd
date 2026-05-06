@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR260D" targetNamespace="http://tempuri.org/AKR260D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR260D.xsd" xmlns:mstns="http://tempuri.org/AKR260D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR260D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="USE_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SECT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SECT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC01" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE01" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC02" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE02" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC03" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE03" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC04" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE04" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC05" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE05" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC06" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE06" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC07" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE07" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC08" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE08" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC09" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE09" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC10" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE10" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC11" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE11" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC12" type="xs:int" minOccurs="0" />
+							<xs:element name="FILE12" type="xs:int" minOccurs="0" />
+							<xs:element name="FULL_COUNT" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RptTable2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="USE_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_MONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SECT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SECT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_COUNT" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R1" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK1" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R2" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK2" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R3" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK3" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R4" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK4" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R5" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK5" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R6" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK6" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R7" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK7" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R8" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK8" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R9" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK9" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R10" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK10" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R11" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK11" type="xs:int" minOccurs="0" />
+							<xs:element name="DOC_R12" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK12" type="xs:int" minOccurs="0" />
+							<xs:element name="FULL_DOC" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK_TOTAL" type="xs:int" minOccurs="0" />
+							<xs:element name="COLUMEGROUP" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RptTable3">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="COLUMEGROUP" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R1" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R2" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R3" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R4" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R5" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R6" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R7" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R8" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R9" type="xs:string" minOccurs="0" />
+							<xs:element name="CODE_R10" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4544D" targetNamespace="http://tempuri.org/EDR4544D.xsd" xmlns:mstns="http://tempuri.org/EDR4544D.xsd" xmlns="http://tempuri.org/EDR4544D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4544D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR4544D" msprop:Generator_UserDSName="EDR4544D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4544L1" msprop:Generator_TableClassName="EDR4544L1DataTable" msprop:Generator_TableVarName="tableEDR4544L1" msprop:Generator_RowChangedName="EDR4544L1RowChanged" msprop:Generator_TablePropName="EDR4544L1" msprop:Generator_RowDeletingName="EDR4544L1RowDeleting" msprop:Generator_RowChangingName="EDR4544L1RowChanging" msprop:Generator_RowEvHandlerName="EDR4544L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4544L1RowDeleted" msprop:Generator_RowClassName="EDR4544L1Row" msprop:Generator_UserTableName="EDR4544L1" msprop:Generator_RowEvArgName="EDR4544L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="RCV_TOTAL" msprop:Generator_ColumnVarNameInTable="columnRCV_TOTAL" msprop:Generator_ColumnPropNameInRow="RCV_TOTAL" msprop:Generator_ColumnPropNameInTable="RCV_TOTALColumn" msprop:Generator_UserColumnName="RCV_TOTAL" type="xs:int" minOccurs="0" />
+              <xs:element name="ERCV" msprop:Generator_ColumnVarNameInTable="columnERCV" msprop:Generator_ColumnPropNameInRow="ERCV" msprop:Generator_ColumnPropNameInTable="ERCVColumn" msprop:Generator_UserColumnName="ERCV" type="xs:int" minOccurs="0" />
+              <xs:element name="PRCVESIGN" msprop:Generator_ColumnVarNameInTable="columnPRCVESIGN" msprop:Generator_ColumnPropNameInRow="PRCVESIGN" msprop:Generator_ColumnPropNameInTable="PRCVESIGNColumn" msprop:Generator_UserColumnName="PRCVESIGN" type="xs:int" minOccurs="0" />
+              <xs:element name="NEW" msprop:Generator_ColumnVarNameInTable="columnNEW" msprop:Generator_ColumnPropNameInRow="NEW" msprop:Generator_ColumnPropNameInTable="NEWColumn" msprop:Generator_UserColumnName="NEW" type="xs:int" minOccurs="0" />
+              <xs:element name="ESIGN" msprop:Generator_ColumnVarNameInTable="columnESIGN" msprop:Generator_ColumnPropNameInRow="ESIGN" msprop:Generator_ColumnPropNameInTable="ESIGNColumn" msprop:Generator_UserColumnName="ESIGN" type="xs:int" minOccurs="0" />
+              <xs:element name="ESignPercent" msprop:Generator_ColumnVarNameInTable="columnESignPercent" msprop:Generator_ColumnPropNameInRow="ESignPercent" msprop:Generator_ColumnPropNameInTable="ESignPercentColumn" msprop:Generator_UserColumnName="ESignPercent" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EDR4544L2" msprop:Generator_TableClassName="EDR4544L2DataTable" msprop:Generator_TableVarName="tableEDR4544L2" msprop:Generator_RowChangedName="EDR4544L2RowChanged" msprop:Generator_TablePropName="EDR4544L2" msprop:Generator_RowDeletingName="EDR4544L2RowDeleting" msprop:Generator_RowChangingName="EDR4544L2RowChanging" msprop:Generator_RowEvHandlerName="EDR4544L2RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4544L2RowDeleted" msprop:Generator_RowClassName="EDR4544L2Row" msprop:Generator_UserTableName="EDR4544L2" msprop:Generator_RowEvArgName="EDR4544L2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH01" msprop:Generator_ColumnVarNameInTable="columnMONTH01" msprop:Generator_ColumnPropNameInRow="MONTH01" msprop:Generator_ColumnPropNameInTable="MONTH01Column" msprop:Generator_UserColumnName="MONTH01" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH02" msprop:Generator_ColumnVarNameInTable="columnMONTH02" msprop:Generator_ColumnPropNameInRow="MONTH02" msprop:Generator_ColumnPropNameInTable="MONTH02Column" msprop:Generator_UserColumnName="MONTH02" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH03" msprop:Generator_ColumnVarNameInTable="columnMONTH03" msprop:Generator_ColumnPropNameInRow="MONTH03" msprop:Generator_ColumnPropNameInTable="MONTH03Column" msprop:Generator_UserColumnName="MONTH03" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH04" msprop:Generator_ColumnVarNameInTable="columnMONTH04" msprop:Generator_ColumnPropNameInRow="MONTH04" msprop:Generator_ColumnPropNameInTable="MONTH04Column" msprop:Generator_UserColumnName="MONTH04" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH05" msprop:Generator_ColumnVarNameInTable="columnMONTH05" msprop:Generator_ColumnPropNameInRow="MONTH05" msprop:Generator_ColumnPropNameInTable="MONTH05Column" msprop:Generator_UserColumnName="MONTH05" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH06" msprop:Generator_ColumnVarNameInTable="columnMONTH06" msprop:Generator_ColumnPropNameInRow="MONTH06" msprop:Generator_ColumnPropNameInTable="MONTH06Column" msprop:Generator_UserColumnName="MONTH06" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH07" msprop:Generator_ColumnVarNameInTable="columnMONTH07" msprop:Generator_ColumnPropNameInRow="MONTH07" msprop:Generator_ColumnPropNameInTable="MONTH07Column" msprop:Generator_UserColumnName="MONTH07" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH08" msprop:Generator_ColumnVarNameInTable="columnMONTH08" msprop:Generator_ColumnPropNameInRow="MONTH08" msprop:Generator_ColumnPropNameInTable="MONTH08Column" msprop:Generator_UserColumnName="MONTH08" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH09" msprop:Generator_ColumnVarNameInTable="columnMONTH09" msprop:Generator_ColumnPropNameInRow="MONTH09" msprop:Generator_ColumnPropNameInTable="MONTH09Column" msprop:Generator_UserColumnName="MONTH09" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH10" msprop:Generator_ColumnVarNameInTable="columnMONTH10" msprop:Generator_ColumnPropNameInRow="MONTH10" msprop:Generator_ColumnPropNameInTable="MONTH10Column" msprop:Generator_UserColumnName="MONTH10" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH11" msprop:Generator_ColumnVarNameInTable="columnMONTH11" msprop:Generator_ColumnPropNameInRow="MONTH11" msprop:Generator_ColumnPropNameInTable="MONTH11Column" msprop:Generator_UserColumnName="MONTH11" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH12" msprop:Generator_ColumnVarNameInTable="columnMONTH12" msprop:Generator_ColumnPropNameInRow="MONTH12" msprop:Generator_ColumnPropNameInTable="MONTH12Column" msprop:Generator_UserColumnName="MONTH12" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

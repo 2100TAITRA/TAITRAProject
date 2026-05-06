@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR364D_EXAM" targetNamespace="http://tempuri.org/EDR364D_EXAM.xsd" xmlns:mstns="http://tempuri.org/EDR364D_EXAM.xsd" xmlns="http://tempuri.org/EDR364D_EXAM.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR364D_EXAM" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR364D_EXAM" msprop:Generator_UserDSName="EDR364D_EXAM">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR364_EXAM" msprop:Generator_TableClassName="EDR364_EXAMDataTable" msprop:Generator_TableVarName="tableEDR364_EXAM" msprop:Generator_RowChangedName="EDR364_EXAMRowChanged" msprop:Generator_TablePropName="EDR364_EXAM" msprop:Generator_RowDeletingName="EDR364_EXAMRowDeleting" msprop:Generator_RowChangingName="EDR364_EXAMRowChanging" msprop:Generator_RowEvHandlerName="EDR364_EXAMRowChangeEventHandler" msprop:Generator_RowDeletedName="EDR364_EXAMRowDeleted" msprop:Generator_RowClassName="EDR364_EXAMRow" msprop:Generator_UserTableName="EDR364_EXAM" msprop:Generator_RowEvArgName="EDR364_EXAMRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ISSUE_DATE" msprop:Generator_ColumnVarNameInTable="columnISSUE_DATE" msprop:Generator_ColumnPropNameInRow="ISSUE_DATE" msprop:Generator_ColumnPropNameInTable="ISSUE_DATEColumn" msprop:Generator_UserColumnName="ISSUE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_NO" msprop:Generator_ColumnVarNameInTable="columnISSUE_NO" msprop:Generator_ColumnPropNameInRow="ISSUE_NO" msprop:Generator_ColumnPropNameInTable="ISSUE_NOColumn" msprop:Generator_UserColumnName="ISSUE_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="ORG_NAME" msprop:Generator_ColumnVarNameInTable="columnORG_NAME" msprop:Generator_ColumnPropNameInRow="ORG_NAME" msprop:Generator_ColumnPropNameInTable="ORG_NAMEColumn" msprop:Generator_UserColumnName="ORG_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_TYPE" msprop:Generator_ColumnVarNameInTable="columnISSUE_TYPE" msprop:Generator_ColumnPropNameInRow="ISSUE_TYPE" msprop:Generator_ColumnPropNameInTable="ISSUE_TYPEColumn" msprop:Generator_UserColumnName="ISSUE_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="MAIL_ADDRESS" msprop:Generator_ColumnVarNameInTable="columnMAIL_ADDRESS" msprop:Generator_ColumnPropNameInRow="MAIL_ADDRESS" msprop:Generator_ColumnPropNameInTable="MAIL_ADDRESSColumn" msprop:Generator_UserColumnName="MAIL_ADDRESS" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="MAIL_STATUS" msprop:Generator_ColumnVarNameInTable="columnMAIL_STATUS" msprop:Generator_ColumnPropNameInRow="MAIL_STATUS" msprop:Generator_ColumnPropNameInTable="MAIL_STATUSColumn" msprop:Generator_UserColumnName="MAIL_STATUS" type="xs:string" minOccurs="0" />
+              <xs:element name="MAIL_TIME" msprop:Generator_ColumnVarNameInTable="columnMAIL_TIME" msprop:Generator_ColumnPropNameInRow="MAIL_TIME" msprop:Generator_ColumnPropNameInTable="MAIL_TIMEColumn" msprop:Generator_UserColumnName="MAIL_TIME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

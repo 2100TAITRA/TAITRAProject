@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR801D" targetNamespace="http://tempuri.org/AKR801D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR801D.xsd" xmlns:mstns="http://tempuri.org/AKR801D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR801D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="AKR800L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="NEW_BY_OU" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_STATE" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_SOURCE" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMDOC_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_CATEGORY" type="xs:string" minOccurs="0" />
+							<xs:element name="SPD_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_PROPERTY" type="xs:string" minOccurs="0" />
+							<xs:element name="DUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="COMBINE_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="KEY_WORD" type="xs:string" minOccurs="0" />
+							<xs:element name="COM_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="B_TYPE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="STEP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CLS" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_LIMIT" type="xs:string" minOccurs="0" />
+							<xs:element name="RMVSEC_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="RMVSEC_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="MERGE" type="xs:string" minOccurs="0" />
+							<xs:element name="RMVSEC_COND" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_UNIT" type="xs:string" minOccurs="0" />
+							<xs:element name="LEAD_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="START_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ALARM_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="SUBFOLDER" type="xs:string" minOccurs="0" />
+							<xs:element name="OWN_OU" type="xs:string" minOccurs="0" />
+							<xs:element name="SIGN_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="TX_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="HANDLE_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="OWN_USER" type="xs:string" minOccurs="0" />
+							<xs:element name="TX_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="TMP_CER" type="xs:string" minOccurs="0" />
+							<xs:element name="MAIL_ADDR" type="xs:string" />
+							<xs:element name="CASE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_DAY" type="xs:string" minOccurs="0" />
+							<xs:element name="SRC_RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="UPISSUE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SIGN_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="UPISSUE_WORD" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_CON" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUE_PROPERTY" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EXTRMVSEC_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="STOCK_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SRC_RCV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="COWORK_INFO" type="xs:string" minOccurs="0" />
+							<xs:element name="OWN_ROLE" type="xs:string" minOccurs="0" />
+							<xs:element name="FOLDER" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AKR800L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SEQ_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SRC_RCV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="SIGN_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

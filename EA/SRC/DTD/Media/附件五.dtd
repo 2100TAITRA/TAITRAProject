@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!ELEMENT 媒體封裝檔 (Signature)>
+<!ELEMENT Signature (SignedInfo, SignatureValue, KeyInfo?, Object*)>
+<!ATTLIST Signature
+Id ID #IMPLIED
+>
+<!ELEMENT SignedInfo (CanonicalizationMethod, SignatureMethod, Reference+)>
+<!ATTLIST SignedInfo
+Id ID #IMPLIED
+>
+<!ELEMENT CanonicalizationMethod (#PCDATA)* >
+<!ATTLIST CanonicalizationMethod
+Algorithm CDATA #REQUIRED
+>
+<!ELEMENT SignatureValue (#PCDATA)>
+<!ATTLIST SignatureValue
+Id ID #IMPLIED
+>
+<!ELEMENT DigestMethod (#PCDATA)*>
+<!ATTLIST DigestMethod
+Algorithm CDATA #REQUIRED
+>
+<!ELEMENT DigestValue (#PCDATA)>
+<!ELEMENT KeyInfo (X509Data)>
+<!ATTLIST KeyInfo
+Id ID #IMPLIED
+>
+<!ELEMENT Manifest (Reference+)>
+<!ATTLIST Manifest
+Id ID #IMPLIED
+>
+<!ELEMENT Reference (Transforms?, DigestMethod, DigestValue)>
+<!ATTLIST Reference
+Id ID #IMPLIED
+URI CDATA #IMPLIED
+Type CDATA #IMPLIED
+>
+<!ELEMENT Object (#PCDATA)*>
+<!ATTLIST Object
+Id CDATA #REQUIRED
+>
+<!ELEMENT SignatureMethod (#PCDATA | HMACOutputLength)*>
+<!ATTLIST SignatureMethod
+Algorithm CDATA #REQUIRED
+>
+<!ELEMENT SignatureProperties (SignatureProperty+)>
+<!ATTLIST SignatureProperties
+Id ID #IMPLIED
+>
+<!ELEMENT SignatureProperty (#PCDATA)*>
+<!ATTLIST SignatureProperty
+Target CDATA #REQUIRED
+Id ID #IMPLIED
+>
+<!ELEMENT Transform (#PCDATA |XPath)*>
+<!ATTLIST Transform
+Algorithm CDATA #REQUIRED
+>
+<!ELEMENT Transforms (Transform+)>
+<!ELEMENT X509Data (X509Certificate)>
+<!ELEMENT HMACOutputLength (#PCDATA)>
+<!ELEMENT XPath (#PCDATA)>
+<!ELEMENT X509Certificate (#PCDATA)>

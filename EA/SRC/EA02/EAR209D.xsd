@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAR209D" targetNamespace="http://tempuri.org/EAR209D.xsd" elementFormDefault="qualified"
+	xmlns="http://tempuri.org/EAR209D.xsd" xmlns:mstns="http://tempuri.org/EAR209D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="EAR209D2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Name11" type="xs:string" minOccurs="0" />
+				<xs:element name="Name12" type="xs:string" minOccurs="0" />
+				<xs:element name="Name21" type="xs:string" minOccurs="0" />
+				<xs:element name="Name22" type="xs:string" minOccurs="0" />
+				<xs:element name="Name31" type="xs:string" minOccurs="0" />
+				<xs:element name="Name32" type="xs:string" minOccurs="0" />
+				<xs:element name="Name41" type="xs:string" minOccurs="0" />
+				<xs:element name="Name42" type="xs:string" minOccurs="0" />
+				<xs:element name="Name51" type="xs:string" minOccurs="0" />
+				<xs:element name="Name52" type="xs:string" minOccurs="0" />
+				<xs:element name="Name61" type="xs:string" minOccurs="0" />
+				<xs:element name="Name62" type="xs:string" minOccurs="0" />
+				<xs:element name="Name71" type="xs:string" minOccurs="0" />
+				<xs:element name="Name72" type="xs:string" minOccurs="0" />
+				<xs:element name="Name81" type="xs:string" minOccurs="0" />
+				<xs:element name="Name82" type="xs:string" minOccurs="0" />
+				<xs:element name="Name91" type="xs:string" minOccurs="0" />
+				<xs:element name="Name92" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail11" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail12" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail21" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail22" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail31" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail32" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail41" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail42" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail51" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail52" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail61" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail62" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail71" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail72" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail81" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail82" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail91" type="xs:string" minOccurs="0" />
+				<xs:element name="Detail92" type="xs:string" minOccurs="0" />
+				<xs:element name="Year11" type="xs:string" minOccurs="0" />
+				<xs:element name="Year12" type="xs:string" minOccurs="0" />
+				<xs:element name="Year21" type="xs:string" minOccurs="0" />
+				<xs:element name="Year22" type="xs:string" minOccurs="0" />
+				<xs:element name="Year31" type="xs:string" minOccurs="0" />
+				<xs:element name="Year32" type="xs:string" minOccurs="0" />
+				<xs:element name="Year41" type="xs:string" minOccurs="0" />
+				<xs:element name="Year42" type="xs:string" minOccurs="0" />
+				<xs:element name="Year51" type="xs:string" minOccurs="0" />
+				<xs:element name="Year52" type="xs:string" minOccurs="0" />
+				<xs:element name="Year61" type="xs:string" minOccurs="0" />
+				<xs:element name="Year62" type="xs:string" minOccurs="0" />
+				<xs:element name="Year71" type="xs:string" minOccurs="0" />
+				<xs:element name="Year72" type="xs:string" minOccurs="0" />
+				<xs:element name="Year81" type="xs:string" minOccurs="0" />
+				<xs:element name="Year82" type="xs:string" minOccurs="0" />
+				<xs:element name="Year91" type="xs:string" minOccurs="0" />
+				<xs:element name="Year92" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EAR209D1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Name" type="xs:string" minOccurs="0" />
+				<xs:element name="YearNo" type="xs:string" minOccurs="0" />
+				<xs:element name="Class" type="xs:string" minOccurs="0" />
+				<xs:element name="Case" type="xs:string" minOccurs="0" />
+				<xs:element name="Vol" type="xs:string" minOccurs="0" />
+				<xs:element name="MinSEQ" type="xs:string" minOccurs="0" />
+				<xs:element name="Year" type="xs:string" minOccurs="0" />
+				<xs:element name="MaxSeq" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

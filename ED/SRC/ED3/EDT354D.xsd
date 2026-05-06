@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDT354D" targetNamespace="http://tempuri.org/EDT354D.xsd" xmlns:mstns="http://tempuri.org/EDT354D.xsd" xmlns="http://tempuri.org/EDT354D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDT354D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDT354D" msprop:Generator_UserDSName="EDT354D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDT354L1" msprop:Generator_TableClassName="EDT354L1DataTable" msprop:Generator_TableVarName="tableEDT354L1" msprop:Generator_RowChangedName="EDT354L1RowChanged" msprop:Generator_TablePropName="EDT354L1" msprop:Generator_RowDeletingName="EDT354L1RowDeleting" msprop:Generator_RowChangingName="EDT354L1RowChanging" msprop:Generator_RowEvHandlerName="EDT354L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDT354L1RowDeleted" msprop:Generator_RowClassName="EDT354L1Row" msprop:Generator_UserTableName="EDT354L1" msprop:Generator_RowEvArgName="EDT354L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="EMPINFO" msprop:Generator_ColumnVarNameInTable="columnEMPINFO" msprop:Generator_ColumnPropNameInRow="EMPINFO" msprop:Generator_ColumnPropNameInTable="EMPINFOColumn" msprop:Generator_UserColumnName="EMPINFO" type="xs:string" minOccurs="0" />
+              <xs:element name="SUBJECT" msprop:Generator_ColumnVarNameInTable="columnSUBJECT" msprop:Generator_ColumnPropNameInRow="SUBJECT" msprop:Generator_ColumnPropNameInTable="SUBJECTColumn" msprop:Generator_UserColumnName="SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="SEND_KIND" msprop:Generator_ColumnVarNameInTable="columnSEND_KIND" msprop:Generator_ColumnPropNameInRow="SEND_KIND" msprop:Generator_ColumnPropNameInTable="SEND_KINDColumn" msprop:Generator_UserColumnName="SEND_KIND" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

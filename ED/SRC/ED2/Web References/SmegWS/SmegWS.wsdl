@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetCardInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argCardNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardInfoResult" type="tns:SimpleRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SimpleRtn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientCradNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClientName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManageName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankBranchCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankBranchName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TxIdNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TxIdName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PDFDesc" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTaxIdInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argTxidNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaxIdInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaxIdInfoResult" type="tns:SimpleRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManageInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argBankNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCaseNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManageInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManageInfoResult" type="tns:SimpleRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBankInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argBankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argBranchCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBankInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBankInfoResult" type="tns:SimpleRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDraftPdfDesc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSortCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDraftPdfDescResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDraftPdfDescResult" type="tns:SimpleRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocToSmeg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argTypeNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocToSmegResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocToSmegResult" type="tns:SimpleRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SimpleRtn" nillable="true" type="tns:SimpleRtn" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxIdInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaxIdInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxIdInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaxIdInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManageInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManageInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetManageInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManageInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBankInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBankInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBankInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBankInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftPdfDescSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDraftPdfDesc" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftPdfDescSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDraftPdfDescResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocToSmegSoapIn">
+    <wsdl:part name="parameters" element="tns:DocToSmeg" />
+  </wsdl:message>
+  <wsdl:message name="DocToSmegSoapOut">
+    <wsdl:part name="parameters" element="tns:DocToSmegResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardInfoHttpGetIn">
+    <wsdl:part name="argCardNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCardInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxIdInfoHttpGetIn">
+    <wsdl:part name="argTxidNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxIdInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetManageInfoHttpGetIn">
+    <wsdl:part name="argBankNo" type="s:string" />
+    <wsdl:part name="argCaseNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManageInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetBankInfoHttpGetIn">
+    <wsdl:part name="argBankCode" type="s:string" />
+    <wsdl:part name="argBranchCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBankInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftPdfDescHttpGetIn">
+    <wsdl:part name="argSortCode" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftPdfDescHttpGetOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="DocToSmegHttpGetIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argTypeNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DocToSmegHttpGetOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetCardInfoHttpPostIn">
+    <wsdl:part name="argCardNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCardInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxIdInfoHttpPostIn">
+    <wsdl:part name="argTxidNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaxIdInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetManageInfoHttpPostIn">
+    <wsdl:part name="argBankNo" type="s:string" />
+    <wsdl:part name="argCaseNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetManageInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetBankInfoHttpPostIn">
+    <wsdl:part name="argBankCode" type="s:string" />
+    <wsdl:part name="argBranchCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBankInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftPdfDescHttpPostIn">
+    <wsdl:part name="argSortCode" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="GetDraftPdfDescHttpPostOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="DocToSmegHttpPostIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argTypeNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DocToSmegHttpPostOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:portType name="SmegWSSoap">
+    <wsdl:operation name="GetCardInfo">
+      <wsdl:input message="tns:GetCardInfoSoapIn" />
+      <wsdl:output message="tns:GetCardInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxIdInfo">
+      <wsdl:input message="tns:GetTaxIdInfoSoapIn" />
+      <wsdl:output message="tns:GetTaxIdInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManageInfo">
+      <wsdl:input message="tns:GetManageInfoSoapIn" />
+      <wsdl:output message="tns:GetManageInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInfo">
+      <wsdl:input message="tns:GetBankInfoSoapIn" />
+      <wsdl:output message="tns:GetBankInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftPdfDesc">
+      <wsdl:input message="tns:GetDraftPdfDescSoapIn" />
+      <wsdl:output message="tns:GetDraftPdfDescSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocToSmeg">
+      <wsdl:input message="tns:DocToSmegSoapIn" />
+      <wsdl:output message="tns:DocToSmegSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SmegWSHttpGet">
+    <wsdl:operation name="GetCardInfo">
+      <wsdl:input message="tns:GetCardInfoHttpGetIn" />
+      <wsdl:output message="tns:GetCardInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxIdInfo">
+      <wsdl:input message="tns:GetTaxIdInfoHttpGetIn" />
+      <wsdl:output message="tns:GetTaxIdInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManageInfo">
+      <wsdl:input message="tns:GetManageInfoHttpGetIn" />
+      <wsdl:output message="tns:GetManageInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInfo">
+      <wsdl:input message="tns:GetBankInfoHttpGetIn" />
+      <wsdl:output message="tns:GetBankInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftPdfDesc">
+      <wsdl:input message="tns:GetDraftPdfDescHttpGetIn" />
+      <wsdl:output message="tns:GetDraftPdfDescHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocToSmeg">
+      <wsdl:input message="tns:DocToSmegHttpGetIn" />
+      <wsdl:output message="tns:DocToSmegHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SmegWSHttpPost">
+    <wsdl:operation name="GetCardInfo">
+      <wsdl:input message="tns:GetCardInfoHttpPostIn" />
+      <wsdl:output message="tns:GetCardInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxIdInfo">
+      <wsdl:input message="tns:GetTaxIdInfoHttpPostIn" />
+      <wsdl:output message="tns:GetTaxIdInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManageInfo">
+      <wsdl:input message="tns:GetManageInfoHttpPostIn" />
+      <wsdl:output message="tns:GetManageInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInfo">
+      <wsdl:input message="tns:GetBankInfoHttpPostIn" />
+      <wsdl:output message="tns:GetBankInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftPdfDesc">
+      <wsdl:input message="tns:GetDraftPdfDescHttpPostIn" />
+      <wsdl:output message="tns:GetDraftPdfDescHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DocToSmeg">
+      <wsdl:input message="tns:DocToSmegHttpPostIn" />
+      <wsdl:output message="tns:DocToSmegHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SmegWSSoap" type="tns:SmegWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCardInfo">
+      <soap:operation soapAction="http://tempuri.org/GetCardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxIdInfo">
+      <soap:operation soapAction="http://tempuri.org/GetTaxIdInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManageInfo">
+      <soap:operation soapAction="http://tempuri.org/GetManageInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInfo">
+      <soap:operation soapAction="http://tempuri.org/GetBankInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftPdfDesc">
+      <soap:operation soapAction="http://tempuri.org/GetDraftPdfDesc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocToSmeg">
+      <soap:operation soapAction="http://tempuri.org/DocToSmeg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SmegWSSoap12" type="tns:SmegWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCardInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxIdInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetTaxIdInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManageInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetManageInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetBankInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftPdfDesc">
+      <soap12:operation soapAction="http://tempuri.org/GetDraftPdfDesc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocToSmeg">
+      <soap12:operation soapAction="http://tempuri.org/DocToSmeg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SmegWSHttpGet" type="tns:SmegWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetCardInfo">
+      <http:operation location="/GetCardInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxIdInfo">
+      <http:operation location="/GetTaxIdInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManageInfo">
+      <http:operation location="/GetManageInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInfo">
+      <http:operation location="/GetBankInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftPdfDesc">
+      <http:operation location="/GetDraftPdfDesc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocToSmeg">
+      <http:operation location="/DocToSmeg" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SmegWSHttpPost" type="tns:SmegWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetCardInfo">
+      <http:operation location="/GetCardInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxIdInfo">
+      <http:operation location="/GetTaxIdInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManageInfo">
+      <http:operation location="/GetManageInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInfo">
+      <http:operation location="/GetBankInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDraftPdfDesc">
+      <http:operation location="/GetDraftPdfDesc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocToSmeg">
+      <http:operation location="/DocToSmeg" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmegWS">
+    <wsdl:port name="SmegWSSoap" binding="tns:SmegWSSoap">
+      <soap:address location="https://docvip.fdat.com.tw/SMEG/SmegWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SmegWSSoap12" binding="tns:SmegWSSoap12">
+      <soap12:address location="https://docvip.fdat.com.tw/SMEG/SmegWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SmegWSHttpGet" binding="tns:SmegWSHttpGet">
+      <http:address location="https://docvip.fdat.com.tw/SMEG/SmegWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SmegWSHttpPost" binding="tns:SmegWSHttpPost">
+      <http:address location="https://docvip.fdat.com.tw/SMEG/SmegWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

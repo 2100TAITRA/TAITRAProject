@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTBCInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTBCInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTBCInfoResult" type="tns:CTAPersonRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CTAPersonRtn">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Exist" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobOrgNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobOrgName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobTitleNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWebHR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argFromOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFromNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebHRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebHRResult" type="tns:CTAPersonRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsUpdEEMC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPersonId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPersonName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argJobOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argJobOrgName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argJobNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argJobTitleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argJobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFromOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFromOrgName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFromWord" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFromNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsUpdEEMCResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDocDraftInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argTaType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocDraftInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocDraftInfoResult" type="tns:CTADraftRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CTADraftRtn">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPersonTA" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DraftInfo" type="tns:ArrayOfXmlDocument" />
+          <s:element minOccurs="0" maxOccurs="1" name="WebFileIO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttachInfo" type="tns:ArrayOfAttInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfXmlDocument">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="XmlDocument" nillable="true">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAttInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AttInfo" nillable="true" type="tns:AttInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AttInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AttType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttFilePath" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCnocode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="XMLSTRINGDATA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCnocodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCnocodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCnoState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argXmlString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCnoStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCnoStateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTAIssue">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetTAIssueResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateTAType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTATypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTATypeResult" type="tns:UpdateTATypeClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateTATypeClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TAType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateTATypeBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateTATypeBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTATypeBatchResult" type="tns:UpdateTATypeClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="CTAPersonRtn" nillable="true" type="tns:CTAPersonRtn" />
+      <s:element name="CTADraftRtn" nillable="true" type="tns:CTADraftRtn" />
+      <s:element name="UpdateTATypeClass" nillable="true" type="tns:UpdateTATypeClass" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTBCInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTBCInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTBCInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTBCInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebHRSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebHR" />
+  </wsdl:message>
+  <wsdl:message name="GetWebHRSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebHRResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsUpdEEMCSoapIn">
+    <wsdl:part name="parameters" element="tns:InsUpdEEMC" />
+  </wsdl:message>
+  <wsdl:message name="InsUpdEEMCSoapOut">
+    <wsdl:part name="parameters" element="tns:InsUpdEEMCResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocDraftInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocDraftInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDocDraftInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocDraftInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCnocodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCnocode" />
+  </wsdl:message>
+  <wsdl:message name="GetCnocodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCnocodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCnoStateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCnoState" />
+  </wsdl:message>
+  <wsdl:message name="GetCnoStateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCnoStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTAIssueSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTAIssue" />
+  </wsdl:message>
+  <wsdl:message name="SetTAIssueSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTAIssueResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTAType" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTATypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTATypeBatch" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTATypeBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTBCInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTBCInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:CTAPersonRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetWebHRHttpGetIn">
+    <wsdl:part name="argFromOrgNo" type="s:string" />
+    <wsdl:part name="argFromNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebHRHttpGetOut">
+    <wsdl:part name="Body" element="tns:CTAPersonRtn" />
+  </wsdl:message>
+  <wsdl:message name="InsUpdEEMCHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOuId" type="s:string" />
+    <wsdl:part name="argOuName" type="s:string" />
+    <wsdl:part name="argPersonId" type="s:string" />
+    <wsdl:part name="argPersonName" type="s:string" />
+    <wsdl:part name="argJobOrgNo" type="s:string" />
+    <wsdl:part name="argJobOrgName" type="s:string" />
+    <wsdl:part name="argJobNo" type="s:string" />
+    <wsdl:part name="argJobTitleNo" type="s:string" />
+    <wsdl:part name="argJobTitle" type="s:string" />
+    <wsdl:part name="argFromOrgNo" type="s:string" />
+    <wsdl:part name="argFromOrgName" type="s:string" />
+    <wsdl:part name="argFromWord" type="s:string" />
+    <wsdl:part name="argFromNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsUpdEEMCHttpGetOut" />
+  <wsdl:message name="GetDocDraftInfoHttpGetIn">
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argTaType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocDraftInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:CTADraftRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetCnocodeHttpGetIn">
+    <wsdl:part name="XMLSTRINGDATA" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCnocodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCnoStateHttpGetIn">
+    <wsdl:part name="argXmlString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCnoStateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTAIssueHttpGetIn" />
+  <wsdl:message name="SetTAIssueHttpGetOut" />
+  <wsdl:message name="UpdateTATypeHttpGetIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:UpdateTATypeClass" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeBatchHttpGetIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeBatchHttpGetOut">
+    <wsdl:part name="Body" element="tns:UpdateTATypeClass" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTBCInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTBCInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:CTAPersonRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetWebHRHttpPostIn">
+    <wsdl:part name="argFromOrgNo" type="s:string" />
+    <wsdl:part name="argFromNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebHRHttpPostOut">
+    <wsdl:part name="Body" element="tns:CTAPersonRtn" />
+  </wsdl:message>
+  <wsdl:message name="InsUpdEEMCHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOuId" type="s:string" />
+    <wsdl:part name="argOuName" type="s:string" />
+    <wsdl:part name="argPersonId" type="s:string" />
+    <wsdl:part name="argPersonName" type="s:string" />
+    <wsdl:part name="argJobOrgNo" type="s:string" />
+    <wsdl:part name="argJobOrgName" type="s:string" />
+    <wsdl:part name="argJobNo" type="s:string" />
+    <wsdl:part name="argJobTitleNo" type="s:string" />
+    <wsdl:part name="argJobTitle" type="s:string" />
+    <wsdl:part name="argFromOrgNo" type="s:string" />
+    <wsdl:part name="argFromOrgName" type="s:string" />
+    <wsdl:part name="argFromWord" type="s:string" />
+    <wsdl:part name="argFromNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsUpdEEMCHttpPostOut" />
+  <wsdl:message name="GetDocDraftInfoHttpPostIn">
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argTaType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocDraftInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:CTADraftRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetCnocodeHttpPostIn">
+    <wsdl:part name="XMLSTRINGDATA" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCnocodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCnoStateHttpPostIn">
+    <wsdl:part name="argXmlString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCnoStateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTAIssueHttpPostIn" />
+  <wsdl:message name="SetTAIssueHttpPostOut" />
+  <wsdl:message name="UpdateTATypeHttpPostIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:UpdateTATypeClass" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeBatchHttpPostIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTATypeBatchHttpPostOut">
+    <wsdl:part name="Body" element="tns:UpdateTATypeClass" />
+  </wsdl:message>
+  <wsdl:portType name="TAWSSoap">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTBCInfo">
+      <wsdl:input message="tns:GetTBCInfoSoapIn" />
+      <wsdl:output message="tns:GetTBCInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebHR">
+      <wsdl:input message="tns:GetWebHRSoapIn" />
+      <wsdl:output message="tns:GetWebHRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsUpdEEMC">
+      <wsdl:input message="tns:InsUpdEEMCSoapIn" />
+      <wsdl:output message="tns:InsUpdEEMCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDraftInfo">
+      <wsdl:input message="tns:GetDocDraftInfoSoapIn" />
+      <wsdl:output message="tns:GetDocDraftInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCnocode">
+      <wsdl:input message="tns:GetCnocodeSoapIn" />
+      <wsdl:output message="tns:GetCnocodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCnoState">
+      <wsdl:input message="tns:GetCnoStateSoapIn" />
+      <wsdl:output message="tns:GetCnoStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTAIssue">
+      <wsdl:input message="tns:SetTAIssueSoapIn" />
+      <wsdl:output message="tns:SetTAIssueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTAType">
+      <wsdl:input message="tns:UpdateTATypeSoapIn" />
+      <wsdl:output message="tns:UpdateTATypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTATypeBatch">
+      <wsdl:input message="tns:UpdateTATypeBatchSoapIn" />
+      <wsdl:output message="tns:UpdateTATypeBatchSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TAWSHttpGet">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpGetIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTBCInfo">
+      <wsdl:input message="tns:GetTBCInfoHttpGetIn" />
+      <wsdl:output message="tns:GetTBCInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebHR">
+      <wsdl:input message="tns:GetWebHRHttpGetIn" />
+      <wsdl:output message="tns:GetWebHRHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsUpdEEMC">
+      <wsdl:input message="tns:InsUpdEEMCHttpGetIn" />
+      <wsdl:output message="tns:InsUpdEEMCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDraftInfo">
+      <wsdl:input message="tns:GetDocDraftInfoHttpGetIn" />
+      <wsdl:output message="tns:GetDocDraftInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCnocode">
+      <wsdl:input message="tns:GetCnocodeHttpGetIn" />
+      <wsdl:output message="tns:GetCnocodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCnoState">
+      <wsdl:input message="tns:GetCnoStateHttpGetIn" />
+      <wsdl:output message="tns:GetCnoStateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTAIssue">
+      <wsdl:input message="tns:SetTAIssueHttpGetIn" />
+      <wsdl:output message="tns:SetTAIssueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTAType">
+      <wsdl:input message="tns:UpdateTATypeHttpGetIn" />
+      <wsdl:output message="tns:UpdateTATypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTATypeBatch">
+      <wsdl:input message="tns:UpdateTATypeBatchHttpGetIn" />
+      <wsdl:output message="tns:UpdateTATypeBatchHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TAWSHttpPost">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpPostIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTBCInfo">
+      <wsdl:input message="tns:GetTBCInfoHttpPostIn" />
+      <wsdl:output message="tns:GetTBCInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebHR">
+      <wsdl:input message="tns:GetWebHRHttpPostIn" />
+      <wsdl:output message="tns:GetWebHRHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsUpdEEMC">
+      <wsdl:input message="tns:InsUpdEEMCHttpPostIn" />
+      <wsdl:output message="tns:InsUpdEEMCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDraftInfo">
+      <wsdl:input message="tns:GetDocDraftInfoHttpPostIn" />
+      <wsdl:output message="tns:GetDocDraftInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCnocode">
+      <wsdl:input message="tns:GetCnocodeHttpPostIn" />
+      <wsdl:output message="tns:GetCnocodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCnoState">
+      <wsdl:input message="tns:GetCnoStateHttpPostIn" />
+      <wsdl:output message="tns:GetCnoStateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTAIssue">
+      <wsdl:input message="tns:SetTAIssueHttpPostIn" />
+      <wsdl:output message="tns:SetTAIssueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTAType">
+      <wsdl:input message="tns:UpdateTATypeHttpPostIn" />
+      <wsdl:output message="tns:UpdateTATypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTATypeBatch">
+      <wsdl:input message="tns:UpdateTATypeBatchHttpPostIn" />
+      <wsdl:output message="tns:UpdateTATypeBatchHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TAWSSoap" type="tns:TAWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTBCInfo">
+      <soap:operation soapAction="http://tempuri.org/GetTBCInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebHR">
+      <soap:operation soapAction="http://tempuri.org/GetWebHR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsUpdEEMC">
+      <soap:operation soapAction="http://tempuri.org/InsUpdEEMC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDraftInfo">
+      <soap:operation soapAction="http://tempuri.org/GetDocDraftInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnocode">
+      <soap:operation soapAction="http://tempuri.org/GetCnocode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnoState">
+      <soap:operation soapAction="http://tempuri.org/GetCnoState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTAIssue">
+      <soap:operation soapAction="http://tempuri.org/SetTAIssue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTAType">
+      <soap:operation soapAction="http://tempuri.org/UpdateTAType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTATypeBatch">
+      <soap:operation soapAction="http://tempuri.org/UpdateTATypeBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TAWSSoap12" type="tns:TAWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTBCInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetTBCInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebHR">
+      <soap12:operation soapAction="http://tempuri.org/GetWebHR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsUpdEEMC">
+      <soap12:operation soapAction="http://tempuri.org/InsUpdEEMC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDraftInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetDocDraftInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnocode">
+      <soap12:operation soapAction="http://tempuri.org/GetCnocode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnoState">
+      <soap12:operation soapAction="http://tempuri.org/GetCnoState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTAIssue">
+      <soap12:operation soapAction="http://tempuri.org/SetTAIssue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTAType">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTAType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTATypeBatch">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTATypeBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TAWSHttpGet" type="tns:TAWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTBCInfo">
+      <http:operation location="/GetTBCInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebHR">
+      <http:operation location="/GetWebHR" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsUpdEEMC">
+      <http:operation location="/InsUpdEEMC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDraftInfo">
+      <http:operation location="/GetDocDraftInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnocode">
+      <http:operation location="/GetCnocode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnoState">
+      <http:operation location="/GetCnoState" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTAIssue">
+      <http:operation location="/SetTAIssue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTAType">
+      <http:operation location="/UpdateTAType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTATypeBatch">
+      <http:operation location="/UpdateTATypeBatch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TAWSHttpPost" type="tns:TAWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTBCInfo">
+      <http:operation location="/GetTBCInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebHR">
+      <http:operation location="/GetWebHR" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsUpdEEMC">
+      <http:operation location="/InsUpdEEMC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocDraftInfo">
+      <http:operation location="/GetDocDraftInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnocode">
+      <http:operation location="/GetCnocode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCnoState">
+      <http:operation location="/GetCnoState" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTAIssue">
+      <http:operation location="/SetTAIssue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTAType">
+      <http:operation location="/UpdateTAType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTATypeBatch">
+      <http:operation location="/UpdateTATypeBatch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TAWS">
+    <wsdl:port name="TAWSSoap" binding="tns:TAWSSoap">
+      <soap:address location="https://docvip.fdat.com.tw/TA/TAWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TAWSSoap12" binding="tns:TAWSSoap12">
+      <soap12:address location="https://docvip.fdat.com.tw/TA/TAWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TAWSHttpGet" binding="tns:TAWSHttpGet">
+      <http:address location="https://docvip.fdat.com.tw/TA/TAWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TAWSHttpPost" binding="tns:TAWSHttpPost">
+      <http:address location="https://docvip.fdat.com.tw/TA/TAWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

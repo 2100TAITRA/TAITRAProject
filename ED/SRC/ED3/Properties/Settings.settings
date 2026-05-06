@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ED3.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ED3_TAWS_TAWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docvip.fdat.com.tw/TA/TAWS.asmx</Value>
+    </Setting>
+    <Setting Name="ED3_EDWS_EDWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docvip.fdat.com.tw/ED/EDLIB/EDWS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

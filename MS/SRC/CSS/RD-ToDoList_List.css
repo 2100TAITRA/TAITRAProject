@@ -1,0 +1,691 @@
+@charset "utf-8";
+/* CSS Document */
+
+.fullViewContent {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #F0F0F0;
+}
+
+/* 2017.3.31 */
+#listPane .fullViewContent {
+	background-color: transparent;
+}
+
+#todolistToolbar {
+  position: relative;
+  margin-left: 0.2em; /* 2016.4 */
+  width: calc(100% - 0.2em); /* 2016.4 */
+  height: 4em;
+}
+
+#todolistToolbar .ui-coner-all {
+  border-radius: .3em;
+}
+
+#todolistToolbar .ui-input-search {
+  margin-top: .7em;
+  max-width: 22em;
+}
+
+#mpContainer #tdl_list_filter {
+  margin-right:10px;
+  /*font-size:smaller; */
+  max-width:21em;
+}
+
+#todolistToolbar .ui-block-a > label {
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0 1px 0 white;
+  display: inline-block;
+}
+
+#todolistToolbar .ui-block-a {
+  padding-left: 10px;
+  margin-top: 3px;
+}
+
+/* 2012.1.19 modify for jQuery Moible 1.0 */
+#todolistToolbar .ui-block-a lable {
+  display: inline;
+}
+
+/* 2012.1.19 modify for jQuery Moible 1.0 */
+#todolisttoolbar .ui-block-a input {
+  display: inline;
+  width: 50%;
+}
+
+#selectedFolder, #selectedFolder_search {
+  border-radius: 0.5em;
+  font-weight: 800;
+  text-shadow: 0 1px 1px #fff;
+  display: inline;
+}
+
+#todolistToolbar .selector_wrapper { /* 條列清單模式左上方之folder selector */
+  width: 70%;
+  display: inline-block;
+}
+
+#selectedFolder { /* 條列清單模式右上方之folder selector */
+  width: 98%; /* 2016.10.17 - 覆蓋arrow-down span, 以觸發click */
+  /*margin: .2em 0;*/
+  text-indent: 5px;
+  text-overflow:ellipsis;
+  min-height: 1.2em;
+}
+  
+#selectedFolder_search { /* 預覽模式左方導覽窗格之 folder selector */
+  width: 98%; /* 2016.10.17 - 覆蓋arrow-down span, 以觸發click */
+  margin-top: 5px;
+  margin-bottom: 3px;
+  text-indent: 5px;
+}
+
+#listPane .selector_wrapper > span {
+  right: .5em;
+}
+
+/* 2021.2.22 - 1090927 Eric Peng, for iPad Portrait [fix with latest layout] */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+  #todolistToolbar .ui-block-a > label {
+    font-size: 15px;
+  }
+
+	#todolistToolbar .selector_wrapper { /* 條列清單模式左上方之folder selector */
+    width: 65%;
+  }
+}
+
+/* 2021.2.3 - 1090927 Eric Peng, for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height:450px) and (orientation: landscape) {
+  #todolistToolbar {
+    font-size: 13px;
+  }
+
+  #todolistToolbar .ui-block-a > label {
+    font-size: 15px;
+  }
+
+	#todolistToolbar .selector_wrapper { /* 條列清單模式左上方之folder selector */
+    width: 65%;
+  }
+}
+
+.searchViewContent .ui-scrolllistview form {
+  margin: 5px -2px 0px -2px;
+}
+
+/* 2016.8 - 公文夾選項文字靠左對齊, 2016.10 - 角色選項文字靠左對齊 */
+div.ios.tdl_mobiscroll .dww .dw-li, div.ios.role_mobiscroll .dww .dw-li {
+  text-align: left;
+}
+
+  /* 2012.9 - 燈號統計 */
+#todolistToolbar div.lights,
+#todolistToolbar div.numbers {
+  /*display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-align: start;
+  -webkit-box-orient: horizontal;*/
+  /* 2016.5 for IE11 support */
+  display: -webkit-inline-flex;
+  align-items: -webkit-flex-end;
+  display: inline-flex;
+  align-items: flex-end;
+}
+
+#todolistToolbar div.lights {
+	
+  margin-top: 8px;
+  margin-left: 20px;
+}
+
+/* 20170321 Kevin 套美工 */
+#todolistToolbar div.light {
+		
+	width: 20px;
+	margin: 0 7px;
+	height: 21px;
+	background-size:20px 20px;
+}
+
+#todolistToolbar div.cell {
+  width: 28px;
+  margin: 0 3px;
+  text-align: center;
+}
+
+#todolistToolbar div.lights > div.cell {
+    /* 20170321 Kevin 套美工
+	max-height: 15px; */
+	max-height: 21px;
+	
+}
+
+#todolistToolbar div.numbers {
+  margin-left: 20px;
+}
+
+  /* 2012.9 - End of 燈號統計 */
+  
+  /* 2012.8.21 - for document search filter */
+#todolistToolbar .ui-block-c > div.doc_light_wrapper {
+  width: 200px;
+  padding: 2px 5em 2px 10px;
+  float: right;
+  width: 60%;
+}
+
+/* 2021.2.17 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height:450px) and (orientation: landscape) {
+  #todolistToolbar .ui-block-c > div.doc_light_wrapper {
+    padding-right: 8em;
+    width: 60%;
+  }
+}
+
+#todolistToolbar .ui-block-c input.ui-input-text {
+  /*width: 200px;*/
+  /*padding:5px 10px;*/
+  /*float:right;*/
+  font-size: smaller;
+}
+  /* 2012.8.21 - End of document search filter */
+  
+/* 2011.11.9
+#selectedFolder {
+  float: right;
+  width: 70%;
+}*/
+
+.sort_mode {
+  float: left;
+  margin: 0 2px;
+  display: inline;
+  clear: none;
+}
+
+.list_mode {
+  float: right;
+  margin: 0 2px;
+  display: inline;
+  clear: none;
+  text-align: right;
+}
+
+/* 2012.1.30 - lights table layout */
+#lights_table {
+  table-layout: fixed;
+  height: 30px;
+  overflow: hidden;
+}
+
+#lights_table tbody {
+  font-size: smaller;
+}
+
+#lights_table thead tr, #lights_table tbody tr {
+  height: 16px;
+}
+
+#lights_table td {
+  text-align: center;
+}
+
+.todolist_container {
+  margin: 0 1em 0 1em; /* 2016.4 */
+  overflow: hidden;
+  height: calc(100% - 4.1em);
+}
+
+/* 2017.6.2 - Eric, iPad table寬度調整 */
+@media screen and (max-width: 1024px) {
+  .todolist_container {
+    margin: 0 .2em 0 .2em;
+  }
+}
+
+#todolist_cntr .sBase, .sData {
+  /*background-color: #ddd; 20170417*/
+  background-color: #eee; /*20170417*/
+  overflow-x: hidden;
+}
+
+#todolist_cntr .sBase .sData.showExtraContent {
+  overflow-x: auto;
+}
+
+/* css for #todolist_tb - 條列式清單table */
+
+/* 2017.3.31 */
+#listPane .fullViewContent > .tdl_tb_cntr {
+	width: calc(100% - 2.5em);
+	height: 100%;
+	background-color: #F0F0F0;
+}
+
+#todolist_tb {
+  border-collapse:collapse;
+  border-radius: 5px;
+  width: 100%;
+  display: table;
+}
+
+/*#todolist_tb thead > tr {
+}*/
+
+#todolist_tb thead {
+  font-size: 1.1em; /* 1.2em; 2016.7 */ 
+}
+
+#todolist_tb thead, #todolist_tb thead tr, #todolist_tb thead th {
+ border-right: 1px solid #fff;
+}
+
+#todolist_tb thead th {
+  padding: 1px 2px;
+  margin: 0 2px 3px 0;
+	/* 2017.4.5 - 美工套用修改 */
+	/*background: #E0E0E0; 20170419*//* #e4f5fc; , 2017.4.5 - modified */ /* Old browsers */
+  /*background: -moz-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%);*/ /* FF3.6+ */
+  /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f5fc), color-stop(50%,#bfe8f9), color-stop(51%,#9fd8ef), color-stop(100%,#2ab0ed));*/ /* Chrome,Safari4+ */
+  /*background: -webkit-linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%);*/  /* Chrome10+,Safari5.1+ */
+  /*background: -ms-linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%);*/ /* W3C */
+  /*background: linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%);*/ /* W3C */
+	
+  /*border-radius: 5px; 2016.7.27 */
+  /*box-shadow:  1px 3px 3px #006666; 2016.7.27 */
+	
+  position: relative; /* 2015.6 - for sort hint position */
+  vertical-align: middle;
+	
+  background: #cbe7f7; /*20170419*/
+}
+
+#todolist_tb thead th:last-child {
+	border-right: 1px solid #9eb6ce;
+}
+
+/* 2017.4 - color-scheme */
+.cs-ly #todolist_tb thead th {
+	background: #fcf3d8;
+}
+.cs-lg #todolist_tb thead th {
+	background: #e0ecb8;
+}
+.cs-lp #todolist_tb thead th {
+	background: #fae4f1;
+}
+
+/* 2015.6 - sort order hint */
+#todolist_tb thead th div.sortIcon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background: transparent;
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+#todolist_tb thead th.headerSortDown div.sortIcon {
+  /*border-top: solid green 3px; */
+  background: white url(../IMAGE/SSO/ui-icons_256x240.png) -64px -192px no-repeat;
+}
+
+#todolist_tb thead th.headerSortUp div.sortIcon {
+  background: white url(../IMAGE/SSO/ui-icons_256x240.png) -96px -192px no-repeat;
+}
+
+/* 清單標題列 */
+#todolist_tb thead th > a, #todolist_tb thead th > div > a {
+  text-decoration: none;
+  /*color: #00f; 20170419*/
+  color: #444; /*20170419*/
+  text-shadow: none; /*20170419*/
+  font-size: larger;
+}
+
+/* 2016.8.26 */
+#todolist_cntr > #todolist_tb thead th > a, #todolist_cntr > #todolist_tb thead th > div > a {
+  font-size: medium;
+}
+
+#todolist_cntr > #todolist_tb tbody tr > td {
+  font-size: medium;
+  padding: 3px 6px 3px 4px;
+}
+
+#todolist_tb .docno_header {
+  width: 5em;
+  text-align: center;
+}
+
+#todolist_tb .docno_header div {
+  display:inline;
+  width: 16px;
+  height: 16px;
+  background-image: url(../IMAGE/SSO/ui-icons_256x240.png);
+}
+
+/* up-arrow */
+.ui-icon-arrow-1-n { background-position: 0 -32px; }
+/* down-arrow */
+.ui-icon-arrow-1-s { background-position: -64px -32px; }
+
+#todolist_tb .subject_header {
+  width: 28em;
+}
+
+#todolist_tb .docno {
+  text-align: center;
+  font-weight: 800;
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
+#todolist_tb .docno.redText {
+  color: #F00;  /* 2016.8.19 FDA隱藏燈號時, 密等公文文號顯示為紅色 */
+}
+
+/* 2019.6.11 - 1080412, Eric Peng - 鐵道特定文件夾文號指定用色 */
+#todolist_tb .docno.rrbSpecColor {
+  color: #666666; 
+}
+
+#todolist_tb .docno > span {
+  text-align: center;
+}
+
+/* 2015.1 - Eric Peng, for signType='W' [開啟...] field */
+div.sData #todolist_tb td.urlLink {
+  text-decoration: underline;
+  color: #00F;
+  text-align: center;
+  font-weight: bold;
+}
+
+#todolist_tb tbody tr {
+ /*cursor: pointer;*/
+ /*background-color: #E0E0E0; 20170419*/
+ background-color: #ffffff; /*20170419*/
+ font-size: 1.2em;
+}
+
+/* 2017.3 - Eric Peng, odd table-row color */ 
+#todolist_tb tbody tr:nth-child(odd) {
+  background-color: #F0F0FF;
+}
+
+#todolist_tb tbody td {
+ border: 1px solid #fff; /* table cell border style */
+ height: 1.2em;
+}
+
+#todolist_tb tbody td.subject, #todolist_tb tbody td.to_e {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 2017.10.24 - 1060967 辦理期限欄位文字內容置中對齊 */
+#todolist_tb tbody td.tbc_centre {
+  text-align: center;
+}
+
+#todolist_tb tbody td.newTime > p:first-child {
+  margin-top: .2em;
+  margin-bottom: 0;
+}
+
+#todolist_tb tbody td.newTime > p:last-child {
+  margin-top: 0em;
+  margin-bottom: .2em;
+}
+
+/* 2012.1.30 */
+#todolist_tb tbody td input {
+  border: none;
+  background-color: #ddd;
+}
+
+/*#todolist_tb tbody div {
+}*/
+
+#todolist_tb tbody img {
+ /* 20170321 Kevin 套美工 */
+ max-width: 18px;
+ margin-left: auto;
+ margin-right: auto;
+ display: block;
+}
+
+/* 2017.6.22 */
+#todolist_tb tbody td.docProc > span.url_link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #00F;
+  margin: auto;
+  display: table;
+}
+
+#todolist_tb tbody td.docProc > span.url_link.placeholder {
+  text-decoration: none;
+  cursor: auto;
+}
+
+
+@media screen and (max-width: 1024px) {
+  #todolist_tb thead {
+    font-size: 1em;
+  }
+  
+  #todolist_tb tbody tr {
+    font-size: 1em;
+  }
+  
+  #todolist_tb .subject_header {
+    width: 20em;
+  }
+  
+  #todolist_tb tbody td.opened img {
+    transform: scale(.8, .8);
+    margin-left: -4px;
+  }
+}
+
+/* 條列式ToDoList */
+.todolist_zebra {
+ background-color: #ddd;	
+}
+
+.todolist_selected {
+  background-color: #ff8;
+}
+
+/* End of todolist_tb - 條列式清單table  css */
+
+/* 搜尋結果項目清單 css */
+.searchView_Folder .ui-select {
+  font-size: 14px;
+}
+
+#sidePane .searchViewContent {
+    /*background-color: #CFC; 20170420*/
+	background-color: #F0F0F0; /*20170420*/
+    margin-right: 40px; /* 24px; 2017.3.31 */
+}
+
+/* 2012.8.30 */
+.search-wrapper {
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  height: 100%;
+}
+
+.search-list > li {
+  position: relative;
+}
+
+/* 2012.4.16 */
+.search-list > li p.ui-li-tdl-w {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+}
+
+/*.search-list .lights {
+  margin-top: 0;
+  margin-right: 6px;
+  top: 3px;
+  right: 6px;
+  position: absolute;
+  overflow: hidden;
+}*/
+
+.search-list .lights img {
+  width: 12px;
+  height: 12px;
+  /*float: right;*/
+  margin-right: 2px;
+}
+
+#listPane .search-list .sl_docNo {
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
+#listPane .searchView_Folder {
+  text-align: center;
+}
+
+#listPane .searchView_Folder .selector_wrapper {
+  width: 95%;
+}
+
+#listPane .search-wrapper > form {
+  width: calc(100% - 2em);
+  margin-left: 0.5em;
+}
+
+.searchView_Folder > input {
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchView_Folder div.reload_button {
+  width: 24px;
+  height: 24px;
+  /* float: right; */
+  background-image: linear-gradient( #5f9cc5 /*{b-bup-background-start}*/, #396b9e /*{b-bup-background-end}*/);
+  /* display: inline; */
+  position: absolute;
+  right: 2em;
+  top: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #FFF;
+  text-shadow: none;
+}
+.searchView_Folder div.reload_button > span {
+  width: 100%;
+  height: 100%;
+  background-image: url(../IMAGE/SSO/icons-18-white.png) /*{global-icon-set}*/;
+  background-repeat: no-repeat;
+  background-color: #3e6790;
+  border-radius: 9px;
+}
+
+.sl_content {
+  font-size: 18px;
+  font-weight: bold;
+  width: 85%;
+}
+
+.search-list .sl_subject {
+  padding-left: 3px;
+}
+
+.sl_incharge {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 0px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+}
+
+/* 右鍵選單 */
+.context-menu-root .context-menu-item.context-menu-disabled {
+  color: #B2B2B2;
+}
+
+/* 圖示/清單 切換按鍵 */
+/* See ToDoList_Icon.css */
+/* End of 圖示/清單 切換按鍵*/
+
+/* 1111124	Leslie[1111127]	MP圖示調整顯示方式 */
+td.MP-Icon{
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+td.MP-RD0 {background-image: url(../IMAGE/ART/Todo-ReadNon.png)}
+td.MP-RD1 {background-image: url(../IMAGE/ART/Todo-Readed.png)}
+td.MP-SPD1 {background-image: url(../IMAGE/ART/Todo-Speed1.png);}
+td.MP-SPD2 {background-image: url(../IMAGE/ART/Todo-Speed2.png);}
+td.MP-SPD3 {background-image: url(../IMAGE/ART/Todo-Speed3.png);}
+td.MP-SPD4 {background-image: url(../IMAGE/ART/Todo-Speed1.png);}
+td.MP-SPD5 {background-image: url(../IMAGE/ART/Todo-Speed3.png);}
+td.MP-LT0 {background-image: url(../IMAGE/ART/Todo-LightRed.png);}
+td.MP-LT1 {background-image: url(../IMAGE/ART/Todo-LightYellow.png);}
+td.MP-LT2 {background-image: url(../IMAGE/ART/Todo-LightWhite.png);}
+td.MP-LT3 {background-image: url(../IMAGE/ART/Todo-LightGreen.png);}
+td.MP-LT4 {background-image: url(../IMAGE/ART/Todo-LightPurple.png);}
+td.MP-SEC1 {background-image: url(../IMAGE/ART/Todo-Secret1.png);}
+td.MP-SEC2 {background-image: url(../IMAGE/ART/Todo-Secret2.png);}
+td.MP-E {background-image: url(../IMAGE/ART/Todo-SignTypeOnline.png);}
+td.MP-P {background-image: url(../IMAGE/ART/Todo-SignTypePepper.png);}
+td.MP-W {background-image: url(../IMAGE/ART/Todo-SignTypeNotify.png);}
+
+/*td.Word{
+    background-image: url(../IMAGE/ART/ToDo-WordIcon.png);
+    width: 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-clip: content-box;
+}*/
+
+td.MP-SPD1.Word {background-image: url(../IMAGE/ART/Todo-MP-SPD1.png);}
+td.MP-SPD2.Word {background-image: url(../IMAGE/ART/Todo-MP-SPD2.png);}
+td.MP-SPD3.Word {background-image: url(../IMAGE/ART/Todo-MP-SPD3.png);}
+td.MP-SPD4.Word {background-image: url(../IMAGE/ART/Todo-MP-SPD4.png);}
+td.MP-SPD5.Word {background-image: url(../IMAGE/ART/Todo-MP-SPD5.png);}
+td.MP-LT0.Word  {background-image: url(../IMAGE/ART/Todo-MP-LT0.png);}/*紅，逾期*/
+td.MP-LT1.Word  {background-image: url(../IMAGE/ART/Todo-MP-LT1.png);}/*黃，屆期*/
+td.MP-LT2.Word  {background-image: url(../IMAGE/ART/Todo-MP-LT2.png);}/*白，無辦理期限*/
+td.MP-LT3.Word  {background-image: url(../IMAGE/ART/Todo-MP-LT3.png);}/*綠，辦理中*/
+td.MP-LT4.Word  {background-image: url(../IMAGE/ART/Todo-MP-LT4.png);}/*紫，逾期未歸檔*/
+td.MP-SEC1.Word {background-image: url(../IMAGE/ART/Todo-MP-SEC1.png);}
+td.MP-SEC2.Word {background-image: url(../IMAGE/ART/Todo-MP-SEC2.png);}
+td.MP-E.Word    {background-image: url(../IMAGE/ART/Todo-MP-E.png);}
+td.MP-P.Word    {background-image: url(../IMAGE/ART/Todo-MP-P.png);}
+td.MP-W.Word    {background-image: url(../IMAGE/ART/Todo-MP-W.png);}
+/* 1111124	Leslie[1111127]	MP圖示調整顯示方式	--END-- */
+
+/* 1141007  Leslie[1141104] MP新增重要性 */
+#todolist_tb .PRIORITY {cursor: pointer;}
+td.MP-PR1 {background-image: url(../IMAGE/ART/Todo-Priority-1.png);background-size: 20px;}
+td.MP-PR2 {background-image: url(../IMAGE/ART/Todo-Priority-2.png);background-size: 20px;}

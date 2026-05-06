@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AKI930D" targetNamespace="http://tempuri.org/AKI930D.xsd" xmlns:mstns="http://tempuri.org/AKI930D.xsd" xmlns="http://tempuri.org/AKI930D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AKI930D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="AKI930D" msprop:Generator_UserDSName="AKI930D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AKI930L1" msprop:Generator_TableClassName="AKI930L1DataTable" msprop:Generator_TableVarName="tableAKI930L1" msprop:Generator_TablePropName="AKI930L1" msprop:Generator_RowDeletingName="AKI930L1RowDeleting" msprop:Generator_RowChangingName="AKI930L1RowChanging" msprop:Generator_RowEvHandlerName="AKI930L1RowChangeEventHandler" msprop:Generator_RowDeletedName="AKI930L1RowDeleted" msprop:Generator_UserTableName="AKI930L1" msprop:Generator_RowChangedName="AKI930L1RowChanged" msprop:Generator_RowEvArgName="AKI930L1RowChangeEvent" msprop:Generator_RowClassName="AKI930L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_NO" msprop:Generator_ColumnVarNameInTable="columnFILE_NO" msprop:Generator_ColumnPropNameInRow="FILE_NO" msprop:Generator_ColumnPropNameInTable="FILE_NOColumn" msprop:Generator_UserColumnName="FILE_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="ENTRY_DATE_RESULT" msprop:Generator_ColumnVarNameInTable="columnENTRY_DATE_RESULT" msprop:Generator_ColumnPropNameInRow="ENTRY_DATE_RESULT" msprop:Generator_ColumnPropNameInTable="ENTRY_DATE_RESULTColumn" msprop:Generator_UserColumnName="ENTRY_DATE_RESULT" type="xs:string" minOccurs="0" />
+              <xs:element name="TX_CODE" msprop:Generator_ColumnVarNameInTable="columnTX_CODE" msprop:Generator_ColumnPropNameInRow="TX_CODE" msprop:Generator_ColumnPropNameInTable="TX_CODEColumn" msprop:Generator_UserColumnName="TX_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="ENTRY_USER" msprop:Generator_ColumnVarNameInTable="columnENTRY_USER" msprop:Generator_ColumnPropNameInRow="ENTRY_USER" msprop:Generator_ColumnPropNameInTable="ENTRY_USERColumn" msprop:Generator_UserColumnName="ENTRY_USER" type="xs:string" minOccurs="0" />
+              <xs:element name="TX_DESC" msprop:Generator_ColumnVarNameInTable="columnTX_DESC" msprop:Generator_ColumnPropNameInRow="TX_DESC" msprop:Generator_ColumnPropNameInTable="TX_DESCColumn" msprop:Generator_UserColumnName="TX_DESC" type="xs:string" minOccurs="0" />
+              <xs:element name="ENTRY_DATE1" msprop:Generator_ColumnVarNameInTable="columnENTRY_DATE1" msprop:Generator_ColumnPropNameInRow="ENTRY_DATE1" msprop:Generator_ColumnPropNameInTable="ENTRY_DATE1Column" msprop:Generator_UserColumnName="ENTRY_DATE1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

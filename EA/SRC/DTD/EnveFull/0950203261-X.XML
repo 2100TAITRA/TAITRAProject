@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="Big5"?>
+<電子封裝檔>
+  <封裝檔內容 Id="Wrap">
+    <封裝檔資訊>電子檔案</封裝檔資訊>
+    <電子檔案>
+      <線上簽核流程 Id="FlowInfo">
+        <簽核流程 URI="#FLOW_100" />
+      </線上簽核流程>
+      <線上簽核資訊 Id="Sol">
+        <簽核點定義 Id="FLOW_100">
+          <Signature Id="ds_user_100">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+              </CanonicalizationMethod>
+              <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+              </SignatureMethod>
+              <Reference URI="0950203261-P-0001.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>1Mr/xVx+sukX5saNlucsbQ4bDiE=</DigestValue>
+              </Reference>
+              <Reference URI="0950203261-O-0002.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>N24B8/nDiT3ijlwCvOPPnHeKkrI=</DigestValue>
+              </Reference>
+              <Reference URI="0950203261-00-01\0001-tc.xml">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>UQshos8lPyJCceTYJ4EJNNXc/ZU=</DigestValue>
+              </Reference>
+              <Reference URI="0950203261-00-01\0001.xml">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>+s/7u6dlv+uQHhkyWpgL1vxJYio=</DigestValue>
+              </Reference>
+              <Reference URI="0950203261-00-01\DraftMgmt.xml">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>6rsbZNiR01KtikXifMXtCc9FhXA=</DigestValue>
+              </Reference>
+              <Reference URI="#aol_info_100">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>6XT73NtiNgYxmu2x5cO82gz67FQ=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>Owx/l8NabS0c6E3VWaub+i0tqRTBW/ykXEWopVx2bQ7ZB4uU7aqAMlC7Fn6cfIMjhGDd/T3PhK+I
+J8kGpzOdv26R/p9XYGU8DGaESyvNhgMBb7SbnD+FdEJjsb7pnROC6PAha1IDjiH6UjTWtxcLuFvX
+nLCm+dRt92h3LrowORI=</SignatureValue>
+            <KeyInfo>
+              <X509Data>
+                <X509Certificate>MIID7TCCAtWgAwIBAgIQChgaNvdrLRGM0dufaugWCzANBgkqhkiG9w0BAQUFADBKMQswCQYDVQQG
+EwJUVzESMBAGA1UECgwJ6KGM5pS/6ZmiMScwJQYDVQQLDB7mlL/lupzmuKzoqabmhpHorYnnrqHn
+kIbkuK3lv4MwHhcNMDYwODIwMTQzNzAyWhcNMDYxMDE5MTQzNzAyWjBDMQswCQYDVQQGEwJUVzEZ
+MBcGA1UEAwwQ5ris6Kmm6Ieq54S25Lq6MTEZMBcGA1UEBRMQYTVlMGYxMGUxYmQ4ZWJlZDCBnzAN
+BgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAuHrFa/WL08BMsj9Vh2IOMm6SQIuJtlN+y1m4Ae9bw8xh
+JB8IGavj0HxTBSZWQIuz04EvQpvfKk3TFm1PMSm2PxfSgXqDZnno5JbZuWVovluNE8CI+YWKOi/6
++faU4y9wKygje76u7lVL0CeKRwWvZGRO+UhyGKALtSa6LU0ats0CAwEAAaOCAVgwggFUMEYGA1Ud
+HwQ/MD0wO6A5oDeGNWh0dHA6Ly9ndGVzdGNhLm5hdC5nb3YudHcvcmVwb3NpdG9yeS9DUkwvY29t
+cGxldGUuY3JsMFMGCCsGAQUFBwEBBEcwRTBDBggrBgEFBQcwAoY3aHR0cDovL2d0ZXN0Y2EubmF0
+Lmdvdi50dy9yZXBvc2l0b3J5L0lzc3VlZFRvVGhpc0NBLnA3YjAUBgNVHSAEDTALMAkGB2CGdmUA
+AwAwMwYDVR0JBCwwKjAVBgdghnYBZAIBMQoGCGCGdgFkAwEBMBEGB2CGdgFkAjMxBgwENjc4OTAd
+BgNVHQ4EFgQUQqMk8mVsvXAsT9ol4d8iUzn4/QQwGgYDVR0RBBMwEYEPdGVzdEBjaHQuY29tLnR3
+MA4GA1UdDwEB/wQEAwIHgDAfBgNVHSMEGDAWgBRL9kp3aNOUxOO1YNwOG++punv2UzANBgkqhkiG
+9w0BAQUFAAOCAQEAF9k9/Y82OwS5Tcg068J51vPu2+Mw97AmuxlRnRxvi7lbnOJZjHkjr/Foc1NM
+X5moMzz1wOuauXhKvO84Yv3t+onQ8sRgAowp3N5jZFRpSJL2eHSs5cWvH6gALCtp9vKdh6qFhYHf
+TqzbMtTZkbLUqjuSgUlXCa02EnjFI5jFHZ0WISfCbs47y6IooF0seFHmOBFMZw12lHzmTc05KRTO
+44pz/E0dzVshbyxcA4d7Snl1Z/ECJsDAmUS8Fbmyjagi1yyVpn6yiRxzN75G2XpoaAMYOePlTqRN
+U9CaM4Q6MQrRTPdOC7Ge1wZSL7Ds0B+izuamAYkoxciGkc7FFshokQ==</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+          </Signature>
+          <Object Id="aol_info_100">
+            <異動資訊>
+              <簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>王小民</姓名>
+                <帳號>CAESAR1</帳號>
+                <角色>承辦人</角色>
+              </簽核人員>
+              <異動別>送請簽核</異動別>
+              <次位簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>李大華</姓名>
+                <帳號>CAESAR2</帳號>
+                <角色>科長</角色>
+              </次位簽核人員>
+            </異動資訊>
+            <簽核資訊>
+              <簽核文件夾 文件夾識別碼="0" 產生時間="09509141405">
+                <文稿原始檔清單 文稿數="1">
+                  <文稿 原始檔序號="0" 序號="0" 文件夾識別碼="102" 物件識別碼="1" 產生時間="09509141406">
+                    <名稱>函（稿）</名稱>
+                    <文稿類型>函</文稿類型>
+                  </文稿>
+                </文稿原始檔清單>
+                <文稿簽核頁面 文件夾識別碼="2" 群組數="1">
+                  <流程群組 文件夾識別碼="101" 物件識別碼="2" 產生時間="09509141406" 群組標題="">
+                    <簽核文稿清單 文稿數="1">
+                      <簽核文稿 文件夾識別碼="103" 文稿序號="0" 物件識別碼="101" 產生時間="09509141406">
+                        <標題>函（稿）</標題>
+                        <頁面清單 總頁數="1">
+                          <頁面 影像檔序號="1" 文件夾識別碼="106" 物件識別碼="103" 產生時間="09509141406">
+                            <簽核物件清單 物件數="1">
+                              <簽核物件 文件夾識別碼="110" 物件識別碼="106" 產生時間="09509141406" 頁面顯示="Y">
+                                <物件類型>章戳</物件類型>
+                                <章戳 顯示時間="Y">
+                                  <文字走向>橫書</文字走向>
+                                  <區域 上="1780" 下="1861" 右="811" 左="419">
+                                  </區域>
+                                  <顏色 紅="255" 綠="0" 藍="0">
+                                  </顏色>
+                                  <檔案序號>2</檔案序號>
+                                </章戳>
+                              </簽核物件>
+                            </簽核物件清單>
+                          </頁面>
+                        </頁面清單>
+                      </簽核文稿>
+                    </簽核文稿清單>
+                  </流程群組>
+                </文稿簽核頁面>
+                <檔案清單>
+                  <電子檔案資訊 序號="0" 文件夾識別碼="104" 物件識別碼="4" 產生時間="09509141406">
+                    <檔案名稱>0950203261-00-01\0001-tc.xml</檔案名稱>
+                    <檔案大小>3470</檔案大小>
+                    <檔案格式>XML</檔案格式>
+                  </電子檔案資訊>
+                  <電子檔案資訊 序號="1" 文件夾識別碼="105" 物件識別碼="4" 產生時間="09509141406">
+                    <檔案名稱>0950203261-P-0001.TIF</檔案名稱>
+                    <檔案大小>13529</檔案大小>
+                    <檔案格式>TIF</檔案格式>
+                  </電子檔案資訊>
+                  <電子檔案資訊 序號="2" 文件夾識別碼="108" 物件識別碼="4" 產生時間="09509141406">
+                    <檔案名稱>0950203261-O-0002.TIF</檔案名稱>
+                    <檔案大小>785</檔案大小>
+                    <檔案格式>TIF</檔案格式>
+                  </電子檔案資訊>
+                </檔案清單>
+              </簽核文件夾>
+            </簽核資訊>
+          </Object>
+        </簽核點定義>
+      </線上簽核資訊>
+    </電子檔案>
+  </封裝檔內容>
+</電子封裝檔>

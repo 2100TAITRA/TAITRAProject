@@ -1,0 +1,2358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocInfoResult" type="tns:DocInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Exist" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Right" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeptId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UtyRtnRoot">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_bRedirect" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrPageQueryStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrStack" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckCowork">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ComNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OU_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNowRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubFolder" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bHasApproved" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEvnParameter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCoworkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCoworkResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RtnObject">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="FileCnt" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SubFolder" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Msg_Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Rcv_Date" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Due_Date" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DelMsgId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SignType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsRcvFile" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RcvFileCnt" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastUpdateProg" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LastUpdateTime" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetDepts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argHaveDept" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argHaveSec" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDept" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeptsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeptsResult" type="tns:DeptStru2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeptStru2">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecName" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUnitAllUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argSubTree" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnitAllUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnitAllUsersResult" type="tns:EmpStru2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EmpStru2">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmpName" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="SectName" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="SectNo" type="tns:ArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetDeptAllUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDeptNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeptAllUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeptAllUsersResult" type="tns:EmpStru2" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubRoleResult" type="tns:RoleStru" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RoleStru">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoleNo" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllUsersOfRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUsersOfRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUsersOfRoleResult" type="tns:EmpStru" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EmpStru">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpName" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFolderInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argTableSelect" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFolderInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFolderInfoResult" type="tns:FolderStyle" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FolderStyle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strFolder" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSubFolder" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxname" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSubUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDeptNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubUnitResult" type="tns:DeptStru" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeptStru">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SecNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="SectName" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argSubTree" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUsersResult" type="tns:EmpStru" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrgInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFullName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrgInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrgInfoResult" type="tns:RtnClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RtnClass">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsGrp" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="OrgName" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="OrgID" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="StdID" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="ContactPsn" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="Email" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="PostNo" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="Address" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="IsFep" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="FepID" type="tns:ArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetDefaultFromNoWord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultFromNoWordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDefaultFromNoWordResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnString">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RtnStr" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="AddNewORG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewORGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddNewORGResult" type="tns:UtyRtnRoot" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultSubject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubjectNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultSubjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDefaultSubjectResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSDATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argLtBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argLtIncHd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argLtUom" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkDateResult" type="tns:TimeLibWorkDate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimeLibWorkDate">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="WorkDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LeadTime" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ChkDuplicateDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFromInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkDuplicateDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkDuplicateDocResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountInfoResult" type="tns:CUserPlayRules" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CUserPlayRules">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="EmpName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleNo" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="tns:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="tns:ArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="fnGetFullLeadTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argLeadTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argComNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSumType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnve" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fnGetFullLeadTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fnGetFullLeadTimeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCapplyFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argTaskNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCapplyFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCapplyFlowResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRcvAndIssueDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argComNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRcvAndIssueDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRcvAndIssueDateResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSuppNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSuppCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSuppNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSuppNotesResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Penalized">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argBatchNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PenalizedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PenalizedResult" type="tns:Rtn_EDR580_Class" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Rtn_EDR580_Class">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGrp" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgName" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TranAppRoleTodo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TranAppRoleTodoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TranAppRoleTodoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DocInfo" nillable="true" type="tns:DocInfo" />
+      <s:element name="RtnObject" nillable="true" type="tns:RtnObject" />
+      <s:element name="DeptStru2" nillable="true" type="tns:DeptStru2" />
+      <s:element name="EmpStru2" nillable="true" type="tns:EmpStru2" />
+      <s:element name="RoleStru" nillable="true" type="tns:RoleStru" />
+      <s:element name="EmpStru" nillable="true" type="tns:EmpStru" />
+      <s:element name="FolderStyle" nillable="true" type="tns:FolderStyle" />
+      <s:element name="DeptStru" nillable="true" type="tns:DeptStru" />
+      <s:element name="RtnClass" nillable="true" type="tns:RtnClass" />
+      <s:element name="UtyRtnString" nillable="true" type="tns:UtyRtnString" />
+      <s:element name="UtyRtnRoot" nillable="true" type="tns:UtyRtnRoot" />
+      <s:element name="TimeLibWorkDate" nillable="true" type="tns:TimeLibWorkDate" />
+      <s:element name="CUserPlayRules" nillable="true" type="tns:CUserPlayRules" />
+      <s:element name="int" type="s:int" />
+      <s:element name="Rtn_EDR580_Class" nillable="true" type="tns:Rtn_EDR580_Class" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCoworkSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCowork" />
+  </wsdl:message>
+  <wsdl:message name="CheckCoworkSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCoworkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepts" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnitAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnitAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeptAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeptAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubRole" />
+  </wsdl:message>
+  <wsdl:message name="GetSubRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersOfRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUsersOfRole" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersOfRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUsersOfRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFolderInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFolderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubUnit" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrgInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrgInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetOrgInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrgInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultFromNoWordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultFromNoWord" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultFromNoWordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultFromNoWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewORGSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewORG" />
+  </wsdl:message>
+  <wsdl:message name="AddNewORGSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewORGResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultSubjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultSubject" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultSubjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultSubjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkDate" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkDuplicateDocSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkDuplicateDoc" />
+  </wsdl:message>
+  <wsdl:message name="ChkDuplicateDocSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkDuplicateDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullLeadTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:fnGetFullLeadTime" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullLeadTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:fnGetFullLeadTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCapplyFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCapplyFlow" />
+  </wsdl:message>
+  <wsdl:message name="GetCapplyFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCapplyFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRcvAndIssueDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRcvAndIssueDate" />
+  </wsdl:message>
+  <wsdl:message name="GetRcvAndIssueDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRcvAndIssueDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSuppNotes" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSuppNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PenalizedSoapIn">
+    <wsdl:part name="parameters" element="tns:Penalized" />
+  </wsdl:message>
+  <wsdl:message name="PenalizedSoapOut">
+    <wsdl:part name="parameters" element="tns:PenalizedResponse" />
+  </wsdl:message>
+  <wsdl:message name="TranAppRoleTodoSoapIn">
+    <wsdl:part name="parameters" element="tns:TranAppRoleTodo" />
+  </wsdl:message>
+  <wsdl:message name="TranAppRoleTodoSoapOut">
+    <wsdl:part name="parameters" element="tns:TranAppRoleTodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DocInfo" />
+  </wsdl:message>
+  <wsdl:message name="CheckCoworkHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="strOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="ComNo" type="s:string" />
+    <wsdl:part name="OU_ID" type="s:string" />
+    <wsdl:part name="argUsername" type="s:string" />
+    <wsdl:part name="argNowRole" type="s:string" />
+    <wsdl:part name="argSubFolder" type="s:string" />
+    <wsdl:part name="bHasApproved" type="s:string" />
+    <wsdl:part name="argEvnParameter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCoworkHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnObject" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argHaveDept" type="s:string" />
+    <wsdl:part name="argHaveSec" type="s:string" />
+    <wsdl:part name="argDept" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DeptStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitNo" type="s:string" />
+    <wsdl:part name="argRoleNo" type="s:string" />
+    <wsdl:part name="argSubTree" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:EmpStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:EmpStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetSubRoleHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubRoleHttpGetOut">
+    <wsdl:part name="Body" element="tns:RoleStru" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersOfRoleHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersOfRoleHttpGetOut">
+    <wsdl:part name="Body" element="tns:EmpStru" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argTableSelect" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:FolderStyle" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitHttpGetOut">
+    <wsdl:part name="Body" element="tns:DeptStru" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitNo" type="s:string" />
+    <wsdl:part name="argSubTree" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:EmpStru" />
+  </wsdl:message>
+  <wsdl:message name="GetOrgInfoHttpGetIn">
+    <wsdl:part name="argSessionId" type="s:string" />
+    <wsdl:part name="argFullName" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="DeptNo" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrgInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnClass" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultFromNoWordHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argFOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultFromNoWordHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="AddNewORGHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddNewORGHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnRoot" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultSubjectHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argFOrgNo" type="s:string" />
+    <wsdl:part name="argSubjectNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultSubjectHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argSDATE" type="s:string" />
+    <wsdl:part name="argKey" type="s:string" />
+    <wsdl:part name="argLtBy" type="s:string" />
+    <wsdl:part name="argLtIncHd" type="s:string" />
+    <wsdl:part name="argLtUom" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:TimeLibWorkDate" />
+  </wsdl:message>
+  <wsdl:message name="ChkDuplicateDocHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argFromInfo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkDuplicateDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argUserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:CUserPlayRules" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullLeadTimeHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argLeadTime" type="s:string" />
+    <wsdl:part name="argComNo" type="s:string" />
+    <wsdl:part name="argSumType" type="s:string" />
+    <wsdl:part name="argEnve" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullLeadTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetCapplyFlowHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argTaskNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCapplyFlowHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetRcvAndIssueDateHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argComNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRcvAndIssueDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppNotesHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argSuppCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppNotesHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="PenalizedHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argBatchNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PenalizedHttpGetOut">
+    <wsdl:part name="Body" element="tns:Rtn_EDR580_Class" />
+  </wsdl:message>
+  <wsdl:message name="TranAppRoleTodoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TranAppRoleTodoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostIn">
+    <wsdl:part name="MethodName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DocInfo" />
+  </wsdl:message>
+  <wsdl:message name="CheckCoworkHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="strOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="ComNo" type="s:string" />
+    <wsdl:part name="OU_ID" type="s:string" />
+    <wsdl:part name="argUsername" type="s:string" />
+    <wsdl:part name="argNowRole" type="s:string" />
+    <wsdl:part name="argSubFolder" type="s:string" />
+    <wsdl:part name="bHasApproved" type="s:string" />
+    <wsdl:part name="argEvnParameter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCoworkHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnObject" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argHaveDept" type="s:string" />
+    <wsdl:part name="argHaveSec" type="s:string" />
+    <wsdl:part name="argDept" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DeptStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitNo" type="s:string" />
+    <wsdl:part name="argRoleNo" type="s:string" />
+    <wsdl:part name="argSubTree" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitAllUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:EmpStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptAllUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:EmpStru2" />
+  </wsdl:message>
+  <wsdl:message name="GetSubRoleHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubRoleHttpPostOut">
+    <wsdl:part name="Body" element="tns:RoleStru" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersOfRoleHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersOfRoleHttpPostOut">
+    <wsdl:part name="Body" element="tns:EmpStru" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argTableSelect" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:FolderStyle" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argDeptNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSubUnitHttpPostOut">
+    <wsdl:part name="Body" element="tns:DeptStru" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argUnitNo" type="s:string" />
+    <wsdl:part name="argSubTree" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:EmpStru" />
+  </wsdl:message>
+  <wsdl:message name="GetOrgInfoHttpPostIn">
+    <wsdl:part name="argSessionId" type="s:string" />
+    <wsdl:part name="argFullName" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="DeptNo" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrgInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnClass" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultFromNoWordHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argFOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultFromNoWordHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="AddNewORGHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddNewORGHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnRoot" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultSubjectHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argFOrgNo" type="s:string" />
+    <wsdl:part name="argSubjectNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultSubjectHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argSDATE" type="s:string" />
+    <wsdl:part name="argKey" type="s:string" />
+    <wsdl:part name="argLtBy" type="s:string" />
+    <wsdl:part name="argLtIncHd" type="s:string" />
+    <wsdl:part name="argLtUom" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:TimeLibWorkDate" />
+  </wsdl:message>
+  <wsdl:message name="ChkDuplicateDocHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argFromInfo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChkDuplicateDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argUserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:CUserPlayRules" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullLeadTimeHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argLeadTime" type="s:string" />
+    <wsdl:part name="argComNo" type="s:string" />
+    <wsdl:part name="argSumType" type="s:string" />
+    <wsdl:part name="argEnve" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullLeadTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetCapplyFlowHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argTaskNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCapplyFlowHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetRcvAndIssueDateHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argComNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRcvAndIssueDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppNotesHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argSuppCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSuppNotesHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="PenalizedHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argBatchNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PenalizedHttpPostOut">
+    <wsdl:part name="Body" element="tns:Rtn_EDR580_Class" />
+  </wsdl:message>
+  <wsdl:message name="TranAppRoleTodoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TranAppRoleTodoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="EDWSSoap">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <wsdl:input message="tns:GetDocInfoSoapIn" />
+      <wsdl:output message="tns:GetDocInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCowork">
+      <wsdl:input message="tns:CheckCoworkSoapIn" />
+      <wsdl:output message="tns:CheckCoworkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得所有部門代碼名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetDeptsSoapIn" />
+      <wsdl:output message="tns:GetDeptsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某單位所屬人員帳號名稱，可指定角色</wsdl:documentation>
+      <wsdl:input message="tns:GetUnitAllUsersSoapIn" />
+      <wsdl:output message="tns:GetUnitAllUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某部門所屬人員帳號名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetDeptAllUsersSoapIn" />
+      <wsdl:output message="tns:GetDeptAllUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubRole">
+      <wsdl:input message="tns:GetSubRoleSoapIn" />
+      <wsdl:output message="tns:GetSubRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersOfRole">
+      <wsdl:input message="tns:GetAllUsersOfRoleSoapIn" />
+      <wsdl:output message="tns:GetAllUsersOfRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <wsdl:input message="tns:GetFolderInfoSoapIn" />
+      <wsdl:output message="tns:GetFolderInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <wsdl:input message="tns:GetSubUnitSoapIn" />
+      <wsdl:output message="tns:GetSubUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input message="tns:GetAllUsersSoapIn" />
+      <wsdl:output message="tns:GetAllUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">機關檢核檢查並帶回預設發文方式</wsdl:documentation>
+      <wsdl:input message="tns:GetOrgInfoSoapIn" />
+      <wsdl:output message="tns:GetOrgInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultFromNoWord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">輸入來文機關代碼，回傳TX_CODE='WORD'的來文字</wsdl:documentation>
+      <wsdl:input message="tns:GetDefaultFromNoWordSoapIn" />
+      <wsdl:output message="tns:GetDefaultFromNoWordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewORG">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">簡易新增機關資料</wsdl:documentation>
+      <wsdl:input message="tns:AddNewORGSoapIn" />
+      <wsdl:output message="tns:AddNewORGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultSubject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取出預設主旨</wsdl:documentation>
+      <wsdl:input message="tns:GetDefaultSubjectSoapIn" />
+      <wsdl:output message="tns:GetDefaultSubjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某一工作日日期</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkDateSoapIn" />
+      <wsdl:output message="tns:GetWorkDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkDuplicateDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">檢查紙本來文是否重覆</wsdl:documentation>
+      <wsdl:input message="tns:ChkDuplicateDocSoapIn" />
+      <wsdl:output message="tns:ChkDuplicateDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得此帳號所扮演的所有角色資料</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountInfoSoapIn" />
+      <wsdl:output message="tns:GetAccountInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullLeadTime">
+      <wsdl:input message="tns:fnGetFullLeadTimeSoapIn" />
+      <wsdl:output message="tns:fnGetFullLeadTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapplyFlow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得辦理情形說明、是否需要許可證、時效計算、展延性質</wsdl:documentation>
+      <wsdl:input message="tns:GetCapplyFlowSoapIn" />
+      <wsdl:output message="tns:GetCapplyFlowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRcvAndIssueDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得收文及發文日期及是否為創稿公文</wsdl:documentation>
+      <wsdl:input message="tns:GetRcvAndIssueDateSoapIn" />
+      <wsdl:output message="tns:GetRcvAndIssueDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppNotes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得補件原因</wsdl:documentation>
+      <wsdl:input message="tns:GetSuppNotesSoapIn" />
+      <wsdl:output message="tns:GetSuppNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Penalized">
+      <wsdl:input message="tns:PenalizedSoapIn" />
+      <wsdl:output message="tns:PenalizedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TranAppRoleTodo">
+      <wsdl:input message="tns:TranAppRoleTodoSoapIn" />
+      <wsdl:output message="tns:TranAppRoleTodoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EDWSHttpGet">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpGetIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <wsdl:input message="tns:GetDocInfoHttpGetIn" />
+      <wsdl:output message="tns:GetDocInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCowork">
+      <wsdl:input message="tns:CheckCoworkHttpGetIn" />
+      <wsdl:output message="tns:CheckCoworkHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得所有部門代碼名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetDeptsHttpGetIn" />
+      <wsdl:output message="tns:GetDeptsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某單位所屬人員帳號名稱，可指定角色</wsdl:documentation>
+      <wsdl:input message="tns:GetUnitAllUsersHttpGetIn" />
+      <wsdl:output message="tns:GetUnitAllUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某部門所屬人員帳號名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetDeptAllUsersHttpGetIn" />
+      <wsdl:output message="tns:GetDeptAllUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubRole">
+      <wsdl:input message="tns:GetSubRoleHttpGetIn" />
+      <wsdl:output message="tns:GetSubRoleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersOfRole">
+      <wsdl:input message="tns:GetAllUsersOfRoleHttpGetIn" />
+      <wsdl:output message="tns:GetAllUsersOfRoleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <wsdl:input message="tns:GetFolderInfoHttpGetIn" />
+      <wsdl:output message="tns:GetFolderInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <wsdl:input message="tns:GetSubUnitHttpGetIn" />
+      <wsdl:output message="tns:GetSubUnitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input message="tns:GetAllUsersHttpGetIn" />
+      <wsdl:output message="tns:GetAllUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">機關檢核檢查並帶回預設發文方式</wsdl:documentation>
+      <wsdl:input message="tns:GetOrgInfoHttpGetIn" />
+      <wsdl:output message="tns:GetOrgInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultFromNoWord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">輸入來文機關代碼，回傳TX_CODE='WORD'的來文字</wsdl:documentation>
+      <wsdl:input message="tns:GetDefaultFromNoWordHttpGetIn" />
+      <wsdl:output message="tns:GetDefaultFromNoWordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewORG">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">簡易新增機關資料</wsdl:documentation>
+      <wsdl:input message="tns:AddNewORGHttpGetIn" />
+      <wsdl:output message="tns:AddNewORGHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultSubject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取出預設主旨</wsdl:documentation>
+      <wsdl:input message="tns:GetDefaultSubjectHttpGetIn" />
+      <wsdl:output message="tns:GetDefaultSubjectHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某一工作日日期</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkDateHttpGetIn" />
+      <wsdl:output message="tns:GetWorkDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkDuplicateDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">檢查紙本來文是否重覆</wsdl:documentation>
+      <wsdl:input message="tns:ChkDuplicateDocHttpGetIn" />
+      <wsdl:output message="tns:ChkDuplicateDocHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得此帳號所扮演的所有角色資料</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountInfoHttpGetIn" />
+      <wsdl:output message="tns:GetAccountInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullLeadTime">
+      <wsdl:input message="tns:fnGetFullLeadTimeHttpGetIn" />
+      <wsdl:output message="tns:fnGetFullLeadTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapplyFlow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得辦理情形說明、是否需要許可證、時效計算、展延性質</wsdl:documentation>
+      <wsdl:input message="tns:GetCapplyFlowHttpGetIn" />
+      <wsdl:output message="tns:GetCapplyFlowHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRcvAndIssueDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得收文及發文日期及是否為創稿公文</wsdl:documentation>
+      <wsdl:input message="tns:GetRcvAndIssueDateHttpGetIn" />
+      <wsdl:output message="tns:GetRcvAndIssueDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppNotes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得補件原因</wsdl:documentation>
+      <wsdl:input message="tns:GetSuppNotesHttpGetIn" />
+      <wsdl:output message="tns:GetSuppNotesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Penalized">
+      <wsdl:input message="tns:PenalizedHttpGetIn" />
+      <wsdl:output message="tns:PenalizedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TranAppRoleTodo">
+      <wsdl:input message="tns:TranAppRoleTodoHttpGetIn" />
+      <wsdl:output message="tns:TranAppRoleTodoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EDWSHttpPost">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoHttpPostIn" />
+      <wsdl:output message="tns:GetWebMethodInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <wsdl:input message="tns:GetDocInfoHttpPostIn" />
+      <wsdl:output message="tns:GetDocInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCowork">
+      <wsdl:input message="tns:CheckCoworkHttpPostIn" />
+      <wsdl:output message="tns:CheckCoworkHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得所有部門代碼名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetDeptsHttpPostIn" />
+      <wsdl:output message="tns:GetDeptsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某單位所屬人員帳號名稱，可指定角色</wsdl:documentation>
+      <wsdl:input message="tns:GetUnitAllUsersHttpPostIn" />
+      <wsdl:output message="tns:GetUnitAllUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某部門所屬人員帳號名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetDeptAllUsersHttpPostIn" />
+      <wsdl:output message="tns:GetDeptAllUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubRole">
+      <wsdl:input message="tns:GetSubRoleHttpPostIn" />
+      <wsdl:output message="tns:GetSubRoleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersOfRole">
+      <wsdl:input message="tns:GetAllUsersOfRoleHttpPostIn" />
+      <wsdl:output message="tns:GetAllUsersOfRoleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <wsdl:input message="tns:GetFolderInfoHttpPostIn" />
+      <wsdl:output message="tns:GetFolderInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <wsdl:input message="tns:GetSubUnitHttpPostIn" />
+      <wsdl:output message="tns:GetSubUnitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input message="tns:GetAllUsersHttpPostIn" />
+      <wsdl:output message="tns:GetAllUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">機關檢核檢查並帶回預設發文方式</wsdl:documentation>
+      <wsdl:input message="tns:GetOrgInfoHttpPostIn" />
+      <wsdl:output message="tns:GetOrgInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultFromNoWord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">輸入來文機關代碼，回傳TX_CODE='WORD'的來文字</wsdl:documentation>
+      <wsdl:input message="tns:GetDefaultFromNoWordHttpPostIn" />
+      <wsdl:output message="tns:GetDefaultFromNoWordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewORG">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">簡易新增機關資料</wsdl:documentation>
+      <wsdl:input message="tns:AddNewORGHttpPostIn" />
+      <wsdl:output message="tns:AddNewORGHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultSubject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取出預設主旨</wsdl:documentation>
+      <wsdl:input message="tns:GetDefaultSubjectHttpPostIn" />
+      <wsdl:output message="tns:GetDefaultSubjectHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得某一工作日日期</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkDateHttpPostIn" />
+      <wsdl:output message="tns:GetWorkDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkDuplicateDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">檢查紙本來文是否重覆</wsdl:documentation>
+      <wsdl:input message="tns:ChkDuplicateDocHttpPostIn" />
+      <wsdl:output message="tns:ChkDuplicateDocHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得此帳號所扮演的所有角色資料</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountInfoHttpPostIn" />
+      <wsdl:output message="tns:GetAccountInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullLeadTime">
+      <wsdl:input message="tns:fnGetFullLeadTimeHttpPostIn" />
+      <wsdl:output message="tns:fnGetFullLeadTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCapplyFlow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得辦理情形說明、是否需要許可證、時效計算、展延性質</wsdl:documentation>
+      <wsdl:input message="tns:GetCapplyFlowHttpPostIn" />
+      <wsdl:output message="tns:GetCapplyFlowHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRcvAndIssueDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得收文及發文日期及是否為創稿公文</wsdl:documentation>
+      <wsdl:input message="tns:GetRcvAndIssueDateHttpPostIn" />
+      <wsdl:output message="tns:GetRcvAndIssueDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppNotes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得補件原因</wsdl:documentation>
+      <wsdl:input message="tns:GetSuppNotesHttpPostIn" />
+      <wsdl:output message="tns:GetSuppNotesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Penalized">
+      <wsdl:input message="tns:PenalizedHttpPostIn" />
+      <wsdl:output message="tns:PenalizedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TranAppRoleTodo">
+      <wsdl:input message="tns:TranAppRoleTodoHttpPostIn" />
+      <wsdl:output message="tns:TranAppRoleTodoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EDWSSoap" type="tns:EDWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <soap:operation soapAction="http://tempuri.org/GetDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCowork">
+      <soap:operation soapAction="http://tempuri.org/CheckCowork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <soap:operation soapAction="http://tempuri.org/GetDepts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <soap:operation soapAction="http://tempuri.org/GetUnitAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <soap:operation soapAction="http://tempuri.org/GetDeptAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubRole">
+      <soap:operation soapAction="http://tempuri.org/GetSubRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersOfRole">
+      <soap:operation soapAction="http://tempuri.org/GetAllUsersOfRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <soap:operation soapAction="http://tempuri.org/GetFolderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <soap:operation soapAction="http://tempuri.org/GetSubUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgInfo">
+      <soap:operation soapAction="http://tempuri.org/GetOrgInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultFromNoWord">
+      <soap:operation soapAction="http://tempuri.org/GetDefaultFromNoWord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewORG">
+      <soap:operation soapAction="http://tempuri.org/AddNewORG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultSubject">
+      <soap:operation soapAction="http://tempuri.org/GetDefaultSubject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDate">
+      <soap:operation soapAction="http://tempuri.org/GetWorkDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDuplicateDoc">
+      <soap:operation soapAction="http://tempuri.org/ChkDuplicateDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullLeadTime">
+      <soap:operation soapAction="http://tempuri.org/fnGetFullLeadTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapplyFlow">
+      <soap:operation soapAction="http://tempuri.org/GetCapplyFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRcvAndIssueDate">
+      <soap:operation soapAction="http://tempuri.org/GetRcvAndIssueDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppNotes">
+      <soap:operation soapAction="http://tempuri.org/GetSuppNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Penalized">
+      <soap:operation soapAction="http://tempuri.org/Penalized" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranAppRoleTodo">
+      <soap:operation soapAction="http://tempuri.org/TranAppRoleTodo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EDWSSoap12" type="tns:EDWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCowork">
+      <soap12:operation soapAction="http://tempuri.org/CheckCowork" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <soap12:operation soapAction="http://tempuri.org/GetDepts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <soap12:operation soapAction="http://tempuri.org/GetUnitAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <soap12:operation soapAction="http://tempuri.org/GetDeptAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubRole">
+      <soap12:operation soapAction="http://tempuri.org/GetSubRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersOfRole">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUsersOfRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetFolderInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <soap12:operation soapAction="http://tempuri.org/GetSubUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetOrgInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultFromNoWord">
+      <soap12:operation soapAction="http://tempuri.org/GetDefaultFromNoWord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewORG">
+      <soap12:operation soapAction="http://tempuri.org/AddNewORG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultSubject">
+      <soap12:operation soapAction="http://tempuri.org/GetDefaultSubject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDate">
+      <soap12:operation soapAction="http://tempuri.org/GetWorkDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDuplicateDoc">
+      <soap12:operation soapAction="http://tempuri.org/ChkDuplicateDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullLeadTime">
+      <soap12:operation soapAction="http://tempuri.org/fnGetFullLeadTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapplyFlow">
+      <soap12:operation soapAction="http://tempuri.org/GetCapplyFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRcvAndIssueDate">
+      <soap12:operation soapAction="http://tempuri.org/GetRcvAndIssueDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppNotes">
+      <soap12:operation soapAction="http://tempuri.org/GetSuppNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Penalized">
+      <soap12:operation soapAction="http://tempuri.org/Penalized" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranAppRoleTodo">
+      <soap12:operation soapAction="http://tempuri.org/TranAppRoleTodo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EDWSHttpGet" type="tns:EDWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <http:operation location="/GetDocInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCowork">
+      <http:operation location="/CheckCowork" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <http:operation location="/GetDepts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <http:operation location="/GetUnitAllUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <http:operation location="/GetDeptAllUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubRole">
+      <http:operation location="/GetSubRole" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersOfRole">
+      <http:operation location="/GetAllUsersOfRole" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <http:operation location="/GetFolderInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <http:operation location="/GetSubUnit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <http:operation location="/GetAllUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgInfo">
+      <http:operation location="/GetOrgInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultFromNoWord">
+      <http:operation location="/GetDefaultFromNoWord" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewORG">
+      <http:operation location="/AddNewORG" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultSubject">
+      <http:operation location="/GetDefaultSubject" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDate">
+      <http:operation location="/GetWorkDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDuplicateDoc">
+      <http:operation location="/ChkDuplicateDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <http:operation location="/GetAccountInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullLeadTime">
+      <http:operation location="/fnGetFullLeadTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapplyFlow">
+      <http:operation location="/GetCapplyFlow" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRcvAndIssueDate">
+      <http:operation location="/GetRcvAndIssueDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppNotes">
+      <http:operation location="/GetSuppNotes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Penalized">
+      <http:operation location="/Penalized" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranAppRoleTodo">
+      <http:operation location="/TranAppRoleTodo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EDWSHttpPost" type="tns:EDWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <http:operation location="/GetWebMethodInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocInfo">
+      <http:operation location="/GetDocInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCowork">
+      <http:operation location="/CheckCowork" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepts">
+      <http:operation location="/GetDepts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnitAllUsers">
+      <http:operation location="/GetUnitAllUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptAllUsers">
+      <http:operation location="/GetDeptAllUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubRole">
+      <http:operation location="/GetSubRole" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersOfRole">
+      <http:operation location="/GetAllUsersOfRole" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderInfo">
+      <http:operation location="/GetFolderInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubUnit">
+      <http:operation location="/GetSubUnit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <http:operation location="/GetAllUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgInfo">
+      <http:operation location="/GetOrgInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultFromNoWord">
+      <http:operation location="/GetDefaultFromNoWord" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewORG">
+      <http:operation location="/AddNewORG" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultSubject">
+      <http:operation location="/GetDefaultSubject" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDate">
+      <http:operation location="/GetWorkDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkDuplicateDoc">
+      <http:operation location="/ChkDuplicateDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <http:operation location="/GetAccountInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullLeadTime">
+      <http:operation location="/fnGetFullLeadTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCapplyFlow">
+      <http:operation location="/GetCapplyFlow" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRcvAndIssueDate">
+      <http:operation location="/GetRcvAndIssueDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppNotes">
+      <http:operation location="/GetSuppNotes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Penalized">
+      <http:operation location="/Penalized" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranAppRoleTodo">
+      <http:operation location="/TranAppRoleTodo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EDWS">
+    <wsdl:port name="EDWSSoap" binding="tns:EDWSSoap">
+      <soap:address location="http://localhost/ED/EDLIB/EDWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EDWSSoap12" binding="tns:EDWSSoap12">
+      <soap12:address location="http://localhost/ED/EDLIB/EDWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EDWSHttpGet" binding="tns:EDWSHttpGet">
+      <http:address location="http://localhost/ED/EDLIB/EDWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EDWSHttpPost" binding="tns:EDWSHttpPost">
+      <http:address location="http://localhost/ED/EDLIB/EDWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

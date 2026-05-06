@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR822D" targetNamespace="http://tempuri.org/EAR822D.xsd" xmlns:mstns="http://tempuri.org/EAR822D.xsd" xmlns="http://tempuri.org/EAR822D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR822D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EAR822D" msprop:Generator_UserDSName="EAR822D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EAR822D" msprop:Generator_TableClassName="EAR822DDataTable" msprop:Generator_TableVarName="tableEAR822D" msprop:Generator_RowChangedName="EAR822DRowChanged" msprop:Generator_TablePropName="_EAR822D" msprop:Generator_RowDeletingName="EAR822DRowDeleting" msprop:Generator_RowChangingName="EAR822DRowChanging" msprop:Generator_RowEvHandlerName="EAR822DRowChangeEventHandler" msprop:Generator_RowDeletedName="EAR822DRowDeleted" msprop:Generator_RowClassName="EAR822DRow" msprop:Generator_UserTableName="EAR822D" msprop:Generator_RowEvArgName="EAR822DRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BORROW_DEPT" msprop:Generator_ColumnVarNameInTable="columnBORROW_DEPT" msprop:Generator_ColumnPropNameInRow="BORROW_DEPT" msprop:Generator_ColumnPropNameInTable="BORROW_DEPTColumn" msprop:Generator_UserColumnName="BORROW_DEPT" type="xs:string" minOccurs="0" />
+              <xs:element name="BORROW_TIME" msprop:Generator_ColumnVarNameInTable="columnBORROW_TIME" msprop:Generator_ColumnPropNameInRow="BORROW_TIME" msprop:Generator_ColumnPropNameInTable="BORROW_TIMEColumn" msprop:Generator_UserColumnName="BORROW_TIME" type="xs:int" minOccurs="0" />
+              <xs:element name="PRI_xFF2E_T_TIME" msprop:Generator_ColumnVarNameInTable="columnPRIＮT_TIME" msprop:Generator_ColumnPropNameInRow="PRIＮT_TIME" msprop:Generator_ColumnPropNameInTable="PRIＮT_TIMEColumn" msprop:Generator_UserColumnName="PRIＮT_TIME" type="xs:int" minOccurs="0" />
+              <xs:element name="GROUPKEY" msprop:Generator_ColumnVarNameInTable="columnGROUPKEY" msprop:Generator_ColumnPropNameInRow="GROUPKEY" msprop:Generator_ColumnPropNameInTable="GROUPKEYColumn" msprop:Generator_UserColumnName="GROUPKEY" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

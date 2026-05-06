@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKM399D" targetNamespace="http://tempuri.org/AKM399D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKM399D.xsd" xmlns:mstns="http://tempuri.org/AKM399D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKM399D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="STOCK_MAIN">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SOURCE_ORGNO" type="xs:string" minOccurs="0" />
+							<xs:element name="STOCK_NO_1" type="xs:string" minOccurs="0" />
+							<xs:element name="BEG_STOCK_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="END_STOCK_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="USED_STOCK_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="STOCK_STATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NO_CLS" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="STOCK_REMARK" type="xs:string" minOccurs="0" />
+							<xs:element name="STOCK_NO_2" type="xs:string" minOccurs="0" />
+							<xs:element name="STOCK_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="GroupUnit" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

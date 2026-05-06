@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+	<HEAD>
+		<TITLE>TBI100 公布欄查詢作業</TITLE>
+		<script language="javascript" src="TBI100.js"></script>
+		<script language="javascript" src="../TBLIB/TB_LIB.js"></script>
+		<meta name="GENERATOR" Content="Microsoft Visual Studio 7.0">
+	</HEAD>
+<script language=javascript>
+
+window.onload = fnOnLoad;
+function fnOnLoad()
+{
+	//1100526 Zen 1100610 弱掃Client DOM XSS修正
+    //var strParam = GetAllParamStr();
+    var strParam = EncodeURI(GetAllParamStr());
+	TBI110.location = "TBI110.aspx" + strParam;
+	TBI120.location = "TBI120.aspx" + strParam;
+}
+
+</script>
+	<FRAMESET frameSpacing="1" cols="270,*">
+		<frame border="1" name="TBI110" id="TBI110" src="" scrolling="auto" >
+		<FRAME name="TBI120" id="TBI120" src="">
+		<NOFRAMES>
+			<BODY>
+				<P>This page uses frames, but your browser doesn't support them.</P>
+			</BODY>
+		</NOFRAMES>
+	</FRAMESET>
+</HTML>

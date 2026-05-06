@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DFM310D" targetNamespace="http://tempuri.org/DFM310D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/DFM310D.xsd" xmlns:mstns="http://tempuri.org/DFM310D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="DFM310D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="DFM310L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SRV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SRV_ALIAS" type="xs:string" minOccurs="0" />
+							<xs:element name="SRV_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SRV_IP" type="xs:string" minOccurs="0" />
+							<xs:element name="SRV_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="WGRP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="WGRP_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="START_PATH" type="xs:string" minOccurs="0" />
+							<xs:element name="SHARE_PATH" type="xs:string" minOccurs="0" />
+							<xs:element name="STORAGE_PATH" type="xs:string" minOccurs="0" />
+							<xs:element name="BKUP_SRVNO" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="BKUP_STORAGE" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_SPACE" type="xs:long" minOccurs="0" />
+							<xs:element name="TOTAL_SPACE" type="xs:long" minOccurs="0" />
+							<xs:element name="WEB_SERVICE" type="xs:string" minOccurs="0" />
+							<xs:element name="BKUP_WGRP" type="xs:string" minOccurs="0" />
+							<xs:element name="BKUP_WGRPNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="BKUP_SRVNAME" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

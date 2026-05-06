@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAP810D" targetNamespace="http://tempuri.org/EAP810D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EAP810D.xsd" xmlns:mstns="http://tempuri.org/EAP810D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAP810D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="DIRECTORY_VOL">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FD_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="UPD_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="OKEEP_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="ADJUSTYR_DESC" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_LIMIT" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_REMARK" type="xs:string" minOccurs="0" />
+							<xs:element name="COPY_REMARK" type="xs:string" minOccurs="0" />
+							<xs:element name="MEDIA_NO1" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CLS" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CASE" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_UNIT" type="xs:string" minOccurs="0" />
+							<xs:element name="DES_DOCNO" type="xs:string" minOccurs="0" />
+							<xs:element name="DES_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="TRAN_REMARK" type="xs:string" minOccurs="0" />
+							<xs:element name="PDES_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="TRAN_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="TRAN1_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_ORG" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV1_ORG" type="xs:string" minOccurs="0" />
+							<xs:element name="START_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="HISTORY_ORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="OTHER_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="REF_ORG_LIST" type="xs:string" minOccurs="0" />
+							<xs:element name="REF1_ORG_LIST" type="xs:string" minOccurs="0" />
+							<xs:element name="PUBLISH_LIMIT" type="xs:string" minOccurs="0" />
+							<xs:element name="ITEM_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="OTHER_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="PRE_DOC_START_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_START_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="PRE_DOC_END_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_END_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_LOOK" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_SUMMARY" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_REL_CASE_LIST" type="xs:string" minOccurs="0" />
+							<xs:element name="THEME" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_REMARK" type="xs:string" minOccurs="0" />
+							<xs:element name="APP_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUEORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_CATEGORY" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMDOC_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_STATE" type="xs:string" minOccurs="0" />
+							<xs:element name="RMVSEC_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_VOL" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="MICRO_FILM" type="xs:string" minOccurs="0" />
+							<xs:element name="CRT_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="RMVSEC_COND" type="xs:string" minOccurs="0" />
+							<xs:element name="COM_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_KEY" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_KEY" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DOC_RANGE">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SOURCE_ORGNO" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_KEY" type="xs:string" minOccurs="0" />
+							<xs:element name="PLAN_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="KEY_TABLE">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MAIN_IDX" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FILE_DIRECTORY">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ORGNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="TOTAL_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILEVOL_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILESEQ_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_START_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_END_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_NAME" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

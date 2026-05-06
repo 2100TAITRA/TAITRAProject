@@ -1,0 +1,1449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s1="http://2100T.com.tw" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="T2100" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="T2100" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="T2100">
+      <s:import namespace="http://2100T.com.tw" />
+      <s:element name="GetSaveLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSaveLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSaveLocationResult" type="tns:SaveLocation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SaveLocation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PulbicService" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PublicRoot" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserService" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserRoot" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrInfo" type="tns:ErrInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getPrivateFolio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPrivateFolioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPrivateFolioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="putPrivateFolio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PriFolIOGMT">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="putPrivateFolioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="putPrivateFolioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="putPrivateRsrc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PriRsrc">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="putPrivateRsrcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="putPrivateRsrcResult" type="tns:ErrInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPrivateRsrc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPrivateRsrcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPrivateRsrcResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPublicFolio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Path4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSDL4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FuncName4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QryType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Summary" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeqNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="End_Date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IssueNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPublicFolioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPublicFolioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPublicRsrc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Path4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSDL4Profile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPublicRsrcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPublicRsrcResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransmitTarget">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Path4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSDL4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeqNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTransmitTargetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTransmitTargetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeptInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Path4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSDL4Profile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDeptInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDeptInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTransStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeqNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTransStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateTransStatusResult" type="tns:ErrInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkTransStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeqNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkTransStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkTransStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SeqNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TransType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Path4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSDL4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolInfo" type="tns:DocumentClass" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCollection" type="s1:ArrayOfArgFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocumentClass">
+        <s:attribute name="FolderName" type="s:string" />
+        <s:attribute name="FolderPath" type="s:string" />
+        <s:attribute name="FolderLastUpdate" type="s:string" />
+        <s:attribute name="FolderDept" type="s:string" />
+        <s:attribute name="DocNo" type="s:string" />
+        <s:attribute name="FolderOrder" type="s:string" />
+        <s:attribute name="FolderDesp" type="s:string" />
+        <s:attribute name="FolderReadOnly" type="s:string" />
+      </s:complexType>
+      <s:element name="argFile" nillable="true" type="s1:argFile" />
+      <s:element name="TransFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransFolderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Deptment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIssueNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IssueOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIssueNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIssueNoResult" type="tns:IssueNoClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IssueNoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IssueWord" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsErr" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrName" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrType" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrCode" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMessage" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTrace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TargetSite" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRedirect" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDocContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Deptment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromOrg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApproveLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClassNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeepYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrInfo" type="tns:ErrInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDocContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocData" nillable="true" type="tns:DocData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCls">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClassNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClsNoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KeepYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClsName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsLowest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckClsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckClsResult" type="tns:ClsNoClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClassNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CaseNoClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClsNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CaseNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckCaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCaseResult" type="tns:CaseNoClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GETCOPY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WSDL4Profile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Path4Profile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GETCOPYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GETCOPYResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Artifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelExt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Role" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoResult" type="tns:UserInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRsrcHashStr">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetRsrcHashStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRsrcHashStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocHash">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RtnObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RtnValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsErr" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDocHashResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocHashResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveLocation" nillable="true" type="tns:SaveLocation" />
+      <s:element name="ErrInfo" nillable="true" type="tns:ErrInfo" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="IssueNoClass" nillable="true" type="tns:IssueNoClass" />
+      <s:element name="DocData" nillable="true" type="tns:DocData" />
+      <s:element name="ClsNoClass" nillable="true" type="tns:ClsNoClass" />
+      <s:element name="CaseNoClass" nillable="true" type="tns:CaseNoClass" />
+      <s:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+      <s:element name="RtnObject" nillable="true" type="tns:RtnObject" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://2100T.com.tw">
+      <s:import namespace="T2100" />
+      <s:complexType name="ArrayOfArgFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="tns:argFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="argFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToPath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetSaveLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSaveLocation" />
+  </wsdl:message>
+  <wsdl:message name="GetSaveLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSaveLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPrivateFolioSoapIn">
+    <wsdl:part name="parameters" element="tns:getPrivateFolio" />
+  </wsdl:message>
+  <wsdl:message name="getPrivateFolioSoapOut">
+    <wsdl:part name="parameters" element="tns:getPrivateFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="putPrivateFolioSoapIn">
+    <wsdl:part name="parameters" element="tns:putPrivateFolio" />
+  </wsdl:message>
+  <wsdl:message name="putPrivateFolioSoapOut">
+    <wsdl:part name="parameters" element="tns:putPrivateFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="putPrivateRsrcSoapIn">
+    <wsdl:part name="parameters" element="tns:putPrivateRsrc" />
+  </wsdl:message>
+  <wsdl:message name="putPrivateRsrcSoapOut">
+    <wsdl:part name="parameters" element="tns:putPrivateRsrcResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPrivateRsrcSoapIn">
+    <wsdl:part name="parameters" element="tns:getPrivateRsrc" />
+  </wsdl:message>
+  <wsdl:message name="getPrivateRsrcSoapOut">
+    <wsdl:part name="parameters" element="tns:getPrivateRsrcResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPublicFolioSoapIn">
+    <wsdl:part name="parameters" element="tns:getPublicFolio" />
+  </wsdl:message>
+  <wsdl:message name="getPublicFolioSoapOut">
+    <wsdl:part name="parameters" element="tns:getPublicFolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPublicRsrcSoapIn">
+    <wsdl:part name="parameters" element="tns:getPublicRsrc" />
+  </wsdl:message>
+  <wsdl:message name="getPublicRsrcSoapOut">
+    <wsdl:part name="parameters" element="tns:getPublicRsrcResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTransmitTargetSoapIn">
+    <wsdl:part name="parameters" element="tns:getTransmitTarget" />
+  </wsdl:message>
+  <wsdl:message name="getTransmitTargetSoapOut">
+    <wsdl:part name="parameters" element="tns:getTransmitTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDeptInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getDeptInfo" />
+  </wsdl:message>
+  <wsdl:message name="getDeptInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getDeptInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTransStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:updateTransStatus" />
+  </wsdl:message>
+  <wsdl:message name="updateTransStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:updateTransStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkTransStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:checkTransStatus" />
+  </wsdl:message>
+  <wsdl:message name="checkTransStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:checkTransStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:TransFolder" />
+  </wsdl:message>
+  <wsdl:message name="TransFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:TransFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNo" />
+  </wsdl:message>
+  <wsdl:message name="GetNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIssueNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIssueNo" />
+  </wsdl:message>
+  <wsdl:message name="GetIssueNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIssueNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocContentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocContent" />
+  </wsdl:message>
+  <wsdl:message name="GetDocContentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckClsSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCls" />
+  </wsdl:message>
+  <wsdl:message name="CheckClsSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckClsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCase" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GETCOPYSoapIn">
+    <wsdl:part name="parameters" element="tns:GETCOPY" />
+  </wsdl:message>
+  <wsdl:message name="GETCOPYSoapOut">
+    <wsdl:part name="parameters" element="tns:GETCOPYResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRsrcHashStrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRsrcHashStr" />
+  </wsdl:message>
+  <wsdl:message name="GetRsrcHashStrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRsrcHashStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocHashSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocHash" />
+  </wsdl:message>
+  <wsdl:message name="GetDocHashSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocHashResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSaveLocationHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="DeptNo" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="IP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSaveLocationHttpPostOut">
+    <wsdl:part name="Body" element="tns:SaveLocation" />
+  </wsdl:message>
+  <wsdl:message name="getPrivateFolioHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="DeptNo" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="IP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPrivateFolioHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getPrivateRsrcHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="DeptNo" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="IP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPrivateRsrcHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getPublicFolioHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="OrgID" type="s:string" />
+    <wsdl:part name="DeptID" type="s:string" />
+    <wsdl:part name="Path4Profile" type="s:string" />
+    <wsdl:part name="WSDL4Profile" type="s:string" />
+    <wsdl:part name="FuncName4Profile" type="s:string" />
+    <wsdl:part name="QryType" type="s:string" />
+    <wsdl:part name="Summary" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="SeqNo" type="s:string" />
+    <wsdl:part name="Start_Date" type="s:string" />
+    <wsdl:part name="End_Date" type="s:string" />
+    <wsdl:part name="IssueNo" type="s:string" />
+    <wsdl:part name="IP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPublicFolioHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getPublicRsrcHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="OrgID" type="s:string" />
+    <wsdl:part name="DeptID" type="s:string" />
+    <wsdl:part name="Path4Profile" type="s:string" />
+    <wsdl:part name="WSDL4Profile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPublicRsrcHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getTransmitTargetHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="OrgID" type="s:string" />
+    <wsdl:part name="DeptID" type="s:string" />
+    <wsdl:part name="Path4Profile" type="s:string" />
+    <wsdl:part name="WSDL4Profile" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="SeqNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getTransmitTargetHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getDeptInfoHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="OrgID" type="s:string" />
+    <wsdl:part name="DeptID" type="s:string" />
+    <wsdl:part name="Path4Profile" type="s:string" />
+    <wsdl:part name="WSDL4Profile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDeptInfoHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="updateTransStatusHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="OrgID" type="s:string" />
+    <wsdl:part name="DeptID" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="SeqNo" type="s:string" />
+    <wsdl:part name="Status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updateTransStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:ErrInfo" />
+  </wsdl:message>
+  <wsdl:message name="checkTransStatusHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="OrgID" type="s:string" />
+    <wsdl:part name="DeptID" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="SeqNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkTransStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNoHttpPostIn">
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="Deptment" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIssueNoHttpPostIn">
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="IssueOrgNo" type="s:string" />
+    <wsdl:part name="SecNo" type="s:string" />
+    <wsdl:part name="DeptNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIssueNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:IssueNoClass" />
+  </wsdl:message>
+  <wsdl:message name="GetDocContentHttpPostIn">
+    <wsdl:part name="DocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocContentHttpPostOut">
+    <wsdl:part name="Body" element="tns:DocData" />
+  </wsdl:message>
+  <wsdl:message name="CheckClsHttpPostIn">
+    <wsdl:part name="ClassNo" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="SecNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckClsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ClsNoClass" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseHttpPostIn">
+    <wsdl:part name="ClassNo" type="s:string" />
+    <wsdl:part name="CaseNo" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCaseHttpPostOut">
+    <wsdl:part name="Body" element="tns:CaseNoClass" />
+  </wsdl:message>
+  <wsdl:message name="GETCOPYHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+    <wsdl:part name="OrgNo" type="s:string" />
+    <wsdl:part name="DocNo" type="s:string" />
+    <wsdl:part name="WSDL4Profile" type="s:string" />
+    <wsdl:part name="Path4Profile" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GETCOPYHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpPostIn">
+    <wsdl:part name="Artifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:UserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRsrcHashStrHttpPostIn" />
+  <wsdl:message name="GetRsrcHashStrHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocHashHttpPostIn">
+    <wsdl:part name="strOrgNo" type="s:string" />
+    <wsdl:part name="strDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDocHashHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnObject" />
+  </wsdl:message>
+  <wsdl:portType name="webEditWS02Soap">
+    <wsdl:operation name="GetSaveLocation">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">讀取FileServer的設定</documentation>
+      <wsdl:input message="tns:GetSaveLocationSoapIn" />
+      <wsdl:output message="tns:GetSaveLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateFolio">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得伺服機中個人存放區中公文夾資訊</documentation>
+      <wsdl:input message="tns:getPrivateFolioSoapIn" />
+      <wsdl:output message="tns:getPrivateFolioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="putPrivateFolio">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">更新伺服器個人公文夾資訊</documentation>
+      <wsdl:input message="tns:putPrivateFolioSoapIn" />
+      <wsdl:output message="tns:putPrivateFolioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="putPrivateRsrc">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">設定伺服機中個人資源(Example)資訊</documentation>
+      <wsdl:input message="tns:putPrivateRsrcSoapIn" />
+      <wsdl:output message="tns:putPrivateRsrcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateRsrc">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得伺服機中個人資源(Example)資訊</documentation>
+      <wsdl:input message="tns:getPrivateRsrcSoapIn" />
+      <wsdl:output message="tns:getPrivateRsrcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPublicFolio">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得伺服機中共用存放區資訊</documentation>
+      <wsdl:input message="tns:getPublicFolioSoapIn" />
+      <wsdl:output message="tns:getPublicFolioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPublicRsrc">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得伺服機中共用資源檔資訊</documentation>
+      <wsdl:input message="tns:getPublicRsrcSoapIn" />
+      <wsdl:output message="tns:getPublicRsrcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitTarget">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得傳送標的</documentation>
+      <wsdl:input message="tns:getTransmitTargetSoapIn" />
+      <wsdl:output message="tns:getTransmitTargetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeptInfo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">總發人員取得單位負責列表</documentation>
+      <wsdl:input message="tns:getDeptInfoSoapIn" />
+      <wsdl:output message="tns:getDeptInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTransStatus">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">更新共用公文夾重傳狀態</documentation>
+      <wsdl:input message="tns:updateTransStatusSoapIn" />
+      <wsdl:output message="tns:updateTransStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkTransStatus">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">查詢共用公文夾重傳狀態</documentation>
+      <wsdl:input message="tns:checkTransStatusSoapIn" />
+      <wsdl:output message="tns:checkTransStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransFolder">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">公文夾傳送作業</documentation>
+      <wsdl:input message="tns:TransFolderSoapIn" />
+      <wsdl:output message="tns:TransFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">要號作業</documentation>
+      <wsdl:input message="tns:GetNoSoapIn" />
+      <wsdl:output message="tns:GetNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIssueNo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得發文字號作業</documentation>
+      <wsdl:input message="tns:GetIssueNoSoapIn" />
+      <wsdl:output message="tns:GetIssueNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocContent">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得公文基本資料</documentation>
+      <wsdl:input message="tns:GetDocContentSoapIn" />
+      <wsdl:output message="tns:GetDocContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCls">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">檢查分類號、年度號和密等並回傳保存年限和案次號</documentation>
+      <wsdl:input message="tns:CheckClsSoapIn" />
+      <wsdl:output message="tns:CheckClsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCase">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">用分類號、年度號檢查案次號是否存在</documentation>
+      <wsdl:input message="tns:CheckCaseSoapIn" />
+      <wsdl:output message="tns:CheckCaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GETCOPY">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得抄本資訊</documentation>
+      <wsdl:input message="tns:GETCOPYSoapIn" />
+      <wsdl:output message="tns:GETCOPYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得使用者基本資訊</documentation>
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsrcHashStr">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得資源檔Hash值</documentation>
+      <wsdl:input message="tns:GetRsrcHashStrSoapIn" />
+      <wsdl:output message="tns:GetRsrcHashStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocHash">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">依公文文號產生識別碼</documentation>
+      <wsdl:input message="tns:GetDocHashSoapIn" />
+      <wsdl:output message="tns:GetDocHashSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="webEditWS02HttpPost">
+    <wsdl:operation name="GetSaveLocation">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">讀取FileServer的設定</documentation>
+      <wsdl:input message="tns:GetSaveLocationHttpPostIn" />
+      <wsdl:output message="tns:GetSaveLocationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateFolio">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得伺服機中個人存放區中公文夾資訊</documentation>
+      <wsdl:input message="tns:getPrivateFolioHttpPostIn" />
+      <wsdl:output message="tns:getPrivateFolioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateRsrc">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得伺服機中個人資源(Example)資訊</documentation>
+      <wsdl:input message="tns:getPrivateRsrcHttpPostIn" />
+      <wsdl:output message="tns:getPrivateRsrcHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPublicFolio">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得伺服機中共用存放區資訊</documentation>
+      <wsdl:input message="tns:getPublicFolioHttpPostIn" />
+      <wsdl:output message="tns:getPublicFolioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPublicRsrc">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得伺服機中共用資源檔資訊</documentation>
+      <wsdl:input message="tns:getPublicRsrcHttpPostIn" />
+      <wsdl:output message="tns:getPublicRsrcHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitTarget">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得傳送標的</documentation>
+      <wsdl:input message="tns:getTransmitTargetHttpPostIn" />
+      <wsdl:output message="tns:getTransmitTargetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDeptInfo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">總發人員取得單位負責列表</documentation>
+      <wsdl:input message="tns:getDeptInfoHttpPostIn" />
+      <wsdl:output message="tns:getDeptInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTransStatus">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">更新共用公文夾重傳狀態</documentation>
+      <wsdl:input message="tns:updateTransStatusHttpPostIn" />
+      <wsdl:output message="tns:updateTransStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkTransStatus">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">查詢共用公文夾重傳狀態</documentation>
+      <wsdl:input message="tns:checkTransStatusHttpPostIn" />
+      <wsdl:output message="tns:checkTransStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">要號作業</documentation>
+      <wsdl:input message="tns:GetNoHttpPostIn" />
+      <wsdl:output message="tns:GetNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIssueNo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得發文字號作業</documentation>
+      <wsdl:input message="tns:GetIssueNoHttpPostIn" />
+      <wsdl:output message="tns:GetIssueNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocContent">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得公文基本資料</documentation>
+      <wsdl:input message="tns:GetDocContentHttpPostIn" />
+      <wsdl:output message="tns:GetDocContentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCls">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">檢查分類號、年度號和密等並回傳保存年限和案次號</documentation>
+      <wsdl:input message="tns:CheckClsHttpPostIn" />
+      <wsdl:output message="tns:CheckClsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCase">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">用分類號、年度號檢查案次號是否存在</documentation>
+      <wsdl:input message="tns:CheckCaseHttpPostIn" />
+      <wsdl:output message="tns:CheckCaseHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GETCOPY">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得抄本資訊</documentation>
+      <wsdl:input message="tns:GETCOPYHttpPostIn" />
+      <wsdl:output message="tns:GETCOPYHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得使用者基本資訊</documentation>
+      <wsdl:input message="tns:GetUserInfoHttpPostIn" />
+      <wsdl:output message="tns:GetUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRsrcHashStr">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">取得資源檔Hash值</documentation>
+      <wsdl:input message="tns:GetRsrcHashStrHttpPostIn" />
+      <wsdl:output message="tns:GetRsrcHashStrHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocHash">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">依公文文號產生識別碼</documentation>
+      <wsdl:input message="tns:GetDocHashHttpPostIn" />
+      <wsdl:output message="tns:GetDocHashHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="webEditWS02Soap" type="tns:webEditWS02Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetSaveLocation">
+      <soap:operation soapAction="T2100/GetSaveLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateFolio">
+      <soap:operation soapAction="T2100/getPrivateFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="putPrivateFolio">
+      <soap:operation soapAction="T2100/putPrivateFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="putPrivateRsrc">
+      <soap:operation soapAction="T2100/putPrivateRsrc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateRsrc">
+      <soap:operation soapAction="T2100/getPrivateRsrc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPublicFolio">
+      <soap:operation soapAction="T2100/getPublicFolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPublicRsrc">
+      <soap:operation soapAction="T2100/getPublicRsrc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitTarget">
+      <soap:operation soapAction="T2100/getTransmitTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeptInfo">
+      <soap:operation soapAction="T2100/getDeptInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTransStatus">
+      <soap:operation soapAction="T2100/updateTransStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkTransStatus">
+      <soap:operation soapAction="T2100/checkTransStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransFolder">
+      <soap:operation soapAction="T2100/TransFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNo">
+      <soap:operation soapAction="T2100/GetNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIssueNo">
+      <soap:operation soapAction="T2100/GetIssueNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocContent">
+      <soap:operation soapAction="T2100/GetDocContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCls">
+      <soap:operation soapAction="T2100/CheckCls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCase">
+      <soap:operation soapAction="T2100/CheckCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GETCOPY">
+      <soap:operation soapAction="T2100/GETCOPY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="T2100/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsrcHashStr">
+      <soap:operation soapAction="T2100/GetRsrcHashStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocHash">
+      <soap:operation soapAction="T2100/GetDocHash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="webEditWS02HttpPost" type="tns:webEditWS02HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetSaveLocation">
+      <http:operation location="/GetSaveLocation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateFolio">
+      <http:operation location="/getPrivateFolio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPrivateRsrc">
+      <http:operation location="/getPrivateRsrc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPublicFolio">
+      <http:operation location="/getPublicFolio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPublicRsrc">
+      <http:operation location="/getPublicRsrc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransmitTarget">
+      <http:operation location="/getTransmitTarget" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDeptInfo">
+      <http:operation location="/getDeptInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTransStatus">
+      <http:operation location="/updateTransStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkTransStatus">
+      <http:operation location="/checkTransStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNo">
+      <http:operation location="/GetNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIssueNo">
+      <http:operation location="/GetIssueNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocContent">
+      <http:operation location="/GetDocContent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCls">
+      <http:operation location="/CheckCls" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCase">
+      <http:operation location="/CheckCase" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GETCOPY">
+      <http:operation location="/GETCOPY" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <http:operation location="/GetUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRsrcHashStr">
+      <http:operation location="/GetRsrcHashStr" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocHash">
+      <http:operation location="/GetDocHash" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="webEditWS02">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">供 公文製作內部 使用</documentation>
+    <wsdl:port name="webEditWS02Soap" binding="tns:webEditWS02Soap">
+      <soap:address location="http://deva/wedep/webeditws02.asmx" />
+    </wsdl:port>
+    <wsdl:port name="webEditWS02HttpPost" binding="tns:webEditWS02HttpPost">
+      <http:address location="http://deva/wedep/webeditws02.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

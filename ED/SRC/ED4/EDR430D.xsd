@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR430D" targetNamespace="http://tempuri.org/EDR430D.xsd" elementFormDefault="qualified"
+	xmlns="http://tempuri.org/EDR430D.xsd" xmlns:mstns="http://tempuri.org/EDR430D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="EDR430L1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="YEARMONTH" type="xs:string" />
+				<xs:element name="DOC_NO" type="xs:string" />
+				<xs:element name="OU_ID" type="xs:string" />
+				<xs:element name="OU_NAME" type="xs:string" />
+				<xs:element name="USERNAME" type="xs:string" />
+				<xs:element name="EMP_NAME" type="xs:string" />
+				<xs:element name="FROM_SUBJECT" type="xs:string" />
+				<xs:element name="RCV_DATE" type="xs:string" />
+				<xs:element name="PDUE_DATE" type="xs:string" />
+				<xs:element name="DUE_DATE" type="xs:string" />
+				<xs:element name="START_DATE" type="xs:string" />
+				<xs:element name="ISSUE_DATE" type="xs:string" />
+				<xs:element name="UD_ISSUE" type="xs:string" />
+				<xs:element name="PTY_NAME" type="xs:string" />
+				<xs:element name="FROM_NO" type="xs:string" />
+				<xs:element name="FROMORG_NAME" type="xs:string" />
+				<xs:element name="SRC_RCV_NO" type="xs:string" />
+				<xs:element name="CURR_LOCATION" type="xs:string" />
+        <xs:element name="E_CLOSE_DATE" type="xs:string" />
+        <xs:element name="E_CLOSE_TYPE" type="xs:string" />
+        <xs:element name="DOC_STATE" type="xs:string" />
+        <xs:element name="IS_COWORK" type="xs:string" />
+        <xs:element name="SIGN_TYPE" type="xs:string" />
+        <xs:element name="E_UD_OVERDUE" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

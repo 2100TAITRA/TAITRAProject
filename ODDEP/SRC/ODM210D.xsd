@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ODM210D" targetNamespace="http://tempuri.org/ODM210D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/ODM210D.xsd" xmlns:mstns="http://tempuri.org/ODM210D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="ODM210D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CASE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="NEW_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="B_TYPE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="PTY_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="ORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="KEYWORD" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RptTable2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CASE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

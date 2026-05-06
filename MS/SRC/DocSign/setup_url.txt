@@ -1,0 +1,11 @@
+
+
+
+
+
+
+itms-services://?action=download-manifest&url=https%3A%2F%2Fdocap1.cdc.gov.tw%2FMS%2FInstall%2FDocSign.plist
+
+
+
+itms-services://?action=download-manifest&url=https%3A%2F%2Fsys2013%2FMS%2FInstall%2FDocSign.plist

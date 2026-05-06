@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAR900D" targetNamespace="http://tempuri.org/EAR900D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/EAR900D.xsd" xmlns:mstns="http://tempuri.org/EAR900D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAR900D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Main">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="T1" type="xs:string" minOccurs="0" />
+							<xs:element name="L1" type="xs:string" minOccurs="0" />
+							<xs:element name="T2" type="xs:string" minOccurs="0" />
+							<xs:element name="L2" type="xs:string" minOccurs="0" />
+							<xs:element name="T3" type="xs:string" minOccurs="0" />
+							<xs:element name="L3" type="xs:string" minOccurs="0" />
+							<xs:element name="T4" type="xs:string" minOccurs="0" />
+							<xs:element name="L4" type="xs:string" minOccurs="0" />
+							<xs:element name="T5" type="xs:string" minOccurs="0" />
+							<xs:element name="L5" type="xs:string" minOccurs="0" />
+							<xs:element name="T6" type="xs:string" minOccurs="0" />
+							<xs:element name="L6" type="xs:string" minOccurs="0" />
+							<xs:element name="T7" type="xs:string" minOccurs="0" />
+							<xs:element name="L7" type="xs:string" minOccurs="0" />
+							<xs:element name="T8" type="xs:string" minOccurs="0" />
+							<xs:element name="L8" type="xs:string" minOccurs="0" />
+							<xs:element name="T9" type="xs:string" minOccurs="0" />
+							<xs:element name="L9" type="xs:string" minOccurs="0" />
+							<xs:element name="T10" type="xs:string" minOccurs="0" />
+							<xs:element name="L10" type="xs:string" minOccurs="0" />
+							<xs:element name="T11" type="xs:string" minOccurs="0" />
+							<xs:element name="L11" type="xs:string" minOccurs="0" />
+							<xs:element name="T12" type="xs:string" minOccurs="0" />
+							<xs:element name="L12" type="xs:string" minOccurs="0" />
+							<xs:element name="T13" type="xs:string" minOccurs="0" />
+							<xs:element name="L13" type="xs:string" minOccurs="0" />
+							<xs:element name="T14" type="xs:string" minOccurs="0" />
+							<xs:element name="L14" type="xs:string" minOccurs="0" />
+							<xs:element name="T15" type="xs:string" minOccurs="0" />
+							<xs:element name="L15" type="xs:string" minOccurs="0" />
+							<xs:element name="T16" type="xs:string" minOccurs="0" />
+							<xs:element name="L16" type="xs:string" minOccurs="0" />
+							<xs:element name="T17" type="xs:string" minOccurs="0" />
+							<xs:element name="L17" type="xs:string" minOccurs="0" />
+							<xs:element name="T18" type="xs:string" minOccurs="0" />
+							<xs:element name="L18" type="xs:string" minOccurs="0" />
+							<xs:element name="T19" type="xs:string" minOccurs="0" />
+							<xs:element name="L19" type="xs:string" minOccurs="0" />
+							<xs:element name="T20" type="xs:string" minOccurs="0" />
+							<xs:element name="L20" type="xs:string" minOccurs="0" />
+							<xs:element name="T21" type="xs:string" minOccurs="0" />
+							<xs:element name="L21" type="xs:string" minOccurs="0" />
+							<xs:element name="T22" type="xs:string" minOccurs="0" />
+							<xs:element name="L22" type="xs:string" minOccurs="0" />
+							<xs:element name="T23" type="xs:string" minOccurs="0" />
+							<xs:element name="L23" type="xs:string" minOccurs="0" />
+							<xs:element name="T24" type="xs:string" minOccurs="0" />
+							<xs:element name="L24" type="xs:string" minOccurs="0" />
+							<xs:element name="T25" type="xs:string" minOccurs="0" />
+							<xs:element name="L25" type="xs:string" minOccurs="0" />
+							<xs:element name="T26" type="xs:string" minOccurs="0" />
+							<xs:element name="L26" type="xs:string" minOccurs="0" />
+							<xs:element name="T27" type="xs:string" minOccurs="0" />
+							<xs:element name="L27" type="xs:string" minOccurs="0" />
+							<xs:element name="T28" type="xs:string" minOccurs="0" />
+							<xs:element name="L28" type="xs:string" minOccurs="0" />
+							<xs:element name="T29" type="xs:string" minOccurs="0" />
+							<xs:element name="L29" type="xs:string" minOccurs="0" />
+							<xs:element name="T30" type="xs:string" minOccurs="0" />
+							<xs:element name="L30" type="xs:string" minOccurs="0" />
+							<xs:element name="T31" type="xs:string" minOccurs="0" />
+							<xs:element name="L31" type="xs:string" minOccurs="0" />
+							<xs:element name="T32" type="xs:string" minOccurs="0" />
+							<xs:element name="L32" type="xs:string" minOccurs="0" />
+							<xs:element name="T33" type="xs:string" minOccurs="0" />
+							<xs:element name="L33" type="xs:string" minOccurs="0" />
+							<xs:element name="T34" type="xs:string" minOccurs="0" />
+							<xs:element name="L34" type="xs:string" minOccurs="0" />
+							<xs:element name="LL6" type="xs:string" minOccurs="0" />
+							<xs:element name="TT6" type="xs:string" minOccurs="0" />
+							<xs:element name="LL7" type="xs:string" minOccurs="0" />
+							<xs:element name="TT7" type="xs:string" minOccurs="0" />
+							<xs:element name="LL8" type="xs:string" minOccurs="0" />
+							<xs:element name="TT8" type="xs:string" minOccurs="0" />
+							<xs:element name="LL9" type="xs:string" minOccurs="0" />
+							<xs:element name="TT9" type="xs:string" minOccurs="0" />
+							<xs:element name="LL10" type="xs:string" minOccurs="0" />
+							<xs:element name="TT10" type="xs:string" minOccurs="0" />
+							<xs:element name="LL11" type="xs:string" minOccurs="0" />
+							<xs:element name="TT11" type="xs:string" minOccurs="0" />
+							<xs:element name="LL12" type="xs:string" minOccurs="0" />
+							<xs:element name="TT12" type="xs:string" minOccurs="0" />
+							<xs:element name="LL13" type="xs:string" minOccurs="0" />
+							<xs:element name="TT13" type="xs:string" minOccurs="0" />
+							<xs:element name="LL14" type="xs:string" minOccurs="0" />
+							<xs:element name="TT14" type="xs:string" minOccurs="0" />
+							<xs:element name="LL15" type="xs:string" minOccurs="0" />
+							<xs:element name="TT15" type="xs:string" minOccurs="0" />
+							<xs:element name="LL16" type="xs:string" minOccurs="0" />
+							<xs:element name="TT16" type="xs:string" minOccurs="0" />
+							<xs:element name="LL17" type="xs:string" minOccurs="0" />
+							<xs:element name="TT17" type="xs:string" minOccurs="0" />
+							<xs:element name="T35" type="xs:string" minOccurs="0" />
+							<xs:element name="L35" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

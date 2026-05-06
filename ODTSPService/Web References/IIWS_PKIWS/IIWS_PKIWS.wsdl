@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="fnGetTSA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSignature" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fnGetTSAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fnGetTSAResult" type="tns:RET_TSA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RET_TSA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strTSA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strHashAlgorithm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strHashedMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strGenTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strAccuracy" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RET_TSA" nillable="true" type="tns:RET_TSA" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="fnGetTSASoapIn">
+    <wsdl:part name="parameters" element="tns:fnGetTSA" />
+  </wsdl:message>
+  <wsdl:message name="fnGetTSASoapOut">
+    <wsdl:part name="parameters" element="tns:fnGetTSAResponse" />
+  </wsdl:message>
+  <wsdl:message name="fnGetTSAHttpGetIn">
+    <wsdl:part name="argSignature" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fnGetTSAHttpGetOut">
+    <wsdl:part name="Body" element="tns:RET_TSA" />
+  </wsdl:message>
+  <wsdl:message name="fnGetTSAHttpPostIn">
+    <wsdl:part name="argSignature" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fnGetTSAHttpPostOut">
+    <wsdl:part name="Body" element="tns:RET_TSA" />
+  </wsdl:message>
+  <wsdl:portType name="IIWS_PKIWSSoap">
+    <wsdl:operation name="fnGetTSA">
+      <wsdl:input message="tns:fnGetTSASoapIn" />
+      <wsdl:output message="tns:fnGetTSASoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IIWS_PKIWSHttpGet">
+    <wsdl:operation name="fnGetTSA">
+      <wsdl:input message="tns:fnGetTSAHttpGetIn" />
+      <wsdl:output message="tns:fnGetTSAHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IIWS_PKIWSHttpPost">
+    <wsdl:operation name="fnGetTSA">
+      <wsdl:input message="tns:fnGetTSAHttpPostIn" />
+      <wsdl:output message="tns:fnGetTSAHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IIWS_PKIWSSoap" type="tns:IIWS_PKIWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="fnGetTSA">
+      <soap:operation soapAction="http://tempuri.org/fnGetTSA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IIWS_PKIWSHttpGet" type="tns:IIWS_PKIWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="fnGetTSA">
+      <http:operation location="/fnGetTSA" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IIWS_PKIWSHttpPost" type="tns:IIWS_PKIWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="fnGetTSA">
+      <http:operation location="/fnGetTSA" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IIWS_PKIWS">
+    <wsdl:port name="IIWS_PKIWSSoap" binding="tns:IIWS_PKIWSSoap">
+      <soap:address location="http://localhost/iiws/IIWS_PKIWS.ASMX" />
+    </wsdl:port>
+    <wsdl:port name="IIWS_PKIWSHttpGet" binding="tns:IIWS_PKIWSHttpGet">
+      <http:address location="http://localhost/iiws/IIWS_PKIWS.ASMX" />
+    </wsdl:port>
+    <wsdl:port name="IIWS_PKIWSHttpPost" binding="tns:IIWS_PKIWSHttpPost">
+      <http:address location="http://localhost/iiws/IIWS_PKIWS.ASMX" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

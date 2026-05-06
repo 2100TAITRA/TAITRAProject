@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  104_g2b2c_encrypt-list.dtd   	交換加密表單檔   2015.05.01 -->
+<!ENTITY  % 信封檔標籤 SYSTEM "104_envelope.ent" >
+%信封檔標籤;
+<!ELEMENT	g2b2c-encrypt-list  (receivercardlist) >
+<!-- /g2b2c-encrypt-list -->

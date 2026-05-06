@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+#aki800ListWorkspace {
+    background: transparent;    
+}
+
+#aki800ListWorkspace .sub_content {
+    background-color: #EEE;
+    overflow-y: auto;
+    height: 100%; /*calc(100% - 0.8em - 2px); */
+    padding: 0;
+}
+
+#aki800_leftTopPane {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #ddd;
+}
+
+/* 2017.3.31 - new */
+#aki800ListWorkspace .fullViewContent {
+    width: calc(100% - 2.5em);   
+}
+
+#aki800_todolistToolbar {
+    padding-left: 1em;
+}
+
+#aki800_todolistToolbar .ui-mini {
+    margin-top: .5em;
+}
+
+#aki800Link, #aki800Link > span {
+	border-radius: .3em;
+}
+
+#aki800Link {
+    margin-left: 1em;
+}
+
+#querydoc_todolist_tb tbody {
+    font-size: larger;
+}
+
+#querydoc_todolist_cntr .sData {
+    overflow-y: auto;
+}
+
+#querydoc_todolist_cntr .sData tbody > tr {
+    line-height: 3em;
+	background-color: #FFFFFF; /*20170420*/
+}
+
+/* 2017.4 - Eric Peng, odd table-row color */ 
+#querydoc_todolist_cntr .sData tr:nth-child(odd) {
+  background-color: #F0F0FF;
+}
+
+#querydoc_leftTopPane .searchViewContent {
+    /*background-color: #FCC; 20170420*/
+	background-color: #F0F0F0; /*20170420*/
+    margin-right: 40px; /* 24px; 2017.3.31 */
+}
+
+#querydoc_leftTopPane .searchViewContent .search-wrapper > form {
+    width: 75%;
+}
+
+#querydoc_leftTopPane .searchViewContent .controlPanel {
+    position: absolute;
+    top: 10px; /* 3px; 2017.3.31 */
+    right: 45px; /* 25px; 2017.3.31 */
+}
+
+#btn_aki800Link, #btn_aki800Link > span {
+    border-radius: .3em;
+}
+
+.btn_Query_Del_Btn{
+    position: relative;
+    right: 30px;
+    float: right;
+    margin: -.2em;
+    display: none;
+}
+
+.querydoc_ReadyToDelete{
+    opacity: 0.5;
+    background: silver;
+}
+
+/* 2015.6 - sort order hint */
+#querydoc_todolist_tb thead th div.sortIcon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background: transparent;
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+#querydoc_todolist_tb thead th.headerSortDown div.sortIcon {
+  /*border-top: solid green 3px; */
+  background: white url(../IMAGE/SSO/ui-icons_256x240.png) -64px -192px no-repeat;
+}
+
+#querydoc_todolist_tb thead th.headerSortUp div.sortIcon {
+  background: white url(../IMAGE/SSO/ui-icons_256x240.png) -96px -192px no-repeat;
+}
+
+#querydoc_todolist_tb tbody .to_e{
+	max-width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

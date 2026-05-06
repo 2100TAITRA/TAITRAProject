@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://2100T.com.tw" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://2100T.com.tw" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://2100T.com.tw">
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksUpdateSignFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWorkFilename" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPincode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIsDraft" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksUpdateSignFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksUpdateSignFolderResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnSFolder">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RtnStr" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="RtnErrCode" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UtyRtnRoot">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_bRedirect" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrPageQueryStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrStack" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wksSignEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksSignEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksSignEnvelopeResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksBuildSignFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPinCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCmdFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFsDocSavePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksBuildSignFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksBuildSignFolderResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsUpdateSignFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFileRemotePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWorkFilename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPFXDATA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPincode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTempCardInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEnvFile" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsUpdateSignFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsUpdateSignFolderResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsSignEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argEnvFile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignCert" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsSignEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsSignEnvelopeResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsRemoveDocTempData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsRemoveDocTempDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsRemoveDocTempDataResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsGetCOMDocMergeStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strFileRemotePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocMsgId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsGetCOMDocMergeStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsGetCOMDocMergeStatusResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsUpdateCOMDocSignFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strFileRemotePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocMsgId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPFXDATA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPincode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTempCardInfo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEnvFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsUpdateCOMDocSignFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsUpdateCOMDocSignFolderResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAkp360UpdateEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnvFileFullPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAkp360UpdateEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsAkp360UpdateEnvelopeResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAkp360SignEnvelopd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnvFileFullPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsAkp360SignEnvelopdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsAkp360SignEnvelopdResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksRemoveSignFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argComeOthers" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDelMsgIdList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksRemoveSignFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksRemoveSignFolderResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksGetResignSignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argComeOthers" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocPath" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wksGetResignSignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksGetResignSignInfoResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnString">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RtnStr" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="wksUpdateResignInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argComeOthers" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSignReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="resignSI" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="signatureValue" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="signCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocPath" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksUpdateResignInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksUpdateResignInfoResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksGetCOMDocMergeStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocMsgId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksGetCOMDocMergeStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksGetCOMDocMergeStatusResult" type="tns:UtyRtnCOMDocMergeStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnCOMDocMergeStatus">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="mergeStateCode" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="removeTmpContent" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="workStationPath" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="wksUpdateCOMDocEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMainDocMsgId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlags" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPincode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksUpdateCOMDocEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksUpdateCOMDocEnvelopeResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksCOMDocSignEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUniqueId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksCOMDocSignEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksCOMDocSignEnvelopeResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksMergeFilesForCoworkDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDestEnvFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCoworkDataInfo" type="tns:ArrayOfArgCoworkFlowData" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argComeOthers" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArgCoworkFlowData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="argCoworkFlowData" nillable="true" type="tns:argCoworkFlowData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="argCoworkFlowData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PathName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgIdList" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreviousMsgId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Thread" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wksMergeFilesForCoworkDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksMergeFilesForCoworkDocInfoResult" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfErr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Err" nillable="true" type="tns:Err" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Err">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrIdx" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="wksRemoveDocTempData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksRemoveDocTempDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksRemoveDocTempDataResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksGenCODocSignFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOthersDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCmdFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileServerWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFsDocSavePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wksGenCODocSignFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wksGenCODocSignFolderResult" type="tns:UtyRtnSFolder" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksUpdateSignFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:wksUpdateSignFolder" />
+  </wsdl:message>
+  <wsdl:message name="wksUpdateSignFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:wksUpdateSignFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksSignEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:wksSignEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="wksSignEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:wksSignEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksBuildSignFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:wksBuildSignFolder" />
+  </wsdl:message>
+  <wsdl:message name="wksBuildSignFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:wksBuildSignFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsUpdateSignFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:wsUpdateSignFolder" />
+  </wsdl:message>
+  <wsdl:message name="wsUpdateSignFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:wsUpdateSignFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsSignEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:wsSignEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="wsSignEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:wsSignEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsRemoveDocTempDataSoapIn">
+    <wsdl:part name="parameters" element="tns:wsRemoveDocTempData" />
+  </wsdl:message>
+  <wsdl:message name="wsRemoveDocTempDataSoapOut">
+    <wsdl:part name="parameters" element="tns:wsRemoveDocTempDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsGetCOMDocMergeStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:wsGetCOMDocMergeStatus" />
+  </wsdl:message>
+  <wsdl:message name="wsGetCOMDocMergeStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:wsGetCOMDocMergeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsUpdateCOMDocSignFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:wsUpdateCOMDocSignFolder" />
+  </wsdl:message>
+  <wsdl:message name="wsUpdateCOMDocSignFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:wsUpdateCOMDocSignFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsAkp360UpdateEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:wsAkp360UpdateEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="wsAkp360UpdateEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:wsAkp360UpdateEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsAkp360SignEnvelopdSoapIn">
+    <wsdl:part name="parameters" element="tns:wsAkp360SignEnvelopd" />
+  </wsdl:message>
+  <wsdl:message name="wsAkp360SignEnvelopdSoapOut">
+    <wsdl:part name="parameters" element="tns:wsAkp360SignEnvelopdResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksRemoveSignFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:wksRemoveSignFolder" />
+  </wsdl:message>
+  <wsdl:message name="wksRemoveSignFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:wksRemoveSignFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksGetResignSignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:wksGetResignSignInfo" />
+  </wsdl:message>
+  <wsdl:message name="wksGetResignSignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:wksGetResignSignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksUpdateResignInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:wksUpdateResignInfo" />
+  </wsdl:message>
+  <wsdl:message name="wksUpdateResignInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:wksUpdateResignInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksGetCOMDocMergeStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:wksGetCOMDocMergeStatus" />
+  </wsdl:message>
+  <wsdl:message name="wksGetCOMDocMergeStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:wksGetCOMDocMergeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksUpdateCOMDocEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:wksUpdateCOMDocEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="wksUpdateCOMDocEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:wksUpdateCOMDocEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksCOMDocSignEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:wksCOMDocSignEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="wksCOMDocSignEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:wksCOMDocSignEnvelopeResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksMergeFilesForCoworkDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:wksMergeFilesForCoworkDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="wksMergeFilesForCoworkDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:wksMergeFilesForCoworkDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksRemoveDocTempDataSoapIn">
+    <wsdl:part name="parameters" element="tns:wksRemoveDocTempData" />
+  </wsdl:message>
+  <wsdl:message name="wksRemoveDocTempDataSoapOut">
+    <wsdl:part name="parameters" element="tns:wksRemoveDocTempDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="wksGenCODocSignFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:wksGenCODocSignFolder" />
+  </wsdl:message>
+  <wsdl:message name="wksGenCODocSignFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:wksGenCODocSignFolderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="T2100WebSFolderSoap">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksUpdateSignFolder">
+      <wsdl:input message="tns:wksUpdateSignFolderSoapIn" />
+      <wsdl:output message="tns:wksUpdateSignFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksSignEnvelope">
+      <wsdl:input message="tns:wksSignEnvelopeSoapIn" />
+      <wsdl:output message="tns:wksSignEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksBuildSignFolder">
+      <wsdl:input message="tns:wksBuildSignFolderSoapIn" />
+      <wsdl:output message="tns:wksBuildSignFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsUpdateSignFolder">
+      <wsdl:input message="tns:wsUpdateSignFolderSoapIn" />
+      <wsdl:output message="tns:wsUpdateSignFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsSignEnvelope">
+      <wsdl:input message="tns:wsSignEnvelopeSoapIn" />
+      <wsdl:output message="tns:wsSignEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsRemoveDocTempData">
+      <wsdl:input message="tns:wsRemoveDocTempDataSoapIn" />
+      <wsdl:output message="tns:wsRemoveDocTempDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsGetCOMDocMergeStatus">
+      <wsdl:input message="tns:wsGetCOMDocMergeStatusSoapIn" />
+      <wsdl:output message="tns:wsGetCOMDocMergeStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsUpdateCOMDocSignFolder">
+      <wsdl:input message="tns:wsUpdateCOMDocSignFolderSoapIn" />
+      <wsdl:output message="tns:wsUpdateCOMDocSignFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsAkp360UpdateEnvelope">
+      <wsdl:input message="tns:wsAkp360UpdateEnvelopeSoapIn" />
+      <wsdl:output message="tns:wsAkp360UpdateEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsAkp360SignEnvelopd">
+      <wsdl:input message="tns:wsAkp360SignEnvelopdSoapIn" />
+      <wsdl:output message="tns:wsAkp360SignEnvelopdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksRemoveSignFolder">
+      <wsdl:input message="tns:wksRemoveSignFolderSoapIn" />
+      <wsdl:output message="tns:wksRemoveSignFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksGetResignSignInfo">
+      <wsdl:input message="tns:wksGetResignSignInfoSoapIn" />
+      <wsdl:output message="tns:wksGetResignSignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksUpdateResignInfo">
+      <wsdl:input message="tns:wksUpdateResignInfoSoapIn" />
+      <wsdl:output message="tns:wksUpdateResignInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksGetCOMDocMergeStatus">
+      <wsdl:input message="tns:wksGetCOMDocMergeStatusSoapIn" />
+      <wsdl:output message="tns:wksGetCOMDocMergeStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksUpdateCOMDocEnvelope">
+      <wsdl:input message="tns:wksUpdateCOMDocEnvelopeSoapIn" />
+      <wsdl:output message="tns:wksUpdateCOMDocEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksCOMDocSignEnvelope">
+      <wsdl:input message="tns:wksCOMDocSignEnvelopeSoapIn" />
+      <wsdl:output message="tns:wksCOMDocSignEnvelopeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksMergeFilesForCoworkDocInfo">
+      <wsdl:input message="tns:wksMergeFilesForCoworkDocInfoSoapIn" />
+      <wsdl:output message="tns:wksMergeFilesForCoworkDocInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksRemoveDocTempData">
+      <wsdl:input message="tns:wksRemoveDocTempDataSoapIn" />
+      <wsdl:output message="tns:wksRemoveDocTempDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wksGenCODocSignFolder">
+      <wsdl:input message="tns:wksGenCODocSignFolderSoapIn" />
+      <wsdl:output message="tns:wksGenCODocSignFolderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="T2100WebSFolderSoap" type="tns:T2100WebSFolderSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://2100T.com.tw/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksUpdateSignFolder">
+      <soap:operation soapAction="http://2100T.com.tw/wksUpdateSignFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksSignEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/wksSignEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksBuildSignFolder">
+      <soap:operation soapAction="http://2100T.com.tw/wksBuildSignFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsUpdateSignFolder">
+      <soap:operation soapAction="http://2100T.com.tw/wsUpdateSignFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsSignEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/wsSignEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRemoveDocTempData">
+      <soap:operation soapAction="http://2100T.com.tw/wsRemoveDocTempData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGetCOMDocMergeStatus">
+      <soap:operation soapAction="http://2100T.com.tw/wsGetCOMDocMergeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsUpdateCOMDocSignFolder">
+      <soap:operation soapAction="http://2100T.com.tw/wsUpdateCOMDocSignFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAkp360UpdateEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/wsAkp360UpdateEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAkp360SignEnvelopd">
+      <soap:operation soapAction="http://2100T.com.tw/wsAkp360SignEnvelopd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksRemoveSignFolder">
+      <soap:operation soapAction="http://2100T.com.tw/wksRemoveSignFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksGetResignSignInfo">
+      <soap:operation soapAction="http://2100T.com.tw/wksGetResignSignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksUpdateResignInfo">
+      <soap:operation soapAction="http://2100T.com.tw/wksUpdateResignInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksGetCOMDocMergeStatus">
+      <soap:operation soapAction="http://2100T.com.tw/wksGetCOMDocMergeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksUpdateCOMDocEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/wksUpdateCOMDocEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksCOMDocSignEnvelope">
+      <soap:operation soapAction="http://2100T.com.tw/wksCOMDocSignEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksMergeFilesForCoworkDocInfo">
+      <soap:operation soapAction="http://2100T.com.tw/wksMergeFilesForCoworkDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksRemoveDocTempData">
+      <soap:operation soapAction="http://2100T.com.tw/wksRemoveDocTempData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksGenCODocSignFolder">
+      <soap:operation soapAction="http://2100T.com.tw/wksGenCODocSignFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T2100WebSFolderSoap12" type="tns:T2100WebSFolderSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksUpdateSignFolder">
+      <soap12:operation soapAction="http://2100T.com.tw/wksUpdateSignFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksSignEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/wksSignEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksBuildSignFolder">
+      <soap12:operation soapAction="http://2100T.com.tw/wksBuildSignFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsUpdateSignFolder">
+      <soap12:operation soapAction="http://2100T.com.tw/wsUpdateSignFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsSignEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/wsSignEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsRemoveDocTempData">
+      <soap12:operation soapAction="http://2100T.com.tw/wsRemoveDocTempData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsGetCOMDocMergeStatus">
+      <soap12:operation soapAction="http://2100T.com.tw/wsGetCOMDocMergeStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsUpdateCOMDocSignFolder">
+      <soap12:operation soapAction="http://2100T.com.tw/wsUpdateCOMDocSignFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAkp360UpdateEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/wsAkp360UpdateEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsAkp360SignEnvelopd">
+      <soap12:operation soapAction="http://2100T.com.tw/wsAkp360SignEnvelopd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksRemoveSignFolder">
+      <soap12:operation soapAction="http://2100T.com.tw/wksRemoveSignFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksGetResignSignInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/wksGetResignSignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksUpdateResignInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/wksUpdateResignInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksGetCOMDocMergeStatus">
+      <soap12:operation soapAction="http://2100T.com.tw/wksGetCOMDocMergeStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksUpdateCOMDocEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/wksUpdateCOMDocEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksCOMDocSignEnvelope">
+      <soap12:operation soapAction="http://2100T.com.tw/wksCOMDocSignEnvelope" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksMergeFilesForCoworkDocInfo">
+      <soap12:operation soapAction="http://2100T.com.tw/wksMergeFilesForCoworkDocInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksRemoveDocTempData">
+      <soap12:operation soapAction="http://2100T.com.tw/wksRemoveDocTempData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wksGenCODocSignFolder">
+      <soap12:operation soapAction="http://2100T.com.tw/wksGenCODocSignFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="T2100WebSFolder">
+    <wsdl:port name="T2100WebSFolderSoap" binding="tns:T2100WebSFolderSoap">
+      <soap:address location="https://win10test01.fdat.com.tw/WEBSFOLDER/WebSFolder.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T2100WebSFolderSoap12" binding="tns:T2100WebSFolderSoap12">
+      <soap12:address location="https://win10test01.fdat.com.tw/WEBSFOLDER/WebSFolder.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

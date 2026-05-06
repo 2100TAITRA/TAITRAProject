@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DocStatusUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMtnetNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocStatusUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DocStatusUpdateResult" type="tns:CMTnetObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CMTnetObj">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CMTnetObj" nillable="true" type="tns:CMTnetObj" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DocStatusUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:DocStatusUpdate" />
+  </wsdl:message>
+  <wsdl:message name="DocStatusUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:DocStatusUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="DocStatusUpdateHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMtnetNo" type="s:string" />
+    <wsdl:part name="argType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DocStatusUpdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:CMTnetObj" />
+  </wsdl:message>
+  <wsdl:message name="DocStatusUpdateHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argMtnetNo" type="s:string" />
+    <wsdl:part name="argType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DocStatusUpdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:CMTnetObj" />
+  </wsdl:message>
+  <wsdl:portType name="MtnetWSSoap">
+    <wsdl:operation name="DocStatusUpdate">
+      <wsdl:input message="tns:DocStatusUpdateSoapIn" />
+      <wsdl:output message="tns:DocStatusUpdateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MtnetWSHttpGet">
+    <wsdl:operation name="DocStatusUpdate">
+      <wsdl:input message="tns:DocStatusUpdateHttpGetIn" />
+      <wsdl:output message="tns:DocStatusUpdateHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MtnetWSHttpPost">
+    <wsdl:operation name="DocStatusUpdate">
+      <wsdl:input message="tns:DocStatusUpdateHttpPostIn" />
+      <wsdl:output message="tns:DocStatusUpdateHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MtnetWSSoap" type="tns:MtnetWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DocStatusUpdate">
+      <soap:operation soapAction="http://tempuri.org/DocStatusUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MtnetWSSoap12" type="tns:MtnetWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DocStatusUpdate">
+      <soap12:operation soapAction="http://tempuri.org/DocStatusUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MtnetWSHttpGet" type="tns:MtnetWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="DocStatusUpdate">
+      <http:operation location="/DocStatusUpdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MtnetWSHttpPost" type="tns:MtnetWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="DocStatusUpdate">
+      <http:operation location="/DocStatusUpdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MtnetWS">
+    <wsdl:port name="MtnetWSSoap" binding="tns:MtnetWSSoap">
+      <soap:address location="http://docvip.fdat.com.tw/MTnetWS/MTnetWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MtnetWSSoap12" binding="tns:MtnetWSSoap12">
+      <soap12:address location="http://docvip.fdat.com.tw/MTnetWS/MTnetWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MtnetWSHttpGet" binding="tns:MtnetWSHttpGet">
+      <http:address location="http://docvip.fdat.com.tw/MTnetWS/MTnetWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MtnetWSHttpPost" binding="tns:MtnetWSHttpPost">
+      <http:address location="http://docvip.fdat.com.tw/MTnetWS/MTnetWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

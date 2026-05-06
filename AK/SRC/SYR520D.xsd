@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="SYR520D" targetNamespace="http://tempuri.org/SYR520D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/SYR520D.xsd" xmlns:mstns="http://tempuri.org/SYR520D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="SYR520D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="USER_JOB_CALC">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ACP_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="ACPS_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="RJT_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="RJTS_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="EDIT_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="EDITF_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="SCAN_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="SCANP_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="BORS_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="RET_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="RETS_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="SCANS_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="SCANSP_NUM" type="xs:int" minOccurs="0" />
+							<xs:element name="USE_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_MONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RptTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ACP_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="ACPS_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="RJT_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="RJTS_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="EDIT_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="EDITF_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="SCAN_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="SCANP_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="BORS_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="RET_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="RETS_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="SCANS_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="SCANSP_SUM" type="xs:int" minOccurs="0" />
+							<xs:element name="USE_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_MONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="ACP_SUM_E" type="xs:int" minOccurs="0" />
+							<xs:element name="ACPS_SUM_E" type="xs:int" minOccurs="0" />
+							<xs:element name="RJT_SUM_E" type="xs:int" minOccurs="0" />
+							<xs:element name="RJTS_SUM_E" type="xs:int" minOccurs="0" />
+							<xs:element name="EDIT_SUM_E" type="xs:int" />
+							<xs:element name="EDITF_SUM_E" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_SUM_E" type="xs:int" minOccurs="0" />
+							<xs:element name="BORS_SUM_E" type="xs:int" minOccurs="0" />
+							<xs:element name="RET_SUM_E" type="xs:int" minOccurs="0" />
+							<xs:element name="RETS_SUM_E" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

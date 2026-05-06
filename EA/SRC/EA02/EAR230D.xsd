@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR230D" targetNamespace="http://tempuri.org/EAR230D.xsd" xmlns:mstns="http://tempuri.org/EAR230D.xsd" xmlns="http://tempuri.org/EAR230D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR230D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EAR230D" msprop:Generator_UserDSName="EAR230D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EAR230D1" msprop:Generator_TableClassName="EAR230D1DataTable" msprop:Generator_TableVarName="tableEAR230D1" msprop:Generator_RowChangedName="EAR230D1RowChanged" msprop:Generator_TablePropName="EAR230D1" msprop:Generator_RowDeletingName="EAR230D1RowDeleting" msprop:Generator_RowChangingName="EAR230D1RowChanging" msprop:Generator_RowEvHandlerName="EAR230D1RowChangeEventHandler" msprop:Generator_RowDeletedName="EAR230D1RowDeleted" msprop:Generator_RowClassName="EAR230D1Row" msprop:Generator_UserTableName="EAR230D1" msprop:Generator_RowEvArgName="EAR230D1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO1" msprop:Generator_ColumnVarNameInTable="columnDOC_NO1" msprop:Generator_ColumnPropNameInRow="DOC_NO1" msprop:Generator_ColumnPropNameInTable="DOC_NO1Column" msprop:Generator_UserColumnName="DOC_NO1" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_NO1" msprop:Generator_ColumnVarNameInTable="columnFILE_NO1" msprop:Generator_ColumnPropNameInRow="FILE_NO1" msprop:Generator_ColumnPropNameInTable="FILE_NO1Column" msprop:Generator_UserColumnName="FILE_NO1" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME1" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME1" msprop:Generator_ColumnPropNameInRow="DEPT_NAME1" msprop:Generator_ColumnPropNameInTable="DEPT_NAME1Column" msprop:Generator_UserColumnName="DEPT_NAME1" type="xs:string" minOccurs="0" />
+              <xs:element name="SCAN1" msprop:Generator_ColumnVarNameInTable="columnSCAN1" msprop:Generator_ColumnPropNameInRow="SCAN1" msprop:Generator_ColumnPropNameInTable="SCAN1Column" msprop:Generator_UserColumnName="SCAN1" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_NO2" msprop:Generator_ColumnVarNameInTable="columnDOC_NO2" msprop:Generator_ColumnPropNameInRow="DOC_NO2" msprop:Generator_ColumnPropNameInTable="DOC_NO2Column" msprop:Generator_UserColumnName="DOC_NO2" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_NO2" msprop:Generator_ColumnVarNameInTable="columnFILE_NO2" msprop:Generator_ColumnPropNameInRow="FILE_NO2" msprop:Generator_ColumnPropNameInTable="FILE_NO2Column" msprop:Generator_UserColumnName="FILE_NO2" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME2" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME2" msprop:Generator_ColumnPropNameInRow="DEPT_NAME2" msprop:Generator_ColumnPropNameInTable="DEPT_NAME2Column" msprop:Generator_UserColumnName="DEPT_NAME2" type="xs:string" minOccurs="0" />
+              <xs:element name="SCAN2" msprop:Generator_ColumnVarNameInTable="columnSCAN2" msprop:Generator_ColumnPropNameInRow="SCAN2" msprop:Generator_ColumnPropNameInTable="SCAN2Column" msprop:Generator_UserColumnName="SCAN2" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

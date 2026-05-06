@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAT501D" targetNamespace="http://tempuri.org/EAT501D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/EAT501D.xsd" xmlns:mstns="http://tempuri.org/EAT501D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="EAT501D" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="DPLAN_MAIN">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DPLAN_NO" type="xs:string" minOccurs="0" />
+                            <xs:element name="DPLAN_TYPE" type="xs:string" minOccurs="0" />
+                            <xs:element name="OWN_ORG" type="xs:string" minOccurs="0" />
+                            <xs:element name="ISSUENO_WORD" type="xs:string" minOccurs="0" />
+                            <xs:element name="ISSUENO_NO" type="xs:string" minOccurs="0" />
+                            <xs:element name="VOLUME_NUM" type="xs:string" minOccurs="0" />
+                            <xs:element name="BOX_NUM" type="xs:string" minOccurs="0" />
+                            <xs:element name="FILE_YEAR" type="xs:string" minOccurs="0" />
+                            <xs:element name="FILE_CNT" type="xs:string" minOccurs="0" />
+                            <xs:element name="KEEP_PLACE" type="xs:string" minOccurs="0" />
+                            <xs:element name="PDES_DATE" type="xs:string" minOccurs="0" />
+                            <xs:element name="PDES_PLACE" type="xs:string" minOccurs="0" />
+                            <xs:element name="PDES_METHOD" type="xs:string" minOccurs="0" />
+                            <xs:element name="MATCH_BASIC" type="xs:string" minOccurs="0" />
+                            <xs:element name="REMARK" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DESPLAN_DETAILBATCH">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DPLAN_NO" type="xs:string" minOccurs="0" />
+                            <xs:element name="PLAN_NO" type="xs:string" minOccurs="0" />
+                            <xs:element name="PLAN_DATE" type="xs:string" minOccurs="0" />
+                            <xs:element name="PLAN_DESC" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DESPLAN_DETAILHISTORY">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DPLAN_NO" type="xs:string" minOccurs="0" />
+                            <xs:element name="ORG_NAME" type="xs:string" minOccurs="0" />
+                            <xs:element name="CHOOSE_CNT" type="xs:string" minOccurs="0" />
+                            <xs:element name="CASE_CNT" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DESPLAN_DETAILJOIN">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DPLAN_NO" type="xs:string" minOccurs="0" />
+                            <xs:element name="FILE_CNT" type="xs:string" minOccurs="0" />
+                            <xs:element name="KEEP_PLACE" type="xs:string" minOccurs="0" />
+                            <xs:element name="VOLUME_NUM" type="xs:string" minOccurs="0" />
+                            <xs:element name="ORG_NAME_LIST" type="xs:string" minOccurs="0" />
+                            <xs:element name="CHOOSE_CNT_LIST" type="xs:string" minOccurs="0" />
+                            <xs:element name="PDES_DATE" type="xs:string" minOccurs="0" />
+                            <xs:element name="PDES_PLACE" type="xs:string" minOccurs="0" />
+                            <xs:element name="PDES_METHOD" type="xs:string" minOccurs="0" />
+                            <xs:element name="MATCH_BASIC" type="xs:string" minOccurs="0" />
+                            <xs:element name="REMARK" type="xs:string" minOccurs="0" />
+                            <xs:element name="FILE_YEAR" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

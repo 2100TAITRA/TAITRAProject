@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR421D" targetNamespace="http://tempuri.org/EDR421D.xsd" xmlns:mstns="http://tempuri.org/EDR421D.xsd" xmlns="http://tempuri.org/EDR421D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR421D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR421D" msprop:Generator_UserDSName="EDR421D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR421L1" msprop:Generator_TableClassName="EDR421L1DataTable" msprop:Generator_TableVarName="tableEDR421L1" msprop:Generator_TablePropName="EDR421L1" msprop:Generator_RowDeletingName="EDR421L1RowDeleting" msprop:Generator_RowChangingName="EDR421L1RowChanging" msprop:Generator_RowEvHandlerName="EDR421L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR421L1RowDeleted" msprop:Generator_UserTableName="EDR421L1" msprop:Generator_RowChangedName="EDR421L1RowChanged" msprop:Generator_RowEvArgName="EDR421L1RowChangeEvent" msprop:Generator_RowClassName="EDR421L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EXEC_DATE" msprop:Generator_ColumnVarNameInTable="columnEXEC_DATE" msprop:Generator_ColumnPropNameInRow="EXEC_DATE" msprop:Generator_ColumnPropNameInTable="EXEC_DATEColumn" msprop:Generator_UserColumnName="EXEC_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="ENTRY_DATE" msprop:Generator_ColumnVarNameInTable="columnENTRY_DATE" msprop:Generator_ColumnPropNameInRow="ENTRY_DATE" msprop:Generator_ColumnPropNameInTable="ENTRY_DATEColumn" msprop:Generator_UserColumnName="ENTRY_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="APP_EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnAPP_EMP_NAME" msprop:Generator_ColumnPropNameInRow="APP_EMP_NAME" msprop:Generator_ColumnPropNameInTable="APP_EMP_NAMEColumn" msprop:Generator_UserColumnName="APP_EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="OVER_REASON" msprop:Generator_ColumnVarNameInTable="columnOVER_REASON" msprop:Generator_ColumnPropNameInRow="OVER_REASON" msprop:Generator_ColumnPropNameInTable="OVER_REASONColumn" msprop:Generator_UserColumnName="OVER_REASON" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

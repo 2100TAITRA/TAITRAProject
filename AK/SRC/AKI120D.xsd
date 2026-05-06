@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKI120D" targetNamespace="http://tempuri.org/AKI120D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKI120D.xsd" xmlns:mstns="http://tempuri.org/AKI120D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKI120D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="AKI120">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ENTRY_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ENTRY_MODE" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT" type="xs:string" minOccurs="0" />
+							<xs:element name="OLD_DEPT" type="xs:string" minOccurs="0" />
+							<xs:element name="OLD_EMP_NAME" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

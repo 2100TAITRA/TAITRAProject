@@ -1,0 +1,10 @@
+<UpdateApp>
+	<App>
+		<Src>1</Src><!--By Registry-->
+		<Method></Method>
+		<RegPath>UniView.Document\shell\open\command</RegPath>
+		<RegName></RegName>
+		<RegType>HKEY_CLASSES_ROOT</RegType>		
+		<FileName>UniView.exe</FileName>
+	</App>
+</UpdateApp>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ODR480_VACD" targetNamespace="http://tempuri.org/ODR480_VACD.xsd" xmlns:mstns="http://tempuri.org/ODR480_VACD.xsd" xmlns="http://tempuri.org/ODR480_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ODR480_VACD" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="ODR480_VACD" msprop:Generator_UserDSName="ODR480_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ODR480VAC_L1" msprop:Generator_TableClassName="ODR480VAC_L1DataTable" msprop:Generator_TableVarName="tableODR480VAC_L1" msprop:Generator_RowChangedName="ODR480VAC_L1RowChanged" msprop:Generator_TablePropName="ODR480VAC_L1" msprop:Generator_RowDeletingName="ODR480VAC_L1RowDeleting" msprop:Generator_RowChangingName="ODR480VAC_L1RowChanging" msprop:Generator_RowEvHandlerName="ODR480VAC_L1RowChangeEventHandler" msprop:Generator_RowDeletedName="ODR480VAC_L1RowDeleted" msprop:Generator_RowClassName="ODR480VAC_L1Row" msprop:Generator_UserTableName="ODR480VAC_L1" msprop:Generator_RowEvArgName="ODR480VAC_L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DeptName" msprop:Generator_ColumnVarNameInTable="columnDeptName" msprop:Generator_ColumnPropNameInRow="DeptName" msprop:Generator_ColumnPropNameInTable="DeptNameColumn" msprop:Generator_UserColumnName="DeptName" type="xs:string" minOccurs="0" />
+              <xs:element name="Rcv_All" msprop:Generator_ColumnVarNameInTable="columnRcv_All" msprop:Generator_ColumnPropNameInRow="Rcv_All" msprop:Generator_ColumnPropNameInTable="Rcv_AllColumn" msprop:Generator_UserColumnName="Rcv_All" type="xs:int" minOccurs="0" />
+              <xs:element name="Rcv_ECnt" msprop:Generator_ColumnVarNameInTable="columnRcv_ECnt" msprop:Generator_ColumnPropNameInRow="Rcv_ECnt" msprop:Generator_ColumnPropNameInTable="Rcv_ECntColumn" msprop:Generator_UserColumnName="Rcv_ECnt" type="xs:int" minOccurs="0" />
+              <xs:element name="Rcv_EPercent" msprop:Generator_ColumnVarNameInTable="columnRcv_EPercent" msprop:Generator_ColumnPropNameInRow="Rcv_EPercent" msprop:Generator_ColumnPropNameInTable="Rcv_EPercentColumn" msprop:Generator_UserColumnName="Rcv_EPercent" type="xs:double" minOccurs="0" />
+              <xs:element name="Issue_All" msprop:Generator_ColumnVarNameInTable="columnIssue_All" msprop:Generator_ColumnPropNameInRow="Issue_All" msprop:Generator_ColumnPropNameInTable="Issue_AllColumn" msprop:Generator_UserColumnName="Issue_All" type="xs:int" minOccurs="0" />
+              <xs:element name="Issue_ShouldECnt" msprop:Generator_ColumnVarNameInTable="columnIssue_ShouldECnt" msprop:Generator_ColumnPropNameInRow="Issue_ShouldECnt" msprop:Generator_ColumnPropNameInTable="Issue_ShouldECntColumn" msprop:Generator_UserColumnName="Issue_ShouldECnt" type="xs:int" minOccurs="0" />
+              <xs:element name="Issue_CantE" msprop:Generator_ColumnVarNameInTable="columnIssue_CantE" msprop:Generator_ColumnPropNameInRow="Issue_CantE" msprop:Generator_ColumnPropNameInTable="Issue_CantEColumn" msprop:Generator_UserColumnName="Issue_CantE" type="xs:int" minOccurs="0" />
+              <xs:element name="Issue_ActualE" msprop:Generator_ColumnVarNameInTable="columnIssue_ActualE" msprop:Generator_ColumnPropNameInRow="Issue_ActualE" msprop:Generator_ColumnPropNameInTable="Issue_ActualEColumn" msprop:Generator_UserColumnName="Issue_ActualE" type="xs:int" minOccurs="0" />
+              <xs:element name="Issue_TYPE1" msprop:Generator_ColumnVarNameInTable="columnIssue_TYPE1" msprop:Generator_ColumnPropNameInRow="Issue_TYPE1" msprop:Generator_ColumnPropNameInTable="Issue_TYPE1Column" msprop:Generator_UserColumnName="Issue_TYPE1" type="xs:int" minOccurs="0" />
+              <xs:element name="Issue_TYPE5" msprop:Generator_ColumnVarNameInTable="columnIssue_TYPE5" msprop:Generator_ColumnPropNameInRow="Issue_TYPE5" msprop:Generator_ColumnPropNameInTable="Issue_TYPE5Column" msprop:Generator_UserColumnName="Issue_TYPE5" type="xs:int" minOccurs="0" />
+              <xs:element name="Issue_P" msprop:Generator_ColumnVarNameInTable="columnIssue_P" msprop:Generator_ColumnPropNameInRow="Issue_P" msprop:Generator_ColumnPropNameInTable="Issue_PColumn" msprop:Generator_UserColumnName="Issue_P" type="xs:int" minOccurs="0" />
+              <xs:element name="Issue_EPercent_InIssue" msprop:Generator_ColumnVarNameInTable="columnIssue_EPercent_InIssue" msprop:Generator_ColumnPropNameInRow="Issue_EPercent_InIssue" msprop:Generator_ColumnPropNameInTable="Issue_EPercent_InIssueColumn" msprop:Generator_UserColumnName="Issue_EPercent_InIssue" type="xs:double" minOccurs="0" />
+              <xs:element name="Issue_EPercent_InAll" msprop:Generator_ColumnVarNameInTable="columnIssue_EPercent_InAll" msprop:Generator_ColumnPropNameInRow="Issue_EPercent_InAll" msprop:Generator_ColumnPropNameInTable="Issue_EPercent_InAllColumn" msprop:Generator_UserColumnName="Issue_EPercent_InAll" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ODR480VAC_L2" msprop:Generator_TableClassName="ODR480VAC_L2DataTable" msprop:Generator_TableVarName="tableODR480VAC_L2" msprop:Generator_RowChangedName="ODR480VAC_L2RowChanged" msprop:Generator_TablePropName="ODR480VAC_L2" msprop:Generator_RowDeletingName="ODR480VAC_L2RowDeleting" msprop:Generator_RowChangingName="ODR480VAC_L2RowChanging" msprop:Generator_RowEvHandlerName="ODR480VAC_L2RowChangeEventHandler" msprop:Generator_RowDeletedName="ODR480VAC_L2RowDeleted" msprop:Generator_RowClassName="ODR480VAC_L2Row" msprop:Generator_UserTableName="ODR480VAC_L2" msprop:Generator_RowEvArgName="ODR480VAC_L2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IssueNo" msprop:Generator_ColumnVarNameInTable="columnIssueNo" msprop:Generator_ColumnPropNameInRow="IssueNo" msprop:Generator_ColumnPropNameInTable="IssueNoColumn" msprop:Generator_UserColumnName="IssueNo" type="xs:string" minOccurs="0" />
+              <xs:element name="OrgName" msprop:Generator_ColumnVarNameInTable="columnOrgName" msprop:Generator_ColumnPropNameInRow="OrgName" msprop:Generator_ColumnPropNameInTable="OrgNameColumn" msprop:Generator_UserColumnName="OrgName" type="xs:string" minOccurs="0" />
+              <xs:element name="FromSubject" msprop:Generator_ColumnVarNameInTable="columnFromSubject" msprop:Generator_ColumnPropNameInRow="FromSubject" msprop:Generator_ColumnPropNameInTable="FromSubjectColumn" msprop:Generator_UserColumnName="FromSubject" type="xs:string" minOccurs="0" />
+              <xs:element name="DeptNo" msprop:Generator_ColumnVarNameInTable="columnDeptNo" msprop:Generator_ColumnPropNameInRow="DeptNo" msprop:Generator_ColumnPropNameInTable="DeptNoColumn" msprop:Generator_UserColumnName="DeptNo" type="xs:string" minOccurs="0" />
+              <xs:element name="DeptName" msprop:Generator_ColumnVarNameInTable="columnDeptName" msprop:Generator_ColumnPropNameInRow="DeptName" msprop:Generator_ColumnPropNameInTable="DeptNameColumn" msprop:Generator_UserColumnName="DeptName" type="xs:string" minOccurs="0" />
+              <xs:element name="Empname" msprop:Generator_ColumnVarNameInTable="columnEmpname" msprop:Generator_ColumnPropNameInRow="Empname" msprop:Generator_ColumnPropNameInTable="EmpnameColumn" msprop:Generator_UserColumnName="Empname" type="xs:string" minOccurs="0" />
+              <xs:element name="IssueDate" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" msprop:Generator_UserColumnName="IssueDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ODR480VAC_L3" msprop:Generator_TableClassName="ODR480VAC_L3DataTable" msprop:Generator_TableVarName="tableODR480VAC_L3" msprop:Generator_RowChangedName="ODR480VAC_L3RowChanged" msprop:Generator_TablePropName="ODR480VAC_L3" msprop:Generator_RowDeletingName="ODR480VAC_L3RowDeleting" msprop:Generator_RowChangingName="ODR480VAC_L3RowChanging" msprop:Generator_RowEvHandlerName="ODR480VAC_L3RowChangeEventHandler" msprop:Generator_RowDeletedName="ODR480VAC_L3RowDeleted" msprop:Generator_RowClassName="ODR480VAC_L3Row" msprop:Generator_UserTableName="ODR480VAC_L3" msprop:Generator_RowEvArgName="ODR480VAC_L3RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DeptName" msprop:Generator_ColumnVarNameInTable="columnDeptName" msprop:Generator_ColumnPropNameInRow="DeptName" msprop:Generator_ColumnPropNameInTable="DeptNameColumn" msprop:Generator_UserColumnName="DeptName" type="xs:string" minOccurs="0" />
+              <xs:element name="Rcv_All" msprop:Generator_ColumnVarNameInTable="columnRcv_All" msprop:Generator_ColumnPropNameInRow="Rcv_All" msprop:Generator_ColumnPropNameInTable="Rcv_AllColumn" msprop:Generator_UserColumnName="Rcv_All" type="xs:int" minOccurs="0" />
+              <xs:element name="ESIGN_P2E" msprop:Generator_ColumnVarNameInTable="columnESIGN_P2E" msprop:Generator_ColumnPropNameInRow="ESIGN_P2E" msprop:Generator_ColumnPropNameInTable="ESIGN_P2EColumn" msprop:Generator_UserColumnName="ESIGN_P2E" type="xs:int" minOccurs="0" />
+              <xs:element name="ESIGN_NEW" msprop:Generator_ColumnVarNameInTable="columnESIGN_NEW" msprop:Generator_ColumnPropNameInRow="ESIGN_NEW" msprop:Generator_ColumnPropNameInTable="ESIGN_NEWColumn" msprop:Generator_UserColumnName="ESIGN_NEW" type="xs:int" minOccurs="0" />
+              <xs:element name="ESIGN_CNT" msprop:Generator_ColumnVarNameInTable="columnESIGN_CNT" msprop:Generator_ColumnPropNameInRow="ESIGN_CNT" msprop:Generator_ColumnPropNameInTable="ESIGN_CNTColumn" msprop:Generator_UserColumnName="ESIGN_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="ESIGNPercent" msprop:Generator_ColumnVarNameInTable="columnESIGNPercent" msprop:Generator_ColumnPropNameInRow="ESIGNPercent" msprop:Generator_ColumnPropNameInTable="ESIGNPercentColumn" msprop:Generator_UserColumnName="ESIGNPercent" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ODR480VAC_L4" msprop:Generator_TableClassName="ODR480VAC_L4DataTable" msprop:Generator_TableVarName="tableODR480VAC_L4" msprop:Generator_RowChangedName="ODR480VAC_L4RowChanged" msprop:Generator_TablePropName="ODR480VAC_L4" msprop:Generator_RowDeletingName="ODR480VAC_L4RowDeleting" msprop:Generator_RowChangingName="ODR480VAC_L4RowChanging" msprop:Generator_RowEvHandlerName="ODR480VAC_L4RowChangeEventHandler" msprop:Generator_RowDeletedName="ODR480VAC_L4RowDeleted" msprop:Generator_RowClassName="ODR480VAC_L4Row" msprop:Generator_UserTableName="ODR480VAC_L4" msprop:Generator_RowEvArgName="ODR480VAC_L4RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DeptName" msprop:Generator_ColumnVarNameInTable="columnDeptName" msprop:Generator_ColumnPropNameInRow="DeptName" msprop:Generator_ColumnPropNameInTable="DeptNameColumn" msprop:Generator_UserColumnName="DeptName" type="xs:string" minOccurs="0" />
+              <xs:element name="Rcv_All" msprop:Generator_ColumnVarNameInTable="columnRcv_All" msprop:Generator_ColumnPropNameInRow="Rcv_All" msprop:Generator_ColumnPropNameInTable="Rcv_AllColumn" msprop:Generator_UserColumnName="Rcv_All" type="xs:int" minOccurs="0" />
+              <xs:element name="Rcv_E" msprop:Generator_ColumnVarNameInTable="columnRcv_E" msprop:Generator_ColumnPropNameInRow="Rcv_E" msprop:Generator_ColumnPropNameInTable="Rcv_EColumn" msprop:Generator_UserColumnName="Rcv_E" type="xs:int" minOccurs="0" />
+              <xs:element name="Rcv_EPercent" msprop:Generator_ColumnVarNameInTable="columnRcv_EPercent" msprop:Generator_ColumnPropNameInRow="Rcv_EPercent" msprop:Generator_ColumnPropNameInTable="Rcv_EPercentColumn" msprop:Generator_UserColumnName="Rcv_EPercent" type="xs:double" minOccurs="0" />
+              <xs:element name="Issue_All" msprop:Generator_ColumnVarNameInTable="columnIssue_All" msprop:Generator_ColumnPropNameInRow="Issue_All" msprop:Generator_ColumnPropNameInTable="Issue_AllColumn" msprop:Generator_UserColumnName="Issue_All" type="xs:int" minOccurs="0" />
+              <xs:element name="Issue_E" msprop:Generator_ColumnVarNameInTable="columnIssue_E" msprop:Generator_ColumnPropNameInRow="Issue_E" msprop:Generator_ColumnPropNameInTable="Issue_EColumn" msprop:Generator_UserColumnName="Issue_E" type="xs:int" minOccurs="0" />
+              <xs:element name="Issue_EPercent" msprop:Generator_ColumnVarNameInTable="columnIssue_EPercent" msprop:Generator_ColumnPropNameInRow="Issue_EPercent" msprop:Generator_ColumnPropNameInTable="Issue_EPercentColumn" msprop:Generator_UserColumnName="Issue_EPercent" type="xs:double" minOccurs="0" />
+              <xs:element name="ESIGN_NEW" msprop:Generator_ColumnVarNameInTable="columnESIGN_NEW" msprop:Generator_ColumnPropNameInRow="ESIGN_NEW" msprop:Generator_ColumnPropNameInTable="ESIGN_NEWColumn" msprop:Generator_UserColumnName="ESIGN_NEW" type="xs:int" minOccurs="0" />
+              <xs:element name="ESIGN_CNT" msprop:Generator_ColumnVarNameInTable="columnESIGN_CNT" msprop:Generator_ColumnPropNameInRow="ESIGN_CNT" msprop:Generator_ColumnPropNameInTable="ESIGN_CNTColumn" msprop:Generator_UserColumnName="ESIGN_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="ESIGNPercent" msprop:Generator_ColumnVarNameInTable="columnESIGNPercent" msprop:Generator_ColumnPropNameInRow="ESIGNPercent" msprop:Generator_ColumnPropNameInTable="ESIGNPercentColumn" msprop:Generator_UserColumnName="ESIGNPercent" type="xs:double" minOccurs="0" />
+              <xs:element name="ESIGN_P2E" msprop:Generator_ColumnVarNameInTable="columnESIGN_P2E" msprop:Generator_ColumnPropNameInRow="ESIGN_P2E" msprop:Generator_ColumnPropNameInTable="ESIGN_P2EColumn" msprop:Generator_UserColumnName="ESIGN_P2E" type="xs:int" minOccurs="0" />
+              <xs:element name="TB_CNT" msprop:Generator_ColumnVarNameInTable="columnTB_CNT" msprop:Generator_ColumnPropNameInRow="TB_CNT" msprop:Generator_ColumnPropNameInTable="TB_CNTColumn" msprop:Generator_UserColumnName="TB_CNT" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

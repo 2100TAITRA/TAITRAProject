@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4024D" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4024D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR4024D" msprop:Generator_UserDSName="EDR4024D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MAINTABLE" msprop:Generator_TableClassName="MAINTABLEDataTable" msprop:Generator_TableVarName="tableMAINTABLE" msprop:Generator_TablePropName="MAINTABLE" msprop:Generator_RowDeletingName="MAINTABLERowDeleting" msprop:Generator_RowChangingName="MAINTABLERowChanging" msprop:Generator_RowEvHandlerName="MAINTABLERowChangeEventHandler" msprop:Generator_RowDeletedName="MAINTABLERowDeleted" msprop:Generator_UserTableName="MAINTABLE" msprop:Generator_RowChangedName="MAINTABLERowChanged" msprop:Generator_RowEvArgName="MAINTABLERowChangeEvent" msprop:Generator_RowClassName="MAINTABLERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPTNAME" msprop:Generator_ColumnVarNameInTable="columnDEPTNAME" msprop:Generator_ColumnPropNameInRow="DEPTNAME" msprop:Generator_ColumnPropNameInTable="DEPTNAMEColumn" msprop:Generator_UserColumnName="DEPTNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="RCVCOUNT" msprop:Generator_ColumnVarNameInTable="columnRCVCOUNT" msprop:Generator_ColumnPropNameInRow="RCVCOUNT" msprop:Generator_ColumnPropNameInTable="RCVCOUNTColumn" msprop:Generator_UserColumnName="RCVCOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="RCVEXTENT" msprop:Generator_ColumnVarNameInTable="columnRCVEXTENT" msprop:Generator_ColumnPropNameInRow="RCVEXTENT" msprop:Generator_ColumnPropNameInTable="RCVEXTENTColumn" msprop:Generator_UserColumnName="RCVEXTENT" type="xs:string" minOccurs="0" />
+              <xs:element name="RCVPERCENT" msprop:Generator_ColumnVarNameInTable="columnRCVPERCENT" msprop:Generator_ColumnPropNameInRow="RCVPERCENT" msprop:Generator_ColumnPropNameInTable="RCVPERCENTColumn" msprop:Generator_UserColumnName="RCVPERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="CREATECOUNT" msprop:Generator_ColumnVarNameInTable="columnCREATECOUNT" msprop:Generator_ColumnPropNameInRow="CREATECOUNT" msprop:Generator_ColumnPropNameInTable="CREATECOUNTColumn" msprop:Generator_UserColumnName="CREATECOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="CREATEEXTENT" msprop:Generator_ColumnVarNameInTable="columnCREATEEXTENT" msprop:Generator_ColumnPropNameInRow="CREATEEXTENT" msprop:Generator_ColumnPropNameInTable="CREATEEXTENTColumn" msprop:Generator_UserColumnName="CREATEEXTENT" type="xs:string" minOccurs="0" />
+              <xs:element name="CREATEPERCENT" msprop:Generator_ColumnVarNameInTable="columnCREATEPERCENT" msprop:Generator_ColumnPropNameInRow="CREATEPERCENT" msprop:Generator_ColumnPropNameInTable="CREATEPERCENTColumn" msprop:Generator_UserColumnName="CREATEPERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="ALLCOUNT" msprop:Generator_ColumnVarNameInTable="columnALLCOUNT" msprop:Generator_ColumnPropNameInRow="ALLCOUNT" msprop:Generator_ColumnPropNameInTable="ALLCOUNTColumn" msprop:Generator_UserColumnName="ALLCOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="ALLEXTENT" msprop:Generator_ColumnVarNameInTable="columnALLEXTENT" msprop:Generator_ColumnPropNameInRow="ALLEXTENT" msprop:Generator_ColumnPropNameInTable="ALLEXTENTColumn" msprop:Generator_UserColumnName="ALLEXTENT" type="xs:string" minOccurs="0" />
+              <xs:element name="ALLPERCENT" msprop:Generator_ColumnVarNameInTable="columnALLPERCENT" msprop:Generator_ColumnPropNameInRow="ALLPERCENT" msprop:Generator_ColumnPropNameInTable="ALLPERCENTColumn" msprop:Generator_UserColumnName="ALLPERCENT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

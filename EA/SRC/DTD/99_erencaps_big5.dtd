@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="BIG5"?>
+<!-- 		99_erencaps_big5.dtd      電子檔案封裝檔格式  2010.10.10    -->
+<!ENTITY  % 基本標籤  SYSTEM "99_basic_a_big5.ent" >
+%基本標籤;
+<!ENTITY  % 線上簽核標籤  SYSTEM "99_sign_big5.ent" >
+%線上簽核標籤;
+<!ENTITY  % 檔管標籤  SYSTEM "99_records_big5.ent" >
+%檔管標籤;
+<!ELEMENT 電子封裝檔 (封裝檔電子簽章?,封裝檔內容)>
+<!ELEMENT 封裝檔電子簽章 (Signature,加簽時間)>
+<!ELEMENT 加簽時間 (#PCDATA)>
+<!ATTLIST 加簽時間
+	Id ID #REQUIRED>
+
+<!ELEMENT 封裝檔內容 (封裝檔資訊,詮釋資料?,((電子影音檔案)|(電子檔案)))>
+<!ATTLIST 封裝檔內容 
+	Id ID #REQUIRED
+>
+<!ELEMENT 詮釋資料 (案件)>
+<!ELEMENT 案件 (案由,並列案由?,其他案由?,主要發文者?,主要來文者?,受文者*,次要發文者*,次要來文者*,文別?,本別?,密等,解密條件或保密期限?,解密日期?,保存年限,調整後之保存年限?,保存年限調整原因?,發文字號*,收文字號?,來文字號*,年度號,分類號,案次號,卷次號,目次號,電子或微縮編號?,其他編號?,文件產生日期,檔案類別,媒體型式?,數量?,計量單位?,外觀細節*,附件紀錄*,併案?,有關案件?,案名?,機關代碼,單位代碼?,電子檔案名稱,核准使用群*,核准使用者*,核准銷毀文號?,銷毀日期?,移轉註記?,延長移轉屆滿日期?,移轉日期?,移交日期?,接管機關代碼?,移交機關代碼?,實體儲存位置*,檔案格式*,檔案大小*,檔案格式版本*,編碼方式*,電子檔案確認日期,電子檔案產生者及修改者*,詮釋資料建立者及修改者*,作業紀錄*,轉置紀錄*,更新紀錄*,備份紀錄*)>
+<!ELEMENT 併案 ((母文|子文)+)>
+<!ATTLIST 併案
+     併案關係  (母文|子文) #REQUIRED
+>
+<!ELEMENT 電子影音檔案 (歸檔掃描影像,其它電子影音檔?)>
+<!ATTLIST 電子影音檔案
+	文號 CDATA #REQUIRED
+>
+<!ELEMENT 歸檔掃描影像 (頁面群組+)>
+<!ATTLIST 歸檔掃描影像
+	群組數 CDATA #REQUIRED
+	總頁數 CDATA #REQUIRED
+>
+<!ELEMENT 頁面群組 (電子影音檔案資訊+)>
+<!ATTLIST 頁面群組
+	頁數 CDATA #REQUIRED
+	檔案數 CDATA #REQUIRED
+	群組名稱 CDATA #REQUIRED
+	群組型別 NMTOKEN #REQUIRED
+>
+<!ELEMENT 電子影音檔案資訊 (檔案名稱,檔案大小,檔案格式)>
+
+<!ELEMENT 其它電子影音檔 (影音檔群組+)>
+<!ELEMENT 影音檔群組 (電子影音檔案資訊,附件電子檔清單?)>
+<!ATTLIST 影音檔群組
+	群組名稱 CDATA #REQUIRED
+>
+<!ELEMENT 附件電子檔清單 (附件電子檔+)>
+<!ATTLIST 附件電子檔清單
+	數量 CDATA #REQUIRED
+>
+<!ELEMENT 附件電子檔 (電子影音檔案資訊)>
+<!ATTLIST 附件電子檔
+	附件名稱 CDATA #IMPLIED
+>
+<!ELEMENT 電子檔案 (檔案管理單位點收簽章?,線上簽核,文稿簽核頁面?)>
+<!ELEMENT 檔案管理單位點收簽章 (Signature,加簽時間,Signature?,加簽時間?)>
+<!ELEMENT 線上簽核 (線上簽核流程,線上簽核資訊)>
+<!ATTLIST 線上簽核
+		  Id ID #REQUIRED
+	>
+<!ELEMENT 文稿簽核頁面 (頁面群組+)>
+<!ATTLIST 文稿簽核頁面
+Id ID #REQUIRED
+群組數 CDATA #REQUIRED
+	總頁數 CDATA #REQUIRED
+>

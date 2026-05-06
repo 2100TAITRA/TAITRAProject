@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DataSetAKM320L" targetNamespace="http://tempuri.org/DataSetAKM320L.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/DataSetAKM320L.xsd" xmlns:mstns="http://tempuri.org/DataSetAKM320L.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKM320LDS" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="CLASS_MAIN">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CLS_NO" type="xs:string" />
+							<xs:element name="CLS_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="REF_CLSKEY" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_STATE" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="SHOWCASE" type="xs:string" minOccurs="0" />
+							<xs:element name="SHOWCASE1" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_STATE_VER" type="xs:string" minOccurs="0" />
+							<xs:element name="VER_NO" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CASE_MAIN">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CASE_NO" type="xs:string" />
+							<xs:element name="CASE_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="APP_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="OTHER_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="PRIMARY_KEY" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="DataSetAKM320LKey2" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:CASE_MAIN" />
+			<xs:field xpath="mstns:PRIMARY_KEY" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>

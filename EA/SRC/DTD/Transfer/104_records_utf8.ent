@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 檔管標籤集(檔管用)    104_records_utf8.ent  修改日期:2015.05.01 -->
+<!ELEMENT        檔案目錄傳送名稱        EMPTY>
+<!ATTLIST         檔案目錄傳送名稱 代碼   (A|B|C|D|E|F|G|T|X)   "A">
+<!ELEMENT        系統名稱         EMPTY>
+<!ATTLIST         系統名稱 代碼   (1|2)   "1">
+<!ELEMENT       月份             (#PCDATA)>
+<!ELEMENT        應用註記           (#PCDATA)>
+<!ELEMENT        複製註記          EMPTY>
+<!ATTLIST         複製註記  代碼   (Y|N|C)    "Y">
+<!ELEMENT       應用方式          EMPTY>
+<!ATTLIST         應用方式  代碼   (1|2|3|4)   "1">
+<!ELEMENT        併案註記         EMPTY>
+<!ATTLIST         併案註記  代碼   (1|2)   "1">
+<!ELEMENT        基準項目編號           (#PCDATA)>
+<!ELEMENT        電子媒體編號           (#PCDATA)>
+<!ATTLIST         計量單位            NUM CDATA #REQUIRED>
+<!ELEMENT       計量單位            (#PCDATA)>
+<!ATTLIST         數量                NUM CDATA #REQUIRED>
+<!ELEMENT        數量            (#PCDATA)>
+<!ATTLIST         紙本來文數量        NUM CDATA #REQUIRED>
+<!ELEMENT        紙本來文數量            (#PCDATA)>
+ <!ELEMENT        檔案類別         EMPTY>
+<!ATTLIST         檔案類別  代碼   (1|2)   "1">
+<!ELEMENT        檔案格式版本            (#PCDATA) >
+<!ELEMENT        編碼方式           (#PCDATA) >
+<!ELEMENT        保存狀況         EMPTY>
+<!ATTLIST         保存狀況  代碼 (A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|Z) "A">
+<!ELEMENT        調整後之保存年限          (#PCDATA)>
+<!ELEMENT        保存年限調整原因        EMPTY>
+<!ATTLIST         保存年限調整原因  代碼 (A|B|C|Z) "A">
+<!ELEMENT        移轉註記          EMPTY>
+<!ATTLIST         移轉註記  代碼 (1|2|3|4|5|6) "1">
+<!ELEMENT        人            (#PCDATA)>
+<!ELEMENT        事             (#PCDATA)>
+<!ELEMENT        時            (#PCDATA)>
+<!ELEMENT        地            (#PCDATA)>
+<!ELEMENT        物             (#PCDATA)>
+<!ELEMENT        行政施政知識分類號          (#PCDATA)>
+<!ELEMENT        其他            (#PCDATA)>
+<!ELEMENT        電子檔案清查結果        EMPTY>
+<!ATTLIST         電子檔案清查結果  代碼  (A1|A2|A3|B1|B2|B3|C1|C2|C3)   "A1">
+<!ELEMENT        電子檔案處理建議        EMPTY>
+<!ATTLIST         電子檔案處理建議 代碼 (A1|A2|A3|B1|B2|B3|C1|C2|C3)   "A1">
+<!ELEMENT        處理建議        EMPTY>
+<!ATTLIST         處理建議 代碼 (A|B|C|D|E|F|G|H|I|J|Z)   "A">
+<!ELEMENT        封裝檔資訊           (#PCDATA) >
+<!ELEMENT        案名                 (#PCDATA)>
+<!ELEMENT        並列案名           (#PCDATA)>
+<!ELEMENT        其他案名          (#PCDATA)>
+<!ELEMENT        可參照之有關案卷         (#PCDATA)>
+<!ELEMENT        案由                 (#PCDATA)>
+<!ELEMENT        並列案由          (#PCDATA)>
+<!ELEMENT        其他案由          (#PCDATA)>
+<!ELEMENT        有關案件           (#PCDATA)>
+<!ELEMENT        檔案產生及管有機關         (#PCDATA)>
+<!ELEMENT        檔案有關機關         (#PCDATA)>
+<!ELEMENT        主要發文者          (#PCDATA)>
+<!ELEMENT        主要來文者         (#PCDATA)>
+<!ELEMENT        次要發文者         (#PCDATA)>
+<!ELEMENT        次要來文者         (#PCDATA)>
+<!ELEMENT        主併文號          (#PCDATA)>
+<!ELEMENT        分類表使用機關          (#PCDATA)>
+<!ELEMENT        分類表啟用日期          (#PCDATA)>
+<!ELEMENT        分類表停用日期          (#PCDATA)>
+<!ELEMENT        類目名稱          (#PCDATA)>
+<!ELEMENT        內容描述              (#PCDATA)>
+<!ELEMENT        清理處置                  (#PCDATA)>
+<!ELEMENT	 分類號啟用日期	         (#PCDATA)>
+<!ELEMENT        舊分類號          (#PCDATA)>
+<!ELEMENT        舊分類號啟用日期         (#PCDATA)>
+<!ELEMENT        電子或微縮編號          (#PCDATA)>
+<!ELEMENT        其他編號          (#PCDATA)>
+<!ELEMENT        文件產生日期之年制         (#PCDATA)>
+<!ELEMENT        文件產生日期          (#PCDATA)>
+<!ELEMENT        案卷檔案起始日期之年制         (#PCDATA)>
+<!ELEMENT        案卷檔案迄止日期之年制         (#PCDATA)>
+<!ELEMENT       案卷檔案起始日期         (#PCDATA)>
+<!ELEMENT        案卷檔案迄止日期         (#PCDATA)>
+<!ELEMENT        正版檔案 (電子媒體編號,(檔案路徑,(檔案名稱,檔案大小)*)*)>
+<!ELEMENT        副版檔案 (電子媒體編號,(檔案路徑,(檔案名稱,檔案大小)*)*)>
+<!ELEMENT       本文電子檔 (電子媒體編號,(檔案路徑,(檔案名稱,(檔案大小)*)*),檔案格式,檔案格式版本)>
+<!ELEMENT        附件紀錄  (附件名稱,媒體型式,附件數量,附件單位)*>
+<!ELEMENT       附件檔案 (電子媒體編號,(檔案路徑,(檔案名稱,檔案大小,檔案格式,檔案格式版本,編碼方式)*)*)>
+<!ELEMENT        附件單位          (#PCDATA)>
+<!ELEMENT        外觀細節           (#PCDATA)>
+<!ELEMENT        主題 (人*,事*,時*,地*,物*,行政施政知識分類號*,其他*)>
+<!ELEMENT        複製限制         (#PCDATA)>
+<!ELEMENT        附註          (#PCDATA)>
+<!ELEMENT        史政機關代碼          (#PCDATA)>
+<!ELEMENT        核准銷毀文號         (#PCDATA)>
+<!ELEMENT        銷毀日期          (#PCDATA)>
+<!ELEMENT        延長移轉屆滿日期         (#PCDATA)>
+<!ELEMENT        移轉日期          (#PCDATA)>
+<!ELEMENT        移轉文號           (#PCDATA)>
+<!ELEMENT        移交機關代碼          (#PCDATA)>
+<!ELEMENT        接管機關代碼          (#PCDATA)>
+<!ELEMENT        移交日期          (#PCDATA)>
+<!ELEMENT        移交文號           (#PCDATA)>
+<!ELEMENT        解密日期           (#PCDATA)>
+<!ELEMENT        浮水印   (文字,檔案名稱)>
+<!ELEMENT        承辦人員          (#PCDATA)>
+<!ELEMENT        承辦人員職稱           (#PCDATA)>
+<!ELEMENT        會辦單位          (#PCDATA)>
+<!ELEMENT        會辦人員          (#PCDATA)>
+<!ELEMENT        會辦人員職稱          (#PCDATA)>
+<!ELEMENT       浮水印註記          (#PCDATA)>
+<!ELEMENT        遮掩註記           (#PCDATA)>
+<!ELEMENT        送歸日期          (#PCDATA)>
+<!ELEMENT        點收日期          (#PCDATA)>
+<!ELEMENT        退文日期          (#PCDATA)>
+<!ELEMENT        退文原因          (#PCDATA)>
+<!ELEMENT        受退單位           (#PCDATA)>
+<!ELEMENT       立案日期           (#PCDATA)>
+<!ELEMENT        編目日期          (#PCDATA)>
+<!ELEMENT        目錄維護日期          (#PCDATA)>
+<!ELEMENT        清查日期          (#PCDATA)>
+<!ELEMENT        調閱日期           (#PCDATA)>
+<!ELEMENT        目錄轉出日期          (#PCDATA)>
+<!ELEMENT        電子檔案確認日期         (#PCDATA)>
+<!ELEMENT        歸還日期          (#PCDATA)>
+<!ELEMENT        媒體製作日期           (#PCDATA)>
+<!ELEMENT        申請日期           (#PCDATA)>
+<!ELEMENT        應歸檔日期          (#PCDATA)>
+<!ELEMENT        應歸還日期          (#PCDATA)>
+<!ELEMENT        稽催逾期未歸檔日期         (#PCDATA)>
+<!ELEMENT        稽催逾期未歸還日期         (#PCDATA)>
+<!ELEMENT        延後歸檔日期          (#PCDATA)>
+<!ELEMENT        延後歸還日期          (#PCDATA)>
+<!ELEMENT        應用日期及時間          (#PCDATA)>
+<!ELEMENT        應用者之個人資料         (#PCDATA)>
+<!ELEMENT        硬體環境          (#PCDATA)>
+<!ELEMENT        軟體作業系統          (#PCDATA)>
+<!ELEMENT        資料庫系統          (#PCDATA)>
+<!ELEMENT        轉置時間        (年月日,時分)>
+<!ELEMENT        轉置說明          (#PCDATA)>
+<!ELEMENT        轉置紀錄           (轉置時間,轉置說明)*>
+<!ELEMENT        更新時間          (年月日,時分)>
+<!ELEMENT        更新說明          (#PCDATA)>
+<!ELEMENT        更新紀錄           (更新時間,更新說明)*>
+<!ELEMENT        備份時間          (年月日,時分)>
+<!ELEMENT        備份說明          (#PCDATA)>
+<!ELEMENT        備份紀錄           (備份時間,備份說明)*>
+<!ELEMENT        詮釋資料建立者及修改者         (#PCDATA)>
+<!ELEMENT        電子檔案產生者及修改者         (#PCDATA)>
+<!ELEMENT        異動人員         (#PCDATA)>
+<!ELEMENT        異動日期及時間          (年月日,時分)>
+<!ELEMENT        作業事項         (#PCDATA)>
+<!ELEMENT        異動內容          (#PCDATA)>
+<!ELEMENT        作業紀錄        (異動人員,異動日期及時間,作業事項,異動內容)*>
+<!ELEMENT        應用時間        (年月日,時分)>
+<!ELEMENT        應用目的           (#PCDATA)>
+<!ELEMENT        應用紀錄           (應用時間,年度號,分類號,案次號,卷次號,目次號,應用目的)*>
+<!ELEMENT        歸檔人員          (#PCDATA)>
+<!ELEMENT        點收人員           (#PCDATA)>
+<!ELEMENT        退文人員           (#PCDATA)>
+<!ELEMENT        立案人員          (#PCDATA)>
+<!ELEMENT        編目人員          (#PCDATA)>
+<!ELEMENT        目錄維護人員         (#PCDATA)>
+<!ELEMENT        掃描人員          (#PCDATA)>
+<!ELEMENT        清查人員          (#PCDATA)>
+<!ELEMENT        調閱人員          (#PCDATA)>
+<!ELEMENT        目錄轉出人員         (#PCDATA)>
+<!ELEMENT        歸還人員          (#PCDATA)>
+<!ELEMENT        媒體製作人員         (#PCDATA)>
+<!ELEMENT        申請人員          (#PCDATA)>
+<!ELEMENT        審核人員          (#PCDATA)>
+<!ELEMENT        核准使用群         (#PCDATA)>
+<!ELEMENT        核准使用者         (#PCDATA)>
+<!ELEMENT        電子檔案名稱         (#PCDATA)>

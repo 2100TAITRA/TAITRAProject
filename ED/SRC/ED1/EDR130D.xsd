@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR130D" targetNamespace="http://tempuri.org/EDR130D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR130D.xsd" xmlns:mstns="http://tempuri.org/EDR130D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR130D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="ODR130L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="SRC_RCV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SRC_RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_SOURCE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_PROPERTY" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_CATEGORY" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ODR130L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_CATEGORY" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="ATTACH_NUM" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

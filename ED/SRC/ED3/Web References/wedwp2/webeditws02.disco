@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost/wedep/webeditws02.asmx?wsdl" docRef="http://localhost/wedep/webeditws02.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost/wedep/webeditws02.asmx" xmlns:q1="T2100" binding="q1:webEditWS02Soap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

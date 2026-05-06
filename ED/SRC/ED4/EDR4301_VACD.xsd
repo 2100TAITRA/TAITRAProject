@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4301_VACD" targetNamespace="http://tempuri.org/EDR4301_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR4301_VACD.xsd" xmlns="http://tempuri.org/EDR4301_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4301_VACD" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR4301_VACD" msprop:Generator_UserDSName="EDR4301_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4301_VACL1" msprop:Generator_TableClassName="EDR4301_VACL1DataTable" msprop:Generator_TableVarName="tableEDR4301_VACL1" msprop:Generator_TablePropName="EDR4301_VACL1" msprop:Generator_RowDeletingName="EDR4301_VACL1RowDeleting" msprop:Generator_RowChangingName="EDR4301_VACL1RowChanging" msprop:Generator_RowEvHandlerName="EDR4301_VACL1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4301_VACL1RowDeleted" msprop:Generator_UserTableName="EDR4301_VACL1" msprop:Generator_RowChangedName="EDR4301_VACL1RowChanged" msprop:Generator_RowEvArgName="EDR4301_VACL1RowChangeEvent" msprop:Generator_RowClassName="EDR4301_VACL1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORGNAME" msprop:Generator_ColumnVarNameInTable="columnORGNAME" msprop:Generator_ColumnPropNameInRow="ORGNAME" msprop:Generator_ColumnPropNameInTable="ORGNAMEColumn" msprop:Generator_UserColumnName="ORGNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="LAST_MONTHCNT" msprop:Generator_ColumnVarNameInTable="columnLAST_MONTHCNT" msprop:Generator_ColumnPropNameInRow="LAST_MONTHCNT" msprop:Generator_ColumnPropNameInTable="LAST_MONTHCNTColumn" msprop:Generator_UserColumnName="LAST_MONTHCNT" type="xs:int" minOccurs="0" />
+              <xs:element name="NEW_RCVCNT" msprop:Generator_ColumnVarNameInTable="columnNEW_RCVCNT" msprop:Generator_ColumnPropNameInRow="NEW_RCVCNT" msprop:Generator_ColumnPropNameInTable="NEW_RCVCNTColumn" msprop:Generator_UserColumnName="NEW_RCVCNT" type="xs:int" minOccurs="0" />
+              <xs:element name="NEW_CNT" msprop:Generator_ColumnVarNameInTable="columnNEW_CNT" msprop:Generator_ColumnPropNameInRow="NEW_CNT" msprop:Generator_ColumnPropNameInTable="NEW_CNTColumn" msprop:Generator_UserColumnName="NEW_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_6" msprop:Generator_ColumnVarNameInTable="columnISSUE_6" msprop:Generator_ColumnPropNameInRow="ISSUE_6" msprop:Generator_ColumnPropNameInTable="ISSUE_6Column" msprop:Generator_UserColumnName="ISSUE_6" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_6TO30" msprop:Generator_ColumnVarNameInTable="columnISSUE_6TO30" msprop:Generator_ColumnPropNameInRow="ISSUE_6TO30" msprop:Generator_ColumnPropNameInTable="ISSUE_6TO30Column" msprop:Generator_UserColumnName="ISSUE_6TO30" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_31" msprop:Generator_ColumnVarNameInTable="columnISSUE_31" msprop:Generator_ColumnPropNameInRow="ISSUE_31" msprop:Generator_ColumnPropNameInTable="ISSUE_31Column" msprop:Generator_UserColumnName="ISSUE_31" type="xs:int" minOccurs="0" />
+              <xs:element name="UD_ISSUE" msprop:Generator_ColumnVarNameInTable="columnUD_ISSUE" msprop:Generator_ColumnPropNameInRow="UD_ISSUE" msprop:Generator_ColumnPropNameInTable="UD_ISSUEColumn" msprop:Generator_UserColumnName="UD_ISSUE" type="xs:double" minOccurs="0" />
+              <xs:element name="STORE" msprop:Generator_ColumnVarNameInTable="columnSTORE" msprop:Generator_ColumnPropNameInRow="STORE" msprop:Generator_ColumnPropNameInTable="STOREColumn" msprop:Generator_UserColumnName="STORE" type="xs:int" minOccurs="0" />
+              <xs:element name="WAIT_NODELAY" msprop:Generator_ColumnVarNameInTable="columnWAIT_NODELAY" msprop:Generator_ColumnPropNameInRow="WAIT_NODELAY" msprop:Generator_ColumnPropNameInTable="WAIT_NODELAYColumn" msprop:Generator_UserColumnName="WAIT_NODELAY" type="xs:int" minOccurs="0" />
+              <xs:element name="WAIT_DELAY" msprop:Generator_ColumnVarNameInTable="columnWAIT_DELAY" msprop:Generator_ColumnPropNameInRow="WAIT_DELAY" msprop:Generator_ColumnPropNameInTable="WAIT_DELAYColumn" msprop:Generator_UserColumnName="WAIT_DELAY" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAttachInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAttachInfoId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAttachInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteAttachInfoResult" type="tns:UtyRtnBool" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnBool">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="RtnBool" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UtyRtnRoot">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_bRedirect" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrPageQueryStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrStack" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AttachInfo" type="tns:GetAttachInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDelAttachFileName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetAttachInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="AttachInfoId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IssueDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ExpireDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PasterId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PasterName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UpdType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="IdentifyCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="AttachFileInfo" type="tns:ArrayOfAttachFile" />
+              <s:element minOccurs="0" maxOccurs="1" name="IssueOrgInfo" type="tns:ArrayOfIssueOrg" />
+              <s:element minOccurs="0" maxOccurs="1" name="SourceOrgNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DISPATCH_NAME" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAttachFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AttachFile" nillable="true" type="tns:AttachFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AttachFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileSize" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeqNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileHash" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIssueOrg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="IssueOrg" nillable="true" type="tns:IssueOrg" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="IssueOrg">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SeqNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddRecordResult" type="tns:UtyRtnRoot" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RtnDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUpdType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RtnDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RtnDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_And_Update_DL_DELIV_UNIT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AttachInfo" type="tns:GetAttachInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_And_Update_DL_DELIV_UNITResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ModifyAttachInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AttachInfo" type="tns:GetAttachInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDelAttachFileName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyAttachInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyAttachInfoResult" type="tns:UtyRtnRoot" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveAttachInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AttachInfo" type="tns:GetAttachInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveAttachInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveAttachInfoResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnString">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="RtnStr" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SaveAttachInfoBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arrAttachInfo" type="tns:ArrayOfGetAttachInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGetAttachInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GetAttachInfo" nillable="true" type="tns:GetAttachInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveAttachInfoBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveAttachInfoBatchResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchAttachInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIssueDateStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIssueDateEnd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIdentifyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFromOutSide" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argParameter" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchAttachInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchAttachInfoResult" type="tns:UtyRtnAttachInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnAttachInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Info" type="tns:ArrayOfAttachInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfAttachInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AttachInfo" nillable="true" type="tns:AttachInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AttachInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AttachInfoId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpireDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasterId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasterName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpdType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdentifyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttachFileInfo" type="tns:ArrayOfAttachFile" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssueOrgInfo" type="tns:ArrayOfIssueOrg" />
+          <s:element minOccurs="0" maxOccurs="1" name="SourceOrgNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispatachName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SearchAttachInfoSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIssueDateStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIssueDateEnd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIdentifyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFromOutSide" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchAttachInfoSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchAttachInfoSessionResult" type="tns:UtyRtnAttachInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchAttachInfoByInfoId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAttachInfoId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchAttachInfoByInfoIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchAttachInfoByInfoIdResult" type="tns:UtyRtnAttachInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttachInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAttachInfoId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttachInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttachInfoResult" type="tns:UtyRtnAttachInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileSrvInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFileSrvInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileSrvInfoResult" type="tns:UtyRtnFileSrvInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnFileSrvInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Info" type="tns:FileSrvInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="FileSrvInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WebService" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalSpace" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseSpace" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFileIOInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFileIOInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileIOInfoResult" type="tns:UtyRtnFileInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnFileInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Info" type="tns:FileInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="FileInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WebService" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartPath" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalSpace" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UseSpace" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFileIOInfoWithId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAttachInfoId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFolder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileIOInfoWithIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileIOInfoWithIdResult" type="tns:UtyRtnFileInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttachFileName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAttachInfoId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSeqNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAttachFileNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAttachFileNameResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllAttachInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllAttachInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteAllAttachInfoResult" type="tns:UtyRtnBool" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchAttDept">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchAttDeptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchAttDeptResult" type="tns:UtyRtnDeptInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnDeptInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Info" type="tns:DeptInfo" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DeptInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitName" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifyCaptcha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argCHV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyCaptchaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyCaptchaResult" type="tns:VerifyRtns" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VerifyRtns">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bIsValid" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GenCaptcha">
+        <s:complexType />
+      </s:element>
+      <s:element name="GenCaptchaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenCaptchaResult" type="tns:CaptchaRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CaptchaRtn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCaptcha" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAttachInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAttachInfo" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAttachInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAttachInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="AddRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="RtnDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:RtnDataSet" />
+  </wsdl:message>
+  <wsdl:message name="RtnDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:RtnDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_And_Update_DL_DELIV_UNITSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_And_Update_DL_DELIV_UNIT" />
+  </wsdl:message>
+  <wsdl:message name="Delete_And_Update_DL_DELIV_UNITSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_And_Update_DL_DELIV_UNITResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAttachInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyAttachInfo" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAttachInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyAttachInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveAttachInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveAttachInfo" />
+  </wsdl:message>
+  <wsdl:message name="SaveAttachInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveAttachInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveAttachInfoBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveAttachInfoBatch" />
+  </wsdl:message>
+  <wsdl:message name="SaveAttachInfoBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveAttachInfoBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchAttachInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchAttachInfo" />
+  </wsdl:message>
+  <wsdl:message name="SearchAttachInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchAttachInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchAttachInfoSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchAttachInfoSession" />
+  </wsdl:message>
+  <wsdl:message name="SearchAttachInfoSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchAttachInfoSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchAttachInfoByInfoIdSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchAttachInfoByInfoId" />
+  </wsdl:message>
+  <wsdl:message name="SearchAttachInfoByInfoIdSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchAttachInfoByInfoIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttachInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttachInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSrvInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileSrvInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFileSrvInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileSrvInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileIOInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileIOInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFileIOInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileIOInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileIOInfoWithIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileIOInfoWithId" />
+  </wsdl:message>
+  <wsdl:message name="GetFileIOInfoWithIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileIOInfoWithIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachFileNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAttachFileName" />
+  </wsdl:message>
+  <wsdl:message name="GetAttachFileNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAttachFileNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllAttachInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllAttachInfo" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAllAttachInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllAttachInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchAttDeptSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchAttDept" />
+  </wsdl:message>
+  <wsdl:message name="SearchAttDeptSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchAttDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyCaptchaSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyCaptcha" />
+  </wsdl:message>
+  <wsdl:message name="VerifyCaptchaSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyCaptchaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenCaptchaSoapIn">
+    <wsdl:part name="parameters" element="tns:GenCaptcha" />
+  </wsdl:message>
+  <wsdl:message name="GenCaptchaSoapOut">
+    <wsdl:part name="parameters" element="tns:GenCaptchaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DLWSSoap">
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">刪除附件資訊</wsdl:documentation>
+      <wsdl:input message="tns:DeleteAttachInfoSoapIn" />
+      <wsdl:output message="tns:DeleteAttachInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRecord">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">新增異動紀錄(含上下載)</wsdl:documentation>
+      <wsdl:input message="tns:AddRecordSoapIn" />
+      <wsdl:output message="tns:AddRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RtnDataSet">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得異動紀錄</wsdl:documentation>
+      <wsdl:input message="tns:RtnDataSetSoapIn" />
+      <wsdl:output message="tns:RtnDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_And_Update_DL_DELIV_UNIT">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">先刪除後新增受文機關明細檔</wsdl:documentation>
+      <wsdl:input message="tns:Delete_And_Update_DL_DELIV_UNITSoapIn" />
+      <wsdl:output message="tns:Delete_And_Update_DL_DELIV_UNITSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAttachInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改附件資訊</wsdl:documentation>
+      <wsdl:input message="tns:ModifyAttachInfoSoapIn" />
+      <wsdl:output message="tns:ModifyAttachInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">儲存附件資訊(新增) </wsdl:documentation>
+      <wsdl:input message="tns:SaveAttachInfoSoapIn" />
+      <wsdl:output message="tns:SaveAttachInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachInfoBatch">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">儲存附件資訊(批次新增) </wsdl:documentation>
+      <wsdl:input message="tns:SaveAttachInfoBatchSoapIn" />
+      <wsdl:output message="tns:SaveAttachInfoBatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttachInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜尋附件資訊(供搜尋視窗用)</wsdl:documentation>
+      <wsdl:input message="tns:SearchAttachInfoSoapIn" />
+      <wsdl:output message="tns:SearchAttachInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttachInfoSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">搜尋附件資訊(ODT351檢查附件是否已存在附件下載區)</wsdl:documentation>
+      <wsdl:input message="tns:SearchAttachInfoSessionSoapIn" />
+      <wsdl:output message="tns:SearchAttachInfoSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttachInfoByInfoId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得附件資訊(依附件編號搜尋)</wsdl:documentation>
+      <wsdl:input message="tns:SearchAttachInfoByInfoIdSoapIn" />
+      <wsdl:output message="tns:SearchAttachInfoByInfoIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得附件資訊(依附件編號搜尋)</wsdl:documentation>
+      <wsdl:input message="tns:GetAttachInfoSoapIn" />
+      <wsdl:output message="tns:GetAttachInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSrvInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得檔案伺服器資訊</wsdl:documentation>
+      <wsdl:input message="tns:GetFileSrvInfoSoapIn" />
+      <wsdl:output message="tns:GetFileSrvInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileIOInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得AP 伺服器上檔案存取資訊</wsdl:documentation>
+      <wsdl:input message="tns:GetFileIOInfoSoapIn" />
+      <wsdl:output message="tns:GetFileIOInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileIOInfoWithId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得AP 伺服器公告編告資料夾上 檔案存取資訊</wsdl:documentation>
+      <wsdl:input message="tns:GetFileIOInfoWithIdSoapIn" />
+      <wsdl:output message="tns:GetFileIOInfoWithIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachFileName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得檔案名稱</wsdl:documentation>
+      <wsdl:input message="tns:GetAttachFileNameSoapIn" />
+      <wsdl:output message="tns:GetAttachFileNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllAttachInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">依文號(10碼)刪除所有相關資訊</wsdl:documentation>
+      <wsdl:input message="tns:DeleteAllAttachInfoSoapIn" />
+      <wsdl:output message="tns:DeleteAllAttachInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttDept">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得附件發布單位</wsdl:documentation>
+      <wsdl:input message="tns:SearchAttDeptSoapIn" />
+      <wsdl:output message="tns:SearchAttDeptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyCaptcha">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">驗證圖型碼</wsdl:documentation>
+      <wsdl:input message="tns:VerifyCaptchaSoapIn" />
+      <wsdl:output message="tns:VerifyCaptchaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenCaptcha">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">產出驗證碼</wsdl:documentation>
+      <wsdl:input message="tns:GenCaptchaSoapIn" />
+      <wsdl:output message="tns:GenCaptchaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DLWSSoap" type="tns:DLWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachInfo">
+      <soap:operation soapAction="http://tempuri.org/DeleteAttachInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecord">
+      <soap:operation soapAction="http://tempuri.org/AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RtnDataSet">
+      <soap:operation soapAction="http://tempuri.org/RtnDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_And_Update_DL_DELIV_UNIT">
+      <soap:operation soapAction="http://tempuri.org/Delete_And_Update_DL_DELIV_UNIT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAttachInfo">
+      <soap:operation soapAction="http://tempuri.org/ModifyAttachInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachInfo">
+      <soap:operation soapAction="http://tempuri.org/SaveAttachInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachInfoBatch">
+      <soap:operation soapAction="http://tempuri.org/SaveAttachInfoBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttachInfo">
+      <soap:operation soapAction="http://tempuri.org/SearchAttachInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttachInfoSession">
+      <soap:operation soapAction="http://tempuri.org/SearchAttachInfoSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttachInfoByInfoId">
+      <soap:operation soapAction="http://tempuri.org/SearchAttachInfoByInfoId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachInfo">
+      <soap:operation soapAction="http://tempuri.org/GetAttachInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSrvInfo">
+      <soap:operation soapAction="http://tempuri.org/GetFileSrvInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileIOInfo">
+      <soap:operation soapAction="http://tempuri.org/GetFileIOInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileIOInfoWithId">
+      <soap:operation soapAction="http://tempuri.org/GetFileIOInfoWithId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachFileName">
+      <soap:operation soapAction="http://tempuri.org/GetAttachFileName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllAttachInfo">
+      <soap:operation soapAction="http://tempuri.org/DeleteAllAttachInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttDept">
+      <soap:operation soapAction="http://tempuri.org/SearchAttDept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyCaptcha">
+      <soap:operation soapAction="http://tempuri.org/VerifyCaptcha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenCaptcha">
+      <soap:operation soapAction="http://tempuri.org/GenCaptcha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DLWSSoap12" type="tns:DLWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachInfo">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAttachInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecord">
+      <soap12:operation soapAction="http://tempuri.org/AddRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RtnDataSet">
+      <soap12:operation soapAction="http://tempuri.org/RtnDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_And_Update_DL_DELIV_UNIT">
+      <soap12:operation soapAction="http://tempuri.org/Delete_And_Update_DL_DELIV_UNIT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAttachInfo">
+      <soap12:operation soapAction="http://tempuri.org/ModifyAttachInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachInfo">
+      <soap12:operation soapAction="http://tempuri.org/SaveAttachInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachInfoBatch">
+      <soap12:operation soapAction="http://tempuri.org/SaveAttachInfoBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttachInfo">
+      <soap12:operation soapAction="http://tempuri.org/SearchAttachInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttachInfoSession">
+      <soap12:operation soapAction="http://tempuri.org/SearchAttachInfoSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttachInfoByInfoId">
+      <soap12:operation soapAction="http://tempuri.org/SearchAttachInfoByInfoId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetAttachInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileSrvInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetFileSrvInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileIOInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetFileIOInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileIOInfoWithId">
+      <soap12:operation soapAction="http://tempuri.org/GetFileIOInfoWithId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachFileName">
+      <soap12:operation soapAction="http://tempuri.org/GetAttachFileName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllAttachInfo">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAllAttachInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAttDept">
+      <soap12:operation soapAction="http://tempuri.org/SearchAttDept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyCaptcha">
+      <soap12:operation soapAction="http://tempuri.org/VerifyCaptcha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenCaptcha">
+      <soap12:operation soapAction="http://tempuri.org/GenCaptcha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DLWS">
+    <wsdl:port name="DLWSSoap" binding="tns:DLWSSoap">
+      <soap:address location="http://localhost/DL/DLLIB/DLWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DLWSSoap12" binding="tns:DLWSSoap12">
+      <soap12:address location="http://localhost/DL/DLLIB/DLWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

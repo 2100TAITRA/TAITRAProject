@@ -1,0 +1,163 @@
+<!--#include file="/STDN/Lib/Script.shtml"-->
+<Div id="SetupBtn" class="BannerBtn" >設定</Div>
+<Div id="SetupArea" class="BannerMenu" style="display:none">
+	<div class="dTR">
+		<div class="dTD" id="RptTitle" style="margin: 5px 5px 5px 5px;text-align: center;color:#ffffff;">
+			<SPAN>報表格式設定</SPAN>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="PDForDOC">
+			<input type="radio" id="rdPDF" name="PrintType" value="PDF"><label for="rdPDF">PDF</label>
+			<input type="radio" id="rdDOC" name="PrintType" value="WORD"  checked="checked"><label for="rdDOC">ODF</label>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="KCTitle" style="margin: 5px 5px 5px 5px;text-align: center;color:#ffffff;">
+			<SPAN>資料清除設定</SPAN>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="KeepOrClear">
+			<input type="radio" id="rdKeep" name="KeepClear" value="Keep"><label for="rdKeep">保留</label>
+			<input type="radio" id="rdClear" name="KeepClear" value="Clean" checked="checked"><label for="rdClear">清除</label>
+		</div>
+	</div>
+	
+	<div class="dTR">
+		<div class="dTD" id="ColorTitle" style="margin: 5px 5px 5px 5px;text-align: center;color:#ffffff;">
+			<SPAN>背景主題</SPAN>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="Color">
+			<div id="ColorSwitchLB" class="ColorSwitch"></div>
+			<div id="ColorSwitchLW" class="ColorSwitch"></div>
+		</div>
+	</div>
+	
+	<div class="dTR">
+		<div class="dTD"  style="margin: 5px 5px 5px 5px;text-align: center;color:#ffffff;">
+			<SPAN>字型比例％</SPAN>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="FontZoom">
+			<input id="nmFontZoom" min="50" max="200" step="5" readonly />
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="FontButton">
+			<input type="button" id="btSetDefault" value="預設值" />
+			<input type="button" id="btSaveFontSet" value="儲存" />
+		</div>
+	</div>
+</Div>
+
+<!-- 1140428	Leslie[1131224]	新增操作手冊區 -->
+<Div id="ManualBtn" class="BannerBtn" style="display:none" >操作說明</Div>
+<Div id="ManualArea" class="BannerMenu" style="display:none">
+</Div>
+
+<DIV style="Z-INDEX: 104; BORDER: black 1px solid; POSITION: absolute; DISPLAY: none; TOP: 221px; LEFT: 783px;BACKGROUND-COLOR:#FFFFFF;"
+ id="lbToolTip" data-From=""></DIV>
+<script>
+$(function() {
+	if(jf_ReadCookie("Mode") == "Keep" )
+		$("#rdKeep").prop('checked',true);
+	//1070515	Leslie[1070293]	恢復報表格式設定，但改為ODF
+	if(jf_ReadCookie("FORMAT") == "PDF" )
+		$("#rdPDF").prop('checked',true);
+    //1080923	Leslie[1080339]	配合更新jQueryUI版本，修改宣告寫法
+    //$( "#PDForDOC" ).buttonset();
+    $( "#PDForDOC").controlgroup().find("input").checkboxradio({icon:false});
+    //1091023	Leslie[1090754]	補修拿掉多餘的Cookie註冊，過量的Cookie會造成防火牆判定攻擊
+	/*try{
+	jf_SaveCookieWithExpire('ISO_CONVERT_URL',GetSSOPage().SSO_CONFIG.getIsoConvertURLs().join(';'));	//將工作站網站存入Cookie中
+	}
+	catch(e){}*/
+	//1070515	Leslie[1070293]	恢復報表格式設定，但改為ODF	--END--
+	//1080923	Leslie[1080339]	配合更新jQueryUI版本，修改宣告寫法
+	//$( "#KeepOrClear" ).buttonset();
+	$( "#KeepOrClear" ).controlgroup().find("input").checkboxradio({icon:false});
+	//1140428	Leslie[1131224]	新增操作手冊區
+	$('input[type="hidden"][id*="MANUAL_"]').each(function(idx, domObj){
+		$('#ManualBtn').show();
+		let $id = domObj.id;
+		let $Manual = $(domObj).val().split('§');
+		let imgDl = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAsQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADXSURBVEiJ7dQxTgJBGMXxH2xBYyfF9tBTeggTSVAKzqFX0NaS23gDWypuQEmiYWPU5tvErFnY2exW8JKXfDPzzftPJpOhuabYhqdNNw0TAEtMwss+AKOaujNAK10AZw64RtYgI4veJMATdnhHfiQ8j54dHlMAcwwww1sNJI+1WfTeHTnIP92iwE94g/Wf8TrmynERe5J0X4F819RF9LbSogKp+gurtuGnIJ2El6peV6fhpR7wiY+oe9E4fGZ6wUH9U2zrA54H2OOqp8Pvswi/0eznTFGB11/BO1Gi3BuACQAAAABJRU5ErkJggg=="
+		$(`<div class="dTR"><div class="dTD"><a title="下載 ${$Manual[1]}">${($Manual[0]?$Manual[0]:$Manual[1])}<img src="${imgDl}" /></a></div></div>`).appendTo($('#ManualArea'))
+		.on('click', function(){
+			let strWebService = $("#h_WS").val()
+			let strStartPath = btoa(unescape(encodeURIComponent($("#h_SP").val())))
+			var url = `/odtools/docatt.ashx?FileName=${btoa(unescape(encodeURIComponent($Manual[1])))}&SAMLart=${jf_GetArtifact()}&FileIOWS=${strWebService}&FilePath=${strStartPath}&DocNo=Manual`;
+			window.open(url);
+		})
+	})
+  });
+  
+  //1140428	Leslie[1131224]	新增操作手冊區
+  // $( ".BannerBtn" ).click(function() {
+  $( ".BannerBtn" ).click(function(e) {
+		var options = {direction: 'right'};
+		//1140428	Leslie[1131224]	新增操作手冊區
+		//$(".BannerMenu").toggle('slide',options,500);
+		let $other = "";
+		if(e.target.id == 'SetupBtn'){
+			$("#SetupArea").toggle('slide',options,500);
+			$other = $('#ManualArea');
+		}
+		else if(e.target.id == 'ManualBtn'){
+			$("#ManualArea").toggle('slide',options,500);
+			$other = $('#SetupArea');
+		}
+		if($other.is(':visible'))
+			$other.toggle('slide',options,500);
+  });
+
+  $( ".BannerMenu input:not('#nmFontZoom')" ).click(function(){
+	var options = {direction: 'right'};
+    $(".BannerMenu").hide('slide',options,500);
+  })
+
+  $(".BannerMenu input[name=KeepClear]").click(function () {
+      jf_SaveCookieWithExpire('Mode', this.value);
+  })
+  
+  //1070515	Leslie[1070293]	恢復報表格式設定，但改為ODF
+  $(".BannerMenu input[name=PrintType]").click(function () {
+      jf_SaveCookieWithExpire('FORMAT', this.value);
+  })
+  
+  //1110818 Kevin 1101532 新增背景主題
+  $('#ColorSwitchLB').on("click", function(){ 
+	jf_ColorSwitchClick('LB', '#DBF1FF', '#8FD5FD');
+  });
+  $('#ColorSwitchLW').on("click", function(){ 
+	jf_ColorSwitchClick('LW', '#fAfAfA', '#c9f3f5'); //F4FAFA
+  });
+	
+	
+
+function jf_ReadCookie(argCookieName)
+{
+	var namex = argCookieName + "=";
+
+	if (document.cookie.length == 0) { return null; }
+	nameat = document.cookie.indexOf(namex);
+	if (nameat == -1) { return null; } // 找不到 name 時
+	ValueAt = nameat + namex.length;
+	endPos = document.cookie.indexOf(";", ValueAt);
+	if (endPos == -1) { return document.cookie.substring(ValueAt); }
+	else { return document.cookie.substring(ValueAt, endPos); }
+}
+</script>
+<!-- 2015.1 - Eric Peng, ASPX網頁程式dlg框架 -->
+<div id="dlgASPXPage" style="display:none;width:99%;height:99%;padding:0px;">
+	<div class="pane" style="width:101%;height:101%;overflow-y: hidden;overflow-x:hidden; -webkit-overflow-scrolling:touch;">
+	  <iframe class="aspx_page_content" style="width:99%;height:99%;"></iframe>
+	</div>
+	<a class="closeBtn" style="display:none"></a>
+</div><!-- <div id="dlgASPXPage" ... -->
+<div class="footStatus"></div>
+<div id="dlgMessage" title=""><p></p></div>

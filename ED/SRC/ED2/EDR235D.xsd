@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR235D" targetNamespace="http://tempuri.org/EDR235D.xsd" xmlns:mstns="http://tempuri.org/EDR235D.xsd" xmlns="http://tempuri.org/EDR235D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR235D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR235D" msprop:Generator_UserDSName="EDR235D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR235L1" msprop:Generator_TableClassName="EDR235L1DataTable" msprop:Generator_TableVarName="tableEDR235L1" msprop:Generator_TablePropName="EDR235L1" msprop:Generator_RowDeletingName="EDR235L1RowDeleting" msprop:Generator_RowChangingName="EDR235L1RowChanging" msprop:Generator_RowEvHandlerName="EDR235L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR235L1RowDeleted" msprop:Generator_UserTableName="EDR235L1" msprop:Generator_RowChangedName="EDR235L1RowChanged" msprop:Generator_RowEvArgName="EDR235L1RowChangeEvent" msprop:Generator_RowClassName="EDR235L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OU_ID" msprop:Generator_ColumnVarNameInTable="columnOU_ID" msprop:Generator_ColumnPropNameInRow="OU_ID" msprop:Generator_ColumnPropNameInTable="OU_IDColumn" msprop:Generator_UserColumnName="OU_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CASE_TYPE_1" msprop:Generator_ColumnVarNameInTable="columnCASE_TYPE_1" msprop:Generator_ColumnPropNameInRow="CASE_TYPE_1" msprop:Generator_ColumnPropNameInTable="CASE_TYPE_1Column" msprop:Generator_UserColumnName="CASE_TYPE_1" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CASE_TYPE_2" msprop:Generator_ColumnVarNameInTable="columnCASE_TYPE_2" msprop:Generator_ColumnPropNameInRow="CASE_TYPE_2" msprop:Generator_ColumnPropNameInTable="CASE_TYPE_2Column" msprop:Generator_UserColumnName="CASE_TYPE_2" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CASE_TYPE_3" msprop:Generator_ColumnVarNameInTable="columnCASE_TYPE_3" msprop:Generator_ColumnPropNameInRow="CASE_TYPE_3" msprop:Generator_ColumnPropNameInTable="CASE_TYPE_3Column" msprop:Generator_UserColumnName="CASE_TYPE_3" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CASE_TYPE_4" msprop:Generator_ColumnVarNameInTable="columnCASE_TYPE_4" msprop:Generator_ColumnPropNameInRow="CASE_TYPE_4" msprop:Generator_ColumnPropNameInTable="CASE_TYPE_4Column" msprop:Generator_UserColumnName="CASE_TYPE_4" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CLOSE_TYPE_1" msprop:Generator_ColumnVarNameInTable="columnCLOSE_TYPE_1" msprop:Generator_ColumnPropNameInRow="CLOSE_TYPE_1" msprop:Generator_ColumnPropNameInTable="CLOSE_TYPE_1Column" msprop:Generator_UserColumnName="CLOSE_TYPE_1" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CLOSE_TYPE_2" msprop:Generator_ColumnVarNameInTable="columnCLOSE_TYPE_2" msprop:Generator_ColumnPropNameInRow="CLOSE_TYPE_2" msprop:Generator_ColumnPropNameInTable="CLOSE_TYPE_2Column" msprop:Generator_UserColumnName="CLOSE_TYPE_2" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CLOSE_TYPE_3" msprop:Generator_ColumnVarNameInTable="columnCLOSE_TYPE_3" msprop:Generator_ColumnPropNameInRow="CLOSE_TYPE_3" msprop:Generator_ColumnPropNameInTable="CLOSE_TYPE_3Column" msprop:Generator_UserColumnName="CLOSE_TYPE_3" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="FROM_TYPE_1" msprop:Generator_ColumnVarNameInTable="columnFROM_TYPE_1" msprop:Generator_ColumnPropNameInRow="FROM_TYPE_1" msprop:Generator_ColumnPropNameInTable="FROM_TYPE_1Column" msprop:Generator_UserColumnName="FROM_TYPE_1" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="FROM_TYPE_2" msprop:Generator_ColumnVarNameInTable="columnFROM_TYPE_2" msprop:Generator_ColumnPropNameInRow="FROM_TYPE_2" msprop:Generator_ColumnPropNameInTable="FROM_TYPE_2Column" msprop:Generator_UserColumnName="FROM_TYPE_2" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="FROM_TYPE_3" msprop:Generator_ColumnVarNameInTable="columnFROM_TYPE_3" msprop:Generator_ColumnPropNameInRow="FROM_TYPE_3" msprop:Generator_ColumnPropNameInTable="FROM_TYPE_3Column" msprop:Generator_UserColumnName="FROM_TYPE_3" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="FROM_TYPE_4" msprop:Generator_ColumnVarNameInTable="columnFROM_TYPE_4" msprop:Generator_ColumnPropNameInRow="FROM_TYPE_4" msprop:Generator_ColumnPropNameInTable="FROM_TYPE_4Column" msprop:Generator_UserColumnName="FROM_TYPE_4" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CASE_FROM_1" msprop:Generator_ColumnVarNameInTable="columnCASE_FROM_1" msprop:Generator_ColumnPropNameInRow="CASE_FROM_1" msprop:Generator_ColumnPropNameInTable="CASE_FROM_1Column" msprop:Generator_UserColumnName="CASE_FROM_1" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CASE_FROM_2" msprop:Generator_ColumnVarNameInTable="columnCASE_FROM_2" msprop:Generator_ColumnPropNameInRow="CASE_FROM_2" msprop:Generator_ColumnPropNameInTable="CASE_FROM_2Column" msprop:Generator_UserColumnName="CASE_FROM_2" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CASE_FROM_3" msprop:Generator_ColumnVarNameInTable="columnCASE_FROM_3" msprop:Generator_ColumnPropNameInRow="CASE_FROM_3" msprop:Generator_ColumnPropNameInTable="CASE_FROM_3Column" msprop:Generator_UserColumnName="CASE_FROM_3" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="CASE_FROM_4" msprop:Generator_ColumnVarNameInTable="columnCASE_FROM_4" msprop:Generator_ColumnPropNameInRow="CASE_FROM_4" msprop:Generator_ColumnPropNameInTable="CASE_FROM_4Column" msprop:Generator_UserColumnName="CASE_FROM_4" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="UD_LT_6" msprop:Generator_ColumnVarNameInTable="columnUD_LT_6" msprop:Generator_ColumnPropNameInRow="UD_LT_6" msprop:Generator_ColumnPropNameInTable="UD_LT_6Column" msprop:Generator_UserColumnName="UD_LT_6" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="UD_6_TO_15" msprop:Generator_ColumnVarNameInTable="columnUD_6_TO_15" msprop:Generator_ColumnPropNameInRow="UD_6_TO_15" msprop:Generator_ColumnPropNameInTable="UD_6_TO_15Column" msprop:Generator_UserColumnName="UD_6_TO_15" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="UD_15_TO_30" msprop:Generator_ColumnVarNameInTable="columnUD_15_TO_30" msprop:Generator_ColumnPropNameInRow="UD_15_TO_30" msprop:Generator_ColumnPropNameInTable="UD_15_TO_30Column" msprop:Generator_UserColumnName="UD_15_TO_30" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="UD_GT_30" msprop:Generator_ColumnVarNameInTable="columnUD_GT_30" msprop:Generator_ColumnPropNameInRow="UD_GT_30" msprop:Generator_ColumnPropNameInTable="UD_GT_30Column" msprop:Generator_UserColumnName="UD_GT_30" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

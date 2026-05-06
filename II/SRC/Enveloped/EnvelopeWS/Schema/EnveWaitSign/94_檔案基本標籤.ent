@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--	標籤集 (基本層)    94_基本標籤.ent   -->
+<!ELEMENT  檔案目錄傳送名稱		EMPTY>
+<!ATTLIST  檔案目錄傳送名稱 代碼   (A|B|C|D|E|F|G|T|X)   "A">
+<!ELEMENT  功能				EMPTY>
+<!ATTLIST  功能  代碼   (N|M|D)   "N">
+<!ELEMENT  系統名稱			EMPTY>
+<!ATTLIST  系統名稱 代碼   (1|2)   "1">
+<!ELEMENT  文字				(#PCDATA) >
+<!ELEMENT  全銜				(#PCDATA) >
+<!ELEMENT  機關代碼			(#PCDATA) >
+<!ELEMENT  單位代碼			(#PCDATA) >
+<!ELEMENT  職稱				(#PCDATA) >
+<!ELEMENT  姓名				(#PCDATA) >
+<!ELEMENT  年月日			(#PCDATA) >
+<!ELEMENT  時分				(#PCDATA) >
+<!ELEMENT  年度				(#PCDATA)>
+<!ELEMENT  月份				(#PCDATA)>
+<!ELEMENT  收發處理本別			EMPTY>
+<!ATTLIST  收發處理本別  代碼  	(1|2|3|4|5|A|B|C|D|E)  "1">
+<!ELEMENT  公文類別			EMPTY>
+<!ATTLIST  公文類別  代碼   (1|2|3|4|5|6|7|8|9|A|Z)  "1">
+<!ELEMENT  函類別 EMPTY>
+<!ATTLIST  函類別   代碼   (1|2|3|4|5|6|7|8)   	"1">
+<!ELEMENT  其他類別			EMPTY>
+<!ATTLIST  其他類別   代碼   (1|2|3|4|5|6|7|8|9|A|B|C|D|E|F|G|H|I|Z)   	"1">
+<!ELEMENT  密等				EMPTY>
+<!ATTLIST  密等  代碼   (1|2|3|4|5)   "1">
+<!ELEMENT  保存年限			(#PCDATA)>
+<!ELEMENT  字				(#PCDATA)>
+<!ELEMENT  文號				(#PCDATA)>
+<!ELEMENT  目錄公布限制			EMPTY>
+<!ATTLIST  目錄公布限制  代碼   (Y|N)   "Y">
+<!ELEMENT  應用限制			EMPTY>
+<!ATTLIST  應用限制  代碼   (Y|N|R)   "Y">
+<!ELEMENT  應用註記			(#PCDATA)>
+<!ELEMENT  複製註記			EMPTY>
+<!ATTLIST  複製註記  代碼   (Y|N|C)    "Y">
+<!ELEMENT  應用方式			EMPTY>
+<!ATTLIST  應用方式  代碼   (1|2|3|4)   "1">
+<!ELEMENT  併案註記			EMPTY>
+<!ATTLIST  併案註記  代碼   (1|2)   "1">
+<!ELEMENT  年度號			(#PCDATA)>
+<!ELEMENT  分類號			(#PCDATA)>
+<!ELEMENT  案次號			(#PCDATA)>
+<!ELEMENT  卷次號			(#PCDATA)>
+<!ELEMENT  目次號			(#PCDATA)>
+<!ELEMENT  基準項目編號			(#PCDATA)>
+<!ELEMENT  媒體型式			EMPTY>
+<!ATTLIST  媒體型式   代碼   (1|2|3|4|5|6|7|8|9|A|B|C|D|E|F|Z)  "1" >
+<!ELEMENT 媒體編號			(#PCDATA)>
+<!ATTLIST 計量單位            NUM CDATA #REQUIRED>
+<!ELEMENT 計量單位			(#PCDATA)>
+<!ATTLIST 數量                NUM CDATA #REQUIRED>
+<!ELEMENT 數量				(#PCDATA)>
+<!ELEMENT 頁數				(#PCDATA)>
+<!ELEMENT  檔案名稱			(#PCDATA)>
+<!ELEMENT  檔案路徑			(#PCDATA)>
+<!ELEMENT  檔案大小			(#PCDATA)>
+<!ELEMENT  附件媒體型式			EMPTY>
+<!ATTLIST  附件媒體型式   代碼   (1|2|3|4|5|6|7|8|9|A|B|C|D|E|F|Z)  "1">
+<!ELEMENT  檔案類別			EMPTY>
+<!ATTLIST  檔案類別  代碼   (1|2)   "1">
+<!ELEMENT  檔案格式			(#PCDATA) >
+<!ELEMENT  檔案格式版本			(#PCDATA) >
+<!ELEMENT  編碼方式			(#PCDATA) >
+<!ELEMENT  保存狀況			EMPTY>
+<!ATTLIST  保存狀況  代碼	(A|B|C|D|E|F|G|Z) "A">
+<!ELEMENT  調整後之保存年限		(#PCDATA)>
+<!ELEMENT  保存年限調整原因		EMPTY>
+<!ATTLIST  保存年限調整原因  代碼	(A|B|C) "A">
+<!ELEMENT  移轉註記			EMPTY>
+<!ATTLIST  移轉註記  代碼	(1|2|3|4|5) "1">
+<!ELEMENT  人				(#PCDATA)>
+<!ELEMENT  事				(#PCDATA)>
+<!ELEMENT  時				(#PCDATA)>
+<!ELEMENT  地				(#PCDATA)>
+<!ELEMENT  物				(#PCDATA)>
+<!ELEMENT  行政施政知識分類號		(#PCDATA)>
+<!ELEMENT  其他				(#PCDATA)>
+<!ELEMENT  數位內容檔案清查結果		EMPTY>
+<!ATTLIST  數位內容檔案清查結果  代碼 	(A1|A2|A3|B1|B2|B3|C1|C2|C3)   "A1">
+<!ELEMENT  數位內容檔案處理建議		EMPTY>
+<!ATTLIST  數位內容檔案處理建議 代碼	(A1|A2|A3|B1|B2|B3|C1|C2|C3)   "A1">
+<!ELEMENT  封裝檔資訊			(#PCDATA) >
+<!ELEMENT  物件類型			(#PCDATA) >
+<!ELEMENT  帳號				(#PCDATA) >
+<!ELEMENT  機關				(#PCDATA) >
+<!ELEMENT  異動別			(#PCDATA) >

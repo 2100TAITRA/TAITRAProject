@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR438D" targetNamespace="http://tempuri.org/EDR438D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR438D.xsd" xmlns:mstns="http://tempuri.org/EDR438D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR438D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR438L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="YEARMONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_1" type="xs:int" minOccurs="0" />
+							<xs:element name="CLOSE_2" type="xs:int" minOccurs="0" />
+							<xs:element name="CLOSE_3" type="xs:int" minOccurs="0" />
+							<xs:element name="ISSUE_DAYS" type="xs:double" minOccurs="0" />
+							<xs:element name="WAITNODELAY_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="WAITDELAY_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="WAITNEW_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="WAITPREV_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="NEWRCV_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="NEW_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="LASTMONTH_CNT" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EDR438L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="YEARMONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="PDUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="START_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ISSUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="UD_ISSUE" type="xs:string" minOccurs="0" />
+							<xs:element name="PTY_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SRC_RCV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CURR_LOCATION" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

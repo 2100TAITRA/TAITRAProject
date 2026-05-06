@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DB</name>
+    </assembly>
+    <members>
+        <member name="M:T2100.DB.DBCommand.TrimForSQL(System.String)">
+            <summary>
+            針對加入SQL查詢條件的欄位值，去掉頭尾的單引號、減號、空格與字串中的危險指令(例：EXEC,DROP,DELETE,TRUNCATE...等)
+            </summary>
+            <param name="argValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:T2100.DB.DbLogFile.LogPath">
+            <summary>
+            log檔路徑
+            </summary>
+        </member>
+        <member name="P:T2100.DB.DbLogFile.LogFileName">
+            <summary>
+            Log檔檔名
+            </summary>
+        </member>
+        <member name="M:T2100.DB.DbLogFile.WriteLogFile">
+            <summary>
+            寫出Log檔案
+            </summary>
+            <returns>true,false</returns>
+        </member>
+        <member name="M:T2100.DB.DbLogFile.InsertLogString(System.String,System.String)">
+            <summary>
+            加一訊息字串至Log字串中
+            </summary>
+            <param name="type">訊息別:I(訊息),W(警告),E(錯誤)</param>
+            <param name="desp">訊息</param>
+            <returns>true,false</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="big5"?>
+<root>
+	<item>
+		<value>1</value>
+		<text>歸檔後解密</text>
+	</item>
+	<item>
+		<value>2</value>
+		<text>保存年限到期解密</text>
+	</item>
+	<item>
+		<value>3</value>
+		<text>指定解密期限</text>
+	</item>
+</root>

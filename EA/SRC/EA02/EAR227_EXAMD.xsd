@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR227_EXAMD" targetNamespace="http://tempuri.org/EAR210D.xsd" xmlns:mstns="http://tempuri.org/EAR210D.xsd" xmlns="http://tempuri.org/EAR210D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR227_EXAMD" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EAR227_EXAMD" msprop:Generator_UserDSName="EAR227_EXAMD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EAR227_EXAML1" msprop:Generator_TableClassName="EAR227_EXAML1DataTable" msprop:Generator_TableVarName="tableEAR227_EXAML1" msprop:Generator_TablePropName="EAR227_EXAML1" msprop:Generator_RowDeletingName="EAR227_EXAML1RowDeleting" msprop:Generator_RowChangingName="EAR227_EXAML1RowChanging" msprop:Generator_RowEvHandlerName="EAR227_EXAML1RowChangeEventHandler" msprop:Generator_RowDeletedName="EAR227_EXAML1RowDeleted" msprop:Generator_UserTableName="EAR227_EXAML1" msprop:Generator_RowChangedName="EAR227_EXAML1RowChanged" msprop:Generator_RowEvArgName="EAR227_EXAML1RowChangeEvent" msprop:Generator_RowClassName="EAR227_EXAML1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DISC_NAME_1" msprop:Generator_ColumnVarNameInTable="columnDISC_NAME_1" msprop:Generator_ColumnPropNameInRow="DISC_NAME_1" msprop:Generator_ColumnPropNameInTable="DISC_NAME_1Column" msprop:Generator_UserColumnName="DISC_NAME_1" type="xs:string" minOccurs="0" />
+              <xs:element name="DISC_DOC_NO_1" msprop:Generator_ColumnVarNameInTable="columnDISC_DOC_NO_1" msprop:Generator_ColumnPropNameInRow="DISC_DOC_NO_1" msprop:Generator_ColumnPropNameInTable="DISC_DOC_NO_1Column" msprop:Generator_UserColumnName="DISC_DOC_NO_1" type="xs:string" minOccurs="0" />
+              <xs:element name="DISC_DESC_1" msprop:Generator_ColumnVarNameInTable="columnDISC_DESC_1" msprop:Generator_ColumnPropNameInRow="DISC_DESC_1" msprop:Generator_ColumnPropNameInTable="DISC_DESC_1Column" msprop:Generator_UserColumnName="DISC_DESC_1" type="xs:string" minOccurs="0" />
+              <xs:element name="DISC_NAME_2" msprop:Generator_ColumnVarNameInTable="columnDISC_NAME_2" msprop:Generator_ColumnPropNameInRow="DISC_NAME_2" msprop:Generator_ColumnPropNameInTable="DISC_NAME_2Column" msprop:Generator_UserColumnName="DISC_NAME_2" type="xs:string" minOccurs="0" />
+              <xs:element name="DISC_DOC_NO_2" msprop:Generator_ColumnVarNameInTable="columnDISC_DOC_NO_2" msprop:Generator_ColumnPropNameInRow="DISC_DOC_NO_2" msprop:Generator_ColumnPropNameInTable="DISC_DOC_NO_2Column" msprop:Generator_UserColumnName="DISC_DOC_NO_2" type="xs:string" minOccurs="0" />
+              <xs:element name="DISC_DESC_2" msprop:Generator_ColumnVarNameInTable="columnDISC_DESC_2" msprop:Generator_ColumnPropNameInRow="DISC_DESC_2" msprop:Generator_ColumnPropNameInTable="DISC_DESC_2Column" msprop:Generator_UserColumnName="DISC_DESC_2" type="xs:string" minOccurs="0" />
+              <xs:element name="DISC_NAME_1_2" msprop:Generator_ColumnVarNameInTable="columnDISC_NAME_1_2" msprop:Generator_ColumnPropNameInRow="DISC_NAME_1_2" msprop:Generator_ColumnPropNameInTable="DISC_NAME_1_2Column" msprop:Generator_UserColumnName="DISC_NAME_1_2" type="xs:string" minOccurs="0" />
+              <xs:element name="DISC_DOC_NO_1_2" msprop:Generator_ColumnVarNameInTable="columnDISC_DOC_NO_1_2" msprop:Generator_ColumnPropNameInRow="DISC_DOC_NO_1_2" msprop:Generator_ColumnPropNameInTable="DISC_DOC_NO_1_2Column" msprop:Generator_UserColumnName="DISC_DOC_NO_1_2" type="xs:string" minOccurs="0" />
+              <xs:element name="DISC_NAME_2_2" msprop:Generator_ColumnVarNameInTable="columnDISC_NAME_2_2" msprop:Generator_ColumnPropNameInRow="DISC_NAME_2_2" msprop:Generator_ColumnPropNameInTable="DISC_NAME_2_2Column" msprop:Generator_UserColumnName="DISC_NAME_2_2" type="xs:string" minOccurs="0" />
+              <xs:element name="DISC_DOC_NO_2_2" msprop:Generator_ColumnVarNameInTable="columnDISC_DOC_NO_2_2" msprop:Generator_ColumnPropNameInRow="DISC_DOC_NO_2_2" msprop:Generator_ColumnPropNameInTable="DISC_DOC_NO_2_2Column" msprop:Generator_UserColumnName="DISC_DOC_NO_2_2" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EAR227_EXAML2" msprop:Generator_TableClassName="EAR227_EXAML2DataTable" msprop:Generator_TableVarName="tableEAR227_EXAML2" msprop:Generator_RowChangedName="EAR227_EXAML2RowChanged" msprop:Generator_TablePropName="EAR227_EXAML2" msprop:Generator_RowDeletingName="EAR227_EXAML2RowDeleting" msprop:Generator_RowChangingName="EAR227_EXAML2RowChanging" msprop:Generator_RowEvHandlerName="EAR227_EXAML2RowChangeEventHandler" msprop:Generator_RowDeletedName="EAR227_EXAML2RowDeleted" msprop:Generator_RowClassName="EAR227_EXAML2Row" msprop:Generator_UserTableName="EAR227_EXAML2" msprop:Generator_RowEvArgName="EAR227_EXAML2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_INFO" msprop:Generator_ColumnVarNameInTable="columnDOC_INFO" msprop:Generator_ColumnPropNameInRow="DOC_INFO" msprop:Generator_ColumnPropNameInTable="DOC_INFOColumn" msprop:Generator_UserColumnName="DOC_INFO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

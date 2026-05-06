@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IFR016D" targetNamespace="http://tempuri.org/IFR016D.xsd" xmlns:mstns="http://tempuri.org/IFR016D.xsd" xmlns="http://tempuri.org/IFR016D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IFR016D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="IFR016D" msprop:Generator_UserDSName="IFR016D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="IFR016L1" msprop:Generator_TableClassName="IFR016L1DataTable" msprop:Generator_TableVarName="tableIFR016L1" msprop:Generator_TablePropName="IFR016L1" msprop:Generator_RowDeletingName="IFR016L1RowDeleting" msprop:Generator_RowChangingName="IFR016L1RowChanging" msprop:Generator_RowEvHandlerName="IFR016L1RowChangeEventHandler" msprop:Generator_RowDeletedName="IFR016L1RowDeleted" msprop:Generator_UserTableName="IFR016L1" msprop:Generator_RowChangedName="IFR016L1RowChanged" msprop:Generator_RowEvArgName="IFR016L1RowChangeEvent" msprop:Generator_RowClassName="IFR016L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MISSION_ORGNAME" msprop:Generator_ColumnVarNameInTable="columnMISSION_ORGNAME" msprop:Generator_ColumnPropNameInRow="MISSION_ORGNAME" msprop:Generator_ColumnPropNameInTable="MISSION_ORGNAMEColumn" msprop:Generator_UserColumnName="MISSION_ORGNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SECT_NAME" msprop:Generator_ColumnVarNameInTable="columnSECT_NAME" msprop:Generator_ColumnPropNameInRow="SECT_NAME" msprop:Generator_ColumnPropNameInTable="SECT_NAMEColumn" msprop:Generator_UserColumnName="SECT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="USERNEME" msprop:Generator_ColumnVarNameInTable="columnUSERNEME" msprop:Generator_ColumnPropNameInRow="USERNEME" msprop:Generator_ColumnPropNameInTable="USERNEMEColumn" msprop:Generator_UserColumnName="USERNEME" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="USE_STATE" msprop:Generator_ColumnVarNameInTable="columnUSE_STATE" msprop:Generator_ColumnPropNameInRow="USE_STATE" msprop:Generator_ColumnPropNameInTable="USE_STATEColumn" msprop:Generator_UserColumnName="USE_STATE" type="xs:string" minOccurs="0" />
+              <xs:element name="ROLE_NAME" msprop:Generator_ColumnVarNameInTable="columnROLE_NAME" msprop:Generator_ColumnPropNameInRow="ROLE_NAME" msprop:Generator_ColumnPropNameInTable="ROLE_NAMEColumn" msprop:Generator_UserColumnName="ROLE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="HOLD_PRIVILEGE" msprop:Generator_ColumnVarNameInTable="columnHOLD_PRIVILEGE" msprop:Generator_ColumnPropNameInRow="HOLD_PRIVILEGE" msprop:Generator_ColumnPropNameInTable="HOLD_PRIVILEGEColumn" msprop:Generator_UserColumnName="HOLD_PRIVILEGE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

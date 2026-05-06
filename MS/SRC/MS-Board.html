@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>Page Title</title>
+</head>
+
+<body>
+  <div id="billboardCtxt" data-role="page"> <!--class="ui-subpage"-->
+    <div class="menu">
+        <div style="width:100%;">
+          <ul id="billboard-class-list" class="billboard-class-list" data-inset="true" data-role="listview" data-theme='d'>
+            <li><a href="#">所有分類<span class="ui-li-count">9</span></a></li>
+            <li><a href="#">施政計劃<span class="ui-li-count">3</span></a></li>
+            <li><a href="#">一般公文<span class="ui-li-count">1</span></a></li>
+            <li><a href="#">人民陳情<span class="ui-li-count">0</span></a></li>
+            <li><a href="#">測試天氣05<span class="ui-li-count">0</span></a></li>
+            <li><a href="#">福利<span class="ui-li-count">0</span></a></li>
+            <li><a href="#">一般公告<span class="ui-li-count">5</span></a></li>
+            <li><a href="#">測試機關相關公告<span class="ui-li-count">0</span></a></li>
+            <li><a href="#">娛樂<span class="ui-li-count">0</span></a></li>
+            <li><a href="#">藝術<span class="ui-li-count">0</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <div class="ui-grid-a">
+          <div class="ui-block-a">
+            <div data-type='horizontal'>
+              <input type="button" value="全部選取" data-theme="b" data-inline="true"/>
+              <input type="button" value="清除選取" data-theme="b" data-inline="true"/>
+              <input type="button" value="反相選取" data-theme="b" data-inline="true"/>
+            </div>
+          </div>
+        </div>
+        <table id="billboard_tb">
+          <!-- 標題列 -->
+          <!-- 發布單位 公布日期 公文文號 公告對象  -->
+          <thead>
+            <tr>
+              <th><a href="#">序</a></th>
+              <th><a href="#">選</a></th>
+              <th><a href="#"><img alt="" src='./IMAGE/SSO/clip.png'/></a></th>
+              <th><a href="#">來文機關</a></th>
+              <th><a href="#">公告主旨</a></th>
+              <th><a href="#">發布單位</a></th>
+              <th><a href="#">公布日期</a></th>
+              <th ><a href="#">公文文號</a></th>
+              <th style='width:4.5em;'><a href="#">公告對象</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 公布欄項目清單內容 -->
+            <tr>
+              <td>1</td>
+              <td><input type="checkbox" value="" data-role="none" /></td>
+              <td><img alt="" src='./IMAGE/SSO/clip.png'/></td>
+              <td>測試機關123</td>
+              <td>測試公告1</td>
+              <td>人事室二科</td>
+              <td>100年11月11日</td>
+              <td>1000012372</td>
+              <td>全局</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="checkbox" value="" data-role="none" /></td>
+              <td></td>
+              <td>測試機關1</td>
+              <td>測試公告甲</td>
+              <td>人事室</td>
+              <td>100年11月10日</td>
+              <td>1000012365</td>
+              <td>人事室</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="checkbox" value="" data-role="none" /></td>
+              <td><img alt="" src='./IMAGE/SSO/clip.png'/></td>
+              <td>測試機關1</td>
+              <td>測試公告主旨</td>
+              <td>會計室</td>
+              <td>100年11月8日</td>
+              <td>1000012355</td>
+              <td>會計室</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><input type="checkbox" value="" data-role="none" /></td>
+              <td><img alt="" src='./IMAGE/SSO/clip.png'/></td>
+              <td>測試機關2</td>
+              <td>測試公告主旨A</td>
+              <td>人事室二科</td>
+              <td>100年11月7日</td>
+              <td>1000012349</td>
+              <td>全局</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><input type="checkbox" value="" data-role="none" /></td>
+              <td></td>
+              <td>測試機關3</td>
+              <td>測試公告Subject</td>
+              <td>人事室二科</td>
+              <td>100年11月7日</td>
+              <td>1000012348</td>
+              <td>全局</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><input type="checkbox" value="" data-role="none" /></td>
+              <td></td>
+              <td>測試機關3</td>
+              <td>測試公告20111101</td>
+              <td>人事室一科</td>
+              <td>100年11月4日</td>
+              <td>1000012345</td>
+              <td>全局</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td><input type="checkbox" value="" data-role="none" /></td>
+              <td><img alt="" src='./IMAGE/SSO/clip.png'/></td>
+              <td>測試機關2</td>
+              <td>測試公告一</td>
+              <td>會計室</td>
+              <td>100年11月2日</td>
+              <td>1000012223</td>
+              <td>全局</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td><input type="checkbox" value="" data-role="none" /></td>
+              <td><img alt="" src='./IMAGE/SSO/clip.png'/></td>
+              <td>測試機關1</td>
+              <td>測試公告一</td>
+              <td>祕書室文書科</td>
+              <td>100年11月1日</td>
+              <td>1000012222</td>
+              <td>全局</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td><input type="checkbox" value="" data-role="none" /></td>
+              <td></td>
+              <td>測試機關3</td>
+              <td>測試公告一</td>
+              <td>人事室二科</td>
+              <td>100年11月5日</td>
+              <td>1000011111</td>
+              <td>全局</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div> <!--div id="billboardCtxt"-->
+</body>
+</html>

@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetWorkDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSDATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argLtBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argLtIncHd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argLtUom" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkDateResult" type="tns:TimeLibWorkDate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimeLibWorkDate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WorkDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeadTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsErr" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrName" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrType" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrCode" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMessage" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTrace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TargetSite" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRedirect" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSumType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocProperty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSpdNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argBTypeNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRcvDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimeLibSumTypeInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SumType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LtUom" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LtBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LtIncHd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartRule" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDateCalcBySys" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LeadTimeDB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DueDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSumTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSumTypeResult" type="tns:TimeLibSumTypeInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBTypeNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocProperty" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RtnStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBTypeNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBTypeNoResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBTypeNoByDeptNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGetBTypeByDept" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strIsAllRcv" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocProperty" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBTypeNoByDeptNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBTypeNoByDeptNoResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkDays">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSDATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDueDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argLtIncHd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkDaysResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkDaysResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TimeLibWorkDate" nillable="true" type="tns:TimeLibWorkDate" />
+      <s:element name="TimeLibSumTypeInfo" nillable="true" type="tns:TimeLibSumTypeInfo" />
+      <s:element name="UtyRtnString" nillable="true" type="tns:UtyRtnString" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWorkDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkDate" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSumTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSumType" />
+  </wsdl:message>
+  <wsdl:message name="GetSumTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSumTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBTypeNo" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBTypeNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoByDeptNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBTypeNoByDeptNo" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoByDeptNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBTypeNoByDeptNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDaysSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkDays" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDaysSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkDaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSDATE" type="s:string" />
+    <wsdl:part name="argKey" type="s:string" />
+    <wsdl:part name="argLtBy" type="s:string" />
+    <wsdl:part name="argLtIncHd" type="s:string" />
+    <wsdl:part name="argLtUom" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:TimeLibWorkDate" />
+  </wsdl:message>
+  <wsdl:message name="GetSumTypeHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argDocProperty" type="s:string" />
+    <wsdl:part name="argSpdNo" type="s:string" />
+    <wsdl:part name="argBTypeNo" type="s:string" />
+    <wsdl:part name="argRcvDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSumTypeHttpGetOut">
+    <wsdl:part name="Body" element="tns:TimeLibSumTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argDocProperty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoByDeptNoHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="strGetBTypeByDept" type="s:string" />
+    <wsdl:part name="strIsAllRcv" type="s:string" />
+    <wsdl:part name="argDocProperty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoByDeptNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDaysHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSDATE" type="s:string" />
+    <wsdl:part name="argDueDate" type="s:string" />
+    <wsdl:part name="argLtIncHd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDaysHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSDATE" type="s:string" />
+    <wsdl:part name="argKey" type="s:string" />
+    <wsdl:part name="argLtBy" type="s:string" />
+    <wsdl:part name="argLtIncHd" type="s:string" />
+    <wsdl:part name="argLtUom" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:TimeLibWorkDate" />
+  </wsdl:message>
+  <wsdl:message name="GetSumTypeHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argDocProperty" type="s:string" />
+    <wsdl:part name="argSpdNo" type="s:string" />
+    <wsdl:part name="argBTypeNo" type="s:string" />
+    <wsdl:part name="argRcvDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSumTypeHttpPostOut">
+    <wsdl:part name="Body" element="tns:TimeLibSumTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argDocProperty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoByDeptNoHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="strGetBTypeByDept" type="s:string" />
+    <wsdl:part name="strIsAllRcv" type="s:string" />
+    <wsdl:part name="argDocProperty" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBTypeNoByDeptNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDaysHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSDATE" type="s:string" />
+    <wsdl:part name="argDueDate" type="s:string" />
+    <wsdl:part name="argLtIncHd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkDaysHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnString" />
+  </wsdl:message>
+  <wsdl:portType name="TIME_LIBSoap">
+    <wsdl:operation name="GetWorkDate">
+      <wsdl:input message="tns:GetWorkDateSoapIn" />
+      <wsdl:output message="tns:GetWorkDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSumType">
+      <wsdl:input message="tns:GetSumTypeSoapIn" />
+      <wsdl:output message="tns:GetSumTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNo">
+      <wsdl:input message="tns:GetBTypeNoSoapIn" />
+      <wsdl:output message="tns:GetBTypeNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNoByDeptNo">
+      <wsdl:input message="tns:GetBTypeNoByDeptNoSoapIn" />
+      <wsdl:output message="tns:GetBTypeNoByDeptNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDays">
+      <wsdl:input message="tns:GetWorkDaysSoapIn" />
+      <wsdl:output message="tns:GetWorkDaysSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TIME_LIBHttpGet">
+    <wsdl:operation name="GetWorkDate">
+      <wsdl:input message="tns:GetWorkDateHttpGetIn" />
+      <wsdl:output message="tns:GetWorkDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSumType">
+      <wsdl:input message="tns:GetSumTypeHttpGetIn" />
+      <wsdl:output message="tns:GetSumTypeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNo">
+      <wsdl:input message="tns:GetBTypeNoHttpGetIn" />
+      <wsdl:output message="tns:GetBTypeNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNoByDeptNo">
+      <wsdl:input message="tns:GetBTypeNoByDeptNoHttpGetIn" />
+      <wsdl:output message="tns:GetBTypeNoByDeptNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDays">
+      <wsdl:input message="tns:GetWorkDaysHttpGetIn" />
+      <wsdl:output message="tns:GetWorkDaysHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TIME_LIBHttpPost">
+    <wsdl:operation name="GetWorkDate">
+      <wsdl:input message="tns:GetWorkDateHttpPostIn" />
+      <wsdl:output message="tns:GetWorkDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSumType">
+      <wsdl:input message="tns:GetSumTypeHttpPostIn" />
+      <wsdl:output message="tns:GetSumTypeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNo">
+      <wsdl:input message="tns:GetBTypeNoHttpPostIn" />
+      <wsdl:output message="tns:GetBTypeNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNoByDeptNo">
+      <wsdl:input message="tns:GetBTypeNoByDeptNoHttpPostIn" />
+      <wsdl:output message="tns:GetBTypeNoByDeptNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDays">
+      <wsdl:input message="tns:GetWorkDaysHttpPostIn" />
+      <wsdl:output message="tns:GetWorkDaysHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TIME_LIBSoap" type="tns:TIME_LIBSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetWorkDate">
+      <soap:operation soapAction="http://tempuri.org/GetWorkDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSumType">
+      <soap:operation soapAction="http://tempuri.org/GetSumType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNo">
+      <soap:operation soapAction="http://tempuri.org/GetBTypeNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNoByDeptNo">
+      <soap:operation soapAction="http://tempuri.org/GetBTypeNoByDeptNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDays">
+      <soap:operation soapAction="http://tempuri.org/GetWorkDays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TIME_LIBHttpGet" type="tns:TIME_LIBHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetWorkDate">
+      <http:operation location="/GetWorkDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSumType">
+      <http:operation location="/GetSumType" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNo">
+      <http:operation location="/GetBTypeNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNoByDeptNo">
+      <http:operation location="/GetBTypeNoByDeptNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDays">
+      <http:operation location="/GetWorkDays" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TIME_LIBHttpPost" type="tns:TIME_LIBHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetWorkDate">
+      <http:operation location="/GetWorkDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSumType">
+      <http:operation location="/GetSumType" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNo">
+      <http:operation location="/GetBTypeNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBTypeNoByDeptNo">
+      <http:operation location="/GetBTypeNoByDeptNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkDays">
+      <http:operation location="/GetWorkDays" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TIME_LIB">
+    <wsdl:port name="TIME_LIBSoap" binding="tns:TIME_LIBSoap">
+      <soap:address location="http://localhost/ODDEPD/lib/TIME_LIB.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TIME_LIBHttpGet" binding="tns:TIME_LIBHttpGet">
+      <http:address location="http://localhost/ODDEPD/lib/TIME_LIB.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TIME_LIBHttpPost" binding="tns:TIME_LIBHttpPost">
+      <http:address location="http://localhost/ODDEPD/lib/TIME_LIB.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

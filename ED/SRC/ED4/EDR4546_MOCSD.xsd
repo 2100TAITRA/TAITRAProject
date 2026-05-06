@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4546_MOCSD" targetNamespace="http://tempuri.org/EDR4546_MOCSD.xsd" xmlns:mstns="http://tempuri.org/EDR4546_MOCSD.xsd" xmlns="http://tempuri.org/EDR4546_MOCSD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4546_MOCSD" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR4546_MOCSD" msprop:Generator_UserDSName="EDR4546_MOCSD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4546_MOCSL1" msprop:Generator_TableClassName="EDR4546_MOCSL1DataTable" msprop:Generator_TableVarName="tableEDR4546_MOCSL1" msprop:Generator_RowChangedName="EDR4546_MOCSL1RowChanged" msprop:Generator_TablePropName="EDR4546_MOCSL1" msprop:Generator_RowDeletingName="EDR4546_MOCSL1RowDeleting" msprop:Generator_RowChangingName="EDR4546_MOCSL1RowChanging" msprop:Generator_RowEvHandlerName="EDR4546_MOCSL1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4546_MOCSL1RowDeleted" msprop:Generator_RowClassName="EDR4546_MOCSL1Row" msprop:Generator_UserTableName="EDR4546_MOCSL1" msprop:Generator_RowEvArgName="EDR4546_MOCSL1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="OVERDUE6" msprop:Generator_ColumnVarNameInTable="columnOVERDUE6" msprop:Generator_ColumnPropNameInRow="OVERDUE6" msprop:Generator_ColumnPropNameInTable="OVERDUE6Column" msprop:Generator_UserColumnName="OVERDUE6" type="xs:int" minOccurs="0" />
+              <xs:element name="OVERDUE7TO13" msprop:Generator_ColumnVarNameInTable="columnOVERDUE7TO13" msprop:Generator_ColumnPropNameInRow="OVERDUE7TO13" msprop:Generator_ColumnPropNameInTable="OVERDUE7TO13Column" msprop:Generator_UserColumnName="OVERDUE7TO13" type="xs:int" minOccurs="0" />
+              <xs:element name="OVERDUE14TO20" msprop:Generator_ColumnVarNameInTable="columnOVERDUE14TO20" msprop:Generator_ColumnPropNameInRow="OVERDUE14TO20" msprop:Generator_ColumnPropNameInTable="OVERDUE14TO20Column" msprop:Generator_UserColumnName="OVERDUE14TO20" type="xs:int" minOccurs="0" />
+              <xs:element name="OVERDUE21TO27" msprop:Generator_ColumnVarNameInTable="columnOVERDUE21TO27" msprop:Generator_ColumnPropNameInRow="OVERDUE21TO27" msprop:Generator_ColumnPropNameInTable="OVERDUE21TO27Column" msprop:Generator_UserColumnName="OVERDUE21TO27" type="xs:int" minOccurs="0" />
+              <xs:element name="OVERDUE28" msprop:Generator_ColumnVarNameInTable="columnOVERDUE28" msprop:Generator_ColumnPropNameInRow="OVERDUE28" msprop:Generator_ColumnPropNameInTable="OVERDUE28Column" msprop:Generator_UserColumnName="OVERDUE28" type="xs:int" minOccurs="0" />
+              <xs:element name="OVERDUESUM" msprop:Generator_ColumnVarNameInTable="columnOVERDUESUM" msprop:Generator_ColumnPropNameInRow="OVERDUESUM" msprop:Generator_ColumnPropNameInTable="OVERDUESUMColumn" msprop:Generator_UserColumnName="OVERDUESUM" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

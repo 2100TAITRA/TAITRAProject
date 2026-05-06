@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="BIG5"?>
+<!--		 99_clscheme_utf8.dtd      分類表彙送格式   2010.11.01  -->
+<!ENTITY  % 基本標籤  SYSTEM "99_basic_a_utf8.ent" >
+%基本標籤;
+<!ENTITY  % 檔管標籤  SYSTEM "99_records_utf8.ent" >
+%檔管標籤;
+<!ELEMENT 檔案分類 (分類表)+>
+<!ELEMENT 分類表 (功能,分類表使用機關,分類表啟用日期,分類表停用日期?,分類類目*)>
+<!ELEMENT 分類類目(分類號,類目名稱,內容描述?,保存年限*,清理處置?,基準項目編號*)>
+<!ATTLIST 分類類目 分類層級 (1|2|3|4|5|6|7|8|9) "1">
+

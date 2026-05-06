@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR415D" targetNamespace="http://tempuri.org/EAR415D.xsd" xmlns:mstns="http://tempuri.org/EAR415D.xsd" xmlns="http://tempuri.org/EAR415D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR415D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EAR415D" msprop:Generator_UserDSName="EAR415D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MainTable" msprop:Generator_TableClassName="MainTableDataTable" msprop:Generator_TableVarName="tableMainTable" msprop:Generator_RowChangedName="MainTableRowChanged" msprop:Generator_TablePropName="MainTable" msprop:Generator_RowDeletingName="MainTableRowDeleting" msprop:Generator_RowChangingName="MainTableRowChanging" msprop:Generator_RowEvHandlerName="MainTableRowChangeEventHandler" msprop:Generator_RowDeletedName="MainTableRowDeleted" msprop:Generator_RowClassName="MainTableRow" msprop:Generator_UserTableName="MainTable" msprop:Generator_RowEvArgName="MainTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SAMPLING_NO" msprop:Generator_ColumnVarNameInTable="columnSAMPLING_NO" msprop:Generator_ColumnPropNameInRow="SAMPLING_NO" msprop:Generator_ColumnPropNameInTable="SAMPLING_NOColumn" msprop:Generator_UserColumnName="SAMPLING_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="SIGN_TYPE" msprop:Generator_ColumnVarNameInTable="columnSIGN_TYPE" msprop:Generator_ColumnPropNameInRow="SIGN_TYPE" msprop:Generator_ColumnPropNameInTable="SIGN_TYPEColumn" msprop:Generator_UserColumnName="SIGN_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="ENVE_VER" msprop:Generator_ColumnVarNameInTable="columnENVE_VER" msprop:Generator_ColumnPropNameInRow="ENVE_VER" msprop:Generator_ColumnPropNameInTable="ENVE_VERColumn" msprop:Generator_UserColumnName="ENVE_VER" type="xs:string" minOccurs="0" />
+              <xs:element name="SAMPLING_EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnSAMPLING_EMP_NAME" msprop:Generator_ColumnPropNameInRow="SAMPLING_EMP_NAME" msprop:Generator_ColumnPropNameInTable="SAMPLING_EMP_NAMEColumn" msprop:Generator_UserColumnName="SAMPLING_EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ERROR_TYPE" msprop:Generator_ColumnVarNameInTable="columnERROR_TYPE" msprop:Generator_ColumnPropNameInRow="ERROR_TYPE" msprop:Generator_ColumnPropNameInTable="ERROR_TYPEColumn" msprop:Generator_UserColumnName="ERROR_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="ERROR_MSG" msprop:Generator_ColumnVarNameInTable="columnERROR_MSG" msprop:Generator_ColumnPropNameInRow="ERROR_MSG" msprop:Generator_ColumnPropNameInTable="ERROR_MSGColumn" msprop:Generator_UserColumnName="ERROR_MSG" type="xs:string" minOccurs="0" />
+              <xs:element name="ERROR_PROC" msprop:Generator_ColumnVarNameInTable="columnERROR_PROC" msprop:Generator_ColumnPropNameInRow="ERROR_PROC" msprop:Generator_ColumnPropNameInTable="ERROR_PROCColumn" msprop:Generator_UserColumnName="ERROR_PROC" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

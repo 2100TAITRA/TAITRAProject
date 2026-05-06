@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://localhost/ea/ea21/eat216ws.asmx?disco" filename="eat216ws.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost/ea/ea21/eat216ws.asmx?wsdl" filename="eat216ws.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

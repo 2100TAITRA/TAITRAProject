@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR410D" targetNamespace="http://tempuri.org/EDR410D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR410D.xsd" xmlns:mstns="http://tempuri.org/EDR410D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR410D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR410L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="LEAD_TIME" type="xs:double" minOccurs="0" />
+							<xs:element name="TOTAL_USE_DAYS" type="xs:double" minOccurs="0" />
+							<xs:element name="USE_DAYS" type="xs:double" minOccurs="0" />
+							<xs:element name="SUPPLY_USE_DAYS" type="xs:double" minOccurs="0" />
+							<xs:element name="REMAIN_DAYS" type="xs:double" minOccurs="0" />
+							<xs:element name="DUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="HAVE_COM" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_STATUS" type="xs:string" minOccurs="0" />
+							<xs:element name="SEQ_NO" type="xs:decimal" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string"></xs:element>
+							<xs:element name="COWORK_DAYS" type="xs:string" minOccurs="0" />
+							<xs:element name="INSP_COUNT" type="xs:string" minOccurs="0" />
+							<xs:element name="B_TYPE_NAME" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

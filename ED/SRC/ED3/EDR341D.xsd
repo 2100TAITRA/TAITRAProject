@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR341D" targetNamespace="http://tempuri.org/EDR341D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR341D.xsd" xmlns:mstns="http://tempuri.org/EDR341D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR341D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR341L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SRC_RCV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_SNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="UD_ISSUE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

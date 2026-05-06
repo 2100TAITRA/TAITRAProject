@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 線上簽核 SYSTEM "99_sign_utf8.dtd" [
+	<!ENTITY % 基本標籤 SYSTEM "99_basic_utf8.ent">
+	<!ENTITY % 線上簽核標籤 SYSTEM "99_sign_utf8.ent">
+]>
+<abcd線上簽核 Id="Aol">
+	<線上簽核流程 Id="FlowInfo">
+		<簽核流程 Id="FLOW_0" 異動別="分文"/>
+		<簽核流程 Id="FLOW_516611" 異動別="送請簽核"/>
+		<簽核流程 Id="FLOW_516792" 異動別="辦畢退回"/>
+		<簽核流程 Id="FLOW_516822" 異動別="歸檔"/>
+	</線上簽核流程>
+	<線上簽核資訊 Id="Sol">
+		<簽核點定義 Id="sign_516611" URI="#FLOW_516611">
+			<Signature Id="ds_user_516611">
+				<SignedInfo>
+					<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+					<Reference URI="1000000026-P-0000.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>D3gAPqaA5vfX524C23QtGJPgiwk=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-00-01\0001.di">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>MqZUwisIOnw3n8BkqhaGBkMQZ6k=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-P-0002.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>SGxmcAjHH3Ys6W1vArk4CYIdM20=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-O-0003.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>xUXFUPueNoHnPbB1L1c3WTzWx2o=</DigestValue>
+					</Reference>
+					<Reference URI="#aol_info_516611">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>N+hZWd/NNeEm9kC1YWg4hWnYxas=</DigestValue>
+					</Reference>
+				</SignedInfo>
+				<SignatureValue>lqAlxNZiAEPcMZy5DfgcjnHX3r9L/h8yRR26G136/rQ+srZyMle2mLSx+3gikOlPOP6/fL0NgoVL
+ZvoupTKrn/IBCOfv6SDP/1+bFMfdpnmcPZQLTed8/yjh4eo7ZtGHpSAzJB1sTpeObYguIPtIaMQh
+2VsTh+JMQCmijdIkISYwJ/XjY1A6UUW911YlLGgbeLUw0LtOKR3XvNov3ZNiqJHpNY2X64UQU5Os
+53M4m2nq8fsXRAsl3ViTahjWUwOgUObdr9wW48mQKh1MKpRjvT6z/C7HTFrHuAKAZKZNixfKD8Uk
+vShFndD0og/MMfeVLNjQp/mN4ptwQm669VQNrw==</SignatureValue>
+				<KeyInfo>
+					<X509Data>
+						<X509Certificate>MIIEoDCCA4igAwIBAgIQGkHiN2+4eFjZx4NPkg9vzjANBgkqhkiG9w0BAQUFADBKMQswCQYDVQQG
+EwJUVzESMBAGA1UECgwJ6KGM5pS/6ZmiMScwJQYDVQQLDB7mlL/lupzmuKzoqabmhpHorYnnrqHn
+kIbkuK3lv4MwHhcNMTEwNDE5MDUyNzEwWhcNMTEwNTIwMDUyNzEwWjA9MQswCQYDVQQGEwJUVzEZ
+MBcGA1UEAwwQ5ris6Kmm6Ieq54S25Lq6MTETMBEGA1UEBRMKODIxNDU4MjE1MjCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBALGps5ec4lgrMmVI4NciKQTPheCCIhvxeJqwM2DiXgOXSDMT
+G8NHz0WZyJFCVllh2DuCiWP5aEGQVWVfUjKFNPjfVZb8Z1WXr9stcIB484cJ3oBY1iHz9NwMk1z1
+ftQp/m3l5YKW4Dz6hiBS/vY4PXotA1Qi1jjIRxeQIohtOznak9XTNrNtfqhofEa87pbGqCsh/SKZ
+LW3EyHMiqM+Tzl22qT8Lzk+X2tEZVpCXYcXrI5SPRIPTJQInANKAsFPXJzqlY2us84CY+Ef3/9NF
+ZqxYAjSBIGGgKlLF3XztR1qMrSr7M+A+NjzaB6/57e9E9EWqtwBOQVspWjs3LsoK5pkCAwEAAaOC
+AY0wggGJMH8GCCsGAQUFBwEBBHMwcTA+BggrBgEFBQcwAoYyaHR0cDovL2d0ZXN0Y2EubmF0Lmdv
+di50dy9jZXJ0cy9Jc3N1ZWRUb1RoaXNDQS5wN2IwLwYIKwYBBQUHMAGGI2h0dHA6Ly9ndGVzdGNh
+Lm5hdC5nb3YudHcvT0NTUC9vY3NwMBQGA1UdIAQNMAswCQYHYIZ2ZQADADAzBgNVHQkELDAqMBUG
+B2CGdgFkAgExCgYIYIZ2AWQDAQEwEQYHYIZ2AWQCMzEGDAQxMTAwMCEGA1UdEQEB/wQXMBWBE3Rl
+c3QwMDFAdGVzdC5nb3YudHcwDgYDVR0PAQH/BAQDAgeAMB8GA1UdIwQYMBaAFEv2Sndo05TE47Vg
+3A4b76m6e/ZTMB0GA1UdDgQWBBQ2G10ZbfI0cIDuYQlIfQ5XJKaSkDBIBgNVHR8EQTA/MD2gO6A5
+hjdodHRwOi8vZ3Rlc3RjYS5uYXQuZ292LnR3L2NybC9HVGVzdENBL2NvbXBsZXRlZGVsdGEuY3Js
+MA0GCSqGSIb3DQEBBQUAA4IBAQDQUjXrwIFZz8qwwxuL1xgYSpRJzThi31U3xttC9Njd603+6zLC
+G9Em2l9TSWFy95fblBA3v5DPyOJs59njKyXIlQ30qdJ18AQiZB01oadGSyRymwIH+yOl8Dz8Kdzc
+VqybBM4+ILeYAIfHmIy9m+yzNevR0uCap22Ce6Rue1TVSShHLf8d+7UAjB+HaYsR1y3jKmPva8GL
+lvuDDaUnnp7zyi76CwpLZ72hibp1N1SHtVp3+KBc4UkLKcgQMzCqOfTCl1awZecGOoh8BGkxWwsI
+2Du8FOi7i/QKjSMaLKj1HfciAKMunTq49aVxRLwRJA+O31J8CEWBHyrXR5INsZOB</X509Certificate>
+					</X509Data>
+				</KeyInfo>
+			</Signature>
+			<Object Id="aol_info_516611">
+				<異動資訊>
+					<簽核人員>
+						<單位>行政三科</單位>
+						<職稱>科員</職稱>
+						<姓名>陳怡茜</姓名>
+						<帳號>ROSE</帳號>
+						<角色>承辦人</角色>
+					</簽核人員>
+					<異動別>送請簽核</異動別>
+					<簽核意見/>
+					<簽章時間>10001291241</簽章時間>
+					<次位簽核人員>
+						<簽核人員>
+							<單位>主任秘書室</單位>
+							<職稱/>
+							<姓名>測試簽核人員</姓名>
+							<帳號>C04</帳號>
+							<角色>主任秘書</角色>
+						</簽核人員>
+					</次位簽核人員>
+				</異動資訊>
+				<簽核資訊>
+					<來文文件夾 Id="iDoc_001" 產生時間="10001281216">
+						<來文清單 來文數="1">
+							<來文 序號="0" 格式="紙本" 產生時間="10001281216">
+								<來文字號>
+									<文字>基衛保一字第1000000026號</文字>
+								</來文字號>
+								<來文類型>函</來文類型>
+								<紙本來文 頁面數="1">
+									<頁面 原始檔序號="0" 序號="0" 文件夾識別碼="103" 產生時間="10001281216"/>
+								</紙本來文>
+							</來文>
+						</來文清單>
+					</來文文件夾>
+					<簽核文件夾 Id="sDOC_516611" 產生時間="10001291241">
+						<簽核文稿清單 文稿數="1">
+							<文稿 原始檔序號="1" 序號="0" 文件夾識別碼="105" 物件識別碼="0" 產生時間="10001291239" 產生點資訊="sign_516611">
+								<名稱>簽</名稱>
+								<文稿類型>簽</文稿類型>
+								<文稿頁面檔 產生時間="10001291239" 記錄方式="堆疊式">
+									<文稿頁面清單 頁面數="1">
+										<頁面 原始檔序號="2" 序號="0" 文件夾識別碼="106" 物件識別碼="105" 產生時間="10001291239" 產生點資訊="sign_516611"/>
+									</文稿頁面清單>
+									<簽核物件 文件夾識別碼="107" 物件識別碼="106" 產生時間="10001291239" 產生點資訊="sign_516611" 頁面顯示="Y">
+										<物件類型>章戳</物件類型>
+										<章戳 顯示時間="Y">
+											<文字走向>橫書</文字走向>
+											<區域 上="1478" 下="1559" 右="707" 左="309"/>
+											<顏色 紅="255" 綠="0" 藍="0"/>
+											<檔案序號>3</檔案序號>
+										</章戳>
+									</簽核物件>
+								</文稿頁面檔>
+							</文稿>
+						</簽核文稿清單>
+						<檔案清單 檔案數="4">
+							<電子檔案資訊 原始檔序號="0" 序號="0" 產生時間="10001281216">
+								<檔案名稱>1000000026-P-0000.TIF</檔案名稱>
+								<檔案大小>13112</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="1" 序號="1" 產生時間="10001291239">
+								<檔案名稱>1000000026-00-01\0001.di</檔案名稱>
+								<檔案大小>495</檔案大小>
+								<檔案格式>DI</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="2" 序號="2" 產生時間="10001291239">
+								<檔案名稱>1000000026-P-0002.TIF</檔案名稱>
+								<檔案大小>9872</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="3" 序號="3" 產生時間="10001291239">
+								<檔案名稱>1000000026-O-0003.TIF</檔案名稱>
+								<檔案大小>869</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+						</檔案清單>
+					</簽核文件夾>
+				</簽核資訊>
+			</Object>
+		</簽核點定義>
+		<簽核點定義 Id="sign_516792" URI="#FLOW_516792">
+			<Signature Id="ds_user_516792">
+				<SignedInfo>
+					<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+					<Reference URI="1000000026-P-0000.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>D3gAPqaA5vfX524C23QtGJPgiwk=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-00-01\0001.di">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>MqZUwisIOnw3n8BkqhaGBkMQZ6k=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-P-0002.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>SGxmcAjHH3Ys6W1vArk4CYIdM20=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-O-0003.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>xUXFUPueNoHnPbB1L1c3WTzWx2o=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-O-0004.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>ZzjmfBB3+lqAMAUc4CLdTWmJSfU=</DigestValue>
+					</Reference>
+					<Reference URI="#aol_info_516792">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>zTOUG2PbpA2c6gi9SY2sJ15AaiY=</DigestValue>
+					</Reference>
+					<Reference URI="#sign_516611">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>Ex0tvx4lwebZ8BXqxanJHpx6piA=</DigestValue>
+					</Reference>
+				</SignedInfo>
+				<SignatureValue>OwMZblYz7qj4xL2RWpmDaT6zv7ov2xzWk4iREcr7+NupzZiZMcVRninGxQe1ROhd1FRW2mF2kCQz
+5mR0cI965OaBUXoktGCZxoBzy0CP1TYe/u2I0pvkUMQq6/Sm86QvIPl9mwQjzlO4A6mvmRdFSfuQ
+YsTzFuwnplqCcHsdQOU=</SignatureValue>
+				<KeyInfo>
+					<X509Data>
+						<X509Certificate>MIIEHDCCAwSgAwIBAgIQK2dgXN3aujAQZkeoMYWL4DANBgkqhkiG9w0BAQUFADBKMQswCQYDVQQG
+EwJUVzESMBAGA1UECgwJ6KGM5pS/6ZmiMScwJQYDVQQLDB7mlL/lupzmuKzoqabmhpHorYnnrqHn
+kIbkuK3lv4MwHhcNMTEwNDE5MDUyOTA3WhcNMTEwNTIwMDUyOTA3WjA9MQswCQYDVQQGEwJUVzEZ
+MBcGA1UEAwwQ5ris6Kmm6Ieq54S25Lq6MjETMBEGA1UEBRMKNTA0Mzg0NzYxMDCBnzANBgkqhkiG
+9w0BAQEFAAOBjQAwgYkCgYEA0fLfw1LLL2sv9mZtfggQMIfwplCtW+bi9DMCB1EDSuhkrkn4+eCU
+wNAhDJ7hNhSKZkPshmzrT1hmGQq9FTM+cxVLfQTEpw7jHLQVh6dXsLC2kscG48zNqAZycC6pguZR
+4VfhagEQz3YoelwOsxYUHvBRg92Qdib9qAofiw56zl8CAwEAAaOCAY0wggGJMH8GCCsGAQUFBwEB
+BHMwcTA+BggrBgEFBQcwAoYyaHR0cDovL2d0ZXN0Y2EubmF0Lmdvdi50dy9jZXJ0cy9Jc3N1ZWRU
+b1RoaXNDQS5wN2IwLwYIKwYBBQUHMAGGI2h0dHA6Ly9ndGVzdGNhLm5hdC5nb3YudHcvT0NTUC9v
+Y3NwMBQGA1UdIAQNMAswCQYHYIZ2ZQADADAzBgNVHQkELDAqMBUGB2CGdgFkAgExCgYIYIZ2AWQD
+AQEwEQYHYIZ2AWQCMzEGDAQxMTAwMCEGA1UdEQEB/wQXMBWBE3Rlc3QwMDJAdGVzdC5nb3YudHcw
+DgYDVR0PAQH/BAQDAgeAMB8GA1UdIwQYMBaAFEv2Sndo05TE47Vg3A4b76m6e/ZTMB0GA1UdDgQW
+BBTWkemy6mAe3Zplv6T4/1CQfdpiMTBIBgNVHR8EQTA/MD2gO6A5hjdodHRwOi8vZ3Rlc3RjYS5u
+YXQuZ292LnR3L2NybC9HVGVzdENBL2NvbXBsZXRlZGVsdGEuY3JsMA0GCSqGSIb3DQEBBQUAA4IB
+AQBv6lWZYpLhEjORt4n/yvQu6N5wm8nqG2NaMhnkweAop+fbIjqb9/4CtRIyolqIjFwNeyaADaL6
+X9aMBSzVptM5Bdwyt5OrcSpzfYMEeL3fn0WOHOc7jewiT5gJP15gkn0lizJDjkrxLmQk0ubTqTGa
+DM48GfOTn0oUUkte1fZCiiUkiR0JcJhYkeItkjfDNqyMT4mR2eFb7zo9ZJDftj3WKiwjX1EdA68I
+JhxGNZUiAwU8b+15VyLeaGdpHPpMnv1sv47eS4efSWfuy0QKTsEVd+FkbRKV7GG8Vq91215QxsZ2
+hePl9KKrNPx+QkeK/WUHnX0LK47tGKNO6YmiLBuH</X509Certificate>
+					</X509Data>
+				</KeyInfo>
+			</Signature>
+			<Object Id="aol_info_516792">
+				<異動資訊>
+					<簽核人員>
+						<單位>主任秘書室</單位>
+						<職稱/>
+						<姓名>測試簽核人員</姓名>
+						<帳號>C04</帳號>
+						<角色>主任秘書</角色>
+					</簽核人員>
+					<異動別>辦畢退回</異動別>
+					<簽核意見>可</簽核意見>
+					<簽章時間>10001291623</簽章時間>
+					<次位簽核人員>
+						<簽核人員>
+							<單位>行政三科</單位>
+							<職稱/>
+							<姓名>陳怡茜</姓名>
+							<帳號>ROSE</帳號>
+							<角色>承辦人</角色>
+						</簽核人員>
+					</次位簽核人員>
+				</異動資訊>
+				<簽核資訊>
+					<來文文件夾參照路徑 URI="#iDoc_001"/>
+					<簽核文件夾 Id="sDOC_516792" 產生時間="10001291623">
+						<簽核文稿清單 文稿數="1">
+							<文稿 原始檔序號="1" 序號="0" 文件夾識別碼="105" 物件識別碼="0" 產生時間="10001291239" 產生點資訊="sign_516611">
+								<名稱>簽</名稱>
+								<文稿類型>簽</文稿類型>
+								<文稿頁面檔 產生時間="10001291239" 記錄方式="堆疊式">
+									<文稿頁面清單 頁面數="1">
+										<頁面 原始檔序號="2" 序號="0" 文件夾識別碼="106" 物件識別碼="105" 產生時間="10001291239" 產生點資訊="sign_516611"/>
+									</文稿頁面清單>
+									<簽核物件 文件夾識別碼="107" 物件識別碼="106" 產生時間="10001291239" 產生點資訊="sign_516611" 頁面顯示="Y">
+										<物件類型>章戳</物件類型>
+										<章戳 顯示時間="Y">
+											<文字走向>橫書</文字走向>
+											<區域 上="1478" 下="1559" 右="707" 左="309"/>
+											<顏色 紅="255" 綠="0" 藍="0"/>
+											<檔案序號>3</檔案序號>
+										</章戳>
+									</簽核物件>
+									<簽核物件 文件夾識別碼="109" 物件識別碼="106" 產生時間="10001291623" 產生點資訊="sign_516792" 頁面顯示="Y">
+										<物件類型>文字意見</物件類型>
+										<文字意見>
+											<位置 X="1746" Y="1419"/>
+											<文字內容>可</文字內容>
+											<文字走向>橫書</文字走向>
+											<字型>
+												<名稱>標楷體</名稱>
+												<樣式>普通</樣式>
+												<大小>28</大小>
+												<顏色 紅="255" 綠="0" 藍="0"/>
+											</字型>
+										</文字意見>
+									</簽核物件>
+									<簽核物件 文件夾識別碼="110" 物件識別碼="106" 產生時間="10001291623" 產生點資訊="sign_516792" 頁面顯示="Y">
+										<物件類型>章戳</物件類型>
+										<章戳 顯示時間="Y">
+											<文字走向>橫書</文字走向>
+											<區域 上="1537" 下="1653" 右="2323" 左="1860"/>
+											<顏色 紅="255" 綠="0" 藍="0"/>
+											<檔案序號>4</檔案序號>
+										</章戳>
+									</簽核物件>
+								</文稿頁面檔>
+							</文稿>
+						</簽核文稿清單>
+						<檔案清單 檔案數="5">
+							<電子檔案資訊 原始檔序號="0" 序號="0" 產生時間="10001281216">
+								<檔案名稱>1000000026-P-0000.TIF</檔案名稱>
+								<檔案大小>13112</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="1" 序號="1" 產生時間="10001291239">
+								<檔案名稱>1000000026-00-01\0001.di</檔案名稱>
+								<檔案大小>495</檔案大小>
+								<檔案格式>DI</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="2" 序號="2" 產生時間="10001291239">
+								<檔案名稱>1000000026-P-0002.TIF</檔案名稱>
+								<檔案大小>9872</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="3" 序號="3" 產生時間="10001291239">
+								<檔案名稱>1000000026-O-0003.TIF</檔案名稱>
+								<檔案大小>869</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="4" 序號="4" 產生時間="10001291623">
+								<檔案名稱>1000000026-O-0004.TIF</檔案名稱>
+								<檔案大小>961</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+						</檔案清單>
+					</簽核文件夾>
+				</簽核資訊>
+			</Object>
+		</簽核點定義>
+		<簽核點定義 Id="sign_516822" URI="#FLOW_516822">
+			<Signature Id="ds_user_516822">
+				<SignedInfo>
+					<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+					<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+					<Reference URI="1000000026-P-0000.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>D3gAPqaA5vfX524C23QtGJPgiwk=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-00-01\0001.di">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>MqZUwisIOnw3n8BkqhaGBkMQZ6k=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-P-0002.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>SGxmcAjHH3Ys6W1vArk4CYIdM20=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-O-0003.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>xUXFUPueNoHnPbB1L1c3WTzWx2o=</DigestValue>
+					</Reference>
+					<Reference URI="1000000026-O-0004.TIF">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>ZzjmfBB3+lqAMAUc4CLdTWmJSfU=</DigestValue>
+					</Reference>
+					<Reference URI="#aol_info_516822">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>Xw1wv3TgH3xYLg7Ex4FIGaTmG5s=</DigestValue>
+					</Reference>
+					<Reference URI="#sign_516792">
+						<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+						<DigestValue>ro+y3tkaqfukFcQ2aoRUmKVxvko=</DigestValue>
+					</Reference>
+				</SignedInfo>
+				<SignatureValue>ovD2cfSsVxXRuJZ88XWn0tqdxxq06jO62gm1072wUepUn9N4jsVllzs8iHsmyP+y/jrtexsBXBzY
++veJ6xruukwa1MiwRXYHro9MJl6iPTNC4ABP6v1Y6cAoTxXJ5KvOLvk8/3y6cU1VWDiwL9+BMsyx
+MRG3VWGaG+rL0xG1oTe421gU12f4J5+ywHEaGWlJq7zgmo3bWzXCzMCHTsF6+8OrBtsY2hzEiYfY
+RfY3s3qQw1HOCMlW+0nxYouFQf/zMX6zy2zp8PkJY50dRdblKyxHSOV9sPuNxW+7tvyRHMtkFWSu
+dkGLW0Ro7hzyTmWUkDottu8ghc6TlXN2K9FzIQ==</SignatureValue>
+				<KeyInfo>
+					<X509Data>
+						<X509Certificate>MIIEoDCCA4igAwIBAgIQGkHiN2+4eFjZx4NPkg9vzjANBgkqhkiG9w0BAQUFADBKMQswCQYDVQQG
+EwJUVzESMBAGA1UECgwJ6KGM5pS/6ZmiMScwJQYDVQQLDB7mlL/lupzmuKzoqabmhpHorYnnrqHn
+kIbkuK3lv4MwHhcNMTEwNDE5MDUyNzEwWhcNMTEwNTIwMDUyNzEwWjA9MQswCQYDVQQGEwJUVzEZ
+MBcGA1UEAwwQ5ris6Kmm6Ieq54S25Lq6MTETMBEGA1UEBRMKODIxNDU4MjE1MjCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBALGps5ec4lgrMmVI4NciKQTPheCCIhvxeJqwM2DiXgOXSDMT
+G8NHz0WZyJFCVllh2DuCiWP5aEGQVWVfUjKFNPjfVZb8Z1WXr9stcIB484cJ3oBY1iHz9NwMk1z1
+ftQp/m3l5YKW4Dz6hiBS/vY4PXotA1Qi1jjIRxeQIohtOznak9XTNrNtfqhofEa87pbGqCsh/SKZ
+LW3EyHMiqM+Tzl22qT8Lzk+X2tEZVpCXYcXrI5SPRIPTJQInANKAsFPXJzqlY2us84CY+Ef3/9NF
+ZqxYAjSBIGGgKlLF3XztR1qMrSr7M+A+NjzaB6/57e9E9EWqtwBOQVspWjs3LsoK5pkCAwEAAaOC
+AY0wggGJMH8GCCsGAQUFBwEBBHMwcTA+BggrBgEFBQcwAoYyaHR0cDovL2d0ZXN0Y2EubmF0Lmdv
+di50dy9jZXJ0cy9Jc3N1ZWRUb1RoaXNDQS5wN2IwLwYIKwYBBQUHMAGGI2h0dHA6Ly9ndGVzdGNh
+Lm5hdC5nb3YudHcvT0NTUC9vY3NwMBQGA1UdIAQNMAswCQYHYIZ2ZQADADAzBgNVHQkELDAqMBUG
+B2CGdgFkAgExCgYIYIZ2AWQDAQEwEQYHYIZ2AWQCMzEGDAQxMTAwMCEGA1UdEQEB/wQXMBWBE3Rl
+c3QwMDFAdGVzdC5nb3YudHcwDgYDVR0PAQH/BAQDAgeAMB8GA1UdIwQYMBaAFEv2Sndo05TE47Vg
+3A4b76m6e/ZTMB0GA1UdDgQWBBQ2G10ZbfI0cIDuYQlIfQ5XJKaSkDBIBgNVHR8EQTA/MD2gO6A5
+hjdodHRwOi8vZ3Rlc3RjYS5uYXQuZ292LnR3L2NybC9HVGVzdENBL2NvbXBsZXRlZGVsdGEuY3Js
+MA0GCSqGSIb3DQEBBQUAA4IBAQDQUjXrwIFZz8qwwxuL1xgYSpRJzThi31U3xttC9Njd603+6zLC
+G9Em2l9TSWFy95fblBA3v5DPyOJs59njKyXIlQ30qdJ18AQiZB01oadGSyRymwIH+yOl8Dz8Kdzc
+VqybBM4+ILeYAIfHmIy9m+yzNevR0uCap22Ce6Rue1TVSShHLf8d+7UAjB+HaYsR1y3jKmPva8GL
+lvuDDaUnnp7zyi76CwpLZ72hibp1N1SHtVp3+KBc4UkLKcgQMzCqOfTCl1awZecGOoh8BGkxWwsI
+2Du8FOi7i/QKjSMaLKj1HfciAKMunTq49aVxRLwRJA+O31J8CEWBHyrXR5INsZOB</X509Certificate>
+					</X509Data>
+				</KeyInfo>
+			</Signature>
+			<Object Id="aol_info_516822">
+				<異動資訊>
+					<簽核人員>
+						<單位>行政三科</單位>
+						<職稱>科員</職稱>
+						<姓名>陳怡茜</姓名>
+						<帳號>ROSE</帳號>
+						<角色/>
+					</簽核人員>
+					<異動別>歸檔</異動別>
+					<簽核意見/>
+					<簽章時間>10001291819</簽章時間>
+					<次位簽核人員>
+						<簽核人員>
+							<單位>檔案室</單位>
+							<職稱/>
+							<姓名/>
+							<帳號/>
+							<角色>檔管人員</角色>
+						</簽核人員>
+					</次位簽核人員>
+				</異動資訊>
+				<簽核資訊>
+					<來文文件夾參照路徑 URI="#iDoc_001"/>
+					<簽核文件夾 Id="sDOC_516822" 產生時間="10001291819">
+						<簽核文稿清單 文稿數="1">
+							<文稿 原始檔序號="1" 序號="0" 文件夾識別碼="105" 物件識別碼="0" 產生時間="10001291239" 產生點資訊="sign_516611">
+								<名稱>簽</名稱>
+								<文稿類型>簽</文稿類型>
+								<文稿頁面檔 產生時間="10001291239" 記錄方式="堆疊式">
+									<文稿頁面清單 頁面數="1">
+										<頁面 原始檔序號="2" 序號="0" 文件夾識別碼="106" 物件識別碼="105" 產生時間="10001291239" 產生點資訊="sign_516611"/>
+									</文稿頁面清單>
+									<簽核物件 文件夾識別碼="107" 物件識別碼="106" 產生時間="10001291239" 產生點資訊="sign_516611" 頁面顯示="Y">
+										<物件類型>章戳</物件類型>
+										<章戳 顯示時間="Y">
+											<文字走向>橫書</文字走向>
+											<區域 上="1478" 下="1559" 右="707" 左="309"/>
+											<顏色 紅="255" 綠="0" 藍="0"/>
+											<檔案序號>3</檔案序號>
+										</章戳>
+									</簽核物件>
+									<簽核物件 文件夾識別碼="109" 物件識別碼="106" 產生時間="10001291623" 產生點資訊="sign_516792" 頁面顯示="Y">
+										<物件類型>文字意見</物件類型>
+										<文字意見>
+											<位置 X="1746" Y="1419"/>
+											<文字內容>可</文字內容>
+											<文字走向>橫書</文字走向>
+											<字型>
+												<名稱>標楷體</名稱>
+												<樣式>普通</樣式>
+												<大小>28</大小>
+												<顏色 紅="255" 綠="0" 藍="0"/>
+											</字型>
+										</文字意見>
+									</簽核物件>
+									<簽核物件 文件夾識別碼="110" 物件識別碼="106" 產生時間="10001291623" 產生點資訊="sign_516792" 頁面顯示="Y">
+										<物件類型>章戳</物件類型>
+										<章戳 顯示時間="Y">
+											<文字走向>橫書</文字走向>
+											<區域 上="1537" 下="1653" 右="2323" 左="1860"/>
+											<顏色 紅="255" 綠="0" 藍="0"/>
+											<檔案序號>4</檔案序號>
+										</章戳>
+									</簽核物件>
+								</文稿頁面檔>
+							</文稿>
+						</簽核文稿清單>
+						<檔案清單 檔案數="5">
+							<電子檔案資訊 原始檔序號="0" 序號="0" 產生時間="10001281216">
+								<檔案名稱>1000000026-P-0000.TIF</檔案名稱>
+								<檔案大小>13112</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="1" 序號="1" 產生時間="10001291239">
+								<檔案名稱>1000000026-00-01\0001.di</檔案名稱>
+								<檔案大小>495</檔案大小>
+								<檔案格式>DI</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="2" 序號="2" 產生時間="10001291239">
+								<檔案名稱>1000000026-P-0002.TIF</檔案名稱>
+								<檔案大小>9872</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="3" 序號="3" 產生時間="10001291239">
+								<檔案名稱>1000000026-O-0003.TIF</檔案名稱>
+								<檔案大小>869</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+							<電子檔案資訊 原始檔序號="4" 序號="4" 產生時間="10001291623">
+								<檔案名稱>1000000026-O-0004.TIF</檔案名稱>
+								<檔案大小>961</檔案大小>
+								<檔案格式>TIF</檔案格式>
+							</電子檔案資訊>
+						</檔案清單>
+					</簽核文件夾>
+				</簽核資訊>
+			</Object>
+		</簽核點定義>
+	</線上簽核資訊>
+</abcd線上簽核>

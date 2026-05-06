@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.2100t.com.tw/webservices/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.2100t.com.tw/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.2100t.com.tw/webservices/">
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetOrgUptTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetOrgUptTimeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="OrgUptTimeSwitch">
+        <s:complexType />
+      </s:element>
+      <s:element name="OrgUptTimeSwitchResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetOrgUptTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetOrgUptTime" />
+  </wsdl:message>
+  <wsdl:message name="ResetOrgUptTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetOrgUptTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrgUptTimeSwitchSoapIn">
+    <wsdl:part name="parameters" element="tns:OrgUptTimeSwitch" />
+  </wsdl:message>
+  <wsdl:message name="OrgUptTimeSwitchSoapOut">
+    <wsdl:part name="parameters" element="tns:OrgUptTimeSwitchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ResetOrgUptTimeHttpGetIn" />
+  <wsdl:message name="ResetOrgUptTimeHttpGetOut" />
+  <wsdl:message name="OrgUptTimeSwitchHttpGetIn" />
+  <wsdl:message name="OrgUptTimeSwitchHttpGetOut" />
+  <wsdl:message name="GetUserInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ResetOrgUptTimeHttpPostIn" />
+  <wsdl:message name="ResetOrgUptTimeHttpPostOut" />
+  <wsdl:message name="OrgUptTimeSwitchHttpPostIn" />
+  <wsdl:message name="OrgUptTimeSwitchHttpPostOut" />
+  <wsdl:portType name="SAMLSoap">
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetOrgUptTime">
+      <wsdl:input message="tns:ResetOrgUptTimeSoapIn" />
+      <wsdl:output message="tns:ResetOrgUptTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrgUptTimeSwitch">
+      <wsdl:input message="tns:OrgUptTimeSwitchSoapIn" />
+      <wsdl:output message="tns:OrgUptTimeSwitchSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SAMLHttpGet">
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoHttpGetIn" />
+      <wsdl:output message="tns:GetUserInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetOrgUptTime">
+      <wsdl:input message="tns:ResetOrgUptTimeHttpGetIn" />
+      <wsdl:output message="tns:ResetOrgUptTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrgUptTimeSwitch">
+      <wsdl:input message="tns:OrgUptTimeSwitchHttpGetIn" />
+      <wsdl:output message="tns:OrgUptTimeSwitchHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SAMLHttpPost">
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoHttpPostIn" />
+      <wsdl:output message="tns:GetUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetOrgUptTime">
+      <wsdl:input message="tns:ResetOrgUptTimeHttpPostIn" />
+      <wsdl:output message="tns:ResetOrgUptTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrgUptTimeSwitch">
+      <wsdl:input message="tns:OrgUptTimeSwitchHttpPostIn" />
+      <wsdl:output message="tns:OrgUptTimeSwitchHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SAMLSoap" type="tns:SAMLSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetOrgUptTime">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ResetOrgUptTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrgUptTimeSwitch">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/OrgUptTimeSwitch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SAMLHttpGet" type="tns:SAMLHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetUserInfo">
+      <http:operation location="/GetUserInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetOrgUptTime">
+      <http:operation location="/ResetOrgUptTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="OrgUptTimeSwitch">
+      <http:operation location="/OrgUptTimeSwitch" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SAMLHttpPost" type="tns:SAMLHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetUserInfo">
+      <http:operation location="/GetUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetOrgUptTime">
+      <http:operation location="/ResetOrgUptTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="OrgUptTimeSwitch">
+      <http:operation location="/OrgUptTimeSwitch" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SAML">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">使用者資訊</documentation>
+    <wsdl:port name="SAMLSoap" binding="tns:SAMLSoap">
+      <soap:address location="http://localhost/iiws/saml.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SAMLHttpGet" binding="tns:SAMLHttpGet">
+      <http:address location="http://localhost/iiws/saml.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SAMLHttpPost" binding="tns:SAMLHttpPost">
+      <http:address location="http://localhost/iiws/saml.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

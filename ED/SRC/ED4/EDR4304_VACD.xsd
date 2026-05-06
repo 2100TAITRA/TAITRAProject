@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4304_VACD" targetNamespace="http://tempuri.org/EDR4304_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR4304_VACD.xsd" xmlns="http://tempuri.org/EDR4304_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4304_VACD" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR4304_VACD" msprop:Generator_UserDSName="EDR4304_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4304_VACL1" msprop:Generator_TableClassName="EDR4304_VACL1DataTable" msprop:Generator_TableVarName="tableEDR4304_VACL1" msprop:Generator_RowChangedName="EDR4304_VACL1RowChanged" msprop:Generator_TablePropName="EDR4304_VACL1" msprop:Generator_RowDeletingName="EDR4304_VACL1RowDeleting" msprop:Generator_RowChangingName="EDR4304_VACL1RowChanging" msprop:Generator_RowEvHandlerName="EDR4304_VACL1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4304_VACL1RowDeleted" msprop:Generator_RowClassName="EDR4304_VACL1Row" msprop:Generator_UserTableName="EDR4304_VACL1" msprop:Generator_RowEvArgName="EDR4304_VACL1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORGNAME" msprop:Generator_ColumnVarNameInTable="columnORGNAME" msprop:Generator_ColumnPropNameInRow="ORGNAME" msprop:Generator_ColumnPropNameInTable="ORGNAMEColumn" msprop:Generator_UserColumnName="ORGNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="RCV_CNT" msprop:Generator_ColumnVarNameInTable="columnRCV_CNT" msprop:Generator_ColumnPropNameInRow="RCV_CNT" msprop:Generator_ColumnPropNameInTable="RCV_CNTColumn" msprop:Generator_UserColumnName="RCV_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="P2E" msprop:Generator_ColumnVarNameInTable="columnP2E" msprop:Generator_ColumnPropNameInRow="P2E" msprop:Generator_ColumnPropNameInTable="P2EColumn" msprop:Generator_UserColumnName="P2E" type="xs:string" minOccurs="0" />
+              <xs:element name="ERCV_CNT" msprop:Generator_ColumnVarNameInTable="columnERCV_CNT" msprop:Generator_ColumnPropNameInRow="ERCV_CNT" msprop:Generator_ColumnPropNameInTable="ERCV_CNTColumn" msprop:Generator_UserColumnName="ERCV_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="ERCV_PERCENT" msprop:Generator_ColumnVarNameInTable="columnERCV_PERCENT" msprop:Generator_ColumnPropNameInRow="ERCV_PERCENT" msprop:Generator_ColumnPropNameInTable="ERCV_PERCENTColumn" msprop:Generator_UserColumnName="ERCV_PERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_CNT" msprop:Generator_ColumnVarNameInTable="columnISSUE_CNT" msprop:Generator_ColumnPropNameInRow="ISSUE_CNT" msprop:Generator_ColumnPropNameInTable="ISSUE_CNTColumn" msprop:Generator_UserColumnName="ISSUE_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="EISSUE_CNT" msprop:Generator_ColumnVarNameInTable="columnEISSUE_CNT" msprop:Generator_ColumnPropNameInRow="EISSUE_CNT" msprop:Generator_ColumnPropNameInTable="EISSUE_CNTColumn" msprop:Generator_UserColumnName="EISSUE_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="EISSUE_PERCENT" msprop:Generator_ColumnVarNameInTable="columnEISSUE_PERCENT" msprop:Generator_ColumnPropNameInRow="EISSUE_PERCENT" msprop:Generator_ColumnPropNameInTable="EISSUE_PERCENTColumn" msprop:Generator_UserColumnName="EISSUE_PERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="NEW_CNT" msprop:Generator_ColumnVarNameInTable="columnNEW_CNT" msprop:Generator_ColumnPropNameInRow="NEW_CNT" msprop:Generator_ColumnPropNameInTable="NEW_CNTColumn" msprop:Generator_UserColumnName="NEW_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="ESIGN_CNT" msprop:Generator_ColumnVarNameInTable="columnESIGN_CNT" msprop:Generator_ColumnPropNameInRow="ESIGN_CNT" msprop:Generator_ColumnPropNameInTable="ESIGN_CNTColumn" msprop:Generator_UserColumnName="ESIGN_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="ESIGN_PERCENT" msprop:Generator_ColumnVarNameInTable="columnESIGN_PERCENT" msprop:Generator_ColumnPropNameInRow="ESIGN_PERCENT" msprop:Generator_ColumnPropNameInTable="ESIGN_PERCENTColumn" msprop:Generator_UserColumnName="ESIGN_PERCENT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

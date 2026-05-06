@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR456D" targetNamespace="http://tempuri.org/EDR456D.xsd" elementFormDefault="qualified"
+	xmlns="http://tempuri.org/EDR456D.xsd" xmlns:mstns="http://tempuri.org/EDR456D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="EDR456L1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="DOC_NO" type="xs:string" />
+				<xs:element name="OU_NAME" type="xs:string" />
+				<xs:element name="E_UD_ISSUE" type="xs:string" />
+				<xs:element name="E_DUE_DATE" type="xs:string" />
+				<xs:element name="PTY_NAME" type="xs:string" />
+				<xs:element name="B_TYPE_NAME" type="xs:string" />
+				<xs:element name="E_CLOSE_DATE" type="xs:string" />
+				<xs:element name="M_DOC_STATE" type="xs:string" />
+				<xs:element name="M_RCV_DATE" type="xs:string" />
+				<xs:element name="M_SRC_RCV_NO" type="xs:string" />
+				<xs:element name="M_FROMORG_DATE" type="xs:string" />
+				<xs:element name="M_FROM_SUBJECT" type="xs:string" />
+				<xs:element name="M_FROM_NO_NO" type="xs:string" />
+				<xs:element name="M_FROMORG_NAME" type="xs:string" />
+				<xs:element name="SEC_NAME" type="xs:string" />
+				<xs:element name="SPD_NAME" type="xs:string" />
+				<xs:element name="M_ISSUE_ATTACH_CNT" type="xs:string" />
+				<xs:element name="M_USERNAME" type="xs:string" />
+				<xs:element name="TYPE_NAME" type="xs:string" />
+				<xs:element name="EMP_NAME" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EDR456L2">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OU_ID" type="xs:string" />
+				<xs:element name="OU_NAME" type="xs:string" />
+				<xs:element name="RCV_SUM" type="xs:int" />
+				<xs:element name="NEW_AND_NEWRCV" type="xs:int" />
+				<xs:element name="LASTMONTH" type="xs:int" />
+				<xs:element name="CLOSE_SUM" type="xs:int" />
+				<xs:element name="CLOSE_IN_DUE" type="xs:int" />
+				<xs:element name="CLOSE_IN_DUE_OF_CS" type="xs:double" />
+				<xs:element name="CLOSE_OVER_DUE" type="xs:int" />
+				<xs:element name="CLOSE_OVER_DUE_OF_CS" type="xs:double" />
+				<xs:element name="WAIT_SUM" type="xs:int" />
+				<xs:element name="WAIT_NODELAY" type="xs:int" />
+				<xs:element name="WAIT_DELAY" type="xs:int" />
+				<xs:element name="WAIT_OF_TOTAL" type="xs:double" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

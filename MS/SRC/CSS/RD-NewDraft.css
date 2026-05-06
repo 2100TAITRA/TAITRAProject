@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#newDocWorkspace {
+    background: transparent;    
+}
+
+/* 1100917 Raymond 1080763 合併1070348, Eric, 修改高度 (100%-146px) => (100% 186px) */
+#newDocWorkspace .ui-panel div[data-role='content'] {
+    height: calc(100% - 186px); /* header:44px, margin-top + margin-bottom = 30px */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; /* 2012.12.6 - iOS navitve scroll */
+}
+
+#newDocWorkspace .draftTypePanel fieldset {
+    margin-left: 1em;
+    display: block; /* 2021.3.26 - Eric, fix Firefox 86.0 display problem */
+}
+
+#newDocWorkspace .icon_layout {
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    /*display:none;*/
+    position: absolute;
+}
+
+#newDocWorkspace .list_layout {
+    width: 24em; /* 25em; 2017.3.31 */
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    padding: 0;
+    border: 0;
+    right: 0;
+    /*2016.5.12*/
+    margin-right: 40px; /* 24px; 2017.3.31 */
+}
+
+#newDocWorkspace .list_items {
+    width: 100%;
+    float:left;
+    height: 100%;
+}
+
+#newDocWorkspace div.ui-collapsible {
+    margin: 0;
+}
+
+#newDocWorkspace #divUl, #newDocWorkspace #divUl .ui-collapsible-content {
+    /*margin-left: 0px;*/
+}
+#newDocWorkspace .ui-collapsible-content {
+    margin: 0px;
+	border-bottom-width: 0px;
+}
+
+#newDocWorkspace .ui-panel .ui-li-count {
+    /*right: -2.5em;*/
+}
+#newDocWorkspace .ui-li-count {
+    float: right;
+}
+
+#newDocWorkspace .ulChild1 li {
+    border-width: 0px;
+}
+
+#newDocWorkspace .ulChild1 > li > .ui-collapsible {
+    margin-left: 25px;
+    /* width: 210px; */
+}
+
+#newDocWorkspace ul.ulChild2 {
+    /*width: 100%;*/
+}
+
+#newDocWorkspace .ulChild2 > li > .ui-collapsible {
+    margin-left: 25px;
+    /* width: 185px; */
+}
+
+#newDocWorkspace .ui-panel a.ui-btn-active {
+    background: #fadb4e;
+    text-shadow: 0 1px 0 #fff;
+    border: none;
+	color: #3030ff;
+}
+
+#newDocWorkspace .ui-panel a button {
+    position: absolute;
+    margin: 0px;
+    top: 0px;
+    right: 0px;
+    width: 5em;
+    height: 100%;
+}
+
+/* 1100917 Raymond 1080763 合併1070348, Eric, 創稿稿件樣板支援自訂範本 */
+#newDocWorkspace .ui-panel #divUl2 a button {
+    width: 4.2em;
+    height: 90%;
+    margin-top: 2px;
+}
+
+#newDocWorkspace .ui-panel a button .ui-btn-inner {
+    padding-right: 20px;
+}
+
+#newDocWorkspace .previewPane {
+    width: calc(100% - 25em);
+    height:100%;
+    float:right;
+    background-color: #CFC;
+}

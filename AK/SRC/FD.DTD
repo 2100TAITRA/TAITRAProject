@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'Big5'?>
+<!DOCTYPE ROWSET [
+<!ELEMENT ROWSET (ROW)*>
+<!ELEMENT ROW (檔案目錄傳送名稱, 功能, 案由, 並列案由?, 其他案由?, 案名?, 相關案件?, 主要發文者?, 主要來文者?, 次要發文者?, 
+               次要來文者?, 發文者之補正?, 來文者之補正?,文別?, 本別?, 密等, 解密條件?, 保存年限, 應用限制?, 保存狀況?, 
+               調整後之保存年限?, 保存年限調整原因?, 核准銷毀文號?, 銷毀日期?, 解密日期?, 移轉註記?, 延長移轉屆滿日期?, 
+               移轉日期?, 發文字號?, 收文字號?, 來文字號?, 年度號, 分類號, 案次號, 卷次號, 目次號, 電子媒體編號?,
+               電子檔案路徑?, 電子檔案名稱*, 微縮編號?, 文件產生日期, 媒體型式?, 數量?, 計量單位?, 附件名稱*, 附件媒體型式*, 
+               附件數量*, 附件單位*, 主題*, 附註* )>
+<!ATTLIST ROW          num CDATA #REQUIRED>
+<!ATTLIST 電子檔案名稱 num CDATA #REQUIRED>
+<!ATTLIST 附件名稱     num CDATA #REQUIRED>
+<!ATTLIST 附件媒體型式 num CDATA #REQUIRED>
+<!ATTLIST 附件數量     num CDATA #REQUIRED>
+<!ATTLIST 附件單位     num CDATA #REQUIRED>
+<!ATTLIST 主題         num CDATA #REQUIRED>
+<!ATTLIST 附註         num CDATA #REQUIRED>
+<!ELEMENT 檔案目錄傳送名稱 (#PCDATA)>
+<!ELEMENT 功能 (#PCDATA)>
+<!ELEMENT 案由 (#PCDATA)>
+<!ELEMENT 並列案由 (#PCDATA)>
+<!ELEMENT 其他案由 (#PCDATA)>
+<!ELEMENT 案名 (#PCDATA)>
+<!ELEMENT 相關案件 (#PCDATA)>
+<!ELEMENT 主要發文者 (#PCDATA)>
+<!ELEMENT 主要來文者 (#PCDATA)>
+<!ELEMENT 次要發文者 (#PCDATA)>
+<!ELEMENT 次要來文者 (#PCDATA)>
+<!ELEMENT 發文者之補正 (#PCDATA)>
+<!ELEMENT 來文者之補正 (#PCDATA)>
+<!ELEMENT 文別 (#PCDATA)>
+<!ELEMENT 本別 (#PCDATA)>
+<!ELEMENT 密等 (#PCDATA)>
+<!ELEMENT 解密條件 (#PCDATA)>
+<!ELEMENT 保存年限 (#PCDATA)>
+<!ELEMENT 應用限制 (#PCDATA)>
+<!ELEMENT 保存狀況 (#PCDATA)>
+<!ELEMENT 調整後之保存年限 (#PCDATA)>
+<!ELEMENT 保存年限調整原因 (#PCDATA)>
+<!ELEMENT 核准銷毀文號 (#PCDATA)>
+<!ELEMENT 銷毀日期 (#PCDATA)>
+<!ELEMENT 解密日期 (#PCDATA)>
+<!ELEMENT 移轉註記 (#PCDATA)>
+<!ELEMENT 延長移轉屆滿日期 (#PCDATA)>
+<!ELEMENT 移轉日期 (#PCDATA)>
+<!ELEMENT 發文字號 (#PCDATA)>
+<!ELEMENT 收文字號 (#PCDATA)>
+<!ELEMENT 來文字號 (#PCDATA)>
+<!ELEMENT 年度號 (#PCDATA)>
+<!ELEMENT 分類號 (#PCDATA)>
+<!ELEMENT 案次號 (#PCDATA)>
+<!ELEMENT 卷次號 (#PCDATA)>
+<!ELEMENT 目次號 (#PCDATA)>
+<!ELEMENT 電子媒體編號 (#PCDATA)>
+<!ELEMENT 電子檔案路徑 (#PCDATA)>
+<!ELEMENT 電子檔案名稱 (#PCDATA)>
+<!ELEMENT 微縮編號 (#PCDATA)>
+<!ELEMENT 文件產生日期 (#PCDATA)>
+<!ELEMENT 媒體型式 (#PCDATA)>
+<!ELEMENT 數量 (#PCDATA)>
+<!ELEMENT 計量單位 (#PCDATA)>
+<!ELEMENT 附件名稱 (#PCDATA)>
+<!ELEMENT 附件媒體型式 (#PCDATA)>
+<!ELEMENT 附件數量 (#PCDATA)>
+<!ELEMENT 附件單位 (#PCDATA)>
+<!ELEMENT 主題 (#PCDATA)>
+<!ELEMENT 附註 (#PCDATA)>
+]>

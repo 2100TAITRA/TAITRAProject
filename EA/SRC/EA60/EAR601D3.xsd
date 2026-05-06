@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR601D3" targetNamespace="http://tempuri.org/EAR601D3.xsd" xmlns:mstns="http://tempuri.org/EAR601D3.xsd" xmlns="http://tempuri.org/EAR601D3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR601D3" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EAR601D3" msprop:Generator_UserDSName="EAR601D3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RptTable" msprop:Generator_TableClassName="RptTableDataTable" msprop:Generator_TableVarName="tableRptTable" msprop:Generator_TablePropName="RptTable" msprop:Generator_RowDeletingName="RptTableRowDeleting" msprop:Generator_RowChangingName="RptTableRowChanging" msprop:Generator_RowEvHandlerName="RptTableRowChangeEventHandler" msprop:Generator_RowDeletedName="RptTableRowDeleted" msprop:Generator_UserTableName="RptTable" msprop:Generator_RowChangedName="RptTableRowChanged" msprop:Generator_RowEvArgName="RptTableRowChangeEvent" msprop:Generator_RowClassName="RptTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FILE_YEAR" msprop:Generator_ColumnVarNameInTable="columnFILE_YEAR" msprop:Generator_ColumnPropNameInRow="FILE_YEAR" msprop:Generator_ColumnPropNameInTable="FILE_YEARColumn" msprop:Generator_UserColumnName="FILE_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CLS" msprop:Generator_ColumnVarNameInTable="columnFILE_CLS" msprop:Generator_ColumnPropNameInRow="FILE_CLS" msprop:Generator_ColumnPropNameInTable="FILE_CLSColumn" msprop:Generator_UserColumnName="FILE_CLS" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CASE" msprop:Generator_ColumnVarNameInTable="columnFILE_CASE" msprop:Generator_ColumnPropNameInRow="FILE_CASE" msprop:Generator_ColumnPropNameInTable="FILE_CASEColumn" msprop:Generator_UserColumnName="FILE_CASE" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_VOL" msprop:Generator_ColumnVarNameInTable="columnFILE_VOL" msprop:Generator_ColumnPropNameInRow="FILE_VOL" msprop:Generator_ColumnPropNameInTable="FILE_VOLColumn" msprop:Generator_UserColumnName="FILE_VOL" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_SEQ" msprop:Generator_ColumnVarNameInTable="columnFILE_SEQ" msprop:Generator_ColumnPropNameInRow="FILE_SEQ" msprop:Generator_ColumnPropNameInTable="FILE_SEQColumn" msprop:Generator_UserColumnName="FILE_SEQ" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_START_DATE" msprop:Generator_ColumnVarNameInTable="columnDOC_START_DATE" msprop:Generator_ColumnPropNameInRow="DOC_START_DATE" msprop:Generator_ColumnPropNameInTable="DOC_START_DATEColumn" msprop:Generator_UserColumnName="DOC_START_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_END_DATE" msprop:Generator_ColumnVarNameInTable="columnDOC_END_DATE" msprop:Generator_ColumnPropNameInRow="DOC_END_DATE" msprop:Generator_ColumnPropNameInTable="DOC_END_DATEColumn" msprop:Generator_UserColumnName="DOC_END_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="SEC_NO" msprop:Generator_ColumnVarNameInTable="columnSEC_NO" msprop:Generator_ColumnPropNameInRow="SEC_NO" msprop:Generator_ColumnPropNameInTable="SEC_NOColumn" msprop:Generator_UserColumnName="SEC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="SEC_NAME" msprop:Generator_ColumnVarNameInTable="columnSEC_NAME" msprop:Generator_ColumnPropNameInRow="SEC_NAME" msprop:Generator_ColumnPropNameInTable="SEC_NAMEColumn" msprop:Generator_UserColumnName="SEC_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_NO1" msprop:Generator_ColumnVarNameInTable="columnMEDIA_NO1" msprop:Generator_ColumnPropNameInRow="MEDIA_NO1" msprop:Generator_ColumnPropNameInTable="MEDIA_NO1Column" msprop:Generator_UserColumnName="MEDIA_NO1" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_NO2" msprop:Generator_ColumnVarNameInTable="columnMEDIA_NO2" msprop:Generator_ColumnPropNameInRow="MEDIA_NO2" msprop:Generator_ColumnPropNameInTable="MEDIA_NO2Column" msprop:Generator_UserColumnName="MEDIA_NO2" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_NO3" msprop:Generator_ColumnVarNameInTable="columnMEDIA_NO3" msprop:Generator_ColumnPropNameInRow="MEDIA_NO3" msprop:Generator_ColumnPropNameInTable="MEDIA_NO3Column" msprop:Generator_UserColumnName="MEDIA_NO3" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_DESP" msprop:Generator_ColumnVarNameInTable="columnMEDIA_DESP" msprop:Generator_ColumnPropNameInRow="MEDIA_DESP" msprop:Generator_ColumnPropNameInTable="MEDIA_DESPColumn" msprop:Generator_UserColumnName="MEDIA_DESP" type="xs:string" minOccurs="0" />
+              <xs:element name="CASE_NAME" msprop:Generator_ColumnVarNameInTable="columnCASE_NAME" msprop:Generator_ColumnPropNameInRow="CASE_NAME" msprop:Generator_ColumnPropNameInTable="CASE_NAMEColumn" msprop:Generator_UserColumnName="CASE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ORG_NAME" msprop:Generator_ColumnVarNameInTable="columnORG_NAME" msprop:Generator_ColumnPropNameInRow="ORG_NAME" msprop:Generator_ColumnPropNameInTable="ORG_NAMEColumn" msprop:Generator_UserColumnName="ORG_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SOURCE_ORGNO" msprop:Generator_ColumnVarNameInTable="columnSOURCE_ORGNO" msprop:Generator_ColumnPropNameInRow="SOURCE_ORGNO" msprop:Generator_ColumnPropNameInTable="SOURCE_ORGNOColumn" msprop:Generator_UserColumnName="SOURCE_ORGNO" type="xs:string" minOccurs="0" />
+              <xs:element name="CASE_SUMMARY" msprop:Generator_ColumnVarNameInTable="columnCASE_SUMMARY" msprop:Generator_ColumnPropNameInRow="CASE_SUMMARY" msprop:Generator_ColumnPropNameInTable="CASE_SUMMARYColumn" msprop:Generator_UserColumnName="CASE_SUMMARY" type="xs:string" minOccurs="0" />
+              <xs:element name="BOX_NO" msprop:Generator_ColumnVarNameInTable="columnBOX_NO" msprop:Generator_ColumnPropNameInRow="BOX_NO" msprop:Generator_ColumnPropNameInTable="BOX_NOColumn" msprop:Generator_UserColumnName="BOX_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="MAXBOX" msprop:Generator_ColumnVarNameInTable="columnMAXBOX" msprop:Generator_ColumnPropNameInRow="MAXBOX" msprop:Generator_ColumnPropNameInTable="MAXBOXColumn" msprop:Generator_UserColumnName="MAXBOX" type="xs:string" minOccurs="0" />
+              <xs:element name="FILENO" msprop:Generator_ColumnVarNameInTable="columnFILENO" msprop:Generator_ColumnPropNameInRow="FILENO" msprop:Generator_ColumnPropNameInTable="FILENOColumn" msprop:Generator_UserColumnName="FILENO" type="xs:string" minOccurs="0" />
+              <xs:element name="VOLCNT" msprop:Generator_ColumnVarNameInTable="columnVOLCNT" msprop:Generator_ColumnPropNameInRow="VOLCNT" msprop:Generator_ColumnPropNameInTable="VOLCNTColumn" msprop:Generator_UserColumnName="VOLCNT" type="xs:string" minOccurs="0" />
+              <xs:element name="THEME" msprop:Generator_ColumnVarNameInTable="columnTHEME" msprop:Generator_ColumnPropNameInRow="THEME" msprop:Generator_ColumnPropNameInTable="THEMEColumn" msprop:Generator_UserColumnName="THEME" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_LIMIT" msprop:Generator_ColumnVarNameInTable="columnAPPLY_LIMIT" msprop:Generator_ColumnPropNameInRow="APPLY_LIMIT" msprop:Generator_ColumnPropNameInTable="APPLY_LIMITColumn" msprop:Generator_UserColumnName="APPLY_LIMIT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

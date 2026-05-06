@@ -1,0 +1,138 @@
+<script language="javascript">
+
+element.attachEvent("onmouseover",fnOnMouseOver);
+element.attachEvent("onmouseout",fnOnMouseOut);
+element.attachEvent("onmousedown",fnOnMouseDown);
+element.attachEvent("onmouseup",fnOnMouseUp);
+element.attachEvent("onpropertychange", fnOnPropertyChange);
+
+//-------------------------------------------------------
+// Global Variables
+//-------------------------------------------------------
+
+var originalSrc;
+var originalColor
+
+var state;
+var ImageButton;
+var NormalButton;
+var originalColor;
+
+
+//-------------------------------------------------------
+// §PÂ_element ¬O ImageButton ©Î¬O Button
+//-------------------------------------------------------
+
+if(element.type=="image")
+{
+  ImageButton = element;
+  NormalButton = element.document.all[element.relbtn];
+}
+else if(element.type=="submit")
+{
+  ImageButton = element.document.all[element.relbtn];
+  NormalButton = element;
+}
+
+  originalSrc = ImageButton.src;
+  originalColor = NormalButton.style.color;
+
+
+//----------------------------------------------------------
+//
+//  Function:  fnOnMouseOver()
+//
+//----------------------------------------------------------
+
+function fnOnMouseOver()
+{
+  state = "hover";
+
+  if(ImageButton.hoverSrc)
+  {
+    ImageButton.src = ImageButton.hoverSrc;
+  }
+  if(NormalButton.hoverColor)
+  {
+    NormalButton.style.color = NormalButton.hoverColor;
+  }
+  else
+  {
+    NormalButton.style.color = "blue";
+  }
+  NormalButton.style.cursor = "hand";
+}
+
+//----------------------------------------------------------
+//
+//  Function:  fnOnMouseOut()
+//
+//----------------------------------------------------------
+
+function fnOnMouseOut()
+{
+  state = "normal";
+
+  ImageButton.src = originalSrc;
+  NormalButton.style.color = originalColor;
+  NormalButton.style.cursor = "auto";
+
+}
+
+//----------------------------------------------------------
+//
+//  Function:  fnOnMouseDown()
+//
+//----------------------------------------------------------
+
+function fnOnMouseDown()
+{
+  state = "clicked";
+
+  if (ImageButton.pressedSrc)
+  {
+    ImageButton.src = ImageButton.pressedSrc;
+  }
+}
+
+//----------------------------------------------------------
+//
+//  Function:  fnOnMouseUp()
+//
+//----------------------------------------------------------
+
+function fnOnMouseUp()
+{
+  state = "hover"
+
+  if(ImageButton.hoverSrc)
+  {
+    ImageButton.src = ImageButton.hoverSrc;
+  }
+  else
+  {
+    ImageButton.src = originalSrc;
+  }
+}
+
+
+function fnOnPropertyChange()
+{
+  if ((window.event.src == "pressedSrc") && (state == "normal"))
+  {
+    originalSrc = ImageButton.src
+  }
+
+  if ((window.event.propertyName == "hoverSrc") && (state == "hover"))
+  {
+    ImageButton.src = ImageButton.hoverSrc
+  }
+
+  if ((window.event.propertyName == "pressedSrc") && (state == "clicked"))
+  {
+    ImageButton.src = ImageButton.pressedSrc
+  }
+  
+}
+
+</script>

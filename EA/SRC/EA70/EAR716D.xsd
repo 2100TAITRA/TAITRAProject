@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR716D" targetNamespace="http://tempuri.org/EAR716D.xsd" xmlns:mstns="http://tempuri.org/EAR716D.xsd" xmlns="http://tempuri.org/EAR716D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR716D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EAR716D" msprop:Generator_UserDSName="EAR716D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RptTable" msprop:Generator_TableClassName="RptTableDataTable" msprop:Generator_TableVarName="tableRptTable" msprop:Generator_RowChangedName="RptTableRowChanged" msprop:Generator_TablePropName="RptTable" msprop:Generator_RowDeletingName="RptTableRowDeleting" msprop:Generator_RowChangingName="RptTableRowChanging" msprop:Generator_RowEvHandlerName="RptTableRowChangeEventHandler" msprop:Generator_RowDeletedName="RptTableRowDeleted" msprop:Generator_RowClassName="RptTableRow" msprop:Generator_UserTableName="RptTable" msprop:Generator_RowEvArgName="RptTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YEAR" msprop:Generator_ColumnVarNameInTable="columnYEAR" msprop:Generator_ColumnPropNameInRow="YEAR" msprop:Generator_ColumnPropNameInTable="YEARColumn" msprop:Generator_UserColumnName="YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="REMOVE_SEC" msprop:Generator_ColumnVarNameInTable="columnREMOVE_SEC" msprop:Generator_ColumnPropNameInRow="REMOVE_SEC" msprop:Generator_ColumnPropNameInTable="REMOVE_SECColumn" msprop:Generator_UserColumnName="REMOVE_SEC" type="xs:string" minOccurs="0" />
+              <xs:element name="UNREMOVE_SEC" msprop:Generator_ColumnVarNameInTable="columnUNREMOVE_SEC" msprop:Generator_ColumnPropNameInRow="UNREMOVE_SEC" msprop:Generator_ColumnPropNameInTable="UNREMOVE_SECColumn" msprop:Generator_UserColumnName="UNREMOVE_SEC" type="xs:string" minOccurs="0" />
+              <xs:element name="CHANGE_SEC" msprop:Generator_ColumnVarNameInTable="columnCHANGE_SEC" msprop:Generator_ColumnPropNameInRow="CHANGE_SEC" msprop:Generator_ColumnPropNameInTable="CHANGE_SECColumn" msprop:Generator_UserColumnName="CHANGE_SEC" type="xs:string" minOccurs="0" />
+              <xs:element name="YEAR_TOTAL" msprop:Generator_ColumnVarNameInTable="columnYEAR_TOTAL" msprop:Generator_ColumnPropNameInRow="YEAR_TOTAL" msprop:Generator_ColumnPropNameInTable="YEAR_TOTALColumn" msprop:Generator_UserColumnName="YEAR_TOTAL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RptTableTotal" msprop:Generator_TableClassName="RptTableTotalDataTable" msprop:Generator_TableVarName="tableRptTableTotal" msprop:Generator_TablePropName="RptTableTotal" msprop:Generator_RowDeletingName="RptTableTotalRowDeleting" msprop:Generator_RowChangingName="RptTableTotalRowChanging" msprop:Generator_RowEvHandlerName="RptTableTotalRowChangeEventHandler" msprop:Generator_RowDeletedName="RptTableTotalRowDeleted" msprop:Generator_UserTableName="RptTableTotal" msprop:Generator_RowChangedName="RptTableTotalRowChanged" msprop:Generator_RowEvArgName="RptTableTotalRowChangeEvent" msprop:Generator_RowClassName="RptTableTotalRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ALL_REMOVE_SEC" msprop:Generator_ColumnVarNameInTable="columnALL_REMOVE_SEC" msprop:Generator_ColumnPropNameInRow="ALL_REMOVE_SEC" msprop:Generator_ColumnPropNameInTable="ALL_REMOVE_SECColumn" msprop:Generator_UserColumnName="ALL_REMOVE_SEC" type="xs:string" minOccurs="0" />
+              <xs:element name="ALL_UNREMOVE_SEC" msprop:Generator_ColumnVarNameInTable="columnALL_UNREMOVE_SEC" msprop:Generator_ColumnPropNameInRow="ALL_UNREMOVE_SEC" msprop:Generator_ColumnPropNameInTable="ALL_UNREMOVE_SECColumn" msprop:Generator_UserColumnName="ALL_UNREMOVE_SEC" type="xs:string" minOccurs="0" />
+              <xs:element name="ALL_CHANGE_SEC" msprop:Generator_ColumnVarNameInTable="columnALL_CHANGE_SEC" msprop:Generator_ColumnPropNameInRow="ALL_CHANGE_SEC" msprop:Generator_ColumnPropNameInTable="ALL_CHANGE_SECColumn" msprop:Generator_UserColumnName="ALL_CHANGE_SEC" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

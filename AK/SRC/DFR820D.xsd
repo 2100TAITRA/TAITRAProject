@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="DFR820D" targetNamespace="http://tempuri.org/DFR820D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/DFR820D.xsd" xmlns:mstns="http://tempuri.org/DFR820D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="DFR820D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="OIR100L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MAINITEM" type="xs:string" minOccurs="0" />
+							<xs:element name="M01" type="xs:int" minOccurs="0" />
+							<xs:element name="M02" type="xs:int" minOccurs="0" />
+							<xs:element name="M03" type="xs:int" minOccurs="0" />
+							<xs:element name="M04" type="xs:int" minOccurs="0" />
+							<xs:element name="M05" type="xs:int" minOccurs="0" />
+							<xs:element name="M06" type="xs:int" minOccurs="0" />
+							<xs:element name="M07" type="xs:int" minOccurs="0" />
+							<xs:element name="M08" type="xs:int" minOccurs="0" />
+							<xs:element name="M09" type="xs:int" minOccurs="0" />
+							<xs:element name="M10" type="xs:int" minOccurs="0" />
+							<xs:element name="M11" type="xs:int" minOccurs="0" />
+							<xs:element name="M12" type="xs:int" minOccurs="0" />
+							<xs:element name="RANK" type="xs:int" minOccurs="0" />
+							<xs:element name="TOTAL" type="xs:int" minOccurs="0" />
+							<xs:element name="MAINITEMDESP" type="xs:string" />
+							<xs:element name="UNIT_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="P01" type="xs:int" minOccurs="0" />
+							<xs:element name="P02" type="xs:int" minOccurs="0" />
+							<xs:element name="P03" type="xs:int" minOccurs="0" />
+							<xs:element name="P04" type="xs:int" minOccurs="0" />
+							<xs:element name="P05" type="xs:int" minOccurs="0" />
+							<xs:element name="P06" type="xs:int" minOccurs="0" />
+							<xs:element name="P07" type="xs:int" minOccurs="0" />
+							<xs:element name="P08" type="xs:int" minOccurs="0" />
+							<xs:element name="P09" type="xs:int" minOccurs="0" />
+							<xs:element name="P10" type="xs:int" minOccurs="0" />
+							<xs:element name="P11" type="xs:int" minOccurs="0" />
+							<xs:element name="P12" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TempForL1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MAINITEM" type="xs:string" minOccurs="0" />
+							<xs:element name="MAINITEMDESP" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_MONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="NUM" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TempForL1_1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MAINITEM" type="xs:string" minOccurs="0" />
+							<xs:element name="MAINITEMDESP" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_MONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="NUM" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

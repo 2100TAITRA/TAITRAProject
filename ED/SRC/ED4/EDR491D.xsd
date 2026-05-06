@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR491D" targetNamespace="http://tempuri.org/EDR491D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR491D.xsd" xmlns:mstns="http://tempuri.org/EDR491D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR491D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR491L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ALL_E" type="xs:int" minOccurs="0" />
+							<xs:element name="NEW_E" type="xs:int" minOccurs="0" />
+							<xs:element name="NEW_P_APP1" type="xs:int" minOccurs="0" />
+							<xs:element name="NEW_P_APP2" type="xs:int" minOccurs="0" />
+							<xs:element name="E_RCV_E" type="xs:int" minOccurs="0" />
+							<xs:element name="E_RCV_P" type="xs:int" minOccurs="0" />
+							<xs:element name="P_RCV_E" type="xs:int" minOccurs="0" />
+							<xs:element name="P_RCV_P" type="xs:int" minOccurs="0" />
+							<xs:element name="E_SIGN_RATE" type="xs:double" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="YEARMONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="DAY" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EDR491L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOC_NO" minOccurs="0" type="xs:string" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="YEARMONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="IS_INCLUDE_INSECT" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

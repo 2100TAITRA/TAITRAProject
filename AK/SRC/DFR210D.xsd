@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DFR210D" targetNamespace="http://tempuri.org/DFR210D.xsd" xmlns:mstns="http://tempuri.org/DFR210D.xsd" xmlns="http://tempuri.org/DFR210D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DFR210D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="DFR210D" msprop:Generator_UserDSName="DFR210D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DFR210" msprop:Generator_TableClassName="DFR210DataTable" msprop:Generator_TableVarName="tableDFR210" msprop:Generator_RowChangedName="DFR210RowChanged" msprop:Generator_TablePropName="DFR210" msprop:Generator_RowDeletingName="DFR210RowDeleting" msprop:Generator_RowChangingName="DFR210RowChanging" msprop:Generator_RowEvHandlerName="DFR210RowChangeEventHandler" msprop:Generator_RowDeletedName="DFR210RowDeleted" msprop:Generator_RowClassName="DFR210Row" msprop:Generator_UserTableName="DFR210" msprop:Generator_RowEvArgName="DFR210RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SCN_NO" msprop:Generator_ColumnVarNameInTable="columnSCN_NO" msprop:Generator_ColumnPropNameInRow="SCN_NO" msprop:Generator_ColumnPropNameInTable="SCN_NOColumn" msprop:Generator_UserColumnName="SCN_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="TOT_PAGE" msprop:Generator_ColumnVarNameInTable="columnTOT_PAGE" msprop:Generator_ColumnPropNameInRow="TOT_PAGE" msprop:Generator_ColumnPropNameInTable="TOT_PAGEColumn" msprop:Generator_UserColumnName="TOT_PAGE" type="xs:int" minOccurs="0" />
+              <xs:element name="WGRP_NO" msprop:Generator_ColumnVarNameInTable="columnWGRP_NO" msprop:Generator_ColumnPropNameInRow="WGRP_NO" msprop:Generator_ColumnPropNameInTable="WGRP_NOColumn" msprop:Generator_UserColumnName="WGRP_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SCN_DATE" msprop:Generator_ColumnVarNameInTable="columnSCN_DATE" msprop:Generator_ColumnPropNameInRow="SCN_DATE" msprop:Generator_ColumnPropNameInTable="SCN_DATEColumn" msprop:Generator_UserColumnName="SCN_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="STATUS" msprop:Generator_ColumnVarNameInTable="columnSTATUS" msprop:Generator_ColumnPropNameInRow="STATUS" msprop:Generator_ColumnPropNameInTable="STATUSColumn" msprop:Generator_UserColumnName="STATUS" type="xs:string" minOccurs="0" />
+              <xs:element name="BARCODE_NO" msprop:Generator_ColumnVarNameInTable="columnBARCODE_NO" msprop:Generator_ColumnPropNameInRow="BARCODE_NO" msprop:Generator_ColumnPropNameInTable="BARCODE_NOColumn" msprop:Generator_UserColumnName="BARCODE_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="PAGE_NO" msprop:Generator_ColumnVarNameInTable="columnPAGE_NO" msprop:Generator_ColumnPropNameInRow="PAGE_NO" msprop:Generator_ColumnPropNameInTable="PAGE_NOColumn" msprop:Generator_UserColumnName="PAGE_NO" type="xs:int" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SECT_NAME" msprop:Generator_ColumnVarNameInTable="columnSECT_NAME" msprop:Generator_ColumnPropNameInRow="SECT_NAME" msprop:Generator_ColumnPropNameInTable="SECT_NAMEColumn" msprop:Generator_UserColumnName="SECT_NAME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DFR210L2" msprop:Generator_TableClassName="DFR210L2DataTable" msprop:Generator_TableVarName="tableDFR210L2" msprop:Generator_TablePropName="DFR210L2" msprop:Generator_RowDeletingName="DFR210L2RowDeleting" msprop:Generator_RowChangingName="DFR210L2RowChanging" msprop:Generator_RowEvHandlerName="DFR210L2RowChangeEventHandler" msprop:Generator_RowDeletedName="DFR210L2RowDeleted" msprop:Generator_UserTableName="DFR210L2" msprop:Generator_RowChangedName="DFR210L2RowChanged" msprop:Generator_RowEvArgName="DFR210L2RowChangeEvent" msprop:Generator_RowClassName="DFR210L2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="COUNTS" msprop:Generator_ColumnVarNameInTable="columnCOUNTS" msprop:Generator_ColumnPropNameInRow="COUNTS" msprop:Generator_ColumnPropNameInTable="COUNTSColumn" msprop:Generator_UserColumnName="COUNTS" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="PAGES" msprop:Generator_ColumnVarNameInTable="columnPAGES" msprop:Generator_ColumnPropNameInRow="PAGES" msprop:Generator_ColumnPropNameInTable="PAGESColumn" msprop:Generator_UserColumnName="PAGES" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,444 @@
+BODY
+{
+	background-color:linen;
+}
+
+.LogoImg
+{
+      LEFT: 83px;
+      TOP: 21px;
+      WIDTH: 100px; 
+      HEIGHT: 58px; 
+      POSITION: absolute;
+}
+
+.BannerImg
+{
+      LEFT: 220px; 
+      TOP: 21px;
+      WIDTH: 350px; 
+      HEIGHT: 58px;        
+      POSITION: absolute;
+}
+
+.Logo
+{
+   visibility:hidden;
+}
+
+.BaseTable
+{
+   LEFT: 20px; POSITION: absolute; TOP: 90px; 
+   width:740px;
+   BORDER-WIDTH:0px;
+}
+
+.ReportBaseTable
+{
+   LEFT: 20px; POSITION: absolute; TOP: 90px; 
+   width:740px;
+   BORDER-WIDTH:0px;
+}
+
+.ChildBaseTable
+{
+   LEFT: 20px; POSITION: absolute; TOP: 10px; 
+   width:650px;
+   BORDER-WIDTH:0px;
+}
+
+.ActionTable
+{
+   border:4px;
+   border-top-style:outset;
+   border-left-style:solid;
+   border-bottom-style:ridge;
+   border-right-style:ridge;
+   border-top-color:Silver;
+   border-left-color:Silver;
+   width:100%;
+   background-color:LightGray;
+}
+
+.ReportActionTable
+{
+   border:4px;
+   border-top-style:outset;
+   border-left-style:solid;
+   border-bottom-style:ridge;
+   border-right-style:ridge;
+   border-top-color:Silver;
+   border-left-color:Silver;
+   width:95%;
+}
+
+.ChildActionTable
+{
+   border:4px;
+   border-top-style:outset;
+   border-left-style:solid;
+   border-bottom-style:ridge;
+   border-right-style:ridge;
+   border-top-color:Silver;
+   border-left-color:Silver;
+   width:100%;
+}
+
+.User
+{
+   BORDER-STYLE: DOUBLE;
+   BORDER:#ffffff;
+   BORDER-WIDTH:1px;
+   BORDER-TOP-STYLE:DOUBLE;
+   BORDER-LEFT-STYLE:DOUBLE;
+   BORDER-BOTTOM-STYLE:DOUBLE;
+   BORDER-RIGHT-STYLE: DOUBLE;
+}
+
+.MainTable
+{
+}
+
+.ReportMainTable
+{
+}
+
+.ChildMainTable
+{
+}
+
+.DGHeader
+{
+	background-color:#add8e6;
+}
+
+.DetailSection
+{
+	overflow:auto;
+}
+
+.LeftCol
+{
+}
+
+.upper {text-transform: uppercase;}
+.hide {	display: none;}
+/*0980604 [工單002361] Yvonne 修正V3指定CombinedButton.htc的URL避免造成無效連結*/
+.btn { behavior:url(../../../STD/LIB/CombinedButton.htc); }
+
+.hidden { visibility:hidden; }
+
+.DisplayOnly
+{
+	background-color:Gainsboro;
+}
+
+.KeyField
+{
+	/*
+		一般鍵值欄位
+	*/
+	color:Red;
+}
+
+.KeyUpperField
+{
+	/*
+		大寫鍵值欄位，但實際內容若小寫，並不會變成大寫
+	*/
+	color:Red;
+	text-transform: uppercase;
+}
+
+.KeyEnUpperField
+{
+	/*
+		大寫鍵值英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+	color:Red;
+	text-transform: uppercase;
+	ime-mode:inactive;
+}
+
+.KeyFieldNumeric
+{
+	/*
+		數值鍵值欄位，會將輸入法功能Disabled，需搭配jf_InpNumOnly()使用，可避免使用者輸入數字以外的字元
+	*/
+	color:Red;
+	ime-mode:disabled;
+}
+
+.RequireField
+{
+	/*
+		一般必要欄位
+	*/
+	color:Teal;
+}
+
+.RequireUpperField
+{
+	/*
+		大寫必要欄位，但實際內容若小寫，並不會變成大寫
+	*/
+	color:Teal;
+	text-transform: uppercase;
+}
+
+.RequireEnUpperField
+{
+	/*
+		大寫必要英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+	color:Teal;
+	text-transform: uppercase;
+	ime-mode:inactive;
+}
+
+.RequireFieldNumeric
+{
+	/*
+		數值必要欄位，會將輸入法功能Disabled，需搭配jf_InpNumOnly()使用，可避免使用者輸入數字以外的字元
+	*/
+	color:Teal;
+	ime-mode:disabled;
+}
+
+.InputFieldText
+{
+	/*
+		一般欄位
+	*/
+	color:Navy;
+}
+
+.InputUpperFieldText
+{
+	/*
+		大寫一般欄位，但實際內容若小寫，並不會變成大寫
+	*/
+	color:Navy;
+	text-transform: uppercase;
+}
+
+.InputEnUpperField
+{
+	/*
+		大寫一般英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+	color:Navy;
+	text-transform: uppercase;
+	ime-mode:inactive;
+}
+
+.InputFieldNumeric
+{
+	/*
+		數值一般欄位，會將輸入法功能Disabled，需搭配jf_InpNumOnly()使用，可避免使用者輸入數字以外的字元
+	*/
+	color:Navy;
+	ime-mode:disabled;
+}
+
+.InputFieldLabel
+{	
+	color:Navy;
+}
+
+.TextLabel
+{
+	color:Navy;
+	border-style:none;
+	background-color:Transparent;
+}
+
+.menucontainer
+{
+/*	position: absolute;
+	top: 70;
+	left: 22; */
+	width: 730;
+	font-family: Arial; 
+	font-size: 9pt; 
+	background-color:Transparent; 
+	border:0; 
+	border-top-color: #CFCFCF; 
+	border-left-color: #CFCFCF; 
+	border-right-color: #505050; 
+	border-bottom-color: #505050; 
+	z-index: 130;
+}
+
+.menulabel
+{
+	position:absolute; 
+	cursor: hand; 
+	color: #000000; 
+	width: 75;
+	text-align: center; 
+	background-color: Transparent; 
+	z-index: 7; 
+	border: "1 solid"; 
+	border-color: menu;
+}
+
+.menulabel2
+{
+	position: absolute; 
+	cursor: hand; 
+	color: #000000;
+	width: 75;
+	text-align: center; 
+	background-color: lightsteelblue; 
+	border: "1 solid";
+	border-color: #000000;
+	/*
+	border-top-color: #CFCFCF; 
+	border-left-color: #CFCFCF; 
+	border-right-color: #505050; 
+	border-bottom-color: #505050; */
+	z-index: 7;
+}
+
+.menulabel3
+{
+	position: absolute; 
+	cursor: hand; 
+	color: #000000; 
+	width: 75;
+	text-align: center; 
+	background-color:gainsboro; 
+	border: "1 solid"; 
+	border-top-color: #505050; 
+	border-left-color: #505050; 
+	border-right-color: #CFCFCF; 
+	border-bottom-color: #CFCFCF; 
+	z-index: 7;
+}
+
+.menugroup
+{
+	display: none; 
+	padding-top: 2px; 
+	padding-bottom: 2px; 
+	padding-left: 0px; 
+	position: absolute; 
+	top: 0; left: 0; 
+	width: 150; 
+	font-family: Arial; 
+	font-size: 8pt; 
+	background-color: menu; 
+	border: "1 solid"; 
+	border-top-color: #CFCFCF; 
+	border-left-color: #CFCFCF; 
+	border-right-color: #505050; 
+	border-bottom-color: #505050; 
+	z-index: 7;
+}
+
+.scratch
+{
+	display: none; 
+	width: 250; 
+	height: 250; 
+	overflow: auto; 
+	padding: 5px; 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	font-family: Arial; 
+	font-size: 8pt; 
+	background-color: #FFFFCC; 
+	border: "1 solid"; 
+	border-top-color: #FFFFDD;
+	border-left-color: #FFFFDD; 
+	border-right-color: #999900; 
+	border-bottom-color: #999900; 
+	z-index: 4;
+}
+
+.scratchx
+{
+	cursor: hand; 
+	font-weight: bold; 
+	height: 12; 
+	position: relative; 
+	top: 0; 
+	left: 0; 
+	font-family: Arial; 
+	font-size: 12pt; 
+	background-color: #FFFFcc; 
+	border: "1 solid"; 
+	border-top-color: #FFFFDD; 
+	border-left-color: #FFFFDD; 
+	border-right-color: #999900; 
+	border-bottom-color: #999900; 
+	z-index: 4;
+}
+
+.MenuRow
+{
+	
+}
+
+.V3_GenericBannerCaption
+{ 
+	WIDTH: 102.5%; 
+	BACKGROUND-COLOR: dodgerblue;
+	Z-INDEX: 101; LEFT: 0px; POSITION: absolute; TOP: 0px;
+	height:25;
+}
+
+.V3_GenericChildCaption
+{ 
+	WIDTH: 102.5%; 
+	BACKGROUND-COLOR: dodgerblue ;
+	Z-INDEX: 101; LEFT: 0px; POSITION: absolute; TOP: 0px;
+	height:25;
+}
+
+.V3_GenericBannerToolBar
+{
+	WIDTH:102.5%;
+	Z-INDEX: 101; LEFT: 0px; POSITION: absolute; TOP: 24px;
+}
+
+.V3_GenericChildToolBar
+{
+	WIDTH:102.5%;
+	Z-INDEX: 101; LEFT: 0px; POSITION: absolute; TOP: 24px;
+	
+}
+
+.tab { behavior:url(../../../STD/LIB/T2100MultiPage.htc); }
+.hidden{ display:none}
+
+.PopUp
+{
+	color:Navy;
+	border-style:none;
+	background-color:Transparent;
+	behavior:url(../../../STD/LIB/PopUpMessage.htc);
+}
+
+.fixHeaderStyle { POSITION: relative;  TOP: expression(this.offsetParent.scrollTop) }
+.RequireEnOnlyUpperField
+{
+	/*
+		Zoey [95/11/08 copy from STD ]大寫必要英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+	color:Teal;
+	text-transform: uppercase;
+	ime-mode:disabled;
+}
+
+.InputEnOnlyUpperField
+{
+	/*
+		Zoey [95/11/08 copy from STD ]大寫一般英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+	color:Navy;
+	text-transform: uppercase;
+	ime-mode:disabled;
+}

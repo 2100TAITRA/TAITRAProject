@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--  104_msg.dtd   交換確認訊息檔   2015.05.01 -->
+<!ENTITY  % 信封檔標籤 SYSTEM "104_envelope.ent" >
+%信封檔標籤;
+<!ELEMENT g2b2c-msg	(senderinfo, receiverlist, exchangeid, processid, applicationid?, msgtime, msgcode, msgnote)>
+<!-- /g2b2c-msg -->

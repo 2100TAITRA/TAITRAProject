@@ -1,0 +1,59 @@
+Searching 3316 files for "INSERT INTO CASE_MAIN"
+
+\\192.168.1.249\project\AK\SRC\AKM320.aspx.cs:
+ 1080: 					MainCommand.CommandText = "insert into case_main (source_orgno,case_year,case_no,case_name,cls_no,";
+
+\\192.168.1.249\project\AK\SRC\AKM330.aspx.cs:
+ 2480: 						/*MainCommand.CommandText = "Insert into CASE_MAIN (SOURCE_ORGNO,CASE_NO,CASE_YEAR,CLS_NO,CASE_NAME,PRIMARY_KEY,CLS_KEY) values ('"
+ 2483: 						MainCommand.CommandText = "Insert into CASE_MAIN (SOURCE_ORGNO,CASE_NO,CASE_YEAR,CLS_NO,CASE_NAME,PRIMARY_KEY,CLS_KEY,SEC_NO) values (" +
+
+\\192.168.1.249\project\AK\SRC\AKM330_SMEG.aspx.cs:
+ 2396: 						/*MainCommand.CommandText = "Insert into CASE_MAIN (SOURCE_ORGNO,CASE_NO,CASE_YEAR,CLS_NO,CASE_NAME,PRIMARY_KEY,CLS_KEY) values ('"
+ 2399: 						MainCommand.CommandText = "Insert into CASE_MAIN (SOURCE_ORGNO,CASE_NO,CASE_YEAR,CLS_NO,CASE_NAME,PRIMARY_KEY,CLS_KEY,SEC_NO) values (" +
+
+\\192.168.1.249\project\AK\SRC\AKM330C1.aspx.cs:
+  404: 				string strSQL = "Insert into CASE_MAIN (SOURCE_ORGNO,CASE_YEAR, CASE_NO,CLS_NO,CASE_NAME,APP_SUBJECT,OTHER_SUBJECT,PRIMARY_KEY, CLS_KEY) " +
+  408: 				string strSQL = "Insert into CASE_MAIN (SOURCE_ORGNO,CASE_YEAR, CASE_NO,CLS_NO,CASE_NAME,APP_SUBJECT,OTHER_SUBJECT,PRIMARY_KEY, CLS_KEY, CASE_STATE ) " +
+
+\\192.168.1.249\project\AK\SRC\AKR330.aspx.cs:
+ 2724:                     MainCommand.CommandText = "INSERT INTO CASE_MAIN (SOURCE_ORGNO,CASE_NO,CLS_NO,CASE_NAME,CASE_YEAR) VALUES(?,?,?,?,'')";
+
+\\192.168.1.249\project\AK\SRC\AKR330_SMEG.aspx.cs:
+ 2493:                     MainCommand.CommandText = "INSERT INTO CASE_MAIN (SOURCE_ORGNO,CASE_NO,CLS_NO,CASE_NAME,CASE_YEAR) VALUES(?,?,?,?,'')";
+
+\\192.168.1.249\project\AK\SRC\AKT116WS.asmx.cs:
+ 2739: 			Comm.CommandText = "INSERT INTO CASE_MAIN (SOURCE_ORGNO,CASE_NO,CLS_NO,CASE_NAME,CASE_YEAR,PRIMARY_KEY,CLS_KEY) VALUES (?,?,?,?,'',?,?)";
+
+\\192.168.1.249\project\AK\SRC\lib\AK_LIB.cs:
+ 3493: 					argComm.CommandText = "INSERT INTO CASE_MAIN (SOURCE_ORGNO,CASE_YEAR,CASE_NO,CLS_NO,CASE_NAME, PRIMARY_KEY, CLS_KEY) VALUES(?,'',?,?,?,?,?)";
+
+\\192.168.1.249\project\EA\SRC\DATA\CCASE_MAIN.cs:
+  117: 						m_MainCommand.CommandText  = "INSERT INTO CASE_MAIN "
+  247: 				m_MainCommand.CommandText  = "INSERT INTO CASE_MAIN ";
+
+\\192.168.1.249\project\EA\SRC\EA01\EAT010.aspx.cs:
+  998:                         //m_MainCommand.CommandText = "INSERT INTO CASE_MAIN VALUES(@SOURCE_ORGNO,@CASE_NO,@CASE_YEAR,@CASE_NAME,@CLS_NO,@APP_SUBJECT,@OTHER_SUBJECT,@PRIMARY_KEY,@OPDES_DATE,@PDES_DATE ";
+  999:                         m_MainCommand.CommandText = "INSERT INTO CASE_MAIN ";
+
+\\192.168.1.249\project\EA\SRC\EA02\EAT220.aspx.cs:
+ 4670: 			u_cConnObj.m_MainCommand.CommandText = "INSERT INTO CASE_MAIN (SOURCE_ORGNO, CASE_NO, CASE_YEAR, CASE_NAME, "+
+
+\\192.168.1.249\project\EA\SRC\EA12\EAPDT05.asmx.cs:
+ 2811: 				MainCommand.CommandText = "insert into CASE_MAIN (SOURCE_ORGNO,CASE_NO,CASE_NAME,CLS_NO,CLS_KEY,PRIMARY_KEY) "+
+ 5497: 			argCmd.CommandText = " INSERT INTO CASE_MAIN (SOURCE_ORGNO, CASE_YEAR, CLS_NO, CASE_NO, CASE_NAME, CLS_KEY, PRIMARY_KEY) VALUES "+
+
+\\192.168.1.249\project\EA\SRC\EA22\EAM200.aspx.cs:
+ 2736: 						m_MainCommand.CommandText = "INSERT INTO CASE_MAIN "
+
+\\192.168.1.249\project\EA\SRC\EA40\EAT400.aspx.cs:
+ 3429: //				/*strSQL = "INSERT INTO CASE_MAIN "+
+
+\\192.168.1.249\project\EA\SRC\EA41\EAT417.aspx.cs:
+ 2088: 						u_cConnObj.m_MainCommand.CommandText = "INSERT INTO CASE_MAIN (SOURCE_ORGNO,CASE_NO,CASE_YEAR,CLS_NO,CASE_NAME,PRIMARY_KEY,CLS_KEY) VALUES ('"
+
+\\192.168.1.249\project\EA\SRC\EALIB\EA_LIB.cs:
+ 6083: 			cConnObj.m_MainCommand.CommandText  = "INSERT INTO CASE_MAIN (SOURCE_ORGNO, CASE_NO, CASE_YEAR, CASE_NAME, CLS_NO, PRIMARY_KEY, CLS_KEY, CASE_STATE) ";
+
+\\192.168.1.249\project\ODDEP\SRC\lib\OD_LIB.asmx.cs:
+ 6155: 							MainCommand.CommandText = "INSERT INTO CASE_MAIN (";
+

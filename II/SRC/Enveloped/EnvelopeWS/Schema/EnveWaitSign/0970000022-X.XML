@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="Big5"?>
+<!DOCTYPE 電子封裝檔 SYSTEM "附件三.dtd">
+<電子封裝檔>
+  <封裝檔內容 Id="Wrap">
+    <封裝檔資訊>電子檔案</封裝檔資訊>
+    <電子檔案>
+      <線上簽核流程 Id="FlowInfo">
+        <簽核流程 URI="#FLOW_0" />
+        <簽核流程 URI="#FLOW_340695" />
+        <簽核流程 URI="#FLOW_340706" />
+        <簽核流程 URI="#FLOW_340737" />
+        <簽核流程 URI="#FLOW_340747" />
+      </線上簽核流程>
+      <線上簽核資訊 Id="Sol">
+        <簽核點定義 Id="FLOW_0">
+          <Signature Id="ds_user_0">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+              </CanonicalizationMethod>
+              <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+              </SignatureMethod>
+              <Reference URI="0970000022-ED-313050000GU200000_09500522610-A.di">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>NybKu47TLC9wqavTZJ7l/GHpoD0=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-P-0001.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>ounPg12wSr57UI3CAFdWk1tEDaU=</DigestValue>
+              </Reference>
+              <Reference URI="#aol_info_0">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>K4Z7PM7Cw1zgQPvVD//EO2TGR5k=</DigestValue>
+              </Reference>
+            </SignedInfo>
+          </Signature>
+          <Object Id="aol_info_0">
+            <異動資訊>
+              <簽核人員>
+                <職稱>總收</職稱>
+                <姓名>王小明</姓名>
+                <帳號>CAESAR</帳號>
+                <角色>收文人員</角色>
+              </簽核人員>
+              <異動別>分文</異動別>
+              <次位簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>
+                </姓名>
+                <帳號>
+                </帳號>
+                <角色>
+                </角色>
+              </次位簽核人員>
+            </異動資訊>
+            <簽核資訊>
+              <簽核文件夾 產生時間="09508241448" 文件夾識別碼="0">
+                <文稿原始檔清單 文稿數="1">
+                  <文稿 產生時間="09508241448" 文件夾識別碼="101" 物件識別碼="1" 序號="0" 原始檔序號="0">
+                    <名稱>來文</名稱>
+                    <文稿類型>函</文稿類型>
+                  </文稿>
+                </文稿原始檔清單>
+                <來文內容 產生時間="09508241448" 文件夾識別碼="3" 物件識別碼="0">
+                  <來文字號>0970000022</來文字號>
+                  <文稿序號>0</文稿序號>
+                  <頁面清單 總頁數="1">
+                    <頁面 產生時間="09508241448" 文件夾識別碼="104" 物件識別碼="3" 影像檔序號="1" />
+                  </頁面清單>
+                </來文內容>
+                <檔案清單>
+                  <電子檔案資訊 產生時間="09508241448" 文件夾識別碼="102" 物件識別碼="4" 序號="0">
+                    <檔案名稱>0970000022-ED-313050000GU200000_09500522610-A.di</檔案名稱>
+                    <檔案大小>1023</檔案大小>
+                    <檔案格式>DI</檔案格式>
+                  </電子檔案資訊>
+                  <電子檔案資訊 產生時間="09508241448" 文件夾識別碼="103" 物件識別碼="4" 序號="1">
+                    <檔案名稱>0970000022-P-0001.TIF</檔案名稱>
+                    <檔案大小>14224</檔案大小>
+                    <檔案格式>TIF</檔案格式>
+                  </電子檔案資訊>
+                </檔案清單>
+              </簽核文件夾>
+            </簽核資訊>
+          </Object>
+        </簽核點定義>
+        <簽核點定義 Id="FLOW_340695">
+          <Signature Id="ds_user_340695">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+              </CanonicalizationMethod>
+              <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+              </SignatureMethod>
+              <Reference URI="#aol_info_340695">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>HZxo17bj0qWPu3cHeEPMwSAgTrc=</DigestValue>
+              </Reference>
+            </SignedInfo>
+          </Signature>
+          <Object Id="aol_info_340695">
+            <異動資訊>
+              <簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>王小明</姓名>
+                <帳號>CAESAR</帳號>
+                <角色>分辦人員</角色>
+              </簽核人員>
+              <異動別>分辦</異動別>
+              <次位簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>王小民</姓名>
+                <帳號>CAESAR1</帳號>
+                <角色>承辦人</角色>
+              </次位簽核人員>
+            </異動資訊>
+            <簽核資訊>
+              <簽核文件夾異動內容 />
+            </簽核資訊>
+          </Object>
+        </簽核點定義>
+        <簽核點定義 Id="FLOW_340706">
+          <Signature Id="ds_user_340706">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+              </CanonicalizationMethod>
+              <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+              </SignatureMethod>
+              <Reference URI="0970000022-P-0003.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>Q6A6tAI2UzXzaFsFGAxyHdwmOkA=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-P-0004.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>18JStE2F2z39uz16VxVliPn3DBg=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-P-0006.JPG">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>eH4wk9KhPJksxiPr3f5HZqQiXO4=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-P-0008.PNG">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>qAl+x6IdIayMoWDU3mDP5gGdHzA=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-P-0010.PNG">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>AEy/3GQN7aXH+j1zhGUtwnsz5zE=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0012.ISF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>un1EP0iiIcYszsROItSI3hyWMHQ=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0013.ISF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>uaeLNTEdPZaHh5C36BhyM+KB+LM=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0014.ISF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>NiMTf4993glbQyA55M+VA1oOPaU=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0015.ISF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>CQ9KCn0IHk6iB1X8vfzzzHV6VHg=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0016.ISF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>jSaDx/j3ibbarJXsGNhwiSeCGPE=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0017.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>N24B8/nDiT3ijlwCvOPPnHeKkrI=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0011.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>N24B8/nDiT3ijlwCvOPPnHeKkrI=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-00-01\0001-tc.xml">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>NDrB8+KNcCwdIjbcnNfeo46+H/Q=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-00-01\0001.xml">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>REsHuKcRrbPCPwLLyz3M9ivyVCk=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-00-01\0001-1.doc">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>CAjMlkPf3tIRzjvlpN4BigyhBd8=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-00-01\0001-2.doc">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>Pr7E7EeW2KYA0/ZRaccXsqCmBB4=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-00-01\0001-3.doc">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>NFRj8K/JcooTBd0eB8DyJI7Tb2k=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-00-01\DraftMgmt.xml">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>YpCM/WYu9r0D7R/MeZjc5J1qdIM=</DigestValue>
+              </Reference>
+              <Reference URI="#aol_info_340706">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>ZUb6rzbPPqrOmfNxmZba8gbgmRc=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>VPih77C7W2DWEC3fKezPUtbiplvayb/jipf/VYNGGeGIE3BBn9SeFapjvcls43NxjcL7HEkfmq6x
+BrPixSJQ7/McfiZaCsQBnNN43PkXlMl3TYwBvCxR8NDkdrM1gvtsgDkVyJqFnHP5owiiFaS/KrO5
+79nSrEjJHm9m7Y2p0rM=</SignatureValue>
+            <KeyInfo>
+              <X509Data>
+                <!-- SUBJECT:測試自然人1	ISSUER:政府測試憑證管理中心-->
+                <X509Certificate>MIID7TCCAtWgAwIBAgIQChgaNvdrLRGM0dufaugWCzANBgkqhkiG9w0BAQUFADBKMQswCQYDVQQG
+EwJUVzESMBAGA1UECgwJ6KGM5pS/6ZmiMScwJQYDVQQLDB7mlL/lupzmuKzoqabmhpHorYnnrqHn
+kIbkuK3lv4MwHhcNMDYwODIwMTQzNzAyWhcNMDYxMDE5MTQzNzAyWjBDMQswCQYDVQQGEwJUVzEZ
+MBcGA1UEAwwQ5ris6Kmm6Ieq54S25Lq6MTEZMBcGA1UEBRMQYTVlMGYxMGUxYmQ4ZWJlZDCBnzAN
+BgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAuHrFa/WL08BMsj9Vh2IOMm6SQIuJtlN+y1m4Ae9bw8xh
+JB8IGavj0HxTBSZWQIuz04EvQpvfKk3TFm1PMSm2PxfSgXqDZnno5JbZuWVovluNE8CI+YWKOi/6
++faU4y9wKygje76u7lVL0CeKRwWvZGRO+UhyGKALtSa6LU0ats0CAwEAAaOCAVgwggFUMEYGA1Ud
+HwQ/MD0wO6A5oDeGNWh0dHA6Ly9ndGVzdGNhLm5hdC5nb3YudHcvcmVwb3NpdG9yeS9DUkwvY29t
+cGxldGUuY3JsMFMGCCsGAQUFBwEBBEcwRTBDBggrBgEFBQcwAoY3aHR0cDovL2d0ZXN0Y2EubmF0
+Lmdvdi50dy9yZXBvc2l0b3J5L0lzc3VlZFRvVGhpc0NBLnA3YjAUBgNVHSAEDTALMAkGB2CGdmUA
+AwAwMwYDVR0JBCwwKjAVBgdghnYBZAIBMQoGCGCGdgFkAwEBMBEGB2CGdgFkAjMxBgwENjc4OTAd
+BgNVHQ4EFgQUQqMk8mVsvXAsT9ol4d8iUzn4/QQwGgYDVR0RBBMwEYEPdGVzdEBjaHQuY29tLnR3
+MA4GA1UdDwEB/wQEAwIHgDAfBgNVHSMEGDAWgBRL9kp3aNOUxOO1YNwOG++punv2UzANBgkqhkiG
+9w0BAQUFAAOCAQEAF9k9/Y82OwS5Tcg068J51vPu2+Mw97AmuxlRnRxvi7lbnOJZjHkjr/Foc1NM
+X5moMzz1wOuauXhKvO84Yv3t+onQ8sRgAowp3N5jZFRpSJL2eHSs5cWvH6gALCtp9vKdh6qFhYHf
+TqzbMtTZkbLUqjuSgUlXCa02EnjFI5jFHZ0WISfCbs47y6IooF0seFHmOBFMZw12lHzmTc05KRTO
+44pz/E0dzVshbyxcA4d7Snl1Z/ECJsDAmUS8Fbmyjagi1yyVpn6yiRxzN75G2XpoaAMYOePlTqRN
+U9CaM4Q6MQrRTPdOC7Ge1wZSL7Ds0B+izuamAYkoxciGkc7FFshokQ==</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+          </Signature>
+          <簽章時戳>
+            <TSA>DEVA.NFA.COM.TW</TSA>
+            <HashAlgorithm>http://www.w3.org/2000/09/xmldsig#sha1</HashAlgorithm>
+            <HashedMessage>N/zJjB+SZI9r5i2AwkY1FC65SYU=</HashedMessage>
+            <Version>1.0</Version>
+            <SerialNumber>00124003</SerialNumber>
+            <GenTime>20080104160708Z</GenTime>
+            <Accuracy>0</Accuracy>
+          </簽章時戳>
+          <Object Id="aol_info_340706">
+            <異動資訊>
+              <簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>王小民</姓名>
+                <帳號>CAESAR1</帳號>
+                <角色>承辦人</角色>
+              </簽核人員>
+              <異動別>送請簽核</異動別>
+              <次位簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>李大華</姓名>
+                <帳號>CAESAR2</帳號>
+                <角色>科長</角色>
+              </次位簽核人員>
+            </異動資訊>
+            <簽核資訊>
+              <簽核文件夾異動內容>
+                <新增物件清單 物件數="30">
+                  <異動物件 物件識別碼="2" 類型="流程群組">
+                    <流程群組 產生時間="09508241518" 文件夾識別碼="106" 物件識別碼="2" 群組標題="">
+                      <簽核文稿清單 文稿數="1">
+                        <簽核文稿 產生時間="09508241518" 文件夾識別碼="108" 物件識別碼="106" 文稿序號="1">
+                          <標題>函（稿）</標題>
+                          <頁面清單 總頁數="2">
+                            <頁面 產生時間="09508241518" 文件夾識別碼="111" 物件識別碼="108" 影像檔序號="3" />
+                            <頁面 產生時間="09508241518" 文件夾識別碼="113" 物件識別碼="108" 影像檔序號="4" />
+                          </頁面清單>
+                          <附件頁面清單>
+                            <附件參照 產生時間="09508241518" 文件夾識別碼="116" 物件識別碼="108" 文稿序號="1" 序號="0">
+                              <頁面清單 總頁數="1">
+                                <頁面 產生時間="09508241518" 文件夾識別碼="118" 物件識別碼="116" 影像檔序號="6" />
+                              </頁面清單>
+                            </附件參照>
+                            <附件參照 產生時間="09508241518" 文件夾識別碼="121" 物件識別碼="108" 文稿序號="1" 序號="1">
+                              <頁面清單 總頁數="1">
+                                <頁面 產生時間="09508241518" 文件夾識別碼="123" 物件識別碼="121" 影像檔序號="8" />
+                              </頁面清單>
+                            </附件參照>
+                            <附件參照 產生時間="09508241518" 文件夾識別碼="126" 物件識別碼="108" 文稿序號="1" 序號="2">
+                              <頁面清單 總頁數="1">
+                                <頁面 產生時間="09508241518" 文件夾識別碼="128" 物件識別碼="126" 影像檔序號="10" />
+                              </頁面清單>
+                            </附件參照>
+                          </附件頁面清單>
+                        </簽核文稿>
+                      </簽核文稿清單>
+                    </流程群組>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="110" 物件識別碼="4" 序號="3">
+                      <檔案名稱>0970000022-P-0003.TIF</檔案名稱>
+                      <檔案大小>18428</檔案大小>
+                      <檔案格式>TIF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="112" 物件識別碼="4" 序號="4">
+                      <檔案名稱>0970000022-P-0004.TIF</檔案名稱>
+                      <檔案大小>2702</檔案大小>
+                      <檔案格式>TIF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="117" 物件識別碼="4" 序號="6">
+                      <檔案名稱>0970000022-P-0006.JPG</檔案名稱>
+                      <檔案大小>907851</檔案大小>
+                      <檔案格式>JPEG</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="122" 物件識別碼="4" 序號="8">
+                      <檔案名稱>0970000022-P-0008.PNG</檔案名稱>
+                      <檔案大小>61810</檔案大小>
+                      <檔案格式>PNG</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="127" 物件識別碼="4" 序號="10">
+                      <檔案名稱>0970000022-P-0010.PNG</檔案名稱>
+                      <檔案大小>69542</檔案大小>
+                      <檔案格式>PNG</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="1" 類型="文稿">
+                    <文稿 產生時間="09508241518" 文件夾識別碼="107" 物件識別碼="1" 序號="1" 原始檔序號="2">
+                      <名稱>函（稿）</名稱>
+                      <文稿類型>函</文稿類型>
+                      <附件清單 附件數="3">
+                        <附件 產生時間="09508241518" 文件夾識別碼="114" 物件識別碼="107" 附件名稱="" 原始檔序號="5" />
+                        <附件 產生時間="09508241518" 文件夾識別碼="119" 物件識別碼="107" 附件名稱="" 原始檔序號="7" />
+                        <附件 產生時間="09508241518" 文件夾識別碼="124" 物件識別碼="107" 附件名稱="" 原始檔序號="9" />
+                      </附件清單>
+                    </文稿>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="109" 物件識別碼="4" 序號="2">
+                      <檔案名稱>0970000022-00-01\0001-tc.xml</檔案名稱>
+                      <檔案大小>4822</檔案大小>
+                      <檔案格式>XML</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="115" 物件識別碼="4" 序號="5">
+                      <檔案名稱>0970000022-00-01\0001-1.doc</檔案名稱>
+                      <檔案大小>30720</檔案大小>
+                      <檔案格式>doc</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="120" 物件識別碼="4" 序號="7">
+                      <檔案名稱>0970000022-00-01\0001-2.doc</檔案名稱>
+                      <檔案大小>19456</檔案大小>
+                      <檔案格式>doc</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="125" 物件識別碼="4" 序號="9">
+                      <檔案名稱>0970000022-00-01\0001-3.doc</檔案名稱>
+                      <檔案大小>19456</檔案大小>
+                      <檔案格式>doc</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="111" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241525" 文件夾識別碼="133" 物件識別碼="111" 頁面顯示="Y">
+                      <物件類型>貼式數位墨水</物件類型>
+                      <貼式數位墨水>
+                        <位置 X="2036" Y="2184" />
+                        <檔案序號>12</檔案序號>
+                      </貼式數位墨水>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241525" 文件夾識別碼="134" 物件識別碼="4" 序號="12">
+                      <檔案名稱>0970000022-O-0012.ISF</檔案名稱>
+                      <檔案大小>150</檔案大小>
+                      <檔案格式>ISF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="111" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241525" 文件夾識別碼="135" 物件識別碼="111" 頁面顯示="Y">
+                      <物件類型>文字意見</物件類型>
+                      <文字意見>
+                        <位置 X="1608" Y="1723" />
+                        <文字內容>測試意見！！！</文字內容>
+                        <文字走向>橫書</文字走向>
+                        <字型>
+                          <名稱>標楷體</名稱>
+                          <樣式>粗體</樣式>
+                          <大小>14</大小>
+                          <顏色 紅="0" 綠="0" 藍="0" />
+                        </字型>
+                      </文字意見>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="111" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241525" 文件夾識別碼="138" 物件識別碼="111" 頁面顯示="Y">
+                      <物件類型>貼式文字意見</物件類型>
+                      <貼式文字意見>
+                        <位置 X="1240" Y="1920" />
+                        <文字內容>測試意見！！！</文字內容>
+                      </貼式文字意見>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="118" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241526" 文件夾識別碼="139" 物件識別碼="118" 頁面顯示="Y">
+                      <物件類型>文字意見</物件類型>
+                      <文字意見>
+                        <位置 X="1261" Y="1101" />
+                        <文字內容>讚!!!!</文字內容>
+                        <文字走向>橫書</文字走向>
+                        <字型>
+                          <名稱>標楷體</名稱>
+                          <樣式>粗體</樣式>
+                          <大小>22</大小>
+                          <顏色 紅="0" 綠="0" 藍="0" />
+                        </字型>
+                      </文字意見>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="128" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241526" 文件夾識別碼="140" 物件識別碼="128" 頁面顯示="Y">
+                      <物件類型>文字意見</物件類型>
+                      <文字意見>
+                        <位置 X="556" Y="2043" />
+                        <文字內容>真是太完美啦！！！</文字內容>
+                        <文字走向>橫書</文字走向>
+                        <字型>
+                          <名稱>標楷體</名稱>
+                          <樣式>粗體</樣式>
+                          <大小>36</大小>
+                          <顏色 紅="0" 綠="0" 藍="0" />
+                        </字型>
+                      </文字意見>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="111" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241527" 文件夾識別碼="141" 物件識別碼="111" 頁面顯示="Y">
+                      <物件類型>文字意見</物件類型>
+                      <文字意見>
+                        <位置 X="757" Y="1273" />
+                        <文字內容>附件真是太完美啦！！！</文字內容>
+                        <文字走向>橫書</文字走向>
+                        <字型>
+                          <名稱>標楷體</名稱>
+                          <樣式>粗體</樣式>
+                          <大小>36</大小>
+                          <顏色 紅="0" 綠="0" 藍="0" />
+                        </字型>
+                      </文字意見>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="111" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241527" 文件夾識別碼="142" 物件識別碼="111" 頁面顯示="Y">
+                      <物件類型>數位墨水</物件類型>
+                      <數位墨水>
+                        <區域 左="487" 上="1332" 右="721" 下="1385" />
+                        <檔案序號>13</檔案序號>
+                      </數位墨水>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241527" 文件夾識別碼="143" 物件識別碼="4" 序號="13">
+                      <檔案名稱>0970000022-O-0013.ISF</檔案名稱>
+                      <檔案大小>88</檔案大小>
+                      <檔案格式>ISF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="128" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241527" 文件夾識別碼="144" 物件識別碼="128" 頁面顯示="Y">
+                      <物件類型>數位墨水</物件類型>
+                      <數位墨水>
+                        <區域 左="879" 上="527" 右="1869" 下="641" />
+                        <檔案序號>14</檔案序號>
+                      </數位墨水>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241527" 文件夾識別碼="145" 物件識別碼="4" 序號="14">
+                      <檔案名稱>0970000022-O-0014.ISF</檔案名稱>
+                      <檔案大小>169</檔案大小>
+                      <檔案格式>ISF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="123" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241527" 文件夾識別碼="146" 物件識別碼="123" 頁面顯示="Y">
+                      <物件類型>數位墨水</物件類型>
+                      <數位墨水>
+                        <區域 左="362" 上="444" 右="922" 下="525" />
+                        <檔案序號>15</檔案序號>
+                      </數位墨水>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241527" 文件夾識別碼="147" 物件識別碼="4" 序號="15">
+                      <檔案名稱>0970000022-O-0015.ISF</檔案名稱>
+                      <檔案大小>98</檔案大小>
+                      <檔案格式>ISF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="118" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241527" 文件夾識別碼="148" 物件識別碼="118" 頁面顯示="Y">
+                      <物件類型>數位墨水</物件類型>
+                      <數位墨水>
+                        <區域 左="373" 上="362" 右="894" 下="448" />
+                        <檔案序號>16</檔案序號>
+                      </數位墨水>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241527" 文件夾識別碼="149" 物件識別碼="4" 序號="16">
+                      <檔案名稱>0970000022-O-0016.ISF</檔案名稱>
+                      <檔案大小>101</檔案大小>
+                      <檔案格式>ISF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="104" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241527" 文件夾識別碼="150" 物件識別碼="104" 頁面顯示="Y">
+                      <物件類型>章戳</物件類型>
+                      <章戳 顯示時間="Y">
+                        <文字走向>橫書</文字走向>
+                        <區域 左="340" 上="2475" 右="729" 下="2557" />
+                        <顏色 紅="255" 綠="0" 藍="0" />
+                        <檔案序號>17</檔案序號>
+                      </章戳>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241527" 文件夾識別碼="151" 物件識別碼="4" 序號="17">
+                      <檔案名稱>0970000022-O-0017.TIF</檔案名稱>
+                      <檔案大小>785</檔案大小>
+                      <檔案格式>TIF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="113" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241612" 文件夾識別碼="156" 物件識別碼="113" 頁面顯示="Y">
+                      <物件類型>章戳</物件類型>
+                      <章戳 顯示時間="Y">
+                        <文字走向>橫書</文字走向>
+                        <區域 左="419" 上="428" 右="811" 下="509" />
+                        <顏色 紅="255" 綠="0" 藍="0" />
+                        <檔案序號>11</檔案序號>
+                      </章戳>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241518" 文件夾識別碼="130" 物件識別碼="4" 序號="11">
+                      <檔案名稱>0970000022-O-0011.TIF</檔案名稱>
+                      <檔案大小>785</檔案大小>
+                      <檔案格式>TIF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                </新增物件清單>
+              </簽核文件夾異動內容>
+            </簽核資訊>
+          </Object>
+        </簽核點定義>
+        <簽核點定義 Id="FLOW_340737">
+          <Signature Id="ds_user_340737">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+              </CanonicalizationMethod>
+              <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+              </SignatureMethod>
+              <Reference URI="0970000022-O-0018.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>dn5IXC6RVKqEqct+gQiXUt/QBqE=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0019.ISF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>2N6WU8YudY3Yfhkhsad1A5m0LTU=</DigestValue>
+              </Reference>
+              <Reference URI="#aol_info_340737">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>Sk1+ZTa0d/mOJrxBkrIJIy+mr+A=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>s8ldQQ/qcMnAMSICYDyUCMA8PiKfk1i92JAr+8vgrHuX8W4vyB4Jx5HT0MwlivFUZQ6BvGfNM6oC
+28jXgFGHYfqfzQjDqYAUcRw88E6SgaKaetGQCISlSCaPVSvw/xEdcLiL9xFSSdz5m/V4Lu80Doaf
+HC0zYMe9bkSHlY1YFRY=</SignatureValue>
+            <KeyInfo>
+              <X509Data>
+                <!-- SUBJECT:測試自然人1	ISSUER:政府測試憑證管理中心-->
+                <X509Certificate>MIID7TCCAtWgAwIBAgIQChgaNvdrLRGM0dufaugWCzANBgkqhkiG9w0BAQUFADBKMQswCQYDVQQG
+EwJUVzESMBAGA1UECgwJ6KGM5pS/6ZmiMScwJQYDVQQLDB7mlL/lupzmuKzoqabmhpHorYnnrqHn
+kIbkuK3lv4MwHhcNMDYwODIwMTQzNzAyWhcNMDYxMDE5MTQzNzAyWjBDMQswCQYDVQQGEwJUVzEZ
+MBcGA1UEAwwQ5ris6Kmm6Ieq54S25Lq6MTEZMBcGA1UEBRMQYTVlMGYxMGUxYmQ4ZWJlZDCBnzAN
+BgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAuHrFa/WL08BMsj9Vh2IOMm6SQIuJtlN+y1m4Ae9bw8xh
+JB8IGavj0HxTBSZWQIuz04EvQpvfKk3TFm1PMSm2PxfSgXqDZnno5JbZuWVovluNE8CI+YWKOi/6
++faU4y9wKygje76u7lVL0CeKRwWvZGRO+UhyGKALtSa6LU0ats0CAwEAAaOCAVgwggFUMEYGA1Ud
+HwQ/MD0wO6A5oDeGNWh0dHA6Ly9ndGVzdGNhLm5hdC5nb3YudHcvcmVwb3NpdG9yeS9DUkwvY29t
+cGxldGUuY3JsMFMGCCsGAQUFBwEBBEcwRTBDBggrBgEFBQcwAoY3aHR0cDovL2d0ZXN0Y2EubmF0
+Lmdvdi50dy9yZXBvc2l0b3J5L0lzc3VlZFRvVGhpc0NBLnA3YjAUBgNVHSAEDTALMAkGB2CGdmUA
+AwAwMwYDVR0JBCwwKjAVBgdghnYBZAIBMQoGCGCGdgFkAwEBMBEGB2CGdgFkAjMxBgwENjc4OTAd
+BgNVHQ4EFgQUQqMk8mVsvXAsT9ol4d8iUzn4/QQwGgYDVR0RBBMwEYEPdGVzdEBjaHQuY29tLnR3
+MA4GA1UdDwEB/wQEAwIHgDAfBgNVHSMEGDAWgBRL9kp3aNOUxOO1YNwOG++punv2UzANBgkqhkiG
+9w0BAQUFAAOCAQEAF9k9/Y82OwS5Tcg068J51vPu2+Mw97AmuxlRnRxvi7lbnOJZjHkjr/Foc1NM
+X5moMzz1wOuauXhKvO84Yv3t+onQ8sRgAowp3N5jZFRpSJL2eHSs5cWvH6gALCtp9vKdh6qFhYHf
+TqzbMtTZkbLUqjuSgUlXCa02EnjFI5jFHZ0WISfCbs47y6IooF0seFHmOBFMZw12lHzmTc05KRTO
+44pz/E0dzVshbyxcA4d7Snl1Z/ECJsDAmUS8Fbmyjagi1yyVpn6yiRxzN75G2XpoaAMYOePlTqRN
+U9CaM4Q6MQrRTPdOC7Ge1wZSL7Ds0B+izuamAYkoxciGkc7FFshokQ==</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+          </Signature>
+          <簽章時戳>
+            <TSA>DEVA.NFA.COM.TW</TSA>
+            <HashAlgorithm>http://www.w3.org/2000/09/xmldsig#sha1</HashAlgorithm>
+            <HashedMessage>J8SsrnX+iOZ/475fTdXPld5Axjg=</HashedMessage>
+            <Version>1.0</Version>
+            <SerialNumber>00124008</SerialNumber>
+            <GenTime>20080104162003Z</GenTime>
+            <Accuracy>0</Accuracy>
+          </簽章時戳>
+          <Object Id="aol_info_340737">
+            <異動資訊>
+              <簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>李大華</姓名>
+                <帳號>CAESAR2</帳號>
+                <角色>科長</角色>
+              </簽核人員>
+              <異動別>送請簽核</異動別>
+              <次位簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>陳建國</姓名>
+                <帳號>CAESAR3</帳號>
+                <角色>主任</角色>
+              </次位簽核人員>
+            </異動資訊>
+            <簽核資訊>
+              <簽核文件夾異動內容>
+                <新增物件清單 物件數="4">
+                  <異動物件 物件識別碼="113" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241620" 文件夾識別碼="161" 物件識別碼="113" 頁面顯示="Y">
+                      <物件類型>章戳</物件類型>
+                      <章戳 顯示時間="Y">
+                        <文字走向>橫書</文字走向>
+                        <區域 左="419" 上="520" 右="811" 下="601" />
+                        <顏色 紅="255" 綠="0" 藍="0" />
+                        <檔案序號>18</檔案序號>
+                      </章戳>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241619" 文件夾識別碼="159" 物件識別碼="4" 序號="18">
+                      <檔案名稱>0970000022-O-0018.TIF</檔案名稱>
+                      <檔案大小>848</檔案大小>
+                      <檔案格式>TIF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="111" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241620" 文件夾識別碼="162" 物件識別碼="111" 頁面顯示="Y">
+                      <物件類型>數位墨水</物件類型>
+                      <數位墨水>
+                        <區域 左="487" 上="1820" 右="732" 下="1879" />
+                        <檔案序號>19</檔案序號>
+                      </數位墨水>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241620" 文件夾識別碼="163" 物件識別碼="4" 序號="19">
+                      <檔案名稱>0970000022-O-0019.ISF</檔案名稱>
+                      <檔案大小>89</檔案大小>
+                      <檔案格式>ISF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                </新增物件清單>
+              </簽核文件夾異動內容>
+            </簽核資訊>
+          </Object>
+        </簽核點定義>
+        <簽核點定義 Id="FLOW_340747">
+          <Signature Id="ds_user_340747">
+            <SignedInfo>
+              <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315">
+              </CanonicalizationMethod>
+              <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+              </SignatureMethod>
+              <Reference URI="0970000022-O-0021.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>KT/tgV8ODCsb/kM3wFEopDRRJh4=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0022.ISF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>+UrftUgM8Nt0/VZ7G3Pih8LL0qQ=</DigestValue>
+              </Reference>
+              <Reference URI="0970000022-O-0020.TIF">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>xEKgEuR5s9hv/zg4j+S5p9Hftrw=</DigestValue>
+              </Reference>
+              <Reference URI="#aol_info_340747">
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+                </DigestMethod>
+                <DigestValue>frz9cGYkTtVoNxgxLeyGNfLBJsg=</DigestValue>
+              </Reference>
+            </SignedInfo>
+            <SignatureValue>9d4xdz5d2J0MnjVJb12VZfnJDZNMew8Jg9v/TWb/3zyr1hP9OqLuzCLxJ/hejJway7grDnnN8gNW
+qPcvcx2z0qzr+qkMcXcX/+aWGNpL1FqYc5qHZyxqGT7npvgSvofZXy/FTZd/aySyKgrS/g57yl3w
+pHn/U43qUjAa1xgZP6k=</SignatureValue>
+            <KeyInfo>
+              <X509Data>
+                <!-- SUBJECT:測試自然人1	ISSUER:政府測試憑證管理中心-->
+                <X509Certificate>MIID7TCCAtWgAwIBAgIQChgaNvdrLRGM0dufaugWCzANBgkqhkiG9w0BAQUFADBKMQswCQYDVQQG
+EwJUVzESMBAGA1UECgwJ6KGM5pS/6ZmiMScwJQYDVQQLDB7mlL/lupzmuKzoqabmhpHorYnnrqHn
+kIbkuK3lv4MwHhcNMDYwODIwMTQzNzAyWhcNMDYxMDE5MTQzNzAyWjBDMQswCQYDVQQGEwJUVzEZ
+MBcGA1UEAwwQ5ris6Kmm6Ieq54S25Lq6MTEZMBcGA1UEBRMQYTVlMGYxMGUxYmQ4ZWJlZDCBnzAN
+BgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAuHrFa/WL08BMsj9Vh2IOMm6SQIuJtlN+y1m4Ae9bw8xh
+JB8IGavj0HxTBSZWQIuz04EvQpvfKk3TFm1PMSm2PxfSgXqDZnno5JbZuWVovluNE8CI+YWKOi/6
++faU4y9wKygje76u7lVL0CeKRwWvZGRO+UhyGKALtSa6LU0ats0CAwEAAaOCAVgwggFUMEYGA1Ud
+HwQ/MD0wO6A5oDeGNWh0dHA6Ly9ndGVzdGNhLm5hdC5nb3YudHcvcmVwb3NpdG9yeS9DUkwvY29t
+cGxldGUuY3JsMFMGCCsGAQUFBwEBBEcwRTBDBggrBgEFBQcwAoY3aHR0cDovL2d0ZXN0Y2EubmF0
+Lmdvdi50dy9yZXBvc2l0b3J5L0lzc3VlZFRvVGhpc0NBLnA3YjAUBgNVHSAEDTALMAkGB2CGdmUA
+AwAwMwYDVR0JBCwwKjAVBgdghnYBZAIBMQoGCGCGdgFkAwEBMBEGB2CGdgFkAjMxBgwENjc4OTAd
+BgNVHQ4EFgQUQqMk8mVsvXAsT9ol4d8iUzn4/QQwGgYDVR0RBBMwEYEPdGVzdEBjaHQuY29tLnR3
+MA4GA1UdDwEB/wQEAwIHgDAfBgNVHSMEGDAWgBRL9kp3aNOUxOO1YNwOG++punv2UzANBgkqhkiG
+9w0BAQUFAAOCAQEAF9k9/Y82OwS5Tcg068J51vPu2+Mw97AmuxlRnRxvi7lbnOJZjHkjr/Foc1NM
+X5moMzz1wOuauXhKvO84Yv3t+onQ8sRgAowp3N5jZFRpSJL2eHSs5cWvH6gALCtp9vKdh6qFhYHf
+TqzbMtTZkbLUqjuSgUlXCa02EnjFI5jFHZ0WISfCbs47y6IooF0seFHmOBFMZw12lHzmTc05KRTO
+44pz/E0dzVshbyxcA4d7Snl1Z/ECJsDAmUS8Fbmyjagi1yyVpn6yiRxzN75G2XpoaAMYOePlTqRN
+U9CaM4Q6MQrRTPdOC7Ge1wZSL7Ds0B+izuamAYkoxciGkc7FFshokQ==</X509Certificate>
+              </X509Data>
+            </KeyInfo>
+          </Signature>
+          <簽章時戳>
+            <TSA>DEVA.NFA.COM.TW</TSA>
+            <HashAlgorithm>http://www.w3.org/2000/09/xmldsig#sha1</HashAlgorithm>
+            <HashedMessage>LJ5kVcglGtgON5wH5WA3Gnw+tas=</HashedMessage>
+            <Version>1.0</Version>
+            <SerialNumber>00124014</SerialNumber>
+            <GenTime>20080104163353Z</GenTime>
+            <Accuracy>0</Accuracy>
+          </簽章時戳>
+          <Object Id="aol_info_340747">
+            <異動資訊>
+              <簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>陳建國</姓名>
+                <帳號>CAESAR3</帳號>
+                <角色>主任</角色>
+              </簽核人員>
+              <異動別>送總發文</異動別>
+              <次位簽核人員>
+                <職稱>
+                </職稱>
+                <姓名>
+                </姓名>
+                <帳號>
+                </帳號>
+                <角色>繕印人員</角色>
+              </次位簽核人員>
+            </異動資訊>
+            <簽核資訊>
+              <簽核文件夾異動內容>
+                <新增物件清單 物件數="7">
+                  <異動物件 物件識別碼="113" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241638" 文件夾識別碼="168" 物件識別碼="113" 頁面顯示="Y">
+                      <物件類型>文字意見</物件類型>
+                      <文字意見>
+                        <位置 X="2256" Y="336" />
+                        <文字內容>發</文字內容>
+                        <文字走向>橫書</文字走向>
+                        <字型>
+                          <名稱>標楷體</名稱>
+                          <樣式>普通</樣式>
+                          <大小>36</大小>
+                          <顏色 紅="255" 綠="0" 藍="0" />
+                        </字型>
+                      </文字意見>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="113" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241638" 文件夾識別碼="169" 物件識別碼="113" 頁面顯示="Y">
+                      <物件類型>章戳</物件類型>
+                      <章戳 顯示時間="N">
+                        <文字走向>橫書</文字走向>
+                        <區域 左="1740" 上="465" 右="2340" 下="584" />
+                        <顏色 紅="255" 綠="0" 藍="0" />
+                        <檔案序號>21</檔案序號>
+                      </章戳>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241638" 文件夾識別碼="170" 物件識別碼="4" 序號="21">
+                      <檔案名稱>0970000022-O-0021.TIF</檔案名稱>
+                      <檔案大小>9350</檔案大小>
+                      <檔案格式>TIF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="111" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241639" 文件夾識別碼="171" 物件識別碼="111" 頁面顯示="Y">
+                      <物件類型>數位墨水</物件類型>
+                      <數位墨水>
+                        <區域 左="467" 上="1376" 右="698" 下="1396" />
+                        <檔案序號>22</檔案序號>
+                      </數位墨水>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241639" 文件夾識別碼="172" 物件識別碼="4" 序號="22">
+                      <檔案名稱>0970000022-O-0022.ISF</檔案名稱>
+                      <檔案大小>200</檔案大小>
+                      <檔案格式>ISF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                  <異動物件 物件識別碼="113" 類型="簽核物件">
+                    <簽核物件 產生時間="09508241639" 文件夾識別碼="173" 物件識別碼="113" 頁面顯示="Y">
+                      <物件類型>章戳</物件類型>
+                      <章戳 顯示時間="Y">
+                        <文字走向>橫書</文字走向>
+                        <區域 左="1835" 上="367" 右="2245" 下="454" />
+                        <顏色 紅="255" 綠="0" 藍="0" />
+                        <檔案序號>20</檔案序號>
+                      </章戳>
+                    </簽核物件>
+                  </異動物件>
+                  <異動物件 物件識別碼="4" 類型="電子檔案資訊">
+                    <電子檔案資訊 產生時間="09508241638" 文件夾識別碼="166" 物件識別碼="4" 序號="20">
+                      <檔案名稱>0970000022-O-0020.TIF</檔案名稱>
+                      <檔案大小>893</檔案大小>
+                      <檔案格式>TIF</檔案格式>
+                    </電子檔案資訊>
+                  </異動物件>
+                </新增物件清單>
+              </簽核文件夾異動內容>
+            </簽核資訊>
+          </Object>
+        </簽核點定義>
+      </線上簽核資訊>
+    </電子檔案>
+  </封裝檔內容>
+</電子封裝檔>

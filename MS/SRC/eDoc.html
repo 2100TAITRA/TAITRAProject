@@ -1,0 +1,995 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <title>電子公文系統</title>
+  <!--1110816 Kevin 1101532 支援自造字-->
+  <link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.045"/>
+  <!-- initial-scale, maximun-scale, user-scalable setting 可取消 Mobile Safari double-tap 上方工具列時自動縮放網頁的行為 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon" sizes="152x152" href="IMAGE/touch-icon-ipad-retina.png" /> <!-- 2017.1.17 - add for iPad desktop icon -->
+	<link rel="apple-touch-icon" sizes="167x167" href="IMAGE/touch-icon-ipadpro-retina.png" /> <!-- 2017.1.17 - add for iPad desktop icon -->
+
+  <link rel="stylesheet" href="Lib/JQM/classic-theme.css?ver=5.0.105.045" />
+  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.icons-1.4.5.css?ver=5.0.105.045" />
+  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.structure-1.4.5.css?ver=5.0.105.045" /> 
+  
+  <!-- SSO/AOL 3rdParty - simpleModal dialog -->
+  <link rel="stylesheet" href="CSS/jquery-simplemodal.basic.css?ver=5.0.105.045" />
+  
+  <link rel="stylesheet" href="CSS/RD-jqm-docs.css?ver=5.0.105.045" /> <!-- demo公布欄 scheme & color -->
+  <link rel="stylesheet" href="CSS/RD-SuperTables.css?ver=5.0.105.045" /> <!-- 列表式公文清單 -->
+  
+  <!--link rel="stylesheet" href="CSS/mobiscroll-1.5.1.css?ver=5.0.105.045" /--> <!-- 撥動式捲軸元件 -->
+  
+  <!-- 2013.1.30 - SSO單一網頁實作, from DemoMP-5.html -->
+  
+  <!-- 2015.7.14 - 使用 MobiScroll v2.9.5 -->
+  <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
+  <!-- <link rel="stylesheet" href="Lib/mobiscroll/css/mobiscroll.scroller.css?ver=5.0.105.045" /> -->
+  <!-- <link rel="stylesheet" href="Lib/mobiscroll/css/mobiscroll.animation.css?ver=5.0.105.045" /> -->
+  <!-- <link rel="stylesheet" href="Lib/mobiscroll/css/mobiscroll.scroller.jqm.css?ver=5.0.105.045" /> -->
+  <!-- <link rel="stylesheet" href="Lib/mobiscroll/css/mobiscroll.scroller.ios.css?ver=5.0.105.045" /> -->
+  <!-- <link rel="stylesheet" href="Lib/mobiscroll/css/mobiscroll.scroller.wp.css?ver=5.0.105.045" /> -->
+  
+  <link rel="stylesheet" href="Lib/jquery.ztree/css/zTreeStyle/zTreeStyle.css?ver=5.0.105.045" />
+  
+  <link rel="stylesheet" href="Lib/context-menu/jquery.contextMenu.css?ver=5.0.105.045" />
+  
+  <!-- 2012.12.28 - 使用 MobiScroll v2.3 -->
+  <!--link href="Lib/mobiscroll/css/mobiscroll.core-2.3.1.css?ver=5.0.105.045" />
+  <link href="Lib/mobiscroll/css/mobiscroll.jqm-2.3.css?ver=5.0.105.045" />
+  <link href="Lib/mobiscroll/css/mobiscroll.ios-2.3.css?ver=5.0.105.045" />
+  <link href="Lib/mobiscroll/css/mobiscroll.wp-2.3.css?ver=5.0.105.045" /-->
+
+  <link rel="stylesheet" href="CSS/RD-Login.css?ver=5.0.105.045" /> <!-- 登入頁面 -->
+  <link rel="stylesheet" href="CSS/RD-SSO.css?ver=5.0.105.045" /> <!-- 訊息單一入口 -->
+  <link rel="stylesheet" href="CSS/RD-Drawer.css?ver=5.0.105.045" /> <!-- 側抽屜 -->
+  <link rel="stylesheet" href="CSS/MS-Start.css?ver=5.0.105.045" />  <!-- 首頁 -->
+  <link rel="stylesheet" href="CSS/MS-Board.css?ver=5.0.105.045" /> <!-- 公布欄頁 -->
+  <link rel="stylesheet" href="CSS/RD-ToDoList_Icon.css?ver=5.0.105.045" /> <!-- 待辦清單(圖示) -->
+  <link rel="stylesheet" href="CSS/RD-ToDoList_List.css?ver=5.0.105.045" /> <!-- 待辦清單(列表) -->
+  <link rel="stylesheet" href="CSS/RD-PreviewPane.css?ver=5.0.105.045" /> <!-- 2016.4 - Eric Peng, for FDA prototype: 線上簽核公文預覽窗格 -->
+  <link rel="stylesheet" href="CSS/RD-NewDraft.css?ver=5.0.105.045" /> <!-- 2016.4 - Eric Peng, for FDA prototype: 公文創稿窗格 -->
+  <link rel="stylesheet" href="CSS/RD-HistoryDoc.css?ver=5.0.105.045" /> <!-- 2016.4 - Eric Peng, for FDA prototype: 歷史公文窗格 -->
+  <link rel="stylesheet" href="CSS/RD-QueryDoc.css?ver=5.0.105.045" /> <!-- 2016.4 - Eric Peng, for FDA prototype: 公文檢索窗格 -->
+	<link rel="stylesheet" href="CSS/RD-UniView.css?ver=5.0.105.045" /> <!-- 2016.8 - Eric Peng, for UniView Module -->
+  
+  <!-- 2013.2. -->
+  <link rel="stylesheet" href="CSS/RD-AOL.css?ver=5.0.105.045" />
+  
+  <!-- 2014.3.6 - 受文者詞庫樣式表 -->
+  <link rel="stylesheet" href="CSS/RD-token-input.css?ver=5.0.105.045" />
+  <link rel="stylesheet" href="CSS/RD-token-input-facebook.css?ver=5.0.105.045" />
+  
+  <!-- 2013.1. - SSO單一網頁實作, css for dlg process -->
+  <link rel="stylesheet" href="CSS/RD-DlgProcessSetting.css?ver=5.0.105.045" />
+
+  <!-- 2016.6.22. - 小日曆, css for datepicker widget -->
+  <link rel="stylesheet" href="CSS/jquery.mobile.datepicker.css?ver=5.0.105.045" />
+    
+  <style>
+	/**
+	* Fix for iPad iOS7 slight scroll on 100% body height
+	* http://stackoverflow.com/questions/19012135/ios-7-ipad-safari-landscape-innerheight-outerheight-layout-issue
+	*/
+   @media (orientation:landscape) {
+	   html.ipad.ios7 > body {
+		   position: fixed;
+		   bottom: 0;
+		   width: 100%;
+		   height: 672px !important;
+	   }
+   }
+  </style>
+  <!--1070907 Kevin 因應弱掃不使用版號-->
+  <script src="Lib/jquery.js?ver=5.0.105.045"></script>
+    <!--1080902 Kevin 移除測試jquery 2.2.4-->
+	<!--1100221 Kevin 1100510 版本升級-->
+  <script src="Lib/jquery-migrate-3.5.0.js?ver=5.0.105.045"></script>
+  <script src="Lib/base64.js?ver=5.0.105.045"></script>
+  <!-- 2019.9.12 - 1080339 Eric, 移除參照使用.
+  <script src="Lib/jquery.easing.1.3.js?ver=5.0.105.045"></script--> <!-- 2013.1 - Eric Added - for flow setting dialog -->
+  <!-- <script src="Lib/jquery.simplemodal-1.4.4.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --><!-- 子(對話)視窗元件 (mSSO / DemoMP 皆使用), 2016.5 - upgrade to 1.4.4 -->
+  <script src="Lib/escapeXml.js?ver=5.0.105.045"></script> <!-- 2015.12.14 - Raymond added, for XML char escaping -->
+  
+  <!-- 2015.7.14 - 使用 MobiScroll v2.9.5, 撥動式捲軸元件 -->
+  <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.core.js?ver=5.0.105.045"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.js?ver=5.0.105.045"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.jqm.js?ver=5.0.105.045"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.ios.js?ver=5.0.105.045"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.wp.js?ver=5.0.105.045"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.list.js?ver=5.0.105.045"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/i18n/mobiscroll.i18n.zht.js?ver=5.0.105.045"></script> -->
+  
+  <!-- 2012.12.28 - 使用 MobiScroll v2.3, 撥動式捲軸元件 -->
+  <!--script src="lib/mobiscroll/js/mobiscroll.core-2.3.1.js?ver=5.0.105.045"></script>
+  <script src="lib/mobiscroll/js/mobiscroll.jqm-2.3.js?ver=5.0.105.045"></script>
+  <script src="lib/mobiscroll/js/mobiscroll.ios-2.3.js?ver=5.0.105.045"></script>
+  <script src="lib/mobiscroll/js/mobiscroll.wp-2.3.js?ver=5.0.105.045"></script>
+  <script src="lib/mobiscroll/js/mobiscroll.list-2.3.1.js?ver=5.0.105.045"></script>
+  <script src="lib/mobiscroll/js/lang_cht.js?ver=5.0.105.045"></script-->
+  
+  <!--script src="Lib/Numbering.js?ver=5.0.105.045"></script-->
+  <!--script src="Lib/RD-splitter.js?ver=5.0.105.045"></script-->   <!-- 頁面區域分割元件 2016.6 - 不再使用 -->
+  <script src="Lib/iScroll-lite.js?ver=5.0.105.045"></script> <!-- 單指捲動(Single finger scroll)元件 (目前待辦清單[圖示]仍使用)-->
+  <!--script src="lib/iScroll-wrapper.js?ver=5.0.105.045"></script-->
+  
+  <!--script src="Lib/context-menu/jquery.ui.position.js?ver=5.0.105.045"></script--> <!-- 2016.4 - Eric, 右鍵選單 -->
+  <script src="Lib/context-menu/jquery.contextMenu.js?ver=5.0.105.045"></script> <!-- 2016.4 - Eric, 右鍵選單 -->
+  
+		<!-- 1110421 Kevin 1110164 弱掃移動IOS判定、JS載入至RD-VerifyMac.js -->
+		<script src="Lib/RD-VerifyMac.js?ver=5.0.105.045"></script>
+
+  <!--1070907 Kevin 因應弱掃調整資料夾名稱-->
+  <script src="2100Rsrc/SSO_CONFIG_EDOC.js?ver=5.0.105.045"></script> <!-- 2014.9 - 公文系統Config檔 -->
+  <script src="Lib/RD-SysUtil.js?ver=5.0.105.045"></script> <!-- Eric Added, 儲存系統設定資訊 -->
+  
+  <!--1110421 Kevin 1110164 弱掃移動權杖檢核script至RD-eDoc.js-->
+  <!-- 2014.7 - Eric Peng, For SignalR client -->
+  <!--引用 json2 讓SignalR可以在IIS7.5執行的參考-->
+  <script src="Lib/jquery.SignalR/json2.js?ver=5.0.105.045"></script>
+	
+  <!--引用 SignalR 的參考 -->
+  <!--20191025 Kevin 更新SignalR參考-->
+  <!--20240122 Kevin 更新SignalR參考to 2.4.3-->
+  <script src="Lib/jquery.SignalR/jquery.signalR-2.4.3.js?ver=5.0.105.045"></script>
+ 
+  <!-- SignalR Serice Proxy hub (包裝SignalR Server/Client溝通叫用函式) -->
+  <!--20150617 Kevin 改為固定hubs參考-->
+  <!--<script src="../sr/signalr/hubs?ver=5.0.105.045"></script> --><!--20150617 Kevin 改為固定hubs參考(二代需支援NLB才可改為動態)--><!--SR@Server實際路徑會與MS(HTML5-SSO project)在同一虛擬路徑下 -->
+  <script src="Lib/RD-SignalRhubs.js?ver=5.0.105.045"></script> <!-- SR@Server實際路徑會與MS(HTML5-SSO project)在同一虛擬路徑下 -->
+  <script src="Lib/RD-SignalR.js?ver=5.0.105.045"></script> <!-- 2014.9, SignalR client實作 -->
+  
+  <!--1110421 Kevin 1110164 弱掃移動Debug設定script至RD-eDoc.js-->
+  <script src="Lib/RD-RTCProcess.js?ver=5.0.105.045"></script> <!-- 處理即時訊息(目前實作,使用SignalR機制傳送) -->
+  <script src="Lib/RD-UserInfo.js?ver=5.0.105.045"></script> <!-- 儲存使用者資訊 -->    
+  <!--script src="DemoData.js?ver=5.0.105.045"></script--> <!-- P1/P2測試用資訊 -->
+	
+  <!--script src="Lib/jquery-barcode-2.0.2/jquery-barcode-2.0.2.min.js?ver=5.0.105.045"></script-->
+  <script src="Lib/RD-Utility.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-SuperTables.js?ver=5.0.105.045"></script> <!-- 列表式公文清單 -->
+  <script src="Lib/jquery.tablesorter/jquery.tablesorter.js?ver=5.0.105.045"></script> <!--  列表式公文清單排序 -->
+	
+  <!--script src="Lib/autogrowinput.js?ver=5.0.105.045"></script-->
+  <script src="Lib/RD-Draggable.js?ver=5.0.105.045"></script> <!-- Drag and Drop controller -->
+  <script src="Lib/RD-mcombobox.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-soapclient.js?ver=5.0.105.045"></script>
+  <!-- <script src="Lib/RD-jdataview.js?ver=5.0.105.045"></script> --> <!-- 1140109	Leslie[1131229]	升級第三方套件 -->
+  <script type="module"  src="Lib/BoundsJDataView.js?ver=5.0.105.045"></script>	<!-- 1140109	Leslie[1131229]	升級第三方套件，用這個負責以Module方式載入jdataview(2.5.0) -->
+  <script src="Lib/utf7.js?ver=5.0.105.045"></script>
+	
+  <!--script src="Lib/code39.js?ver=5.0.105.045"></script--><!-- for 條碼支援 -->
+  <!-- <script src="Lib/JsBarcode/JsBarcode.code39.min.js?ver=5.0.105.045"></script>  1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.12.30, PNG條碼 -->
+
+  <script src="Lib/md5.js?ver=5.0.105.045"></script><!-- for Hash計算 -->
+  
+  <script src="Lib/RD-AlternativeLogger.js?ver=5.0.105.045"></script><!-- 2015.12.15 Raymond Added -->
+  <script src="Lib/RD-ModuleMgr.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-WebServices.js?ver=5.0.105.045"></script>
+  <!--1110421 Kevin 1110164 弱掃移動SSO_CONFIG內的WS_URLs設定WebServices網址script至RD-WebServices.js-->
+  <!-- <script src="Lib/RD-SignFolder.js?ver=5.0.105.045"></script>  1100503	Leslie[1100333]	改為延遲載入 --><!-- 2013.4 - for 簽核文件夾內容載入 -->
+  <!-- <script src="Lib/RD-CanvasUtil.js?ver=5.0.105.045"></script>  1100503	Leslie[1100333]	改為延遲載入 -->
+  <script src="Lib/RD-Todolist.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-LoginForEDoc.js?ver=5.0.105.045"></script> <!-- 2021.4.20 - 1100333 Eric, rename RD-Login.js to RD-LoginForEDoc.js -->
+  <script src="Lib/RD-DocPreview.js?ver=5.0.105.045"></script>
+  <!-- 2013.5 - DocSlider.js 功能移至 mDocPreview.js -->
+  <!--script src="Lib/DocSlider.js?ver=5.0.105.045"></script--> <!-- 2012.9.3 - for 公文預覽slider -->
+  <script src="Lib/RD-eDoc.js?ver=5.0.105.045"></script> <!-- 2021.4.19 - 1100333 Eric, modified RD-SSO.js rename to RD-eDoc.js -->
+  <script src="Lib/MS-Start.js?ver=5.0.105.045"></script>
+  <script src="Lib/MS-Board.js?ver=5.0.105.045"></script>
+  <!-- 1040128 Yvonne Add For 選單 20160623 Kevin 二代改由Start實做-->
+  <!--<script src="Lib/MS-Menu.js?ver=5.0.105.045"></script>-->
+  <script src="Lib/jquery.ztree/jquery.ztree.core.js?ver=5.0.105.045"></script>
+  <script src="Lib/jquery.ztree/jquery.ztree.exhide.js?ver=5.0.105.045"></script>
+  <script src="Lib/jquery.ztree/jquery.ztree.exedit.js?ver=5.0.105.045"></script>	<!-- 2017.07.13 - for 程式選單移動功能 -->
+  <script src="Lib/jquery.flot/jquery.flot.js?ver=5.0.105.045"></script>
+  <script src="Lib/jquery.flot/jquery.flot.pie.js?ver=5.0.105.045"></script>
+  <!--<script src="Lib/flot/jshashtable-2.1.js?ver=5.0.105.045"></script>  1080906 Kevin 移除不必要參考  -->
+  <!--<script src="Lib/flot/jquery.numberformatter-1.2.3.min.js?ver=5.0.105.045"></script> 1080906 Kevin 移除不必要參考 -->
+
+  <script src="Lib/jQM/jQM.js?ver=5.0.105.045"></script>
+  
+  <!-- 2013.9.27 - 使用 MobiScroll v2.7.2, 撥動式捲軸元件 -->
+  <!--script src="Lib/mobiscroll/js/mobiscroll.jqmwidget-2.3.js?ver=5.0.105.045"></script-->
+  <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.jqmwidget.js?ver=5.0.105.045"></script> -->
+  <script src="Lib/jquery.mobile.tabs.js?ver=5.0.105.045"></script>
+
+  <!-- 2016.6.22 - 使用jQueryUI的Datepicker元件 & jQM wrapper -->
+  <script src="Lib/jquery-ui.js?ver=5.0.105.045"></script>
+  <!-- <script src="Lib/jquery.mobile.datepicker.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 -->
+  
+  <!-- 2016.11.8 - Leslie, AutoComplete(自動完成)功能模組(for 受文者編輯子視窗) -->
+  <link rel="stylesheet" href="CSS/jquery-ui-autocomplete.css?ver=5.0.105.045" />
+  <!--script src="Lib/jquery-ui-autocomplete.js?ver=5.0.105.045"></script--><!-- 1080223 Raymond jquery UI的autocomplete會跟resize搶mouseDown, 須強制讓resize在autocomplete之後載入, 才能由resize正確吃到mouseDown, 故拿掉async屬性, async會使JS檔以隨機順序載入 -->
+  <!-- 2016.12.26 - Leslie, 文字意見可調整大小 -->
+  <link rel="stylesheet" href="CSS/jquery-ui-resize.css?ver=5.0.105.045" />
+  <!--script src="Lib/jquery-ui-resize.js?ver=5.0.105.045"></script--><!-- 1080223 Raymond jquery UI的autocomplete會跟resize搶mouseDown, 須強制讓resize在autocomplete之後載入, 才能由resize正確吃到mouseDown, 故拿掉async屬性, async會使JS檔以隨機順序載入 -->
+  
+  <!-- 2016.3.25 - Raymond, 簽核子系統用js -->
+  <!-- <script src="Lib/RD-Coworker.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- Eric Added -->
+  <!-- <script src="Lib/RD-DlgProcessSetting.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- Eric Added -->
+  <script src="Lib/RD-Submit.js?ver=5.0.105.045" async></script> <!-- 2015.10 - Eric Added -->
+  <script src="Lib/RD-CustomMgr.js?ver=5.0.105.045"></script> <!-- 客製化架構功能模組 -->
+  <!-- <script src="Lib/RD-RndrAtt.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 匯出附件頁面功能模組 -->
+  <!-- <script src="Lib/RD-AOL.js?ver=5.0.105.045" defer></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 簽核子系統主模組 -->
+  <!-- <script src="Lib/MS-Common.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 欄位連動功能通用模組 -->
+  <script src="Lib/RD-CacheMgr.js?ver=5.0.105.045"></script> <!-- 暫存功能模組 --><!--20170412 Kevin 登入會使用改為同步-->
+  <script src="Lib/RD-RsrcMgr.js?ver=5.0.105.045" async></script> <!-- (文稿編輯)資源管理模組 -->
+  <!-- <script src="Lib/RD-Layout.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 排版功能模組 -->
+  <!-- <script src="Lib/RD-Zoom.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 縮放功模組 -->
+  <!-- <script src="Lib/RD-Edit.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 編輯功能模組 -->
+  <!-- <script src="Lib/RD-EditSO.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 線上簽核功能模組 -->
+  <!-- <script src="Lib/RD-DraftModel.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 文稿模型模組 -->
+  <!-- <script src="Lib/RD-DraftMgmt.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 文稿管理模組 -->
+  <!-- <script src="Lib/RD-FolioModel.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 公文模型模組 -->
+  <!-- <script src="Lib/RD-FolioView.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 公文檢視模組 -->
+  <script src="Lib/RD-TCControl.js?ver=5.0.105.045" async></script> <!-- 追蹤修訂功能模組 -->
+  <script src="Lib/RD-NewDraft.js?ver=5.0.105.045" async></script> <!-- 新增文稿模組 -->
+  <script src="Lib/RD-NewDraftExt.js?ver=5.0.105.045" async></script> <!-- 新增文稿後處理模組 -->
+  <!--script src="Lib/RD-SignFolder.js?ver=5.0.105.045" async></script--><!-- 重複載入 -->
+  <!-- <script src="Lib/RD-VerifyEnve.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 驗簽檢核模組 -->
+  <!-- <script src="Lib/RD-ParseStampMgmt.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 解析章戳匣資訊功能模組 -->
+  <!-- <script src="Lib/RD-SignWork.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 簽核暫存檔功能模組 -->
+  <!-- <script src="Lib/RD-ObserverPattern.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- Observer模式相關操作 -->
+  <!-- <script src="Lib/RD-StampAct.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 章戳連動功能模組 -->
+  <!-- <script src="Lib/RD-jquery.tokenEdit.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 受文者輸入功能模組 -->
+  <!-- <script src="Lib/RD-CompoundFolio.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 母子文功能模組 -->
+  <!-- <script src="Lib/RD-RefView.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 參照檢視功能模組 -->
+  <!-- <script src="Lib/MS-ODC010.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 公文基資模組 -->
+  <!-- <script src="Lib/MS-ODC010WS.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 公文基資模組 -->
+  <!-- <script src="Lib/MS-ODC010UI.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 公文基資模組 -->
+  <!-- <script src="Lib/MS-ODC011.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 公文基資模組(擬辦設定) -->
+  <!-- <script src="Lib/MS-ODC013.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 公文基資模組(會簽待送出) -->
+  <!-- <script src="Lib/MS-ODC012.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 公文基資模組(會簽中) -->
+  <!-- <script src="Lib/RD-jquery.confirm.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 確認功能 -->
+  <!-- <script src="Lib/RD-NewAttach.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 新增附件模組 -->
+  <!-- <script src="Lib/RD-AttachMgmt.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 附件管理模組 -->
+  <!-- <script src="Lib/RD-HistoryDoc.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.4 - Eric Peng, for FDA prototype -->
+  <script src="Lib/RD-QueryDoc.js?ver=5.0.105.045"></script> <!-- 2016.4 - Eric Peng, for FDA prototype -->
+  <!-- <script src="Lib/RD-ReqDocNo.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.5.4 - Raymond, 創稿要號模組 -->
+  <!-- <script src="Lib/RD-ImportFile.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.5.4 - Raymond, 開啟舊檔模組 -->
+  <!-- <script src="Lib/RD-ExportFile.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.5.4 - Raymond, 另存新檔模組 -->
+  <!-- <script src="Lib/RD-PrintFolio.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.5.4 - Raymond, 列印公文模組 -->
+  <!-- <script src="Lib/RD-AdjustOrder.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.5.4 - Raymond, 調整稿序模組 -->
+  <!--1090929 Kevin 1090729 因應弱掃廢除未使用功能 <script src="Lib/RD-ViewHistory.js?ver=5.0.105.045"></script>--> <!-- 2016.5.5 - Raymond, 流程檢視模組 -->
+  <!--1090929 Kevin 1090729 因應弱掃廢除未使用功能 <script src="Lib/RD-ViewGuide.js?ver=5.0.105.045"></script>--> <!-- 2016.5.5 - Raymond, 導覽模組 -->
+  <!-- <script src="Lib/RD-ViewRefAtt.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.5.5 - Raymond, 參考附件模組 -->
+  <!-- <script src="Lib/RD-DraftCmds.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.5.5 - Raymond, 文稿指令列功能模組 -->
+  <!-- <script src="Lib/MS-Dept.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 受文者編輯子視窗模組 -->
+  <!-- <script src="Lib/RD-HiCosSCard.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.7.10 - PC憑證智慧卡加簽模組 -->
+  <!-- <script src="Lib/RD-NewDoc.js?ver=5.0.105.045"></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.7.13 - 創稿功能 -->
+  <!-- <script src="Lib/MS-GRP.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 群組編輯子視窗模組 -->
+  <!-- <script src="Lib/MS-ModeOrg.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 受文者修改子視窗-->
+  <!-- <script src="Lib/MS-Choose.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 受文者選擇子視窗-->
+  <!-- <script src="Lib/MS-WedEditSave.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!--文稿儲存處理-->
+  <!-- <script src="Lib/RD-watermark.jquery.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!--2018.1.18 - Eric Peng, 1060406, 強制式浮水印功能模組 -->
+  <!-- <script src="Lib/RD-UniView.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!--UniView模組 -->
+  <!-- <script src="Lib/MS-ToState.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!--期望語設定子視窗-->
+  <!-- <script src="Lib/MS-ToMeetTime.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!--開會時間設定子視窗-->
+  <!-- <script src="Lib/MS-Transfer.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!--獎懲與投標廠商設定子視窗-->
+  <!-- <script src="Lib/MS-SetDept.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!--驗收地點及請購單位設定子視窗-->
+  <!-- <script src="Lib/MS-EmployeeChange.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!--人員調動表設定子視窗-->
+  <!-- <script src="Lib/MS-SetIssueWordList.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!--會銜字號設定子視窗-->
+  <!-- <script src="Lib/RD-RefAttachMgmt.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.11.1 - Leslie, 參考附件管理檔模組 -->
+  <!-- <script src="Lib/RD-FolioCmds.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.11.2 - Raymond, 公文指令列功能模組 -->
+  <!-- <script src="Lib/RD-ChangePpr.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.11.2 - Raymond, 轉紙本指令列功能模組 -->
+  <!-- <script src="Lib/RD-PrintRefDoc.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2016.12.29 - Raymond, 參照公文列印功能模組 -->
+  <!-- <script src="Lib/CryptoJS/crypto-js.js?ver=5.0.105.045" async></script> 1100503	Leslie[1100333]	改為延遲載入 --> <!-- 2019.1.22 - Leslie, 1080043 新增SHA256演算法函式庫 -->
+  
+  <script type="module" src="Lib/DOMPurify/purify.js?ver=5.0.105.045"></script> <!-- 20210421 -->
+</head>
+<body>
+  <span id="httpObject" style="display:none"></span>
+  <div data-role="page" id="home" data-theme="b">
+		<div id="home_header" data-role="header" data-theme="b">
+		
+			<div id="imgUpDrawer"><div class="underline"></div></div>
+				
+			<a id="btn_Drawer" data-theme="b" data-role="none" style="display:none"></a>
+			<div id='mainMenu'> <!-- 上方標題列右方之標籤項目 公文夾/公布欄/工具箱 -->
+				<div id='btn_start' data-menuindex='0' class="selected" style="-webkit-user-select:none;">首  頁</div>
+				<div id='btn_mp' data-menuindex='1' style="-webkit-user-selectable:none;">公文夾</div>
+				<!--div id='btn_billboard' data-menuindex='2' style="-webkit-user-select:none;">公布欄</div-->
+				<!--div id="bottom-line"></div-->
+			</div>
+			
+		
+				<!--<img src='./image/sso/banner_logo.png'/> 20170321-->
+				<div id="Logo"></div>
+			<div id='mainTitle'>
+					<!--<span class="app_name" style="position:absolute;left:20px;top:0px">電子公文系統</span>-->
+					<div class="date_and_user">
+						<div id="roleid_wrapper" class="selector_wrapper ui-field-contain" data-type="horizontal" data-theme="e">
+							<input id="roleid_input" type="text" size='10' readonly="readonly" data-theme="c" data-mini="true" />
+							<span class="ui-icon-arrow-d" style="pointer-events:none"></span>
+							<!-- <select id="roleid_input" name="roleid_input" data-role="none" style="height:35px;font-size:1.5em;"></select> -->
+						</div>
+					</div>
+			
+				<div class="last_notification">
+					<marquee id="latest_notify_subject">即時通知訊息...</marquee>
+					<!--div id="latest_notify_subject">即時通知訊息...</div-->
+					<div class="date_info">1XX年X月X日, 星期Ｘ</div>
+				</div>
+			</div>
+			<div id="MainButton">
+			<!--20160608 Kevin 新增捷徑-->
+				<a href="#popupPanel" id="btn_upmenu" data-rel="popup" class="ui-btn ui-btn-b " data-theme="b">常用功能</a>
+				<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="50,1024">
+				<!--<div class="zTreeDemoBackground"></div>20170413移除-->
+					<div class="upMenuPanel"> 
+						<ul id="Uptree" class="ztree Upztree"></ul>
+						<!-- 20220302 Leslie 新增機關切換選單 -->
+						<ul id="UpUserLink" class="ztree UpUserLink"></ul>
+						<!--20170413 Kevin 新增顏色選擇-->
+						<div id="ColorSwitchTitle">背景主題</div>
+						<div id="ColorSwitchLB" class="ColorSwitch"></div>
+						<div id="ColorSwitchLG" class="ColorSwitch"></div>
+						<div id="ColorSwitchLP" class="ColorSwitch"></div>
+						<div id="ColorSwitchLY" class="ColorSwitch"></div>
+						<div id="LogProcess">
+							<div id="EnableInfoLog" class="LogProcessBtn">啟用追查模式</div>
+							<div id="DownloadLog" class="LogProcessBtn">下載Log檔</div>
+							<div id="ResetLog" class="LogProcessBtn">重置Log檔</div>
+							<div id="DownLoadDigiPDA" class="LogProcessBtn" style="float: right; display: none;">待辦提醒工具</div>
+							<!-- 1130808 Raymond 1130313 合併1111007(1100394), 新增安裝離線版公文製件按鈕 -->
+							<div id="offlineModeGroup" style="width:100%; float:left; display:none">
+								<div id="installOfflineMode" class="LogProcessBtn" style="width: 60px; height: 60px; line-height: 20px">安裝離線版公文製作</div>
+								<div id="updateOfflineMode" class="LogProcessBtn ui-disabled" style="width: 60px; height: 60px; line-height: 20px; font-size: 10pt">更新資源檔及使用者資訊</div>
+								<div id="uninstallOfflineMode" class="LogProcessBtn ui-disabled" style="width: 60px; height: 60px; line-height: 20px">移除離線版公文製作</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="#" id="btn_reload" class="ui-btn ui-btn-b " data-theme="b">重取</a>
+				<a href="#" id="btn_logout" class="ui-btn ui-btn-b " data-theme="b">登出</a>
+			</div>
+		</div>
+		<div data-role="content" id="mainContent">
+			<!--20170321 Kevin 新增左側抽屜-->
+			<div id="imgDownDrawer"></div>
+			<div id='mainPageContainer'>
+				<div id="startContainer" class="sso_subpage vSlideContainer slidedown_page"> <!-- placeholder for 工具箱(首頁)頁面內容 -->
+				</div><!--div id="startContainer"-->
+				<div id="mpContainer" class="sso_subpage vSlideContainer"> <!-- 公文夾功能 -->
+					<div id="mpDesktop" class="mp_desktop"> <!-- 公文夾桌面 -->
+						<div id="eDocPreviewPane" class="work_pane" style="width:100%; height:100%;"> <!-- 簽辦中線上公文預覽 -->
+							<div class="folio_preview_leftband preview_left_band"></div>
+							<div class="folio_preview preview_content">
+								<div class="folio_cntr">
+									<div>
+										<div class="folio_pane">
+											<div class="folio_content"> <!-- for flip景深 -->
+											</div>
+											<div class="cmdForDoc"> <!-- 公文操作按鍵, 2016.3 - 移到 folio_pane內 -->
+												<div>
+													<div class="cmdItem cmdOpenDoc">簽辦公文<div class="icon"></div><!--<span><span></span></span>20170413改為DIV實做--></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div> <!--div id="folio_cntr" -->
+								<div class="folio_preview_nav">
+									<div class="bkg"></div>
+									<div class="folio_btn_prev folio_nav_btn"></div>
+									<div class="folio_btn_1 folio_nav_btn">1</div>
+									<div class="folio_btn_2 folio_nav_btn" style="display:none;">2</div>
+									<div class="folio_btn_3 folio_nav_btn" style="display:none;">3</div>
+									<div class="folio_btn_4 folio_nav_btn" style="display:none;">4</div>
+									<div class="folio_btn_5 folio_nav_btn" style="display:none;">5</div>
+									<div class="folio_btn_next folio_nav_btn"></div>
+								</div><!--div id="folio_preview"--> <!-- End of 文稿/簽核介面 -->
+							</div> <!--div class="folio_preview -->
+						</div> <!--div id="eDocPreviewPane"-->
+						<!--div id="pDocWorkPane" class="work_pane"></div-->
+						<div id="docWorkPane" class="work_pane"> <!-- 簽核模組(AOL, 紙本/線上公文簽辦) 1100205 Raymond 1090927 刪除overflow-x:hidden;以修正AOL區域可以向上捲動超出可視範圍問題 -->
+							<div id="aol" data-theme="b" style="width:100%;height:100%;"></div>
+						</div>
+						<div id="newDocPreviewPane" class="work_pane"> <!-- 新增稿件預覽 -->
+							<div class="folio_preview_leftband preview_left_band"></div>
+							<div class="new_doc_preview preview_content">
+								<div class="folio_cntr">
+									<div>
+										<div class="folio_pane">
+											<div class="folio_content"> <!-- for flip景深 -->
+												<div data-index="0" data-msgid="" class="flip_content" style="left: 0px; z-index: 3; opacity: 1;">
+													<div class="page flip_side">
+														<img class="page_inner" src="">
+														<div class="docNo_left"></div>
+														<div class="docNo_right" style="display:none;"></div>
+											</div>
+												</div>
+												</div>
+										</div>
+									</div>
+								</div> <!--div id="folio_cntr" -->
+							</div>
+						</div>
+						<div id="pDocInspectPane" class="work_pane"> <!-- UniView模組, 紙本公文/來文頁面檢閱 -->
+							<div id="uniView" data-theme="b"></div>
+						</div>
+					</div>
+					<div id="todolistContainer" class="todoSubPage doc_desktop_subpage doc_desktop_showpage"> <!-- 公文夾側桌 -->
+						<div id="tdlPane"> <!-- 公文夾左方窗格 for 待辦清單 -->
+							<div id="tdlPane_dummy1">
+								<div id="listPane"> <!-- 待辦項目, 清單模式 (含全螢幕及單行) -->
+									<div class="fullViewContent"> <!--清單模式-全螢幕 -->
+										<div class="tdl_tb_cntr"> <!--2017.3.31 - new -->
+										<div id="todolistToolbar"> <!-- 清單模式窗格上方的工具欄 -->
+											<div class="ui-grid-b">
+												<div class="ui-block-a">
+													<label>公文夾：</label>
+													<div class="selector_wrapper">
+														<input id="selectedFolder" type="text" size='10' readonly='readonly' value="全部" data-theme="d"/>
+														<span class="ui-icon-arrow-d" style="pointer-events:none"></span>
+													</div>
+												</div>
+												<div class="ui-block-b">
+													<div style="width:90%; float:left;">
+														<input id="tdl_list_filter" placeholder="請輸入關鍵字..." data-inline="true" data-type="search" data-theme="e" />
+													</div>
+													<!--div style="width:105px; float:right;">
+													<button data-role="button" data-icon="back" data-mini="true" data-insect="true">重取待辦</button>
+													</div-->
+												</div>
+												<div class="doc_lights ui-block-c" data-type="horizontal">
+													<!-- 2021.2.17 - 1090927 Eric, remove style settings -->
+													<div class="doc_light_wrapper"> <!--style="width:60%;float:right;padding-right:5em;" -->
+														<div class="lights">
+															<div id="red_light" class="light red_light" title="逾期未辦畢公文"></div>
+															<div id="yellow_light" class="light yellow_light" title="即將逾期未辦畢公文"></div>
+															<div id="white_light" class="light white_light" title="未列入時效計算之公文及通知"></div>
+															<div id="green_light" class="light green_light" title="辦理中公文"></div>
+															<div id="purple_light" class="light purple_light" title="逾期未歸檔"></div>
+														</div>
+														<div class="numbers">
+															<div class="cell red_cnt">?</div>
+															<div class="cell yellow_cnt">?</div>
+															<div class="cell white_cnt">?</div>
+															<div class="cell green_cnt">?</div>
+															<div class="cell purple_cnt">?</div>
+														</div>
+													</div>
+												</div> <!-- div class="doc_lights -->
+											</div> <!--div class="ui-grid-b"-->
+										</div> <!--div id="todolistToolbar"-->
+										<div id="todolist_cntr" class="todolist_container"> <!-- container for 傳統條列式待辦事項清單 -->
+											<table id="todolist_tb"> <!-- 傳統條列式待辦事項清單 -->
+												<thead> <!-- todolist 標題列 -->
+													<tr> <!--th><a href="#">序</a></th-->
+													<th data-prop="speed" style="width:1.2em"><a href="#" data-prop="speed">速<br/>別</a><div class="sortIcon"></div></th>
+													<th data-prop="light" style="width:1.2em"><a href="#" data-prop="light">燈<br/>號</a><div class="sortIcon"></div></th>
+													<th data-prop="secret" style="width:1.2em"><a href="#" data-prop="secret">密<br/>等</a><div class="sortIcon"></div></th>
+													<th data-prop="signType" style="width:1.2em"><a href="#">類<br/>型</a><div class="sortIcon"></div></th>
+													<th data-prop="opened" style="width:1.5em"><a href="#" data-prop="opened">閱<br/>讀</a><div class="sortIcon"></div></th>
+													<th style='width:3.5em;' data-prop="dueDate"><a href="#">辦理<br/>期限</a><div class="sortIcon"></div></th>
+													<th class="docno_header" data-prop="docNo" style="width:10em;"><a href="#" data-prop="docNo">文　　號</a><!--div class="ui-icon-arrow-1-s" style="float:right;cursor:pointer;"></div--><div class="sortIcon"></div></th>
+													<th style='width:5.5em;' data-prop="inchargeUserName"><a href="#" data-prop="inchargeUserName">承辦人</a><div class="sortIcon"></div></th>
+													<th style='width:3.5em;' data-prop="inchargeOUName"><a href="#" data-prop="inchargeOUName">送文<br/>單位</a><div class="sortIcon"></div></th>
+													<th style='min-width:18em;' class="subject_header" data-prop="subject"><a href="#">主　　旨</a><div class="sortIcon"></div></th>
+													<th style='width:5.5em;' data-prop="txname"><a href="#" data-prop="txname">異動別</a><div class="sortIcon"></div></th>
+													<th data-prop="toUserName" style="width:8em"><a href="#" data-prop="sendTo">傳送至</a><div class="sortIcon"></div></th>
+													<th class="newTime" style="width:4.5em;" data-prop="newTime"><a href="#" data-prop="sendTime">送方<br />傳送時間 </a><div class="sortIcon"></div></th>
+													</tr>
+												</thead>
+												<tbody> <!-- 待辦事項清單內容 -->
+												</tbody>
+											</table>
+										</div> <!--div class="todolist_container"-->
+										<div id="tdl_list_toolbar" class="tdl_rt_toolbar" data-inline="true"> <!-- 右上方工具列 (清單/圖示切換) -->
+											<!--div id="btn_batchsubmit" class="icon" title="批次傳送"></div-->
+											<div id="btn_iconmode" class="icon" title="圖示模式"></div>
+											<div class="btn_reload icon" title="重取待辦"></div>
+										</div>
+										<div class="dragControlPane">
+											<div class="drag_control drag_to_close"></div>
+											<div class="drag_control drag_to_half"></div>
+											<div class="drag_control drag_item_title"><div class="icon_place icon-tdl"></div><span>待 辦 事 項</span></div>
+										</div>
+										</div> <!--2017.3.31 - new -->
+									</div> <!--div class="fullViewContent"-->
+								</div> <!--div id="listPane"-->
+								<div id="sidePane">
+									<div class="searchViewContent"> <!--預覽模式-左方公文清單 -->
+										<div>
+											<div class="searchView_Folder" data-theme="e">
+												<div class="selector_wrapper">
+												<!--label>文件夾：</label-->
+												<input id="selectedFolder_search" type="text" value="全部" data-theme="d"/>
+												<span class="ui-icon-arrow-d" style="pointer-events:none"></span> <!-- icon at right corner -->
+												</div>
+												<!--div class="reload_button" title="重取待辦">重<span></span></div-->
+											</div>
+											<!--div class="ui-scrolllistview" data-scroll="y"--> <!--style="height:562px"-->
+											<div class="search-wrapper">
+											<form class="ui-filterable">
+												<input id="tdl-searchview-filter-input" placeholder="請輸入關鍵字..." data-type="search" data-theme="e"> <!-- 2017.4.20 - add placehoder, data-theme -->
+											</form>
+											<!--ul id="search-list" class="search-list" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="輸入關鍵字..." data-theme="c"-->
+											<ul id="search-list" class="search-list" data-inset="true" data-role="listview" data-filter="true" data-input="#tdl-searchview-filter-input" data-filter-placeholder="輸入關鍵字..." data-theme="c">
+											</ul>
+											</div>
+										</div>
+										<div class="dragControlPane">
+											<div class="drag_control drag_to_close"></div>
+											<div class="drag_control drag_to_full"></div>
+											<div class="drag_control drag_item_title"><div class="icon_place icon-tdl"></div><span>待 辦 事 項</span></div>
+										</div>
+									</div> <!--div class="searchViewContent"-->
+								</div> <!--div id="sidePane"-->
+								<div id="iconPane"> <!-- 待辦項目, 圖示模式 -->
+									<div id="tdl_icon_list_content" class="icon_list_content">
+										<div id="todolist_icon_cntr" class="todolist_icon">
+											<ul class="folderList">
+											</ul> <!-- ul class="folderList" -->
+										</div>
+									</div>
+									<!-- 2017.11.28 - 由 #tdl_icon_list_content 移出, 解決iOS Safari無法點擊問題 -->
+									<div id="tdl_icon_toolbar" class="tdl_rt_toolbar"> <!-- 右上方工具列 (清單/圖示切換) -->
+										<div id="btn_listmode" class="icon" title="清單模式"></div>
+									</div>
+									<div class="dragControlPane">
+										<div class="drag_control drag_to_close"></div>
+										<div class="drag_control drag_to_half"></div>
+										<div class="drag_control drag_item_title"><div class="icon_place icon-tdl"></div><span>待 辦 事 項</span></div>
+									</div>
+								</div> <!--div id="iconPane"-->
+							</div> <!--div id="tdlPane_dummy1"-->
+						</div> <!--div id="tdlPane"-->
+					</div> <!--div id="todolistContainer"-->
+					<div id="newDocWorkspace" class="newDocSubPage doc_desktop_subpage doc_desktop_hiddenpage"> <!-- 創稿/新增文稿側桌 -->
+						<div class="sub_content ui-body ui-body-d">
+							<div class="list_layout ui-panel ui-body ui-body-c">
+								<div class="newDoc_options">
+									<div class="draftTypePanel" style="padding-left: 1em">
+										<div class="ui-field-contain">
+											<fieldset data-role="controlgroup" data-mini="true" data-type="horizontal">
+												<legend>公文類型：</legend>
+												<input type="radio" name="choice-signType2" id="radio-choice-signTypeE" value="choice-signTypeE" checked="checked" />
+												<label for="radio-choice-signTypeE">線上簽核</label>
+												
+												<input type="radio" name="choice-signType2" id="radio-choice-signTypeP" value="choice-signTypeP"  />
+												<label for="radio-choice-signTypeP">紙本簽核</label>
+											</fieldset>
+										</div>
+									</div>
+								</div>
+								<div class="list_items">
+									<header data-role="header" style="border-color:#888">
+										<h1 style="background:#fadb4e;width:100%;margin:0;">新增稿件</h1>
+										<!-- 1100917 Raymond 1080763 合併1070348, 支援自訂範本 -->
+										<div class="ui-body-c" data-theme="c">
+											<a id="newDoc_newTmpl" data-corners="false" data-role="button" class="ui-btn-active" style="border-radius:10px 10px 0px 0px; margin-bottom:0px">樣版</a>
+											<a id="newDoc_newSample" data-corners="false" data-role="button" style="border-radius:10px 10px 0px 0px; margin-bottom:0px">範本</a>
+										</div>
+									</header>
+									<div data-role="content" id="newDraftContent">
+										<ul class="newDraftList" data-role="listview" data-theme="c" data-inset="false" id="divUl">
+											<!--稿件清單區塊-->
+										</ul>
+										<!-- 1100917 Raymond 1080763 合併1070348, 支援自訂範本 -->
+										<ul data-role="listview" data-theme="c" data-inset="false" id="divUl2" style="margin:-1em;display:none">
+											<li style="padding:0px" class="ui-li-has-count">
+												<div data-role="collapsible" data-inset="false" data-theme="a" data-collapsed="false"><!--1100922 Raymond 1080763 自訂範本標題項目改為黑色-->
+													<h2 style="margin:0px">自訂範本<span class="ui-li-count">0</span></h2>
+													<ul data-role="listview" data-inset="false"></ul>
+												</div>
+											</li>
+											<li style="padding:0px" class="ui-li-has-count">
+												<div data-role="collapsible" data-inset="false" data-theme="a" data-collapsed="false"><!--1100922 Raymond 1080763 共用範本標題項目改為黑色-->
+													<h2 style="margin:0px">共用範本<span class="ui-li-count">0</span></h2>
+													<ul data-role="listview" data-inset="false"></ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div> <!-- div class="list-items" -->
+							</div>
+							<div class="dragControlPane">
+								<!--div class="drag_control drag_to_full"></div-->
+								<div class="drag_control drag_to_close"></div>
+								<div class="drag_control drag_item_title"><div class="icon_place icon-newDraft"></div><span>創 稿</span></div>
+							</div>
+						</div>
+					</div><!-- div id="newDocWorkspace"-->
+					<!-- 2019.6.10 - Eric, 移除冗餘內容 #historyWorkspace 及 #aki800ListWorkSpace內的公文項目 -->
+					<div id="aki800ListWorkspace" class="aki800SubPage doc_desktop_subpage doc_desktop_hiddenpage"> <!-- 公文檢索側桌 -->
+					<div class="sub_content" style="background-color: transparent">
+						<!--p style="margin-left: 1em">綜合公文查詢(AKI800)作業</p-->
+						<div id="querydoc_leftTopPane"> <!-- 歷史簽辦, 清單模式 (含全螢幕及單行) -->
+						<div class="fullViewContent"> <!--清單模式-全螢幕 -->
+							<div id="querydoc_todolistToolbar"> <!-- 清單模式窗格上方的工具欄 -->
+							<div class="ui-grid-b">
+								<div class="ui-block-a" class="ui-body ui-body-c">
+								<!-- 檢索 button -->
+								<a id="aki800Link" href="#" class="ui-btn ui-btn-d ui-btn-inline ui-mini" data-inline="true">檢索...</a>
+								<a id="queryListEdit" href="#" class="ui-btn ui-btn-d ui-btn-inline ui-mini" data-inline="true">編輯</a>
+								</div>
+								<div class="ui-block-b" data-type="horizontal">
+								</div> <!-- div class="doc_lights -->
+								<div class="ui-block-c" style="width:375px;margin-right:60px;">
+								<div style="width:250px; float:left;">
+									<input id="querydoc_tdl_list_filter" placeholder="請輸入關鍵字..." data-inline="true" data-type="search" data-theme="e" style="margin-right:10px;font-size:smaller"/>
+								</div>
+								</div>
+							</div> <!--div class="ui-grid-b"-->
+							</div> <!--div id="todolistToolbar"-->
+							<div id="querydoc_todolist_cntr" class="querydoc_todolist_container"> <!-- container for 傳統條列式待辦事項清單 -->
+							<table id="querydoc_todolist_tb"> <!-- 傳統條列式待辦事項清單 -->
+								<thead> <!-- todolist 標題列 -->
+								<tr> <!--th><a href="#">序</a></th-->
+									<th data-prop="speed"><a href="#" data-prop="speed">速<br/>別</a><div class="sortIcon"></div></th>
+									<th data-prop="secret"><a href="#" data-prop="secret">密<br/>等</a><div class="sortIcon"></div></th>
+									<th data-prop="signType"><a href="#">類<br/>型</a><div class="sortIcon"></div></th>
+									<th style='width:3.5em;' data-prop="dueDate"><a href="#">辦理<br/>期限</a><div class="sortIcon"></div></th>
+									<th class="docno_header" data-prop="docNo"><a href="#" data-prop="docNo">文號</a><!--div class="ui-icon-arrow-1-s" style="float:right;cursor:pointer;"></div--><div class="sortIcon"></div></th>
+									<th style='width:5.5em;' data-prop="inchargeUserName"><a href="#" data-prop="inchargeUserName">承辦人</a><div class="sortIcon"></div></th>
+									<th style='min-width:24em;' class="subject_header" data-prop="subject"><a href="#">主旨</a><div class="sortIcon"></div></th>
+								</tr>
+								</thead>
+								<tbody> <!-- 公文檢索清單內容 -->
+								</tbody>
+							</table>
+							</div> <!--div class="todolist_container"-->
+							<div class="dragControlPane">
+							<div class="drag_control drag_to_close"></div>
+							<div class="drag_control drag_to_half"></div>
+									<div class="drag_control drag_item_title"><div class="icon_place icon-aki800"></div><span>公 文 檢 索</span></div>
+							</div>
+						</div> <!--div class="fullViewContent"-->
+						<div class="searchViewContent" style="display:none;"> <!--預覽模式-左方公文清單 -->
+							<div>
+							<div class="search-wrapper">
+									<ul id="querydoc-search-list" class="search-list" data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="請輸入關鍵字..." data-theme="e">
+								</ul>
+							</div>
+							<div class="controlPanel">
+								<a id="btn_aki800Link" href="#" class="ui-btn ui-btn-d ui-btn-inline ui-mini">檢索...</a>
+							</div>
+							</div>
+							<div class="dragControlPane">
+							<div class="drag_control drag_to_close"></div>
+							<div class="drag_control drag_to_full"></div>
+								<div class="drag_control drag_item_title"><div class="icon_place icon-aki800"></div><span>公 文 檢 索</span></div>
+							</div>
+						</div> <!--div class="searchViewContent"-->
+						</div> <!--div id="leftTopPane"-->
+					</div>
+					</div>
+					<div id="leftDrawer" class="left_drawer"> <!-- 左側側桌顥示/切換鈕 -->
+						<div class="drawer_switch">
+							<div id="tab_todo" class="ui-block-a tab-item tab-focus"><div class="tab-item-icon"></div><div class="drawer_title">待辦事項</div></div>
+							<div id="tab_newdraft" class="ui-block-b tab-item"><div class="tab-item-icon"></div><div class="drawer_title">創稿</div></div>
+							<!--div id="tab_history_todo" class="ui-block-c tab-item"><div class="tab-item-icon"></div><div>歷史簽辦</div></div-->
+							<div id="tab_aki800" class="ui-block-d tab-item"><div class="tab-item-icon"></div><div class="drawer_title">公文檢索</div></div>
+						</div>
+					</div> <!--divdiv id="leftDrawer"-->
+					<div id="submitPageCntr" style="display:none;">
+						<!--iframe id="docSubmitPage"></iframe-->
+					</div> <!--div id="submitPageCntr" -->
+				</div> <!--div id="mpContainer" -->
+				<div id="billboard" class="sso_subpage vSlideContainer"> <!-- placeholder for 公布欄頁面內容 -->
+					<div class="menu">
+					<div width="100%">
+						<!--div class="ui-grid-a">
+						<div class="ui-block-a"><input type="button" value="簡易查詢" data-theme="e"/></div>
+						<div class="ui-block-b"><input type="button" value="進階查詢" data-theme="e"/></div>
+						</div-->
+						<ul id="billboard-class-list" class="billboard-class-list" data-inset="true" data-role="listview" data-theme='d'>
+						</ul>
+					</div>
+					</div>
+					<div class="content">
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+						<div data-type='horizontal'>
+							<input type="button" value="全部選取" data-theme="b" data-inline="true"/>
+							<input type="button" value="清除選取" data-theme="b" data-inline="true"/>
+							<input type="button" value="反相選取" data-theme="b" data-inline="true"/>
+						</div>
+						</div>
+					</div>
+					<table id="billboard_tb">
+						<!-- 標題列 -->
+						<!-- 發布單位 公布日期 公文文號 公告對象  -->
+						<thead>
+						<tr>
+							<th><a href="#">序</a></th>
+							<th><a href="#">選</a></th>
+							<th><a href="#"><img src='./image/sso/clip.png'/></a></th>
+							<th><a href="#">來文機關</a></th>
+							<th><a href="#">公告主旨</a></th>
+							<th><a href="#">發布單位</a></th>
+							<th><a href="#">公布日期</a></th>
+							<th ><a href="#">公文文號</a></th>
+							<th style='width:4.5em;'><a href="#">公告對象</a></th>
+						</tr>
+						</thead>
+						<tbody>
+						<!-- 公布欄項目清單內容 -->
+						</tbody>
+					</table>
+					</div>
+				</div><!--div id="billboard"-->
+			</div><!--div id='mainPageContainer'-->
+		</div> <!--div data-role="content"...-->
+		<div id="bottom-line" style="left:82px;display:none;"></div> <!-- 上方工具列, 切換首頁/公文夾後, 在Tab下方的連接線 -->
+		<div id="prompt_dlg" data-role="popup" data-overlay-theme="a" data-theme="c" class="ui-corner-all" style="max-width:480px;min-width:240px">
+			<a href="#" data-rel="back" class="ui-btn ui-btn-b ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+			<div data-role="header" data-theme="b" class="ui-corner-top" style="border-top-left-radius:.6em;border-top-right-radius:.6em">
+				<h1 class="prompt_title"></h1>
+			</div>
+			<div data-role="content" data-theme="d" class="prompt_content ui-corner-bottom ui-content">
+				<div class="content_text" style="max-height:320px"></div>
+			</div>
+		</div><!-- div id="prompt" ... -->
+		<!-- 2016.7 - Eric Peng, 紙本簽核原因設定子視窗 -->
+		<div data-role="popup" id="askPDocReasonDialog" data-dismissible="false">
+			<div data-role="header"><h1>請輸入紙本簽核原因</h1></div>
+			<div data-role="main" class="ui-content" style="width:30em;">
+				<p class="E2PMsg" style="display:none;">請確認印表機是否已正確列印出文件！<br>若正確列印，請輸入轉紙本說明及原因後，按確定鍵繼續將本文轉為紙本簽核文件。</p>
+				<select id="reason_code" data-theme="e">紙本簽核說明：
+					<option value=""></option>
+				</select>
+				<div class="prompt_reason_desc">請輸入紙本簽核原因：</div>
+				<input type="text" id="reason_desc" />
+				<!-- 1110401 Raymond 1110383 新增轉紙本列印時可指定雙面列印功能, 1110524 Raymond 1110383 修正與RD-PrintFolio.html中雙面列印選項同ID, 會使列印子視窗第1次開啟時雙面列印選項呈現樣式異常的問題 -->
+				<label for="bothSideE2P">雙面列印</label>
+				<input type="checkbox" id="bothSideE2P" data-theme="d"/>
+				<a href="#" id="btn_PDRDOK" data-inline="true" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all">確定</a>
+				<a href="#" id="btn_PDRDCancel" data-inline="true" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all">取消</a>
+			</div>
+			<!--div data-role="footer">
+				<h1>Footer Text..</h1>
+			</div-->
+		</div>
+		<!-- 2016.9 - Eric Peng, 紙本簽核原因設定子視窗 -->
+		<div data-role="popup" id="confirmInsertCoWWKFDialog" data-dismissible="false">
+			<div data-role="header"><h1>新增會辦流程確認</h1></div>
+			<div data-role="main" class="ui-content" style="width:30em;">
+				<!--div class="prompt_confirm_desc">是否將公文製作稿件中會辦單位資訊新增至公文預排流程中?</div-->
+				<div class="ui-field-contain" data-theme="e">
+					<fieldset data-role="controlgroup" class="ui-page-theme-c">
+						<legend>是否將公文製作稿件中會辦單位資訊新增至公文預排流程中?</legend>
+						<legend>(後會單位將依序加入公文預排流程之最末)</legend>
+						<input type="radio" name="r-choice-inscowork" id="r-choice-inscowork-1" value="choice-1" checked="checked">
+						<label for="r-choice-inscowork-1">加入為順會流程</label>
+						<input type="radio" name="r-choice-inscowork" id="r-choice-inscowork-2" value="choice-2">
+						<label for="r-choice-inscowork-2">加入為分會流程</label>
+					</fieldset>
+				</div>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<a href="#" id="btn_InsCoWWKFCancel" class="ui-btn ui-btn-c ui-corner-all">取消</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#" id="btn_InsCoWWKFDOK" class="ui-btn ui-btn-b ui-corner-all">確定</a>
+					</div>
+				</div>
+			</div>
+		</div><!--div data-role="popup" id="confirmInsertCoWWKFDialog" -->
+		<!-- 2016.9.9 - Eric Peng, 紙本分會流程設定子視窗 -->
+		<div data-role="popup" id="PDoc_CoWWKFDialog" data-dismissible="false" data-overlay-theme="a" style="min-height:30em;width:60em;">
+			<div data-role="header"><h1>分會流程設定</h1></div>
+			<div data-role="main" class="ui-content" style="width:Calc(100% - 2em);height:Calc(100% - 1.5em);padding-top:0px;">
+				<div class="ui-field-contain" data-theme="e" style="height: Calc(100% - 0.5em);">
+					<iframe id="msCoworkSelectFrame" style="width:100%;height:100%"></iframe>
+				</div>
+				<div class="ui-grid-a" style="display:none">
+					<div class="ui-block-a">
+						<a href="#" id="btn_PDocCoWWKFCancel" class="ui-btn ui-btn-c ui-corner-all">取消</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#" id="btn_PDocCoWWKFDOK" class="ui-btn ui-btn-b ui-corner-all">確定</a>
+					</div>
+				</div>
+			</div>
+		</div><!--div data-role="popup" id="PDoc_CoWWKFDialog" -->
+  </div> <!--div data-role="page" id="home" data-theme="b"-->
+  <div id="login" class="login_slidedown">
+	  <div class="main" data-role="content" id="mainContent">
+		  <div class="upper-part">
+			  <!--div class="sys-title" style="display:none">[○○機關]電子公文檔管系統</div-->
+		  </div>
+		  <div class="middle-part ui-grid-b">
+			  <!--<div class="ui-block-a"></div>-->
+			  <!--20170321 Kevin 新增首頁圖示-->
+			  <div id="LoginTitle"></div>
+			  <div class="input_panel ui-block-b ui-page-theme-e" id="LoginMain">
+				  <div id="orgid_wrapper" class="selector_wrapper ui-field-contain" data-type="horizontal" data-theme="e">
+					<input id="orgid_input" type="text" size='10' readonly='readonly' data-theme="e" />
+					<span class="ui-icon-arrow-d" style="pointer-events:none"></span>
+				  </div>
+				  <div class="ui-field-contain" data-mini="true">
+					<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" style="margin-left:5%">
+					  <input type="radio" name="radio-choice-login-type" id="radio-choice-loginbyAccount" value="login-choice-account" checked="checked" />
+					  <label for="radio-choice-loginbyAccount">帳號密碼</label>
+					  <input type="radio" name="radio-choice-login-type" id="radio-choice-loginbyCert" value="login-choice-cert"  />
+					  <label for="radio-choice-loginbyCert">智慧卡</label>
+					</fieldset>
+				  </div>
+				  <div class="userid_wrapper ui-field-contain" data-type="horizontal">
+					  <label for="userid">帳　號：</label>
+					  <input id="in_userid" name="userid" type='text' value="" autocomplete="new-password" />
+				  </div>
+				  <div class="password_wrapper ui-field-contain" data-type="horizontal">
+					  <label for="password">密　碼：</label>
+					  <input id="in_password" name="password" type='password' autocomplete="new-password" />
+				  </div>
+				  <!--div class="login_method_wrapper" data-role="fieldcontain">
+					<fieldset data-role="controlgroup" data-type="horizontal" data-theme="e"-->
+					  <!--legend style="display:none;">登入方式:</legend-->
+					  <!--input type="radio" name="login-choice" id="login-choice-1" value="choice-1" checked="checked"/>
+					  <label for="login-choice-1" data-theme="e">帳號密碼登入</label>
+					  <input type="radio" name="login-choice" id="login-choice-2" value="choice-2"/>
+					  <label for="login-choice-2" data-theme="e">智慧卡登入</label>
+					</fieldset>
+				  </div-->
+				  <div><!--class="ui-grid-a"-->
+					  <!--div class="ui-block-a"></div-->
+					  <div>
+						  <input type="submit" value="登　　入" id="btn_login" data-theme="b" />
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  <div class="bottom_part"></div>
+	  </div>
+  </div> <!--div data-role="page" id="login" ... -->
+  <div id="blankBlackPage" data-role="page" data-theme="a" style="width:100%;height:100%;">
+		<div data-role="content" id="blankPageContent" style="padding: 60px 1em 1em 1em;">
+			<a data-rel="back" href="#home" class="ui-btn ui-btn-inline ui-btn-c">back</a>
+		</div>
+  </div>
+  <!-- 2013.2 - Eric Peng, 傳送設定子視窗 -->
+  <!-- 2021.2.2 - 1090927 Eric Peng, support iPhone, 修改min-height 480 -> 320 -->
+  <div id="dlgDocSendTarget" style="display:none;position:relative;min-height: 320px !important;">
+		<!--div class="dlg-title" data-role="header"-->
+		<h1 style="margin-top:5px;margin-bottom:5px;">確認傳送對象後傳送公文</h1>
+		<!--/div-->
+		<div data-role="content" style="padding-top:5px">
+			<div class="setting_panel" style="max-height:380px; overflow-y:auto; overflow-x:hidden">
+				<div class="approve_setting">
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<!--a id="openWWKFEditDlg" href="#" class="wwkf_btn ui-btn ui-btn-c ui-mini ui-icon-gear ui-btn-icon-right">流程設定</a-->  <!-- 2017.10.18 - 1060748, 預排流程設定移到獨立子視窗 -->
+							<a id="openNegotiateSettingDlg" href="#" class="negotiate_btn ui-btn ui-btn-c ui-mini ui-icon-gear ui-btn-icon-right">待討論</a>
+							<a id="openSendBackSettingDlg" href="#" class="resend_btn ui-btn ui-btn-c ui-mini ui-icon-gear ui-btn-icon-right">回閱設定</a>
+						</div>
+						<div class="ui-block-b">
+							<div class="reject_ui_container" style="float:right; margin: 5px 2px; width:45%; display:inline-block;">
+								<div style="width:95%;">
+									<label><input type="checkbox" id="checkbox_reject" style="display:inline-block;" data-theme="b"/>剔退</label>
+								</div>
+							</div>
+							<div class="apporove_ui_container" style="float:right; margin: 5px 2px; width:45%; display:inline-block; position:relative;">
+								<div style="width:95%;">
+									<label><input type="checkbox" id="checkbox_approve" style="display:inline-block;" data-theme="b" style="width:70%"/>核決</label>
+								</div>
+								<a id="app_opt_show" href="#" class="app_opt_show" data-role="none" style="display:none;"></a>
+							</div>
+						</div>
+					</div>
+					<div class="approve_options ui-body ui-body-e" style="margin-left:150px;">
+						<div class="ui-field-contain" data-type="horizontal" style="margin-left:10px;margin-top:5px;">
+							<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+								<legend>核決類型：</legend>
+								<label><input type="radio" name="app_choice" id="rbox_send" data-theme="e"/>　判發　</label>
+								<label><input type="radio" name="app_choice" id="rbox_accept" data-theme="e"/>　存查　</label>
+							</fieldset>
+						</div>
+						<div class="ui-grid-a" data-theme="d">
+							<div class="ui-block-a">
+								<div style="width:95%">
+									<label><input type="checkbox" name="app_unit_send" id="cbox_unitSend" data-mini="true" data-theme="d"/>單位發文</label>
+								</div>
+							</div>
+							<div class="ui-block-b">
+								<div style="width:95%">
+									<label><input type="checkbox" id="cbox_extra" data-mini="true" data-theme="d"/>發送電子郵件或張貼網頁</label>
+								</div>
+							</div>
+						</div>
+						<a id="app_opt_close" href="#" class="panel_close_img" data-role="none"></a>
+					</div>
+				</div> <!--div class="approve_setting" -->
+				<div class="signer_comment" style="position: relative;">
+					<textarea rows="3" style="width:100%;line-height:1.2em;resize:none;height:4.5em;max-height:4.5em;overflow: auto;-webkit-overflow-scrolling:touch;">目前簽核人員簽核意見blah blah blah...</textarea>
+					<div id="signer_comment_title" style="position:absolute;left:0;top:-25px">簽核意見:</div>
+				</div>
+				<div class="trans_target" data-role="none">
+					<ul id="nextOptions">
+					</ul>
+					<div class="selectNextOptions">
+						<!--button id="btnExpand" data-role="none" style="vertical-align:top; height:45px;">»</button-->
+						<span>指定傳送對象：</span>
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<select id="tdlg_chooseA" class="txSelect" data-theme="c" data-inline="true"></select>
+							</div>
+						</div>
+						<div class="ui-grid-b">
+							<div class="ui-block-a">
+								<select id="tdlg_chooseB" data-theme="c"></select>
+							</div>
+							<div class="ui-block-b">
+								<select id="tdlg_chooseC" data-theme="c"></select>
+							</div>
+							<div class="ui-block-c">
+								<select id="tdlg_chooseD" data-theme="c"></select>
+							</div>
+						</div>
+					</div>
+				</div><!--div class="trans_target"-->
+			</div><!--div class="setting_panel"-->
+			<div class="ui-grid-b">
+				<div class="ui-block-a"><a id="targetDlgOK" class="footer_btn ui-btn ui-btn-e" href="#" style="color:#222;">確認傳送</a></div>
+				<div class="ui-block-b"><a id="targetDlgSave" class="footer_btn ui-btn ui-btn-d" href="#" style="color:#222;">儲存,稍後傳送</a></div>
+				<div class="ui-block-c"><a id="targetDlgCancel" class="footer_btn ui-btn ui-btn-d" href="#" style="color:#222;">取消</a></div>
+			</div>
+		</div>
+		<!-- 2015.9 - Eric Peng, 共議設定子視窗 -->
+		<div id="docSysSettingDlgContainer" style="display:none;">
+			<iframe id="docSysSettingPage" style="background-color:#ffc">
+			</iframe>
+			<div id="docAdvancedSettingDlgContainer" style="display:none;background-color:#FFF;">
+				<iframe id="docAdvSettingPage" style="background-color:#ffc">
+				</iframe>
+				<a id="docAdvDlg_close_btn" style="display:none"></a>
+			</div>
+			<a id="docSysDlg_close_btn" style="display:none"></a>
+			<a id="docAdvDlg_open_btn" style="display:none"></a>
+		</div>
+  </div><!-- div id="dlgDocSendTarget" ... -->
+  <!-- 2015.10 - Eric Peng, 核決設定子視窗 -->
+  <div id="dlgApproveConfirm" style="display:none;position:relative;">
+		<h1 style="margin-top:5px;margin-bottom:5px;">請確認並勾選核決選項</h1>
+		<div data-role="content" style="padding-top:5px;">
+			<div class="ui-field-contain" data-type="horizontal" style="margin-left:10px;margin-top:5px;">
+				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+					<legend>核決類型：</legend>
+					<input type="radio" name="app_choice" id="rbox_send" data-theme="c"/>
+					<label for="rbox_send">　判發　</label>
+					<input type="radio" name="app_choice" id="rbox_accept" data-theme="c"/>
+					<label for="rbox_accept">　存查　</label>
+				</fieldset>
+			</div>
+			<div style="width:95%">
+			<label><input type="checkbox" id="cbox_unitSend" data-mini="true" data-theme="c"/>單位發文</label>
+			<!--label for="cbox_unitSend2">單位發文</label-->
+			</div>
+			<div style="width:95%;margin-top:10px;">
+			<label><input type="checkbox" id="cbox_extra" data-mini="true" data-theme="c"/>發送電子郵件或張貼網頁</label>
+			<!--label for="cbox_extra">發送電子郵件或張貼網頁</label-->
+			</div>
+			<div class="ui-grid-a" style="margin-top:15px">
+				<div class="ui-block-a"></div>
+				<div class="ui-block-b">
+					<div class="ui-grid-a">
+					<div class="ui-block-a"><a id="targetDlgOK" class="footer_btn ui-btn ui-btn-e" href="#" style="color:#222;">確定</a></div>
+					<div class="ui-block-b"><a id="targetDlgCancel" class="footer_btn ui-btn ui-btn-c" href="#" style="color:#222;">取消</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  <!-- 2015.1 - Eric Peng, ASPX網頁程式dlg框架 -->
+  <!-- 2021.10 - Eric, 調整框架內容以避免出現2個垂直scrollbar -->
+  <div id="dlgASPXPage" style="display:none;width:100%;height:100%;padding:0px;overflow:hidden;-webkit-overflow-scrolling:touch;">
+		<iframe class="aspx_page_content" style="width:100%;height:100%;"></iframe>
+		<a class="closeBtn" style="display:none"></a>
+  </div><!-- <div id="dlgASPXPage" ... -->
+  <a id="lnkDialog" href="RD-DlgPincode.html?ver=5.0.105.045" data-rel="dialog" data-transition="slidedown" style="display:none;"></a>
+  <a id="lnkChagnePasswordDlg" href="RD-DlgChangePassword.html?ver=5.0.105.045" data-rel="dialog" data-transition="slidedown" style="display:none;"></a>
+  <div id="SDPMode_curtain"><span>本系統不支援手機直式模式，<br>請轉為橫式後重載網頁．</span></div>
+</body>
+</html>

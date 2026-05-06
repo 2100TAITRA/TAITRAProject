@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AKM330C2D" targetNamespace="http://tempuri.org/AKM330C2D.xsd" xmlns:mstns="http://tempuri.org/AKM330C2D.xsd" xmlns="http://tempuri.org/AKM330C2D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AKM330C2D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AKM330C2D" msprop:Generator_UserDSName="AKM330C2D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AKM330C2L1" msprop:Generator_TableClassName="AKM330C2L1DataTable" msprop:Generator_TableVarName="tableAKM330C2L1" msprop:Generator_TablePropName="AKM330C2L1" msprop:Generator_RowDeletingName="AKM330C2L1RowDeleting" msprop:Generator_RowChangingName="AKM330C2L1RowChanging" msprop:Generator_RowEvHandlerName="AKM330C2L1RowChangeEventHandler" msprop:Generator_RowDeletedName="AKM330C2L1RowDeleted" msprop:Generator_UserTableName="AKM330C2L1" msprop:Generator_RowChangedName="AKM330C2L1RowChanged" msprop:Generator_RowEvArgName="AKM330C2L1RowChangeEvent" msprop:Generator_RowClassName="AKM330C2L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SEQ_NO" msprop:Generator_ColumnVarNameInTable="columnSEQ_NO" msprop:Generator_ColumnPropNameInRow="SEQ_NO" msprop:Generator_ColumnPropNameInTable="SEQ_NOColumn" msprop:Generator_UserColumnName="SEQ_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_DATE" msprop:Generator_ColumnVarNameInTable="columnFILE_DATE" msprop:Generator_ColumnPropNameInRow="FILE_DATE" msprop:Generator_ColumnPropNameInTable="FILE_DATEColumn" msprop:Generator_UserColumnName="FILE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="ACP_DATE" msprop:Generator_ColumnVarNameInTable="columnACP_DATE" msprop:Generator_ColumnPropNameInRow="ACP_DATE" msprop:Generator_ColumnPropNameInTable="ACP_DATEColumn" msprop:Generator_UserColumnName="ACP_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="SIGN_TYPE" msprop:Generator_ColumnVarNameInTable="columnSIGN_TYPE" msprop:Generator_ColumnPropNameInRow="SIGN_TYPE" msprop:Generator_ColumnPropNameInTable="SIGN_TYPEColumn" msprop:Generator_UserColumnName="SIGN_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="CLS_NO" msprop:Generator_ColumnVarNameInTable="columnCLS_NO" msprop:Generator_ColumnPropNameInRow="CLS_NO" msprop:Generator_ColumnPropNameInTable="CLS_NOColumn" msprop:Generator_UserColumnName="CLS_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META content="Microsoft Visual Studio 7.0" name="GENERATOR" charset="utf-8">
+	</HEAD>
+	<BODY>
+		<TABLE id="Table1" height="82" cellSpacing="0" cellPadding="0" width="712" border="0">
+			<TR>
+				<TD align="middle" colSpan="4"><FONT face="新細明體" size="5"><FONT face="新細明體">@TITLE@</FONT></FONT></TD>
+			</TR>
+			<TR>
+				<TD align="middle" colSpan="4"><FONT face="新細明體" size="4">線上調檔檔案目錄摘要</FONT></TD>
+			</TR>
+			<TR>
+				<TD align="right" width="93"><FONT face="新細明體">調案單號：</FONT></TD>
+				<TD align="left" width="116"><FONT face="新細明體">@BOR_NO@</FONT></TD>
+				<TD align="right" width="332"><FONT face="新細明體">申請日期：</FONT></TD>
+				<TD align="left"><FONT face="新細明體">@APP_DATE@</FONT></TD>
+			</TR>
+			<TR>
+				<TD align="right" width="93"><FONT face="新細明體">申請人：</FONT></TD>
+				<TD align="left" width="116"><FONT face="新細明體">@EMP_NAME@</FONT></TD>
+				<TD align="right" width="332"><FONT face="新細明體">調案期限：</FONT></TD>
+				<TD align="left"><FONT face="新細明體">@SDATE@ 至 @EDATE@</FONT></TD>
+			</TR>
+			<TR>
+				<TD align="right" width="332"></TD>
+				<TD align="right"><FONT face="新細明體">共@COUNT@筆</FONT></TD>
+			</TR>
+		</TABLE>
+		<HR width="100%" SIZE="1">
+		<TABLE id="MainTable" cellSpacing="0" cellPadding="0" width="100%" border="1">
+			<TR bgColor="#6b696b">
+				<TD align="middle" width="5%"><FONT face="新細明體" color="white">序</FONT></TD>
+				<TD align="middle" width="15%"><FONT face="新細明體" color="white">收(創)文日期</FONT></TD>
+				<TD align="middle" width="15%"><FONT face="新細明體" color="white">公文文號</FONT></TD>
+				<TD align="middle" width="30%"><FONT face="新細明體" color="white">檔號</FONT></TD>
+				<TD align="middle" width="15%"><FONT color="white" face="新細明體">文件產生日</FONT></TD>
+				<TD align="middle" width="35%"><FONT color="white" face="新細明體">主旨/案由</FONT></TD>
+			</TR>
+			@DETAIL@
+		</TABLE>
+		<HR width="100%" SIZE="1">
+	</BODY>
+</HTML>

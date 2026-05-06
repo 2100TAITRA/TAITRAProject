@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xsd:schema id="Dataset2" targetNamespace="http://tempuri.org/Dataset2.xsd" elementFormDefault="qualified"
+	xmlns="http://tempuri.org/Dataset2.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xsd:element name="Dataset2" msdata:IsDataSet="true">
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element name="DOC_MAIN">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="DOC_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="SOURCE_ORGNO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="SOURCE_ORGNAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="KEEP_TYPE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="KEEP_ORGNO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="KEEP_ORGNAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="KEEY_DEPTNO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="KEEY_DEPTNAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="DEPT_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="DEPT_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="SECT_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="SECT_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="USERNAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="EMP_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RPSDEPT_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RPSDEPT_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RPSSECT_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RPSSECT_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RPS_USER" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RPSEMP_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="DOC_STATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="PROC_STATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="CLOSE_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="EXTFILE_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FROMORG_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FROMORG_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FROM_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FROM_NO_WORD" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FROM_NO_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="SEC_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="SPD_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RMVSEC_COND" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RMVSEC_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="KEEP_YEAR" type="xsd:string" minOccurs="0" />
+							<xsd:element name="DOC_CATEGORY" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FROMDOC_TYPE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FROMATT_DESC" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FROMATT_NUM" type="xsd:decimal" minOccurs="0" />
+							<xsd:element name="RCV_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RCV_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RCV_NO_WORD" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RCV_NO_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FROM_SUBJECT" type="xsd:string" minOccurs="0" />
+							<xsd:element name="APP_SUBJECT" type="xsd:string" minOccurs="0" />
+							<xsd:element name="OTHER_SUBJECT" type="xsd:string" minOccurs="0" />
+							<xsd:element name="ISSUE_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="ISSUE_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="ISSUE_NO_WORD" type="xsd:string" minOccurs="0" />
+							<xsd:element name="ISSUE_NO_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="COM_NOWORD" type="xsd:string" minOccurs="0" />
+							<xsd:element name="COM_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_YEAR" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_CLS" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_CASE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_VOL" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_SEQ" type="xsd:string" minOccurs="0" />
+							<xsd:element name="CLAN_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="VOLUME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="SUB_DIR" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="MF_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="MEDIA_TYPE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_CNT" type="xsd:decimal" minOccurs="0" />
+							<xsd:element name="FILE_UNIT" type="xsd:string" minOccurs="0" />
+							<xsd:element name="APPLY_LIMIT" type="xsd:string" minOccurs="0" />
+							<xsd:element name="KEEP_STATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="DES_DOCNO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="DES_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RKEEP_YEAR" type="xsd:string" minOccurs="0" />
+							<xsd:element name="CKEEPYR_REASON" type="xsd:string" minOccurs="0" />
+							<xsd:element name="TRAN_REMARK" type="xsd:string" minOccurs="0" />
+							<xsd:element name="MAX_LTRANDATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="INS_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="ACP_USERNAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="ACP_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_USERNAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="UPD_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="UPD_USERNAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="SEQ_NO" type="xsd:decimal" minOccurs="0" />
+							<xsd:element name="FILE_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_COMBOSEQ" type="xsd:string" minOccurs="0" />
+							<xsd:element name="COM_TYPE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="BM_DEPT_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="BM_EMP_NAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="BM_DUE_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="BM_BOR_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="BM_BOR_DATE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="CURR_LOCATION" type="xsd:string" minOccurs="0" />
+							<xsd:element name="RCV_TYPE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="SIGN_TYPE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="ASSIGN_ORGNAME" type="xsd:string" minOccurs="0" />
+							<xsd:element name="STOCK_NO" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_GRP" type="xsd:string" minOccurs="0" />
+							<xsd:element name="IN_SUBJECT" type="xsd:string" minOccurs="0" />
+							<xsd:element name="FILE_GRP_COPY" type="xsd:string" minOccurs="0" />
+							<xsd:element name="CLOSE_TYPE" type="xsd:string" minOccurs="0" />
+							<xsd:element name="NEW_BY_OU" type="xsd:string" minOccurs="0" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

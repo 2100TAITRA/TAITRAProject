@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR213D" targetNamespace="http://tempuri.org/EDR213D.xsd" xmlns:mstns="http://tempuri.org/EDR213D.xsd" xmlns="http://tempuri.org/EDR213D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR213D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR213D" msprop:Generator_UserDSName="EDR213D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR213L1" msprop:Generator_TableClassName="EDR213L1DataTable" msprop:Generator_TableVarName="tableEDR213L1" msprop:Generator_RowChangedName="EDR213L1RowChanged" msprop:Generator_TablePropName="EDR213L1" msprop:Generator_RowDeletingName="EDR213L1RowDeleting" msprop:Generator_RowChangingName="EDR213L1RowChanging" msprop:Generator_RowEvHandlerName="EDR213L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR213L1RowDeleted" msprop:Generator_RowClassName="EDR213L1Row" msprop:Generator_UserTableName="EDR213L1" msprop:Generator_RowEvArgName="EDR213L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ATTENDEES" msprop:Generator_ColumnVarNameInTable="columnATTENDEES" msprop:Generator_ColumnPropNameInRow="ATTENDEES" msprop:Generator_ColumnPropNameInTable="ATTENDEESColumn" msprop:Generator_UserColumnName="ATTENDEES" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

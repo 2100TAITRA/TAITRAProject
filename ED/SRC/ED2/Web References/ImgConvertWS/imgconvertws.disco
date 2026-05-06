@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://win7test02/imgConvert/imgconvertws.asmx?wsdl" docRef="https://win7test02/imgConvert/imgconvertws.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://win7test02/imgConvert/imgconvertws.asmx" xmlns:q1="http://2100T.com.tw" binding="q1:T2100FileIoServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://win7test02/imgConvert/imgconvertws.asmx" xmlns:q2="http://2100T.com.tw" binding="q2:T2100FileIoServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

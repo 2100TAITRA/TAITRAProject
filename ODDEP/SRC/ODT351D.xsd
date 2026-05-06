@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ODT351D" targetNamespace="http://tempuri.org/ODT351D.xsd" xmlns:mstns="http://tempuri.org/ODT351D.xsd" xmlns="http://tempuri.org/ODT351D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ODT351D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="ODT351D" msprop:Generator_UserDSName="ODT351D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Receiver" msprop:Generator_TableClassName="ReceiverDataTable" msprop:Generator_TableVarName="tableReceiver" msprop:Generator_TablePropName="Receiver" msprop:Generator_RowDeletingName="ReceiverRowDeleting" msprop:Generator_RowChangingName="ReceiverRowChanging" msprop:Generator_RowEvHandlerName="ReceiverRowChangeEventHandler" msprop:Generator_RowDeletedName="ReceiverRowDeleted" msprop:Generator_UserTableName="Receiver" msprop:Generator_RowChangedName="ReceiverRowChanged" msprop:Generator_RowEvArgName="ReceiverRowChangeEvent" msprop:Generator_RowClassName="ReceiverRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Seq" msprop:Generator_ColumnVarNameInTable="columnSeq" msprop:Generator_ColumnPropNameInRow="Seq" msprop:Generator_ColumnPropNameInTable="SeqColumn" msprop:Generator_UserColumnName="Seq" type="xs:string" minOccurs="0" />
+              <xs:element name="Reciver" msprop:Generator_ColumnVarNameInTable="columnReciver" msprop:Generator_ColumnPropNameInRow="Reciver" msprop:Generator_ColumnPropNameInTable="ReciverColumn" msprop:Generator_UserColumnName="Reciver" type="xs:string" minOccurs="0" />
+              <xs:element name="IssueType" msprop:Generator_ColumnVarNameInTable="columnIssueType" msprop:Generator_ColumnPropNameInRow="IssueType" msprop:Generator_ColumnPropNameInTable="IssueTypeColumn" msprop:Generator_UserColumnName="IssueType" type="xs:string" minOccurs="0" />
+              <xs:element name="DocType" msprop:Generator_ColumnVarNameInTable="columnDocType" msprop:Generator_ColumnPropNameInRow="DocType" msprop:Generator_ColumnPropNameInTable="DocTypeColumn" msprop:Generator_UserColumnName="DocType" type="xs:string" minOccurs="0" />
+              <xs:element name="hasAttach" msprop:Generator_ColumnVarNameInTable="columnhasAttach" msprop:Generator_ColumnPropNameInRow="hasAttach" msprop:Generator_ColumnPropNameInTable="hasAttachColumn" msprop:Generator_UserColumnName="hasAttach" type="xs:string" minOccurs="0" />
+              <xs:element name="DraftNo" msprop:Generator_ColumnVarNameInTable="columnDraftNo" msprop:Generator_ColumnPropNameInRow="DraftNo" msprop:Generator_ColumnPropNameInTable="DraftNoColumn" msprop:Generator_UserColumnName="DraftNo" type="xs:string" minOccurs="0" />
+              <xs:element name="SubNo" msprop:Generator_ColumnVarNameInTable="columnSubNo" msprop:Generator_ColumnPropNameInRow="SubNo" msprop:Generator_ColumnPropNameInTable="SubNoColumn" msprop:Generator_UserColumnName="SubNo" type="xs:string" minOccurs="0" />
+              <xs:element name="SendNo" msprop:Generator_ColumnVarNameInTable="columnSendNo" msprop:Generator_ColumnPropNameInRow="SendNo" msprop:Generator_ColumnPropNameInTable="SendNoColumn" msprop:Generator_UserColumnName="SendNo" type="xs:string" minOccurs="0" />
+              <xs:element name="IssueDesc" msprop:Generator_ColumnVarNameInTable="columnIssueDesc" msprop:Generator_ColumnPropNameInRow="IssueDesc" msprop:Generator_ColumnPropNameInTable="IssueDescColumn" msprop:Generator_UserColumnName="IssueDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="ReciverUserName" msprop:Generator_ColumnVarNameInTable="columnReciverUserName" msprop:Generator_ColumnPropNameInRow="ReciverUserName" msprop:Generator_ColumnPropNameInTable="ReciverUserNameColumn" msprop:Generator_UserColumnName="ReciverUserName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ODT351D_327150000I" msprop:Generator_TableClassName="ODT351D_327150000IDataTable" msprop:Generator_TableVarName="tableODT351D_327150000I" msprop:Generator_TablePropName="ODT351D_327150000I" msprop:Generator_RowDeletingName="ODT351D_327150000IRowDeleting" msprop:Generator_RowChangingName="ODT351D_327150000IRowChanging" msprop:Generator_RowEvHandlerName="ODT351D_327150000IRowChangeEventHandler" msprop:Generator_RowDeletedName="ODT351D_327150000IRowDeleted" msprop:Generator_UserTableName="ODT351D_327150000I" msprop:Generator_RowChangedName="ODT351D_327150000IRowChanged" msprop:Generator_RowEvArgName="ODT351D_327150000IRowChangeEvent" msprop:Generator_RowClassName="ODT351D_327150000IRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_ISSUE_TYPE" msprop:Generator_ColumnVarNameInTable="columnDOC_ISSUE_TYPE" msprop:Generator_ColumnPropNameInRow="DOC_ISSUE_TYPE" msprop:Generator_ColumnPropNameInTable="DOC_ISSUE_TYPEColumn" msprop:Generator_UserColumnName="DOC_ISSUE_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="E_NUM" msprop:Generator_ColumnVarNameInTable="columnE_NUM" msprop:Generator_ColumnPropNameInRow="E_NUM" msprop:Generator_ColumnPropNameInTable="E_NUMColumn" msprop:Generator_UserColumnName="E_NUM" type="xs:string" minOccurs="0" />
+              <xs:element name="P_NUM" msprop:Generator_ColumnVarNameInTable="columnP_NUM" msprop:Generator_ColumnPropNameInRow="P_NUM" msprop:Generator_ColumnPropNameInTable="P_NUMColumn" msprop:Generator_UserColumnName="P_NUM" type="xs:string" minOccurs="0" />
+              <xs:element name="M_NUM" msprop:Generator_ColumnVarNameInTable="columnM_NUM" msprop:Generator_ColumnPropNameInRow="M_NUM" msprop:Generator_ColumnPropNameInTable="M_NUMColumn" msprop:Generator_UserColumnName="M_NUM" type="xs:string" minOccurs="0" />
+              <xs:element name="ATT_NAME" msprop:Generator_ColumnVarNameInTable="columnATT_NAME" msprop:Generator_ColumnPropNameInRow="ATT_NAME" msprop:Generator_ColumnPropNameInTable="ATT_NAMEColumn" msprop:Generator_UserColumnName="ATT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_NAME" msprop:Generator_ColumnVarNameInTable="columnISSUE_NAME" msprop:Generator_ColumnPropNameInRow="ISSUE_NAME" msprop:Generator_ColumnPropNameInTable="ISSUE_NAMEColumn" msprop:Generator_UserColumnName="ISSUE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_TYPE" msprop:Generator_ColumnVarNameInTable="columnISSUE_TYPE" msprop:Generator_ColumnPropNameInRow="ISSUE_TYPE" msprop:Generator_ColumnPropNameInTable="ISSUE_TYPEColumn" msprop:Generator_UserColumnName="ISSUE_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_ATTACH" msprop:Generator_ColumnVarNameInTable="columnISSUE_ATTACH" msprop:Generator_ColumnPropNameInRow="ISSUE_ATTACH" msprop:Generator_ColumnPropNameInTable="ISSUE_ATTACHColumn" msprop:Generator_UserColumnName="ISSUE_ATTACH" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_TYPE" msprop:Generator_ColumnVarNameInTable="columnDOC_TYPE" msprop:Generator_ColumnPropNameInRow="DOC_TYPE" msprop:Generator_ColumnPropNameInTable="DOC_TYPEColumn" msprop:Generator_UserColumnName="DOC_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_POST_NO" msprop:Generator_ColumnVarNameInTable="columnISSUE_POST_NO" msprop:Generator_ColumnPropNameInRow="ISSUE_POST_NO" msprop:Generator_ColumnPropNameInTable="ISSUE_POST_NOColumn" msprop:Generator_UserColumnName="ISSUE_POST_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_ADDRESS" msprop:Generator_ColumnVarNameInTable="columnISSUE_ADDRESS" msprop:Generator_ColumnPropNameInRow="ISSUE_ADDRESS" msprop:Generator_ColumnPropNameInTable="ISSUE_ADDRESSColumn" msprop:Generator_UserColumnName="ISSUE_ADDRESS" type="xs:string" minOccurs="0" />
+              <xs:element name="ATT_CNT" msprop:Generator_ColumnVarNameInTable="columnATT_CNT" msprop:Generator_ColumnPropNameInRow="ATT_CNT" msprop:Generator_ColumnPropNameInTable="ATT_CNTColumn" msprop:Generator_UserColumnName="ATT_CNT" type="xs:string" />
+              <xs:element name="GRP_NAME" msprop:Generator_ColumnVarNameInTable="columnGRP_NAME" msprop:Generator_ColumnPropNameInRow="GRP_NAME" msprop:Generator_ColumnPropNameInTable="GRP_NAMEColumn" msprop:Generator_UserColumnName="GRP_NAME" type="xs:string" />
+              <xs:element name="DRAFT" msprop:Generator_ColumnVarNameInTable="columnDRAFT" msprop:Generator_ColumnPropNameInRow="DRAFT" msprop:Generator_ColumnPropNameInTable="DRAFTColumn" msprop:Generator_UserColumnName="DRAFT" type="xs:string" minOccurs="0" />
+              <xs:element name="SEND_NO" msprop:Generator_ColumnVarNameInTable="columnSEND_NO" msprop:Generator_ColumnPropNameInRow="SEND_NO" msprop:Generator_ColumnPropNameInTable="SEND_NOColumn" msprop:Generator_UserColumnName="SEND_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE_TYPE_NO" msprop:Generator_ColumnVarNameInTable="columnISSUE_TYPE_NO" msprop:Generator_ColumnPropNameInRow="ISSUE_TYPE_NO" msprop:Generator_ColumnPropNameInTable="ISSUE_TYPE_NOColumn" msprop:Generator_UserColumnName="ISSUE_TYPE_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

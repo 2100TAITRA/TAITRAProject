@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAR203D" targetNamespace="http://tempuri.org/EAR203D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EAR203D.xsd" xmlns:mstns="http://tempuri.org/EAR203D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAR203D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Main">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CLS_NAME1_1" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME2_1" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME3_1" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME4_1" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME5_1" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME6_1" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME1_2" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME2_2" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME3_2" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME4_2" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME5_2" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME6_2" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME1_3" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME2_3" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME3_3" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME4_3" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME5_3" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME6_3" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME1_4" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME2_4" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME3_4" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME4_4" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME5_4" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME6_4" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO1_1" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO2_1" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO3_1" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO4_1" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO5_1" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO6_1" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO1_2" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO2_2" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO3_2" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO4_2" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO5_2" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO6_2" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO1_3" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO2_3" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO3_3" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO4_3" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO5_3" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO6_3" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO1_4" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO2_4" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO3_4" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO4_4" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO5_4" type="xs:string" minOccurs="0" />
+							<xs:element name="FILENO6_4" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_YEAR_1" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_YEAR_2" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_YEAR_3" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_YEAR_4" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR_1" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR_2" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR_3" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR_4" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

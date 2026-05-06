@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDocInfoResult" type="tns:DocInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DocInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmpName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="B_Type_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Start_Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Case_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Close_Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="fnGetFullProcessTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCloseDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fnGetFullProcessTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fnGetFullProcessTimeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFoodApplyCase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argKeyValues" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEntryDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argProcessNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEntryNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEntryNoList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateFoodApplyCaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateFoodApplyCaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DocInfo" nillable="true" type="tns:DocInfo" />
+      <s:element name="int" type="s:int" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="CheckDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullProcessTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:fnGetFullProcessTime" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullProcessTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:fnGetFullProcessTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFoodApplyCaseSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFoodApplyCase" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFoodApplyCaseSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFoodApplyCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDocInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="strType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckDocInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DocInfo" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullProcessTimeHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argStartDate" type="s:string" />
+    <wsdl:part name="strCloseDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullProcessTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFoodApplyCaseHttpGetIn">
+    <wsdl:part name="argKeyValues" type="s1:StringArray" />
+    <wsdl:part name="argEntryDate" type="s:string" />
+    <wsdl:part name="argProcessNo" type="s:string" />
+    <wsdl:part name="argEntryNo" type="s:string" />
+    <wsdl:part name="argEntryNoList" type="s1:StringArray" />
+    <wsdl:part name="UpdateType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFoodApplyCaseHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckDocInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="strType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckDocInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DocInfo" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullProcessTimeHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argStartDate" type="s:string" />
+    <wsdl:part name="strCloseDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fnGetFullProcessTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFoodApplyCaseHttpPostIn">
+    <wsdl:part name="argKeyValues" type="s1:StringArray" />
+    <wsdl:part name="argEntryDate" type="s:string" />
+    <wsdl:part name="argProcessNo" type="s:string" />
+    <wsdl:part name="argEntryNo" type="s:string" />
+    <wsdl:part name="argEntryNoList" type="s1:StringArray" />
+    <wsdl:part name="UpdateType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFoodApplyCaseHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="NLFDWSSoap">
+    <wsdl:operation name="CheckDocInfo">
+      <wsdl:input message="tns:CheckDocInfoSoapIn" />
+      <wsdl:output message="tns:CheckDocInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullProcessTime">
+      <wsdl:input message="tns:fnGetFullProcessTimeSoapIn" />
+      <wsdl:output message="tns:fnGetFullProcessTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFoodApplyCase">
+      <wsdl:input message="tns:UpdateFoodApplyCaseSoapIn" />
+      <wsdl:output message="tns:UpdateFoodApplyCaseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NLFDWSHttpGet">
+    <wsdl:operation name="CheckDocInfo">
+      <wsdl:input message="tns:CheckDocInfoHttpGetIn" />
+      <wsdl:output message="tns:CheckDocInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullProcessTime">
+      <wsdl:input message="tns:fnGetFullProcessTimeHttpGetIn" />
+      <wsdl:output message="tns:fnGetFullProcessTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFoodApplyCase">
+      <wsdl:input message="tns:UpdateFoodApplyCaseHttpGetIn" />
+      <wsdl:output message="tns:UpdateFoodApplyCaseHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="NLFDWSHttpPost">
+    <wsdl:operation name="CheckDocInfo">
+      <wsdl:input message="tns:CheckDocInfoHttpPostIn" />
+      <wsdl:output message="tns:CheckDocInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullProcessTime">
+      <wsdl:input message="tns:fnGetFullProcessTimeHttpPostIn" />
+      <wsdl:output message="tns:fnGetFullProcessTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFoodApplyCase">
+      <wsdl:input message="tns:UpdateFoodApplyCaseHttpPostIn" />
+      <wsdl:output message="tns:UpdateFoodApplyCaseHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NLFDWSSoap" type="tns:NLFDWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="CheckDocInfo">
+      <soap:operation soapAction="http://tempuri.org/CheckDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullProcessTime">
+      <soap:operation soapAction="http://tempuri.org/fnGetFullProcessTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFoodApplyCase">
+      <soap:operation soapAction="http://tempuri.org/UpdateFoodApplyCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NLFDWSHttpGet" type="tns:NLFDWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CheckDocInfo">
+      <http:operation location="/CheckDocInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullProcessTime">
+      <http:operation location="/fnGetFullProcessTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFoodApplyCase">
+      <http:operation location="/UpdateFoodApplyCase" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NLFDWSHttpPost" type="tns:NLFDWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CheckDocInfo">
+      <http:operation location="/CheckDocInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnGetFullProcessTime">
+      <http:operation location="/fnGetFullProcessTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFoodApplyCase">
+      <http:operation location="/UpdateFoodApplyCase" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NLFDWS">
+    <wsdl:port name="NLFDWSSoap" binding="tns:NLFDWSSoap">
+      <soap:address location="http://deva/NLFD/NLFDLIB/NFAWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NLFDWSHttpGet" binding="tns:NLFDWSHttpGet">
+      <http:address location="http://deva/NLFD/NLFDLIB/NFAWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NLFDWSHttpPost" binding="tns:NLFDWSHttpPost">
+      <http:address location="http://deva/NLFD/NLFDLIB/NFAWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpdateSendDocDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIssueDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSendDocDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateSendDocDateResult" type="tns:SimpleRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SimpleRtn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SimpleRtn" nillable="true" type="tns:SimpleRtn" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateSendDocDateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSendDocDate" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSendDocDateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSendDocDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSendDocDateHttpGetIn">
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argIssueDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSendDocDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSendDocDateHttpPostIn">
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argIssueDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSendDocDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:SimpleRtn" />
+  </wsdl:message>
+  <wsdl:portType name="DocToWishSoap">
+    <wsdl:operation name="UpdateSendDocDate">
+      <wsdl:input message="tns:UpdateSendDocDateSoapIn" />
+      <wsdl:output message="tns:UpdateSendDocDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DocToWishHttpGet">
+    <wsdl:operation name="UpdateSendDocDate">
+      <wsdl:input message="tns:UpdateSendDocDateHttpGetIn" />
+      <wsdl:output message="tns:UpdateSendDocDateHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DocToWishHttpPost">
+    <wsdl:operation name="UpdateSendDocDate">
+      <wsdl:input message="tns:UpdateSendDocDateHttpPostIn" />
+      <wsdl:output message="tns:UpdateSendDocDateHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DocToWishSoap" type="tns:DocToWishSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateSendDocDate">
+      <soap:operation soapAction="http://tempuri.org/UpdateSendDocDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DocToWishSoap12" type="tns:DocToWishSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateSendDocDate">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSendDocDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DocToWishHttpGet" type="tns:DocToWishHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="UpdateSendDocDate">
+      <http:operation location="/UpdateSendDocDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DocToWishHttpPost" type="tns:DocToWishHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="UpdateSendDocDate">
+      <http:operation location="/UpdateSendDocDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DocToWish">
+    <wsdl:port name="DocToWishSoap" binding="tns:DocToWishSoap">
+      <soap:address location="https://docvip.fdat.com.tw/EXAMWish/DocToWish.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DocToWishSoap12" binding="tns:DocToWishSoap12">
+      <soap12:address location="https://docvip.fdat.com.tw/EXAMWish/DocToWish.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DocToWishHttpGet" binding="tns:DocToWishHttpGet">
+      <http:address location="https://docvip.fdat.com.tw/EXAMWish/DocToWish.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DocToWishHttpPost" binding="tns:DocToWishHttpPost">
+      <http:address location="https://docvip.fdat.com.tw/EXAMWish/DocToWish.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

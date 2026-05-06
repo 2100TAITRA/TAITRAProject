@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.yuntech.edu.tw/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.yuntech.edu.tw/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.yuntech.edu.tw/">
+      <s:element name="DreamSparkAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pLoginName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pLoginPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DreamSparkAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DreamSparkAuthResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pLoginName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pLoginPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pValidationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pDeptCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pValidationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserBasicInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pValidationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserBasicInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserBasicInformationResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pOldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pNewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DreamSparkAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:DreamSparkAuth" />
+  </wsdl:message>
+  <wsdl:message name="DreamSparkAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:DreamSparkAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentList" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartment" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBasicInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserBasicInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBasicInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserBasicInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="DreamSparkAuth">
+      <wsdl:input message="tns:DreamSparkAuthSoapIn" />
+      <wsdl:output message="tns:DreamSparkAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input message="tns:AuthenticateUserSoapIn" />
+      <wsdl:output message="tns:AuthenticateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentList">
+      <wsdl:input message="tns:GetDepartmentListSoapIn" />
+      <wsdl:output message="tns:GetDepartmentListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <wsdl:input message="tns:GetDepartmentSoapIn" />
+      <wsdl:output message="tns:GetDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBasicInformation">
+      <wsdl:input message="tns:GetUserBasicInformationSoapIn" />
+      <wsdl:output message="tns:GetUserBasicInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DreamSparkAuth">
+      <soap:operation soapAction="http://www.yuntech.edu.tw/DreamSparkAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://www.yuntech.edu.tw/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentList">
+      <soap:operation soapAction="http://www.yuntech.edu.tw/GetDepartmentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <soap:operation soapAction="http://www.yuntech.edu.tw/GetDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBasicInformation">
+      <soap:operation soapAction="http://www.yuntech.edu.tw/GetUserBasicInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://www.yuntech.edu.tw/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    <wsdl:operation name="DreamSparkAuth">
+      <soap12:operation soapAction="http://www.yuntech.edu.tw/DreamSparkAuth" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://www.yuntech.edu.tw/AuthenticateUser" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentList">
+      <soap12:operation soapAction="http://www.yuntech.edu.tw/GetDepartmentList" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <soap12:operation soapAction="http://www.yuntech.edu.tw/GetDepartment" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBasicInformation">
+      <soap12:operation soapAction="http://www.yuntech.edu.tw/GetUserBasicInformation" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://www.yuntech.edu.tw/ChangePassword" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="https://adserver.ad.yuntech.edu.tw/WSAuth/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="https://adserver.ad.yuntech.edu.tw/WSAuth/Service.asmx" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

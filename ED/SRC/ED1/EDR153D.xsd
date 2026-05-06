@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR153D" targetNamespace="http://tempuri.org/EDR153D.xsd" xmlns:mstns="http://tempuri.org/EDR153D.xsd" xmlns="http://tempuri.org/EDR153D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR153D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR153D" msprop:Generator_UserDSName="EDR153D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR153L1" msprop:Generator_TableClassName="EDR153L1DataTable" msprop:Generator_TableVarName="tableEDR153L1" msprop:Generator_TablePropName="EDR153L1" msprop:Generator_RowDeletingName="EDR153L1RowDeleting" msprop:Generator_RowChangingName="EDR153L1RowChanging" msprop:Generator_RowEvHandlerName="EDR153L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR153L1RowDeleted" msprop:Generator_UserTableName="EDR153L1" msprop:Generator_RowChangedName="EDR153L1RowChanged" msprop:Generator_RowEvArgName="EDR153L1RowChangeEvent" msprop:Generator_RowClassName="EDR153L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="RCV_TYPE_P" msprop:Generator_ColumnVarNameInTable="columnRCV_TYPE_P" msprop:Generator_ColumnPropNameInRow="RCV_TYPE_P" msprop:Generator_ColumnPropNameInTable="RCV_TYPE_PColumn" msprop:Generator_UserColumnName="RCV_TYPE_P" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="RCV_TYPE_E" msprop:Generator_ColumnVarNameInTable="columnRCV_TYPE_E" msprop:Generator_ColumnPropNameInRow="RCV_TYPE_E" msprop:Generator_ColumnPropNameInTable="RCV_TYPE_EColumn" msprop:Generator_UserColumnName="RCV_TYPE_E" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="RCV_SUM" msprop:Generator_ColumnVarNameInTable="columnRCV_SUM" msprop:Generator_ColumnPropNameInRow="RCV_SUM" msprop:Generator_ColumnPropNameInTable="RCV_SUMColumn" msprop:Generator_UserColumnName="RCV_SUM" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="ISSUE_TYPE_P" msprop:Generator_ColumnVarNameInTable="columnISSUE_TYPE_P" msprop:Generator_ColumnPropNameInRow="ISSUE_TYPE_P" msprop:Generator_ColumnPropNameInTable="ISSUE_TYPE_PColumn" msprop:Generator_UserColumnName="ISSUE_TYPE_P" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="ISSUE_TYPE_E" msprop:Generator_ColumnVarNameInTable="columnISSUE_TYPE_E" msprop:Generator_ColumnPropNameInRow="ISSUE_TYPE_E" msprop:Generator_ColumnPropNameInTable="ISSUE_TYPE_EColumn" msprop:Generator_UserColumnName="ISSUE_TYPE_E" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="ISSUE_SUM" msprop:Generator_ColumnVarNameInTable="columnISSUE_SUM" msprop:Generator_ColumnPropNameInRow="ISSUE_SUM" msprop:Generator_ColumnPropNameInTable="ISSUE_SUMColumn" msprop:Generator_UserColumnName="ISSUE_SUM" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="CANCEL" msprop:Generator_ColumnVarNameInTable="columnCANCEL" msprop:Generator_ColumnPropNameInRow="CANCEL" msprop:Generator_ColumnPropNameInTable="CANCELColumn" msprop:Generator_UserColumnName="CANCEL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EDR153L2" msprop:Generator_TableClassName="EDR153L2DataTable" msprop:Generator_TableVarName="tableEDR153L2" msprop:Generator_RowChangedName="EDR153L2RowChanged" msprop:Generator_TablePropName="EDR153L2" msprop:Generator_RowDeletingName="EDR153L2RowDeleting" msprop:Generator_RowChangingName="EDR153L2RowChanging" msprop:Generator_RowEvHandlerName="EDR153L2RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR153L2RowDeleted" msprop:Generator_RowClassName="EDR153L2Row" msprop:Generator_UserTableName="EDR153L2" msprop:Generator_RowEvArgName="EDR153L2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="SUM" msdata:Caption="RCV_TYPE_P" msprop:Generator_ColumnVarNameInTable="columnSUM" msprop:Generator_ColumnPropNameInRow="SUM" msprop:Generator_ColumnPropNameInTable="SUMColumn" msprop:Generator_UserColumnName="SUM" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="RCV_SUM" msdata:Caption="RCV_TYPE_E" msprop:Generator_ColumnVarNameInTable="columnRCV_SUM" msprop:Generator_ColumnPropNameInRow="RCV_SUM" msprop:Generator_ColumnPropNameInTable="RCV_SUMColumn" msprop:Generator_UserColumnName="RCV_SUM" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="RCV_SUM_WITHOUT_CANCEL" msdata:Caption="RCV_SUM" msprop:Generator_ColumnVarNameInTable="columnRCV_SUM_WITHOUT_CANCEL" msprop:Generator_ColumnPropNameInRow="RCV_SUM_WITHOUT_CANCEL" msprop:Generator_ColumnPropNameInTable="RCV_SUM_WITHOUT_CANCELColumn" msprop:Generator_UserColumnName="RCV_SUM_WITHOUT_CANCEL" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="RCV_CANCEL" msdata:Caption="ISSUE_TYPE_P" msprop:Generator_ColumnVarNameInTable="columnRCV_CANCEL" msprop:Generator_ColumnPropNameInRow="RCV_CANCEL" msprop:Generator_ColumnPropNameInTable="RCV_CANCELColumn" msprop:Generator_UserColumnName="RCV_CANCEL" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="ISSUE_SUM" msdata:Caption="ISSUE_TYPE_E" msprop:Generator_ColumnVarNameInTable="columnISSUE_SUM" msprop:Generator_ColumnPropNameInRow="ISSUE_SUM" msprop:Generator_ColumnPropNameInTable="ISSUE_SUMColumn" msprop:Generator_UserColumnName="ISSUE_SUM" type="xs:string" default="0" minOccurs="0" />
+              <xs:element name="ISSUE_E" msdata:Caption="ISSUE_SUM" msprop:Generator_ColumnVarNameInTable="columnISSUE_E" msprop:Generator_ColumnPropNameInRow="ISSUE_E" msprop:Generator_ColumnPropNameInTable="ISSUE_EColumn" msprop:Generator_UserColumnName="ISSUE_E" type="xs:string" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

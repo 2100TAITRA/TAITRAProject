@@ -1,0 +1,105 @@
+.dpZone,.dpZone * {
+    box-sizing: border-box
+}
+
+.dpZone {
+    min-height: 150px;
+    border: 2px solid rgba(0,0,0,.3);
+    background: #fff;
+    padding: 20px 20px
+}
+
+.dpZone.dpClickable {
+    cursor: pointer
+}
+
+.dpZone.dpClickable * {
+    cursor: default
+}
+
+.dpZone.dpClickable .dpMsg,.dpZone.dpClickable .dpMsg * {
+    cursor: pointer
+}
+
+.dpZone.dpDragHover {
+    border-style: solid
+}
+
+.dpZone.dpDragHover .dpMsg {
+    opacity: .5
+}
+
+.dpZone .dpMsg {
+    text-align: center;
+    margin: 2em 0
+}
+
+
+
+.dpZoneCon.dpM {
+    border-radius: 2.5rem;
+    border: 3px solid white;
+    background: white;
+    width: 21.875rem;
+    height: 16rem;
+    width: 100%;
+    max-width: 16rem;
+    margin: auto;
+    box-shadow: 0 .625rem 1.25rem #0000001a;
+}
+
+.dpZone.dpM {
+    height: 100%;
+    width: 100%;
+    border-radius: 2.5rem;
+    padding: 1rem;
+    border-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none
+}
+
+.dpZone.dpM.dpDragHover {
+    border-style: dashed;
+    border-color: var(--primary-color)
+}
+
+.dpMsg.dpM {
+    text-align: center
+}
+
+.dpMsg.dpM h1.dpM {
+    font-size: 2.375rem;
+    font-weight: 700;
+    color: var(--title-color);
+	line-height: 1em;
+}
+
+.dpZone.dpM .comment.dpM {
+    font-size: .75rem;
+    opacity: .5;
+    margin-bottom: 0
+}
+
+
+
+.dpArea {
+    margin: 10px;
+    min-width: 250px;
+    min-height: 250px;
+}
+
+.dpZone.dpHasFile .dpMsg.dpDesc{
+    display:none
+}
+
+.dpZone.dpMsg.dpFile{
+	display: none
+}
+
+.dpZone.dpHasFile .dpMsg.dpFile{
+	display: block;
+	word-break: break-all;
+	color: #025add;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="INC330D" targetNamespace="http://tempuri.org/INC330D.xsd" xmlns:mstns="http://tempuri.org/INC330D.xsd" xmlns="http://tempuri.org/INC330D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="INC330D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="INC330D" msprop:Generator_UserDSName="INC330D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDC062L" msprop:Generator_TableClassName="EDC062LDataTable" msprop:Generator_TableVarName="tableEDC062L" msprop:Generator_TablePropName="EDC062L" msprop:Generator_RowDeletingName="EDC062LRowDeleting" msprop:Generator_RowChangingName="EDC062LRowChanging" msprop:Generator_RowEvHandlerName="EDC062LRowChangeEventHandler" msprop:Generator_RowDeletedName="EDC062LRowDeleted" msprop:Generator_UserTableName="EDC062L" msprop:Generator_RowChangedName="EDC062LRowChanged" msprop:Generator_RowEvArgName="EDC062LRowChangeEvent" msprop:Generator_RowClassName="EDC062LRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PAYER_ID" msprop:Generator_ColumnVarNameInTable="columnPAYER_ID" msprop:Generator_ColumnPropNameInRow="PAYER_ID" msprop:Generator_ColumnPropNameInTable="PAYER_IDColumn" msprop:Generator_UserColumnName="PAYER_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="PAYER_NAME" msprop:Generator_ColumnVarNameInTable="columnPAYER_NAME" msprop:Generator_ColumnPropNameInRow="PAYER_NAME" msprop:Generator_ColumnPropNameInTable="PAYER_NAMEColumn" msprop:Generator_UserColumnName="PAYER_NAME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

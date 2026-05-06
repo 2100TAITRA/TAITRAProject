@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 線上簽核 SYSTEM "99_sign_utf8.dtd" [
+	<!ENTITY % 基本標籤 SYSTEM "99_basic_utf8.ent">
+	<!ENTITY % 線上簽核標籤 SYSTEM "99_sign_utf8.ent">
+]>
+<線上簽核 Id="Aol">
+	<線上簽核流程 Id="FlowInfo"/>
+	<線上簽核資訊 Id="Sol"/>
+</線上簽核>

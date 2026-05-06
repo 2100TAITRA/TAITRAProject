@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:s1="http://www.cpandl.com" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.2100.com.tw/webservices/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.2100.com.tw/webservices/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.2100.com.tw/webservices/">
+      <s:import namespace="http://www.cpandl.com" />
+      <s:element name="Import">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argORG_NO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportByArg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:詮釋資料集合" />
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:歸檔紀錄集合" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportByArgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportByArgResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Export">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.cpandl.com">
+      <s:element name="詮釋資料集合" type="s1:DocDescSet" />
+      <s:complexType name="DocDescSet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="詮釋資料" type="s1:DocDesc" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocDesc">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="案由" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="並列案由" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="其他案由" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="案名" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="相關案件" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="主要發文者" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="主要來文者" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="次要發文者" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="次要來文者" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="發文者之補正" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="來文者之補正" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="文別" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="本別" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="密等" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="保密期限" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="解密條件" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="保存年限" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="應用限制" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="發文字號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="收文字號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="彙併辦主文號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="與主文併存" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="來文字號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="年度號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="分類號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="案次號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="卷次號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="目次號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="電子檔案路徑" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="電子檔案封裝檔名稱" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="微縮編號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="文件產生日期" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="辦畢日期" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="發文日期" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="收文日期" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="來文日期" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="媒體型式" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="數量" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="計量單位" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="檔案種類" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="附件" type="s1:DocAtt" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="主題" type="s1:DocTheme" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="附註" type="s1:DocRemark" />
+          <s:element minOccurs="0" maxOccurs="1" name="承辦" type="s1:DocRps" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="會辦" type="s1:DocConf" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="受文者" type="s1:Reveiver" />
+        </s:sequence>
+        <s:attribute name="num" type="s:string" />
+      </s:complexType>
+      <s:complexType name="DocAtt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="附件名稱" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="附件媒體型式" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="附件數量" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="附件單位" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocTheme">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="num" type="s:string" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="DocRemark">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="num" type="s:string" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="DocRps">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="承辦單位代碼" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="承辦單位" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="承辦人" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="承辦人代碼" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DocConf">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="會辦單位代碼" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="會辦單位" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="會辦人" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="會辦人代碼" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Reveiver">
+        <s:simpleContent>
+          <s:extension base="s:string" />
+        </s:simpleContent>
+      </s:complexType>
+      <s:element name="歸檔紀錄集合" type="s1:RtnRecordSet" />
+      <s:complexType name="RtnRecordSet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="歸檔紀錄" type="s1:RtnRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RtnRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="收文字號" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="歸檔單位代碼" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="歸檔單位" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="歸檔日期" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="歸檔時間" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="ImportSoapIn">
+    <part name="parameters" element="s0:Import" />
+  </message>
+  <message name="ImportSoapOut">
+    <part name="parameters" element="s0:ImportResponse" />
+  </message>
+  <message name="ImportByArgSoapIn">
+    <part name="parameters" element="s0:ImportByArg" />
+  </message>
+  <message name="ImportByArgSoapOut">
+    <part name="parameters" element="s0:ImportByArgResponse" />
+  </message>
+  <message name="ExportSoapIn">
+    <part name="parameters" element="s0:Export" />
+  </message>
+  <message name="ExportSoapOut">
+    <part name="parameters" element="s0:ExportResponse" />
+  </message>
+  <message name="ImportHttpGetIn">
+    <part name="argORG_NO" type="s:string" />
+  </message>
+  <message name="ImportHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="ExportHttpGetIn">
+    <part name="argOrgNo" type="s:string" />
+  </message>
+  <message name="ExportHttpGetOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="ImportHttpPostIn">
+    <part name="argORG_NO" type="s:string" />
+  </message>
+  <message name="ImportHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <message name="ExportHttpPostIn">
+    <part name="argOrgNo" type="s:string" />
+  </message>
+  <message name="ExportHttpPostOut">
+    <part name="Body" element="s0:string" />
+  </message>
+  <portType name="AKPDT01Soap">
+    <operation name="Import">
+      <input message="s0:ImportSoapIn" />
+      <output message="s0:ImportSoapOut" />
+    </operation>
+    <operation name="ImportByArg">
+      <input message="s0:ImportByArgSoapIn" />
+      <output message="s0:ImportByArgSoapOut" />
+    </operation>
+    <operation name="Export">
+      <input message="s0:ExportSoapIn" />
+      <output message="s0:ExportSoapOut" />
+    </operation>
+  </portType>
+  <portType name="AKPDT01HttpGet">
+    <operation name="Import">
+      <input message="s0:ImportHttpGetIn" />
+      <output message="s0:ImportHttpGetOut" />
+    </operation>
+    <operation name="Export">
+      <input message="s0:ExportHttpGetIn" />
+      <output message="s0:ExportHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="AKPDT01HttpPost">
+    <operation name="Import">
+      <input message="s0:ImportHttpPostIn" />
+      <output message="s0:ImportHttpPostOut" />
+    </operation>
+    <operation name="Export">
+      <input message="s0:ExportHttpPostIn" />
+      <output message="s0:ExportHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="AKPDT01Soap" type="s0:AKPDT01Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="Import">
+      <soap:operation soapAction="http://www.2100.com.tw/webservices/Import" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ImportByArg">
+      <soap:operation soapAction="http://www.2100.com.tw/webservices/ImportByArg" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Export">
+      <soap:operation soapAction="http://www.2100.com.tw/webservices/Export" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="AKPDT01HttpGet" type="s0:AKPDT01HttpGet">
+    <http:binding verb="GET" />
+    <operation name="Import">
+      <http:operation location="/Import" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Export">
+      <http:operation location="/Export" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="AKPDT01HttpPost" type="s0:AKPDT01HttpPost">
+    <http:binding verb="POST" />
+    <operation name="Import">
+      <http:operation location="/Import" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="Export">
+      <http:operation location="/Export" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AKPDT01">
+    <documentation>結辦公文資料轉入作業</documentation>
+    <port name="AKPDT01Soap" binding="s0:AKPDT01Soap">
+      <soap:address location="http://localhost/AK/AKPDT01.asmx" />
+    </port>
+    <port name="AKPDT01HttpGet" binding="s0:AKPDT01HttpGet">
+      <http:address location="http://localhost/AK/AKPDT01.asmx" />
+    </port>
+    <port name="AKPDT01HttpPost" binding="s0:AKPDT01HttpPost">
+      <http:address location="http://localhost/AK/AKPDT01.asmx" />
+    </port>
+  </service>
+</definitions>

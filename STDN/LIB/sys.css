@@ -1,0 +1,898 @@
+﻿/*
+DATE	SA		PRG		MGR_NO		DESC
+1110701	Kevin	Kevin	1110629 	調整UI
+1110816	Kevin	Kevin	1110629 	UI調整為兩格式
+1120516	Leslie	Cloud	1120475		修正顯示比例調整按鈕文字會被切斷問題
+1141027	Leslie	Leslie	1140845		新增密碼欄位顯示功能 
+*/
+
+/*1110222	Leslie[1101532]	[考試院]新增可顯示自造字的WebFont設定*/
+/* 1110817 Kevin 1101532 移動至CSS_CONFIG.css*/
+/*1110222	Leslie[1101532]	[考試院]新增可顯示自造字的WebFont設定	==END== */
+
+BODY {
+    background-color: #fAfAfA;	/*1110629 調整配色*/
+    color: Navy;
+}
+table {
+    font-size: 100%;
+}
+/*1110222	Leslie[1101532]	[考試院]新增可顯示自造字的WebFont設定，加上P、SPAN、Label*/
+p,
+span,
+label,
+input,
+select,
+textarea,
+td {
+    font-size: 1em;
+    color: Navy;
+	height: 1.2em; /*1110629 指定高度*/
+	vertical-align: top;
+	font-family: "2100-Font-Ming", sans-serif; /*1110816 Kevin 支援自造字*/
+}
+
+textarea
+{
+	height: auto; /*1110816 Kevin 修正預設高度*/
+}
+/* 預設初始化區	END */
+
+p
+ {
+	margin: initial;
+}
+
+select
+{
+	height: 1.3em;
+}
+
+input[type='text'] {
+	border-width: 1px;
+			
+}
+
+input[type='submit']
+,.BannerBtn 
+{
+	border-radius: 0px;
+    border-width: 0px;
+    border-color: #6a6a6a;
+    background: #f1f1f1;
+    color: #000;
+    text-decoration: none;
+	/*1120516		Cloud	1120475		修正顯示比例調整按鈕文字會被切斷問題*/
+	min-height:1.5em;	/*	1140428	Leslie	修正Chrome改版後功能鍵文字被切斷問題	*/
+}
+
+:not(.V2_GenericBannerToolBar):not(.V3_GenericBannerToolBar)>input[type='submit']
+{
+	border-radius: 4px;
+    border-width: 1px;
+    border-color: #6a6a6a;
+	height: 1.5em;
+    color: black;
+    vertical-align: text-bottom;
+	line-height: 1.2em;
+}
+
+:not(.V2_GenericBannerToolBar):not(.V3_GenericBannerToolBar)>input[type='submit']:not(:disabled):hover
+,.BannerBtn:not(:disabled):hover
+{
+	color: red;
+}
+
+.V2_GenericBannerToolBar>input[type='submit']:not(:disabled):hover
+,.V3_GenericBannerToolBar>input[type='submit']:not(:disabled):hover
+{
+	color: red;
+}
+
+.V2_GenericBannerToolBar>input[type='submit']:disabled
+,.V3_GenericBannerToolBar>input[type='submit']:disabled
+,.BannerBtn:disabled 
+{
+    color: #888888;
+}
+		
+:not(.V2_GenericBannerToolBar):not(.V3_GenericBannerToolBar)>input[type='submit']:disabled
+{
+	color: #9e9e9e;
+}
+
+.DgSelectToolBar>input[type='submit'] 
+{
+    font-size: 80%;
+	vertical-align: text-top;
+}
+
+span.ToolBarSpan {
+    font-size: 0.5em;
+    vertical-align: middle;
+}
+
+.DivTable {
+    display: table;
+    margin: 10px auto;
+}
+/*table[id^="dg"] {
+    font-size: 80%;
+}*/
+
+table[id^="dg"]{
+	background-color: white;
+}
+
+table[id^="dg"] tr:nth-child(odd) {
+    background-color: #E1F0F8; /*1110629 調整顏色*/
+}
+table.dghead tr:nth-child(1) {
+    background-color: #CDE7F4; /*1110629 調整顏色*/
+}
+table.dghead {
+    position: absolute;
+    z-index: 1;
+    background-color: #CDE7F4; /*1110629 調整顏色*/
+    text-align: center;
+}
+.dTR {
+    display: table-row;
+    text-align: left;
+	line-height: 1.5em; /*1110629 指定高度*/
+}
+.dTD {
+    float: left;
+    display: table-cell;
+    text-align: left;
+}
+.dTDTitle {
+    float: left;
+    display: table-cell;
+    text-align: right;
+}
+.BannerBtn {
+    POSITION: fixed;
+    right: 3px;
+    top: 5px;
+    z-index: 3;
+    cursor: pointer;
+}
+.BannerMenu {
+    background: #E1F0F8;
+    POSITION: absolute;
+    top: 40px;
+    right: 4px;
+    display: table;
+    z-index: 3;
+    border: solid #6a6a6a 1px;
+    font-size: 20px;
+    padding: 0.2em 0.5em
+}
+.BannerMenu .ui-widget {
+    /*width: 6.78em;*/
+    font-size: 1em;
+	padding: 10px;
+}
+
+input#nmFontZoom {
+	width: 3.6em;
+}
+
+.GridDiv {
+    width: 100%;
+    margin: 0px auto;
+    overflow: auto;
+	position: relative;	/*1100218	Leslie[1090927]	跨平台修正*/
+}
+.LogoImg {
+    LEFT: 83px;
+    TOP: 21px;
+    WIDTH: 100px;
+    HEIGHT: 58px;
+    POSITION: absolute;
+}
+.BannerImg {
+    LEFT: 220px;
+    TOP: 21px;
+    WIDTH: 350px;
+    HEIGHT: 58px;
+    POSITION: absolute;
+}
+.Logo {
+    visibility: hidden;
+}
+.BaseTable,
+.DivBaseTable {
+    /*LEFT: 20px; */
+    /*POSITION: absolute; TOP: 90px;*/
+    
+    margin: 60px auto;
+    /*width:740px;*/
+    /* width:70em;*/
+    
+    BORDER-WIDTH: 0px;
+}
+.ReportBaseTable {
+    LEFT: 20px;
+    POSITION: absolute;
+    TOP: 90px;
+    width: 740px;
+    BORDER-WIDTH: 0px;
+}
+.ChildBaseTable {
+    LEFT: 20px;
+    POSITION: absolute;
+    TOP: 10px;
+    width: 650px;
+    BORDER-WIDTH: 0px;
+}
+.ActionTable {
+    border: 4px;
+    border-top-style: outset;
+    border-left-style: solid;
+    border-bottom-style: ridge;
+    border-right-style: ridge;
+    border-top-color: Silver;
+    border-left-color: Silver;
+    width: 100%;
+    background-color: LightGray;
+}
+.ReportActionTable {
+    border: 4px;
+    border-top-style: outset;
+    border-left-style: solid;
+    border-bottom-style: ridge;
+    border-right-style: ridge;
+    border-top-color: Silver;
+    border-left-color: Silver;
+    width: 95%;
+}
+.ChildActionTable {
+    border: 4px;
+    border-top-style: outset;
+    border-left-style: solid;
+    border-bottom-style: ridge;
+    border-right-style: ridge;
+    border-top-color: Silver;
+    border-left-color: Silver;
+    width: 100%;
+}
+.User {
+    BORDER-STYLE: DOUBLE;
+    BORDER: #ffffff;
+    BORDER-WIDTH: 1px;
+    BORDER-TOP-STYLE: DOUBLE;
+    BORDER-LEFT-STYLE: DOUBLE;
+    BORDER-BOTTOM-STYLE: DOUBLE;
+    BORDER-RIGHT-STYLE: DOUBLE;
+}
+.DGHeader {
+    background-color: #add8e6;
+}
+.DetailSection {
+    overflow: auto;
+}
+.LeftCol {} .upper {
+    text-transform: uppercase;
+}
+.hide {
+    display: none;
+}
+/*0980604 [工單002361] Yvonne 修正V3指定CombinedButton.htc的URL避免造成無效連結*/
+
+.btn {
+    behavior: url(../../../STD/LIB/CombinedButton.htc);
+}
+.hidden {
+    visibility: hidden;
+}
+.DisplayOnly {
+    background-color: Gainsboro;
+}
+.KeyField {
+    /*
+		一般鍵值欄位
+	*/
+    
+    color: Red;
+}
+.KeyUpperField {
+    /*
+		大寫鍵值欄位，但實際內容若小寫，並不會變成大寫
+	*/
+    
+    color: Red;
+    text-transform: uppercase;
+}
+.KeyEnUpperField {
+    /*
+		大寫鍵值英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+    
+    color: Red;
+    text-transform: uppercase;
+    ime-mode: inactive;
+}
+
+.RequireField, .RequireField td {	/*2017.3.17	Leslie	加上TD for CheckBoxList或RadioButtonList*/
+    /*
+		一般必要欄位
+	*/
+    
+    color: Teal;
+}
+
+.RequireField:before, .RequireField td:before {	/*1110701增加星號*/
+    /*
+		一般必要欄位
+	*/
+    content: "*";
+}
+
+.RequireUpperField {
+    /*
+		大寫必要欄位，但實際內容若小寫，並不會變成大寫
+	*/
+    
+    color: Teal;
+    text-transform: uppercase;
+}
+.RequireEnUpperField {
+    /*
+		大寫必要英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+    
+    color: Teal;
+    text-transform: uppercase;
+    ime-mode: inactive;
+}
+
+.InputFieldText {
+    /*
+		一般欄位
+	*/
+    
+    color: Navy;
+}
+.InputUpperFieldText {
+    /*
+		大寫一般欄位，但實際內容若小寫，並不會變成大寫
+	*/
+    
+    color: Navy;
+    text-transform: uppercase;
+}
+.InputEnUpperField {
+    /*
+		大寫一般英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+    
+    color: Navy;
+    text-transform: uppercase;
+    ime-mode: inactive;
+}
+
+.InputFieldLabel {
+    color: Navy;
+}
+.TextLabel {
+    color: Navy;
+    border-style: none;
+    background-color: Transparent;
+}
+.menucontainer {
+    /*	position: absolute;
+	top: 70;
+	left: 22; */
+    
+    width: 730;
+    font-family: Arial;
+    font-size: 9pt;
+    background-color: Transparent;
+    border: 0;
+    border-top-color: #CFCFCF;
+    border-left-color: #CFCFCF;
+    border-right-color: #505050;
+    border-bottom-color: #505050;
+    z-index: 130;
+}
+.menulabel {
+    position: absolute;
+    cursor: hand;
+    color: #000000;
+    width: 75;
+    text-align: center;
+    background-color: Transparent;
+    z-index: 7;
+    border: "1 solid";
+    border-color: menu;
+}
+.menulabel2 {
+    position: absolute;
+    cursor: hand;
+    color: #000000;
+    width: 75;
+    text-align: center;
+    background-color: lightsteelblue;
+    border: "1 solid";
+    border-color: #000000;
+    /*
+	border-top-color: #CFCFCF; 
+	border-left-color: #CFCFCF; 
+	border-right-color: #505050; 
+	border-bottom-color: #505050; */
+    
+    z-index: 7;
+}
+.menulabel3 {
+    position: absolute;
+    cursor: hand;
+    color: #000000;
+    width: 75;
+    text-align: center;
+    background-color: gainsboro;
+    border: "1 solid";
+    border-top-color: #505050;
+    border-left-color: #505050;
+    border-right-color: #CFCFCF;
+    border-bottom-color: #CFCFCF;
+    z-index: 7;
+}
+.menugroup {
+    display: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150;
+    font-family: Arial;
+    font-size: 8pt;
+    background-color: menu;
+    border: "1 solid";
+    border-top-color: #CFCFCF;
+    border-left-color: #CFCFCF;
+    border-right-color: #505050;
+    border-bottom-color: #505050;
+    z-index: 7;
+}
+.scratch {
+    display: none;
+    width: 250;
+    height: 250;
+    overflow: auto;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: Arial;
+    font-size: 8pt;
+    background-color: #FFFFCC;
+    border: "1 solid";
+    border-top-color: #FFFFDD;
+    border-left-color: #FFFFDD;
+    border-right-color: #999900;
+    border-bottom-color: #999900;
+    z-index: 4;
+}
+.scratchx {
+    cursor: hand;
+    font-weight: bold;
+    height: 12;
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: Arial;
+    font-size: 12pt;
+    background-color: #FFFFcc;
+    border: "1 solid";
+    border-top-color: #FFFFDD;
+    border-left-color: #FFFFDD;
+    border-right-color: #999900;
+    border-bottom-color: #999900;
+    z-index: 4;
+}
+.V2_GenericBannerCaption,
+.V3_GenericBannerCaption {
+    WIDTH: 100%;
+    BACKGROUND-COLOR: dodgerblue;
+    Z-INDEX: 101;
+    LEFT: 0px;
+    POSITION: absolute;
+    TOP: 0px;
+    height: 25;
+}
+.V2_GenericChildCaption,
+.V3_GenericChildCaption {
+    WIDTH: 102.5%;
+    BACKGROUND-COLOR: dodgerblue;
+    Z-INDEX: 101;
+    LEFT: 0px;
+    POSITION: absolute;
+    TOP: 0px;
+    height: 25;
+}
+.V2_GenericBannerToolBar,
+.V3_GenericBannerToolBar {
+    WIDTH: 100%;
+    Z-INDEX: 2;
+    LEFT: 0px;
+    POSITION: fixed;
+    TOP: 0px;
+    Padding: 5px;
+	/*二一零零未美工前測試配色：rgb(111, 172, 213), rgb(73, 123, 174)*/
+	/*FDA指定配色：rgb(59, 185, 250), rgb(0, 142, 222)*/
+	background-color: #f1f1f1; /*1110629 調整顏色*/
+	/* 1140717	Leslie[1140965]	修正瀏覽器更新字型後，ToolBar切字問題 */
+	input{
+		height: 1.5em;
+	}
+}
+.V2_GenericChildToolBar,
+.V3_GenericChildToolBar {
+    WIDTH: 102.5%;
+    Z-INDEX: 101;
+    LEFT: 0px;
+    POSITION: absolute;
+    TOP: 24px;
+}
+.tab {
+    behavior: url(../../../STD/LIB/T2100MultiPage.htc);
+}
+.hidden {
+    display: none
+}
+.PopUp {
+    color: Navy;
+    border-style: none;
+    background-color: Transparent;
+    behavior: url(../../../STD/LIB/PopUpMessage.htc);
+}
+.fixHeaderStyle {
+    POSITION: relative;
+    TOP: expression(this.offsetParent.scrollTop)
+}
+.RequireEnOnlyUpperField {
+    /*
+		Zoey [95/11/08 copy from STD ]大寫必要英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+    
+    color: Teal;
+    text-transform: uppercase;
+    ime-mode: disabled;
+}
+.InputEnOnlyUpperField {
+    /*
+		Zoey [95/11/08 copy from STD ]大寫一般英數欄位，但實際內容若小寫，並不會變成大寫
+	*/
+    
+    color: Navy;
+    text-transform: uppercase;
+    ime-mode: disabled;
+}
+.footStatus {
+    position: fixed;
+    bottom: 0px;
+    LEFT: 0px;
+    padding: 2px;
+    Z-INDEX: 2;
+    width: 100%;
+	background-color: #f1f1f1;
+    color: #000;
+}
+
+#SetupBtn
+{
+	/*display: none;*/
+}
+
+#FontZoom
+, #FontButton
+{
+	height:2em;
+}
+
+#btSetDefault
+{
+	height:1.5em;
+	padding: 3px;
+}
+
+#btSaveFontSet
+{
+	height:1.5em;
+	padding: 3px;
+}
+
+span.ui-spinner.ui-corner-all.ui-widget.ui-widget-content {
+    height: 1.8em;
+	padding: 0px;
+}
+
+input[type="text"]:disabled {
+    background: lightgrey;
+}
+a.ui-button-disable {
+    background: #C5C5C5;
+}
+input[type="radio"]:disabled+label,
+input[type="checkbox"]:disabled+label {
+    color: gray;
+}
+select:disabled {
+    background-color: lightgray;
+}
+/* 1050602	Leslie	數字欄位統一作法，改用以下Class設定來處理數字欄位(從V3版的搬過來) */
+
+.InputFieldNumeric {
+    /*
+		數值一般欄位，會將輸入法功能Disabled，需搭配jf_InpNumOnly()使用，可避免使用者輸入數字以外的字元
+	*/
+    
+    color: Navy;
+    ime-mode: disabled;
+}
+.RequireFieldNumeric {
+    /*
+		數值必要欄位，會將輸入法功能Disabled，需搭配jf_InpNumOnly()使用，可避免使用者輸入數字以外的字元
+	*/
+    
+    color: Teal;
+    ime-mode: disabled;
+}
+.KeyFieldNumeric {
+    /*
+		數值鍵值欄位，會將輸入法功能Disabled，需搭配jf_InpNumOnly()使用，可避免使用者輸入數字以外的字元
+	*/
+    
+    color: Red;
+    ime-mode: disabled;
+}
+input.DatePicker {
+    ime-mode: disabled;
+}
+/* checkbox 外觀設定	START */
+
+input[type="checkbox"] {
+    height: 0.9em;
+    width: 0.9em;
+    vertical-align: middle;
+    margin: 0 0.1em 0.1em 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(#FFFFFF, #DCDCDC);
+    -webkit-appearance: none;
+    -webkit-transition: box-shadow 200ms;
+    box-shadow: inset 1px 1px 0 #fff, 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+/* border radius for checkbox */
+
+input[type="checkbox"] {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+input[type="checkbox"]:not(:disabled):hover {
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 1px 0 #fff, 0 0 4px rgba(0, 0, 0, 0.3);
+}
+input[type="checkbox"]:active:not(:disabled) {
+    background-image: -webkit-linear-gradient(#C2C2C2, #EFEFEF);
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.2), inset -1px -1px 0 rgba(255, 255, 255, 0.6);
+    border-color: rgba(0, 0, 0, 0.5);
+}
+input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 1px 2px rgba(0, 240, 255, 0.4);
+}
+input[type="checkbox"]:checked {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+/* checkbox checked */
+
+input[type="checkbox"]:checked:before {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7);
+    content: '\2713';
+    -webkit-margin-start: 0;
+    margin-left: 1px;
+    top: -5px;
+    position: relative;
+    font-size: 0.9em;
+}
+/* checkbox 外觀設定	END */
+
+
+/***********************************	RWD尺寸變化區	START */
+@media screen and (max-width: 480px) {
+	/*1100218	Leslie[1090927]	跨平台修正*/
+	html{
+		min-width: 1024px;
+	}
+	
+    /* 如果使用者視窗寬度 <= 480px，將字體大小變為 80%*/
+    BODY {
+        font-size: 80%;
+    }
+	table[id^="dg"] {
+		font-size: 60%;
+		line-height: 1.8em;
+	}
+	
+	table.dghead{
+		display: none;
+	}
+	
+	table[id^="dg"],
+    table[id^="dg"] thead,
+    table[id^="dg"] tbody,
+    table[id^="dg"] th,
+    table[id^="dg"] td,
+    table[id^="dg"] tr {
+        display: block;
+    }
+}
+@media screen and (max-width: 768px) {
+	/*1100218	Leslie[1090927]	跨平台修正*/
+	html{
+		min-width: 1024px;
+	}
+	
+    /* 如果使用者視窗寬度 <= 768px，將字體大小變為 20px*/
+    
+    BODY {
+        font-size: 80%;
+    }
+	table[id^="dg"] {
+		font-size: 80%;
+		line-height: 1.8em;
+	}
+	/* 微調日曆小窗的位置 */
+	div.ui-datepicker{
+		top: 50px !important;
+	}
+	
+	/* 微調報表小窗的大小 */
+	#simplemodal-container{
+		height: 80% !important;
+	}
+	
+	/* 微調WebForm的置中 */
+	.DivTable{
+		margin: 10px 10px 10px 10px;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	/*1100218	Leslie[1090927]	跨平台修正*/
+	html{
+		min-width: 1024px;
+	}
+	
+    /* 如果使用者視窗寬度介於 768px ~ 992px，將字體大小變為 30px*/
+    
+    BODY {
+        font-size: 100%;
+    }
+	table[id^="dg"] {
+		font-size: 80%;
+		line-height: 1.8em;
+	}
+    DIV.V2_GenericBannerToolBar, 
+	.V3_GenericBannerToolBar {
+        WIDTH: 99%;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    /* 如果使用者視窗寬度介於 768px ~ 992px，將字體大小變為 30px*/
+    
+    BODY {
+        font-size: 120%;
+    }
+	table[id^="dg"] {
+		font-size: 80%;
+		line-height: 1.8em;
+	}
+    DIV.V2_GenericBannerToolBar, 
+	.V3_GenericBannerToolBar {
+        WIDTH: 99%;
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1680px) {
+    /* 如果使用者視窗寬度介於 768px ~ 992px，將字體大小變為 30px*/
+    
+    BODY {
+        font-size: 130%;
+    }
+	table[id^="dg"] {
+		font-size: 80%;
+		line-height: 1.8em;
+	}
+    DIV.V2_GenericBannerToolBar, 
+	.V3_GenericBannerToolBar {
+        WIDTH: 99%;
+    }
+}
+@media screen and (min-width: 1681px) {
+    /* 如果使用者視窗寬度 >= 1200px，將字體大小變為 40px*/
+    
+    BODY {
+        font-size: 140%;
+    }
+	table[id^="dg"] {
+    font-size: 80%;
+	line-height: 1.8em;
+	}
+}
+/***********************************	RWD尺寸變化區	END  */
+/*微調圖示位置*/
+img.ui-datepicker-trigger {
+	vertical-align: text-bottom;
+    height: 1.2em; /*1110629 指定高度*/
+    padding-left: 5px;
+}
+
+a{
+	text-decoration-skip-ink: none;
+}
+
+input[type="file"]{
+    height: 1.8em; /*1110815 指定高度*/
+	margin-top: -3px;
+	background: url(images/attach.png) no-repeat; /*1110815 新增迴紋針*/
+    padding-left: 1em;
+    background-size: 1em 1em;
+	background-position: 0% 40%;
+}
+
+#btAddFile
+{
+	background: url(images/attach.png) no-repeat; /*1110815 新增迴紋針*/
+    padding-left: 1em;
+    background-size: 1em 1em;
+	background-position: 0% 40%;
+	background-color: #f1f1f1;
+}
+
+input[type="button"]{
+	height: 1.45em;
+}
+
+/* 1140428	Leslie[1131224]	操作手冊區 */
+#ManualBtn {
+	margin-right: 2.5em;
+}
+
+#ManualArea img{
+	height: 1em;
+	margin-left: 5px;
+    vertical-align: text-bottom;
+}
+
+#ManualArea a{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* 1141027	Leslie[1140845]	新增密碼欄位顯示功能 */
+.eye{
+    position:absolute;
+	background-size:1em;
+	height:1em;
+	width:1em;
+    cursor: pointer;
+    top:0.25em;
+}
+
+.hidePW{
+	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAACxAAAAsQHGLUmNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAbZJREFUSInt1MtKlGEYB/DfzEAX0AipJa7CchfhorF21eA2qFWHq4ic8So63IhCtehA0CDdQNusxCzTgoxEQ78W7/Mx08c3MkbUxj88i/c5H18O8b9RGUDnCC5jEuPBe4fXeIKdPw0+igfYQBa0E5S/N3AfIwdxXEMb37GHh7iO46gGncANPAqdTcyG7b4YwYvI7iXOBH8Ic1gIaqMesrPohM1zDPdzfgpvsYs7kSlMYz0cfAnK8BmN0KmiFbZLmCg6n8QafuBKD38onH+QBp2jidUIUu/hX8UWPkXCSL1dkfrY8DvmIttLJRU3Q9Yq8M+Hr2VpUXSwXcgwx4LUkrJ1roRsvk/wbXSqBYO/jYxUxrJU1nRBoR1KzRLjmZDNFvgXpBV/r+c+TkuD2ZIGlaMuDXI1glSCZoK3hqM9+tfCx0clmzQhrdiuNNz8aBoRJMPXoCycnwudWtjs4Q1OllSMdCTPwsEipnoqaUkDnZfakmc+FboZnuJYP+c5atKhbYbRY9zEmO5XMYZbIcvwDbd1j3MgDOOe7hWXfXbruLtf1oN+1xelfo8GbwWvpO/650GyPsS/xy+t13lHPffbsAAAAABJRU5ErkJggg==);
+}
+
+.showPW{
+	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAsQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHQSURBVEiJ7dU7axRRGMbxX4y3GCKC1a6FFwSN0WoRomBroxgUt7EQBG20UbwhfgIjJHYiIiKInUUQohY2guIFNYWiH0ERLyDeNt6K8w67nt3BtUmVBw7DPDPvnzPPec8ZZjXDOoOpVmNuF0ULsAmDWBzeR7zEQ3wPbwxHcLbb2WzB1YD9LhkfcBmX4n68G/AqTETBW5zHDqxGf4w1GMFF/Pgf+EjM6hOOBazQsBTBIdTCG8vgu7GtDH4AP/EIK1v8JZjUHs/zDD4PjzGN/Tl8D37hBhZlzyalhTyBKpbiqc6x9ON2TLRemBvwBXexMCsYDtDJFi+PJe/EPtwP5iCp1V6jkn8WjgasWgKv42CHumV4gwdzUIz5HV78FteGZp+fi2sF16R9UqYeGMJnKdc8/1rMuFPmp8PbmNX04V4whwqzLvXzHQxkBS8yeCXgDWm/tKoft2SLXGhvPHiGdeGNa898OrwJzaODtBGfBGNfDi+0VVqcr7iZwXulBT3s71gGcEqK5D22l8ELVaWuaoWvx3KpjYujYicu4F28ex0r/gWnvRV3acbS6bC7gs1lsJ7sfhTHNVuR1L41rJV2ca8UxStpDzW6mXWhKemnMauZ0x9mRYWupdinogAAAABJRU5ErkJggg==);
+}
+
+/* 隱藏Edge原生密碼顯示功能 */
+input[type="password"]::-ms-reveal {
+        display: none;
+}

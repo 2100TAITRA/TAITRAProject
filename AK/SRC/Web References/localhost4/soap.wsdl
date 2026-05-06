@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="urn:WellChoose" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="urn:WellChoose" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema targetNamespace="urn:WellChoose">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <s:complexType name="userdata">
+        <s:all>
+          <s:element name="ID" type="s:string" />
+          <s:element name="CUSTOM" type="s:string" />
+          <s:element name="NAME" type="s:string" />
+          <s:element name="MAINDP" type="s:string" />
+          <s:element name="SUBDP" type="s:string" />
+          <s:element name="SUCCESS" type="s:string" />
+        </s:all>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="chkidnoRequest">
+    <part name="sys_id" type="s:string" />
+  </message>
+  <message name="chkidnoResponse">
+    <part name="return" type="s0:userdata" />
+  </message>
+  <message name="testmsgRequest">
+    <part name="any" type="s:string" />
+  </message>
+  <message name="testmsgResponse">
+    <part name="return" type="s:string" />
+  </message>
+  <portType name="WellChoosePortType">
+    <operation name="chkidno">
+      <input message="s0:chkidnoRequest" />
+      <output message="s0:chkidnoResponse" />
+    </operation>
+    <operation name="testmsg">
+      <input message="s0:testmsgRequest" />
+      <output message="s0:testmsgResponse" />
+    </operation>
+  </portType>
+  <binding name="WellChooseBinding" type="s0:WellChoosePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="chkidno">
+      <soap:operation soapAction="urn:WellChoose#chkidno" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="testmsg">
+      <soap:operation soapAction="urn:WellChoose#testmsg" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WellChoose">
+    <port name="WellChoosePort" binding="s0:WellChooseBinding">
+      <soap:address location="http://intranet.fa.gov.tw/soap/soapserver.php" />
+    </port>
+  </service>
+</definitions>

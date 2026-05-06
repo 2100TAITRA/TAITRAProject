@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR920D" targetNamespace="http://tempuri.org/AKR920D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR920D.xsd" xmlns:mstns="http://tempuri.org/AKR920D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR920D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="USE_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="YEAR01" type="xs:int" />
+							<xs:element name="YEAR03" type="xs:int" minOccurs="0" />
+							<xs:element name="YEAR05" type="xs:int" minOccurs="0" />
+							<xs:element name="YEAR10" type="xs:int" minOccurs="0" />
+							<xs:element name="YEAR15" type="xs:int" minOccurs="0" />
+							<xs:element name="YEAR20" type="xs:int" minOccurs="0" />
+							<xs:element name="YEAR25" type="xs:int" minOccurs="0" />
+							<xs:element name="YEAR30" type="xs:int" minOccurs="0" />
+							<xs:element name="YEAR99" type="xs:int" minOccurs="0" />
+							<xs:element name="YEARNotSure" type="xs:int" minOccurs="0" />
+							<xs:element name="CLS_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="YEAR30UP" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,10 @@
+﻿.ED_KeyField
+{
+	/*
+		大寫鍵值欄位，但實際內容若小寫，並不會變成大寫
+		鍵值欄位只能輸入英文及數字
+	*/
+	color:Red;
+	text-transform: uppercase;
+	IME-MODE: disabled;
+}

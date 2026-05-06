@@ -1,0 +1,262 @@
+﻿Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Uninstalling assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Removing EventLog source ODTSP.
+Service ODTSP is being removed from the system...
+Service ODTSP was successfully removed from the system.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Creating EventLog source ODTSP in log Application...
+Rolling back assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Restoring event log to previous state for source ODTSP.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Uninstalling assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Removing EventLog source ODTSP.
+Attempt to stop service ODTSP.
+Service ODTSP is being removed from the system...
+Service ODTSP was successfully removed from the system.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Uninstalling assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Removing EventLog source ODTSP.
+Service ODTSP is being removed from the system...
+Service ODTSP was successfully removed from the system.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Creating EventLog source ODTSP in log Application...
+Rolling back assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Restoring event log to previous state for source ODTSP.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Uninstalling assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Removing EventLog source ODTSP.
+Service ODTSP is being removed from the system...
+Service ODTSP was successfully removed from the system.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Uninstalling assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Removing EventLog source ODTSP.
+Service ODTSP is being removed from the system...
+Service ODTSP was successfully removed from the system.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Uninstalling assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Removing EventLog source ODTSP.
+Service ODTSP is being removed from the system...
+Service ODTSP was successfully removed from the system.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Uninstalling assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Removing EventLog source ODTSP.
+Service ODTSP is being removed from the system...
+Service ODTSP was successfully removed from the system.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Uninstalling assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Removing EventLog source ODTSP.
+Service ODTSP is being removed from the system...
+Service ODTSP was successfully removed from the system.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Uninstalling assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Removing EventLog source ODTSP.
+Service ODTSP is being removed from the system...
+Service ODTSP was successfully removed from the system.
+Installing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+Installing service ODTSP...
+Service ODTSP has been successfully installed.
+Creating EventLog source ODTSP in log Application...
+Committing assembly 'd:\project\odtspservice\bin\release\odtspservice.exe'.
+Affected parameters are:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+正在解除安裝組件 'd:\project\odtspservice\bin\release\odtspservice.exe'。
+受影響的參數為:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+正在移除 EventLog 來源 ODTSP。
+已從系統中移除服務 ODTSP...
+在 System.ServiceProcess.ServiceInstaller 安裝程式的解除安裝中發生例外狀況。
+System.ComponentModel.Win32Exception: 指定的服務並不是已安裝的服務。
+解除安裝時發生例外狀況。將略過此例外狀況，而解除安裝將會繼續。然而，解除安裝完成之後，可能無法完全解除安裝應用程式。
+正在安裝組件 'd:\project\odtspservice\bin\release\odtspservice.exe'。
+受影響的參數為:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+正在安裝服務 ODTSP...
+已經成功安裝服務 ODTSP。
+正在記錄檔 Application 中建立 EventLog 來源 ODTSP...
+正在認可組件 'd:\project\odtspservice\bin\release\odtspservice.exe'。
+受影響的參數為:
+   assemblypath = d:\project\odtspservice\bin\release\odtspservice.exe
+   logfile = d:\project\odtspservice\bin\release\odtspservice.InstallLog
+正在解除安裝組件 'D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\Project2013\ODTSPService\bin\Release\ODTSPService.InstallLog
+   assemblypath = D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe
+無法讀取位於 D:\Project2013\ODTSPService\bin\Release\ODTSPService.InstallState，包含 D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe 組件儲存狀態的檔案，而且檔案可能已經損毀。將不使用儲存資訊，並且繼續解除安裝。
+正在移除 EventLog 來源 ODTSP。
+警告: 來源 ODTSP 未於本機電腦上註冊。
+已從系統中移除服務 ODTSP...
+在 System.ServiceProcess.ServiceInstaller 安裝程式的解除安裝中發生例外狀況。
+System.ComponentModel.Win32Exception: 指定的服務並不是已安裝的服務。
+解除安裝時發生例外狀況。將略過此例外狀況，而解除安裝將會繼續。然而，解除安裝完成之後，可能無法完全解除安裝應用程式。
+正在安裝組件 'D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\Project2013\ODTSPService\bin\Release\ODTSPService.InstallLog
+   assemblypath = D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe
+正在安裝服務 ODTSP...
+已經成功安裝服務 ODTSP。
+正在記錄檔 Application 中建立 EventLog 來源 ODTSP...
+正在認可組件 'D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\Project2013\ODTSPService\bin\Release\ODTSPService.InstallLog
+   assemblypath = D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe
+正在解除安裝組件 'D:\Project\ODTSPService\bin\Release\ODTSPService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\Project\ODTSPService\bin\Release\ODTSPService.InstallLog
+   assemblypath = D:\Project\ODTSPService\bin\Release\ODTSPService.exe
+正在移除 EventLog 來源 ODTSP。
+已從系統中移除服務 ODTSP...
+已經成功從系統移除服務 ODTSP。
+正在安裝組件 'D:\Project\ODTSPService\bin\Release\ODTSPService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\Project\ODTSPService\bin\Release\ODTSPService.InstallLog
+   assemblypath = D:\Project\ODTSPService\bin\Release\ODTSPService.exe
+正在安裝服務 ODTSP...
+已經成功安裝服務 ODTSP。
+正在記錄檔 Application 中建立 EventLog 來源 ODTSP...
+正在認可組件 'D:\Project\ODTSPService\bin\Release\ODTSPService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\Project\ODTSPService\bin\Release\ODTSPService.InstallLog
+   assemblypath = D:\Project\ODTSPService\bin\Release\ODTSPService.exe

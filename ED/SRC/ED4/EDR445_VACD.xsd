@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR445_VACD" targetNamespace="http://tempuri.org/EDR445_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR445_VACD.xsd" xmlns="http://tempuri.org/EDR445_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR445_VACD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR445_VACD" msprop:Generator_UserDSName="EDR445_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR445_VACD" msprop:Generator_TableClassName="EDR445_VACDDataTable" msprop:Generator_TableVarName="tableEDR445_VACD" msprop:Generator_RowChangedName="EDR445_VACDRowChanged" msprop:Generator_TablePropName="_EDR445_VACD" msprop:Generator_RowDeletingName="EDR445_VACDRowDeleting" msprop:Generator_RowChangingName="EDR445_VACDRowChanging" msprop:Generator_RowEvHandlerName="EDR445_VACDRowChangeEventHandler" msprop:Generator_RowDeletedName="EDR445_VACDRowDeleted" msprop:Generator_RowClassName="EDR445_VACDRow" msprop:Generator_UserTableName="EDR445_VACD" msprop:Generator_RowEvArgName="EDR445_VACDRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPTEMP_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPTEMP_NAME" msprop:Generator_ColumnPropNameInRow="DEPTEMP_NAME" msprop:Generator_ColumnPropNameInTable="DEPTEMP_NAMEColumn" msprop:Generator_UserColumnName="DEPTEMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CO_DEPT_NAME" msdata:Caption="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnCO_DEPT_NAME" msprop:Generator_ColumnPropNameInRow="CO_DEPT_NAME" msprop:Generator_ColumnPropNameInTable="CO_DEPT_NAMEColumn" msprop:Generator_UserColumnName="CO_DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ISSUE" msdata:Caption="RCV_ORG_ISSUE" msprop:Generator_ColumnVarNameInTable="columnISSUE" msprop:Generator_ColumnPropNameInRow="ISSUE" msprop:Generator_ColumnPropNameInTable="ISSUEColumn" msprop:Generator_UserColumnName="ISSUE" type="xs:string" minOccurs="0" />
+              <xs:element name="STORE" msdata:Caption="RCV_ORG_STORE" msprop:Generator_ColumnVarNameInTable="columnSTORE" msprop:Generator_ColumnPropNameInRow="STORE" msprop:Generator_ColumnPropNameInTable="STOREColumn" msprop:Generator_UserColumnName="STORE" type="xs:string" minOccurs="0" />
+              <xs:element name="ELSE" msdata:Caption="RCV_DEPT" msprop:Generator_ColumnVarNameInTable="columnELSE" msprop:Generator_ColumnPropNameInRow="ELSE" msprop:Generator_ColumnPropNameInTable="ELSEColumn" msprop:Generator_UserColumnName="ELSE" type="xs:string" minOccurs="0" />
+              <xs:element name="COMPLETE" msdata:Caption="RCV_WAIT" msprop:Generator_ColumnVarNameInTable="columnCOMPLETE" msprop:Generator_ColumnPropNameInRow="COMPLETE" msprop:Generator_ColumnPropNameInTable="COMPLETEColumn" msprop:Generator_UserColumnName="COMPLETE" type="xs:string" minOccurs="0" />
+              <xs:element name="WAIT" msdata:Caption="NEW_ORG_ISSUE" msprop:Generator_ColumnVarNameInTable="columnWAIT" msprop:Generator_ColumnPropNameInRow="WAIT" msprop:Generator_ColumnPropNameInTable="WAITColumn" msprop:Generator_UserColumnName="WAIT" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL" msdata:Caption="NEW_ORG_STORE" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL_DATE" msdata:Caption="NEW_DEPT" msprop:Generator_ColumnVarNameInTable="columnTOTAL_DATE" msprop:Generator_ColumnPropNameInRow="TOTAL_DATE" msprop:Generator_ColumnPropNameInTable="TOTAL_DATEColumn" msprop:Generator_UserColumnName="TOTAL_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="AVG_DATE" msdata:Caption="NEW_WAIT" msprop:Generator_ColumnVarNameInTable="columnAVG_DATE" msprop:Generator_ColumnPropNameInRow="AVG_DATE" msprop:Generator_ColumnPropNameInTable="AVG_DATEColumn" msprop:Generator_UserColumnName="AVG_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="OVERDUE_CNT" msprop:Generator_ColumnVarNameInTable="columnOVERDUE_CNT" msprop:Generator_ColumnPropNameInRow="OVERDUE_CNT" msprop:Generator_ColumnPropNameInTable="OVERDUE_CNTColumn" msprop:Generator_UserColumnName="OVERDUE_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="INDUE_CNT" msdata:Caption="INDUE_PERCENT" msprop:Generator_ColumnVarNameInTable="columnINDUE_CNT" msprop:Generator_ColumnPropNameInRow="INDUE_CNT" msprop:Generator_ColumnPropNameInTable="INDUE_CNTColumn" msprop:Generator_UserColumnName="INDUE_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="INDUE_PERCENT" msprop:Generator_ColumnVarNameInTable="columnINDUE_PERCENT" msprop:Generator_ColumnPropNameInRow="INDUE_PERCENT" msprop:Generator_ColumnPropNameInTable="INDUE_PERCENTColumn" msprop:Generator_UserColumnName="INDUE_PERCENT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="IIR330D" targetNamespace="http://tempuri.org/IIR330D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/IIR330D.xsd" xmlns:mstns="http://tempuri.org/IIR330D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="IIR330D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Main">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME_1" type="xs:string" minOccurs="0" />
+							<xs:element name="SEQ_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="PROXY_USER" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME_2" type="xs:string" minOccurs="0" />
+							<xs:element name="START_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="END_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="PROXY_REASON" type="xs:string" minOccurs="0" />
+							<xs:element name="UPD_USER" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME_3" type="xs:string" minOccurs="0" />
+							<xs:element name="UPD_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="UPD_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ROLE_NAME" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

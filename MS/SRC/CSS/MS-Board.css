@@ -1,0 +1,85 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*
+ CSS for 公布欄頁
+*/
+#billboardCtxt {
+	height: 100%;
+}
+
+/* 左邊窗格的分類清單 */
+#billboard .menu,
+#billboardCtxt .menu{
+  float: left;
+  width: 30%;
+  height: 100%;
+  /*background-color: #ddd;*/
+  border-right: 1px solid #fff;
+}
+
+/* 右邊窗格的公告項目清單 */
+#billboard .content,
+#billboardCtxt .content
+{
+  margin-left: 10px;
+  margin-top: 10px;
+  float: left;
+  width: 68%;
+  height: 95%;
+  /*background-color: #ddd;*/
+}
+
+/* 右邊窗格, 表格上方button styles */
+#billboard .content input[type="button"],
+#billboardCtxt .content input[type="button"]
+{
+  float: left;
+  font-weight: normal;
+}
+
+#billboard .content span.ui-btn-inner,
+#billboardCtxt .content span.ui-btn-inner
+{
+  padding: 5px 10px;
+}
+
+/* 右邊窗格, 表格 styles */
+#billboard .content table,
+#billboardCtxt .content table{
+  border-collapse:collapse;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#billboard_tb thead a {
+  color: #00F;
+  text-decoration: none;
+}
+
+#billboard_tb thead th {
+  background: #e4f5fc; /* Old browsers */
+  background: -moz-linear-gradient(top, #e4f5fc 0%, #bfe8f9 50%, #9fd8ef 51%, #2ab0ed 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4f5fc), color-stop(50%,#bfe8f9), color-stop(51%,#9fd8ef), color-stop(100%,#2ab0ed)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%);  /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(top, #e4f5fc 0%,#bfe8f9 50%,#9fd8ef 51%,#2ab0ed 100%); /* W3C */
+}
+
+#billboard_tb thead, #billboard_tb tbody {
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  border-left: 1px solid #888;
+}
+
+#billboard_tb thead, #billboard_tb thead tr, #billboard_tb thead th, #billboard_tb tbody td {
+ border-right: 1px solid #888;
+}
+
+#billboard_tb tbody tr {
+  border-bottom: 1px solid #888;
+  background-color: #cff;
+}
+
+#billboard_tb tbody td:first-child {
+  text-align: center;
+}

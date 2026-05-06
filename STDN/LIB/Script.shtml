@@ -1,0 +1,12 @@
+<!-- 1110817 Kevin 1101532 新增支援自造字 -->
+<link rel="stylesheet" href="/MS/2100Rsrc/CSS_CONFIG.css?ver=5.0.71.0"/>
+<!-- 1100412	Leslie[1100221]	更新JQuery版號(更新至3.5.1)，一併配合更新參照路徑為絕對路徑 -->
+<link rel="stylesheet" href="/STDN/LIB/CSS/jquery-simplemodal.basic.css?ver=5.0.34.0" />
+<!-- 1080905	Leslie[1080339]	配合更新jQuery版本，修改參照寫法(拿掉版號) -->
+<!-- <script src="/STDN/LIB/jquery-2.2.1.min.js"></script> -->
+<script src="/STDN/LIB/jquery.js?ver=5.0.51"></script>
+<script src="/STDN/LIB/jquery.simplemodal-1.4.4.js?ver=5.0.34.0"></script> <!-- 子(對話)視窗元件 (mSSO / DemoMP 皆使用) -->
+<link rel="stylesheet" href="/STDN/LIB/jquery-ui.css">
+<script src="/STDN/LIB/jquery-ui.js?ver=5.0.68"></script>
+<script src="/STDN/LIB/Template_Util.js?ver=5.0.1051"></script>
+<link rel="stylesheet" href="/STDN/LIB/Template-ui.css?ver=5.0.67.0">

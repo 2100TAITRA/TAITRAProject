@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="big5"?>
+<root>
+	<item>
+		<value>本件於公布時解密</value>
+		<text>本件於公布時解密</text>
+		<value>本件至 年 月 日解密</value>
+		<text>本件至 年 月 日解密</text>
+		<value>附件抽存後解密</value>
+		<text>附件抽存後解密</text>
+		<value>其它</value>
+		<text>其它</text>
+	</item>
+</root>

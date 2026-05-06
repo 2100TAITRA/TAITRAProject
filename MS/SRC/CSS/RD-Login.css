@@ -1,0 +1,436 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* 2016.1.30
+ * for iPad Pro, the window resolution will be 1366x958
+ *  iPad Air and iPad mini => 1024x672
+ */
+/*.ui-page {*/
+#login {
+  position: absolute;
+  width: 100%; /*1024px;*/
+  height: 100%; /*672px;*/
+  box-shadow: 3px 3px 2px rgba(0,0,0,.3);
+	
+  /* 20170321 Kevin 套美工
+  background-image: url('../IMAGE/SSO/bg2.png');
+  background-repeat: no-repeat; 20170321 
+  background-position: left top;
+  background-size: cover;
+  */
+  background-image:url('../IMAGE/ART/Login-Base.png'); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  /*background-attachment: fixed; 2016.6 */
+  /*background-position: center;*/
+  /* 20170321 Kevin 套美工
+  background-size: 100%; */ /* 2016.3.9 */
+  
+  
+	
+  -webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+	transition: all .8s ease-in-out;
+  margin-top: -150%;
+  display: block;
+}
+
+/* 2017.4 - color-scheme */
+.cs-ly #login {
+	background-image:url('../IMAGE/ART/CS-LY/Login-Base.png'); 
+}
+.cs-lg #login {
+	background-image:url('../IMAGE/ART/CS-LG/Login-Base.png'); 
+}
+.cs-lp #login {
+	background-image:url('../IMAGE/ART/CS-LP/Login-Base.png'); 
+}
+/* 20210929	Leslie[1100944] Merge客製化Logo，併首頁美工部分，但移除Logo底圖部分，由JS控制 */
+#OrgTitle
+{
+	margin-left: 40%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+	background-size: 100%;
+    float: left;
+    min-width: 350px;
+	max-width: 450px;
+	width:25%
+}
+
+@media screen and (max-width: 1541px) {
+	#LoginDesc span{
+		font-size:90%;
+	}
+}
+@media screen and (max-height: 1024px) {
+	.main .upper-part {
+		height: 10%  !important;
+	}
+}
+
+@media screen and (max-height: 800px) {
+	.main .upper-part {
+		height: 0%  !important;
+	}
+}
+
+#LoginDesc ol{
+	padding-left:20px;
+}
+
+#LoginTitle.trans-part{
+	margin-top:12%;
+}
+
+#LoginMain.trans-part{
+	display:none;
+}
+
+/* 20210929	Leslie[1100944] Merge客製化Logo，併首頁美工部分 ==END==*/
+
+/* 20170321 Kevin 套美工 */
+#LoginTitle
+{
+	 margin-left: 40%;
+	min-width: 350px;
+	background-image:url('../IMAGE/ART/Login-Logo.png'); 
+	background-repeat: no-repeat;  
+	background-position: center center;
+	height: 60px; /* 20210929	Leslie[1100944] Merge客製化Logo，併首頁美工部分，由100改為60 */
+	float: left;
+	/* 20210929	Leslie[1100944] Merge客製化Logo，併首頁美工部分 */
+	max-width: 450px;
+	width:25%
+}
+
+/* 20170321 Kevin 套美工 */
+#LoginMain
+{
+	margin-left: 40%;
+    margin-top: 110px;
+}
+
+.login_slideup {
+  margin-top: -60%;
+  /* 1110818	Leslie	強制在拉起時隱藏(避免卡住) */
+  display: none !important;
+}
+
+#login.login_slidedown {
+  display: block;
+  margin-top: 0;
+  
+  /* 顯示在所有頁面之前 */
+  z-index: 500;
+}
+
+/*.ui-page .ui-content {*/
+#login .ui-content {
+  height: 100%;
+}
+
+.sys-title
+{
+  font-size: xx-large;
+  font-weight: 800;
+  color: #00f;
+  margin: 50px 0px 150px 5%;
+  height: 50%;
+  text-shadow: 2px 2px rgb(128,128,255);
+}
+
+.main .upper-part {
+	/* 20170321 Kevin 套美工 */
+	/*height: 45%; */  /* 2016.3 - layout change */
+	height: 20%;
+}
+
+.input_panel {
+  background-color: #ffd;
+  border-radius: 5px;
+  border: 1px solid rgb(196,196,128);
+  padding: 5px 10px;
+  /*margin-top: 260px;*/  /* 2016.3.10 */
+  margin-top: 3%;  /* 2016.3.30 */
+  margin-bottom: 10px;
+  margin-left: 90px;
+  height: 50%;
+  min-width: 350px; /* 2016.3.9 */
+  max-width: 450px; /* 2016.4.1 */
+  -webkit-box-shadow: 4px 4px 1px rgba(128,128,0,0.5);
+  -moz-box-shadow: 4px 4px 1px rgba(128,128,0,0.5);
+  box-shadow: 4px 4px 1px rgba(128,128,0,0.5);
+}
+
+/* 2017.2.8 - 解決iOS 10, 關閉 Safari 再重開時, 登入Panel移到螢幕下方問題
+   panel的 margin-top 會被 browser 設成 180px */
+#login div.input_panel.ui-block-b.ui-page-theme-e {
+	/* 20170321 Kevin 套美工
+	/*margin-top: 3%; */
+	margin-top: 0%;
+	width: 25%; 
+	/* 2025.6.10	Leslie[1131183]	[Merge-1110117]增加行動自然人憑證按鈕的寬度 */
+	min-width:385px;
+}
+
+/* 2016.10.24 - layout modify 
+*/
+@media screen and (max-height:768px) and (max-width:1024px) {
+	.main .upper-part {
+		/*height: 36%; 20170414*/
+		height: 0%; /*20170414*/  /* 20210929	Leslie[1100944] Merge客製化Logo，併首頁美工部分，由10改為0 */
+	}
+}
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Portrait */
+@media screen and (min-width:768px) and (min-height:920px) and (orientation: portrait) {
+  .input_panel {
+	/*margin-top: 180px; 2016.3.30 */
+	margin-left: 50px;
+  }
+}
+
+/* 2016.2.1 - Eric Peng, 暫行顯示方案 for iPad Pro Landscape */
+@media screen and (min-width: 1360px) and (min-height:900px) and (orientation: landscape) {
+  .input_panel {
+	/*margin-top: 390px; 2016.3.30 */
+	margin-left: 50px;
+  }
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Pro Portrait */
+@media screen and (min-width: 1024px) and (min-height:960px) and (orientation: portrait) {
+  .input_panel {
+	/*margin-top: 262px; 2016.3.30 */
+	margin-left: 50px;
+  }
+}
+
+/* 2021.2.17 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height:450px) and (orientation: landscape) {
+  #login {
+    font-size: 15px;
+  }
+
+  #login .main {
+    padding: .5em;
+  }
+
+  #login .upper-part {
+    height: .6em;
+  }
+
+  #login #LoginTitle {
+    height: 75px;
+    margin-left: 30%;
+  }
+
+  #login .input_panel {
+    margin-left: 30%;
+  }
+
+  #login #orgid_wrapper {
+    margin-top: .1em;
+    margin-bottom: .1em;
+  }
+
+
+
+
+
+}
+
+.input_panel .userid_wrapper {
+  margin-bottom: .5em;
+}
+
+.input_panel .password_wrapper {
+  margin: .5em 0;
+}
+
+.input_panel div.login_method_wrapper {
+  margin-left: 15px;
+}
+
+.input_panel div.ui-radio label {
+  font-size: 12px;
+}
+
+#orgid_wrapper {
+  margin-top: .5em;
+}
+
+.input_panel label
+{
+  font-weight: 800;
+  font-size: larger;
+}
+
+.input_panel label.ui-select
+{
+  width: 40%;    
+}
+
+.input_panel input.ui-input-text, .input_panel div.ui-select
+{
+  width: 55%;
+}
+
+.input_panel .userid_wrapper > label,
+.input_panel .password_wrapper > label {
+  text-align: right;
+  width: 30%; /* 25%;  2017.5.5 - Eric */
+}
+
+.input_panel .userid_wrapper > div.ui-input-text,
+.input_panel .password_wrapper > div.ui-input-text {
+  width: 68%; /* 73%; 2017.5.5 - Eric */
+}
+
+
+#orgid_input {
+  width: 98%; /* 2016.10.17 - 覆蓋arrow-down span, 以觸發click */
+}
+
+.selector_wrapper {
+  position: relative;
+}
+
+#mpContainer #sidePane .selector_wrapper {
+	width: 98%; /* 2016.10.17 - 覆蓋arrow-down span, 以觸發click */
+  margin: auto;
+}
+
+.selector_wrapper > input {
+  text-indent: 15px;
+  font-weight: 800;
+}
+
+/* 右方下拉 scroll button */
+.selector_wrapper > span {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  
+  top: 50%;
+  margin-top: -10px;
+  right: .5em;
+  
+  background-image: url(../IMAGE/SSO/icons-18-white.png) /*{global-icon-set}*/;
+	background-color: #888;
+  background-repeat: no-repeat;
+  background-position: -216px 50%;
+}
+
+/*#orgid_wrapper > span {
+  right: calc(10% / 2 + 5px);
+}*/
+
+.input_panel div.ui-select
+{
+  width: 100%;
+}
+
+.input_panel div#orgid_wrapper
+{
+  width: 100%;
+  text-align: center;
+}
+
+/* 2021.3.26 - Eric, fix Firefox 86.0 display problem */
+#LoginMain fieldset {
+	display: block;
+}
+
+/* ChangePasswordDialog */
+#dlgChangePassword {
+	z-index: 1001;
+}
+
+#dlgChangePassword .ui-dialog-contain {
+	max-width: 500px;
+}
+
+/* 2021.2.22 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height: 450px) and (orientation: landscape) {
+  #dlgChangePassword .ui-dialog-contain {
+    margin-top: 2.5em;
+  }
+
+  #dlgChangePassword .ui-content {
+    padding-bottom: .5em;
+  }
+
+  #dlgChangePassword #CPWD_OKBtn, 
+  #dlgChangePassword #CPWD_CancelBtn {
+		padding-top: .5em;
+		padding-bottom: .5em;
+	}
+}
+
+/* End of ChangePasswordDialog */
+
+/* 2021.2.22 - 1090927 Eric Peng, for iPhone Portrait */
+#login.ui-page.sd_portrait_mode {
+  display: none;
+}
+
+/* 1110307	Leslie[1101521]	[Merge_1080793]新增忘記密碼連結 */
+/* 1140610	Leslie[1131183]	[Merge]新增行動自然人相關功能[1110117]，加上QRCode連結與QRCode子視窗 */
+/* #lkResetPWD{ */
+#lkResetPWD,#lkQRCode{
+	position: absolute;
+    right: 10px;
+    bottom: 0px;
+}
+
+/* #dlgResetPassword{ */
+#dlgResetPassword,#dlgQrCode{
+	z-index: 1001;
+}
+/* 1110307	Leslie[1101521]	新增圖型驗證功能 */
+#verifyCodeContain{
+	display:none; /*預設不顯示*/
+}
+
+#verifyCodeContain label{
+	margin-top: 33px;
+}
+
+#lkVerifyCode{
+	position: absolute;
+	bottom: 2px;
+	width: 2em;
+}
+
+#verifyCodeContain .ui-input-text{
+	max-width: 4.5em;
+	margin-top: 24px;
+}
+
+#verifyCodeContain img{
+	/* max-width: 150px; */
+	height: 60px;
+	/* 1140203	Leslie[1130962]	增加新版圖型驗證模式 */
+	/* width: 38%; */
+}
+
+.checkmark {
+	/* display: inline-block; */
+	position: absolute;
+	transform: rotate(45deg);
+	height: 16px;
+	width: 8px;
+	border-bottom: 4px solid #000;
+	border-right: 4px solid #000;
+}
+
+/* 1110420	Leslie[1110069]	客製化首頁Logo */
+#LoginTitle.SMEG_Logo{
+	background-image:url('../IMAGE/ART/Login-Logo-SMEG.svg'); 
+}

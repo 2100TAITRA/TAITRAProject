@@ -1,0 +1,545 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="scale" content="1.0">
+	<meta name="viewport" content="width=1024 maximum-scale=1.0 minimum-scale=1.0">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<title>線上簽核公文</title>
+</head>
+<body>
+  <!-- 1100205 Raymond 1090927 修正螢幕高度太小時, 文稿頁面外圈能向上捲動超出可見區域的問題 -->
+  <!-- 2013.9 - Eric Peng, add 'data-url' & 'data-dom-cache' attributes for integration -->
+  <!--div data-role="page" id="aol" data-url="aol" data-theme="b" style="width:1024px; overflow-x:hidden" data-dom-cache="true"-->
+  <!--div data-role="page" id="aol" data-theme="b" style="overflow-x:hidden;" data-dom-cache="true"-->
+  <div data-role="page" id="aol" data-theme="b" data-dom-cache="true">
+    <div data-role="content" id="mainContent">
+        <div id="leftPart" class="ui-pane-a">
+			<div data-role="header" data-theme="a">
+				<!--div data-role="controlgroup" data-type="horizontal" style="margin-top:2px">
+					<div data-role="fieldset">
+						<label for="pencilMode"><img src="IMAGE/AOL/Pen.png" width="16" height="16"></label>
+						<input type="checkbox" id="pencilMode" data-theme="c"/>
+					</div>
+				</div-->
+				<a href="#popupAdvance" data-rel="popup" data-role="button" data-history="false" data-icon="gear" data-theme="b" data-iconpos="notext">進階</a>
+				<div data-role="popup" id="popupAdvance" data-theme="d">
+					<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+						<li data-role="divider" data-theme="b">工具及設定</li> <!-- 2019.8.22 - 1080654 Eric, 修改名稱 -->
+						<li><a id="btnToggleSymbol" data-icon="checkbox">顯示符號工具列</a></li>
+						<li><a id="btnStrokeSetting">手寫筆設定</a></li>
+						<li><a id="btnCommandSetting">簽核工具列設定</a></li><!-- 1140808 Raymond 1140818 新曾簽核工具列設定鈕 -->
+						<li><a id="btnAutoBackupSetting">自動備份設定</a></li>
+						<li><a id="btnRefDocSet" data-rel="dialog" style="display:none;">參考公文設定</a></li><!-- 2021.4.21 - 1180761 Eric, merge MOI-1070298 新增參考公文設定鈕, 1110708 Raymond 1110728 參考公文設定鈕從「設定」鈕選單搬到「齒輪」鈕選單 -->
+						<li><a id="btnWWKFSet2" data-rel="dialog" style="display:none;">預排流程</a></li><!-- 2024.5.14 - 中榮序106, 移植右上角選單項目[預排流程、簽辦意見] -->
+						<li><a id="btnFlowSet2" data-rel="dialog" style="display:none;">簽辦意見</a></li>
+						<li data-icon="false" style="display:none"><a id="moBtnSignCmtPanel">簽辦意見窗格</a></li><!-- 1111024 Raymond 1110864 合併1101468, 新增行動版用的簽辦意見窗格核取方塊， 1130514 Leslie 調整選單順序 -->
+                        <li data-icon="false"><a id="btnEnableTextEditToolbar">啟用文字編輯工具列</a></li><!-- 2023.2.20, Eric 1111363 使用者可自訂顯示/隱藏文字編輯工具列 -->
+						<li data-icon="false" style="display:none"><a id="btnAutoOpenNext">啟用自動開啟下一筆公文</a></li><!-- 2019.8.22, Eric 1080654 新增自動開啟次筆公文 -->
+						<li data-icon="false" style="display:none"><a id="btnAutoOpenNextAdvMode">下一筆公文啟用進階模式</a></li><!-- 2019.8.22, Eric 1080654 新增自動開啟次筆公文 -->
+					</ul>
+				</div>
+				<div id="zoomControl1" data-role="controlgroup" data-type="horizontal">
+					<select id="zoomSelect1" data-theme="c">
+						<option value="50" selected>50%</option>
+						<option value="0">符合視窗</option>
+						<option value="-1">符合寬度</option>
+						<option value="-2">原尺寸</option>
+						<!--option value="-3">全視窗</option-->
+					</select>
+					<a id="zoomOut" data-theme="c" class="ui-btn ui-btn-c ui-icon-minus ui-btn-icon-notext ui-corner-all">-</a>
+					<a id="zoomIn" data-theme="c" class="ui-btn ui-btn-c ui-icon-plus ui-btn-icon-notext ui-corner-all">+</a>
+				</div>
+				<div id="tcControl1" data-role="controlgroup" data-type="horizontal">
+					<select id="tcMode" data-theme="c">
+						<option value="0">追蹤修訂模式</option>
+						<option value="1" selected>完稿模式</option>
+						<!--option value="2">完稿追蹤修訂模式</option>
+						<option value="3">原稿追蹤修訂模式</option-->
+					</select>
+				</div>
+				<!-- 1121222	Leslie[卡驗收序32]	新增客製化可設定功能鍵-->
+				<div id="cusBtnControl1" data-role="controlgroup" data-type="horizontal">
+					<a id="btCusBtn0" data-theme="b" class="ui-btn ui-btn-b ui-corner-all"></a>
+					<a id="btCusBtn1" data-theme="b" class="ui-btn ui-btn-b ui-corner-all"></a>
+					<a id="btCusBtn2" data-theme="b" class="ui-btn ui-btn-b ui-corner-all"></a>
+				</div>
+				<div id="transPanel" class="ui-bar ui-mini">
+				  <div style="height:45px">
+						<!--button id="btnExpand" data-role="none" style="vertical-align:top; height:45px;">»</button-->
+						<!-- 2022.6 - 1100629 Leslie, 考試院新增簡易傳送模式切換功能 -->
+						<div id="pcTranMode"  style="display:none;">
+							<select id="swTranMode" data-role="slider" data-mini="true" data-theme="c" style="display: inline-block; vertical-align: top;">
+								<option value="off"></option>
+							    <option value="on" selected=""></option>
+							</select>
+						</div>
+						<div id="pcTxEasy" style="display:none">
+							<a id="transTargetDisplay" data-role="button" data-rel="dialog" data-theme="c" style="display:block;">
+								<img src="IMAGE/AOL/send_user.png" />
+								<span></span>
+							</a>
+						</div>
+						<!-- 2022.6 - 1100629 Leslie, 考試院新增簡易傳送模式切換功能，END -->
+						<div id="pcTxList" style="display:none"> <!-- 2018.4.12 - Eric, NCKU107284 -->
+							<select id="chooseA" data-theme="c"></select>
+							<div class="transTargets" data-role="controlgroup" data-type="horizontal" style="display:inline-block; margin:.5em 0;">
+								<select id="chooseB" data-theme="c"></select>
+								<select id="chooseC" data-theme="c"></select>
+								<select id="chooseD" data-theme="c"></select>
+							</div>
+							<a href="#" class="ui-btn-e" data-role="button" data-theme="e" id="btnCoworkProcSetting" style="display:none">
+								<!--img src="IMAGE/AOL/transfer.png"/-->
+								<span>分會設定</span>
+							</a>
+						</div>
+						<div id="pcSubmit" style="vertical-align:top; display:none"> <!-- 2018.4.12 - Eric, NCKU107284 -->
+							<label><input id="chkApprove" type="checkbox" data-theme="c" />決行</label><!-- 2015.6.22 核可改成核決，2022.6.29 核決改決行 -->
+							<label><input id="chkReject" type="checkbox" data-theme="c" />剔退</label><!-- 2015.8.20 退回改回剔退 -->
+							<a href="#" data-role="button" data-rel="dialog" data-theme="c" id="btnSubmit">
+								<img src="IMAGE/AOL/transfer.png" />
+								<span>傳送</span>
+							</a>
+							<!-- 2022.6 - 1100629 Leslie, 考試院新增退承辦人鈕 -->
+							<a href="#" data-role="button" data-rel="dialog" data-theme="c" id="btnSendBack" style="display:none;">
+								<img src="IMAGE/AOL/transfer.png" />
+								<span>退承辦人</span>
+							</a>
+						</div> <!-- div.submitPanel -->
+						<div id="pcUtil" style="vertical-align: top;display:none;"> <!-- 2018.4.12 - Eric, NCKU107284 -->
+						    <a id="btnSave" data-role="button" data-rel="dialog" data-theme="c">
+								<img src="IMAGE/AOL/Save.png"/>
+								<span>儲存</span>
+							</a>
+							<a id="btnClose" data-role="button" data-theme="c" data-icon="delete">關閉</a>
+							<!-- 2021.7 - 1100433 Eric, 高雄大學紙本顯示預排流程設定鈕 -->
+							<a id="btnWWKF_PDoc" data-role="button" data-theme="c" data-icon="gear" style="display:none">流程設定</a>
+							<!-- 2022.6 - 1100629 Leslie, 考試院僅顯示預排流程設定鈕 -->
+							<a id="btnWWKFSetting" data-role="button" data-theme="c" data-icon="bullets" style="display:none">預排流程</a>
+							<a id="btnPopupSetting" href="#popupSetting" data-rel="popup" data-role="button" data-history="false" data-icon="gear" data-theme="c">設定</a>
+							<div data-role="popup" id="popupSetting" data-theme="d">
+								<ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+									<li data-role="divider" data-theme="b">設定</li>
+									<li><a id="transTargetSetup">傳送對象</a></li>
+									<li><a id="btnWWKF">預排流程</a></li> <!-- 2017.10.18 - 1060748 新增預排流程設定鈕 -->
+									<li><a id="btnFlowSet" data-rel="dialog">簽辦意見</a></li>
+									<li data-icon="false"><a id="btnSignCmtPanel">簽辦意見窗格</a></li><!-- 1061109 Raymond 1060452 新增簽辦意見窗格 -->
+								</ul>
+							</div>
+						</div> <!-- div.pcUtil -->
+					</div>
+					<!--div class="iosSubmit">
+						<a id="transTargetSetup2" href="#" data-role="button" data-rel="dialog" data-theme="c" style="display:block;">
+							<img src="IMAGE/AOL/send_user.png"/>
+							<span></span>
+						</a>
+					</div-->
+				</div>
+				<div id="moGrpUtil" style="display:inline-block; display:none;">
+					<a id="moBtnFlowSet" data-role="button" data-rel="dialog" data-theme="b">
+						<img src="IMAGE/AOL/edit_group.png"/>
+						<span>簽辦意見</span>
+					</a>
+					<!--a id="moBtnRefDocSet" data-role="button" data-theme="b" data-icon="bullets" title="參考公文設定" style="display:none;">參考</a--><!-- 2021.4.21 - 1080761 Eric, merge MOI 1070298, 1110712 Raymond 1110728 搬去齒輪選單下, 所以工具列的這個重複了, 移除 -->
+					<a id="moBtnSave" data-role="button" data-rel="dialog" data-theme="b">
+						<img src="IMAGE/AOL/Save.png"/>
+						<span>儲存</span>
+					</a>
+					<a id="moBtnClose" data-role="button" data-theme="b" data-icon="delete">關閉</a>
+				</div>
+				<div id="moSubmitPanel" style="vertical-align:top; display:none">
+					<label><input id="moChkApprove" type="checkbox" data-theme="c" />核決</label><!-- 2015.6.22 核可改成核決 -->
+					<label><input id="moChkReject" type="checkbox" data-theme="c" />剔退</label><!-- 2015.8.20 退回改回剔退 -->
+					<a id="moBtnWWKF" data-role="button" data-theme="c"> <!-- 2017.10.9 - 1060748 新增預排流程設定鈕 -->
+						<span>預排流程</span>
+					</a>
+					<a href="#" data-role="button" data-rel="dialog" data-theme="b" id="moBtnSubmit">
+						<img src="IMAGE/AOL/transfer.png" />
+						<span>傳送</span>
+					</a>
+					<div class="moSubmit">
+						<a id="moTransTargetSetup" href="#" data-role="button" data-rel="dialog" data-theme="c" style="display:block;">
+							<img src="IMAGE/AOL/send_user.png" />
+							<span></span>
+						</a>
+					</div>
+				</div> <!-- div.submitPanel -->
+				<a id="btnCloseR" data-role="button" data-theme="c" data-icon="delete">關閉</a>
+			</div>
+			<!--div style="margin-left:50px; overflow-x:visible; position:relative"-->
+			<div id="isoContainer" style="margin-left:2.6em; position:relative">
+				<div id="sidebar">
+					<a id="btnFolioCmds" data-role="button" data-corners="false" style="margin:.1em; padding:.4em 0; width:32px; display:none;">檔<br/>案<br/>功<br/>能</a><!-- 1130503 Raymond 中榮序96 新增"檔案功能"按鈕, 文號頁籤功能移至此按鈕觸發 -->
+					<div id="tabbar" data-tabpos="left">
+						<ul style="-webkit-transform:translateZ(0);"></ul>
+					</div>
+					<a id="refView" data-role="button" style="background:url('IMAGE/ART/Doc-RefView.png')">&nbsp;</a>
+				</div>
+				<div id="iso" style="position:relative">
+					<a class="btnFlipLeft ui-btn ui-corner-all" title="前一頁"></a>
+					<a class="btnFlipRight ui-btn ui-corner-all" title="下一頁"></a>
+					<div class="contentPane">
+						<div id="tabularPanel" class="ui-grid-solo ui-hide-btntext" style="display: none;">
+							<div class="ui-block-a ui-panel-wrapper">
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d ui-icon-carat-d ui-btn-icon-right" id="btnNewTable" title="插入表格">
+									<img src="CSS/images/ui-icons_new_table_32.png"/>
+									<span>插入表格</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnInsRowAbove" title="插入上方列">
+									<img src="CSS/images/ui-icons_insert_row_above_32.png"/>
+									<span>插入上方列</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnInsRowBelow" title="插入下方列">
+									<img src="CSS/images/ui-icons_insert_row_below_32.png"/>
+									<span>插入下方列</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnInsColLeft" title="插入左方欄">
+									<img src="CSS/images/ui-icons_insert_column_left_32.png"/>
+									<span>插入左方欄</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnInsColRight" title="插入右方欄">
+									<img src="CSS/images/ui-icons_insert_column_right_32.png"/>
+									<span>插入右方欄</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnMergeCells" title="合併儲存格">
+									<img src="CSS/images/ui-icons_merge_cells_32.png"/>
+									<span>合併儲存格</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnDivideCells" title="分割儲存格">
+									<img src="CSS/images/ui-icons_divide_cells_32.png"/>
+									<span>分割儲存格</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnDelRow" title="刪除列">
+									<img src="CSS/images/ui-icons_delete_row_32.png"/>
+									<span>刪除列</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnDelCol" title="刪除欄">
+									<img src="CSS/images/ui-icons_delete_column_32.png"/>
+									<span>刪除欄</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnDelTable" title="刪除表格">
+									<img src="CSS/images/ui-icons_delete_table_32.png"/>
+									<span>刪除表格</span>
+								</a>
+								<div data-role="controlgroup" data-type="horizontal" class="ui-btn-inline" data-mini="true" data-corners="false" style="vertical-align:top">
+									<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnSetBold" title="粗體">
+										<span style="font-weight: 900; display: block; font-size:16pt; padding: 2.2px .5em; margin-right:0px">B</span>
+									</a>
+									<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnSetNormal" title="正常">
+										<span style="font-weight: normal; display: block; font-size:16pt; padding: 2.2px .5em; margin-right:0px">N</span>
+									</a>
+								</div>
+								<select data-theme="d" data-inline="true" data-mini="true" data-corners="false" data-shadow="false" id="btnSetFontSize" title="字型大小">
+									<option value="9pt">9pt</option>
+									<option value="10pt">10pt</option>
+									<option value="11pt">11pt</option>
+									<option value="12pt">12pt</option>
+									<option value="13pt">13pt</option>
+									<option value="14pt">14pt</option>
+									<option value="16pt" selected>16pt</option>
+									<option value="18pt">18pt</option>
+									<option value="20pt">20pt</option>
+									<option value="22pt">22pt</option>
+									<option value="24pt">24pt</option>
+									<option value="26pt">26pt</option>
+									<option value="28pt">28pt</option>
+									<option value="30pt">30pt</option>
+									<option value="32pt">32pt</option>
+									<option value="36pt">36pt</option>
+								</select>
+								<select data-theme="d" data-inline="true" data-mini="true" data-corners="false" data-shadow="false" id="btnSetLineHeight" title="行高">
+									<option value="1" selected>1.0</option>
+									<option value="1.1">1.1</option>
+									<option value="1.2">1.2</option>
+									<option value="1.3">1.3</option>
+									<option value="1.4">1.4</option>
+									<option value="1.5">1.5</option>
+									<option value="1.6">1.6</option>
+									<option value="1.7">1.7</option>
+									<option value="1.8">1.8</option>
+									<option value="1.9">1.9</option>
+									<option value="2.0">2.0</option>
+								</select>
+								<select data-theme="d" data-inline="true" data-mini="true" data-corners="false" data-shadow="false" id="btnSetVerticalAlign" title="垂直對齊">
+									<option value="top" selected>齊上</option>
+									<option value="middle">置中</option>
+									<option value="bottom">齊下</option>
+								</select>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnSetAlignLeft" title="靠左對齊">
+									<img src="CSS/images/ui-icons_align_left_32.png"/>
+									<span>靠左對齊</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnSetAlignCenter" title="置中">
+									<img src="CSS/images/ui-icons_align_center_32.png"/>
+									<span>置中</span>
+								</a>
+								<a data-role="button" data-theme="d" class="ui-btn ui-btn-inline ui-mini ui-btn-d" id="btnSetAlignRight" title="靠右對齊">
+									<img src="CSS/images/ui-icons_align_right_32.png"/>
+									<span>靠右對齊</span>
+								</a>
+							</div>
+						</div>
+						<div class="viewPort">
+							<div class="pages">
+							</div>
+							<div class="tags">
+								<div class="tags-group"><!-- 2014.1.15 - Raymond, 宣告data-role='listview'在Mobile Safari iOS 7上似乎有問題, 會導致changePage沒作用 -->
+									<div class="tags-item tags-item-active tags-no-icon">
+										<div id="docInfo" class="ui-btn-text">
+											<img src="IMAGE/ART/Doc-DocInfo.png" class="ui-li-icon" style="width:24px; height:24px"/>
+											<span>基本資料</span>
+										</div>
+									</div>
+								</div>
+								<div class="tags-group">
+									<div class="tags-item tags-item-special">
+										<div class="ui-btn-text">新增稿件</div>
+										<img src="IMAGE/ART/Doc-NewDraft.png" class="ui-li-icon" style="width:24px; height:24px"/>
+									</div>
+								</div>
+								<div class="tags-group">
+									<div class="tags-item tags-item-special">
+										<div class="ui-btn-text">附件管理</div>
+										<img src="IMAGE/ART/Doc-AttInfo.png" class="ui-li-icon" style="width:24px; height:24px"/>
+									</div>
+								</div>
+								<div class="tags-group"><!-- 1100617 Raymond 1080761 合併內政部1070298, 新增參考公文頁籤-->
+									<div class="tags-item tags-item-special">
+										<div class="ui-btn-text">參考公文</div>
+										<img src="IMAGE/ART/Doc-RefAtt.png" class="ui-li-icon" style="width:24px; height:24px"/>
+									</div>
+								</div>
+								<div class="tags-group">
+									<div class="tags-item tags-item-special" id="RefAtt">	<!-- 1111011	Leslie[1110865]	新增ID供後續使用 -->
+										<div class="ui-btn-text">參考附件</div>
+										<img src="IMAGE/ART/Doc-RefAtt.png" class="ui-li-icon" style="width:24px; height:24px"/>
+									</div>
+								</div>
+								<!-- 1111011	Leslie[1110865]	新增簽閱附件 -->
+								<div class="tags-group">
+									<div class="tags-item tags-item-special" id="TmpAtt" style="display:none">
+										<div class="ui-btn-text">簽閱附件</div>
+										<img src="IMAGE/ART/Doc-RefAtt.png" class="ui-li-icon" style="width:24px; height:24px"/>
+									</div>
+								</div>
+							</div>
+							<div id="pnControl1">第<input id="currPgNo" type="tel" min="1" data-role="none">頁，共<span id="totalPgs"></span>頁</div>	<!-- 1140905 Raymond 1140852 新增頁次控制項 -->
+							<div id="cmdFloat">
+								<div></div><canvas width=16 height=16></canvas><canvas width=16 height=16></canvas>
+							</div>
+							<!--div id="cmdHistory" class="ui-controlgroup-horizontal">
+								<button id="undo">復原</button>
+								<button id="redo">重作</button>
+							</div-->
+							<div id="editCursor"></div>
+							<div id="receiverDetail"></div>
+						</div>
+					</div>
+					<div id="searchPanel" class="ui-grid-solo" style="display: none">
+						<div class="ui-block-a ui-panel-wrapper ui-panel-page-container-b">
+							<label for="inpSearchKeyword">尋找目標：</label><input data-role="search" id="inpSearchKeyword"/>
+							<div class="ui-group-theme-c" style="display:inline-block"><label for="chkSearchCase" title="大小寫視為相異">Aa</label><input type="checkbox" id="chkSearchCase" data-mini="true"/></div>
+							<label for="inpReplaceText">取代為：</label><input id="inpReplaceText"/>
+							<a data-role="button" data-inline="true" data-mini="true" id="btnSearchNext">搜尋</a>
+							<a data-role="button" data-inline="true" data-mini="true" id="btnReplaceOne">取代</a>
+							<a data-role="button" data-inline="true" data-mini="true" id="btnReplaceAll">全部取代</a>
+							<a data-role="button" data-inline="true" data-mini="true" id="btnReplaceAllDrafts">取代所有稿件</a>
+							<a data-role="button" data-inline="true" data-mini="true" id="btnReplaceClose" data-theme="a">關閉</a>
+						</div>
+					</div>
+					<div id="dockedPanel">
+						<div id="symbolDocked" style="display:none"></div>
+						<div id="signObjDocked" style="display:none">
+							<div style="background:lightgray;border-top:#999 1px solid;font-weight:border">
+								<div style="display:inline-block;width:20%">類型</div>
+								<div style="display:inline-block;width:30%">簽核資訊</div>
+								<div style="display:inline-block;">文字內容</div>
+							</div>
+							<div style="max-height:200px;overflow-y:scroll;">
+								<ul data-role="listview" data-inset="true"></ul>
+							</div>
+						</div>
+					</div>
+					<!--div data-role="footer">
+						<a id="btnUndo" data-role="button" data-theme="b" data-icon="back">復原</a>
+						<a id="btnRedo" data-role="button" data-theme="b" data-icon="forward">重做</a>
+					</div-->
+				</div>
+				<div id="sidePanel"><!-- 1061109 Raymond 1060452 新增簽辦意見窗格 -->
+					<!-- 1140224 Raymond 1131303 在簽辦意見窗格位置新增錯別字校正窗格, 以標籤按鈕切換 -->
+					<div class="ui-header ui-body-c">
+						<button id="signCmtList_tag" data-corners="false" data-role="button" class="ui-btn-active" style="border-radius:10px 10px 0px 0px; margin-bottom:0px">簽辦意見</button>
+						<button id="fixWordList_tag" data-corners="false" data-role="button" style="border-radius:10px 10px 0px 0px; margin-bottom:0px">錯別字校正</button>
+					</div>
+					<div>
+						<div id="signCmtList_panel" style="display:block">
+							<ul id="signCmtList" data-role="listview" data-inset="true">
+							</ul>
+							<!-- 1120220 Raymond 1111225 新增內部意見區域 -->
+							<div id="innerCmtPanel">
+								<div class="ui-bar-inherit">內部意見</div>
+								<ul id="innerCmtList" data-role="listview" data-inset="true">
+								</ul>
+							</div>
+						</div>
+						<div id="fixWordList_panel" style="display:none">
+							<div class="ui-body-b">
+								<a id="acceptAllFixWords" data-role="button" data-inline="true" data-mini="true">全部接受</a>
+								<a id="rejectAllFixWords" data-role="button" data-inline="true" data-mini="true">全部拒絕</a>
+								<a id="fixWordSetting" data-role="button" data-history="false" data-icon="gear" data-theme="b" data-iconpos="notext" data-inline="true">設定</a>
+							</div>
+							<ul id="fixWordList" data-role="listview" data-inset="true">
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="errorCorrectionFloat">
+					<h3>錯別字校正</h3>
+					<hr/>
+					<ul style="list-style: none">
+						<li><a>錯</a></li>
+					</ul>
+					<hr/>
+					<div data-role="field-contain">
+						<button id="rejectCorrection" data-role="button" data-inline="true" data-theme="a" title="忽略此錯別字" tabindex="1">拒絕</button>
+						<button id="prevError" data-role="button" data-inline="true" data-theme="c" title="前一個錯別字" tabindex="2"><img src="IMAGE/AOL/prev64.png"/></button>
+						<button id="nextError" data-role="button" data-inline="true" data-theme="c" title="後一個錯別字" tabindex="3"><img src="IMAGE/AOL/next64.png"/></button>&nbsp;
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="rightPart" class="ui-pane-b">
+			<div data-role="header" data-theme="a">
+				<!--a id="refView" data-role="button" data-icon="arrow-l" data-theme="b">&nbsp;</a-->
+				<!--select id="refs" data-theme="c" data-inline="true" style="margin-left:3em;">
+					<option value="">&nbsp;</option>
+					<option value="a" selected>對照 - [文號：1050000004]</option>
+					<option value="b">調閱 - [文號：1010000123]</option>
+					<option value="c">參閱 - 二代簽核系統規格說明書</option>
+				</select-->
+				<div id="zoomControl2" data-role="controlgroup" data-type="horizontal">
+					<select id="zoomSelect2" data-theme="c">
+						<option value="50" selected>50%</option>
+						<option value="0">符合視窗</option>
+						<option value="-1">符合寬度</option>
+						<option value="-2">原尺寸</option>
+					</select>
+					<a id="zoomOut" class="ui-btn ui-btn-c ui-icon-minus ui-btn-icon-notext ui-corner-all">-</a>
+					<a id="zoomIn" class="ui-btn ui-btn-c ui-icon-plus ui-btn-icon-notext ui-corner-all">+</a>
+				</div>
+				<div id="historyControl2" data-role="controlgroup">
+					<select id="historyList" data-theme="c"><option>歷史檢視</option></select>
+				</div>
+				<a id="btnCloseRefView" data-theme="b" class="ui-btn ui-btn-right ui-btn-b ui-icon-delete ui-corner-all">關閉</a>
+			</div>
+			<!--div style="margin-left:50px; overflow-x:visible; position:relative"-->
+			<div style="margin-left:2.5em; overflow-x:visible; position:relative">
+				<div id="sidebar">
+					<a id="btnFolioCmds2" data-role="button" data-corners="false" style="margin:.1em; padding:.4em 0; width:32px; display:none;">檔<br/>案<br/>功<br/>能</a><!-- 1130503 Raymond 中榮序96 新增"檔案功能"按鈕, 文號頁籤功能移至此按鈕觸發 -->
+					<div id="tabbar2" data-tabpos="left">
+						<ul style="-webkit-transform:translateZ(0);"></ul>
+					</div>
+				</div>
+				<div id="iso" style="position:relative">
+					<div class="contentPane">
+						<div class="viewPort">
+							<div class="pages">
+							</div>
+							<div class="tags">
+								<div class="tags-group"><!-- 2014.1.15 - Raymond, 宣告data-role='listview'在Mobile Safari iOS 7上似乎有問題, 會導致changePage沒作用 -->
+									<div class="tags-item tags-item-active tags-no-icon">
+										<div id="docInfo" class="ui-btn-text">
+											<img src="IMAGE/ART/Doc-AttInfo.png" class="ui-li-icon" style="width:24px; height:24px"/>
+											<span>基本資料</span>
+										</div>
+									</div>
+								</div>
+								<div class="tags-group">
+								</div>
+								<div class="tags-group">
+								</div>
+							</div>
+							<div id="cmdFloat">
+								<div></div><canvas width=16 height=16></canvas><canvas width=16 height=16></canvas>
+							</div>
+							<div id="receiverDetail"></div>
+						</div>
+					</div>
+					<a class="btnFlipLeft ui-btn ui-corner-all" title="前一頁"></a>
+					<a class="btnFlipRight ui-btn ui-corner-all" title="下一頁"></a>
+					<div id="dockedPanel">
+						<div id="symbolDocked" style="display:none"></div>
+						<div id="signObjDocked" style="display:none">
+							<div style="background:lightgray;border-top:#999 1px solid;font-weight:border">
+								<div style="display:inline-block;width:20%">類型</div>
+								<div style="display:inline-block;width:30%">簽核資訊</div>
+								<div style="display:inline-block;">文字內容</div>
+							</div>
+							<div style="max-height:200px;overflow-y:scroll;">
+								<ul data-role="listview" data-inset="true"></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="popup" id="uvGoToPageDialog" data-dismissible="false" data-overlay-theme="a" style="min-height:10em;width:30em;">
+			<div data-role="header"><h1>指定檢閱頁面</h1></div>
+			<div data-role="main" class="ui-content" style="width:Calc(100% - 2em); height:Calc(100% - 4.5em); padding-top:0px;">
+				<div style="margin-top:16px;">請選擇欲檢閱的頁面：</div>
+				<div class="ui-field-contain" data-theme="e" style="height: Calc(100% - 0.5em);">
+					<div style="background-color:lightgray; height:350px; overflow-y:auto; display:none;">
+						<ul id="groupItemList" data-role="listview" data-theme="c" data-corners="false" data-mini="true" style="margin:0px;">
+						</ul>
+					</div>
+					<div class="input-range" data-mini="true">
+						<input id="gotoPageNo" placeholder="請輸入頁序" type="number" data-inline="true" maxlength="4"></input>
+						<span id="rangeHint" data-inline="true"></span>
+					</div>
+				</div>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<a href="#" id="btn_uvGotoPageCancel" class="ui-mini ui-btn ui-btn-c ui-corner-all">取消</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#" id="btn_uvGotoPageOK" class="ui-mini ui-btn ui-btn-b ui-corner-all">確定</a>
+					</div>
+				</div>
+			</div>
+		</div><!--div data-role="popup" id="uvGoToPageDialog" -->
+		<div data-role="popup" id="uvNewSampleDialog" data-dismissible="false" data-overlay-theme="a" style="min-height:10em;width:30em;">
+			<div data-role="header"><h1>設定自訂範本</h1></div>
+			<div data-role="main" class="ui-content" style="width:Calc(100% - 2em); height:Calc(100% - 4.5em); padding-top:0px;">
+				<!--1100917 Raymond 1080763 合併1070348, 配合自訂範本及類別功能修正UI-->
+				<div class="ui-field-contain" data-theme="e">
+					<label for="chooseSampleClass" style="float:left; margin:.5em 2% 0 0">類別：</label>
+					<select id="chooseSampleClass" data-mini="true">
+						<option value="newSampleClass">新增</option>
+					</select>
+				</div>
+				<div style="margin-top:16px;">請輸入新增類別的名稱：</div>
+				<div class="ui-field-contain" data-theme="e">
+					<input id="newSampleClass" placeholder="請輸入類別名稱" data-inline="true"></input>
+				</div>
+				<div style="margin-top:16px;">請設定自訂範本的名稱：</div>
+				<div class="ui-field-contain" data-theme="e" style="height: Calc(100% - 0.5em);">
+					<input id="newSampleName" placeholder="請輸入名稱" data-inline="true"></input>
+				</div>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<a href="#" id="btn_uvNewSampleCancel" class="ui-mini ui-btn ui-btn-c ui-corner-all">取消</a>
+					</div>
+					<div class="ui-block-b">
+						<a href="#" id="btn_uvNewSampleOK" class="ui-mini ui-btn ui-btn-b ui-corner-all">確定</a>
+					</div>
+				</div>
+			</div>
+		</div><!--div data-role="popup" id="uvGoToPageDialog" -->
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<link rel="stylesheet" href="../../../STDN/LIB/CSS/jquery-simplemodal.basic.css" />
+<script src="../../../STDN/LIB/jquery-2.2.1.min.js"></script>
+<script src="../../../STDN/LIB/jquery.simplemodal-1.4.4.js"></script> <!-- 子(對話)視窗元件 (mSSO / DemoMP 皆使用) -->
+<link rel="stylesheet" href="../../../STDN/LIB/jquery-ui.css">
+<script src="../../../STDN/LIB/jquery-ui.js"></script>
+<script src="../../../STDN/LIB/Template_Util.js"></script>
+<!--TABLE class="V2_GenericBannerCaption" id="tblTitleBar" cellSpacing="0" cellPadding="0">
+	<TR>
+		<TD width="50%"><FONT color="#ffffff" size="3"><B>電子公文管理系統</B></FONT>
+		<TD width="50%" id="tdPageControl" align="right">
+			<div id="oMenuContainer"></div>
+		</TD>
+	</TR>
+</TABLE>-->
+<style>
+	/*.SetlabelCss{background-color:black ;cursor: hand; color: #FFFFFF; width: 100; height:25; TOP: 0px; text-align: center; z-index: 7; border: "0 solid"; border-color: "#000000";font-size: 12pt;}
+	.OnlineHelplabelCss{background-color:black ;cursor: hand; color: #FFFFFF; width: 80; height:25; TOP: 0px; text-align: center; z-index: 7; border: "0 solid"; border-color: "#000000";font-size: 12pt;}
+	.LeavelabelCss{background-color:black ;cursor: hand; color: #FFFFFF; width: 80; height:25; TOP: 0px; text-align: center; z-index: 7; border: "0 solid"; border-color: "#000000";font-size: 12pt;}
+	.TRCss {background-color:black ;cursor: hand; color: #FFFFFF;width: 100; height:25;font-size: 10pt;text-align: center;}
+	.TRHidden {display: none;width: 80; height:25;font-size: 10pt;text-align: center;}
+	.TRVisible {display: block;width: 80; height:25;font-size: 10pt;text-align: center;}
+	.TableContainerCss{position: absolute ; display: none;cursor: hand; color: #FFFFFF; text-align: center; z-index:0; border: "0 solid"; border-color: "#000000";font-size: 10pt; width: 180; height: 50;}
+	.TableCss{position: absolute; cursor: hand; color: #FFFFFF; left: 0px;text-align: left; z-index:0; border: "0 solid"; border-color: "#000000";font-size: 10pt;}*/
+    .custom-combobox {
+        position: relative;
+        display: inline-block;
+    }
+
+    .custom-combobox-toggle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: -1px;
+        padding: 0;
+    }
+
+    .custom-combobox-input {
+        margin: 0;
+        /*padding: 1px 2px;*/
+		font-weight:normal;
+		color: Navy;
+    }
+	
+	.ui-widget{
+		font-size:1em;
+	}
+	
+	.ui-autocomplete {
+    max-height: 10em;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+	</style>
+<Div id="SetupBtn" class="BannerBtn" >設定</Div>
+<Div class="BannerMenu" style="display:none">
+	<div class="dTR">
+		<div class="dTD" id="PDForDOC" style="margin: 10px 5px 10px 5px;text-align: center;color:#ffffff;">
+			<!-- <input type="radio" id="rdPDF" name="PrintType" checked="checked"><label for="rdPDF">PDF</label>
+			<input type="radio" id="rdDOC" name="PrintType"><label for="rdDOC">DOC</label> -->
+			<SPAN>資料清除設定</SPAN>
+		</div>
+	</div>
+	<div class="dTR">
+		<div class="dTD" id="KeepOrClear">
+			<input type="radio" id="rdKeep" name="KeepClear" value="Keep"><label for="rdKeep">保留模式</label>
+			<br/> 
+			<input type="radio" id="rdClear" name="KeepClear" value="Clean" checked="checked"><label for="rdClear">清除模式</label>
+		</div>
+	</div>
+</Div>
+
+<DIV style="Z-INDEX: 104; BORDER: black 1px solid; POSITION: absolute; DISPLAY: none; TOP: 221px; LEFT: 783px;BACKGROUND-COLOR:#FFFFFF;"
+ id="lbToolTip" data-From=""></DIV>
+<script>
+$(function() {
+    //$( "#PDForDOC" ).buttonset();
+	$( "#KeepOrClear" ).buttonset();
+  });
+  
+  $( ".BannerBtn" ).click(function() {
+		var options = {direction: 'right'};
+      $(".BannerMenu").toggle('slide',options,500);
+  });
+
+  $(".BannerMenu input[name=KeepClear]").click(function () {
+      jf_SaveCookieWithExpire('Mode', this.value);
+  })
+//#######底下為單隻測試時所需要的code#############################################################
+//.V2_GenericBannerCaption{WIDTH: 103%;BACKGROUND-COLOR: dodgerblue;Z-INDEX: 101; LEFT: 0px; POSITION: absolute; TOP: 0px; border: "0 solid";}
+/*
+jf_MenuInit();
+function jf_SaveCookieWithExpire(argCookieName, argValue)
+{
+	jf_SaveCookie(argCookieName,argValue);
+}
+function jf_SaveCookie(argCookieName, argValue)
+{
+	document.cookie = argCookieName + '=' + escape(argValue) + ';path=/';
+}
+function jf_ReadCookie(argCookieName)
+{
+	var namex = argCookieName + "=";
+
+	if (document.cookie.length == 0) { return null; }
+	nameat = document.cookie.indexOf(namex);
+	if (nameat == -1) { return null; } // 找不到 name 時
+	ValueAt = nameat + namex.length;
+	endPos = document.cookie.indexOf(";", ValueAt);
+	if (endPos == -1) { return document.cookie.substring(ValueAt); }
+	else { return document.cookie.substring(ValueAt, endPos); }
+}*/
+//######################################################################################
+// When the body loads, setup intial settings.
+
+//1050223	Leslie	配合二代環境，正式註解以下程式碼
+/*
+function jf_MenuInit()
+{
+	if(document.title.indexOf('ODT130 ') != -1 || document.title.indexOf('ODT351 ')!=-1)
+		oMenuContainer.innerHTML ='<span class="OnlineHelplabelCss" id="oOnlineHelp" onclick="fnOpenHelp()">線上說明</span>';
+	oMenuContainer.innerHTML+='<span class="SetlabelCss" id="oMenu" onmouseOver="fnMouseEnter()">設　定</span>';
+	oMenuContainer.innerHTML+='<span id="Contain1" class="TableContainerCss">';
+	oMenuContainer.innerHTML+='</span>';
+	oMenuContainer.innerHTML+='<span class="LeavelabelCss" onclick="jf_ConfirmExit();">離　開</span>';
+	document.all.tbTool.style.zIndex=1;
+}
+
+//Show two modes for User to choose
+function fnMouseEnter()
+{
+	var oContain1=eval("Contain1");
+	oContain1.style.top=25;
+	oContain1.style.display="block";
+	oContain1.style.left=document.all.tbTool.offsetWidth-180;
+	//單隻測試用document.body.offsetWidth
+	oContain1.innerHTML=
+	'<TABLE id="tbMode" class="TableCss" onmouseleave="TableClose()" cellpadding="0" cellspacing="0">'+
+		'<TR class="TRCss">'+
+			'<TD class="TRCss" id="oMode1" onmouseEnter="ShowModeItem()">預覽格式設定</TD>'+
+			'<TD id="oColor1"><IMG style="display:none" id="oImg1" src="Template/images/flyout_red.gif"></TD>'+
+			'<TD id="oColor3""><IMG style="display:none" id="oImg3" src="Template/images/flyout_red.gif"></TD>'+
+			'<TD class="TRHidden" id="oItem1" onclick="fnFormat()" onmouseOver="fnFocusColor()" onmouseOut="fnFocusOut()">PDF預覽</TD>'+
+			'<TD class="TRHidden" id="oItem3" onclick="fnClean()" onmouseOver="fnFocusColor()" onmouseOut="fnFocusOut()">保留模式</TD>'+
+		'</TR>'+
+		'<TR class="TRCss">'+
+			'<TD class="TRCss" id="oMode2" onmouseEnter="ShowModeItem()">資料清除設定</TD>'+
+			'<TD id="oColor2"><IMG style="display:none" id="oImg2" src="Template/images/flyout_red.gif"></TD>'+
+			'<TD id="oColor4"><IMG style="display:none" id="oImg4" src="Template/images/flyout_red.gif"></TD>'+
+			'<TD class="TRHidden" id="oItem2" onclick="fnFormat()" onmouseOver="fnFocusColor()" onmouseOut="fnFocusOut()">WORD預覽</TD>'+
+			'<TD class="TRHidden" id="oItem4" onclick="fnClean()" onmouseOver="fnFocusColor()" onmouseOut="fnFocusOut()">清除模式</TD>'+
+		'</TR>'+
+	'</TABLE>';
+}
+
+function TableClose()
+{
+	eval("tbMode").style.display="none";
+}
+
+//Show detail items of 2 modes
+function ShowModeItem()
+{
+	oWorkItem=event.srcElement;
+	if (oWorkItem.innerHTML=="預覽格式設定")
+	{
+		eval("oMode1").style.backgroundColor = "LightGrey";
+		eval("oMode2").style.backgroundColor = "black";
+		eval("oItem1").className="TRVisible";	//PDF type
+		eval("oItem2").className="TRVisible";	//WORD type
+		eval("oItem3").className="TRHidden";	//keep mode
+		eval("oItem4").className="TRHidden";	//Clean mode
+		if(jf_ReadCookie("FORMAT") == "PDF")
+		{
+			document.all["oImg1"].style.display = "block";
+			document.all["oImg2"].style.display = "none";
+			document.all["oImg3"].style.display = "none";
+			document.all["oImg4"].style.display = "none";
+		}
+		else
+		{
+			document.all["oImg1"].style.display = "none";
+			document.all["oImg2"].style.display = "block";
+			document.all["oImg3"].style.display = "none";
+			document.all["oImg4"].style.display = "none";
+		}
+	}
+	else if (oWorkItem.innerHTML=="資料清除設定")
+	{
+		eval("oMode1").style.backgroundColor = "black";
+		eval("oMode2").style.backgroundColor = "LightGrey";
+		eval("oItem1").className="TRHidden";
+		eval("oItem2").className="TRHidden";
+		eval("oItem3").className="TRVisible";
+		eval("oItem4").className="TRVisible";
+		if(jf_ReadCookie("Mode") == "Keep" )
+		{
+			document.all["oImg1"].style.display = "none";
+			document.all["oImg2"].style.display = "none";
+			document.all["oImg3"].style.display = "block";
+			document.all["oImg4"].style.display = "none";
+		}
+		else
+		{
+			document.all["oImg1"].style.display = "none";
+			document.all["oImg2"].style.display = "none";
+			document.all["oImg3"].style.display = "none";
+			document.all["oImg4"].style.display = "block";
+		}
+	}
+}
+
+function fnFocusColor()
+{
+	if (event.srcElement.id=="oItem1")
+	{
+		eval("oItem1").style.backgroundColor = "LightGrey";
+		eval("oColor1").style.backgroundColor = "LightGrey";
+	}
+	else if (event.srcElement.id=="oItem2")
+	{
+		eval("oItem2").style.backgroundColor = "LightGrey";
+		eval("oColor2").style.backgroundColor = "LightGrey";
+	}
+	else if (event.srcElement.id=="oItem3")
+	{
+		eval("oItem3").style.backgroundColor = "LightGrey";
+		eval("oColor3").style.backgroundColor = "LightGrey";
+	}
+	else if (event.srcElement.id=="oItem4")
+	{
+		eval("oItem4").style.backgroundColor = "LightGrey";
+		eval("oColor4").style.backgroundColor = "LightGrey";
+	}
+}
+
+function fnFocusOut()
+{
+	eval("oItem1").style.backgroundColor = "black";
+	eval("oItem2").style.backgroundColor = "black";
+	eval("oItem3").style.backgroundColor = "black";
+	eval("oItem4").style.backgroundColor = "black";
+	eval("oColor1").style.backgroundColor = "black";
+	eval("oColor2").style.backgroundColor = "black";
+	eval("oColor3").style.backgroundColor = "black";
+	eval("oColor4").style.backgroundColor = "black";
+}
+
+//set Cookie "FORMAT" property
+function fnFormat()
+{
+	oWorkItem=event.srcElement;
+	if (oWorkItem.id=="oItem1")
+		jf_SaveCookieWithExpire('FORMAT', 'PDF');
+	else if (oWorkItem.id=="oItem2")
+		jf_SaveCookieWithExpire('FORMAT', 'WORD');
+	TableClose();
+	//alert("已設定報表為 " + jf_ReadCookie("FORMAT") + " 模式");
+}
+
+//Set Cookie "Mode" property
+function fnClean()
+{
+	oWorkItem=event.srcElement;
+	if (oWorkItem.id=="oItem3")
+		jf_SaveCookieWithExpire('Mode', 'Keep');
+	else if (oWorkItem.id=="oItem4")
+		jf_SaveCookieWithExpire('Mode', 'Clean');
+	TableClose();
+	//alert("已設定系統為 " + jf_ReadCookie("Mode") + " 模式");
+}*/
+
+$(function () { $('select.comboBox').combobox(); });
+$(function () { $('input.DatePicker').datepicker({
+      showOn: "button",
+      buttonImage: "Template/images/SEARCH_DATE.gif",
+      buttonImageOnly: true,
+      buttonText: "Select date",
+	  dateFormat:"Cmmdd"	//1050104	Leslie	修改"jquery-ui.js"增加格式"C"，其輸出為民國年(3碼，並自動補0)
+    });})
+//$(function () { $('input.combobox,span.combobox').css('display', 'none'); });
+</script>
+<!-- 2015.1 - Eric Peng, ASPX網頁程式dlg框架 -->
+<div id="dlgASPXPage" style="display:none;width:99%;height:99%;padding:0px;">
+	<div class="pane" style="width:101%;height:101%;overflow-y: hidden;overflow-x:hidden; -webkit-overflow-scrolling:touch;">
+	  <iframe class="aspx_page_content" style="width:99%;height:99%;"></iframe>
+	</div>
+	<a class="closeBtn" style="display:none"></a>
+</div><!-- <div id="dlgASPXPage" ... -->
+<div class="footStatus"></div>

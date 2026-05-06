@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR815D" targetNamespace="http://tempuri.org/EAR815D.xsd" xmlns:mstns="http://tempuri.org/EAR815D.xsd" xmlns="http://tempuri.org/EAR815D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR815D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EAR815D" msprop:Generator_UserDSName="EAR815D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EAR815L1" msprop:Generator_TableClassName="EAR815L1DataTable" msprop:Generator_TableVarName="tableEAR815L1" msprop:Generator_TablePropName="EAR815L1" msprop:Generator_RowDeletingName="EAR815L1RowDeleting" msprop:Generator_RowChangingName="EAR815L1RowChanging" msprop:Generator_RowEvHandlerName="EAR815L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EAR815L1RowDeleted" msprop:Generator_UserTableName="EAR815L1" msprop:Generator_RowChangedName="EAR815L1RowChanged" msprop:Generator_RowEvArgName="EAR815L1RowChangeEvent" msprop:Generator_RowClassName="EAR815L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="BOR_VOLCNT" msprop:Generator_ColumnVarNameInTable="columnBOR_VOLCNT" msprop:Generator_ColumnPropNameInRow="BOR_VOLCNT" msprop:Generator_ColumnPropNameInTable="BOR_VOLCNTColumn" msprop:Generator_UserColumnName="BOR_VOLCNT" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="RET_VOLCNT" msprop:Generator_ColumnVarNameInTable="columnRET_VOLCNT" msprop:Generator_ColumnPropNameInRow="RET_VOLCNT" msprop:Generator_ColumnPropNameInTable="RET_VOLCNTColumn" msprop:Generator_UserColumnName="RET_VOLCNT" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EAR815L2" msprop:Generator_TableClassName="EAR815L2DataTable" msprop:Generator_TableVarName="tableEAR815L2" msprop:Generator_TablePropName="EAR815L2" msprop:Generator_RowDeletingName="EAR815L2RowDeleting" msprop:Generator_RowChangingName="EAR815L2RowChanging" msprop:Generator_RowEvHandlerName="EAR815L2RowChangeEventHandler" msprop:Generator_RowDeletedName="EAR815L2RowDeleted" msprop:Generator_UserTableName="EAR815L2" msprop:Generator_RowChangedName="EAR815L2RowChanged" msprop:Generator_RowEvArgName="EAR815L2RowChangeEvent" msprop:Generator_RowClassName="EAR815L2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DAY" msprop:Generator_ColumnVarNameInTable="columnDAY" msprop:Generator_ColumnPropNameInRow="DAY" msprop:Generator_ColumnPropNameInTable="DAYColumn" msprop:Generator_UserColumnName="DAY" type="xs:string" minOccurs="0" />
+              <xs:element name="AA_BOR_COUNT" msprop:Generator_ColumnVarNameInTable="columnAA_BOR_COUNT" msprop:Generator_ColumnPropNameInRow="AA_BOR_COUNT" msprop:Generator_ColumnPropNameInTable="AA_BOR_COUNTColumn" msprop:Generator_UserColumnName="AA_BOR_COUNT" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="AA_BOR_VOL" msprop:Generator_ColumnVarNameInTable="columnAA_BOR_VOL" msprop:Generator_ColumnPropNameInRow="AA_BOR_VOL" msprop:Generator_ColumnPropNameInTable="AA_BOR_VOLColumn" msprop:Generator_UserColumnName="AA_BOR_VOL" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="AA_RET_COUNT" msprop:Generator_ColumnVarNameInTable="columnAA_RET_COUNT" msprop:Generator_ColumnPropNameInRow="AA_RET_COUNT" msprop:Generator_ColumnPropNameInTable="AA_RET_COUNTColumn" msprop:Generator_UserColumnName="AA_RET_COUNT" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="AA_RET_VOL" msprop:Generator_ColumnVarNameInTable="columnAA_RET_VOL" msprop:Generator_ColumnPropNameInRow="AA_RET_VOL" msprop:Generator_ColumnPropNameInTable="AA_RET_VOLColumn" msprop:Generator_UserColumnName="AA_RET_VOL" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="BB_BOR_COUNT" msprop:Generator_ColumnVarNameInTable="columnBB_BOR_COUNT" msprop:Generator_ColumnPropNameInRow="BB_BOR_COUNT" msprop:Generator_ColumnPropNameInTable="BB_BOR_COUNTColumn" msprop:Generator_UserColumnName="BB_BOR_COUNT" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="BB_BOR_VOL" msprop:Generator_ColumnVarNameInTable="columnBB_BOR_VOL" msprop:Generator_ColumnPropNameInRow="BB_BOR_VOL" msprop:Generator_ColumnPropNameInTable="BB_BOR_VOLColumn" msprop:Generator_UserColumnName="BB_BOR_VOL" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="BB_RET_COUNT" msprop:Generator_ColumnVarNameInTable="columnBB_RET_COUNT" msprop:Generator_ColumnPropNameInRow="BB_RET_COUNT" msprop:Generator_ColumnPropNameInTable="BB_RET_COUNTColumn" msprop:Generator_UserColumnName="BB_RET_COUNT" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="BB_RET_VOL" msprop:Generator_ColumnVarNameInTable="columnBB_RET_VOL" msprop:Generator_ColumnPropNameInRow="BB_RET_VOL" msprop:Generator_ColumnPropNameInTable="BB_RET_VOLColumn" msprop:Generator_UserColumnName="BB_RET_VOL" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="OTHER_BOR_COUNT" msprop:Generator_ColumnVarNameInTable="columnOTHER_BOR_COUNT" msprop:Generator_ColumnPropNameInRow="OTHER_BOR_COUNT" msprop:Generator_ColumnPropNameInTable="OTHER_BOR_COUNTColumn" msprop:Generator_UserColumnName="OTHER_BOR_COUNT" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="OTHER_BOR_VOL" msprop:Generator_ColumnVarNameInTable="columnOTHER_BOR_VOL" msprop:Generator_ColumnPropNameInRow="OTHER_BOR_VOL" msprop:Generator_ColumnPropNameInTable="OTHER_BOR_VOLColumn" msprop:Generator_UserColumnName="OTHER_BOR_VOL" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="OTHER_RET_COUNT" msprop:Generator_ColumnVarNameInTable="columnOTHER_RET_COUNT" msprop:Generator_ColumnPropNameInRow="OTHER_RET_COUNT" msprop:Generator_ColumnPropNameInTable="OTHER_RET_COUNTColumn" msprop:Generator_UserColumnName="OTHER_RET_COUNT" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="OTHER_RET_VOL" msprop:Generator_ColumnVarNameInTable="columnOTHER_RET_VOL" msprop:Generator_ColumnPropNameInRow="OTHER_RET_VOL" msprop:Generator_ColumnPropNameInTable="OTHER_RET_VOLColumn" msprop:Generator_UserColumnName="OTHER_RET_VOL" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

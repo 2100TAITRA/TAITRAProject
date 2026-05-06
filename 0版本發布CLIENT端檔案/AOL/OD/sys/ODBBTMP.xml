@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="big5"?>
+<root>
+	<item>
+		<toname>CAESAR</toname>
+		<msg>請以傳真函至</msg>
+		<poster>FRANK</poster>
+		<postdate>092/01/02</postdate>
+		<status>O</status>
+	</item>
+	<item>
+		<toname>FRANK</toname>
+		<msg>請以電話聯絡 </msg>
+		<poster>CAESAR</poster>
+		<postdate>092/01/01</postdate>
+		<status>O</status>
+	</item>
+	<item>
+		<toname>003</toname>
+		<msg>請在上班時間通知 </msg>
+		<poster>FRANK</poster>
+		<postdate>092/11/20</postdate>
+		<status>O</status>
+	</item>
+</root>

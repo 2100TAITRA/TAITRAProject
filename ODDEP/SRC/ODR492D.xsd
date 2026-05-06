@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ODR492D" targetNamespace="http://tempuri.org/ODR492D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/ODR492D.xsd" xmlns:mstns="http://tempuri.org/ODR492D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="ODR492D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="ODR492L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="B_TYPE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="B_TYPE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FINISH_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="LEAD_TIME" type="xs:int" minOccurs="0" />
+							<xs:element name="MAX_DAYS" type="xs:int" minOccurs="0" />
+							<xs:element name="MIN_DAYS" type="xs:int" minOccurs="0" />
+							<xs:element name="AVG_DAYS" type="xs:int" minOccurs="0" />
+							<xs:element name="N1_FINISH_DAYS" type="xs:int" minOccurs="0" />
+							<xs:element name="N2_FINISH_DAYS" type="xs:int" minOccurs="0" />
+							<xs:element name="PART1_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="PART1_PERCENT" type="xs:int" minOccurs="0" />
+							<xs:element name="PART2_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="PART2_PERCENT" type="xs:int" minOccurs="0" />
+							<xs:element name="PART3_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="PART3_PERCENT" type="xs:int" minOccurs="0" />
+							<xs:element name="PART4_CNT" type="xs:int" minOccurs="0" />
+							<xs:element name="PART4_PERCENT" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,547 @@
+﻿/* 預設初始化區 */
+
+BODY {
+    background-color: #dddddd;
+    color: Navy;
+}
+table {
+    font-size: 100%;
+}
+input,
+select,
+textarea,
+td {
+    font-family: 細明體;
+    font-size: 1em;
+    color: Navy;
+}
+/* 預設初始化區	END */
+
+@media screen and (max-width: 480px) {
+    /* 如果使用者視窗寬度 <= 480px，將字體大小變為 16px*/
+    
+    BODY {
+        font-size: 80%;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* 如果使用者視窗寬度 <= 768px，將字體大小變為 20px*/
+    
+    BODY {
+        font-size: 100%;
+    }
+    .footable td:before {
+        content: attr(data-title);
+    }
+    .footable,
+    .footable thead,
+    .footable tbody,
+    .footable th,
+    .footable td,
+    .footable tr {
+        display: block;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    /* 如果使用者視窗寬度介於 768px ~ 992px，將字體大小變為 30px*/
+    
+    BODY {
+        font-size: 110%;
+    }
+    DIV.V2_GenericBannerToolBar {
+        WIDTH: 99%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    /* 如果使用者視窗寬度 >= 1200px，將字體大小變為 40px*/
+    
+    BODY {
+        font-size: 120%;
+    }
+    input[type='text'] {}
+}
+input[type='submit'],
+.BannerBtn {
+    background: #5f9cc5;
+    background-image: -webkit-linear-gradient(top, #5f9cc5, #386b9e);
+    background-image: -moz-linear-gradient(top, #5f9cc5, #386b9e);
+    background-image: -ms-linear-gradient(top, #5f9cc5, #386b9e);
+    background-image: -o-linear-gradient(top, #5f9cc5, #386b9e);
+    background-image: linear-gradient(to bottom, #5f9cc5, #386b9e);
+    -webkit-border-radius: 25;
+    -moz-border-radius: 25;
+    border-radius: 25px;
+    border: solid #dddddd 1px;
+    color: #ffffff;
+    padding: 3px 6px 3px 6px;
+    text-decoration: none;
+}
+input[type='submit']:hover,
+.BannerBtn:hover {
+    background: #6facd5;
+    background-image: -webkit-linear-gradient(top, #6facd5, #4273a4);
+    background-image: -moz-linear-gradient(top, #6facd5, #4273a4);
+    background-image: -ms-linear-gradient(top, #6facd5, #4273a4);
+    background-image: -o-linear-gradient(top, #6facd5, #4273a4);
+    background-image: linear-gradient(to bottom, #6facd5, #4273a4);
+    text-decoration: none;
+}
+input[type='submit']:disabled,
+.BannerBtn:disabled {
+    background: #5f9cc5;
+    background-image: -webkit-linear-gradient(top, #5f9cc5, #386b9e);
+    background-image: -moz-linear-gradient(top, #5f9cc5, #386b9e);
+    background-image: -ms-linear-gradient(top, #5f9cc5, #386b9e);
+    background-image: -o-linear-gradient(top, #5f9cc5, #386b9e);
+    background-image: linear-gradient(to bottom, #5f9cc5, #386b9e);
+    -webkit-border-radius: 25;
+    -moz-border-radius: 25;
+    border-radius: 25px;
+    border: solid #dddddd 1px;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: #585858;
+}
+.DgSelectToolBar>input[type='submit'] {
+    font-size: 80%;
+}
+.DivTable {
+    display: table;
+    margin: 30px auto;
+}
+table[id^="dg"] {
+    font-size: 80%;
+}
+table[id^="dg"] tr:nth-child(odd) {
+    background-color: #C9F3F5;
+}
+table.dghead tr:nth-child(1) {
+    background-color: #5f9cc5;
+}
+.dTR {
+    display: table-row;
+    text-align: left;
+}
+.dTD {
+    float: left;
+    display: table-cell;
+    text-align: left;
+}
+.dTDTitle {
+    float: left;
+    display: table-cell;
+    text-align: right;
+}
+.BannerBtn {
+    POSITION: fixed;
+    right: 3px;
+    top: 5px;
+    z-index: 3;
+    cursor: pointer;
+}
+.BannerMenu {
+    background: #5f9cc5;
+    POSITION: absolute;
+    top: 40px;
+    right: 3px;
+    display: table;
+    z-index: 3;
+    border: solid #ffffff 2px;
+    width: 6.78em;
+    font-size: 1em;
+}
+.BannerMenu .ui-widget {
+    width: 6.78em;
+    font-size: 1em;
+}
+.GridDiv {
+    width: 100%;
+    margin: 0px auto;
+    overflow: auto;
+}
+.LogoImg {
+    LEFT: 83px;
+    TOP: 21px;
+    WIDTH: 100px;
+    HEIGHT: 58px;
+    POSITION: absolute;
+}
+.BannerImg {
+    LEFT: 220px;
+    TOP: 21px;
+    WIDTH: 350px;
+    HEIGHT: 58px;
+    POSITION: absolute;
+}
+.Logo {
+    visibility: hidden;
+}
+.BaseTable,
+.DivBaseTable {
+    /*LEFT: 20px; */
+    /*POSITION: absolute; TOP: 90px;*/
+    
+    margin: 60px auto;
+    /*width:740px;*/
+    /* width:70em;*/
+    
+    BORDER-WIDTH: 0px;
+}
+.ReportBaseTable {
+    LEFT: 20px;
+    POSITION: absolute;
+    TOP: 90px;
+    width: 740px;
+    BORDER-WIDTH: 0px;
+}
+.ChildBaseTable {
+    LEFT: 20px;
+    POSITION: absolute;
+    TOP: 10px;
+    width: 650px;
+    BORDER-WIDTH: 0px;
+}
+.ActionTable {
+    border: 4px;
+    border-top-style: outset;
+    border-left-style: solid;
+    border-bottom-style: ridge;
+    border-right-style: ridge;
+    border-top-color: Silver;
+    border-left-color: Silver;
+    width: 100%;
+    /*background-color: LightGray;*/
+}
+.ReportActionTable {
+    border: 4px;
+    border-top-style: outset;
+    border-left-style: solid;
+    border-bottom-style: ridge;
+    border-right-style: ridge;
+    border-top-color: Silver;
+    border-left-color: Silver;
+    width: 95%;
+}
+.ChildActionTable {
+    border: 4px;
+    border-top-style: outset;
+    border-left-style: solid;
+    border-bottom-style: ridge;
+    border-right-style: ridge;
+    border-top-color: Silver;
+    border-left-color: Silver;
+    width: 100%;
+}
+.User {
+    BORDER-STYLE: DOUBLE;
+    BORDER: #ffffff;
+    BORDER-WIDTH: 1px;
+    BORDER-TOP-STYLE: DOUBLE;
+    BORDER-LEFT-STYLE: DOUBLE;
+    BORDER-BOTTOM-STYLE: DOUBLE;
+    BORDER-RIGHT-STYLE: DOUBLE;
+}
+.MainTable {} .ReportMainTable {} .ChildMainTable {} .DGHeader {
+    background-color: #add8e6;
+}
+.DetailSection {
+    overflow: auto;
+}
+.LeftCol {} .upper {
+    text-transform: uppercase;
+}
+.hide {
+    display: none;
+}
+.btn {
+    behavior: url(CombinedButton.htc);
+}
+.hidden {
+    visibility: hidden;
+}
+.DisplayOnly {
+    background-color: Gainsboro;
+}
+.KeyField {
+    color: Red;
+}
+.KeyUpperField {
+    color: Red;
+    text-transform: uppercase;
+}
+.RequireField {
+    color: Teal;
+}
+.InputFieldText {
+    color: Navy;
+}
+.InputFieldLabel {
+    color: Navy;
+}
+.TextLabel {
+    border-style: none;
+    background-color: Transparent;
+}
+.menucontainer {
+    /*	position: absolute;
+	top: 70;
+	left: 22; */
+    
+    width: 730;
+    font-family: Arial;
+    font-size: 9pt;
+    background-color: Transparent;
+    border: 0;
+    border-top-color: #CFCFCF;
+    border-left-color: #CFCFCF;
+    border-right-color: #505050;
+    border-bottom-color: #505050;
+    z-index: 130;
+}
+.menulabel {
+    position: absolute;
+    cursor: hand;
+    color: #000000;
+    width: 75;
+    text-align: center;
+    background-color: Transparent;
+    z-index: 7;
+    border: "1 solid";
+    border-color: menu;
+}
+.menulabel2 {
+    position: absolute;
+    cursor: hand;
+    color: #000000;
+    width: 75;
+    text-align: center;
+    background-color: lightsteelblue;
+    border: "1 solid";
+    border-color: #000000;
+    /*
+	border-top-color: #CFCFCF; 
+	border-left-color: #CFCFCF; 
+	border-right-color: #505050; 
+	border-bottom-color: #505050; */
+    
+    z-index: 7;
+}
+.menulabel3 {
+    position: absolute;
+    cursor: hand;
+    color: #000000;
+    width: 75;
+    text-align: center;
+    background-color: gainsboro;
+    border: "1 solid";
+    border-top-color: #505050;
+    border-left-color: #505050;
+    border-right-color: #CFCFCF;
+    border-bottom-color: #CFCFCF;
+    z-index: 7;
+}
+.menugroup {
+    display: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150;
+    font-family: Arial;
+    font-size: 8pt;
+    background-color: menu;
+    border: "1 solid";
+    border-top-color: #CFCFCF;
+    border-left-color: #CFCFCF;
+    border-right-color: #505050;
+    border-bottom-color: #505050;
+    z-index: 7;
+}
+.scratch {
+    display: none;
+    width: 250;
+    height: 250;
+    overflow: auto;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: Arial;
+    font-size: 8pt;
+    background-color: #FFFFCC;
+    border: "1 solid";
+    border-top-color: #FFFFDD;
+    border-left-color: #FFFFDD;
+    border-right-color: #999900;
+    border-bottom-color: #999900;
+    z-index: 4;
+}
+.scratchx {
+    cursor: hand;
+    font-weight: bold;
+    height: 12;
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: Arial;
+    font-size: 12pt;
+    background-color: #FFFFcc;
+    border: "1 solid";
+    border-top-color: #FFFFDD;
+    border-left-color: #FFFFDD;
+    border-right-color: #999900;
+    border-bottom-color: #999900;
+    z-index: 4;
+}
+.MenuRow {} .V2_GenericBannerCaption {
+    WIDTH: 103%;
+    BACKGROUND-COLOR: dodgerblue;
+    Z-INDEX: 101;
+    LEFT: 0px;
+    POSITION: absolute;
+    TOP: 0px;
+    height: 25;
+}
+.V2_GenericChildCaption {
+    WIDTH: 103%;
+    BACKGROUND-COLOR: dodgerblue;
+    Z-INDEX: 101;
+    LEFT: 0px;
+    POSITION: absolute;
+    TOP: 0px;
+    height: 25;
+}
+.V2_GenericBannerToolBar {
+    WIDTH: 99.2%;
+    Z-INDEX: 2;
+    LEFT: 0px;
+    POSITION: fixed;
+    TOP: 0px;
+    Padding: 5px;
+    background-image: linear-gradient(rgb(111, 172, 213), rgb(73, 123, 174));
+    /*WIDTH: 103%;
+    Z-INDEX: 101;
+    LEFT: 0px;
+    POSITION: absolute;
+    TOP: 24px;*/
+}
+.V2_GenericChildToolBar {
+    WIDTH: 103%;
+    Z-INDEX: 101;
+    LEFT: 0px;
+    POSITION: absolute;
+    TOP: 24px;
+}
+.tab {
+    behavior: url(Template/LIB/T2100MultiPage.htc);
+}
+.NotDisplay {
+    display: none;
+}
+.fixHeaderStyle {
+    POSITION: relative;
+    TOP: expression(this.offsetParent.scrollTop);
+}
+.footStatus {
+    position: fixed;
+    bottom: 0px;
+    LEFT: 0px;
+    padding: 5px;
+    Z-INDEX: 2;
+    width: 100%;
+    background-image: linear-gradient(rgb(162, 162, 162), rgb(195, 195, 195));
+    color: #FFFFFF;
+    border-top-style: ridge;
+}
+input[type="text"]:disabled {
+    background: lightgrey;
+}
+a.ui-button-disable {
+    background: #C5C5C5;
+}
+input[type="radio"]:disabled+label,
+input[type="checkbox"]:disabled+label {
+    color: gray;
+}
+select:disabled {
+    background-color: lightgray;
+}
+/* 1050602	Leslie	數字欄位統一作法，改用以下Class設定來處理數字欄位(從V3版的搬過來) */
+
+.InputFieldNumeric {
+    /*
+		數值一般欄位，會將輸入法功能Disabled，需搭配jf_InpNumOnly()使用，可避免使用者輸入數字以外的字元
+	*/
+    
+    color: Navy;
+    ime-mode: disabled;
+}
+.RequireFieldNumeric {
+    /*
+		數值必要欄位，會將輸入法功能Disabled，需搭配jf_InpNumOnly()使用，可避免使用者輸入數字以外的字元
+	*/
+    
+    color: Teal;
+    ime-mode: disabled;
+}
+.KeyFieldNumeric {
+    /*
+		數值鍵值欄位，會將輸入法功能Disabled，需搭配jf_InpNumOnly()使用，可避免使用者輸入數字以外的字元
+	*/
+    
+    color: Red;
+    ime-mode: disabled;
+}
+input.DatePicker {
+    ime-mode: disabled;
+}
+/* checkbox 外觀設定	START */
+
+input[type="checkbox"] {
+    height: 0.9em;
+    width: 0.9em;
+    vertical-align: middle;
+    margin: 0 0.1em 0.1em 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(#FFFFFF, #DCDCDC);
+    -webkit-appearance: none;
+    -webkit-transition: box-shadow 200ms;
+    box-shadow: inset 1px 1px 0 #fff, 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+/* border radius for checkbox */
+
+input[type="checkbox"] {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+input[type="checkbox"]:not(:disabled):hover {
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 1px 0 #fff, 0 0 4px rgba(0, 0, 0, 0.3);
+}
+input[type="checkbox"]:active:not(:disabled) {
+    background-image: -webkit-linear-gradient(#C2C2C2, #EFEFEF);
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.2), inset -1px -1px 0 rgba(255, 255, 255, 0.6);
+    border-color: rgba(0, 0, 0, 0.5);
+}
+input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 1px 2px rgba(0, 240, 255, 0.4);
+}
+input[type="checkbox"]:checked {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+/* checkbox checked */
+
+input[type="checkbox"]:checked:before {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7);
+    content: '\2713';
+    -webkit-margin-start: 0;
+    margin-left: 1px;
+    top: -5px;
+    position: relative;
+    font-size: 0.9em;
+}
+/* checkbox 外觀設定	END */

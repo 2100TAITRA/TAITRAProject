@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKI801D" targetNamespace="http://tempuri.org/AKI801D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/AKI801D.xsd" xmlns:mstns="http://tempuri.org/AKI801D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKI801D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="MainTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="EXT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="EXT_DAY" type="xs:string" minOccurs="0" />
+							<xs:element name="REASON" type="xs:string" minOccurs="0" />
+							<xs:element name="TX_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="SIGN_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="ODUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="NDUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CONFIRM_DATE" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DetailTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="TX_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO_DETAIL" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SPD_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ODUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="SEQ_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SUM_DAY" type="xs:string" minOccurs="0" />
+							<xs:element name="NDUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="IN_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="REASON" type="xs:string" minOccurs="0" />
+							<xs:element name="ENTRY_DATETIME" type="xs:string" minOccurs="0" />
+							<xs:element name="DIRECTOR_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="REBOR_CODE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="EXT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SIGN_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_SOURCE" type="xs:string" minOccurs="0" />
+							<xs:element name="DIRECTOR_TITLE" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

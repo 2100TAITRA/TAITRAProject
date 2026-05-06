@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR890D" targetNamespace="http://tempuri.org/AKR890D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR890D.xsd" xmlns:mstns="http://tempuri.org/AKR890D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR890D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CLS_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="BOR_01" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_02" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_03" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_04" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_05" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_06" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_07" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_08" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_09" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_10" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_11" type="xs:int" minOccurs="0" />
+							<xs:element name="BOR_12" type="xs:int" minOccurs="0" />
+							<xs:element name="SUM_BORTIMES" type="xs:int" minOccurs="0" />
+							<xs:element name="VERNO" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--	99_sign_utf8.ent     線上簽核(簽核電子檔)  2010.01.08  修改日期:2010.10.10 -->
+
+<!ELEMENT 線上簽核流程 (簽核流程+) >
+<!ATTLIST 線上簽核流程
+Id ID #REQUIRED
+>
+<!ELEMENT 簽核流程  (分會點|流程點)*>  
+<!ATTLIST  簽核流程
+	Id ID #REQUIRED
+    異動別  CDATA #REQUIRED  
+>
+<!ELEMENT 分會點 (簽核流程+)>
+<!ELEMENT 流程點 EMPTY >  
+<!ATTLIST 流程點
+	 流程別 CDATA #REQUIRED
+>
+
+<!ELEMENT 線上簽核資訊 (簽核點定義+, 補簽追認?)>
+<!ATTLIST 線上簽核資訊
+		Id ID #REQUIRED
+	>
+
+<!ELEMENT 簽核點定義 (Signature, Object)>
+<!ATTLIST 簽核點定義
+	URI CDATA #REQUIRED
+	Id ID #REQUIRED	
+>
+
+<!ELEMENT Object (異動資訊, 簽核資訊)>
+<!ATTLIST Object
+	Id ID #REQUIRED
+>
+<!ELEMENT 異動資訊 (簽核人員, 異動別, 簽核意見, 簽章時間,次位簽核人員*,借卡?)>
+<!ATTLIST 異動資訊
+	退文 (Y | N) #IMPLIED
+	借卡 (Y | N) #IMPLIED
+>
+<!ELEMENT 簽核人員 (單位, 職稱, 姓名, 帳號, 角色?)>
+<!ELEMENT 單位 (#PCDATA)>
+<!ELEMENT 帳號 (#PCDATA)>
+<!ELEMENT 角色 (#PCDATA)>
+<!ELEMENT 異動別   (#PCDATA)>
+<!ELEMENT 簽核意見 (#PCDATA)>
+<!ELEMENT 簽章時間 (#PCDATA)>
+
+<!ELEMENT 次位簽核人員 (簽核人員) > 
+<!ELEMENT 簽核資訊 ((來文文件夾|來文文件夾參照路徑)? , (簽核文件夾|子文簽核文件夾))>
+<!ELEMENT 來文文件夾 (來文清單)>
+<!ATTLIST 來文文件夾
+	Id ID #REQUIRED
+	產生時間  CDATA #REQUIRED
+>
+<!ELEMENT 來文文件夾參照路徑 EMPTY >  
+<!ATTLIST 來文文件夾參照路徑
+	URI CDATA #REQUIRED
+>
+<!ELEMENT 來文清單 (來文)>
+<!ATTLIST 來文清單
+	來文數 CDATA #REQUIRED
+>
+<!ELEMENT 來文 (來文字號 , 收文字號?, 來文類型,( 電子來文| 紙本來文) )>
+<!ATTLIST  來文
+	格式       CDATA #REQUIRED
+	序號       CDATA #REQUIRED
+	產生時間   CDATA #REQUIRED
+>
+<!ELEMENT 來文類型 (#PCDATA)>
+<!ELEMENT 電子來文 (頁面*,附件清單?)>
+<!ATTLIST 電子來文
+	原始檔序號 CDATA #REQUIRED
+>
+<!ELEMENT 紙本來文 (頁面+, 附件清單?)>
+<!ATTLIST 紙本來文
+		頁面數 CDATA #REQUIRED		
+		併同歸檔數量 CDATA #IMPLIED
+>
+<!ELEMENT 頁面 EMPTY>
+<!ATTLIST 頁面
+	文件夾識別碼 CDATA #IMPLIED
+	物件識別碼 CDATA #IMPLIED
+	產生點資訊 CDATA #IMPLIED
+	原始檔序號 CDATA #REQUIRED	
+	序號 CDATA #REQUIRED
+	產生時間 CDATA #REQUIRED
+>
+<!ELEMENT 簽核文件夾 (簽核文稿清單 , 檔案清單 ,併文清單?)>
+<!ATTLIST 簽核文件夾
+	Id ID #REQUIRED
+	產生時間 CDATA #REQUIRED
+>
+<!ELEMENT 子文簽核文件夾 (母文? , 檔案清單)>
+<!ATTLIST 子文簽核文件夾
+	Id ID #REQUIRED
+	產生時間 CDATA #REQUIRED
+>
+
+<!ELEMENT 併文清單 (母文 , 子文+)>
+<!ELEMENT 母文 (#PCDATA)>
+<!ELEMENT 子文 (#PCDATA)>
+
+<!ELEMENT 簽核文稿清單 (文稿)+>
+<!ATTLIST 簽核文稿清單
+	文稿數 CDATA #REQUIRED
+>
+<!ELEMENT 文稿 (名稱, 文稿類型, 文稿頁面檔?, 附件清單?)>
+<!ATTLIST 文稿
+	文件夾識別碼 CDATA #IMPLIED
+	物件識別碼 CDATA #IMPLIED
+	類型 CDATA #IMPLIED
+	產生點資訊 CDATA #IMPLIED
+	原始檔序號 CDATA #REQUIRED
+	序號 CDATA #REQUIRED
+	產生時間 CDATA #REQUIRED
+	>
+<!ELEMENT 名稱 (#PCDATA)>
+<!ELEMENT 文稿類型 (#PCDATA)>
+<!ELEMENT 附件清單  (附件)+>
+<!ATTLIST 附件清單
+	附件數 CDATA #REQUIRED
+>
+<!ELEMENT 附件 (名稱 ,附件類型,(電子檔格式附件|一般頁面檔格式附件|文稿頁面檔格式附件))>
+<!ATTLIST 附件
+	文件夾識別碼 CDATA #IMPLIED
+	物件識別碼 CDATA #IMPLIED
+	格式 CDATA #IMPLIED
+	序號 CDATA #IMPLIED
+	產生時間 CDATA #REQUIRED
+>
+<!ELEMENT 附件類型 (#PCDATA)>
+
+<!ELEMENT 電子檔格式附件 EMPTY >
+<!ATTLIST 電子檔格式附件
+原始檔序號 CDATA #REQUIRED
+>
+<!ELEMENT 一般頁面檔格式附件 (頁面+) >
+<!ATTLIST 一般頁面檔格式附件
+	頁面數 CDATA #REQUIRED
+>
+<!ELEMENT 文稿頁面檔格式附件 (文稿頁面檔)>
+<!ATTLIST 文稿頁面檔格式附件
+	原始檔序號 CDATA #IMPLIED	
+>
+<!ELEMENT 檔案清單 (電子檔案資訊)+ >
+<!ATTLIST 檔案清單
+	檔案數 CDATA #REQUIRED
+>
+<!ELEMENT 電子檔案資訊 (檔案名稱, 檔案大小, 檔案格式)>
+<!ATTLIST 電子檔案資訊
+	文件夾識別碼 CDATA #IMPLIED
+	物件識別碼 CDATA #IMPLIED	
+	原始檔序號 CDATA #REQUIRED
+	序號 CDATA #REQUIRED
+	產生時間 CDATA #REQUIRED
+>
+
+<!ELEMENT 文稿頁面清單 (頁面)+>
+<!ATTLIST 文稿頁面清單
+	頁面數 CDATA #REQUIRED
+>
+<!ELEMENT 文稿頁面檔 (文稿頁面清單, 簽核物件*) >
+<!ATTLIST 文稿頁面檔
+	文件夾識別碼  CDATA #IMPLIED
+	物件識別碼  CDATA #IMPLIED
+	記錄方式  (單層式|堆疊式) #IMPLIED
+	產生時間  CDATA #REQUIRED
+>
+<!ELEMENT 物件類型 (#PCDATA)>
+<!ELEMENT 簽核物件 (物件類型, (章戳 | 文字意見| 圖檔))>
+<!ATTLIST 簽核物件
+	文件夾識別碼  CDATA #IMPLIED
+	物件識別碼  CDATA #REQUIRED
+	產生點資訊  CDATA #IMPLIED
+	頁面顯示  (Y|N) #REQUIRED
+	原始檔序號  CDATA #IMPLIED
+	產生時間  CDATA #REQUIRED
+>
+<!ELEMENT 文字走向 (#PCDATA)>
+<!ELEMENT 章戳 (文字走向?, 區域, 顏色, 檔案序號)>
+<!ATTLIST 章戳
+	顯示時間 (Y | N) #IMPLIED
+>
+<!ELEMENT 區域 EMPTY>
+<!ATTLIST 區域
+	左 CDATA #REQUIRED
+	上 CDATA #REQUIRED
+	右 CDATA #REQUIRED
+	下 CDATA #REQUIRED
+>
+<!ELEMENT 顏色 EMPTY>
+<!ATTLIST 顏色
+	紅 CDATA #REQUIRED
+	綠 CDATA #REQUIRED
+	藍 CDATA #REQUIRED
+>
+<!ELEMENT 檔案序號 (#PCDATA)>
+<!ELEMENT 文字意見 (位置, 文字內容, 文字走向, 字型)>
+<!ELEMENT 位置 EMPTY>
+<!ATTLIST 位置
+	X CDATA #REQUIRED
+	Y CDATA #REQUIRED
+>
+<!ELEMENT 文字內容 (#PCDATA)>
+<!ELEMENT 字型 (名稱, 樣式, 大小, 顏色)>
+<!ELEMENT 樣式 (#PCDATA)>
+<!ELEMENT 大小 (#PCDATA)>
+<!ELEMENT 圖檔 (區域,檔案序號)>
+<!ATTLIST 圖檔
+去背景 (Y | N) #IMPLIED
+透明度 CDATA #IMPLIED
+>
+<!ELEMENT 借卡 (借卡日期, 借卡原因)> 
+<!ATTLIST 借卡
+Id ID #IMPLIED
+>
+<!ELEMENT 借卡日期 (#PCDATA)>
+<!ELEMENT 借卡原因 (#PCDATA)>
+
+<!ELEMENT 補簽追認 (補簽人員)+>
+<!ATTLIST 補簽追認
+補簽人員數 CDATA #REQUIRED
+>
+<!ELEMENT 補簽人員 (簽章資料)>
+<!ATTLIST 補簽人員
+URI CDATA #REQUIRED 
+補簽註記 CDATA #REQUIRED         
+產生時間 CDATA #REQUIRED
+>
+<!ELEMENT 簽章資料 (簽核人員, Signature)>
+<!ELEMENT Signature (SignedInfo, SignatureValue?, KeyInfo?, Object*)  >
+<!ATTLIST Signature  
+	Id  	ID 	#IMPLIED 
+>
+<!ELEMENT SignedInfo (CanonicalizationMethod, SignatureMethod,  Reference+)  >
+<!ATTLIST SignedInfo  
+	Id	 ID 	 #IMPLIED 
+>
+<!ELEMENT CanonicalizationMethod (#PCDATA )* > 
+<!ATTLIST CanonicalizationMethod 
+	Algorithm CDATA #REQUIRED 
+> 
+<!ELEMENT  SignatureValue 		(#PCDATA) >
+<!ELEMENT DigestMethod  (#PCDATA)* >
+<!ATTLIST DigestMethod  
+	Algorithm		 CDATA 	#REQUIRED 
+>
+<!ELEMENT  DigestValue 			(#PCDATA) >
+<!ELEMENT KeyInfo (X509Data)>
+<!ATTLIST KeyInfo
+	Id ID #IMPLIED
+>
+<!ELEMENT Manifest (Reference+)>
+<!ATTLIST Manifest
+	Id ID #IMPLIED
+>
+<!ELEMENT Reference (Transforms?, DigestMethod, DigestValue)  >
+<!ATTLIST Reference
+	Id 	ID	#IMPLIED
+	URI 	CDATA 	#IMPLIED
+	Type 	CDATA	 #IMPLIED
+>
+<!ELEMENT SignatureMethod (#PCDATA | HMACOutputLength)*>
+<!ATTLIST SignatureMethod
+	Algorithm CDATA #REQUIRED
+> 
+<!ELEMENT SignatureProperties (SignatureProperty+)>
+<!ATTLIST SignatureProperties
+	Id ID #IMPLIED
+>
+<!ELEMENT SignatureProperty  (#PCDATA)*>
+<!ATTLIST SignatureProperty
+	Target CDATA #REQUIRED
+	Id ID #IMPLIED
+>
+<!ELEMENT	 Transform		 (#PCDATA|XPath)*>
+<!ATTLIST Transform
+	Algorithm CDATA #REQUIRED
+>
+<!ELEMENT Transforms (Transform+)>
+<!ELEMENT X509Data (X509Certificate)>
+<!ELEMENT  X509Certificate 		(#PCDATA) >
+<!ELEMENT 	HMACOutputLength	 (#PCDATA)>
+<!ELEMENT	 XPath		(#PCDATA)>

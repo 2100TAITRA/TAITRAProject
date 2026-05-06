@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR354D" targetNamespace="http://tempuri.org/EDR354D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR354D.xsd" xmlns:mstns="http://tempuri.org/EDR354D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR354D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR354L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DAY01" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY02" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY03" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY04" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY05" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY06" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY07" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY08" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY09" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY10" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY11" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY12" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY13" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY14" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY15" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY16" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY17" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY18" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY19" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY20" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY21" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY22" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY23" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY24" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY25" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY26" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY27" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY28" type="xs:int" minOccurs="0" />
+							<xs:element name="YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="MONTHS" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTHE" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTHTOTAL" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY29" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY30" type="xs:int" minOccurs="0" />
+							<xs:element name="DAY31" type="xs:int" minOccurs="0" />
+							<xs:element name="MONTH" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

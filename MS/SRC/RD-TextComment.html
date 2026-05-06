@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<!--meta name="viewport" content="width=640">
+	<meta name="scale" content="1.0"-->
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<title>文字意見頁面</title>
+</head>
+<body>
+<section id="textComment" data-role="dialog">
+    <header data-role="header">
+        <h1 style="margin-top:0px; margin-bottom:.5em">新增文字意見</h1>
+    </header>
+	<div data-role="content" class="ui-grid-a" style="height:350px;width:97%"><!-- 1110513 Raymond 1110538 因新增加蓋代字選項height從300px增加至350px -->
+        <div class="ui-block-a" style="width:60%;">
+            <textarea style="height:170px; width:100%; font-family:標楷體"></textarea><!-- 1110513 Raymond 1110538 因新增加蓋代字選項height從120px增加至170px -->
+			<div class="symbolBar-container" style="height:150px"><!-- 1110513 Raymond 1110538 因新增加蓋代字選項height從120px增加至150px -->
+				<div class="symbolBar"></div>
+			</div>
+		</div>
+		<form class="ui-block-b" style="width:40%">
+			<select data-theme="c" id="fontSize">
+				<option value="8pt">8pt</option><!-- 1100504 Raymond 1100481 新增8,9,11,22,26,28等大小以避免AOL_TEXTOBJECT_FONT預設大小不在清單中, 儲存時會發生Error的問題 -->
+				<option value="9pt">9pt</option>
+				<option value="10pt">10pt</option>
+				<option value="11pt">11pt</option>
+				<option value="12pt" selected>12pt</option>
+				<option value="14pt">14pt</option>
+				<option value="16pt">16pt</option>
+				<option value="18pt">18pt</option>
+				<option value="20pt">20pt</option>
+				<option value="22pt">22pt</option>
+				<option value="24pt">24pt</option>
+				<option value="26pt">26pt</option>
+				<option value="28pt">28pt</option>
+			</select>
+			<div data-role="controlgroup" data-type="horizontal" data-theme="c">
+				<input id="normal" name="fontStyle" type="checkbox" checked="true" data-theme="c"/>
+				<label for="normal">正常</label>
+				<input id="bold" name="fontStyle" type="checkbox" data-theme="c"/>
+				<label for="bold" style="font-weight:bold">粗體</label>
+				<input id="italic" name="fontStyle" type="checkbox" data-theme="c"/>
+				<label for="italic" style="font-style:italic">斜體</label>
+			</div>
+			<select data-theme="c" id="signet"></select>
+			<fieldset data-role="controlgroup" data-theme="c" style="display:block"><!-- 1100119 Raymond 1090927 fix for FireFox -->
+				<input id="withStamp" type="checkbox" data-theme="c"/><!-- 2015.6.22 預設不勾選 -->
+				<label for="withStamp">加蓋職名章</label>
+			</fieldset>
+			<fieldset data-role="controlgroup" data-theme="c" style="display:block"><!-- 1110513 Raymond 1110538 比照1080053新增加蓋代字選項 -->
+				<input id="addProxyWord" type="checkbox" data-theme="c"/>
+				<label for="addProxyWord">加蓋代字</label>
+			</fieldset>
+			<fieldset data-role="controlgroup" data-theme="c" style="display:block"><!-- 1100119 Raymond 1090927 fix for FireFox -->
+				<input id="dispTime" type="checkbox" data-theme="c"/><!-- 2015.6.22 預設不勾選 -->
+				<label for="dispTime">加蓋時戳</label>
+			</fieldset>
+		</form>
+	</div>
+	<footer data-role="footer">
+		<div style="position:absolute;left:8px;bottom:0px;width:47%;display:inline-block">
+			<a id="cancel" data-role="button" data-theme="c">取消</a>
+		</div>
+		<div style="position:absolute;left:50%;bottom:0px;width:47%;display:inline-block">
+			<a id="ok" data-role="button" data-theme="b">確定</a>
+		</div>
+    </footer>
+</section>
+</body>
+</html>

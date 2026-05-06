@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4221_VACD" targetNamespace="http://tempuri.org/EDR4221_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR4221_VACD.xsd" xmlns="http://tempuri.org/EDR4221_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4221_VACD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR4221_VACD" msprop:Generator_UserDSName="EDR4221_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4221_VACL1" msprop:Generator_TableClassName="EDR4221_VACL1DataTable" msprop:Generator_TableVarName="tableEDR4221_VACL1" msprop:Generator_TablePropName="EDR4221_VACL1" msprop:Generator_RowDeletingName="EDR4221_VACL1RowDeleting" msprop:Generator_RowChangingName="EDR4221_VACL1RowChanging" msprop:Generator_RowEvHandlerName="EDR4221_VACL1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4221_VACL1RowDeleted" msprop:Generator_UserTableName="EDR4221_VACL1" msprop:Generator_RowChangedName="EDR4221_VACL1RowChanged" msprop:Generator_RowEvArgName="EDR4221_VACL1RowChangeEvent" msprop:Generator_RowClassName="EDR4221_VACL1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RCV_GROUP" msprop:Generator_ColumnVarNameInTable="columnRCV_GROUP" msprop:Generator_ColumnPropNameInRow="RCV_GROUP" msprop:Generator_ColumnPropNameInTable="RCV_GROUPColumn" msprop:Generator_UserColumnName="RCV_GROUP" type="xs:string" minOccurs="0" />
+              <xs:element name="RCV_CNT" msprop:Generator_ColumnVarNameInTable="columnRCV_CNT" msprop:Generator_ColumnPropNameInRow="RCV_CNT" msprop:Generator_ColumnPropNameInTable="RCV_CNTColumn" msprop:Generator_UserColumnName="RCV_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="NEW_CNT" msprop:Generator_ColumnVarNameInTable="columnNEW_CNT" msprop:Generator_ColumnPropNameInRow="NEW_CNT" msprop:Generator_ColumnPropNameInTable="NEW_CNTColumn" msprop:Generator_UserColumnName="NEW_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="DOC_NO_CNT" msprop:Generator_ColumnVarNameInTable="columnDOC_NO_CNT" msprop:Generator_ColumnPropNameInRow="DOC_NO_CNT" msprop:Generator_ColumnPropNameInTable="DOC_NO_CNTColumn" msprop:Generator_UserColumnName="DOC_NO_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="NO_ISSUE_CNT" msprop:Generator_ColumnVarNameInTable="columnNO_ISSUE_CNT" msprop:Generator_ColumnPropNameInRow="NO_ISSUE_CNT" msprop:Generator_ColumnPropNameInTable="NO_ISSUE_CNTColumn" msprop:Generator_UserColumnName="NO_ISSUE_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="E_SIGN_CNT" msprop:Generator_ColumnVarNameInTable="columnE_SIGN_CNT" msprop:Generator_ColumnPropNameInRow="E_SIGN_CNT" msprop:Generator_ColumnPropNameInTable="E_SIGN_CNTColumn" msprop:Generator_UserColumnName="E_SIGN_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="TOTAL_SUM" msprop:Generator_ColumnVarNameInTable="columnTOTAL_SUM" msprop:Generator_ColumnPropNameInRow="TOTAL_SUM" msprop:Generator_ColumnPropNameInTable="TOTAL_SUMColumn" msprop:Generator_UserColumnName="TOTAL_SUM" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

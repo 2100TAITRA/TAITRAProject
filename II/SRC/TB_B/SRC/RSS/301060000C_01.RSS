@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>施政計劃</title>
+    <description>施政計劃</description>
+    <link>http://192.168.1.247/TB_A/TB1/TBI100.aspx</link>
+    <language>UTF-8</language>
+    <pubDate>Thu, 03 Jan 2008 12:11:10 GMT</pubDate>
+    <lastBuildDate>Thu, 03 Jan 2008 12:11:10 GMT</lastBuildDate>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <skipDays>
+      <day>saturday</day>
+      <day>sunday</day>
+    </skipDays>
+    <skipHours>
+      <hour>19</hour>
+      <hour>20</hour>
+      <hour>21</hour>
+    </skipHours>
+    <category>施政計劃</category>
+    <generator>電子公佈欄系統</generator>
+    <ttl>1440</ttl>
+    <item>
+      <title>永久公告 test</title>
+      <description>&lt;DIV&gt;&lt;/DIV&gt;</description>
+      <link>http://192.168.1.247/TB_A/TB1/TBI130.htm?BulletinId=09500248</link>
+      <category>施政計劃</category>
+      <guid>09500248</guid>
+      <pubDate>Thu, 03 Jan 2008 12:11:10 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

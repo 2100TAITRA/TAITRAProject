@@ -1,0 +1,3686 @@
+﻿/* Landscape */
+
+/* 2011.11.8 - for full screen width dialog style (jQM 1.0) */
+.ui-dialog .ui-dialog-contain { 
+	max-width: 100%; 
+}
+/* 此網頁字型為教育部發布的標楷體 
+@font-face {
+    font-family: '標楷體';
+    src: url(edukai-3.ttf) format('truetype');
+}*/
+
+/* 1110817 Kevin 1101532 移除未使用字體
+@font-face {
+	font-family: customsymbol-1;
+	src: local("DFKai-sb"), local("STHeitiTC-Medium"), local("STHeiTiTC-Regular");	 Chrome可指定"標楷體", 但IE不行, 只能指定標楷體的英文名稱"DFKai-sb" 
+	unicode-range: U+2026;
+}
+*/
+
+/*1110222	Leslie[1101532]	[考試院]新增可顯示自造字的WebFont設定*/
+/* 1110817 Kevin 1101532 移動至CSS_CONFIG.css*/
+/*1110222	Leslie[1101532]	[考試院]新增可顯示自造字的WebFont設定	==END== */
+
+#aol #mainContent {
+	padding: 0;
+	/*width: 1509px;*/
+	/*height: calc(100% - 50px);	 2016.1.27 changed */
+	overflow-x: visible;
+}
+
+#home #aol #mainContent {
+	padding-left: 2.5em; /* 3.2em; 2017.4.5 - Eric Peng, modified */
+    background-color: #333;
+}
+
+/* 2017.4 - 美工套用 */
+@media screen and (max-width: 1280px) and (orientation: landscape) {
+	#home #aol #mainContent {
+		padding-left: 2.3em;
+	}
+}
+
+/* 1110513 Raymond 1110486 修正Chrome/Edge下某些電腦(不是很舊)啟用瀏覽器的硬體加速功能後, 影像會變模糊的問題 */
+#aol img {
+	image-rendering: -webkit-optimize-contrast;
+	transform: translateZ(0px);	/* 1120921 Raymond 1120692 修正在Chrome下, 單色附件頁面影像顯示可能會有糢糊的問題 */
+}
+
+#aol #mainContent .ui-pane-a {
+	width: 100%;	/* 2016.1.27 changed */
+	display: inline-block;
+	position: relative;	/* 2016.5.5 added */
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: margin-left width;
+	-webkit-transition-timing-function: ease-in;
+	-moz-transition-duration: 0.5s;
+	-moz-transition-property: margin-left width;
+	-moz-transition-timing-function: ease-in;
+	transition-duration: 0.5s;
+	transition-property: margin-left width;
+	transition-timing-function: ease-in;
+}
+
+#aol #mainContent.ui-two-pane .ui-pane-a {
+	margin-left: 50%;	/* 2016.6.2 可編輯窗格在右 */
+	width: 50%;	/* 2016.1.27 changed */
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: margin-left width;
+	-webkit-transition-timing-function: ease-out;
+	/*-webkit-transform: translate(0, 0);*/
+	-moz-transition-duration: 0.5s;
+	-moz-transition-property: margin-left width;
+	-moz-transition-timing-function: ease-out;
+	/*-moz-transform: translate(0, 0);*/
+	transition-duration: 0.5s;
+	transition-property: margin-left width;
+	transition-timing-function: ease-out;
+	/*transform: translate(0, 0);*/
+}
+#aol #mainContent .ui-pane-b {
+	left: -100%;	/* 2016.1.27 changed */
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: left;
+	-webkit-transition-timing-function: ease-in;
+	-moz-transition-duration: 0.5s;
+	-moz-transition-property: left;
+	-moz-transition-timing-function: ease-in;
+	transition-duration: 0.5s;
+	transition-property: left;
+	transition-timing-function: ease-in;
+}
+#aol #mainContent.ui-two-pane .ui-pane-b {
+	left: 2.5em; /* 50px; 2017.4.5 - Eric Peng for final skin */		/* 2016.6.2 for jqm 1.4.5 */
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: left;
+	-webkit-transition-timing-function: ease-out;
+	/*-webkit-transform: translate(0, 0);*/
+	-moz-transition-duration: 0.5s;
+	-moz-transition-property: left;
+	-moz-transition-timing-function: ease-out;
+	/*-moz-transform: translate(0, 0);*/
+	transition-duration: 0.5s;
+	transition-property: left;
+	transition-timing-function: ease-out;
+	/*transform: translate(0, 0);*/
+}
+
+/* fix for 水平併列select及button */
+#aol .ui-controlgroup-horizontal .ui-select .ui-btn-inner {
+	padding-top: 0.6em;
+	padding-bottom: 0.6em;
+	padding-right: 32px;
+}
+#aol .ui-controlgroup-horizontal .ui-select .ui-btn-icon-right .ui-icon {
+	right: 11px;
+}
+
+#aol #leftPart {
+	height: calc(100% - 2px);	/* 2016.6.2 for jqm 1.4.5 */
+	/*display: inline-block;
+	-webkit-transition-duration: 1s;
+	-webkit-transition-property: width;
+	-webkit-transition-timing-function: ease-out;*/
+	/*width: 1005px;*/
+	overflow-x: hidden;
+}
+
+/*#aol #leftPart.helf {*/
+	/*-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: width;
+	-webkit-transition-timing-function: ease-in;
+	width: 537px;*/
+/*}*/
+
+#aol #grpSubmit {
+	position: absolute;
+	left: 390px;
+	top: 3px;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: top;
+	-webkit-transition-timing-function: ease-in;
+	-moz-transition-duration: 0.5s;
+	-moz-transition-property: top;
+	-moz-transition-timing-function: ease-in;
+	transition-duration: 0.5s;
+	transition-property: top;
+	transition-timing-function: ease-in;
+}
+
+#aol #grpSubmit a {
+	display: inline-block;
+	margin: 0;
+}
+
+#aol #grpSubmit a,
+#aol #zoomControl1 a,
+#aol #zoomControl2 a,
+#aol #tcControl1 a,
+#aol #historyControl2 #historyList-button,	/* 1081024 Raymond 1080877 fix tcControl2 -> historyControl2	1100224 Raymond 1090927 修正iOS環境下拉選單不套jQM, 導致歷史檢視下拉選單沒套到這條rule, 高度不一致*/
+#aol #zoomControl1 #zoomSelect1-button,		/* 1100224 Raymond 1090927 修正iOS環境下拉選單不套jQM, 導致縮放比下拉選單沒套到這條rule, 高度不一致 */
+#aol #zoomControl2  #zoomSelect2-button,	/* 1100224 Raymond 1090927 修正iOS環境下拉選單不套jQM, 導致縮放比下拉選單沒套到這條rule, 高度不一致 */
+#aol #tcControl1  #tcMode-button,			/* 1100224 Raymond 1090927 修正iPadOS環境下拉選單不套jQM, 導致追蹤修訂下拉選單沒套到這條rule, 高度不一致 */
+#aol #cusBtnControl1 a,						/* 1130503 Raymond 中榮序97 修正客製化工具列按鈕(ex.中榮的「另開附件視窗」)高度與旁邊的追蹤修訂下拉式選單按鈕不一致問題 */
+#aol #transPanel a {
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+/* 1130402 Raymond 航港局序63 修正歷史檢視的流程點太長超過視窗可顯示高度時, 向下滾動在DocView子視窗無法向下捲動及在EDoc會整個主頁往上捲動的問題 */
+#historyList-menu {
+	max-height: calc(100vh - 2.7em - 2px);	/* 100vh是指100% View Height, 用這個取代window.innerHeight就不需要綁window的resize事件, 每次resize就重算一次最大高度 */
+	overflow-y: auto;
+}
+
+/* 2021.2.17 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height: 450px) and (orientation: landscape) {
+	#aol #zoomControl1 a#zoomIn,
+	#aol #zoomControl1 a#zoomOut,
+	#aol #zoomControl2 a#zoomIn,
+	#aol #zoomControl2 a#zoomOut {
+		width: 1em;
+	}
+}
+
+#aol #mainContent.ui-two-pane #grpSubmit {
+	top: -100px;
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+
+#aol #grpSubmit img,
+#aol #transPanel img {
+	margin-top: -0.4em;
+	margin-bottom: -0.4em;
+	width: 18px;
+	height: 18px;
+	background-color: rgba(0, 0, 0, .4);
+	-webkit-border-radius: 9px;
+	-webkit-box-shadow: 0px 1px 0 rgba(255, 255, 255, .4);
+	-moz-border-radius: 9px;
+	-moz-box-shadow: 0px 1px 0 rgba(255, 255, 255, .4);
+	border-radius: 9px;
+	box-shadow: 0px 1px 0 rgba(255, 255, 255, .4);
+}
+
+#aol #transPanel {
+	position: absolute;
+	/*left: 710px;*/
+	right: -1.5em;	/* 2016.1.27 added */
+	top: -15px;
+	/* 20170321 Kevin 套美工使用背景色
+	background-image: -webkit-linear-gradient(top, #3c3c3c 30%, #111 100%);
+	background-image:    -moz-linear-gradient(top, #3c3c3c 30%, #111 100%);
+	background-image:     -ms-linear-gradient(top, #3c3c3c 30%, #111 100%);
+	background-image:      -o-linear-gradient(top, #3c3c3c 30%, #111 100%);
+	background-image:         linear-gradient(top, #3c3c3c 30%, #111 100%);
+	*/
+	/*border-bottom-left-radius: 2em;*/
+	z-index: 1;
+	color: white;
+	/*-webkit-box-shadow: 0px 2px 2px #333;
+	-moz-box-shadow: 0px 2px 2px #333;
+	box-shadow: 0px 2px 2px #333;*/
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: top;
+	-webkit-transition-timing-function: ease-in;
+	-moz-transition-duration: 0.5s;
+	-moz-transition-property: top;
+	-moz-transition-timing-function: ease-in;
+	transition-duration: 0.5s;
+	transition-property: top;
+	transition-timing-function: ease-in;
+	padding: .4em 15px 0px 0px;	/* 2016.5.23 added */
+}
+
+#aol #mainContent.ui-two-pane #transPanel {
+	top: -200px;
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+
+#aol #transPanel .ui-btn,
+#aol #transPanel .ui-checkbox {
+	display: inline-block;
+	vertical-align: top;	/* 2016.5.23 added */
+	
+	height: 1.1em; /* 2017.4.5 - new */
+    margin-top: 2px;  /* 2017.4.5 - new */
+}
+
+/* 2016.5 - Eric Peng, jQM1.4.5 modify */
+#aol #transPanel > div > label:first-child {
+	display: inline-block;
+}
+
+/* 2017.4 - Eric Peng, 美工套用後修改 */
+#aol #transPanel #pcTxList .ui-select > .ui-btn, /* @chrome: 異動別 + 傳送對象 */
+#aol #transPanel #pcSubmit .ui-checkbox > .ui-btn /* @chrome: 核決[check-box] */
+{
+	padding-top: .6em;
+	padding-bottom: .6em;
+}
+
+#aol #transPanel #pcSubmit .ui-checkbox { /* @chrome: 核決 */
+	margin-top: .5em;
+}
+
+#aol #transPanel #pcSubmit .ui-checkbox > input {
+	margin-top: .25em;
+}
+
+#aol #transPanel #pcTxList > .ui-link, /* 分會設定按鍵 */
+#aol #transPanel #pcSubmit > .ui-btn, /* @chrome: 傳送 */
+#aol #transPanel #pcUtil > .ui-btn,
+#aol #transPanel #pcTxEasy > .ui-btn	/*1110629	Leslie[1110629]	加上簡易模式按鈕*/
+{ /* @chrome: 儲存,關閉,設定 */
+	margin-top: .65em;
+	height: 1.4em;
+	margin-left: -5px;	/*1110408	Leslie	配合字型調整後按鈕間距變化*/
+}
+
+#aol #transPanel #pcSubmit .ui-btn > span, /* @chrome: 傳送 */
+#aol #transPanel #pcUtil .ui-btn > span { /* @chrome: 儲存, 關閉, 設定 */
+	padding-top: .6em;
+	padding-bottom: .6em;
+}
+
+/* 2017.4 - IE AOL上方工具列顯示問題 (看起來有control重疊)
+#aol #transPanel .ui-select > ui-btn,
+#aol #transPanel .ui-checkbox > ui-btn {
+	border-color: transparent;
+}*/
+
+/* 2016.10 - Eric Peng,  mobile submit UI */
+#aol #moGrpUtil {
+    position: absolute;
+    right: 22.5em;
+    top: .3em;
+	z-index: 3; /* 2021.2.22 - Eric, 螢幕寬度不足時, 按鈕雖顯示在上方, 但會觸發上方select element event問題修正. JQM select 之 z-index=2 */
+}
+
+#aol #moGrpUtil a,
+#aol #moSubmitPanel a {
+	display: inline-block;
+	margin: 0;
+}
+
+#aol #moGrpUtil .ui-btn, #aol #moSubmitPanel .ui-btn,
+#aol #moGrpUtil .ui-checkbox, #aol #moSubmitPanel .ui-checkbox {
+	display: inline-block;
+	vertical-align: top;	/* 2016.5.23 added */
+}
+
+#aol #moSubmitPanel .ui-checkbox label {
+	padding-top: .6em;
+	padding-bottom: .6em;
+}
+
+#aol #moGrpUtil a {
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+#aol #moGrpUtil img,
+#aol #moSubmitPanel img {
+	margin-top: -0.4em;
+	margin-bottom: -0.4em;
+	width: 18px;
+	height: 18px;
+	background-color: rgba(0, 0, 0, .4);
+	-webkit-border-radius: 9px;
+	-webkit-box-shadow: 0px 1px 0 rgba(255, 255, 255, .4);
+	-moz-border-radius: 9px;
+	-moz-box-shadow: 0px 1px 0 rgba(255, 255, 255, .4);
+	border-radius: 9px;
+	box-shadow: 0px 1px 0 rgba(255, 255, 255, .4);
+}
+
+/* 2021.2.22 - 1090927 Eric Peng, for iPad portrait fix 
+   2021.2 - iPad Pro 11 width: 834px */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+	#aol #moGrpUtil a {
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+
+	#aol #moGrpUtil a#moBtnClose {
+		padding-left: 2.4em;
+	}
+}
+
+/* 2021.2.17 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height: 450px) and (orientation: landscape) {
+	#aol #moGrpUtil a {
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+
+	#aol #moGrpUtil a#moBtnClose {
+		padding-left: 2.4em;
+	}
+}
+
+#aol #moSubmitPanel {
+	position: absolute;
+	/*left: 710px;*/
+	right: 0px;	/* 2016.1.27 added */
+	/*top: -15px;*/
+	background-image: -webkit-linear-gradient(top, #333 0%, #254117 50%, #383 100%);
+	background-image:    -moz-linear-gradient(top, #333 0%, #254117 50%, #383 100%);
+	background-image:     -ms-linear-gradient(top, #333 0%, #254117 50%, #383 100%);
+	background-image:      -o-linear-gradient(top, #333 0%, #254117 50%, #383 100%);
+	background-image:         linear-gradient(top, #333 0%, #254117 50%, #383 100%);
+	border-bottom-left-radius: 1em;
+	z-index: 2;	/* 1140912 Raymond 退輔會序230 修正平板模式時, 簽辦意見窗格會遮住傳送面板的問題, zIndex由1改成2 */
+	color: white;
+	-webkit-box-shadow: 0px 2px 2px #333;
+	-moz-box-shadow: 0px 2px 2px #333;
+	box-shadow: 0px 2px 2px #333;
+}
+
+#aol #moSubmitPanel > div.ui-checkbox:first-child {
+	margin-left: .5em;
+}
+
+#aol #moSubmitPanel > .ui-checkbox {
+	margin-top: .3em;
+}
+
+/* 2017.10.18 - 1060748-預排流程設定Button */
+#aol #moSubmitPanel #moBtnWWKF {
+	top: .3em;
+	margin-left: .5em;
+	margin-bottom: 0.8em; /* 2022.6.24 - 1110180 Eric, 隱藏核決/剔退按鈕時, 顯示不正確問題修正. */
+}
+
+#aol #moSubmitPanel #moBtnSubmit {
+	position: absolute;
+    right: .5em;
+    top: .3em;
+}
+
+#aol #moSubmitPanel .moSubmit {
+	margin: 0 .5em .5em .5em;
+    width: 21em;
+}
+
+/* 2021.2.22 - 1090927 Eric Peng, 顯示 for iPad Portrait */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+	#aol #moSubmitPanel .moSubmit {
+		width: 16em;
+	}
+
+	#aol #moGrpUtil {
+		right: 17.2em;
+	}
+}
+
+/* 2021.2.3 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height: 450px) and (orientation: landscape) {
+	#aol #moSubmitPanel .moSubmit {
+		width: 16em;
+	}
+
+	#aol #moGrpUtil {
+		right: 17.2em;
+	}
+}
+
+#aol #moSubmitPanel #moTransTargetSetup {
+	padding-top: .3em;
+	padding-bottom: .3em;
+}
+
+#aol #sidebar {
+	width: 2.6em; /* 50px; 2017.4.5 - modify for skin */
+	height: 578px;
+	/* 20170321 Kevin 套美工
+	background-color: #333;*/
+	background-color: rgba(255,255,255,0.4); /* #FFF; 20170427 Eric 美工 */
+	overflow-x: hidden;
+	position: absolute;
+	left: -2.6em; /* -50px; 2017.4.5 - modify for skin */
+	top: 0px;
+}
+
+#aol #rightPart {
+	height: calc(100% - 2px);	/* 2016.6.2 for jqm 1.4.5 */
+	width: calc(50% - 27px);	/* 2016.6.2 for jqm 1.4.5 */
+	border-right: 1px ridge #888;
+	/*display: inline-block;*/
+	position: absolute;
+	top: 0px;
+	z-index: 2;
+	/*display: none;*/
+}
+
+/*#aol #mainContent.ui-two-pane #rightPart {
+	-webkit-transition-timing-function: ease-in;
+	-webkit-transform: translate(-470px, 0px);
+	-moz-transition-timing-function: ease-in;
+	-moz-transform: translate(-470px, 0px);
+	transition-timing-function: ease-in;
+	transform: translate(-470px, 0px);
+	display: block;
+}*/
+
+/* FireFox 過濾 */
+@-moz-document url-prefix() {
+#aol #rightPart.helf {
+	left: 540px;
+}
+#aol #leftPart.helf #grpSubmit {
+	right: 370px;
+}
+}
+
+#aol #refView {
+	position: absolute;
+	bottom: 0px;
+	margin-left: 0px;
+}
+
+#aol #leftPart .ui-header,
+#aol #rightPart .ui-header,
+#aol #leftPart .ui-footer,
+#aol #rightPart .ui-footer {
+	height: 40px;
+	background-color: rgba(255,255,255,0.4);
+	border-top: 0;
+	border-color: #888;
+}
+
+#aol .contentPane {
+	/*width: 945px;*/
+	width: 100%;	/* 2016.1.27 added */
+	height: 578px;
+	overflow: auto;	/* 2016.3.1 fix for chrome */
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+	background: transparent; /*#ccc; 2017.4.27 - 美工 */
+}
+
+#aol .viewPort {
+	/*height: 400px;*/
+	-webkit-transform-origin: left top;
+	-webkit-transform: scale(1.0) translateZ(0);
+	-moz-transform-origin: left top;
+	-moz-transform: scale(1.0) translateZ(0);
+	transform-origin: left top;
+	transform: scale(1.0) translateZ(0);
+}
+
+/* 2016.1.27 配合不同視窗大小調整為百分比 */
+#aol .pages {
+	width: 250mm;
+	height: 320mm;
+	/*overflow: hidden; 2015.6.8 webkit系列child element有scale時, parent element的overflow:hidden會導致child element消失 */
+	margin-left: 0px;
+	margin-right: 0px;
+	background-image: -webkit-linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:    -moz-linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:     -ms-linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:      -o-linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:         linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	
+	position: relative;
+	/* 1131016 Raymond 屏東序1152 修正iPadOS更新至18.0.1後, 縮放文稿頁面會發生文稿頁面只顯示左半邊或全消失的問題
+	-webkit-perspective: none;*/ /* 1100505 Raymond 1100498 修正文稿頁面包括影像在放大顯示比例時, Chrome/Edge會顯得模糊的問題 1900px->none */
+	/*-webkit-perspective-origin: bottom;
+	-webkit-transform-style: preserve-3d;
+	-moz-perspective: none;*/ /* 1100505 Raymond 1100498 修正文稿頁面包括影像在放大顯示比例時, Chrome/Edge會顯得模糊的問題 1900px->none */
+	/*-moz-perspective-origin: bottom;
+	-moz-transform-style: preserve-3d;
+	perspective: none;*/ /* 1100505 Raymond 1100498 修正文稿頁面包括影像在放大顯示比例時, Chrome/Edge會顯得模糊的問題 1900px->none */
+	/*perspective-origin: bottom;
+	transform-style: preserve-3d;*/
+}
+
+/* 2015.6.22 新增速別為速件時公文夾以藍色表示 */
+#aol .pages.fast {
+	background-image: -webkit-linear-gradient(left, #00F 0%, #00F 95%, #77D 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:    -moz-linear-gradient(left, #00F 0%, #00F 95%, #77D 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:     -ms-linear-gradient(left, #00F 0%, #00F 95%, #77D 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:      -o-linear-gradient(left, #00F 0%, #00F 95%, #77D 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:         linear-gradient(left, #00F 0%, #00F 95%, #77D 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+}
+
+#aol .pages.fastest {
+	background-image: -webkit-linear-gradient(left, #F00 0%, #F00 95%, #D77 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:    -moz-linear-gradient(left, #F00 0%, #F00 95%, #D77 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:     -ms-linear-gradient(left, #F00 0%, #F00 95%, #D77 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:      -o-linear-gradient(left, #F00 0%, #F00 95%, #D77 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:         linear-gradient(left, #F00 0%, #F00 95%, #D77 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+}
+
+#aol .pages.secret {
+	background-image: -webkit-linear-gradient(left, #FF0 0%, #FF0 95%, #DD7 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:    -moz-linear-gradient(left, #FF0 0%, #FF0 95%, #DD7 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:     -ms-linear-gradient(left, #FF0 0%, #FF0 95%, #DD7 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:      -o-linear-gradient(left, #FF0 0%, #FF0 95%, #DD7 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+	background-image:         linear-gradient(left, #FF0 0%, #FF0 95%, #DD7 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+}
+
+#aol .pg {
+	position: relative;
+}
+
+#aol .tags {
+	overflow-x: hidden;
+	z-index: 100;
+	position: absolute;
+	left: 213mm;
+	top: 15mm;
+	width: 120px;
+	-webkit-transform: translateZ(2px);	/* 2015.6.8 修正.pages的overflow:hidden會導致.tags被.pages蓋住, 因.pg是translateZ控制前後, z-index無作用 */
+	-moz-transform: translateZ(2px);
+	transform: translateZ(2px);
+}
+#aol .tags .ui-listview {
+	margin-left: -8px;
+	margin-right: 0px;
+}
+/* 修正沒有data-icon但有span.ui-li-count的位置*/
+#aol .tags .ui-btn:not(.ui-li-has-arrow) .ui-li-count {
+	right: 10px;
+}
+#aol .tags .ui-li-header:not(.ui-li-expanded) .ui-btn-text > div {
+	display: none;
+}
+#aol .tags .ui-li-header .ui-icon {
+	top: 22px;
+}
+#aol .tags .ui-li-header.ui-li-expanded .ui-icon {
+	background-position-x: -216px;	/* ui-icon-arrow-d */
+}
+#aol .tags .ui-btn-text > .ui-btn {
+	position: absolute;
+	width: 3em;
+	right: -20px;
+	top: 50%;
+	margin-top: -1.35em;
+	opacity: 0;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: opacity right;
+	-moz-transition-duration: 0.5s;
+	-moz-transition-property: opacity right;
+	transition-duration: 0.5s;
+	transition-property: opacity right;
+}
+#aol .tags .ui-btn-text > .ui-btn .ui-btn-inner {
+	padding-left: 8px;
+}
+#aol .tags .ui-btn-text.ui-confirm-delete > .ui-btn {
+	right: -2px;
+	opacity: 1;
+}
+
+#aol .tags-group {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
+}
+#aol .tags-group .tags-item {
+	border: 1px solid 		#ccc /*{c-bup-border}*/;
+	background: 			#eee /*{c-bup-background-color}*/;
+	font-weight: bold;
+	color: 					#222 /*{c-bup-color}*/;
+	text-shadow: 0 /*{c-bup-shadow-x}*/ 1px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #fff /*{c-bup-shadow-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #fff /*{c-bup-background-start}*/), to( #f1f1f1 /*{c-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+	padding: .6em 2em .6em 8px;
+	position: relative;
+	cursor: pointer;
+}
+#aol .tags-group .tags-item:first-child {
+	-webkit-border-top-right-radius: .6em;
+	-moz-border-top-right-radius: .6em;
+	border-top-right-radius: .6em;
+}
+#aol .tags-group .tags-item:last-child {
+	-webkit-border-bottom-right-radius: .6em;
+	-moz-border-bottom-right-radius: .6em;
+	border-bottom-right-radius: .6em;
+}
+#aol .tags-group .tags-item.tags-no-icon {
+	padding: .6em 10px;
+}
+#aol .tags .ui-btn-text {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#aol .tags .ui-btn-text img {
+	/*float: left; 20170413*/
+   float: right; /*20170413*/
+}
+#aol .tags-group .tags-item-special {
+	border: 1px solid 		#044062 /*{b-bup-border}*/;
+	background: 			#396b9e /*{b-bup-background-color}*/;
+	font-weight: bold;
+	color: 					#fff /*{b-bup-color}*/;
+	text-shadow: 0 /*{b-bup-shadow-x}*/ 1px /*{b-bup-shadow-y}*/ 0 /*{b-bup-shadow-radius}*/ #194b7e /*{b-bup-shadow-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #5f9cc5 /*{b-bup-background-start}*/), to( #396b9e /*{b-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #5f9cc5 /*{b-bup-background-start}*/, #396b9e /*{b-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #5f9cc5 /*{b-bup-background-start}*/, #396b9e /*{b-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #5f9cc5 /*{b-bup-background-start}*/, #396b9e /*{b-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #5f9cc5 /*{b-bup-background-start}*/, #396b9e /*{b-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #5f9cc5 /*{b-bup-background-start}*/, #396b9e /*{b-bup-background-end}*/);
+}
+#aol .tags-group .tags-item .ui-btn-text {
+	color: inherit;
+}
+#aol .tags-group .tags-item .ui-btn-text-modified {	/* 1110324 Raymond 1101578 新增已異動附件標示 */
+	color: red;
+	/*text-shadow: 0px 0px 3px black;*/
+}
+#aol .tags-group .tags-item .ui-btn-text-modified::after {	/* 1110329 Raymond 1101578 新增已異動附件標示 */
+	content: "*";
+	/*text-shadow: 0px 0px 3px black;*/
+}
+#aol .tags-item .ui-li-count {
+	background-color: white;
+	-webkit-border-radius: .6em;
+	-moz-border-radius: .6em;
+	border-radius: .6em;
+	color: inherit;
+	/*min-width: 1.2em;		for jqm 1.4.5 */
+	text-align: center;
+	font-size: 9pt;
+	font-family: inherit;
+	border: 1px solid #ccc;
+	position: absolute;
+	/*right: 6px;	for jqm 1.4.5
+	top: 12px;*/
+}
+#aol .tags-item .ui-icon {
+	/*background-color: white;
+	-webkit-border-radius: .6em;
+	-moz-border-radius: .6em;
+	border-radius: .6em;
+	color: inherit;
+	min-width: 1.2em;
+	text-align: center;
+	font-size: 9pt;
+	font-family: inherit;
+	border: 1px solid #ccc;*/
+	position: absolute;
+	right: 6px;
+	top: 12px;
+}
+#aol .tags-item .tags-item-delete-btn {
+	background-color: red;
+	border: 1px solid #555;
+	-webkit-border-top-left-radius: .6em;
+	-webkit-border-bottom-left-radius: .6em;
+	-moz-border-top-left-radius: .6em;
+	-moz-border-bottom-left-radius: .6em;
+	border-top-left-radius: .6em;
+	border-bottom-left-radius: .6em;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	font-size: 16pt;
+	width: 60px;
+	height: 38px;
+	z-index: 1;
+}
+#aol .tags-item .tags-item-delete-btn .ui-icon {
+	position: absolute;
+	top: 50%;
+	margin-top: -9px;
+	left: 50%;
+	margin-left: -9px;
+}
+
+/*20170413*/
+#aol .tags-item.tags-item-special .ui-li-icon {
+	position: absolute;
+	top: 9px;
+	right: 9px;
+}
+
+/* 1070608 Raymond 1070197 區別文稿是來文、主辦、會辦 */
+#aol .tags-item.tags-item-fromdoc {
+	background: antiquewhite;
+}
+
+/* 1100419 Raymond 1080767 合併內政部1070530區分文稿是已結案 */
+#aol .tags-item.tags-item-closeddraft {
+	background: lightgray;
+}
+
+#aol .tags-item.tags-item-icou {
+	background: #eee;
+}
+
+#aol .tags-item.tags-item-conou {
+	background: mediumaquamarine;
+}
+
+#aol .tags-item.tags-item-conou-own {
+	background: lightgreen;
+}
+
+/* 1100512 Raymond 1090821 區別是外會公文的外機關文稿 */
+#aol .tags-item.tags-item-exorgdraft {
+	background: aquamarine;
+}
+
+#aol .tags-group .tags-item-active {
+	border: 1px solid 		#f4c63f /*{e-bup-border}*/;
+	background: 			#fadb4e /*{e-bup-background-color}*/;
+	font-weight: bold;
+	color: 					#222 /*{e-bup-color}*/;
+	text-shadow: 0 /*{e-bup-shadow-x}*/ 1px /*{e-bup-shadow-y}*/ 0 /*{e-bup-shadow-radius}*/ 	#fff /*{e-bup-shadow-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #ffefaa /*{e-bup-background-start}*/), to( #ffe155 /*{e-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/);
+}
+
+/* SO - relative */
+#aol .table {
+	/*display: block;*/
+}
+#aol .table-row {
+	/*display: block;*/
+	overflow-x: visible;
+}
+#aol .table-cell,
+#testbody .table-cell {	/* 1120203 Raymond 銓敘部序132 修正(審定函)表格後的段落跨頁時分頁位置有誤差, 造成末行的下一行會顯示上半部的問題 */
+	/*display: inline-block;*/
+	overflow-x: visible;
+	vertical-align: top;	/* 2013.9.24 - Raymond, 與舊版一致, 儲存格內容預設齊上 */
+	box-sizing: border-box;	/* 1100618 Raymond 1100715 修正Chrome升級至91版後, 表格的儲存格寬度會增加造成超過外層元素寬度而出現水平捲動條及右邊框未顯示問題 */
+}
+/* 2016.11.4 去掉#aol, 因#testbody也會用到 */
+span.a {
+	/*text-decoration: underline;*/
+	text-indent: 0px;	/* 2016.5.20 - Raymond, IE10/11的text-indent若是負值會往左疊 */
+	vertical-align: top;	/* 2016.11.7 - Raymond, IE10/11不設top會在中間但有第2行時會上移 */
+	/*white-space: pre-wrap;	 1060526 Raymond 1060337 新增保持半形空白顯示功能; 1060609 設定此屬性後, IE會行為異常, 包括無法分散對齊、標號與第1行文字會間隔空白, 因此取消 */
+}
+span.a[contenteditable="true"] {
+	min-width: 0.5em;	/* min-width對span似乎無作用 */
+	outline: 0;	/* 1110809 Raymond 考試院序183 修正Chrome編輯主旨、段落、條列文字時, 不要顯示黑框, 以避免游標移至行首時看不見I-beam的問題 */
+}
+/* 1140602 Raymond 1131284 新增保存年限為數字時, 欄位後顯示'年'字 */
+span.a.number-years::after {
+	content: '年';
+}
+/*#aol .segment span.a::after {
+	color: lightgray;*/
+	/*content: '\0000b6';	 2015.12.3 - Raymond, 段落條列行尾顯示 ¶ 符號, 避免無標號條列按Enter產生新條列沒有高度問題 */
+	/*content: '\00200b';	 2015.12.4 - Raymond, 段落條列行尾顯示Zero Width Space, 避免無標號條列按Enter產生新條列沒有高度問題 */
+/*}*/
+span.plain {
+	/*background: lightgray;*/
+	text-align: inherit;	/* 2013.9.24 - Raymond, 修正套用Para的text-align */
+	text-indent: 0em;	/* 2016.4.19 避免inherit到div.para的text-indent */
+}
+span.plain div {	/* 2014.4.29 - Raymond */
+	display: inline-block;
+}
+span.a:empty {	/* 1070326 - Raymond 1061249 修正Chrome下文字節點沒有任何內容時整行高度變0的問題 */
+	display: inline-block;
+}
+/*.pg > div {
+	position: relative;
+}*/
+#aol div.free-cell {	/* 2016.4.20 新增自由儲存格 */
+	display: inline-block;
+}
+#aol span.a-checkbox {	/* 2016.4.20 新增核取方塊類型的排版物件 */
+	cursor: pointer;
+}
+
+#aol .ui-block-a, #aol .ui-block-b {
+	position: relative;
+}
+
+#aol .flowtype {border:2px inset orange;
+				background:orange;
+				color:blue;
+				border-radius:4px;}
+#aol .time {position:absolute;
+			right:45px;
+			color:gray;}
+	
+#aol #pgBackBuffer,
+#aol #pgFrontFace,
+#aol #pgFlippedOut,
+#aol #pgFlippedIn {
+	position: absolute;
+	margin: 11mm 10px 10mm;	/* 1120918 Raymond 序212 配合製表工具列調為固定位置, 調高簽核頁面上方留白區域的高度 */
+	border: 1px solid #888;
+	-webkit-box-shadow: 8px 8px 4px #888;
+	-moz-box-shadow: 8px 8px 4px #888;
+	box-shadow: 8px 8px 4px #888;
+	background: white;
+	z-index: 100;
+	-webkit-transform: translateZ(1px);	/* 2015.6.9 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+	-moz-transform: translateZ(1px);
+	transform: translateZ(1px);
+}
+/* 1100505 Raymond 1100498 修正頁面向左翻頁時, 次頁內容會顯示在還沒翻頁完畢的本頁內容上的問題 */
+#aol #pgBackBuffer {
+	transform: translateZ(0px);
+}
+#aol #pgFlippedOut {
+	width: 210mm;
+	height: 297mm;
+	z-index: 200;
+	-webkit-transform-origin: left top;
+	-webkit-transition-timing-function: ease-in;
+	-webkit-transform: rotateY(-170deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+	-moz-transform-origin: left top;
+	-moz-transition-timing-function: ease-in;
+	-moz-transform: rotateY(-170deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+	transform-origin: left top;
+	transition-timing-function: ease-in;
+	transform: rotateY(-170deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+}
+#aol #pgFlippedOut.in {
+	-webkit-transition-property: "-webkit-transform";
+	-webkit-transition-duration: 1s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: rotateY(0deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+	/*-moz-transform-origin: left top;*/
+	-moz-transition-property: "-moz-transform";
+	-moz-transition-duration: 1s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: rotateY(0deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+	transition-property: "transform";
+	transition-duration: 1s;
+	transition-timing-function: ease-out;
+	transform: rotateY(0deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+}
+#aol #pgFlippedIn {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	width: 210mm;
+	height: 297mm;
+	z-index: 200;
+	-webkit-transform-origin: left top;
+	-webkit-transition-property: "-webkit-transform";
+	-webkit-transition-timing-function: ease-in;
+	-webkit-transform: rotateY(0deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+	-moz-transform-origin: left top;
+	-moz-transition-property: "-moz-transform";
+	-moz-transition-timing-function: ease-in;
+	-moz-transform: rotateY(0deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+	transform-origin: left top;
+	transition-property: "transform";
+	transition-timing-function: ease-in;
+	transform: rotateY(0deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+}
+#aol #pgFlippedIn.out {
+	-webkit-transition-property: "-webkit-transform";
+	-webkit-transition-duration: 1s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: rotateY(-170deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+	/*-moz-transform-origin: left top;*/
+	-moz-transition-property: "-moz-transform";
+	-moz-transition-duration: 1s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: rotateY(-170deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+	transition-property: "transform";
+	transition-duration: 1s;
+	transition-timing-function: ease-out;
+	transform: rotateY(-170deg) translateZ(1px); /* 2015.6.15 修正.pages的overflow:hidden會導致被.pages蓋住, z-index無作用 */
+}
+/*.pg {
+	width: 210mm;
+	height: 297mm;
+	margin: 10mm 10px;
+	border: 1px solid #888;
+	-webkit-box-shadow: 8px 8px 4px #888;
+	-moz-box-shadow: 8px 8px 4px #888;
+	background: white;
+	z-index: 100;
+	
+	position: absolute;
+	-webkit-transform-origin: left top;
+	-webkit-transition-property: "-webkit-transform";
+	-webkit-transition-duration: 1s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: rotateY(0deg) translateZ(0px);
+	-moz-transform-origin: left top;
+	-moz-transition-property: "-moz-transform";
+	-moz-transition-duration: 1s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: rotateY(0deg) translateZ(0px);
+}
+.pg.top {
+	z-index: 200;
+}
+.pg.flip-left {
+	z-index: 300;
+	-webkit-transition-timing-function: ease-in;
+	-webkit-transform: rotateY(-170deg) translateZ(0px);
+	-moz-transition-timing-function: ease-in;
+	-moz-transform: rotateY(-170deg) translateZ(0px);
+}*/
+#aol .pg .tb {
+	-webkit-transform: rotate(90deg) translate(0px, -94px);
+	-webkit-transform-origin: left top;
+	-moz-transform: rotate(90deg) translate(0px, -94px);
+	-moz-transform-origin: left top;
+	transform: rotate(90deg) translate(0px, -94px);
+	transform-origin: left top;
+}
+#aol .pg-readonly {
+	color: #888;
+}
+#aol .pg-readonly .ui-link {
+	color: #888;
+}
+#aol .pgBody {
+	margin: 25mm;
+	font-family:'黑體';
+	position: relative;
+}
+/*
+  2014.11.14 新增, 邊界區DIV有可能太大遮到本文, 會導致點擊不到, 需設置pointer-events:none
+*/
+#aol .pg .static {
+	position: absolute;
+	pointer-events: none;
+}
+#aol .sender {
+	font-size: 24pt;
+	text-align: center;
+}
+#aol .senderDetail {
+	font-size: 12pt;
+	position: absolute;
+	left: 120mm;
+}
+#aol .outdent3 {
+	padding-left: 3em;
+	text-indent: -3em;
+}
+#aol .outdent4 {
+	padding-left: 4em;
+	text-indent: -4em;
+}
+#aol .outdent5 {
+	padding-left: 5em;
+	text-indent: -5em;
+}
+#aol .receiver {
+	font-size: 16pt;
+}
+#aol .static,
+#aol .sendDate,
+#aol .sendNo,
+#aol .speed,
+#aol .secret,
+#aol .attach,
+#aol recipient {
+	font-size: 12pt;
+}
+#aol .attach {
+	min-height: 24pt;
+}
+#aol .para,
+#testbody .para {	/* 1120208 Raymond 1111090 修正排版斷頁可能與簽核頁面呈現不一致問題(未回報) */
+	font-size: 16pt;
+	font-family: sans-serif;
+	margin: 0;
+	line-height: 1.5;
+	baseline-shift: 10px;
+	/* 分散對齊 */
+	-webkit-text-align: justify;
+	-moz-text-align: justify;
+	text-align: justify;
+	text-justify: distribute;	/* 2016.11.17 - Raymond, for IE分散對齊 */
+	pointer-events: auto;	/* 2014.11.14 - Raymond, 因邊界區DIV設為none, 但邊界區的para仍需點擊, 故設auto */
+	font-kerning: none;	/* 1120208 Raymond 1111090 由於匯出頁面不會計算英數字體之間的kerning(例:Times New Roman的"111"字距比"101"窄), 故網頁也不要用kerning, 以避造成匯出頁面與簽核頁面排版的差異 */
+}
+.para {	/* 1061019 Raymond 條列中有長串網址時$testbody未斷行導致計算行數少於實際行數 */
+	word-break: break-word;
+	word-wrap: break-word;
+}
+/* 1060829 Raymond 1060766 修正IE在背景計算條列的縮排寬度時因分散對齊而與Chrome計算出的不一致, 可能導致IE比Chrome多一行的問題 */
+#aol #pgBackBuffer .para {
+	text-align: left;
+}
+/* 1150203 Raymond 1150101 新增署名也要套字元寬度的修正, 以配合用全形空白控制折成兩行時, 匯出頁面與簽核頁面折行位置一致 */
+/* 2015.11.12 新增segment class控制提前縮排, 一般para則取消提前縮緋 */
+/* 2016.11.4 去掉#aol, 因#testbody也會用到 */
+.para.segment, .para.sign {
+	/*padding-right: 17px;  Mobile Safari跟舊版排版結果有誤差, Font Metrics比較小, 縮小文字顯示區域可以讓文字提前折行 2015.6.24 .8em改成14px, 若字體大小大於16pt, .8em會造成約17px的margin, 影響折行 */
+	/*letter-spacing: 0.03em;	 2015.11.18 - 中文字算字母, 調字母間距可使整行中文字排列長度最接近桌機	1100827 Raymond 1100925 由於修正了匯出頁面的英數字寬, 故恢復 */
+	/*letter-spacing: 0.02em;	 1091225 Raymond 信保序122 修正Chrome與IE顯示段落條列為普通16級字型大小時, 折行與歷史檢視不一致問題 */
+	/*letter-spacing: 0.016em;	 1120208 Raymond 1111090 因考試院序308及取消字型的kerning功能調整縮小字距 */
+	letter-spacing: 0.4px;		/* 1120908 Raymond 鐵道局序183 修正當顯示器比例設為125%時, 文稿簽核頁面的條列的斷行位置不同於100%時(設150%及175%時反而會與100%相同)的問題 */
+}
+/* 1091229 Raymond 信保序122 修正段落條列14級字型大小時, 折行與歷史檢視不一致問題 */
+.para.segment.smallerfont {
+	/*letter-spacing: -0.052px;*/
+	letter-spacing: 0.007em;	/* 1110816 Raymond 考試院序200 修正段落條列12級字型大小時, 折行與歷史檢視不一致問題 */
+}
+/* 1081129 Raymond 1081043 修正主旨/段落/條列文字若有追蹤修訂標籤, 在列印時因都標記成.plain而被調成0字距, 造成與簽核頁面折行位置不一致的問題 */
+/* 1080215 Raymond 1080169 修正主旨/段落/條列因字距加大導致計算首行標題寬度比縮排距離大, 而使首行突出左邊界, 在Chrome新版(72.0.3626.109)WIN10下預覽列印會發生第一個字消失的問題 */
+/*.para.segment .plain {*/
+.para.segment > .plain {
+	letter-spacing: 0px;
+}
+/* 1091214 Raymond 1090931 修正主旨、段落的段名冒號部分未對齊問題 */
+.para.segment > span.a {
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;	/* 1100226 Raymond 1090931 修正人事令函的條列對齊冒號時span.a的100%寬度會導致下移一行的問題 */
+	white-space: break-spaces;	/* 1111028 Raymond 考試院序308 修正用全形空白控制折行加次行要縮排時, 連續的全形空白會變成超出本文區範圍而使下邊界上面多一條水平捲動軸的問題, PS: IE不支援此break-spaces設定值 */
+	text-decoration-skip-ink: none;	/* 1121030 Raymond 領務局序293 修正設定底線樣式後, 部分英文字母gjpqy未顯示底線, 導致底線未連成一線的問題 */
+}
+/*#aol .static .para {	 2015.9.3 邊界區的段落右不內縮 
+	padding-right: 0px;
+}*/
+#aol .signature {
+	margin-top: 12pt;
+	font-size: 24pt;
+}
+/* 1061012 Raymond 1061003 去掉#aol, 因#testbody也會用到 */
+.numbering {
+	/*background: lightgray;*/
+	display: inline-block;	/* 2016.9.26 FIX, 避免隱藏標號又沒有文字內容時整行高度變0, 造成點不到文字區輸入的情況 */
+	/*height: 1em;*/	/* 1061108 Raymond min-height改為height, 修正IE在列印時沒()的條列計算高度時回報多2px造成斷頁位置計算錯誤而使最末行(實際上是次頁首行)顯示一半的問題	1100628 Raymond 1100692 修正Chrome下行高小於1.0時, 由於序號設定為1字高導致後面的段落條列向下移, 若末行也設為行高小於等於1.0, 則最後會變成末行斷頁位置有一點下半部被截掉的問題 */
+}
+/* 2016.11.4 去掉#aol, 因#testbody也會用到 */
+.numbering.even::before {	/* 2016.6.1 新增偶數階的條列序號有"()"要調整左邊界寬度(1050477) */
+	content: "";
+	display: inline-block;
+	margin-left: .3em;
+}
+.numbering.even:empty::before {	/* 1090203 Raymond 修正偶數階的條列序號為隱藏時左邊界寬度要恢復為0(1090055) */
+	margin-left: 0em;
+}
+#aol .marker {
+	position: absolute;
+	font-size: 72pt;
+	/*color: cyan;*/
+}
+#aol .paper {
+	width: 210mm;
+	margin-top: 8px;
+	border: 1px solid #888;
+	-webkit-box-shadow: 8px 8px 4px #888;
+	-moz-box-shadow: 8px 8px 4px #888;
+	box-shadow: 8px 8px 4px #888;
+}
+/* 2016.8.2 新增無內容時可顯示提示樣式, 2016.8.25 新增FDA要求加黑色框 */
+#aol .ui-empty-hint-select,
+#aol .ui-empty-hint-input {
+	display: inline-block;
+	min-width: 1em;
+	background-color: lightblue;
+	/*border: 1px solid black; 2016.11.30 取消邊框以免高度增加 */
+	min-height: 1em;	/* 1071102 Raymond 1071076 修正空值欄位又禁止editable時無高度問題 */
+	vertical-align: middle;	/* 1071102 Raymond 1071076 修正空值欄位又禁止editable時未垂直置中問題 */
+}
+/*#aol .ui-empty-hint-select:hover::before {
+	content: "請選擇" attr(aid);
+	background-color: wheat;
+	color: blue;
+	position: absolute;
+}*/
+/*ins {
+	position: absolute;
+	left: 161mm;
+	width: 23mm;
+	padding-left: 0;
+	text-indent: 0;
+	outline: 1px dashed green;
+}
+.insLine {
+	display: inline-block;
+	width: 0px;
+}
+.insLineBody {
+	position: relative;
+	top: -20px;
+	padding-left: 0;
+	text-indent: 0;
+	border-top: 1px dashed green;
+	float: left;
+}*/
+/* 2015.12.10 - 套用至#testbody預排版, 去掉.pg 2016.12.3 再去掉#aol, 因為#testbody移到body下了 */
+.layout-complete-mode del {
+	display: none;
+}
+.layout-complete-mode ins,
+.layout-complete-mode span.fmt {	/* 1081108 Raymond 修正完稿模式下, 上、下標、粗、斜、底線等異動會變成角色顏色的問題 */
+	text-decoration: none;
+	-webkit-text-fill-color: black;
+}
+.layout-complete-tc-mode del {
+	display: none;
+}
+.layout-origin-tc-mode ins {
+	display: none;
+}
+
+/* 1131223 Raymond 1131303 新增錯別字校正子視窗 */
+#errorCorrectionFloat {
+	background-color: white;
+	position: absolute;
+	z-index: 1003;
+	width: 200px;
+	left: -200px;
+	top: -300px;	/* 1140710 Raymond 1140310 修正-200px -> -300px */
+	border: 1px solid gray;
+	box-shadow: 2px 2px gray;
+}
+#errorCorrectionFloat h3 {
+	margin: 0.3em 0px 0px 0.1em;
+}
+#errorCorrectionFloat a,
+#errorCorrectionFloat button {
+	margin: 0px 4px 4px;
+}
+#errorCorrectionFloat li a {
+	cursor: pointer;
+	text-decoration: underline;
+	font-weight: normal;
+	font-size: 16pt;
+	font-family: "Times New Roman", 標楷體, STKaiTi-TC-Regular, STKaiTiTC-Regular, sans-serif;
+}
+#errorCorrectionFloat #prevError img,
+#errorCorrectionFloat #nextError img {
+	width: 32px;
+	height: 32px;
+	vertical-align: inherit;
+}
+#errorCorrectionFloat #prevError,
+#errorCorrectionFloat #nextError {
+	font-size: 16pt;
+	vertical-align: middle;
+	padding: .27em;
+}
+/* 1131223 Raymond 1131303 新增錯別字標示 */
+SPAN.checkedError {
+	text-decoration: 1px red wavy underline;
+	text-underline-offset: 4px;
+}
+SPAN.checkedError.focused {
+	background-color: pink;
+}
+/* 1131227 Raymond 1131303 新增自動校正錯別字標示 */
+.autoCorrected {
+	background-color: lightblue;
+}
+/* 1140225 Raymond 1131303 新增錯別字校正窗格 */
+#aol #sidePanel #fixWordList {
+	font-family: monospace;
+	font-size: 16pt;
+}
+#aol #sidePanel #fixWordList li {
+	transition-duration: 0.2s;
+	transition-property: transform;
+	transform: translateX(0px);
+	transition-timing-function: ease-in;
+}
+#aol #sidePanel #fixWordList li.removing {
+	transform: translateX(400px);
+}
+#aol #sidePanel #fixWordList .origChar {
+	display: inline-block;
+	font-family: "Times New Roman", 標楷體, STKaiTi-TC-Regular, STKaiTiTC-Regular, sans-serif;
+	text-decoration: line-through;
+	text-decoration-color: red;
+	margin-right: .4em;
+}
+#aol #sidePanel #fixWordList .origChar:hover {
+}
+#aol #sidePanel #fixWordList .fixChar {
+	display: inline-block;
+	font-family: "Times New Roman", 標楷體, STKaiTi-TC-Regular, STKaiTiTC-Regular, sans-serif;
+	color: white;
+	box-shadow:  2px 2px 2px gray;
+	background-color: #396b9e;
+	margin-left: .4em;
+}
+#aol #sidePanel #fixWordList .fixChar:hover {
+	background-color: #4b88b6;
+	cursor: pointer;
+}
+#aol #sidePanel #fixWordList .btnRejectFixWord {
+	float: right;
+}
+#aol #sidePanel #fixWordList li.ui-li-active {
+	background: #fadb4e;
+}
+#aol #sidePanel #fixWordList li .fixWordHeader {
+	display: inline-block;
+	font-family: "Times New Roman", 標楷體, STKaiTi-TC-Regular, STKaiTiTC-Regular, sans-serif;
+	color: red;
+}
+#aol #sidePanel #fixWordList li.ui-li-active .fixWordHeader {
+	display: none;
+}
+#aol #sidePanel #fixWordList li .fixWordHint {
+	color: gray;
+	float: right;
+	font-size: 10pt;
+}
+#aol #sidePanel #fixWordList li.ui-li-active .fixWordHint {
+	display: none;
+}
+#aol #sidePanel #fixWordList li .fixWordItem {
+	display: none;
+}
+#aol #sidePanel #fixWordList li.ui-li-active .fixWordItem {
+	display: block;
+}
+#aol #sidePanel #fixWordSetting {
+	float: right;
+	margin-right: 10px;
+}
+/* 1140319 Raymond 1131303 新增文字意見及簽辦意見的TEXTAREA支援錯別字標示圖層 */
+#aol #textComment .err-corr-target,
+#aol #signCmtList .err-corr-target {
+}
+#aol #textComment .err-corr-cover,
+#aol #signCmtList .err-corr-cover {
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+}
+#aol #signCmtList .comment_text {
+	position: relative;
+}
+#aol #signCmtList .comment_text SPAN.checkedError {
+	text-underline-offset: 0px;
+}
+#aol #errorCorrectionFloat .origChar,
+#aol #errorCorrectionFloat .fixChar {
+	display: inline-block;
+	font-family: "2100-Font-Ming", sans-serif;
+	font-size: 16pt;
+	vertical-align: middle;
+}
+#aol #errorCorrectionFloat .origChar {
+	text-decoration: line-through;
+	text-decoration-color: red;
+	margin-right: .4em;
+}
+#aol #errorCorrectionFloat .origChar:hover {
+}
+#aol #errorCorrectionFloat .fixChar {
+	color: white;
+	box-shadow:  2px 2px 2px gray;
+	background-color: #396b9e;
+	margin-left: .4em;
+}
+#aol #errorCorrectionFloat .fixChar:hover {
+	background-color: #4b88b6;
+	cursor: pointer;
+}
+
+#aol #tabbar,
+#aol #tabbar2 {	/* 1130503 Raymond 中榮序96 新增參照窗格的文號頁籤樣式也要比照簽辦窗格的 */
+	overflow-x: hidden;
+	overflow-y: auto;	/* 2016.3.1 fix for chrome */
+	-webkit-overflow-scrolling: touch;
+}
+#aol .ui-tabs-bar {
+	float: right;
+	height: calc(100% - 60px);	/* 2016.1.27 changed */
+}
+#aol .ui-tabs-bar li {
+	overflow: visible;
+	width: auto;
+	clear: left;
+	display: block;
+	padding-left: 0px;
+}
+#aol .ui-tabs-bar .ui-block-a,
+#aol .ui-tabs-bar .ui-block-b,
+#aol .ui-tabs-bar .ui-block-c,
+#aol .ui-tabs-bar .ui-block-d,
+#aol .ui-tabs-bar .ui-block-e {
+	width: 40px;
+	height: 142px;
+	/*border: 1px solid green;*/
+}
+#aol .ui-tabs-bar li.ui-tabs-item .ui-li-count {
+	font-size: 10pt;
+	position: absolute;
+	top: 98px;
+	left: -4px;
+	margin-left: 50%;
+	width: 18px;
+	text-align: center;
+}
+#aol .ui-tabs-bar li.ui-tabs-subitem {
+	display: none;
+	padding-left: 4px;
+	width: 36px;
+	overflow-x: hidden;
+}
+#aol .ui-tabs-bar .ui-btn-inner {
+	padding: 0.6em 0px;
+}
+#aol .ui-tabs-bar .ui-tabs-subitem .ui-btn-up-c {
+	background: #CDD;
+}
+#aol .ui-tabs-bar .ui-btn-active {
+	/*background: #4596CE;*/
+	color: #22F;
+}
+#aol .ui-tabs-bar li.ui-tabs-subitem-expanded {
+	display: block;
+}
+#aol .ui-tabs-bar li.ui-tabs-item-expanded .ui-li-count {
+	background: #CDC;
+	color: #FFF;
+}
+#aol .ui-tabs-bar a {
+	width: 140px;
+	height: auto;
+	border-left-width: 0;
+	-webkit-transform-origin: left top;
+	-webkit-transform: rotate(270deg) translateX(-142px);
+	-moz-transform-origin: left top;
+	-moz-transform: rotate(270deg) translateX(-142px);
+	-o-transform-origin: left top;
+	-o-transform: rotate(270deg) translateX(-142px);
+	-ms-transform-origin: left top;
+	-ms-transform: rotate(270deg) translateX(-142px);
+	transform-origin: left top;
+	transform: rotate(270deg) translateX(-142px);
+	margin-right: 0px;
+}
+#aol .ui-tabs-bar li:first-child .ui-btn {
+	border-right-width: 1px;
+}
+#aol .ui-tabs-bar li a {
+	border-left-width: 1px;
+}
+#aol .ui-tabs-item-collapsible[data-subitems] .ui-btn-inner {
+	overflow: visible;
+	padding-left: 20px;
+}
+#aol .ui-tabs-bar .ui-btn-inner {
+	overflow: visible;
+	text-align: center;
+}
+#aol .ui-tabs-bar .ui-btn-active {
+	background: #fadb4e;
+	text-shadow: 0 1px 0 #fff;
+	border: 1px solid #CCC;
+}
+
+#leftPart .ui-header .ui-select,
+#rightPart .ui-header .ui-select {
+	display: inline-block;
+	vertical-align: top;	/* 2016.5.23 added */
+}
+#zoomControl1, #zoomControl2 {
+	position: absolute;
+	left: 45px;
+	top: -4px;
+}
+/* 1100219 Raymond 1090927 調整歷史檢視流程下拉選單位置for小螢幕裝置, 故此rule移除歷史檢視流程下拉選單的id */
+#tcControl1/*, #historyControl2*/ {
+	position: absolute;
+	left: 229px;
+	top: -4px;
+}
+/* 1100219 Raymond 1090927 調整歷史檢視流程下拉選單位置for小螢幕裝置 */
+#historyControl2 {
+	position: absolute;
+	right: 60px;
+	top: -4px;
+}
+
+/* 1121222	Leslie[卡驗收序32]	新增客製化可設定功能鍵 */
+#cusBtnControl1 {
+	position: absolute;
+	left: 336px;
+	top: -4px;	/* 1130503 Raymond 中榮序97 因調小功能鍵高度使其與旁邊的追蹤修訂下拉式選單按鈕一致, 配合調整垂直方向位置 */
+}
+
+/* 1140905 Raymond 1140852 新增頁次控制項 */
+#pnControl1 {
+	position: absolute;
+	left: 50%;
+	top: 0px;
+	background: white;
+	padding: 4px 10px;
+	font-size: 14pt;
+}
+#pnControl1 #currPgNo {
+	max-width: 2em;
+}
+#pnControl1 #totalPgs {
+}
+
+/* 2021.6 - 1080761 Eric, merge 2018.5.15 - 1070298, (Eric) 行動平台介面新增[]按鈕, 調整上方工具列控制項位置 */
+@media screen and (max-width: 1200px) {
+	#tcControl1, #historyControl2 {
+		left: 220px;
+		top: -4px;
+	}
+}
+
+/* 2021.6 - 1080761 Eric, merge 1070298 - Startof RefDocMgmt dialog UI */
+#refDocMgmt header .ui-btn-inline {
+	position: absolute;
+	top: .25em;
+}
+#refDocMgmt header .inlineB{
+	display: inline-block;
+}
+#refDocMgmt ol li a {
+    line-height: 2.5em;
+}
+#refDocMgmt .refDoc-DocNo{
+	text-overflow: ellipsis;
+	width: 10em;
+	overflow: hidden;
+	display: inline-block;
+	white-space: nowrap;
+	position: absolute;
+}
+#refDocMgmt .refDoc-Subject{
+	text-overflow: ellipsis;
+	width: 25em;
+	overflow: hidden;
+	display: inline-block;
+	white-space: nowrap;
+	position: absolute;
+	left:140px;
+}
+#refDocMgmt .refDoc-Desc{
+	position:absolute;
+	margin:.2em 0px;
+	top:6px;
+	right:150px;
+	width:10em;
+}
+#refDocMgmt header .ui-input-text {
+	display: inline-block;
+	width: 7em;
+}
+
+#refDocMgmt .ui-listview li a.ui-btn-active {
+	background: #fadb4e;
+	text-shadow: 0 1px 0 #fff;
+	border: 1px solid #CCC;
+	color: #22F;
+}
+#refDocMgmtContent ol li a {
+    line-height: 1.5em;
+}
+
+#refDocMgmtContent .ui-table-header .ui-table-column-header {
+	display: inline-block;
+	padding: 10px 2px;
+	color: blue;
+	vertical-align: top;
+	font-weight: bold;
+	margin-right: -4px;
+}
+/* End of RefDocMgmt dialog UI */
+
+#aol div.ui-radio {
+	display: inline-block;
+}
+/* 1070607 Raymond 1060862 IE不支援appearance, 改用label
+#aol input[type='radio'].color,
+#aol input[type='radio'].line-width,
+#aol input[type='radio'].transparancy {
+	position: static;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 52px;
+	height: 52px;
+	border: 4px outset lightgray;
+	margin: 0px;
+}*/
+#aol input[type='radio'].color,
+#aol input[type='radio'].line-width,
+#aol input[type='radio'].transparancy {
+	display: none;
+}
+#aol input[type='radio'].color + label,	/* +語法是指緊接在後的元素, ~語法是指nextAll的元素, 不需要緊接在後且可複數 */
+#aol input[type='radio'].line-width + label,
+#aol input[type='radio'].transparancy + label {
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	border: 4px outset lightgray;
+	margin: 0;
+	box-sizing: border-box;
+}
+#aol input[type='radio'].color:checked + label,
+#aol input[type='radio'].line-width:checked + label,
+#aol input[type='radio'].transparancy:checked + label {
+	border-style: inset;
+	border-color: black;	/* IE的border inset跟outset顏色都比Chrome深且太相似會分不清楚, 乾脆用黑色表示 */
+}
+#pgInfo .ui-input-text {
+	width: 90%;
+}
+#pgInfo td {
+	text-align: right;
+}
+/* Portrait */
+/* 2016.2.26 修正iPad Pro轉直後內文變小問題
+@media screen and (orientation:portrait) {
+#leftPart {
+	width: 190px;
+	height: 820px;
+}
+#rightPart {
+	width: 580px;
+	height: 820px;
+}
+#aol .pg {
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	transform: scale(0.7);
+}
+}*/
+
+/* 文號頁籤選單
+*/
+#aol #menuFolio {
+	margin: 0;
+}
+/* 指令浮動選單列
+*/
+#cmdFloat {
+	position: absolute;
+	display: none;
+	overflow: visible;
+	white-space: nowrap;
+	width: auto;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	z-index: 200;
+	-webkit-transform: translateZ(2px);	/* 2015.6.8 修正.pages的overflow:hidden會導致被.pages蓋住, 因.pg是translateZ控制前後, z-index無作用 */
+	-moz-transform: translateZ(2px);
+	transform: translateZ(2px);
+	text-align: center;	/* 1111221 Raymond 銓敘部序74 配合文稿頁籤指令需要折行成兩行修改樣式 */
+}
+#cmdFloat > div {
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7d7d7d), color-stop(50%, #4e4e4e), color-stop(51%, #0e0e0e), color-stop(100%, #1d1d1d));
+	background: -webkit-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+	background:    -moz-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+	background:     -ms-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+	background:      -o-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+	background:         linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);*/
+	background: white;
+	border-radius: 6px;
+	-webkit-box-shadow: 2px 2px 2px gray;
+	-moz-box-shadow: 2px 2px 2px gray;
+	-o-box-shadow: 2px 2px 2px gray;
+	-ms-box-shadow: 2px 2px 2px gray;
+	box-shadow: 2px 2px 2px gray;
+	position: relative;
+	z-index: 20;
+	display: inline-block;	/* 1111221 Raymond 銓敘部序74 配合文稿頁籤指令需要折行成兩行修改樣式 */
+}
+#cmdFloat > canvas {
+	position: relative;
+	left: 0px;
+	top: -1px;
+	z-index: 10;
+}
+#cmdFloat .ui-btn {
+	vertical-align: top;	/* 2016.6.2 apply for jqm 1.4.5 */
+	margin: 0px 1px 0px 0px;
+	display: inline-block;
+	font-size: 12pt;
+	color: white;
+	text-shadow: 0px 1px 0px gray;
+	padding: 6px 4px;
+	/*background: transparent;*/
+	border-width: 0px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7d7d7d), color-stop(50%, #4e4e4e), color-stop(51%, #0e0e0e), color-stop(100%, #1d1d1d));
+	background: -webkit-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+	background:    -moz-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+	background:     -ms-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+	background:      -o-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+	background:         linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+}
+#cmdFloat .ui-btn:active {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffb76b), color-stop(50%, #ffa73d), color-stop(51%, #ff7c00), color-stop(100%, #ff7f04));
+	background: -webkit-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+	background:    -moz-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+	background:     -ms-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+	background:      -o-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+	background:         linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+}
+#cmdFloat .ui-btn:first-child {
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	padding-left: 8px;
+}
+#cmdFloat .ui-btn:last-child {
+	margin-right: 0px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	padding-right: 8px;
+}
+/* 1131004 Raymond 1130998 新增個人選用章戳指令列按鈕的類別樣式 */
+#cmdFloat .stampCmd {
+	width: 5em;	/* 一個按鈕固定5個字寬 */
+}
+/* 復原重作浮動選單列
+*/
+#cmdHistory {
+	position: absolute;
+	overflow: visible;
+	white-space: nowrap;
+	width: 100%;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	left: 0px;
+	bottom: 0px;
+	background: black;
+	/*opacity: 0.5;*/
+	-webkit-transition-property: webkitTransform;
+	-webkit-transition-duration: 0.8s;
+	-webkit-transform: translateY(100px);
+}
+#cmdHistory.shown {
+	-webkit-transform: translateY(0px);
+}
+#cmdHistory .ui-btn {
+	opacity: 1.0;
+}
+/* 符號表浮動窗格
+*/
+#symbolFloat {
+	position: absolute;
+	display: none;
+	overflow: visible;
+	width: 100%;
+	height: auto;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	padding: 4px;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(17,17,17,0.7)), color-stop(1, rgba(17,17,17,0.7)));
+	background: -webkit-linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+	background:    -moz-linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+	background:     -ms-linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+	background:      -o-linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+	background:         linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+}
+#symbolFloat .ui-btn-up-a {
+	font-size: 18pt;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	margin: 1px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	border-radius: 4px;
+}
+/* 游標
+*/
+.ui-selectmenu-hidden { top: -9999px; left: -9999px; }
+#editCursor, .Cursor {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 2px;
+	border-left: 1px solid black;
+}
+/* 受文者明細浮動視窗
+*/
+#receiverDetail {
+	position: absolute;
+	display: none;
+	overflow: visible;
+	white-space: nowrap;
+	width: auto;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	z-index: 200;
+	-webkit-transform: translateZ(2px);	/* 2015.6.9 修正.pages的overflow:hidden會導致被.pages蓋住, 因.pg是translateZ控制前後, z-index無作用 */
+	-moz-transform: translateZ(2px);
+	transform: translateZ(2px);
+	border: 1px solid gray;
+	-webkit-box-shadow: 2px 2px 2px gray;
+	-webkit-border-radius: 4px;
+	-moz-box-shadow: 2px 2px 2px gray;
+	-moz-border-radius: 4px;
+	box-shadow: 2px 2px 2px gray;
+	border-radius: 4px;
+	background: -webkit-linear-gradient(top, #ddd 0%, #999 100%);
+	background:    -moz-linear-gradient(top, #ddd 0%, #999 100%);
+	background:     -ms-linear-gradient(top, #ddd 0%, #999 100%);
+	background:      -o-linear-gradient(top, #ddd 0%, #999 100%);
+	background:         linear-gradient(top, #ddd 0%, #999 100%);
+	color: blue;
+	font-weight: heavy;
+	text-shadow: 0 1px 0 gray;
+}
+#receiverDetail > div {
+	padding: 0px .4em;
+}
+#receiverDetail li {
+	background: -webkit-linear-gradient(top, #ddd 0%, #999 100%);
+	background:    -moz-linear-gradient(top, #ddd 0%, #999 100%);
+	background:     -ms-linear-gradient(top, #ddd 0%, #999 100%);
+	background:      -o-linear-gradient(top, #ddd 0%, #999 100%);
+	background:         linear-gradient(top, #ddd 0%, #999 100%);
+	color: blue;
+	font-weight: heavy;
+	text-shadow: 0 1px 0 gray;
+	padding: 0px .4em;
+}
+#receiverDetail .ui-input-text {
+	width: auto;
+	display: inline-block;
+}
+#receiverDetail .ui-select,
+#receiverDetail .ui-checkbox,
+#receiverDetail .ui-field-contain,
+#receiverBatchSetting .ui-checkbox,
+#receiverBatchSetting .ui-field-contain {
+	width: auto;
+	display: inline-block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	vertical-align: top;
+}
+#receiverDetail .ui-radio .ui-btn-active,
+#receiverBatchSetting .ui-radio .ui-btn-active {
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #5393c5 /*{global-active-background-start}*/), to( #6facd5 /*{global-active-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #5393c5 /*{global-active-background-start}*/, #6facd5 /*{global-active-background-end}*/);
+}
+#receiverDetail .ui-icon-radio-off,
+#receiverDetail .ui-icon-checkbox-off,
+#receiverBatchSetting .ui-icon-checkbox-off {
+	background-color: #396B9E;
+}
+#receiverDetail .ui-checkbox .ui-btn-inner,
+#receiverBatchSetting .ui-checkbox .ui-btn-inner {
+	padding-left: 40px;
+	padding-right: 0px;
+	border-top: 1px transparent;
+}
+#receiverDetail .ui-checkbox .ui-btn,
+#receiverBatchSetting .ui-checkbox .ui-btn {
+	border: 1px transparent;
+	background: none;
+	background-image: none;
+}
+#receiverDetail .ui-checkbox {
+	margin-left: -10px;
+}
+#receiverDetail li.li-deleted,
+#receiverDetail li.li-deleted .ui-btn-text {
+	text-decoration: line-through;
+}
+#receiverDetail a.modalCloseImg {
+	background:url(../IMAGE/AOL/x.png) no-repeat center;
+	width:40px;
+	height:40px;
+	display:inline;
+	z-index: 1999;/*3200;*/
+	position:absolute;
+	top:-15px;
+	right:-16px;
+	cursor:pointer;
+}
+#receiverDetail .ui-li-command-bar {
+	background-image: -webkit-linear-gradient( #fadb4e, #fcc24e);
+	background-image:    -moz-linear-gradient( #fadb4e, #fcc24e);
+	background-image:     -ms-linear-gradient( #fadb4e, #fcc24e);
+	background-image:      -o-linear-gradient( #fadb4e, #fcc24e);
+	background-image:         linear-gradient( #fadb4e, #fcc24e);
+	position: relative;
+	height: 0px;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: height;
+	/*-webkit-transition-timing-function: ease-out;*/
+	-moz-transition-duration: 0.5s;
+	-moz-transition-property: height;
+	transition-duration: 0.5s;
+	transition-property: height;
+	overflow: hidden;
+}
+#receiverDetail .ui-li-command-bar.shown {
+	height: 60px;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-property: height;
+	/*-webkit-transition-timing-function: ease-in;*/
+	-moz-transition-duration: 0.5s;
+	-moz-transition-property: height;
+	transition-duration: 0.5s;
+	transition-property: height;
+}
+#receiverDetail .ui-li-command-bar > div {
+	position: absolute;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translate(0px, -60px);
+	-moz-transition-duration: 0.5s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translate(0px, -60px);
+	transition-duration: 0.5s;
+	transition-timing-function: ease-out;
+	transform: translate(0px, -60px);
+}
+#receiverDetail .ui-li-command-bar.shown > div {
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: ease-in;
+	-webkit-transform: translate(0, 0);
+	-moz-transition-duration: 0.5s;
+	-moz-transition-timing-function: ease-in;
+	-moz-transform: translate(0, 0);
+	transition-duration: 0.5s;
+	transition-timing-function: ease-in;
+	transform: translate(0, 0);
+}
+#receiverDetail .ui-li-command-bar .ui-btn {
+	display: inline-block;
+}
+#receiverBatchSetting .ui-select {
+	display: inline-block;
+}
+
+/* 2015.1.8 - Raymond, 受文者清單(for iPad) */
+#receiverList header {
+	margin: 1.4em;
+	border: 0;
+	background: transparent;
+}
+#receiverList header .ui-btn-right {
+	position: absolute;
+	right: .5em;
+}
+#receiverTable {
+	border: 2px ridge gray;
+}
+#receiverTable .ui-table-header,
+#mailMergeTable .ui-table-header,
+#refAttTable .ui-table-header,
+#tmpAttTable .ui-table-header,	/*1111012	Leslie[1110865]	新增簽閱附件*/
+#dlAttTable .ui-table-header,	/*1111122	Leslie[1110863]	新增附件下載子視窗*/
+#attachMgmtContent .ui-table-header {
+	background:-webkit-linear-gradient(top, #ddd 0%, #999 100%);
+	background:   -moz-linear-gradient(top, #ddd 0%, #999 100%);
+	background:    -ms-linear-gradient(top, #ddd 0%, #999 100%);
+	background:     -o-linear-gradient(top, #ddd 0%, #999 100%);
+	background:        linear-gradient(top, #ddd 0%, #999 100%);
+}
+#receiverTable .ui-table-header .ui-table-column-header,
+#mailMergeTable .ui-table-header .ui-table-column-header,
+#refAttTable .ui-table-header .ui-table-column-header,
+#tmpAttTable .ui-table-header .ui-table-column-header,	/*1111012	Leslie[1110865]	新增簽閱附件*/
+#dlAttTable .ui-table-header .ui-table-column-header,	/*1111122	Leslie[1110863]	新增附件下載子視窗*/
+#attachMgmtContent .ui-table-header .ui-table-column-header {
+	display: inline-block;
+	padding: 10px 2px;
+	color: blue;
+	vertical-align: top;
+	/*border: 1px solid gray;*/
+	font-weight: bold;
+	margin-right: -4px;	/* a hack for space between divs */
+}
+#receiverTable .ui-table-header .ui-table-column-header.ui-table-column-orderby,
+#mailMergeTable .ui-table-header .ui-table-column-header.ui-table-column-orderby,
+#refAttTable .ui-table-header .ui-table-column-header.ui-table-column-orderby,
+#tmpAttTable .ui-table-header .ui-table-column-header.ui-table-column-orderby,	/*1111012	Leslie[1110865]	新增簽閱附件*/
+#dlAttTable .ui-table-header .ui-table-column-header.ui-table-column-orderby	/*1111122	Leslie[1110863]	新增附件下載子視窗*/
+{
+	/*border: 1px ridge gray;
+	border-radius: .8em;*/
+	color: black;
+	text-shadow: 1px #999;
+	background:-webkit-linear-gradient(top, #ffefaa 0%, #ffe155 100%);
+	background:   -moz-linear-gradient(top, #ffefaa 0%, #ffe155 100%);
+	background:    -ms-linear-gradient(top, #ffefaa 0%, #ffe155 100%);
+	background:     -o-linear-gradient(top, #ffefaa 0%, #ffe155 100%);
+	background:        linear-gradient(top, #ffefaa 0%, #ffe155 100%);
+}
+#receiverTable .ui-table-body-container,
+#mailMergeTable .ui-table-body-container,
+#refAttTable .ui-table-body-container,
+#tmpAttTable .ui-table-body-container,	/*1111012	Leslie[1110865]	新增簽閱附件*/
+#dlAttTable .ui-table-body-container	/*1111122	Leslie[1110863]	新增附件下載子視窗*/
+{
+	background: lightgray;
+}
+#receiverTable ul.ui-table-body,
+#mailMergeTable ul.ui-table-body,
+#refAttTable ul.ui-table-body,
+#tmpAttTable ul.ui-table-body,	/*1111012	Leslie[1110865]	新增簽閱附件*/
+#dlAttTable ul.ui-table-body	/*1111122	Leslie[1110863]	新增附件下載子視窗*/
+{
+	list-style-type: none;
+	margin: 0;
+	padding:0;
+	background: white;
+}
+#receiverTable li.ui-table-item,
+#mailMergeTable li.ui-table-item,
+#refAttTable li.ui-table-item,
+#tmpAttTable li.ui-table-item,	/*1111012	Leslie[1110865]	新增簽閱附件*/
+#dlAttTable li.ui-table-item	/*1111122	Leslie[1110863]	新增附件下載子視窗*/
+{
+	padding: .5em;
+	/*height: 3em;*/
+	background: lightblue;
+	vertical-align: middle;
+}
+#receiverTable li.ui-table-item:nth-child(2n-1),
+#mailMergeTable li.ui-table-item:nth-child(2n-1),
+#refAttTable li.ui-table-item:nth-child(2n-1),
+#tmpAttTable li.ui-table-item:nth-child(2n-1),	/*1111012	Leslie[1110865]	新增簽閱附件*/
+#dlAttTable li.ui-table-item:nth-child(2n-1)	/*1111122	Leslie[1110863]	新增附件下載子視窗*/
+{
+	background: white;
+}
+#receiverTable li.ui-table-item-deleted .ui-table-column-item {
+	text-decoration: line-through;
+}
+#receiverTable li.ui-table-item-group .ui-table-column-item:nth-child(2) {
+	font-weight: 900;
+}
+#receiverTable li.ui-table-item .ui-table-column-item,
+#mailMergeTable li.ui-table-item .ui-table-column-item,
+#refAttTable li.ui-table-item .ui-table-column-item,
+#tmpAttTable li.ui-table-item .ui-table-column-item,	/*1111012	Leslie[1110865]	新增簽閱附件*/
+#dlAttTable li.ui-table-item .ui-table-column-item	/*1111122	Leslie[1110863]	新增附件下載子視窗*/
+{
+	display: inline-block;
+	/*border: 1px solid gray;*/
+	padding: 0px 2px;
+	word-break: break-all;
+	vertical-align: top;
+	color: black;
+	text-overflow: ellipsis;
+	/*height: 1.4em;*/
+	/*white-space: nowrap;*/
+	overflow: hidden;
+}
+#receiverTable li.ui-table-item .ui-table-column-item:first-child {
+	border-left: 0px solid gray;
+}
+#receiverTable li.ui-table-item input{
+	padding: 0px;
+	margin: 3px 2px;
+	font-family: inherit;
+	font-size: 13pt;
+	outline: 0;
+}
+#receiverTable select {
+	margin: 0px 2px;
+	font-family: inherit;
+	font-size: 12pt;
+}
+
+#refAttTable .ui-table-column-item span:focus ,
+#tmpAttTable .ui-table-column-item span:focus 	/*1111012	Leslie[1110865]	新增簽閱附件*/
+{
+	background-color: white;
+}
+/* 多稿轉出子視窗微調 */
+#mailMergeTable .ui-table-header .ui-table-column-header {
+	margin-right: 0px;
+}
+#mailMergeTable li.ui-table-item {
+	padding: 0px;
+	display: table-row;
+}
+#mailMergeTable li.ui-table-item .ui-table-column-item {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* 浮動視窗
+*/
+#debugHelper {
+	position: absolute;
+	display: none;
+	width: auto;
+	height: auto;
+	-webkit-box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;
+	box-shadow: 2px 2px 2px #999;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(240,240,17,0.8)), color-stop(1, rgba(200,200,17,0.8)));
+	background: -webkit-linear-gradient(top, rgba(240,240,17,0.8) 0%, rgba(200,200,17,0.8) 100%);
+	background:    -moz-linear-gradient(top, rgba(240,240,17,0.8) 0%, rgba(200,200,17,0.8) 100%);
+	background:     -ms-linear-gradient(top, rgba(240,240,17,0.8) 0%, rgba(200,200,17,0.8) 100%);
+	background:      -o-linear-gradient(top, rgba(240,240,17,0.8) 0%, rgba(200,200,17,0.8) 100%);
+	background:         linear-gradient(top, rgba(240,240,17,0.8) 0%, rgba(200,200,17,0.8) 100%);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	color: blue;
+}
+/* 簽核物件的樣式
+*/
+#aol .sign-obj {
+	position: absolute;
+	z-index: 300;
+	pointer-events: auto;	/*	2015.5.29 邊界區的pointer-events:none樣式會繼承到被劃為child的簽核物件(例如:固定於首頁的簽核框), 不改回auto的話, 簽核物件會接不到滑鼠及觸控事件 */
+}
+#aol .so-text {
+	background: transparent;
+	font-size: 16pt;
+	color: blue;
+	line-height: 1.0;	/* 2015.11.12 FIX */
+	white-space: pre;	/* 1081217 FIX for XSS */
+}
+#aol .so-dragging {
+	-webkit-box-shadow: 2px 2px 2px #888;
+	-moz-box-shadow: 2px 2px 2px #888;
+	-o-box-shadow: 2px 2px 2px #888;
+	-ms-box-shadow: 2px 2px 2px #888;
+	box-shadow: 2px 2px 2px #888;
+	margin:-2px 2px;
+	position: absolute;
+	z-index: 300;
+}
+#aol .so-active {
+	outline: 1px dashed green;
+	/*background: rgba(120,120,120,0.5);*/
+}
+#aol .so-active[data-oor = 'true'] {	/* 1060718 Raymond 1060610/1060632 新增簽核區域外物件選取時以灰色框線表現 */
+	outline: 1px dashed gray;
+}
+#aol .so-stamp {
+	background: transparent;
+	font-size: 10pt;
+	color: blue;
+	white-space: nowrap;
+}
+#aol .so-img {
+	font-size: 1pt;
+}
+/* 2015.7.14 chrome的img在div中會齊下 */
+#aol .so-img img {
+	vertical-align: top;
+}
+/* 文字意見子視窗相關樣式
+*/
+#textComment .ui-controlgroup {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+/*#textComment .ui-select:nth-child(3) {
+	margin-top: 100px;
+}*/
+#textComment .symbolBar-container {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+#textComment .symbolBar {
+	font-size: 16pt;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+#textComment .symbolBar .ui-btn-up-c {
+	font-size: 16pt;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	margin: 1px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	border-radius: 4px;
+	background-color: white;	/* 2016.10.19 FIX for iPad */
+	display: inline;			/* 2017.2.16 FIX */
+	color: black;
+	font-family: 標楷體;		/* 2017.2.16 FIX for 「…」 未置中 */
+	font-weight: normal;
+}
+#textComment .ui-checkbox-on {
+	border: 1px solid 		#f4c63f /*{e-bup-border}*/;
+	background: 			#fadb4e /*{e-bup-background-color}*/;
+	font-weight: bold;
+	color: 					#222 /*{e-bup-color}*/;
+	text-shadow: 0 /*{e-bup-shadow-x}*/ 1px /*{e-bup-shadow-y}*/ 0 /*{e-bup-shadow-radius}*/ 	#fff /*{e-bup-shadow-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #ffefaa /*{e-bup-background-start}*/), to( #ffe155 /*{e-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/);
+}
+#sketchOverlay, #drawRectOverlay {	/* 1130315 Raymond 1130050 新增貼布拉矩形大小的Overlay層 */
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background: rgba(200, 200, 224, 0.4);	/* 2016.1.18 修改數位墨水畫布半透明度0.8->0.4 */
+	z-index: 1000;
+}
+#sketchOverlay:active {
+	cursor: crosshair;
+	outline: 1px solid white;
+}
+
+#aol .sign-area {
+	outline: dotted 1pt red;	/* 2013.9.24 - Raymond, 簽核區域範圍顯示 */
+}
+.sign-area {	/* 2016.8.29 - Raymond, 簽核區域試算移至#aol外 */
+	position: absolute;
+}
+
+#aol .tc-indicator {
+	position: absolute;
+	background-image: url(../IMAGE/AOL/point_line.png);
+	background-repeat: repeat-x;
+	font-size: 1pt;
+}
+#aol .tc-context {
+	position: relative;
+	border: 2px dashed green;
+	border-radius: 4px;
+}
+#aol .tc-context-collapse {
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+#aol .tc-context .tc-title {
+	font-size: 9pt;
+}
+
+/* 1141110 Raymond 1141113 新增便利貼樣式 */
+#aol .pg div#noteArea {
+	position: absolute;
+	top: 5cm;
+	right: 0px;
+	width: 24mm;
+}
+#aol .pg div#noteArea ul {
+	padding: 0px;
+}
+#aol .pg div#noteArea li {
+	list-style: none;
+	display: block;
+	color: black;
+	background-color: yellow;
+	border: 1px solid black;
+	box-shadow: 1px 1px 2px gray;
+	padding: 5px 4px;
+}
+#aol .pg div#noteArea li div {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* 新增文稿 styles */
+#aol #divList{        /*設定左邊div*/
+	width: 39%;/*29*/
+	height: 310px;
+	border: solid;
+	border-width: 1px;
+	padding-right:15px;
+	padding-left: 5px;
+	padding-top: 15px;
+	-webkit-overflow-scrolling: touch;
+	overflow:auto;
+	overflow-x: hidden;
+}
+#aol #divView{/*設定右邊div*/
+	width: 57%;/*69*/
+	height: 310px;
+	margin-left: 10px;
+	-webkit-overflow-scrolling: touch;
+	overflow:auto;
+	overflow-x:auto;
+	overflow-y:auto;
+}        
+#aol .ui-li-count{      /*調整count bubble的圓圈大小、位置*/
+	float: right;
+}
+#aol #dlg .ui-li-has-count .ui-li-count{  /*調整count bubble的圓圈大小、位置*/
+	position: relative;
+	bottom: -8px;
+	padding:0.2em .45em;
+}    
+#aol .ui-controlgroup-controls{    /*list與右方與覽列印的block顯示為inline*/ 
+	width: 100%;
+	display: inline-block;
+	vertical-align: initial;	/* 2016.5.23 added */
+}
+#aol .ui-collapsible-inset{
+	margin: .0em 0;
+}
+#aol #footer{
+	width:98%;
+}
+
+#aol #newDraftContent #divUl,
+#aol #newDraftContent .ui-collapsible,
+#aol #dlgTransformDocType #divUl,
+#aol #dlgTransformDocType .ui-collapsible {
+	margin: 0px;
+}
+#aol #newDraftContent .ulChild1 > li > .ui-collapsible,
+#aol #dlgTransformDocType .ulChild1 > li > .ui-collapsible {
+	margin-left: 25px;
+	/*width: 210px;*/
+}
+#aol #newDraftContent .ulChild1 li,  /*子目錄下list都不要有border*/
+#aol #dlgTransformDocType .ulChild1 li {
+	border-width: 0px;
+}
+#aol #newDraftContent .ulChild2 > li > .ui-collapsible,
+#aol #dlgTransformDocType .ulChild2 > li > .ui-collapsible {
+	margin-left: 25px;
+	/*width: 185px;*/
+}
+#aol #newDraftContent .ulChild3 > li > .ui-collapsible,
+#aol #dlgTransformDocType .ulChild3 > li > .ui-collapsible {
+	margin-left: 25px;
+	/*width: 175px;*/
+}
+#aol #divUl .ui-collapsible-content {
+	margin-left: 0px;
+}
+#aol #newDraftContent .ulChild2 > li > .ui-collapsible > .ui-collapsible-content {
+	/*width: 155px;*/
+}
+#aol #newDraftContent .ulChild1 > li > .ui-collapsible > .ui-collapsible-content {
+	/*width: 180px;*/
+}
+#aol #newDraftContent .ui-collapsible-content{
+	margin: 0px;
+}
+#aol #dlgTransformDocType .ui-collapsible-content .ui-listview {
+	margin: -.5em -1em;
+}
+#aol #newDraftContent .ui-collapsible-content,
+#aol #dlgTransformDocType .ui-collapsible-content {
+	border-bottom-width: 0px;
+}
+
+
+#aol div.cover-layer {	/* 2013.9.9 - Raymond, 來文或附件頁面上覆蓋的透明DIV, 用來翻頁及顯示指令列 */
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	/*opacity: 0.2;*/
+}
+
+#aol div.cover-layer .page-no {	/* 2015.7.14 - Raymond, 在附件頁面上覆蓋的透明DIV, 顯示頁碼 */
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	/*opacity: 1;*/
+	font-size: 14pt;
+	font-family: 標楷體;
+	color: black;
+	text-align: center;
+}
+
+/* Stampbox styles */
+/*#aol .ui-btn-active{*/          /*list點擊時背景顯示黃色*/
+/*	background: #fadb4e;
+	text-shadow: 0 1px 0 #fff;
+	border: 1px solid #CCC;
+}*/
+#aol .ui-btn-active:visited, #aol .ui-btn-active:hover, #aol .ui-btn-active a.ui-link-inherit{
+	/*list點擊時字體顯示為黑色*/
+	color:#000;            
+}
+#aol #stampList{
+	-webkit-overflow-scrolling: touch;
+	overflow:auto;
+	overflow-x: hidden;
+	height: 303px;
+	width: 30%;
+}
+#aol #stampView span#stampTx {/* 1081218 Raymond 預覽選用章戳保留顯示折行及空白 */
+	white-space: pre;
+}
+#aol .so-stamp p, #aol .so-stamp img {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	margin: 0;
+	line-height: 1.0;	/* 1081218 Raymond FIX 文字式選用章戳多行時, 行高與傳送後(變.so-text)顯示不一致問題 */
+}
+
+/* 2013.1 - Eric Peng, 傳送選項mobiscroll上方dummy input之style css */
+#aol .mobiscroll-trans-txt {
+	display: none;
+}
+	
+	/* 2013.1 - Eric Peng, 傳送mobiscorll ios style, scroller上方之title空間(預設不顯示title) */
+#aol .ios .dwwl {
+	font-size: medium;
+	margin-top: 20px;
+}
+	
+	/* 2013.1 - 顥示 title */
+#aol .ios .dwwl .dwl {
+	display: block;
+}
+
+/* 2013.11.25 - Raymond, 整合Banner */
+#aol #roleid_input_in_aol {
+	width: 100%;
+	text-indent: 5px;
+}
+
+/* 2015.11.3 - Raymond, 合併jquery.confirm.css並客製化調整成類似iOS 9風格 */
+#confirmOverlay{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11,11,11,0.1)), to(rgba(11,11,11,0.6))) repeat-x rgba(11,11,11,0.2);
+	background:-webkit-linear-gradient(rgba(11,11,11,0.1), rgba(11,11,11,0.6)) repeat-x rgba(11,11,11,0.2);
+	background:   -moz-linear-gradient(rgba(11,11,11,0.1), rgba(11,11,11,0.6)) repeat-x rgba(11,11,11,0.2);
+	background:    -ms-linear-gradient(rgba(11,11,11,0.1), rgba(11,11,11,0.6)) repeat-x rgba(11,11,11,0.2);
+	background:     -o-linear-gradient(rgba(11,11,11,0.1), rgba(11,11,11,0.6)) repeat-x rgba(11,11,11,0.2);
+	background:        linear-gradient(rgba(11,11,11,0.1), rgba(11,11,11,0.6)) repeat-x rgba(11,11,11,0.2);
+	z-index: 10000000;
+}
+
+#confirmBox{
+	background-color: #e5e5e5;
+	width: 400px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin: -130px 0 0 -230px;
+	border: 1px solid rgba(33, 33, 33, 0.6);
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
+	-webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+	-moz-box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+	box-shadow: 0 0 2px rgba(255, 255, 255, 0.6) inset;
+}
+
+#confirmBox h1,
+#confirmBox p{
+	font: 26px/1 'Cuprum','Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	background-color: #f5f5f5;
+	padding: 18px 25px;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+	color: #111;
+}
+
+#confirmBox h1{
+	letter-spacing: 0.3px;
+	color: #888;
+	margin-top: 0px;
+	-webkit-border-top-left-radius: 16px;
+	-moz-border-top-left-radius: 16px;
+	border-top-left-radius: 16px;
+	-webkit-border-top-right-radius: 16px;
+	-moz-border-top-right-radius: 16px;
+	border-top-right-radius: 16px;
+	border-bottom: 1px solid lightgray;
+}
+
+#confirmBox p{
+	background: none;
+	font-size: 16px;
+	line-height: 1.4;
+	/*padding-top: 35px;*/
+}
+
+#confirmBox #confirmButtons{
+	padding: 0;
+	text-align: center;
+	border-top: 1px solid lightgray;
+}
+
+#confirmBox .button{
+	display: inline-block;
+	background-color: white;
+	color: blue;
+	position: relative;
+	height: 2em;
+
+	font-size: 16pt;
+	font-family: '黑體', '微軟正黑體', 'Helvetica', 'Arial Bold', sans-serif;
+
+	/*margin-right: 25px;
+	padding: 0 35px 0 40px;*/
+	padding-top: .5em;
+	text-decoration: none;
+	border: none;
+	
+	border-left: 1px solid lightgray;
+}
+
+#confirmBox .button:first-child{
+	-webkit-border-bottom-left-radius: 16px;
+	-moz-border-bottom-left-radius: 16px;
+	border-bottom-left-radius: 16px;
+	border-left: 0px;
+}
+
+#confirmBox .button:last-child{
+	margin-right: 0;
+	-webkit-border-bottom-right-radius: 16px;
+	-moz-border-bottom-right-radius: 16px;
+	border-bottom-right-radius: 16px;
+}
+
+#confirmBox .button span{
+	position: absolute;
+	top: 0;
+	right: -5px;
+	/*background: url('buttons.png') no-repeat;*/
+	width: 5px;
+	height: 33px
+}
+
+#confirmBox .blue{				background-position:left top;text-shadow:1px 1px 0 #5889a2;}
+#confirmBox .blue span{			background-position:-195px 0;}
+#confirmBox .blue:hover{			background-position:left bottom;}
+#confirmBox .blue:hover span{	background-position:-195px bottom;}
+
+#confirmBox .gray{				background-position:-200px top;text-shadow:1px 1px 0 #707070;}
+#confirmBox .gray span{			background-position:-395px 0;}
+#confirmBox .gray:hover{			background-position:-200px bottom;}
+#confirmBox .gray:hover span{	background-position:-395px bottom;}
+
+/* 桌機翻頁UI */
+#aol a.btnFlipLeft, #aol a.btnFlipRight {
+	padding: 0;	/* apply for jqm 1.4.5 */
+	position: absolute;
+	top: 50%;
+	background-color: gray;
+	opacity: 0.5;
+	border-radius: 4px;
+	width: 64px;
+	height: 64px;
+	display: none;
+	z-index: 2;	/* 2016.11.29 fix for 簽核物件檢視子視窗(參照窗格開啟時)顯示在正中間, 右側的前一頁按鈕會浮在子視窗上的問題 */
+}
+#aol a.btnFlipLeft {
+	left: 0px;
+	background-image: url("../IMAGE/AOL/prev64.png");
+}
+#aol a.btnFlipRight {
+	right: 0px;
+	background-image: url("../IMAGE/AOL/next64.png");
+}
+
+/* temporary panel widget */
+#aol .ui-panel {
+	left: 0px;
+	top: 0px;
+	width: 500px;
+	height: 100%;
+	min-height: 200px;	/* 1100219 Raymond 1090927 覆寫.ui-page的min-height以支援螢幕高度最小至325px可容納顯示"新增稿件"側邊欄面版 */
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(0px);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(0px);
+	transition-duration: 0.3s;	/* 1120726 Raymond 1120503 fix typo - transi[s]tion-duration */
+	transition-timing-function: ease-out;
+	transform: translateX(0px);
+	background-color: black;
+	padding-right: 8px;
+}
+#aol .ui-panel.ui-selectmenu-hidden {
+	-webkit-transform: translateX(-510px);
+	-moz-transform: translateX(-510px);
+	transform: translateX(-510px);
+}
+#aol .ui-panel header {
+	color: white;
+}
+#aol .ui-panel footer {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+#aol .ui-panel div[data-role='content'] {
+	height: calc(100% - 87px);	/* 1070427 Raymond 因為上面多了樣版、範本的頁籤, 高度要增加 */
+	overflow-y: scroll;
+}
+/*#aol .ui-panel .ui-li-count {
+	right: -2.5em;
+}*/
+/* 2016.10.19 FIX for listview */
+.ui-content .simplemodal-data .ui-listview {
+	margin: 0;
+}
+#aol .ui-panel a.ui-btn-active,
+#aol .simplemodal-data .ui-listview .ui-btn-active,
+#aol .simplemodal-data .ui-table-body .ui-btn-active,
+#confirmBox .ui-btn-active {
+	background: #fadb4e;
+	text-shadow: 0 1px 0 #fff;
+	color: #3030ff;
+	/*border: none;*/
+	border-color: #ccc;
+}
+#aol .ui-panel a button {
+	position: absolute;
+	margin: 0px;
+	top: 0px;
+	right: 0px;
+}
+#aol .ui-panel a button .ui-btn-inner {
+	padding-right: 20px;
+}
+/* 受文者清單(iPad) */
+#receiverList .ui-slide-pane-left {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(-450px);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(-450px);
+	transistion-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transform: translateX(-100%);
+}
+#receiverList .ui-slide-pane-right {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(450px);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(450px);
+	transistion-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transform: translateX(100%);
+}
+/*CLOUD ADD-S*/
+#receiverList header .ui-btn-center {
+	text-align: center;
+}
+#receiverTable .ui-table-header-PC,
+#receiverTable-GRP .ui-table-header-PC-GRP ,
+#receiverTable-Choose-Org .ui-table-header-PC-Choose-Org,
+#receiverTable-Choose-Emp .ui-table-header-PC-Choose-Emp {
+	color: #fff;
+	background:#396b9e;
+	height: 40px;
+}
+#receiverTable .ui-table-header-PC .ui-table-column-header,
+#receiverTable-GRP  .ui-table-header-PC-GRP .ui-table-column-header,
+#receiverTable-Choose-Org .ui-table-header-PC-Choose-Org .ui-table-column-header,
+#receiverTable-Choose-Emp .ui-table-header-PC-Choose-Emp .ui-table-column-header
+{
+	display: inline-block;
+	vertical-align: top;
+	/*font-weight: bold;*/
+	/*margin-right: -4px;*/
+	margin: -0.5px;
+	/*padding: 1px 0.5px;*/
+}
+#receiverSetting  header .wrap {
+  width: 150px;
+  height: 150px;
+  background-color: #666;
+  margin-left: auto;
+  margin-right: auto;
+}
+#receiverTable li.ui-table-item-PC input,
+#receiverTable-GRP li.ui-table-item-PC input,
+/*1110901	Joe		1110615		增加textarea	*/
+#receiverTable li.ui-table-item-PC textarea,
+#receiverTable-GRP li.ui-table-item-PC textarea,
+#receiverTable-Choose-Org li.ui-table-item-PC input,
+#receiverTable-Choose-Emp li.ui-table-item-PC input
+{
+	padding: 0px;
+	margin: 0px 1px;
+	font-family: inherit;
+	font-size: 13pt;
+	outline: 0;
+}
+#receiverTable li.ui-table-item-PC .ui-table-column-item,
+#receiverTable li.ui-table-item-PC .ui-table-column-item-delete,
+#receiverTable-GRP li.ui-table-item-PC .ui-table-column-item,
+#receiverTable-Choose-Org li.ui-table-item-PC .ui-table-column-item,
+#receiverTable-Choose-Emp li.ui-table-item-PC .ui-table-column-item
+{
+	/*display: inline-block;*/
+	display: inline-flex;
+	word-break: break-all;
+	vertical-align: top;
+	color: black;
+	text-overflow: ellipsis;
+	height: 30px;
+	overflow: hidden;
+	line-height: 30px;
+	margin: 1px 1px;
+}
+#receiverTable .ui-table-item-PC select ,
+#receiverTable-GRP .ui-table-item-PC select 
+{
+	margin: 0px 1px;
+	font-family: inherit;
+	font-size: 12pt;
+}
+#receiverTable li.ui-table-item-PC:nth-child(2n-1),
+#receiverTable-GRP li.ui-table-item-PC:nth-child(2n-1),
+#receiverTable-Choose-Org li.ui-table-item-PC:nth-child(2n-1),
+#receiverTable-Choose-Emp li.ui-table-item-PC:nth-child(2n-1)
+{
+	background: #C9F3F5;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+}
+#receiverTable li.ui-table-item-PC,
+#receiverTable-GRP li.ui-table-item-PC,
+#receiverTable-Choose-Org li.ui-table-item-PC,
+#receiverTable-Choose-Emp li.ui-table-item-PC
+{
+	background: #C9F3F5;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+}
+/*#receiverTable li.ui-table-item-PC-deleted .ui-table-column-item ,
+/*#receiverTable-GRP li.ui-table-item-PC-deleted .ui-table-column-item 
+#receiverTable-GRP div.ui-table-column-item .ui-table-item-PC-deleted
+{
+	pointer-events: none;
+}*/
+/*以下設定為群組編輯子視窗*/
+#receiverSetting .ui-slide-pane-GRP,
+#receiverSetting .ui-slide-pane-Choose-Org,
+#receiverSetting .ui-slide-pane-Choose-Emp
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(1024px);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(1024px);
+	transistion-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transform: translateX(100%);
+}
+
+#receiverTable-GRP .ui-table-body-container,
+#receiverTable-Choose-Org .ui-table-body-container,
+#receiverTable-Choose-Emp .ui-table-body-container
+ {
+	background: lightgray;
+}
+#receiverTable-GRP ul.ui-table-body,
+#receiverTable-Choose-Org ul.ui-table-body,
+#receiverTable-Choose-Emp ul.ui-table-body
+ {
+	list-style-type: none;
+	margin: 0;
+	padding:0;
+	background: white;
+}
+#receiverTable-GRP li.ui-table-item-deleted .ui-table-column-item {
+	pointer-events: none;
+	opacity: 0.4;
+}
+/*#receiverTable-GRP li.ui-table-item-group .ui-table-column-item:nth-child(2) {
+	font-weight: 900;
+}*/
+#receiverTable-GRP li.ui-table-item .ui-table-column-item,
+#receiverTable-Choose-Org li.ui-table-item .ui-table-column-item,
+#receiverTable-Choose-Emp li.ui-table-item .ui-table-column-item
+{
+	display: inline-block;
+	/*border: 1px solid gray;*/
+	padding: 0px 2px;
+	word-break: break-all;
+	vertical-align: top;
+	color: black;
+	text-overflow: ellipsis;
+	height: 40px;
+	/*white-space: nowrap;*/
+	overflow: hidden;
+}
+#receiverTable-GRP li.ui-table-item .ui-table-column-item:first-child ,
+#receiverTable-Choose-Org li.ui-table-item .ui-table-column-item:first-child ,
+#receiverTable-Choose-Emp li.ui-table-item .ui-table-column-item:first-child {
+	border-left: 0px solid gray;
+}
+#receiverTable-GRP li.ui-table-item input,
+#receiverTable-Choose-Org li.ui-table-item input,
+#receiverTable-Choose-Emp li.ui-table-item input
+{
+
+	padding: 0px;
+	margin: 0px 2px;
+	font-family: inherit;
+	font-size: 13pt;
+	outline: 0;
+}
+#receiverTable-GRP select {
+	margin: 0px 2px;
+	font-family: inherit;
+	font-size: 12pt;
+}
+/*以下設定為受文者修改子視窗*/
+#receiverSetting .ui-slide-pane-ModeOrg,
+#receiverSetting .ui-slide-pane-ModeOrg-Muit,
+#receiverSetting .ui-slide-pane-ModeOrg-GRP
+{
+	position: absolute;
+	top: 30%;
+	left: 0px;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(1024px);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(1024px);
+	transistion-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transform: translateX(100%);
+}
+/*CLOUD ADD-E*/
+#receiverList .ui-slide-pane-active {
+	transform: translateX(0px);
+}
+/* 受文者設定子視窗(桌機) */
+#receiverSetting .ui-slide-pane-left {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(-1024px);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(-1024px);
+	transistion-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transform: translateX(-100%);
+}
+#receiverSetting .ui-slide-pane-right {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(1024px);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(1024px);
+	transistion-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transform: translateX(100%);
+}
+#receiverSetting .ui-slide-pane-active {
+	transform: translateX(0px);
+}
+/* 子視窗內欄位特殊調整 */
+#aol #dlgExportFile #setReason .ui-select {
+	width: 70%;
+}
+#aol .simplemodal-data a.ui-btn-active .attach-desc,
+#aol .simplemodal-data a.ui-btn-active .attach-size {
+	display: none;
+}
+#aol .simplemodal-data[data-role='dialog'] {
+	width: calc(100% - 16px);
+	min-height: calc(100% - 16px);
+}
+#aol #dlgReqDocNo .ui-input-text {
+	width: 10em;
+}
+#aol #dlgReqDocNo .ui-btn-inline {
+	margin-left: 10px;
+}
+#attachMgmt header .ui-btn-inline {
+	position: absolute;
+	top: .25em;
+}
+#attachMgmt header #btnAddNew {
+	left: .25em;
+}
+#attachMgmt header #btnRemoveAll {
+	left: 70px;
+}
+#attachMgmt header #btnRecover {
+	left: 138px;
+}
+/*1070503	Leslie[1070179]	UI調整相關	--START--*/
+#attachMgmt header #btnMultiMode {
+	left: 206px;
+}
+#attachMgmt header #dlRcvAtt-button{
+	width: 100%;			/* 1100326 Raymond 1090927 fix for iOS Safari 來文電子清單的下拉式選單過寬會折行問題 width:542px;->100%; 外層DIV的寬度限制在RD-AttachMgmt.html中設定 */
+	box-sizing: border-box;	/* 1100326 Raymond 1090927 fix for iOS Safari 來文電子清單的下拉式選單過寬會折行問題 */
+}
+#attachMgmt header #dlAttTextDefault-button{
+	height: 1.5em;
+	width: 52px;
+}
+#attachMgmt header .inlineB{
+	display: inline-block;
+}
+/*#attachMgmtContent ol li a {
+    line-height: 2.5em;
+}*/
+#attachMgmt .attach-nm{
+	text-overflow: ellipsis;
+	width: 200px;
+	overflow: hidden;
+	display: inline-block;
+	white-space: nowrap;
+	position: absolute;
+}
+
+/*1090903 Zen 1090524 (信保基金)附件明細新增上傳人員、時間欄位*/
+#attachMgmt .attach-uploadUser, .attach-uploadTime{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: inline-block;
+	white-space: nowrap;
+	position: absolute;
+}
+
+/*1070503	Leslie[1070179]	UI調整相關	--END--*/
+
+/* 1140722	Leslie[1140381]	「匯出分繕表」功能鍵 */
+#attachMgmt header #btnExportMailMerge {
+	left: 274px;
+}
+
+#attachMgmt header .ui-input-text {
+	display: inline-block;
+	width: calc(100% - 385px);	/*1070503	Leslie[1070179]	調整UI，由65改為56%,	1100224 Raymond 1090927 因應小螢幕裝置調整為用100%寬度去扣, 正常螢幕尺寸時會保特與56%一致寬度 */
+}
+#attachMgmt header .ui-checkbox {
+	display: inline-block;
+}
+#attachMgmt .ui-listview li a.ui-btn-active {
+	background: #fadb4e;
+	text-shadow: 0 1px 0 #fff;
+	border: 1px solid #CCC;
+	color: #22F;
+}
+#dlgPrintFolio.simplemodal-data,
+#dlgPrintRefDoc.simplemodal-data {	/* 1110627 Raymond 1110271 新增, 歷史檢視的列印子視窗變更id為dlgPrintRefDoc */
+	width: calc(100% - 16px);
+	height: calc(100% - 16px);
+}
+#dlgPrintFolio .ui-listview li.ui-btn-active,
+#dlgPrintRefDoc .ui-listview li.ui-btn-active {	/* 1110627 Raymond 1110271 新增, 歷史檢視的列印子視窗變更id為dlgPrintRefDoc */
+	background: #fadb4e;
+	text-shadow: 0 1px 0 #fff;
+	border: 1px solid #CCC;
+	color: #22F;
+}
+#dlgPrintFolio .ui-mini {
+	margin: 0;
+}
+#dlgPrintFolio .ui-field-contain,
+#dlgPrintRefDoc .ui-field-contain {	/* 1110627 Raymond 1110271 新增, 歷史檢視的列印子視窗變更id為dlgPrintRefDoc */
+	margin: .2em .1em;
+}
+#dlgPrintFolio .ui-radio,
+#dlgPrintFolio .ui-input-text,
+#dlgPrintRefDoc .ui-checkbox {	/* 1110627 Raymond 1110271 新增, 歷史檢視的列印子視窗變更id為dlgPrintRefDoc, 核取方塊選項改為inline-block */
+	display: inline-block;
+}
+#dlgPrintFolio .ui-input-text {
+	width: 50%;
+}
+#dlgPrintFolio .ui-slide-pane-left,
+#dlgConUnitSetting .ui-slide-pane-left,
+#dlgExportDI .ui-slide-pane-left {	/* 1061219 Raymond 1061155 新增另存DI的對話盒樣式 */
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(-100%);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(-100%);
+	transistion-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transform: translateX(-100%);
+}
+#dlgPrintFolio .ui-slide-pane-right,
+#dlgConUnitSetting .ui-slide-pane-right,
+#dlgExportDI .ui-slide-pane-right {	/* 1061219 Raymond 1061155 新增另存DI的對話盒樣式 */
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(100%);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(100%);
+	transistion-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transform: translateX(100%);
+}
+#dlgPrintFolio .ui-slide-pane-active,
+#dlgConUnitSetting .ui-slide-pane-active,
+#dlgExportDI .ui-slide-pane-active {	/* 1061219 Raymond 1061155 新增另存DI的對話盒樣式 */
+	transform: translateX(0px);
+}
+#dlgPrintFolio #receivers .ui-select {
+	display: inline-block;
+}
+#dlgExportDI .ui-checkbox {	/* 1061219 Raymond 1061155 新增另存DI的對話盒樣式 */
+	display: inline-block;
+	vertical-align: initial;
+}
+#dlgExportDI .ui-select {	/* 1061219 Raymond 1061155 新增另存DI的對話盒樣式 */
+	display: inline-block;
+	width: 67%;
+}
+/* 符號表固定窗格 1060818 Raymond 1060703 改成放在dockedPanel下
+ */
+#dockedPanel {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	/*overflow-x: scroll;*/
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(17,17,17,0.7)), color-stop(1, rgba(17,17,17,0.7)));
+	background: -webkit-linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+	background:    -moz-linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+	background:     -ms-linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+	background:      -o-linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+	background:         linear-gradient(top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.7) 100%);
+}
+#symbolDocked .ui-btn-up-a {
+	font-family: "標楷體";
+	font-size: 16pt;
+	width: 32px;
+	height: 32px;
+	padding: 0;
+	margin: 1px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	border-radius: 4px;
+	background-color: lightgray;	/* 1081031 Raymond 符號表符號按扭的背景色固定為淺灰色, 避免iOS13的Dark Mode功能影響變成黑色, 造成符號的文字看不清楚的問題 */
+	white-space: pre;	/* 1111024 Raymond 1110864 合併1101468, 修正符號表若有半形空白, 按鈕位置會上移的問題 */
+}
+/* 簽核物件檢視窗格 1060818 Raymond 1060703 新增
+ */
+#signObjDocked .ui-listview {
+	margin: 0px;
+}
+#signObjDocked .ui-listview li.ui-li-active {
+	background: #fadb4e;
+	text-shadow: 0 1px 0 #fff;
+	border: 1px solid #CCC;
+	color: #22F;
+}
+
+
+#btn_upmenu_in_aol {
+	right: 82px;
+}
+
+/* 一些子視窗中的元素在IE下會跑掉
+ */
+.simplemodal-data .ui-btn-inline,
+.simplemodal-data .ui-checkbox {
+	vertical-align: top;
+}
+/* 新增小日曆圖示 */
+.ui-icon-calendar {
+	background-image: url(../IMAGE/AOL/calendar-24.png);
+	background-size: contain;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+}
+
+/* 1061106 Raymond 1060452 新增簽辦意見窗格 */
+#aol #isoContainer #sidePanel {
+	display: none;
+	position: absolute;
+	width: 25%;
+	top: 0px;
+	left: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background-color: gray;
+	/*transition-property: width;
+	transition-duration: .3s;
+	transition-timing-function: ease-in;*/
+	z-index: 1;	/* 1140718 Raymond 退輔會序144 修正啟用簽的製表功能後, 製表工具列會遮到簽辦意見窗格的問題 */
+}
+
+/* 1110401 Raymond 1110383 轉紙本詢問原因子視窗新增雙面列印核取方塊選項, PS:目前該子視窗只有一個checkbox(input#bothSide), 若以後要再塞第2個checkbox的話, 可能必須修改這裡的selector條件區分出是雙面列印的checkbox還是其它的checkbox */
+#askPDocReasonDialog .ui-checkbox {
+	display: inline-block;
+	float: right;
+}
+
+/* 1070104 Raymond 1061176 列印預排版時有標號的條列(display:inline)不會套用小於1.0的行距, 改為inline-block才會套用, $.height()才會得到正確的高度, 預覽分頁沒有inline-block卻是正常套用的 
+#testbody span.a {
+	display: inline-block;
+}*/
+#testbody .numbering {
+	height: auto;	/* 1070104 Raymond 1061176 列印預排版時高度設1em會影響行高小於1.0時的高度, 導致斷頁位置計算錯誤*/
+	vertical-align: top;	/* 1070104 Raymond 1061176 列印預排版時標號與條列內文都調成inline-block + top */
+}
+
+/* 1140311 Raymond 1140413 修正列印簽核物件資訊頁時, 若簽核意見太長超過剩餘單頁高度需分頁顯示, 判斷文字內容的分頁點時需比照列印結果的樣式(PrintChrome.css), 否則會抓錯分頁點 */
+div.comment {
+	display: inline-block;
+	white-space: pre-wrap;
+	vertical-align: top;
+	width: calc(100% - 6em);
+}
+
+
+/* 1071004 Raymond 這個class #testbody也會用到, 不能限制在#aol否則會出現斷頁計算錯誤(多一行) */
+/* 1070430 Raymond 1070177 新增combobox wrapper class */
+/*#aol .ui-edit-combobox {*/
+.ui-edit-combobox {
+	display: inline-block;
+	position: relative;
+	text-indent: 0px;	/* 1070529 Raymond 1070598 避免繼承到已設定縮排的段落的負值text-indent */
+}
+
+#aol #isoContainer.showSidePanel #sidePanel {
+	display: block;
+}
+
+#aol #isoContainer #sidePanel .ui-listview {
+	margin: 0px;
+}
+
+#aol #isoContainer #sidePanel .ui-listview li {
+	width: auto;
+}
+#aol #isoContainer {
+	margin-right: 0%;
+	transition-duration: .3s;
+	transition-property: margin-right;
+	transition-timing-function: ease-out;
+}
+#aol #isoContainer.showSidePanel {
+	margin-right: 15%;
+}
+@media screen and (min-width: 1281px) {
+	#aol #isoContainer.showSidePanel {
+		margin-right: 20%;
+	}
+}
+@media screen and (min-width: 1601px) {
+	#aol #isoContainer.showSidePanel {
+		margin-right: 25%;
+	}
+}
+
+/* 1120220 Raymond 1111225 新增簽辦意見窗格中分出內部意見區域 */
+#aol #sidePanel #innerCmtPanel {
+	display: none;
+}
+#aol #sidePanel #innerCmtPanel .ui-bar-inherit {
+	padding: 0.7em 1em;
+	text-align: center;
+}
+#aol #sidePanel #innerCmtPanel #innerCmtList {
+	height: 264px;
+	overflow-y: auto;
+}
+#aol #sidePanel.showInnerCmt #innerCmtPanel {
+	display: block;
+}
+#aol #sidePanel.showInnerCmt #signCmtList {
+	height: calc(100% - 264px - 2.7em);
+	overflow-y: auto;
+}
+
+/* 1100719 Raymond 1100431 新增搜尋面板 */
+#aol #isoContainer #searchPanel {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1000;	/* 1120725 Raymond 1120503 因新增製表工具列, 將搜尋面板調高z-index, 以避免被製表工具列遮住 */
+	box-shadow: 0 3px 3px rgba(0, 0, 0, .2);
+}
+
+#aol #isoContainer #searchPanel label {
+	display: inline;
+}
+
+#aol #isoContainer #searchPanel .ui-input-text,
+#aol #isoContainer #searchPanel .ui-checkbox {
+	display: inline-block;
+}
+
+
+/* 1110406	Leslie[1101578] 配合附件編輯功能，一併調整附件維護子視窗的CSS設定 */
+#attachMgmtContent li a.editMode{height:2.5em;}
+#attachMgmtContent input.attach-cusName {position: absolute;margin: 0.5em 0px;top: 1px;left: 8em;width: calc(100% - 545px);}
+#attachMgmtContent input.attach-cusName.editMode {margin: 0.4em 0px;}
+#attachMgmtContent input.attach-desc {position:absolute; margin:.5em 0px; top:1px; left:250px; width:calc(100% - 365px);}
+#attachMgmtContent input.attach-desc.showCustom {left: calc(9em + 100% - 545px); width: calc(100% - 545px);}
+#attachMgmtContent input.attach-desc.editMode{margin: 0.4em 0px;width: calc(100% - 260px);}
+#attachMgmtContent input.attach-desc.showCustom.editMode {width: calc(100% - 465px);}
+#attachMgmtContent span.attach-size{position:absolute; top: 12px; right: 2px;}
+#attachMgmtContent span.attach-size.editMode{margin: 1.5em 0px; right: calc(100% - 854px);}
+#attachMgmtContent span.attach-edit{position: absolute; margin: 1.5em 0px; left: 250px; width: calc(100% - 365px);}
+#attachMgmtContent span.attach-edit.showCustom{left: 8.2em; width: calc(100% - 210px);}
+#attachMgmtContent span.attach-edit.modifyed{color:red;font-weight:bold;}
+
+/* 1110617 Raymond 1110416 合併一代1030961功能, 新增浮水印樣式 */
+div.watermark {
+	position: absolute;
+	left: 2.5%;	/* 1120110 Raymond 1111441 修正在套印密件浮水印後, Chrome列印預覽會縮小的問題 50%->2.5% */
+	top: calc(50% - 4em);	/* 1120110 Raymond 1111441 修正在套印密件浮水印後, Chrome列印預覽會縮小的問題 50%->calc(50% - 4em) */
+	font-size: 32pt;
+	width: 95%;
+	font-family: "Times New Roman", 標楷體, STKaiTi-TC-Regular, STKaiTiTC-Regular, sans-serif;
+	opacity: 0.2;
+	text-align: center;
+	line-height: 1;
+	/*color: white;	IE與Chrome一樣列印出來後不會有中空效果
+	text-shadow: 0px 0px 1pt black;*/
+}
+/*div.watermark > div {	1120110 Raymond 1111441 修正在套印密件浮水印後, Chrome列印預覽會縮小的問題
+	position: relative;
+	left: -50%;
+	top: -4em;
+}*/
+div.watermark div.watermark-nm {
+	line-height: 1.5;
+}
+div.watermark div.watermark-docno {
+	line-height: 1.5;
+}
+div.watermark div.watermark-sec {
+	line-height: 1.5;
+}
+div.watermark div.watermark-warn {
+	border: 0px solid black;
+	display: inline-block;
+}
+div.watermark div.watermark-warn > div {
+	writing-mode: tb;
+	display: table-cell;
+	vertical-align: middle;
+}
+div.attachwatermark {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+/* 1110629	Leslie[1110629]	考試院UI/UX需求，修改傳送選單 */
+#aol #transPanel>div>div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#aol #pcTranMode div{
+    border-radius: 14px;
+    width: 4em;
+}
+
+#aol #pcTranMode div.ui-slider {
+    width: 3.2em;
+    height: 1.9em;
+	margin-top: 10px;
+}
+
+#aol #pcTranMode div.ui-slider .ui-slider-inneroffset {
+	width: 1.6em;
+}
+
+#aol #pcTranMode div.ui-slider .ui-slider-inneroffset a {
+	width: 16px;
+    font-size: 8px;
+}
+
+#pcSubmit a.ui-btn:not([data-icon]),
+#pcUtil a.ui-btn:not([data-icon]){
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#pcUtil a.ui-btn[data-icon]{
+    padding-right: 5px;
+}
+
+/* #pcTxEasy, #pcTxList{ */
+	/* min-width : 396px; */
+/* } */
+
+#pcSubmit.hideIcon a.ui-btn:not([data-icon])>img,
+#pcUtil.hideIcon a.ui-btn:not([data-icon])>img{
+    display: none;
+}
+
+#aol #transPanel .ui-btn:hover,
+#zoomControl1 .ui-btn:hover,
+#tcControl1 .ui-btn:hover{
+	background-color: #7dc3ec;
+	color: #ffffff;
+	border-color: #7dc3ec;
+	font-weight:400;
+	text-shadow: 0.1em /*{c-bup-shadow-x}*/ 0.1em /*{c-bup-shadow-y}*/ 0.2em /*{c-bup-shadow-radius}*/ #055e92 /*{c-bup-shadow-color}*/;
+}
+
+/*1111012	Leslie[1110865]	新增客製化UI設定，簽閱/參考附件的頁籤顏色*/
+#TmpAtt.MocsUI {
+	background-image: linear-gradient( #60be5a /*{b-bup-background-start}*/, #266227 /*{b-bup-background-end}*/) !important;
+}
+
+#RefAtt.MocsUI {
+	background-image: linear-gradient( #ca53c5 /*{b-bup-background-start}*/, #652b7c /*{b-bup-background-end}*/) !important; 
+}
+
+li.delAtt>.ui-table-column-item>span {
+    color: red;
+    text-decoration-line: line-through;
+}
+
+/* 1111124	Leslie[1110920]	新增文號頁籤可顯示來文機關 */
+div#iso.Tag_FromOrg {
+    margin-left: 0.7em;
+}
+
+#aol div#sidebar.Tag_FromOrg {
+    width: 3.2em;
+}
+
+#aol div#sidebar.Tag_FromOrg li{
+    width: 3em;
+}
+
+#aol div#sidebar.Tag_FromOrg li a{
+    height: 2.6em;
+    display: flex;
+    vertical-align: middle;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/*1111221	Leslie[1111238]	新增拖拉檔案可加入附件的功能*/
+DIV.FileDrop{
+	height: 100%;
+	display: none;
+	position: absolute;
+	width: 100%;
+	opacity: 75%;
+	background-color: white;
+	top: 0px;
+	z-index: 10;
+	outline: 0.5rem dashed var(--bs-success);
+	outline-offset: -1.5rem;
+}
+
+DIV.FileDrop h1{
+	text-align: center;
+	margin-top: 25%;
+}
+
+.FileDrop.DragOver{
+	display: block !important;
+}
+
+#dlgViewRef .FileDrop, #dlgViewTmp .FileDrop{
+	top: 3px;
+	height: calc(100% - 20px);
+	width: calc(100% - 30px);
+}
+
+/* 1120725 Raymond 1120503 新增製表功能 */
+#tabularPanel {
+	overflow: auto;
+	border-bottom: 1px solid gray;
+	box-shadow: 0 3px 5px black;
+	position: fixed;	/* 1120918 Raymond 序212 修正製表工具列為固定位置,       */
+	z-index: 1;			/* 以免顯示製表工具列時簽核頁面中的欄位的指令列向下位移, */
+	width: 100%;		/* 及簽核頁面捲動至下半頁時也能點擊到製表工具列的按鈕    */
+}
+
+#tabularPanel > .ui-panel-wrapper > .ui-btn {
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 2px;	/* 1120918 Raymond 序212 配合製表工具列調為固定位置, */
+	margin-bottom: 2px;	/*                       調整按鈕高度                */
+}
+
+#tabularPanel > .ui-panel-wrapper > .ui-btn:not(.ui-btn-icon-right) {
+	padding-right: 0px;
+}
+
+/* 1120918 Raymond 序212 配合製表工具列調為固定位置, 調整粗體/正常按鈕高度 */
+#tabularPanel > .ui-panel-wrapper > .ui-controlgroup {
+	vertical-align: top;
+	margin-top: 2px;
+	margin-bottom: 0px;
+	height: 35px;
+}
+
+/* 1120918 Raymond 序212 配合製表工具列調為固定位置, 調整下拉式選單的按鈕高度 */
+#tabularPanel > .ui-panel-wrapper > .ui-select {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#tabularPanel > .ui-panel-wrapper > .ui-controlgroup .ui-btn {
+	padding: 0px;
+}
+
+#tabularPanel > .ui-panel-wrapper > .ui-btn > img {
+	vertical-align: middle;
+}
+
+#tabularPanel > .ui-panel-wrapper > .ui-btn span {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+#tabularPanel.ui-hide-btntext > .ui-panel-wrapper > .ui-btn span {
+	display: none;
+}
+
+#btnSetLineHeight-button::before {
+	content: "";
+	position: absolute;
+	background-image: url("../CSS/images/ui-icons_set_line_height_32.png");
+	width: 30px;
+	height: 30px;
+	top: 0px;
+	left: 0px;
+}
+
+#btnSetLineHeight-button {
+	padding-left: 34px;
+}
+
+/* 1120809 Raymond 1120503 新增插入表格功能的幾欄幾列選取介面的樣式 */
+#tblPicker {
+	border: 1px solid gray;
+}
+
+#tblPicker div {
+	background: #ffcd92;
+	/*font-family: Times New Roman;*/
+	text-align: center;
+}
+
+#tblPicker table {
+	border-spacing: 0px;
+	background: #f8f8f8;
+}
+
+#tblPicker td {
+	border: 1px solid #888;
+	width: 16px;
+	height: 16px;
+	box-sizing: border-box;
+}
+
+#tblPicker .tblPickerHighlight {
+	background-color: lightblue;
+}
+
+/* 1120809 Raymond 1120503 新增文稿中自訂表格的樣式 */
+table.custom-table {
+	border-spacing: 0px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.custom-table tbody:focus {
+	outline: none;
+}
+
+table.custom-table th {
+	user-select: none;
+}
+
+table.custom-table td {
+	border: 1px solid black;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+table.custom-table td.selected {
+	background-color: lightblue;
+}
+
+table.custom-table p {
+	margin: 0;
+	text-align: left;
+	font-size: inherit;
+	line-height: 1.0;
+	min-height: 1em;
+	min-width: .5em;
+}
+
+/* 1120809 Raymond 1120503 新增jquery.resizableColumns.css */
+.rc-handle-container {
+	position: relative;
+}
+.rc-handle {
+	position: absolute;
+	width: 7px;
+	cursor: ew-resize;
+	margin-left: -3px;
+	z-index: 2;
+}
+table.rc-table-resizing {
+	cursor: ew-resize;
+}
+table.rc-table-resizing thead,
+table.rc-table-resizing thead > th,
+table.rc-table-resizing thead > th > a {
+	cursor: ew-resize;
+}
+
+/* 1120823 Raymond 1120562 新增tipAlert外掛的CSS rules */
+div.tipAlert {
+	position: absolute;
+	width: 100%;
+	border: 4px solid transparent;
+	box-sizing: border-box;
+	animation: blinker 1s linear infinite;
+	pointer-events: none;
+}
+div.tipAlert > div {
+	position: absolute;
+	bottom: 0px;
+	height: 27px;
+	width: 100%;
+	overflow-y: hidden;
+}
+div.tipAlert #tip {
+	display: block;
+	font-size: 12pt;
+	border: 1px solid gray;
+	background: yellow;
+	color: red;
+	position: absolute;
+	bottom: 0px;
+	width: calc(100% - 2.5em - 2px);
+	margin: 0;
+	padding: 2px 0px 2px 2.5em;
+	text-align: left;
+	text-shadow: 0px 0px 1px crimson;
+}
+div.tipAlert #tip::after {
+	background-color:red;
+}
+.blink_border {
+	animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+	50% {
+		border-color: #ff0000;
+	}
+}
+
+
+
+/*1120508	Leslie	航港局長官要求放寬，針對較新的寛螢幕放寬右上按鍵區*/
+@media screen and (min-width: 1440px){
+#aol #transPanel #pcTxList > .ui-link, /* 分會設定按鍵 */
+#aol #transPanel #pcSubmit > .ui-btn, /* @chrome: 傳送 */
+#aol #transPanel #pcUtil > .ui-btn,
+#aol #transPanel #pcTxEasy > .ui-btn	
+{ /* @chrome: 儲存,關閉,設定 */
+	margin-left: 0px;	
+}
+
+#pcSubmit a.ui-btn:not([data-icon]),
+#pcUtil a.ui-btn:not([data-icon]){
+    padding-left: 8px;
+    padding-right: 8px;
+}
+}
+
+/* 1131007	Leslie[1130987]	北榮新增特殊UI模式 */
+
+#aol #leftPart .ui-header.ui-bar-a.highMode{
+	height: 4.5em;
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #transPanel{
+	left:605px;			/*由程式計算後會重新設定*/
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #transPanel > div{
+	height: 6em !important;
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #pcTranMode,
+#aol #leftPart .ui-header.ui-bar-a.highMode #pcTxEasy{
+	position: relative;
+	left:210px;			
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #pcTxList{
+	position: relative;
+	left:210px;
+	display: inline-grid !important;
+	grid-template-rows: 2.75em;
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #pcTxList.hide{
+	display: none !important;
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #btnSubmit{
+	position: absolute;
+	left: 0px;
+	width: 120px;
+	height: 35px;
+	font-size: 20pt;
+	line-height: 38px;
+	top: -4px;
+	background: #fadb4e;
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #btnSubmit:hover{
+	background-color: #7dc3ec;
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode .ui-checkbox{
+	position: absolute;
+	right: 2em;
+	top: 3.2em;
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #btnSubmit img{
+	vertical-align: super;
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #btnSave
+,#aol #leftPart .ui-header.ui-bar-a.highMode #btnClose{
+	position: absolute;
+	left: 142px; 		/*由程式計算後會重新設定*/
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #btnClose{
+	top: 3.1em; 
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #btnSendBack{
+	position: absolute;
+	right: 8em;
+	top: 3.2em;
+}
+
+#aol #leftPart .ui-header.ui-bar-a.highMode #btnWWKF_PDoc,
+#aol #leftPart .ui-header.ui-bar-a.highMode #btnPopupSetting,
+#aol #leftPart .ui-header.ui-bar-a.highMode #btnWWKFSetting
+{
+	position: absolute;
+	right: 2em;
+}
+
+@media screen and (max-width: 1440px){
+	#aol #leftPart .ui-header.ui-bar-a.highMode #btnSubmit{
+		width: 80px;
+		margin-left:0px;
+	}
+	#aol #leftPart .ui-header.ui-bar-a.highMode #pcTranMode,
+	#aol #leftPart .ui-header.ui-bar-a.highMode #pcTxEasy,
+	#aol #leftPart .ui-header.ui-bar-a.highMode #pcTxList{
+		left:158px;
+	}
+	#aol #leftPart .ui-header.ui-bar-a.highMode #btnSave
+	,#aol #leftPart .ui-header.ui-bar-a.highMode #btnClose{
+		left: 97px; 		/*由程式計算後會重新設定*/
+	}
+	#aol #leftPart .ui-header.ui-bar-a.highMode #pcTxList div a{
+		padding-left:5px;
+		padding-right:28px;
+	}
+	#aol #leftPart .ui-header.ui-bar-a.highMode #pcTxList .transTargets .ui-select:first-child{
+		position:absolute;
+		margin-left: 107px;
+		top: 0.5em;
+	}
+}

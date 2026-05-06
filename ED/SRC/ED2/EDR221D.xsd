@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR221D" targetNamespace="http://tempuri.org/EDR221D.xsd" xmlns:mstns="http://tempuri.org/EDR221D.xsd" xmlns="http://tempuri.org/EDR221D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR221D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR221D" msprop:Generator_UserDSName="EDR221D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR221L1" msprop:Generator_TableClassName="EDR221L1DataTable" msprop:Generator_TableVarName="tableEDR221L1" msprop:Generator_RowChangedName="EDR221L1RowChanged" msprop:Generator_TablePropName="EDR221L1" msprop:Generator_RowDeletingName="EDR221L1RowDeleting" msprop:Generator_RowChangingName="EDR221L1RowChanging" msprop:Generator_RowEvHandlerName="EDR221L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR221L1RowDeleted" msprop:Generator_RowClassName="EDR221L1Row" msprop:Generator_UserTableName="EDR221L1" msprop:Generator_RowEvArgName="EDR221L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="APPLY_TIME" msprop:Generator_ColumnVarNameInTable="columnAPPLY_TIME" msprop:Generator_ColumnPropNameInRow="APPLY_TIME" msprop:Generator_ColumnPropNameInTable="APPLY_TIMEColumn" msprop:Generator_UserColumnName="APPLY_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="RECOVER_SEQ" msprop:Generator_ColumnVarNameInTable="columnRECOVER_SEQ" msprop:Generator_ColumnPropNameInRow="RECOVER_SEQ" msprop:Generator_ColumnPropNameInTable="RECOVER_SEQColumn" msprop:Generator_UserColumnName="RECOVER_SEQ" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_DEPT" msprop:Generator_ColumnVarNameInTable="columnAPPLY_DEPT" msprop:Generator_ColumnPropNameInRow="APPLY_DEPT" msprop:Generator_ColumnPropNameInTable="APPLY_DEPTColumn" msprop:Generator_UserColumnName="APPLY_DEPT" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_EMP" msprop:Generator_ColumnVarNameInTable="columnAPPLY_EMP" msprop:Generator_ColumnPropNameInRow="APPLY_EMP" msprop:Generator_ColumnPropNameInTable="APPLY_EMPColumn" msprop:Generator_UserColumnName="APPLY_EMP" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_NO" msprop:Generator_ColumnVarNameInTable="columnAPPLY_NO" msprop:Generator_ColumnPropNameInRow="APPLY_NO" msprop:Generator_ColumnPropNameInTable="APPLY_NOColumn" msprop:Generator_UserColumnName="APPLY_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_REASON" msprop:Generator_ColumnVarNameInTable="columnAPPLY_REASON" msprop:Generator_ColumnPropNameInRow="APPLY_REASON" msprop:Generator_ColumnPropNameInTable="APPLY_REASONColumn" msprop:Generator_UserColumnName="APPLY_REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="APPROVE_INFO" msprop:Generator_ColumnVarNameInTable="columnAPPROVE_INFO" msprop:Generator_ColumnPropNameInRow="APPROVE_INFO" msprop:Generator_ColumnPropNameInTable="APPROVE_INFOColumn" msprop:Generator_UserColumnName="APPROVE_INFO" type="xs:string" minOccurs="0" />
+              <xs:element name="REVOKE_INFO" msprop:Generator_ColumnVarNameInTable="columnREVOKE_INFO" msprop:Generator_ColumnPropNameInRow="REVOKE_INFO" msprop:Generator_ColumnPropNameInTable="REVOKE_INFOColumn" msprop:Generator_UserColumnName="REVOKE_INFO" type="xs:string" minOccurs="0" />
+              <xs:element name="TX_STATUS" msprop:Generator_ColumnVarNameInTable="columnTX_STATUS" msprop:Generator_ColumnPropNameInRow="TX_STATUS" msprop:Generator_ColumnPropNameInTable="TX_STATUSColumn" msprop:Generator_UserColumnName="TX_STATUS" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

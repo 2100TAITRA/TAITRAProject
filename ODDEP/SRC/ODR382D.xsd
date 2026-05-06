@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ODR382D" targetNamespace="http://tempuri.org/ODR382D.xsd" xmlns:mstns="http://tempuri.org/ODR382D.xsd" xmlns="http://tempuri.org/ODR382D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ODR382D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="ODR382D" msprop:Generator_UserDSName="ODR382D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ODR382L1" msprop:Generator_TableClassName="ODR382L1DataTable" msprop:Generator_TableVarName="tableODR382L1" msprop:Generator_TablePropName="ODR382L1" msprop:Generator_RowDeletingName="ODR382L1RowDeleting" msprop:Generator_RowChangingName="ODR382L1RowChanging" msprop:Generator_RowEvHandlerName="ODR382L1RowChangeEventHandler" msprop:Generator_RowDeletedName="ODR382L1RowDeleted" msprop:Generator_UserTableName="ODR382L1" msprop:Generator_RowChangedName="ODR382L1RowChanged" msprop:Generator_RowEvArgName="ODR382L1RowChangeEvent" msprop:Generator_RowClassName="ODR382L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GRP" msprop:Generator_ColumnVarNameInTable="columnGRP" msprop:Generator_ColumnPropNameInRow="GRP" msprop:Generator_ColumnPropNameInTable="GRPColumn" msprop:Generator_UserColumnName="GRP" type="xs:string" minOccurs="0" />
+              <xs:element name="ORG_NAME" msprop:Generator_ColumnVarNameInTable="columnORG_NAME" msprop:Generator_ColumnPropNameInRow="ORG_NAME" msprop:Generator_ColumnPropNameInTable="ORG_NAMEColumn" msprop:Generator_UserColumnName="ORG_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ADDRESS" msprop:Generator_ColumnVarNameInTable="columnADDRESS" msprop:Generator_ColumnPropNameInRow="ADDRESS" msprop:Generator_ColumnPropNameInTable="ADDRESSColumn" msprop:Generator_UserColumnName="ADDRESS" type="xs:string" minOccurs="0" />
+              <xs:element name="POST_COST" msprop:Generator_ColumnVarNameInTable="columnPOST_COST" msprop:Generator_ColumnPropNameInRow="POST_COST" msprop:Generator_ColumnPropNameInTable="POST_COSTColumn" msprop:Generator_UserColumnName="POST_COST" type="xs:double" minOccurs="0" />
+              <xs:element name="NUM" msprop:Generator_ColumnVarNameInTable="columnNUM" msprop:Generator_ColumnPropNameInRow="NUM" msprop:Generator_ColumnPropNameInTable="NUMColumn" msprop:Generator_UserColumnName="NUM" type="xs:string" minOccurs="0" />
+              <xs:element name="POST_CODE" msprop:Generator_ColumnVarNameInTable="columnPOST_CODE" msprop:Generator_ColumnPropNameInRow="POST_CODE" msprop:Generator_ColumnPropNameInTable="POST_CODEColumn" msprop:Generator_UserColumnName="POST_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="POST_WEIGHT" msprop:Generator_ColumnVarNameInTable="columnPOST_WEIGHT" msprop:Generator_ColumnPropNameInRow="POST_WEIGHT" msprop:Generator_ColumnPropNameInTable="POST_WEIGHTColumn" msprop:Generator_UserColumnName="POST_WEIGHT" type="xs:string" minOccurs="0" />
+              <xs:element name="RETURN" msprop:Generator_ColumnVarNameInTable="columnRETURN" msprop:Generator_ColumnPropNameInRow="RETURN" msprop:Generator_ColumnPropNameInTable="RETURNColumn" msprop:Generator_UserColumnName="RETURN" type="xs:string" minOccurs="0" />
+              <xs:element name="PRINT" msprop:Generator_ColumnVarNameInTable="columnPRINT" msprop:Generator_ColumnPropNameInRow="PRINT" msprop:Generator_ColumnPropNameInTable="PRINTColumn" msprop:Generator_UserColumnName="PRINT" type="xs:string" minOccurs="0" />
+              <xs:element name="SRC_NO" msprop:Generator_ColumnVarNameInTable="columnSRC_NO" msprop:Generator_ColumnPropNameInRow="SRC_NO" msprop:Generator_ColumnPropNameInTable="SRC_NOColumn" msprop:Generator_UserColumnName="SRC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

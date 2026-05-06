@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AKR111D" targetNamespace="http://tempuri.org/AKR111D.xsd" xmlns:mstns="http://tempuri.org/AKR111D.xsd" xmlns="http://tempuri.org/AKR111D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AKR111D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="AKR111D" msprop:Generator_UserDSName="AKR111D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RptTable" msprop:Generator_TableClassName="RptTableDataTable" msprop:Generator_TableVarName="tableRptTable" msprop:Generator_TablePropName="RptTable" msprop:Generator_RowDeletingName="RptTableRowDeleting" msprop:Generator_RowChangingName="RptTableRowChanging" msprop:Generator_RowEvHandlerName="RptTableRowChangeEventHandler" msprop:Generator_RowDeletedName="RptTableRowDeleted" msprop:Generator_UserTableName="RptTable" msprop:Generator_RowChangedName="RptTableRowChanged" msprop:Generator_RowEvArgName="RptTableRowChangeEvent" msprop:Generator_RowClassName="RptTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO" msprop:Generator_ColumnPropNameInRow="DEPT_NO" msprop:Generator_ColumnPropNameInTable="DEPT_NOColumn" msprop:Generator_UserColumnName="DEPT_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="DOCFILE_TYPE" msprop:Generator_ColumnVarNameInTable="columnDOCFILE_TYPE" msprop:Generator_ColumnPropNameInRow="DOCFILE_TYPE" msprop:Generator_ColumnPropNameInTable="DOCFILE_TYPEColumn" msprop:Generator_UserColumnName="DOCFILE_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_CNT" msprop:Generator_ColumnVarNameInTable="columnDOC_CNT" msprop:Generator_ColumnPropNameInRow="DOC_CNT" msprop:Generator_ColumnPropNameInTable="DOC_CNTColumn" msprop:Generator_UserColumnName="DOC_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_UNIT" msprop:Generator_ColumnVarNameInTable="columnDOC_UNIT" msprop:Generator_ColumnPropNameInRow="DOC_UNIT" msprop:Generator_ColumnPropNameInTable="DOC_UNITColumn" msprop:Generator_UserColumnName="DOC_UNIT" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_INFO" msprop:Generator_ColumnVarNameInTable="columnMEDIA_INFO" msprop:Generator_ColumnPropNameInRow="MEDIA_INFO" msprop:Generator_ColumnPropNameInTable="MEDIA_INFOColumn" msprop:Generator_UserColumnName="MEDIA_INFO" type="xs:string" minOccurs="0" />
+              <xs:element name="SEC_NO" msprop:Generator_ColumnVarNameInTable="columnSEC_NO" msprop:Generator_ColumnPropNameInRow="SEC_NO" msprop:Generator_ColumnPropNameInTable="SEC_NOColumn" msprop:Generator_UserColumnName="SEC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="SEC_NAME" msprop:Generator_ColumnVarNameInTable="columnSEC_NAME" msprop:Generator_ColumnPropNameInRow="SEC_NAME" msprop:Generator_ColumnPropNameInTable="SEC_NAMEColumn" msprop:Generator_UserColumnName="SEC_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ENTRY_DATE" msprop:Generator_ColumnVarNameInTable="columnENTRY_DATE" msprop:Generator_ColumnPropNameInRow="ENTRY_DATE" msprop:Generator_ColumnPropNameInTable="ENTRY_DATEColumn" msprop:Generator_UserColumnName="ENTRY_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="CODE_DESC" msprop:Generator_ColumnVarNameInTable="columnCODE_DESC" msprop:Generator_ColumnPropNameInRow="CODE_DESC" msprop:Generator_ColumnPropNameInTable="CODE_DESCColumn" msprop:Generator_UserColumnName="CODE_DESC" type="xs:string" minOccurs="0" />
+              <xs:element name="REMARK" msprop:Generator_ColumnVarNameInTable="columnREMARK" msprop:Generator_ColumnPropNameInRow="REMARK" msprop:Generator_ColumnPropNameInTable="REMARKColumn" msprop:Generator_UserColumnName="REMARK" type="xs:string" minOccurs="0" />
+              <xs:element name="TX_CODE" msprop:Generator_ColumnVarNameInTable="columnTX_CODE" msprop:Generator_ColumnPropNameInRow="TX_CODE" msprop:Generator_ColumnPropNameInTable="TX_CODEColumn" msprop:Generator_UserColumnName="TX_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="ACP_NO" msprop:Generator_ColumnVarNameInTable="columnACP_NO" msprop:Generator_ColumnPropNameInRow="ACP_NO" msprop:Generator_ColumnPropNameInTable="ACP_NOColumn" msprop:Generator_UserColumnName="ACP_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ATTTABLE" msprop:Generator_TableClassName="ATTTABLEDataTable" msprop:Generator_TableVarName="tableATTTABLE" msprop:Generator_TablePropName="ATTTABLE" msprop:Generator_RowDeletingName="ATTTABLERowDeleting" msprop:Generator_RowChangingName="ATTTABLERowChanging" msprop:Generator_RowEvHandlerName="ATTTABLERowChangeEventHandler" msprop:Generator_RowDeletedName="ATTTABLERowDeleted" msprop:Generator_UserTableName="ATTTABLE" msprop:Generator_RowChangedName="ATTTABLERowChanged" msprop:Generator_RowEvArgName="ATTTABLERowChangeEvent" msprop:Generator_RowClassName="ATTTABLERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_DESC" msprop:Generator_ColumnVarNameInTable="columnFILE_DESC" msprop:Generator_ColumnPropNameInRow="FILE_DESC" msprop:Generator_ColumnPropNameInTable="FILE_DESCColumn" msprop:Generator_UserColumnName="FILE_DESC" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_DESP" msprop:Generator_ColumnVarNameInTable="columnMEDIA_DESP" msprop:Generator_ColumnPropNameInRow="MEDIA_DESP" msprop:Generator_ColumnPropNameInTable="MEDIA_DESPColumn" msprop:Generator_UserColumnName="MEDIA_DESP" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_CNT" msprop:Generator_ColumnVarNameInTable="columnMEDIA_CNT" msprop:Generator_ColumnPropNameInRow="MEDIA_CNT" msprop:Generator_ColumnPropNameInTable="MEDIA_CNTColumn" msprop:Generator_UserColumnName="MEDIA_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_UNIT" msprop:Generator_ColumnVarNameInTable="columnMEDIA_UNIT" msprop:Generator_ColumnPropNameInRow="MEDIA_UNIT" msprop:Generator_ColumnPropNameInTable="MEDIA_UNITColumn" msprop:Generator_UserColumnName="MEDIA_UNIT" type="xs:string" minOccurs="0" />
+              <xs:element name="IS_ECFILE" msprop:Generator_ColumnVarNameInTable="columnIS_ECFILE" msprop:Generator_ColumnPropNameInRow="IS_ECFILE" msprop:Generator_ColumnPropNameInTable="IS_ECFILEColumn" msprop:Generator_UserColumnName="IS_ECFILE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

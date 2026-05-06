@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ODT390D" targetNamespace="http://tempuri.org/ODT390D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/ODT390D.xsd" xmlns:mstns="http://tempuri.org/ODT390D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="ODT390D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="ODT390">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SEQ_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="POST_SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="ORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="POST_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="IS_PRINT" type="xs:string" minOccurs="0" />
+							<xs:element name="BOOKED" type="xs:string" minOccurs="0" />
+							<xs:element name="POST_COST" type="xs:string" minOccurs="0" />
+							<xs:element name="SHARE_COST" type="xs:string" minOccurs="0" />
+							<xs:element name="REST_COST" type="xs:string" minOccurs="0" />
+							<xs:element name="POST_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="PROP_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="PROP_COST" type="xs:string" minOccurs="0" />
+							<xs:element name="PROP_TYPE" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

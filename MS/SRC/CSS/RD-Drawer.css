@@ -1,0 +1,493 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS for 抽屜 */
+div#leftDrawer {
+    position: absolute;
+    top: 0; /*52px;*/
+    left: 0;
+    
+    width: 2.5em; /* 3.2em; 2017.4.5 - modified */
+    height: 100%; /*calc(100% - 52px);*/
+    transform: translate3d(-3.5em,0,0);
+    transition: transform 300ms ease;
+	/* 20170321 Kevin 套美工   
+	background-color: #FFF; */
+	/*background-image: linear-gradient(#4cade5, #eef2f3); 20170411 改套背景色*/
+	/* 20170321 Kevin 套美工
+    box-shadow: 3px 0 3px rgba(0,0,0,.15); */
+    z-index: 45;
+    overflow-y: hidden;
+}
+
+div.left_drawer.top_of_subpage {
+    z-index: 51;
+}
+
+/* 2017.4 - color scheme */
+/* 20170411 改套背景色
+.cs-ly div#leftDrawer {
+    background-image: linear-gradient(#e5c565, #f2f3ee);
+}
+.cs-lp div#leftDrawer {
+    background-image: linear-gradient(#e88bc2, #f2eef3);
+}
+.cs-lg div#leftDrawer {
+    background-image: linear-gradient(#97b531, #f8f3ee);
+}
+*/
+
+.left_drawer .drawerContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+    
+div#leftDrawer.drawer_show, .left_drawer.drawer_show {
+  transform: translate3d(0, 0, 0);
+}
+
+.left_drawer .drawer_switch {
+  margin-top: 6em; /*-2px; 2017.4 - modify */
+  width: 2.5em; /*3.2em; 2017.3.31 */
+  height: auto;
+  /*background-color: #fcf;*/
+}
+
+/* 2017.4 - 美工套用 */
+@media screen and (max-width: 1200px) and (orientation: landscape) {
+    div#leftDrawer {
+        width: 2.2em;
+    }
+    
+    .left_drawer .drawer_switch {
+        width: 2.2em;
+    }
+}
+
+/* 2021.2.3 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height:450px) and (orientation: landscape) {
+	.left_drawer .drawer_switch {
+        margin-top: 0.5em;
+    }
+}
+
+.left_drawer .drawer_link {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  width: 15px !important;
+  height: 50px;
+  background-color: #808080;
+  z-index: 19;
+  background-image: url(../IMAGE/SSO/icons-18-white.png) /*{global-icon-set}*/;
+  background-repeat: no-repeat;
+  background-position: 	-144px 50%;
+}
+
+/*#leftDrawer*/
+.drawer_switch .tab-item {
+    width: 100%;
+    border: 1px 1px 0 1px solid #CCC;
+    background-color: #f6f6f6;
+    text-align: center;
+    /*border-top-left-radius: 6px;*/
+	border-top-right-radius: 0.6em; /*20170417*/
+    border-bottom-right-radius: 0.6em;
+    /*border-bottom-right-radius: 6px;*/
+    border-top: 2px solid #CCC;
+    padding: 0 0.2em 0.2em 0.2em;
+    /*color: #CCC;*/
+    /*background-image: linear-gradient(to right, #e5e5e5, #f2f2f2);*/
+    background-image: linear-gradient(to right, #93EDC7 /*{e-bup-background-start}*/, #1CD8D2 /*{e-bup-background-end}*/);
+    cursor: pointer;
+    font-size: larger; /* 2017.3.31 */
+    font-weight: 800; /* 2017.3.31 */
+}
+
+.drawer_switch .tab-item:not(:first-child) {
+    margin-top: -3px;
+}
+
+.drawer_switch .tab-item:last-child {
+    border-bottom: 1px solid #888;
+}
+
+.drawer_switch .tab-item .tab-item-icon {
+    width: 100%;
+    height: 1.5em; /* 2.2em; 2017.3.31 - modify */
+    /*background-image: url(../IMAGE/SSO/icons-36-black.png); 2017.3.31 */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.drawer_switch .tab-item.tab-focus .tab-item-icon {
+    /*width: 100%; 2017.3.31 - remove */
+    /*height: 2.2em; 2017.3.31 - remove */
+    /*background-image: url(../IMAGE/SSO/icons-36-white.png);  2017.3.31 - remove */
+}
+
+/* 2017.3.31 - new */
+.drawer_switch #tab_todo.tab-item {
+    background: linear-gradient(to right, #FFF , #fff0c0);
+}
+
+.drawer_switch #tab_todo .tab-item-icon {
+    /*background-position: -930px 50%; 2017.3.31 */
+    background-image: url(../IMAGE/ART/Drawer-Todo.png);
+}
+
+ /* 2017.3.31 - new */
+.drawer_switch #tab_newdraft.tab-item {
+    background: linear-gradient(to right, #FFF , #b7f764);
+}
+
+.drawer_switch #tab_newdraft .tab-item-icon {
+    /*background-position: 4px 50%;  2017.3.31 */
+    background-image: url(../IMAGE/ART/Drawer-NewDraft.png);
+}
+
+.drawer_switch #tab_history_todo .tab-item-icon {
+    /*background-position: -498px 50%; 2017.3.31 */
+    background-image: url(../IMAGE/ART/Drawer-Search.png);
+}
+
+/* 2017.3.31 - new */
+.drawer_switch #tab_aki800.tab-item {
+    background: linear-gradient(to right, #FFF , #ffcd92); 
+}
+
+.drawer_switch #tab_aki800 .tab-item-icon {
+    /*background-position: -1216px 50%; 2017.3.31 */
+    background-image: url(../IMAGE/ART/Drawer-Search.png);
+}
+
+/*#leftDrawer*/
+.drawer_switch #tab_todo.tab-item.tab-focus,
+.drawer_switch #tab_newdraft.tab-item.tab-focus,
+.drawer_switch #tab_history_todo.tab-item.tab-focus,
+.drawer_switch #tab_aki800.tab-item.tab-focus {
+    /*color: #fff; 2017.3.31 */
+    /*background-image: linear-gradient(to right, #5f9cc5, #396b9e);*/
+    /*background-image: url(../IMAGE/SSO/icons-36-white.png); 2017.3.31 */
+    /*background-image: -ms-linear-gradient(right, #24C6DC*/ /*{d-bdown-background-start}*/ /*, #514A9D*/ /*{d-bdown-background-end}*/ /*); 2017.3.31 - remove */
+    /*background-image: linear-gradient(to right, #24C6DC*/ /*{d-bdown-background-start}*/ /*, #514A9D*/ /*{d-bdown-background-end}*/ /*); 2017.3.31 - remove */
+}
+
+/* 各側桌右側的拉動控制項 */
+.dragControlPane {
+    width: 40px; /* 24px; 2017.3.31 */
+    position: absolute;
+    top: 5px; /*45px; 2017.4 - modify */
+    right: 0px;
+    z-index: 5;
+}
+
+#aki800ListWorkspace .dragControlPane {
+    top: 16px;
+}
+
+.list_layout .dragControlPane,
+.searchViewContent .dragControlPane,
+#newDocWorkspace .dragControlPane,
+#aki800ListWorkspace .dragControlPane
+{
+    top: 5px;
+}
+
+.dragControlPane .drag_control {
+    width: 37px; /* 24px; 2017.3.31 */
+    height: 43px; /* 22px; 2017.3.31 */
+    padding: 1px;
+    background-image: url(../IMAGE/SSO/icons-18-white.png) /*{global-icon-set} {global-icon-set}*/;
+    background-repeat: no-repeat;
+    background-color: tranparent; /* #3e6790; 2017.3.31 */
+    cursor: pointer;
+    /* 2016.5.12
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* 2017.3.31
+.dragControlPane .drag_control:not(:last-child) {
+    margin-bottom: 10px;
+}*/
+
+.dragControlPane .drag_to_half {
+    /* background-position: -141px 50%; */
+    background-image: url(../IMAGE/ART/Drawer-TodoToHalf.png) /*{global-icon-set}*/;
+    background-color: transparent;
+}
+
+.dragControlPane .drag_to_close {
+    /* background-position: -69px 50%; */
+    background-image: url(../IMAGE/ART/Drawer-TodoToClose.png) /*{global-icon-set}*/;
+    background-color: transparent;
+}
+
+.dragControlPane .drag_to_full {
+    /* background-position: -105px 50%; */
+    background-image: url(../IMAGE/ART/Drawer-TodoToFull.png) /*{global-icon-set}*/;
+    background-color: transparent;
+}
+
+.dragControlPane .drag_control.drag_item_title {
+    background-image: none;
+    height: 7em; /* 5.5em; 2017.3.31 */
+    color: #222; /* #eee; 2017.3.31 */
+    margin-bottom: .5em;
+    text-align: center;
+    text-shadow: 0 /*{b-body-shadow-x}*/ 1px /*{b-body-shadow-y}*/ 0 /*{b-body-shadow-radius}*/ #FFF /*{b-body-shadow-color}*/;
+    background: linear-gradient(to right, #FFF , #fff0c0); /* 2017.3.31 */
+    font-size: larger; /* 2017.3.31 - add */
+    font-weight: 800; /* 2017.4 - add */
+    cursor: default;
+}
+
+/* 2017.3.31 */
+#todolistContainer .dragControlPane .drag_control.drag_item_title {
+    background: linear-gradient(to right, #FFF , #fff0c0); 
+}
+
+/* 2021.2.18 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height:450px) and (orientation: landscape) {
+    #todolistContainer .dragControlPane .drag_control.drag_item_title {
+        height: 4.5em;
+    }
+}
+
+#newDocWorkspace .dragControlPane .drag_control.drag_item_title {
+    background: linear-gradient(to right, #FFF , #b7f764); /* 2017.3.31 */
+    height: 4.5em; /* 3em; 2017.3.31 */
+    margin-top: 9em;
+}
+
+/* 2021.2.18 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height:450px) and (orientation: landscape) {
+    #newDocWorkspace .dragControlPane .drag_control.drag_item_title {
+        margin-top: 1.5em;
+        height: 4.5em;
+    }
+}
+
+/* 2017.3.31 */
+#aki800ListWorkspace  .dragControlPane .drag_control.drag_item_title {
+    background: linear-gradient(to right, #FFF , #ffcd92); /* 2017.3.31 */
+    margin-top: 11em;
+}
+
+/* 2021.2.18 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height:450px) and (orientation: landscape) {
+    #aki800ListWorkspace .dragControlPane .drag_control.drag_item_title {
+        margin-top: 3.5em;
+        height: 4.5em;
+    }
+}
+
+#newDocWorkspace .dragControlPane .drag_item_title.insertDraftMode {
+    height: 7em; /*5em; 20170427 - Eric, 美工 */
+}
+
+.drag_item_title .icon_place {
+    width: 100%;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.drag_item_title .icon-tdl {
+    background-image: url(../IMAGE/ART/Drawer-Todo.png) /*{global-icon-set}*/;
+}
+
+.drag_item_title .icon-newDraft {
+    background-image: url(../IMAGE/ART/Drawer-NewDraft.png) /*{global-icon-set}*/;
+}
+
+.drag_item_title .icon-aki800 {
+    background-image: url(../IMAGE/ART/Drawer-Search.png) /*{global-icon-set}*/;
+}
+
+.mpContainer {
+    position: relative;
+}
+
+.doc_desktop_subpage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*transform: translate3d(calc(0px - 100% - 20px),0,0); */
+    transform: translateX(-100%) translateX(-2em);
+    transition: transform 1000ms ease;
+    z-index: 50;
+    /* 2016.5.12
+    border-right: 2px solid #CCC; */
+    background-color: #CCC;
+}
+
+.doc_desktop_subpage.doc_desktop_showpage {
+    transform: translate3d(0,0,0);
+    display: block;
+}
+
+.doc_desktop_subpage.doc_desktop_sidepage {
+    /* 2016.5.12 */
+    /*transform: translate3d(calc(0px - 100% + 25em + 24px),0,0);*/
+    transform: translateX(-100%) translateX(25em) translateX(1.5em);
+    z-index: 1100; /* 2016.10.3 - Eric, 解決新增文稿只顯示畫面左方1/3內容問題 */
+}
+
+/*.doc_desktop_subpage.doc_desktop_hiddenpage {*/
+    /*left: calc(0px - 100% - 20px); 2021.1.7 - 1090786 Eric, 因側屜內容顯示傳送後未顯示, 取消! */
+/*}*/
+
+@media screen and (max-width: 1300px) and (orientation: landscape) {
+    /*.doc_desktop_subpage.doc_desktop_sidepage {
+        transform: translate3d(-630px,0,0);
+    }
+    
+    .doc_desktop_subpage.doc_desktop_hiddenpage {
+        left: -1030px;
+    }*/
+}
+
+/* 2020.11.27 - 1090786 Eric, 未使用, 移除! [Note:修改前內容為空, margin-left設定已被mark未使用] */
+/*.doc_desktop_subpage .sub_content { */
+    /*margin-left: 3.2em;*/
+/*}*/
+
+/*#login.login_slidedown {
+  display: block;
+  margin-top: 0;*/
+  
+  /* 顯示在所有頁面之前 */
+  /*z-index: 500;
+}*/
+  
+#leftDrawer .draw_panel {
+    height: calc(100% - 21px);
+}
+
+#leftDrawer .createDraft_content {
+    background-color: #80ff80;
+}
+
+#leftDrawer .history_todo_content {
+    background-color: #ffff80;
+}
+
+#leftDrawer .docSearch_content {
+    background-color: #80ffff;
+}
+
+#leftDrawer .selectedFolder_search {
+  border-radius: 0.5em;
+  font-weight: 800;
+  text-shadow: 0 1px 1px #fff;
+  display: inline;
+}
+
+#leftDrawer .selector_wrapper { /* 條列清單模式左上方之folder selector */
+  width: 90%;
+  display: inline-block;
+  margin-left: 5%;
+}
+
+#leftDrawer .selector_wrapper > span { /* 條列清單模式左上方之folder selector */
+    right: 9px;
+}
+
+#leftDrawer .selectedFolder_search { /* 預覽模式左方導覽窗格之 folder selector */
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 3px;
+  text-indent: 5px;
+}
+
+#leftDrawer .search-wrapper {
+  margin-top: 15px;
+  height: calc(100% - 44px);
+}
+
+#leftDrawer .search-wrapper ul {
+  height: calc(100% - 47px);
+}
+
+#leftDrawer .new_draft_settings {
+    width: calc(100% - 1em);
+}
+
+#leftDrawer div.drawerContent > span {
+  right: calc(10% + 5px);
+}
+
+
+/* css for 創稿功能 */
+#newDocWorkspace .tdl_rt_toolbar {
+  position: absolute;
+  right: 5px;
+  top:0px;
+  width: 45px;
+  height: 36px;
+  margin-top: -8px;
+	
+  background-image: linear-gradient(#396B9E /*{b-bup-background-start}*/, #5F9CC5 /*{b-bup-background-end}*/);
+  border-radius: 0 0 .5em .5em;
+  border: 1px solid #396B9E;
+	
+  -webkit-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+}
+
+#newDocWorkspace .sub_content {
+    /* 2016.5.12 
+    background-color: #EEE; */
+    background: transparent;
+    border: none;
+    
+    overflow-y: auto;
+    height: 100%; /*calc(100% - 0.8em - 2px); */
+    padding: 0;
+}
+
+#newDocWorkspace .draft_filter .ui-field-contain div.ui-select {
+    width: 70%;
+}
+
+#newDocWorkspace .draftTypePanel .ui-field-contain .ui-controlgroup-label {
+    width: 25%;    
+}
+
+#newDocWorkspace .draftTypePanel .ui-field-contain .ui-controlgroup-controls {
+    width: 73%;
+}
+
+#newDocWorkspace .drafts {
+    width: 90%;
+    margin: auto;
+    height: calc(100% - 68px);
+    overflow-y: scroll;
+}
+
+#newDocWorkspace .draft_item {
+    width: calc((250px - 2em) * 0.707);
+    height: calc(256px - 2em);
+    border: 2px solid #888;
+    background-image: linear-gradient(#d7d2cc/*{d-bdown-background-start}*/, #304352/*{d-bdown-background-end}*/);
+    text-align: center;
+    margin: 1em auto;
+    color: #0000FF;
+    font-size: larger;
+}
+
+/* 文稿預覽 */
+#newDocPreviewPane {
+    transform: translate3d(-1400px, 0, 0);
+    transition: transform 1000ms ease;
+}
+
+#newDocPreviewPane.slideToOpen {
+    transform: translate3d(0, 0, 0);
+}

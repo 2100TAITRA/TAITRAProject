@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SRService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SRService_AuthWS_AuthWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://sys2013/iiws/authws.asmx</Value>
+    </Setting>
+    <Setting Name="SRService_ODMSSP_ODMSSP" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://sys2013/ODMSSP/ODMSSP.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

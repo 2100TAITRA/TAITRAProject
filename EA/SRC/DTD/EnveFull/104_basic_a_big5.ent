@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="BIG5"?>
+<!-- 基本標籤集   104_basic_a_big5.ent   1999.12.1  修改日期:2015.05.01  -->
+<!ELEMENT  年月日     (#PCDATA)>
+<!--  例: <年月日>0990108</年月日>  -->
+<!ELEMENT  字    (#PCDATA)>
+<!ELEMENT  文號     (年度,流水號,支號?)>
+<!ELEMENT  年度      (#PCDATA)>
+<!ELEMENT  流水號    (#PCDATA)>
+<!ELEMENT  支號      (#PCDATA)>
+<!ELEMENT  時分      (#PCDATA)>
+<!--  例: <時分>0830</時分>  -->
+<!ELEMENT  文字    (#PCDATA)>
+<!ELEMENT  姓名      (#PCDATA)>
+<!ELEMENT  職稱    (#PCDATA)>
+<!ELEMENT  全銜      (#PCDATA)>
+<!ELEMENT  機關代碼   (#PCDATA)>
+<!ELEMENT  單位代碼   (#PCDATA)>
+<!ELEMENT  收發處理本別  EMPTY>
+<!ATTLIST  收發處理本別  代碼   (1|2|3|4|5|A|B|C|D|E)  "1">
+<!ELEMENT  公文類別    EMPTY>
+<!ATTLIST  公文類別  代碼    (1|2|3|4|5|6|7|8|9|A|Z)  "2">
+<!ELEMENT  令類別    EMPTY>
+<!ATTLIST  令類別 代碼       (1|2)   "2">
+<!ELEMENT  函類別    EMPTY>
+<!ATTLIST  函類別 代碼       (1|2|3|4|5|6|7|8|9|A)    "1">
+<!ELEMENT  密等及解密條件或保密期限  (密等,解密條件或保密期限)>
+<!ELEMENT  密等     EMPTY>
+<!ATTLIST  密等  代碼       (1|2|3|4|5)   "1"> 
+<!ELEMENT  解密條件或保密期限 (#PCDATA)>
+<!ELEMENT  保存年限    (#PCDATA)>
+<!ELEMENT  功能     EMPTY>
+<!ATTLIST  功能      代碼   (N|M|D)   "N">
+<!ELEMENT  應用限制    EMPTY>
+<!ATTLIST  應用限制  代碼   (Y|N|R)   "Y">
+<!ELEMENT  年度號      (#PCDATA)>
+<!ELEMENT  分類號      (#PCDATA)>
+<!ELEMENT  案次號      (#PCDATA)>
+<!ELEMENT  卷次號      (#PCDATA)>
+<!ELEMENT  目次號      (#PCDATA)>
+<!ELEMENT  媒體型式      EMPTY>
+<!ATTLIST  媒體型式  代碼   (1|2|3|4|5|6|7|8|9|A|B|C|D|E|F|Z)   "1">
+<!ELEMENT  機關        (全銜,機關代碼?)>
+<!ELEMENT  發文日期     (#PCDATA)>
+<!ELEMENT  發文字號     ((字,文號)|(文字))>
+<!ELEMENT  受文者     (#PCDATA)> 
+<!ELEMENT  文別      (公文類別,(函類別|令類別|其他類別)?)> 
+<!ELEMENT  本別      EMPTY>
+<!ATTLIST  本別  代碼   (1|2|3|4|5|A|B|C|D|E)  "1">
+<!ELEMENT  收文字號     ((字,文號)|(文字))>
+<!ELEMENT  來文字號    ((字,文號)|(文字))>
+<!ELEMENT  辦畢日期     (#PCDATA)>
+<!ELEMENT  來文日期     (#PCDATA)>
+<!ELEMENT  收文日期     (#PCDATA)>
+<!ELEMENT  併案文號    (#PCDATA)>
+<!ELEMENT  附件名稱     (#PCDATA)>
+<!ELEMENT  附件媒體型式    (媒體型式)>
+<!ELEMENT  承辦單位    (#PCDATA)>
+<!ELEMENT  案情摘要    (#PCDATA)>
+<!ELEMENT  附件數量      (#PCDATA)> 
+<!ELEMENT  其他類別    EMPTY>
+<!ATTLIST   其他類別   代碼   (1|2|3|4|5|6|7|8|9|A|B|C|D|E|F|G|H|I|Z) "1">
+<!ELEMENT  檔案名稱          (#PCDATA)>
+<!ELEMENT  檔案路徑          (#PCDATA)>
+<!ELEMENT  檔案大小          (#PCDATA)>
+<!ELEMENT 檔案格式        (#PCDATA) >
+<!ELEMENT  檔案來源別   EMPTY>
+<!ATTLIST  檔案來源別  代碼   (1|2|3|4)   "1">
+<!ELEMENT  頁數          (#PCDATA)>

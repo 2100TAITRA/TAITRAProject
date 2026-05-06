@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="BIG5"?>
+<!--		 104_ertransfer_big5.dtd 移轉(交)電子媒體封裝檔格式  2015.05.01 -->
+<!ELEMENT 移轉封裝檔 (Signature)>
+<!ELEMENT 電子媒體編號清單 (電子媒體編號+)>
+<!ELEMENT 電子媒體編號 (#PCDATA)>
+<!ELEMENT Signature (SignedInfo, SignatureValue, KeyInfo, Object*)>
+<!ATTLIST Signature
+	Id ID #IMPLIED
+>
+<!ELEMENT SignedInfo (CanonicalizationMethod, SignatureMethod, Reference+)>
+<!ATTLIST SignedInfo
+	Id ID #IMPLIED
+>
+<!ELEMENT CanonicalizationMethod (#PCDATA)* >
+<!ATTLIST CanonicalizationMethod
+	Algorithm CDATA #REQUIRED
+>
+<!ELEMENT SignatureValue (#PCDATA)>
+<!ATTLIST SignatureValue
+	Id ID #IMPLIED
+>
+<!ELEMENT DigestMethod (#PCDATA)*>
+<!ATTLIST DigestMethod
+	Algorithm CDATA #REQUIRED
+>
+<!ELEMENT DigestValue (#PCDATA)>
+<!ELEMENT KeyInfo (X509Data)>
+<!ATTLIST KeyInfo
+	Id ID #IMPLIED
+>
+<!ELEMENT Manifest (Reference+)>
+<!ATTLIST Manifest
+	Id ID #IMPLIED
+>
+<!ELEMENT Reference (Transforms?, DigestMethod, DigestValue)>
+<!ATTLIST Reference
+	Id ID #IMPLIED
+	URI CDATA #IMPLIED
+	Type CDATA #IMPLIED
+>
+<!ELEMENT Object (電子媒體編號清單)>
+<!ATTLIST Object
+	Id ID #REQUIRED
+>
+<!ELEMENT SignatureMethod (#PCDATA | HMACOutputLength)*>
+<!ATTLIST SignatureMethod
+	Algorithm CDATA #REQUIRED
+>
+<!ELEMENT SignatureProperties (SignatureProperty+)>
+<!ATTLIST SignatureProperties
+	Id ID #IMPLIED
+>
+<!ELEMENT SignatureProperty (#PCDATA)*>
+<!ATTLIST SignatureProperty
+	Target CDATA #REQUIRED
+	Id ID #IMPLIED
+>
+<!ELEMENT Transform (#PCDATA |XPath)*>
+<!ATTLIST Transform
+	Algorithm CDATA #REQUIRED
+>
+<!ELEMENT Transforms (Transform+)>
+<!ELEMENT X509Data (X509Certificate)>
+<!ELEMENT HMACOutputLength (#PCDATA)>
+<!ELEMENT XPath (#PCDATA)>
+<!ELEMENT X509Certificate (#PCDATA)>

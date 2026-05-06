@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAT831_MOCSD" targetNamespace="http://tempuri.org/AKR810D.xsd" xmlns:mstns="http://tempuri.org/AKR810D.xsd" xmlns="http://tempuri.org/AKR810D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAT831_MOCSD" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EAT831_MOCSD" msprop:Generator_UserDSName="EAT831_MOCSD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="_x0038_10Rpt" msprop:Generator_TableClassName="_810RptDataTable" msprop:Generator_TableVarName="table810Rpt" msprop:Generator_TablePropName="_810Rpt" msprop:Generator_RowDeletingName="_810RptRowDeleting" msprop:Generator_RowChangingName="_810RptRowChanging" msprop:Generator_RowEvHandlerName="_810RptRowChangeEventHandler" msprop:Generator_RowDeletedName="_810RptRowDeleted" msprop:Generator_UserTableName="810Rpt" msprop:Generator_RowChangedName="_810RptRowChanged" msprop:Generator_RowEvArgName="_810RptRowChangeEvent" msprop:Generator_RowClassName="_810RptRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PAGE" msprop:Generator_ColumnVarNameInTable="columnPAGE" msprop:Generator_ColumnPropNameInRow="PAGE" msprop:Generator_ColumnPropNameInTable="PAGEColumn" msprop:Generator_UserColumnName="PAGE" type="xs:string" minOccurs="0" />
+              <xs:element name="FOUR_CORNER_NO" msprop:Generator_ColumnVarNameInTable="columnFOUR_CORNER_NO" msprop:Generator_ColumnPropNameInRow="FOUR_CORNER_NO" msprop:Generator_ColumnPropNameInTable="FOUR_CORNER_NOColumn" msprop:Generator_UserColumnName="FOUR_CORNER_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_DATE" msprop:Generator_ColumnVarNameInTable="columnAPPLY_DATE" msprop:Generator_ColumnPropNameInRow="APPLY_DATE" msprop:Generator_ColumnPropNameInTable="APPLY_DATEColumn" msprop:Generator_UserColumnName="APPLY_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="BORDEPTNAME" msprop:Generator_ColumnVarNameInTable="columnBORDEPTNAME" msprop:Generator_ColumnPropNameInRow="BORDEPTNAME" msprop:Generator_ColumnPropNameInTable="BORDEPTNAMEColumn" msprop:Generator_UserColumnName="BORDEPTNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CLOSEDATE" msprop:Generator_ColumnVarNameInTable="columnCLOSEDATE" msprop:Generator_ColumnPropNameInRow="CLOSEDATE" msprop:Generator_ColumnPropNameInTable="CLOSEDATEColumn" msprop:Generator_UserColumnName="CLOSEDATE" type="xs:string" minOccurs="0" />
+              <xs:element name="BOREMPNAME" msprop:Generator_ColumnVarNameInTable="columnBOREMPNAME" msprop:Generator_ColumnPropNameInRow="BOREMPNAME" msprop:Generator_ColumnPropNameInTable="BOREMPNAMEColumn" msprop:Generator_UserColumnName="BOREMPNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="MGRNAME" msprop:Generator_ColumnVarNameInTable="columnMGRNAME" msprop:Generator_ColumnPropNameInRow="MGRNAME" msprop:Generator_ColumnPropNameInTable="MGRNAMEColumn" msprop:Generator_UserColumnName="MGRNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_NO" msprop:Generator_ColumnVarNameInTable="columnFILE_NO" msprop:Generator_ColumnPropNameInRow="FILE_NO" msprop:Generator_ColumnPropNameInTable="FILE_NOColumn" msprop:Generator_UserColumnName="FILE_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DOCPAGE" msprop:Generator_ColumnVarNameInTable="columnDOCPAGE" msprop:Generator_ColumnPropNameInRow="DOCPAGE" msprop:Generator_ColumnPropNameInTable="DOCPAGEColumn" msprop:Generator_UserColumnName="DOCPAGE" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="COPY_NO" msprop:Generator_ColumnVarNameInTable="columnCOPY_NO" msprop:Generator_ColumnPropNameInRow="COPY_NO" msprop:Generator_ColumnPropNameInTable="COPY_NOColumn" msprop:Generator_UserColumnName="COPY_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="COMNO" msprop:Generator_ColumnVarNameInTable="columnCOMNO" msprop:Generator_ColumnPropNameInRow="COMNO" msprop:Generator_ColumnPropNameInTable="COMNOColumn" msprop:Generator_UserColumnName="COMNO" type="xs:string" minOccurs="0" />
+              <xs:element name="BOR_NO" msprop:Generator_ColumnVarNameInTable="columnBOR_NO" msprop:Generator_ColumnPropNameInRow="BOR_NO" msprop:Generator_ColumnPropNameInTable="BOR_NOColumn" msprop:Generator_UserColumnName="BOR_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DESC" msprop:Generator_ColumnVarNameInTable="columnDESC" msprop:Generator_ColumnPropNameInRow="DESC" msprop:Generator_ColumnPropNameInTable="DESCColumn" msprop:Generator_UserColumnName="DESC" type="xs:string" minOccurs="0" />
+              <xs:element name="BOR_REASON" msprop:Generator_ColumnVarNameInTable="columnBOR_REASON" msprop:Generator_ColumnPropNameInRow="BOR_REASON" msprop:Generator_ColumnPropNameInTable="BOR_REASONColumn" msprop:Generator_UserColumnName="BOR_REASON" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EAT831_L2" msprop:Generator_TableClassName="EAT831_L2DataTable" msprop:Generator_TableVarName="tableEAT831_L2" msprop:Generator_RowChangedName="EAT831_L2RowChanged" msprop:Generator_TablePropName="EAT831_L2" msprop:Generator_RowDeletingName="EAT831_L2RowDeleting" msprop:Generator_RowChangingName="EAT831_L2RowChanging" msprop:Generator_RowEvHandlerName="EAT831_L2RowChangeEventHandler" msprop:Generator_RowDeletedName="EAT831_L2RowDeleted" msprop:Generator_RowClassName="EAT831_L2Row" msprop:Generator_UserTableName="EAT831_L2" msprop:Generator_RowEvArgName="EAT831_L2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BOR_DATE" msprop:Generator_ColumnVarNameInTable="columnBOR_DATE" msprop:Generator_ColumnPropNameInRow="BOR_DATE" msprop:Generator_ColumnPropNameInTable="BOR_DATEColumn" msprop:Generator_UserColumnName="BOR_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLYDEPTNAME" msprop:Generator_ColumnVarNameInTable="columnAPPLYDEPTNAME" msprop:Generator_ColumnPropNameInRow="APPLYDEPTNAME" msprop:Generator_ColumnPropNameInTable="APPLYDEPTNAMEColumn" msprop:Generator_UserColumnName="APPLYDEPTNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="FILENO_NAME" msprop:Generator_ColumnVarNameInTable="columnFILENO_NAME" msprop:Generator_ColumnPropNameInRow="FILENO_NAME" msprop:Generator_ColumnPropNameInTable="FILENO_NAMEColumn" msprop:Generator_UserColumnName="FILENO_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="BOOKMARKNO" msprop:Generator_ColumnVarNameInTable="columnBOOKMARKNO" msprop:Generator_ColumnPropNameInRow="BOOKMARKNO" msprop:Generator_ColumnPropNameInTable="BOOKMARKNOColumn" msprop:Generator_UserColumnName="BOOKMARKNO" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLYEMPNAME" msprop:Generator_ColumnVarNameInTable="columnAPPLYEMPNAME" msprop:Generator_ColumnPropNameInRow="APPLYEMPNAME" msprop:Generator_ColumnPropNameInTable="APPLYEMPNAMEColumn" msprop:Generator_UserColumnName="APPLYEMPNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_DATE" msprop:Generator_ColumnVarNameInTable="columnAPPLY_DATE" msprop:Generator_ColumnPropNameInRow="APPLY_DATE" msprop:Generator_ColumnPropNameInTable="APPLY_DATEColumn" msprop:Generator_UserColumnName="APPLY_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="BOR_NO" msprop:Generator_ColumnVarNameInTable="columnBOR_NO" msprop:Generator_ColumnPropNameInRow="BOR_NO" msprop:Generator_ColumnPropNameInTable="BOR_NOColumn" msprop:Generator_UserColumnName="BOR_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

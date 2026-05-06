@@ -1,0 +1,31 @@
+﻿<!DOCTYPE HTML>
+<script language="javascript">
+window.onload = fnOnLoad;
+function fnOnLoad()
+{
+	//1100504	Joe		1100473		弱掃修正Client DOM XSS
+	//embeddedFrame.location = "IFI700C1.aspx" + GetAllParamStr();
+	embeddedFrame.location = "IFI700C1.aspx" + encodeURI(GetAllParamStr());
+}
+function GetAllParamStr()
+{
+	var strParam = "";
+	var pUrl = unescape(this.location);
+	if( pUrl != -1 )
+	{
+		var i = pUrl.indexOf("?");
+		if(i != -1)
+			strParam = pUrl.substr(i); 
+	}
+	return strParam;
+}
+</script>
+<HTML>
+	<HEAD>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<TITLE>IFI700C1 公告事項明細內容子視窗</TITLE>
+	</HEAD>
+	<FRAMESET>
+		<frame src="IFI700C1.aspx" name="embeddedFrame" width="100%" height="100%" />
+	</FRAMESET>
+</HTML>

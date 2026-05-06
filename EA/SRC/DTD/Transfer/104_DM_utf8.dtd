@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  104_DM_utf8.dtd   文書訊息表單   2015.05.01 -->
+<!ENTITY  % 基本標籤  SYSTEM "104_basic_utf8.ent" >
+%基本標籤;
+<!ENTITY  % 電子交換標籤  SYSTEM "104_exchange_utf8.ent" >
+%電子交換標籤;
+<!ELEMENT  文書訊息表單  (文書訊息代碼,訊息備註)>
+<!-- /文書訊息表單 -->

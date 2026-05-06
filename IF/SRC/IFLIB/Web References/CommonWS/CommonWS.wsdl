@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUnitInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCodeName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnitInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnitInfoResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EmailNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argContent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSenderCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmailNotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailNotifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RebuildStaticTreeView">
+        <s:complexType />
+      </s:element>
+      <s:element name="RebuildStaticTreeViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RebuildStaticTreeViewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrgInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrgInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrgInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrgInfoWithSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="argGenBatchSubmitResFile" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argGenBussinessTypeResFile" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argGenLocalUnitResFile" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argGenUnitInfoFile" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argRebuildStaticTreeView" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrgInfoWithSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrgInfoWithSetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfArrayOfString" nillable="true" type="tns:ArrayOfArrayOfString" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUnitInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnitInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnitInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EmailNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:EmailNotify" />
+  </wsdl:message>
+  <wsdl:message name="EmailNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:EmailNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="RebuildStaticTreeViewSoapIn">
+    <wsdl:part name="parameters" element="tns:RebuildStaticTreeView" />
+  </wsdl:message>
+  <wsdl:message name="RebuildStaticTreeViewSoapOut">
+    <wsdl:part name="parameters" element="tns:RebuildStaticTreeViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrgInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrgInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoWithSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrgInfoWithSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoWithSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrgInfoWithSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitInfoHttpGetIn">
+    <wsdl:part name="argUnitCodeName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="EmailNotifyHttpGetIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSubject" type="s:string" />
+    <wsdl:part name="argContent" type="s:string" />
+    <wsdl:part name="argSenderCode" type="s:string" />
+    <wsdl:part name="argUserCode" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="EmailNotifyHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RebuildStaticTreeViewHttpGetIn" />
+  <wsdl:message name="RebuildStaticTreeViewHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoHttpGetIn">
+    <wsdl:part name="argOrgno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoWithSetHttpGetIn">
+    <wsdl:part name="argGenBatchSubmitResFile" type="s:string" />
+    <wsdl:part name="argGenBussinessTypeResFile" type="s:string" />
+    <wsdl:part name="argGenLocalUnitResFile" type="s:string" />
+    <wsdl:part name="argGenUnitInfoFile" type="s:string" />
+    <wsdl:part name="argRebuildStaticTreeView" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoWithSetHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitInfoHttpPostIn">
+    <wsdl:part name="argUnitCodeName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUnitInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="EmailNotifyHttpPostIn">
+    <wsdl:part name="argSessionID" type="s:string" />
+    <wsdl:part name="argSubject" type="s:string" />
+    <wsdl:part name="argContent" type="s:string" />
+    <wsdl:part name="argSenderCode" type="s:string" />
+    <wsdl:part name="argUserCode" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="EmailNotifyHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RebuildStaticTreeViewHttpPostIn" />
+  <wsdl:message name="RebuildStaticTreeViewHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoHttpPostIn">
+    <wsdl:part name="argOrgno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoWithSetHttpPostIn">
+    <wsdl:part name="argGenBatchSubmitResFile" type="s:string" />
+    <wsdl:part name="argGenBussinessTypeResFile" type="s:string" />
+    <wsdl:part name="argGenLocalUnitResFile" type="s:string" />
+    <wsdl:part name="argGenUnitInfoFile" type="s:string" />
+    <wsdl:part name="argRebuildStaticTreeView" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrgInfoWithSetHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="CommonWSSoap">
+    <wsdl:operation name="GetUnitInfo">
+      <wsdl:input message="tns:GetUnitInfoSoapIn" />
+      <wsdl:output message="tns:GetUnitInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmailNotify">
+      <wsdl:input message="tns:EmailNotifySoapIn" />
+      <wsdl:output message="tns:EmailNotifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RebuildStaticTreeView">
+      <wsdl:input message="tns:RebuildStaticTreeViewSoapIn" />
+      <wsdl:output message="tns:RebuildStaticTreeViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfo">
+      <wsdl:input message="tns:UpdateOrgInfoSoapIn" />
+      <wsdl:output message="tns:UpdateOrgInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfoWithSet">
+      <wsdl:input message="tns:UpdateOrgInfoWithSetSoapIn" />
+      <wsdl:output message="tns:UpdateOrgInfoWithSetSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CommonWSHttpGet">
+    <wsdl:operation name="GetUnitInfo">
+      <wsdl:input message="tns:GetUnitInfoHttpGetIn" />
+      <wsdl:output message="tns:GetUnitInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmailNotify">
+      <wsdl:input message="tns:EmailNotifyHttpGetIn" />
+      <wsdl:output message="tns:EmailNotifyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RebuildStaticTreeView">
+      <wsdl:input message="tns:RebuildStaticTreeViewHttpGetIn" />
+      <wsdl:output message="tns:RebuildStaticTreeViewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfo">
+      <wsdl:input message="tns:UpdateOrgInfoHttpGetIn" />
+      <wsdl:output message="tns:UpdateOrgInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfoWithSet">
+      <wsdl:input message="tns:UpdateOrgInfoWithSetHttpGetIn" />
+      <wsdl:output message="tns:UpdateOrgInfoWithSetHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CommonWSHttpPost">
+    <wsdl:operation name="GetUnitInfo">
+      <wsdl:input message="tns:GetUnitInfoHttpPostIn" />
+      <wsdl:output message="tns:GetUnitInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EmailNotify">
+      <wsdl:input message="tns:EmailNotifyHttpPostIn" />
+      <wsdl:output message="tns:EmailNotifyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RebuildStaticTreeView">
+      <wsdl:input message="tns:RebuildStaticTreeViewHttpPostIn" />
+      <wsdl:output message="tns:RebuildStaticTreeViewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfo">
+      <wsdl:input message="tns:UpdateOrgInfoHttpPostIn" />
+      <wsdl:output message="tns:UpdateOrgInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfoWithSet">
+      <wsdl:input message="tns:UpdateOrgInfoWithSetHttpPostIn" />
+      <wsdl:output message="tns:UpdateOrgInfoWithSetHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CommonWSSoap" type="tns:CommonWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetUnitInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUnitInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmailNotify">
+      <soap:operation soapAction="http://tempuri.org/EmailNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RebuildStaticTreeView">
+      <soap:operation soapAction="http://tempuri.org/RebuildStaticTreeView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrgInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfoWithSet">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrgInfoWithSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CommonWSHttpGet" type="tns:CommonWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetUnitInfo">
+      <http:operation location="/GetUnitInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmailNotify">
+      <http:operation location="/EmailNotify" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RebuildStaticTreeView">
+      <http:operation location="/RebuildStaticTreeView" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfo">
+      <http:operation location="/UpdateOrgInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfoWithSet">
+      <http:operation location="/UpdateOrgInfoWithSet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CommonWSHttpPost" type="tns:CommonWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetUnitInfo">
+      <http:operation location="/GetUnitInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmailNotify">
+      <http:operation location="/EmailNotify" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RebuildStaticTreeView">
+      <http:operation location="/RebuildStaticTreeView" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfo">
+      <http:operation location="/UpdateOrgInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrgInfoWithSet">
+      <http:operation location="/UpdateOrgInfoWithSet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CommonWS">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="CommonWSSoap" binding="tns:CommonWSSoap">
+      <soap:address location="http://localhost/iiws/CommonWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CommonWSHttpGet" binding="tns:CommonWSHttpGet">
+      <http:address location="http://localhost/iiws/CommonWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CommonWSHttpPost" binding="tns:CommonWSHttpPost">
+      <http:address location="http://localhost/iiws/CommonWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html><head>
+		<title>EAH005 分類號及已立案案件查詢視窗</title>
+		<meta content="Microsoft Visual Studio 8.0" name="GENERATOR">
+		<meta content="C#" name="CODE_LANGUAGE">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<link rel="stylesheet" href="/STDN/Lib/css/zTreeStyle/zTreeStyle.css" type="text/css">
+		<link href="/STDN/Lib/SYS.css" type="text/css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		
+	</head>
+	<body ms_positioning="GridLayout" class="" style="font-size: 100%;">
+		<form name="EAH005" language="javascript" id="EAH005">
+<input type="hidden" name="TemplateMode" id="TemplateMode" value="0">
+<input type="hidden" name="StatusValue" id="StatusValue" value="新增　　｜　　　　　　　　　　　　　　　　　　　　｜王建盛　　｜隸屬機關：屏東縣政府">
+<input type="hidden" name="StatusMode" id="StatusMode" value="">
+<input type="hidden" name="SsoServer" id="SsoServer" value="pthgvip.fdat.com.tw">
+<input type="hidden" name="ToolBarSenderID" id="ToolBarSenderID" value="">
+<input type="hidden" name="txPrivilege" id="txPrivilege" value="SuperUser">
+<input type="hidden" name="txState" id="txState" value="未執行">
+<input type="hidden" name="txErrMsg" id="txErrMsg" value="無">
+<input type="hidden" name="txRecords" id="txRecords" value="0">
+<link rel="stylesheet" href="CSS/jquery-simplemodal.basic.css">
+<script src="/ms/Lib/jquery.js"></script>
+<script src="/ms/Lib/jquery.simplemodal-1.4.4.js"></script><!-- 1120419 Raymond 1111007 1.4.1->1.4.4 -->
+<!-- <script src="/STDN/Lib/Template_Util.js?ver=5.0.105.045"></script> -->
+<style>
+	.custom-combobox {
+        position: relative;
+        display: inline-block;
+    }
+
+    .custom-combobox-toggle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: -1px;
+        padding: 0;
+    }
+
+    .custom-combobox-input {
+        margin: 0;
+        /*padding: 1px 2px;*/
+		font-weight:normal;
+		color: Navy;
+    }
+	
+	.ui-widget{
+		font-size:1em;
+	}
+	
+	.ui-autocomplete {
+    max-height: 10em;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+  }
+  
+    /*修正升級jQueryUI後，ComboBox的空白選項僅能顯示半形空白的高度*/
+    ul.ui-autocomplete div.ui-menu-item-wrapper{
+		height:1em;
+	}
+	.ui-menu .ui-menu-item {
+		list-style-image: none;
+	}
+</style>
+<div style="Z-INDEX: 104; BORDER: black 1px solid; POSITION: absolute; DISPLAY: none; TOP: 221px; LEFT: 783px;BACKGROUND-COLOR:#FFFFFF;" id="lbToolTip" data-from=""></div>
+<div id="hiddenDiv" style="Z-INDEX: -100; POSITION: absolute; WIDTH: 100px; HEIGHT: 100px; VISIBILITY: hidden; TOP: 0px; LEFT: 0px">
+<select size="4" name="lbReturnValue" id="lbReturnValue" style="width:80px;">
+</select><input name="txOrgNo" type="text" id="txOrgNo" style="width:32px;"><input name="txClsLvl" type="text" id="txClsLvl" style="width:24px;"><input name="txSClsLvl" type="text" value="4" id="txSClsLvl" style="width:24px;"><input name="H_IsPAD" type="text" value="5" id="H_IsPAD" style="width:24px;"><input name="H_Selected" type="text" id="H_Selected" style="width:24px;">
+				<input name="H_txMode" type="text" value="1" id="H_txMode">
+				<input name="H_txNFROM" type="text" value="Custom" id="H_txNFROM">
+				<input name="H_txVerNo" type="text" id="H_txVerNo">
+				<input name="H_txFileYear" type="text" id="H_txFileYear">
+				<input name="H_txFileCls" type="text" value="" id="H_txFileCls">
+				<input name="H_txDeptNo" type="text" value="" id="H_txDeptNo">
+				<input name="H_txShowAll" type="text" id="H_txShowAll">
+				<input name="H_SelectedValue" type="text" id="H_SelectedValue" tabindex="-1" class="hide">
+                <textarea name="H_JsonData" id="H_JsonData"></textarea>
+				<input name="H_PerSonClass" type="text" id="H_PerSonClass">
+			</div>
+			<div class="DivBaseTable">
+				<div class="DivTable" id="MainTable">
+					<div class="dTR">
+						<div class="dTDTitle" style="width: 7.5em;"><span id="Label3">名稱/編號查詢：</span></div>
+						<div class="dTD"><input name="txSearchData" type="text" maxlength="100" id="txSearchData" tabindex="50" style="width:20.5em;"></div>
+					</div>
+				</div>
+				<div class="DivTable">
+					<div id="userclasstr" style="overflow: auto;">
+						
+					</div>
+			 </div>
+				<div class="DivTable">
+					<div class="dTR">
+						<div class="dTD" id="Data">
+							<div class="GridDiv" style="height: 358px;" data-oldheight="300">
+								<ul id="Classtree" class="ztree"></ul>
+							</div>
+						</div>
+					</div>
+					</div>
+			</div>
+			<div id="tbTool" class="V3_GenericBannerToolBar">
+</div>
+<!-- <script language="javascript" src="/STDN/Lib/SYS_utf8.js"></script> -->
+<!-- <script language="javascript" src="/STDN/Lib/template_utf8_v3.js"></script> -->
+<script language="javascript" src="/ms/Lib/EAH005.js"></script>
+</form>
+	
+	<script type="text/javascript" src="/ms/Lib/jquery.ztree/jquery.ztree.core.js"></script>
+	<script type="text/javascript" src="/ms/Lib/jquery.ztree/jquery.ztree.exhide.js"></script>
+
+<div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable ui-resizable" aria-describedby="dlgMessage" aria-labelledby="ui-id-1" style="display: none; position: absolute;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle">
+<span id="ui-id-1" class="ui-dialog-title">&nbsp;</span>
+<button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close">
+<span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div id="dlgMessage" class="ui-dialog-content ui-widget-content"><p></p></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-corner-all ui-widget">Ok</button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+<div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+<div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+<div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+<div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+</div>
+</body>
+</html>

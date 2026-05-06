@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="NewAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNewAccountInfo" type="tns:NewAccountInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NewAccountInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNewAccountInfo" type="tns:NewAccountInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyAccountAndChangeRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNewAccountInfo" type="tns:NewAccountInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyAccountAndChangeRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyAccountAndChangeRoleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Notify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argNotifyInfo" type="tns:NotifyInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NotifyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Target" type="tns:ArrayOfNotifyTarget" />
+          <s:element minOccurs="0" maxOccurs="1" name="Info" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SenderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SenderUnitName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfNotifyTarget">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="NotifyTarget" nillable="true" type="tns:NotifyTarget" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotifyTarget">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TargetType" type="tns:NotifyTargetType" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="NotifyTargetType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Org" />
+          <s:enumeration value="Unit" />
+          <s:enumeration value="Role" />
+          <s:enumeration value="Account" />
+          <s:enumeration value="Group" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="NotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifyResult" type="tns:NotifyResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NotifyResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="p1" type="tns:NotifyOrg" />
+            <s:element minOccurs="0" maxOccurs="1" name="p2" type="tns:NotifyUnit" />
+            <s:element minOccurs="0" maxOccurs="1" name="p3" type="tns:NotifyRole" />
+            <s:element minOccurs="0" maxOccurs="1" name="p4" type="tns:NotifyAccount" />
+            <s:element minOccurs="0" maxOccurs="1" name="p5" type="tns:NotifyGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NotifyOrg">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:NotifyTarget">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="NotifyUnit">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:NotifyTarget">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="NotifyRole">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:NotifyTarget">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="RoleCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="NotifyAccount">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:NotifyTarget">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="NotifyGroup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:NotifyTarget">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="OrgNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="GroupNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="testResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetProxy">
+        <s:complexType />
+      </s:element>
+      <s:element name="SetProxyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetProxyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NewAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:NewAccount" />
+  </wsdl:message>
+  <wsdl:message name="NewAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:NewAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableAccount" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyAccount" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAccountAndChangeRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyAccountAndChangeRole" />
+  </wsdl:message>
+  <wsdl:message name="ModifyAccountAndChangeRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyAccountAndChangeRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifySoapIn">
+    <wsdl:part name="parameters" element="tns:Notify" />
+  </wsdl:message>
+  <wsdl:message name="NotifySoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="testSoapIn">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="testSoapOut">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetProxySoapIn">
+    <wsdl:part name="parameters" element="tns:SetProxy" />
+  </wsdl:message>
+  <wsdl:message name="SetProxySoapOut">
+    <wsdl:part name="parameters" element="tns:SetProxyResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProxyHttpGetIn" />
+  <wsdl:message name="SetProxyHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetProxyHttpPostIn" />
+  <wsdl:message name="SetProxyHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="CustomizeWSSoap">
+    <wsdl:operation name="NewAccount">
+      <wsdl:input message="tns:NewAccountSoapIn" />
+      <wsdl:output message="tns:NewAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableAccount">
+      <wsdl:input message="tns:DisableAccountSoapIn" />
+      <wsdl:output message="tns:DisableAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAccount">
+      <wsdl:input message="tns:ModifyAccountSoapIn" />
+      <wsdl:output message="tns:ModifyAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAccountAndChangeRole">
+      <wsdl:input message="tns:ModifyAccountAndChangeRoleSoapIn" />
+      <wsdl:output message="tns:ModifyAccountAndChangeRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Notify">
+      <wsdl:input message="tns:NotifySoapIn" />
+      <wsdl:output message="tns:NotifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <wsdl:input message="tns:testSoapIn" />
+      <wsdl:output message="tns:testSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProxy">
+      <wsdl:input message="tns:SetProxySoapIn" />
+      <wsdl:output message="tns:SetProxySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CustomizeWSHttpGet">
+    <wsdl:operation name="DisableAccount">
+      <wsdl:input message="tns:DisableAccountHttpGetIn" />
+      <wsdl:output message="tns:DisableAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProxy">
+      <wsdl:input message="tns:SetProxyHttpGetIn" />
+      <wsdl:output message="tns:SetProxyHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CustomizeWSHttpPost">
+    <wsdl:operation name="DisableAccount">
+      <wsdl:input message="tns:DisableAccountHttpPostIn" />
+      <wsdl:output message="tns:DisableAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProxy">
+      <wsdl:input message="tns:SetProxyHttpPostIn" />
+      <wsdl:output message="tns:SetProxyHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomizeWSSoap" type="tns:CustomizeWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="NewAccount">
+      <soap:operation soapAction="http://tempuri.org/NewAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableAccount">
+      <soap:operation soapAction="http://tempuri.org/DisableAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAccount">
+      <soap:operation soapAction="http://tempuri.org/ModifyAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyAccountAndChangeRole">
+      <soap:operation soapAction="http://tempuri.org/ModifyAccountAndChangeRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Notify">
+      <soap:operation soapAction="http://tempuri.org/Notify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://tempuri.org/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProxy">
+      <soap:operation soapAction="http://tempuri.org/SetProxy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomizeWSHttpGet" type="tns:CustomizeWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="DisableAccount">
+      <http:operation location="/DisableAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProxy">
+      <http:operation location="/SetProxy" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomizeWSHttpPost" type="tns:CustomizeWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="DisableAccount">
+      <http:operation location="/DisableAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetProxy">
+      <http:operation location="/SetProxy" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomizeWS">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="CustomizeWSSoap" binding="tns:CustomizeWSSoap">
+      <soap:address location="http://localhost/Customize/CustomizeWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CustomizeWSHttpGet" binding="tns:CustomizeWSHttpGet">
+      <http:address location="http://localhost/Customize/CustomizeWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CustomizeWSHttpPost" binding="tns:CustomizeWSHttpPost">
+      <http:address location="http://localhost/Customize/CustomizeWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

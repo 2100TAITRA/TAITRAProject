@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ODR242D" targetNamespace="http://tempuri.org/ODR242D.xsd" xmlns:mstns="http://tempuri.org/ODR242D.xsd" xmlns="http://tempuri.org/ODR242D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ODR242D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="ODR242D" msprop:Generator_UserDSName="ODR242D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RptTable" msprop:Generator_TableClassName="RptTableDataTable" msprop:Generator_TableVarName="tableRptTable" msprop:Generator_TablePropName="RptTable" msprop:Generator_RowDeletingName="RptTableRowDeleting" msprop:Generator_RowChangingName="RptTableRowChanging" msprop:Generator_RowEvHandlerName="RptTableRowChangeEventHandler" msprop:Generator_RowDeletedName="RptTableRowDeleted" msprop:Generator_UserTableName="RptTable" msprop:Generator_RowChangedName="RptTableRowChanged" msprop:Generator_RowEvArgName="RptTableRowChangeEvent" msprop:Generator_RowClassName="RptTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SEQ_NO" msprop:Generator_ColumnVarNameInTable="columnSEQ_NO" msprop:Generator_ColumnPropNameInRow="SEQ_NO" msprop:Generator_ColumnPropNameInTable="SEQ_NOColumn" msprop:Generator_UserColumnName="SEQ_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="OU_ID" msprop:Generator_ColumnVarNameInTable="columnOU_ID" msprop:Generator_ColumnPropNameInRow="OU_ID" msprop:Generator_ColumnPropNameInTable="OU_IDColumn" msprop:Generator_UserColumnName="OU_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="USER_ID" msprop:Generator_ColumnVarNameInTable="columnUSER_ID" msprop:Generator_ColumnPropNameInRow="USER_ID" msprop:Generator_ColumnPropNameInTable="USER_IDColumn" msprop:Generator_UserColumnName="USER_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="USER_NAME" msprop:Generator_ColumnVarNameInTable="columnUSER_NAME" msprop:Generator_ColumnPropNameInRow="USER_NAME" msprop:Generator_ColumnPropNameInTable="USER_NAMEColumn" msprop:Generator_UserColumnName="USER_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="RCV_DATE" msprop:Generator_ColumnVarNameInTable="columnRCV_DATE" msprop:Generator_ColumnPropNameInRow="RCV_DATE" msprop:Generator_ColumnPropNameInTable="RCV_DATEColumn" msprop:Generator_UserColumnName="RCV_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="DUE_DATE" msprop:Generator_ColumnVarNameInTable="columnDUE_DATE" msprop:Generator_ColumnPropNameInRow="DUE_DATE" msprop:Generator_ColumnPropNameInTable="DUE_DATEColumn" msprop:Generator_UserColumnName="DUE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="SEXT_TIMES" msprop:Generator_ColumnVarNameInTable="columnSEXT_TIMES" msprop:Generator_ColumnPropNameInRow="SEXT_TIMES" msprop:Generator_ColumnPropNameInTable="SEXT_TIMESColumn" msprop:Generator_UserColumnName="SEXT_TIMES" type="xs:string" minOccurs="0" />
+              <xs:element name="SPROCESS_AUDIT" msprop:Generator_ColumnVarNameInTable="columnSPROCESS_AUDIT" msprop:Generator_ColumnPropNameInRow="SPROCESS_AUDIT" msprop:Generator_ColumnPropNameInTable="SPROCESS_AUDITColumn" msprop:Generator_UserColumnName="SPROCESS_AUDIT" type="xs:string" minOccurs="0" />
+              <xs:element name="DELAY_DAY" msprop:Generator_ColumnVarNameInTable="columnDELAY_DAY" msprop:Generator_ColumnPropNameInRow="DELAY_DAY" msprop:Generator_ColumnPropNameInTable="DELAY_DAYColumn" msprop:Generator_UserColumnName="DELAY_DAY" type="xs:string" minOccurs="0" />
+              <xs:element name="WORK_DAY" msprop:Generator_ColumnVarNameInTable="columnWORK_DAY" msprop:Generator_ColumnPropNameInRow="WORK_DAY" msprop:Generator_ColumnPropNameInTable="WORK_DAYColumn" msprop:Generator_UserColumnName="WORK_DAY" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="POSITION" msprop:Generator_ColumnVarNameInTable="columnPOSITION" msprop:Generator_ColumnPropNameInRow="POSITION" msprop:Generator_ColumnPropNameInTable="POSITIONColumn" msprop:Generator_UserColumnName="POSITION" type="xs:string" minOccurs="0" />
+              <xs:element name="SRC_RCV_NO" msprop:Generator_ColumnVarNameInTable="columnSRC_RCV_NO" msprop:Generator_ColumnPropNameInRow="SRC_RCV_NO" msprop:Generator_ColumnPropNameInTable="SRC_RCV_NOColumn" msprop:Generator_UserColumnName="SRC_RCV_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="CLOSE_DATE" msprop:Generator_ColumnVarNameInTable="columnCLOSE_DATE" msprop:Generator_ColumnPropNameInRow="CLOSE_DATE" msprop:Generator_ColumnPropNameInTable="CLOSE_DATEColumn" msprop:Generator_UserColumnName="CLOSE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="PTY_NAME" msprop:Generator_ColumnVarNameInTable="columnPTY_NAME" msprop:Generator_ColumnPropNameInRow="PTY_NAME" msprop:Generator_ColumnPropNameInTable="PTY_NAMEColumn" msprop:Generator_UserColumnName="PTY_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="OVER_REASON" msprop:Generator_ColumnVarNameInTable="columnOVER_REASON" msprop:Generator_ColumnPropNameInRow="OVER_REASON" msprop:Generator_ColumnPropNameInTable="OVER_REASONColumn" msprop:Generator_UserColumnName="OVER_REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="FROMORG_NAME" msprop:Generator_ColumnVarNameInTable="columnFROMORG_NAME" msprop:Generator_ColumnPropNameInRow="FROMORG_NAME" msprop:Generator_ColumnPropNameInTable="FROMORG_NAMEColumn" msprop:Generator_UserColumnName="FROMORG_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_NO" msprop:Generator_ColumnVarNameInTable="columnFROM_NO" msprop:Generator_ColumnPropNameInRow="FROM_NO" msprop:Generator_ColumnPropNameInTable="FROM_NOColumn" msprop:Generator_UserColumnName="FROM_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="PDUE_DATE" msprop:Generator_ColumnVarNameInTable="columnPDUE_DATE" msprop:Generator_ColumnPropNameInRow="PDUE_DATE" msprop:Generator_ColumnPropNameInTable="PDUE_DATEColumn" msprop:Generator_UserColumnName="PDUE_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="DELAY_DAY_INT" msprop:Generator_ColumnVarNameInTable="columnDELAY_DAY_INT" msprop:Generator_ColumnPropNameInRow="DELAY_DAY_INT" msprop:Generator_ColumnPropNameInTable="DELAY_DAY_INTColumn" msprop:Generator_UserColumnName="DELAY_DAY_INT" type="xs:int" minOccurs="0" />
+              <xs:element name="PDELAY_DAY" msprop:Generator_ColumnVarNameInTable="columnPDELAY_DAY" msprop:Generator_ColumnPropNameInRow="PDELAY_DAY" msprop:Generator_ColumnPropNameInTable="PDELAY_DAYColumn" msprop:Generator_UserColumnName="PDELAY_DAY" type="xs:string" minOccurs="0" />
+              <xs:element name="SEXT_DAY" msprop:Generator_ColumnVarNameInTable="columnSEXT_DAY" msprop:Generator_ColumnPropNameInRow="SEXT_DAY" msprop:Generator_ColumnPropNameInTable="SEXT_DAYColumn" msprop:Generator_UserColumnName="SEXT_DAY" type="xs:string" minOccurs="0" />
+              <xs:element name="START_DATE" msprop:Generator_ColumnVarNameInTable="columnSTART_DATE" msprop:Generator_ColumnPropNameInRow="START_DATE" msprop:Generator_ColumnPropNameInTable="START_DATEColumn" msprop:Generator_UserColumnName="START_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="OVER_DUE_BASE" msprop:Generator_ColumnVarNameInTable="columnOVER_DUE_BASE" msprop:Generator_ColumnPropNameInRow="OVER_DUE_BASE" msprop:Generator_ColumnPropNameInTable="OVER_DUE_BASEColumn" msprop:Generator_UserColumnName="OVER_DUE_BASE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

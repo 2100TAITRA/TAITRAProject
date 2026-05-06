@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAC005D" targetNamespace="http://tempuri.org/EAC005D.xsd" xmlns:mstns="http://tempuri.org/EAC005D.xsd" xmlns="http://tempuri.org/EAC005D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAC005D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EAC005D" msprop:Generator_UserDSName="EAC005D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RptTable1" msprop:Generator_TableClassName="RptTable1DataTable" msprop:Generator_TableVarName="tableRptTable1" msprop:Generator_RowChangedName="RptTable1RowChanged" msprop:Generator_TablePropName="RptTable1" msprop:Generator_RowDeletingName="RptTable1RowDeleting" msprop:Generator_RowChangingName="RptTable1RowChanging" msprop:Generator_RowEvHandlerName="RptTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="RptTable1RowDeleted" msprop:Generator_RowClassName="RptTable1Row" msprop:Generator_UserTableName="RptTable1" msprop:Generator_RowEvArgName="RptTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CLS_NO" msprop:Generator_ColumnVarNameInTable="columnCLS_NO" msprop:Generator_ColumnPropNameInRow="CLS_NO" msprop:Generator_ColumnPropNameInTable="CLS_NOColumn" msprop:Generator_UserColumnName="CLS_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="VER_NO" msprop:Generator_ColumnVarNameInTable="columnVER_NO" msprop:Generator_ColumnPropNameInRow="VER_NO" msprop:Generator_ColumnPropNameInTable="VER_NOColumn" msprop:Generator_UserColumnName="VER_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="CLS_NAME" msprop:Generator_ColumnVarNameInTable="columnCLS_NAME" msprop:Generator_ColumnPropNameInRow="CLS_NAME" msprop:Generator_ColumnPropNameInTable="CLS_NAMEColumn" msprop:Generator_UserColumnName="CLS_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="KEEP_YEAR" msprop:Generator_ColumnVarNameInTable="columnKEEP_YEAR" msprop:Generator_ColumnPropNameInRow="KEEP_YEAR" msprop:Generator_ColumnPropNameInTable="KEEP_YEARColumn" msprop:Generator_UserColumnName="KEEP_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="START_DATE" msprop:Generator_ColumnVarNameInTable="columnSTART_DATE" msprop:Generator_ColumnPropNameInRow="START_DATE" msprop:Generator_ColumnPropNameInTable="START_DATEColumn" msprop:Generator_UserColumnName="START_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="USE_STATE" msprop:Generator_ColumnVarNameInTable="columnUSE_STATE" msprop:Generator_ColumnPropNameInRow="USE_STATE" msprop:Generator_ColumnPropNameInTable="USE_STATEColumn" msprop:Generator_UserColumnName="USE_STATE" type="xs:string" minOccurs="0" />
+              <xs:element name="OCLS_NO" msprop:Generator_ColumnVarNameInTable="columnOCLS_NO" msprop:Generator_ColumnPropNameInRow="OCLS_NO" msprop:Generator_ColumnPropNameInTable="OCLS_NOColumn" msprop:Generator_UserColumnName="OCLS_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="OVER_NO" msprop:Generator_ColumnVarNameInTable="columnOVER_NO" msprop:Generator_ColumnPropNameInRow="OVER_NO" msprop:Generator_ColumnPropNameInTable="OVER_NOColumn" msprop:Generator_UserColumnName="OVER_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="OCLS_NAME" msprop:Generator_ColumnVarNameInTable="columnOCLS_NAME" msprop:Generator_ColumnPropNameInRow="OCLS_NAME" msprop:Generator_ColumnPropNameInTable="OCLS_NAMEColumn" msprop:Generator_UserColumnName="OCLS_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="OKEEP_YEAR" msprop:Generator_ColumnVarNameInTable="columnOKEEP_YEAR" msprop:Generator_ColumnPropNameInRow="OKEEP_YEAR" msprop:Generator_ColumnPropNameInTable="OKEEP_YEARColumn" msprop:Generator_UserColumnName="OKEEP_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="OSTART_DATE" msprop:Generator_ColumnVarNameInTable="columnOSTART_DATE" msprop:Generator_ColumnPropNameInRow="OSTART_DATE" msprop:Generator_ColumnPropNameInTable="OSTART_DATEColumn" msprop:Generator_UserColumnName="OSTART_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_NO" msprop:Generator_ColumnVarNameInTable="columnITEM_NO" msprop:Generator_ColumnPropNameInRow="ITEM_NO" msprop:Generator_ColumnPropNameInTable="ITEM_NOColumn" msprop:Generator_UserColumnName="ITEM_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_NAME" msprop:Generator_ColumnVarNameInTable="columnITEM_NAME" msprop:Generator_ColumnPropNameInRow="ITEM_NAME" msprop:Generator_ColumnPropNameInTable="ITEM_NAMEColumn" msprop:Generator_UserColumnName="ITEM_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="IKEEP_YEAR" msprop:Generator_ColumnVarNameInTable="columnIKEEP_YEAR" msprop:Generator_ColumnPropNameInRow="IKEEP_YEAR" msprop:Generator_ColumnPropNameInTable="IKEEP_YEARColumn" msprop:Generator_UserColumnName="IKEEP_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="CLEAR_PROC" msprop:Generator_ColumnVarNameInTable="columnCLEAR_PROC" msprop:Generator_ColumnPropNameInRow="CLEAR_PROC" msprop:Generator_ColumnPropNameInTable="CLEAR_PROCColumn" msprop:Generator_UserColumnName="CLEAR_PROC" type="xs:string" minOccurs="0" />
+              <xs:element name="CONTENT_DSIP" msprop:Generator_ColumnVarNameInTable="columnCONTENT_DSIP" msprop:Generator_ColumnPropNameInRow="CONTENT_DSIP" msprop:Generator_ColumnPropNameInTable="CONTENT_DSIPColumn" msprop:Generator_UserColumnName="CONTENT_DSIP" type="xs:string" minOccurs="0" />
+              <xs:element name="SHOWCASE" msprop:Generator_ColumnVarNameInTable="columnSHOWCASE" msprop:Generator_ColumnPropNameInRow="SHOWCASE" msprop:Generator_ColumnPropNameInTable="SHOWCASEColumn" msprop:Generator_UserColumnName="SHOWCASE" type="xs:string" minOccurs="0" />
+              <xs:element name="SHOWCASE1" msprop:Generator_ColumnVarNameInTable="columnSHOWCASE1" msprop:Generator_ColumnPropNameInRow="SHOWCASE1" msprop:Generator_ColumnPropNameInTable="SHOWCASE1Column" msprop:Generator_UserColumnName="SHOWCASE1" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_FNAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_FNAME" msprop:Generator_ColumnPropNameInRow="DEPT_FNAME" msprop:Generator_ColumnPropNameInTable="DEPT_FNAMEColumn" msprop:Generator_UserColumnName="DEPT_FNAME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CLASS_MAIN" msprop:Generator_TableClassName="CLASS_MAINDataTable" msprop:Generator_TableVarName="tableCLASS_MAIN" msprop:Generator_RowChangedName="CLASS_MAINRowChanged" msprop:Generator_TablePropName="CLASS_MAIN" msprop:Generator_RowDeletingName="CLASS_MAINRowDeleting" msprop:Generator_RowChangingName="CLASS_MAINRowChanging" msprop:Generator_RowEvHandlerName="CLASS_MAINRowChangeEventHandler" msprop:Generator_RowDeletedName="CLASS_MAINRowDeleted" msprop:Generator_RowClassName="CLASS_MAINRow" msprop:Generator_UserTableName="CLASS_MAIN" msprop:Generator_RowEvArgName="CLASS_MAINRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VER_NO" msprop:Generator_ColumnVarNameInTable="columnVER_NO" msprop:Generator_ColumnPropNameInRow="VER_NO" msprop:Generator_ColumnPropNameInTable="VER_NOColumn" msprop:Generator_UserColumnName="VER_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="VER_DESP" msprop:Generator_ColumnVarNameInTable="columnVER_DESP" msprop:Generator_ColumnPropNameInRow="VER_DESP" msprop:Generator_ColumnPropNameInTable="VER_DESPColumn" msprop:Generator_UserColumnName="VER_DESP" type="xs:string" />
+              <xs:element name="CLS_NO" msprop:Generator_ColumnVarNameInTable="columnCLS_NO" msprop:Generator_ColumnPropNameInRow="CLS_NO" msprop:Generator_ColumnPropNameInTable="CLS_NOColumn" msprop:Generator_UserColumnName="CLS_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="CLS_NAME" msprop:Generator_ColumnVarNameInTable="columnCLS_NAME" msprop:Generator_ColumnPropNameInRow="CLS_NAME" msprop:Generator_ColumnPropNameInTable="CLS_NAMEColumn" msprop:Generator_UserColumnName="CLS_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="REF_CLSKEY" msprop:Generator_ColumnVarNameInTable="columnREF_CLSKEY" msprop:Generator_ColumnPropNameInRow="REF_CLSKEY" msprop:Generator_ColumnPropNameInTable="REF_CLSKEYColumn" msprop:Generator_UserColumnName="REF_CLSKEY" type="xs:string" minOccurs="0" />
+              <xs:element name="USE_STATE" msprop:Generator_ColumnVarNameInTable="columnUSE_STATE" msprop:Generator_ColumnPropNameInRow="USE_STATE" msprop:Generator_ColumnPropNameInTable="USE_STATEColumn" msprop:Generator_UserColumnName="USE_STATE" type="xs:string" minOccurs="0" />
+              <xs:element name="USE_STATE_VER" msprop:Generator_ColumnVarNameInTable="columnUSE_STATE_VER" msprop:Generator_ColumnPropNameInRow="USE_STATE_VER" msprop:Generator_ColumnPropNameInTable="USE_STATE_VERColumn" msprop:Generator_UserColumnName="USE_STATE_VER" type="xs:string" minOccurs="0" />
+              <xs:element name="KEEP_YEAR" msprop:Generator_ColumnVarNameInTable="columnKEEP_YEAR" msprop:Generator_ColumnPropNameInRow="KEEP_YEAR" msprop:Generator_ColumnPropNameInTable="KEEP_YEARColumn" msprop:Generator_UserColumnName="KEEP_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="SHOWCASE" msprop:Generator_ColumnVarNameInTable="columnSHOWCASE" msprop:Generator_ColumnPropNameInRow="SHOWCASE" msprop:Generator_ColumnPropNameInTable="SHOWCASEColumn" msprop:Generator_UserColumnName="SHOWCASE" type="xs:string" minOccurs="0" />
+              <xs:element name="SHOWCASE1" msprop:Generator_ColumnVarNameInTable="columnSHOWCASE1" msprop:Generator_ColumnPropNameInRow="SHOWCASE1" msprop:Generator_ColumnPropNameInTable="SHOWCASE1Column" msprop:Generator_UserColumnName="SHOWCASE1" type="xs:string" minOccurs="0" />
+              <xs:element name="CASE_NO" msprop:Generator_ColumnVarNameInTable="columnCASE_NO" msprop:Generator_ColumnPropNameInRow="CASE_NO" msprop:Generator_ColumnPropNameInTable="CASE_NOColumn" msprop:Generator_UserColumnName="CASE_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="CASE_NAME" msprop:Generator_ColumnVarNameInTable="columnCASE_NAME" msprop:Generator_ColumnPropNameInRow="CASE_NAME" msprop:Generator_ColumnPropNameInTable="CASE_NAMEColumn" msprop:Generator_UserColumnName="CASE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_YEAR" msprop:Generator_ColumnVarNameInTable="columnFILE_YEAR" msprop:Generator_ColumnPropNameInRow="FILE_YEAR" msprop:Generator_ColumnPropNameInTable="FILE_YEARColumn" msprop:Generator_UserColumnName="FILE_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="CASE_KEY" msprop:Generator_ColumnVarNameInTable="columnCASE_KEY" msprop:Generator_ColumnPropNameInRow="CASE_KEY" msprop:Generator_ColumnPropNameInTable="CASE_KEYColumn" msprop:Generator_UserColumnName="CASE_KEY" type="xs:string" minOccurs="0" />
+              <xs:element name="CLEAR_PROC" msprop:Generator_ColumnVarNameInTable="columnCLEAR_PROC" msprop:Generator_ColumnPropNameInRow="CLEAR_PROC" msprop:Generator_ColumnPropNameInTable="CLEAR_PROCColumn" msprop:Generator_UserColumnName="CLEAR_PROC" type="xs:string" minOccurs="0" />
+              <xs:element name="CONTENT_DSIP" msprop:Generator_ColumnVarNameInTable="columnCONTENT_DSIP" msprop:Generator_ColumnPropNameInRow="CONTENT_DSIP" msprop:Generator_ColumnPropNameInTable="CONTENT_DSIPColumn" msprop:Generator_UserColumnName="CONTENT_DSIP" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_NO" msprop:Generator_ColumnVarNameInTable="columnITEM_NO" msprop:Generator_ColumnPropNameInRow="ITEM_NO" msprop:Generator_ColumnPropNameInTable="ITEM_NOColumn" msprop:Generator_UserColumnName="ITEM_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

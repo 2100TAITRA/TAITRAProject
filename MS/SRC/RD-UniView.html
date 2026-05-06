@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="scale" content="1.0">
+  <meta name="viewport" content="maximum-scale=1.0 minimum-scale=1.0">
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <title>UniView模組</title>
+</head>
+<body>
+  <!-- 2013.9 - Eric Peng, add 'data-url' & 'data-dom-cache' attributes for integration -->
+  <!--div data-role="page" id="aol" data-url="aol" data-theme="b" style="width:1024px; overflow-x:hidden" data-dom-cache="true"-->
+	<div class='wrapper'>
+		<div data-role="page" id="uniView" data-ssomodule='true' data-theme="b" style="overflow-x:hidden;width:100%;" data-dom-cache="true">
+			<div data-role="content" id="uvMainContent">
+				<div id="uvLeftPart" class="ui-pane-a">
+					<div class="top_tool_bar" data-role="header" data-theme="a">
+						<div id="uvZoomControl" data-role="controlgroup" data-type="horizontal">
+							<select id="uvZoomSelect" data-theme="c">
+								<option value="100" selected>100%</option>
+								<option value="50">50%</option>
+								<option value="0">符合視窗</option>
+								<option value="-1">符合寬度</option>
+								<option value="-2">原尺寸</option>
+								<!--option value="-3">全視窗</option-->
+							</select>
+							<a id="uvZoomOut" class="ui-btn ui-btn-c ui-icon-minus ui-btn-icon-notext">-</a>
+							<a id="uvZoomIn" class="ui-btn ui-btn-c ui-icon-plus ui-btn-icon-notext">+</a>
+						</div>
+						<div id="uvGoToPanel" class="btnGroup">
+							<a id="uvBtnGoToFirstPage" class="ui-btn ui-btn-c" title="最前頁">|&lt;</a>
+							<a id="uvBtnGoToLastPage" class="ui-btn ui-btn-c" title="最次頁">&gt;|</a>
+							<a id="uvBtnGoToPage" class="ui-btn ui-btn-c ui-icon-navigation ui-btn-icon-notext" title="指定檢閱頁次"></a>
+							<!--a id="uvBtnGoToPage" class="ui-btn ui-btn-c" title="指定檢閱頁次">跳頁</a-->
+							<!-- 2017.2.20 rotate -->
+						</div>
+						<div id="uvRotatePanel" class="btnGroup" style="margin-left: .1em">
+							<a id="uvBtnRotateRight" class="ui-btn ui-btn-c ui-icon-forward ui-btn-icon-notext" title="向右旋轉90度"></a>
+							<a id="uvBtnRotateLeft" class="ui-btn ui-btn-c ui-icon-back ui-btn-icon-notext" title="向左旋轉90度"></a>
+						</div>
+						<div id="uvExBtnPanel" class="btnGroup">
+							<a id="uvBtnExportPDF" class="ui-btn ui-btn-c" title="將掃描影像，另存PDF">另存PDF</a>
+						</div>
+						<span class="uvPageInfo">第999頁，共999頁</span>
+						<div id="uvTitle" class="uvInspectTitle">
+							<div class="content">唯讀閱覽模式</div>
+						</div>
+						<div id="pageInfo">
+							<span>?/???</span>
+						</div>
+						<div id="uvGrpSubmit">
+							<a id="uvBtnClose" class="ui-btn ui-btn-b ui-icon-delete">關閉</a>
+						</div>
+					</div>
+					<div id="uvSideBarPane"> <!-- style="margin-left:50px; overflow-x:visible; position:relative"-->
+						<div id="uvSideBar">
+							<div id="uvTabBar" data-tabpos="left" class="ui-navbar ui-navbar-noicons ui-tabs-bar" role="navigation">
+								<ul>
+								<li class="ui-block-a">
+									<a href="#" id="uvFolio" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-btn-active ui-btn-hover-c">
+									<span class="ui-btn-inner">
+										<span class="ui-btn-text">1059999999</span>
+									</span>
+									</a>
+								</li>
+								</ul>
+							</div>
+							<a id="uvRefView" class="ui-btn ui-btn-icon-notext" style="background:url('IMAGE/ART/Doc-RefView.png');display:none;">&nbsp;</a>
+						</div>
+						<div id="uvISO" style="position:relative">
+							<div class="uvContentPane"> <!-- style="height: 623px;"-->
+								<div id="uvViewPort" class="uvViewPort layout-complete-mode"><!-- style="width: 943px; height: 1208px;" -->
+									<div class="uvPages">
+										<div id="uvpgFlippedOut"></div>
+										<div id="uvpgFlippedIn" style="z-index:0"></div>
+										<div id="uvpgBackBuffer"></div>
+										<div id="uvpgFrontFace">
+											<div class="pg">
+												<img style="-webkit-user-select:none" src=""> <!--IMAGE\SSO\210.PNG"-->
+												<!--div class="cover-layer"></div-->
+											</div>
+										</div>
+									</div>
+									<div class="tags"> <!-- 頁面右上方標籤 -->
+										<div class="tags-group" style="display:none"> <!-- 公文基資 Tag, 暫時隱藏 -->
+											<div class="tags-item tags-no-icon">
+												<div id="uvDocInfo" class="ui-btn-text">
+													<img src="IMAGE/ART/Doc-DocInfo.png" class="ui-li-icon" style="width:24px; height:24px">
+													<span>公文基資</span>
+												</div>
+											</div>
+										</div>
+										<div class="tags-group">
+											<div class="tags-item tags-item-active" data-attIdx='-1'>
+												<div class="ui-btn-text">本文</div>
+												<span class="ui-li-count">1</span>
+											</div>
+										<!--div class="tags-item tags-item-special">
+											<div class="ui-btn-text">新增稿件</div>
+											<span class="ui-icon ui-icon-arrow-r"></span>
+										</div-->
+										</div>
+										<div class="tags-group">
+											<!--div class="tags-item tags-item-special" style="">
+												<div class="ui-btn-text">附件一</div>
+												<span class="ui-li-count">10</span>
+												<span class="ui-icon ui-icon-arrow-r"></span>
+											</div>
+											<div class="tags-item tags-item-special" style="">
+												<div class="ui-btn-text">附件二</div>
+												<span class="ui-li-count">8</span>
+												<span class="ui-icon ui-icon-arrow-r"></span>
+											</div-->
+										</div>
+									</div>
+									<div id="uvCmdFloat">
+										<div></div>
+										<canvas width="16" height="16"></canvas>
+										<canvas width="16" height="16"></canvas>
+									</div>
+									<!--div id="cmdHistory" class="ui-controlgroup-horizontal">
+										<button id="undo">復原</button>
+										<button id="redo">重作</button>
+									</div-->
+									<div id="editCursor"></div>
+									<div id="receiverDetail"></div>
+								</div>
+							</div>
+							<a class="uvBtnFlipLeft" data-role="button" data-theme="none" data-shadow="none" data-iconpos="notext" data-corners="true" data-iconshadow="true" data-wrapperels="span" title="前一頁" style="display: inline;"><span class="ui-btn-inner ui-btn-corner-all"></a>
+							<a class="uvBtnFlipRight" data-role="button" data-theme="none" data-shadow="none" data-iconpos="notext" data-corners="true" data-iconshadow="true" data-wrapperels="span" title="下一頁" style="display: inline;"><span class="ui-btn-inner ui-btn-corner-all"></a>
+							<div id="symbolDocked" style="display:none"></div>
+						</div>
+					</div>
+				</div> <!-- div id="leftPart2" -->
+			</div> <!-- div data-role="content" id="mainContent2" -->
+			<!-- 2016.12.14 - Eric Peng, 列印範圍選取及參數設定子視窗 -->
+			<div data-role="popup" id="uniViewPrintSettingDialog" data-dismissible="false" data-overlay-theme="a" style="min-height:30em;width:30em;">
+				<div data-role="header"><h1>公文列印設定</h1></div>
+				<div data-role="main" class="ui-content" style="width:Calc(100% - 2em); height:Calc(100% - 4.5em); padding-top:0px;">
+					<div style="margin-top:16px;">請選擇列印範圍：</div>
+					<div class="ui-field-contain" data-theme="e" style="height: Calc(100% - 0.5em);border: solid 1px #AAA;">
+						<div style="background-color:lightgray; height:350px; overflow-y:auto">
+							<ul id="printItemList" data-role="listview" data-theme="c" data-corners="false" data-mini="true" style="margin:0px;">
+							</ul>
+						</div>
+					</div>
+					<div class="ui-grid-b">
+						<div class="ui-block-a">
+							<label data-inline="true"><input type="checkbox" id="cbPrintPageNo" data-theme="c" data-mini="true" />列印頁碼</label>
+						</div>
+					</div>
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<a href="#" id="btn_uvPrtCancel" class="ui-mini ui-btn ui-btn-c ui-corner-all">取消</a>
+						</div>
+						<div class="ui-block-b">
+							<a href="#" id="btn_uvPrtOK" class="ui-mini ui-btn ui-btn-b ui-corner-all">確定</a>
+						</div>
+					</div>
+				</div>
+			</div><!--div data-role="popup" id="uniViewPrintSettingDialog" -->
+			<!-- 2017.1.6 - Eric Peng, 跳頁指定子視窗 -->
+			<div data-role="popup" id="uvGoToPageDialog" data-dismissible="false" data-overlay-theme="a" style="min-height:10em;width:30em;">
+				<div data-role="header"><h1>指定檢閱頁面</h1></div>
+				<div data-role="main" class="ui-content" style="width:Calc(100% - 2em); height:Calc(100% - 4.5em); padding-top:0px;">
+					<div style="margin-top:16px;">請選擇欲檢閱的頁面：</div>
+					<div class="ui-field-contain" data-theme="e" style="height: Calc(100% - 0.5em);">
+						<div style="background-color:lightgray; height:350px; overflow-y:auto; display:none;">
+							<ul id="groupItemList" data-role="listview" data-theme="c" data-corners="false" data-mini="true" style="margin:0px;">
+							</ul>
+						</div>
+						<div class="input-range" data-mini="true">
+							<input id="gotoPageNo" placeholder="請輸入頁序" type="number" data-inline="true" maxlength="4"></input>
+							<span id="rangeHint" data-inline="true"></span>
+						</div>
+					</div>
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<a href="#" id="btn_uvGotoPageCancel" class="ui-mini ui-btn ui-btn-c ui-corner-all">取消</a>
+						</div>
+						<div class="ui-block-b">
+							<a href="#" id="btn_uvGotoPageOK" class="ui-mini ui-btn ui-btn-b ui-corner-all">確定</a>
+						</div>
+					</div>
+				</div>
+			</div><!--div data-role="popup" id="uvGoToPageDialog" -->
+		</div>
+	</div--> <!-- div class="wrapper' -->
+</body>
+</html>

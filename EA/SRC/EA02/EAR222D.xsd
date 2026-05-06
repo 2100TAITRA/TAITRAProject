@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR222D" targetNamespace="http://tempuri.org/EAR226D.xsd" xmlns:mstns="http://tempuri.org/EAR226D.xsd" xmlns="http://tempuri.org/EAR226D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR222D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EAR222D" msprop:Generator_UserDSName="EAR222D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RptTable1" msprop:Generator_TableClassName="RptTable1DataTable" msprop:Generator_TableVarName="tableRptTable1" msprop:Generator_TablePropName="RptTable1" msprop:Generator_RowDeletingName="RptTable1RowDeleting" msprop:Generator_RowChangingName="RptTable1RowChanging" msprop:Generator_RowEvHandlerName="RptTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="RptTable1RowDeleted" msprop:Generator_UserTableName="RptTable1" msprop:Generator_RowChangedName="RptTable1RowChanged" msprop:Generator_RowEvArgName="RptTable1RowChangeEvent" msprop:Generator_RowClassName="RptTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FILEYEAR" msprop:Generator_ColumnVarNameInTable="columnFILEYEAR" msprop:Generator_ColumnPropNameInRow="FILEYEAR" msprop:Generator_ColumnPropNameInTable="FILEYEARColumn" msprop:Generator_UserColumnName="FILEYEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="_x0039_9PAGE" msprop:Generator_ColumnVarNameInTable="column99PAGE" msprop:Generator_ColumnPropNameInRow="_99PAGE" msprop:Generator_ColumnPropNameInTable="_99PAGEColumn" msprop:Generator_UserColumnName="99PAGE" type="xs:int" minOccurs="0" />
+              <xs:element name="_x0039_9COUNT" msprop:Generator_ColumnVarNameInTable="column99COUNT" msprop:Generator_ColumnPropNameInRow="_99COUNT" msprop:Generator_ColumnPropNameInTable="_99COUNTColumn" msprop:Generator_UserColumnName="99COUNT" type="xs:int" minOccurs="0" />
+              <xs:element name="UN99PAGE" msprop:Generator_ColumnVarNameInTable="columnUN99PAGE" msprop:Generator_ColumnPropNameInRow="UN99PAGE" msprop:Generator_ColumnPropNameInTable="UN99PAGEColumn" msprop:Generator_UserColumnName="UN99PAGE" type="xs:int" minOccurs="0" />
+              <xs:element name="UN99COUNT" msprop:Generator_ColumnVarNameInTable="columnUN99COUNT" msprop:Generator_ColumnPropNameInRow="UN99COUNT" msprop:Generator_ColumnPropNameInTable="UN99COUNTColumn" msprop:Generator_UserColumnName="UN99COUNT" type="xs:int" minOccurs="0" />
+              <xs:element name="ALL99PAGE" msprop:Generator_ColumnVarNameInTable="columnALL99PAGE" msprop:Generator_ColumnPropNameInRow="ALL99PAGE" msprop:Generator_ColumnPropNameInTable="ALL99PAGEColumn" msprop:Generator_UserColumnName="ALL99PAGE" type="xs:int" minOccurs="0" />
+              <xs:element name="ALL99COUNT" msprop:Generator_ColumnVarNameInTable="columnALL99COUNT" msprop:Generator_ColumnPropNameInRow="ALL99COUNT" msprop:Generator_ColumnPropNameInTable="ALL99COUNTColumn" msprop:Generator_UserColumnName="ALL99COUNT" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

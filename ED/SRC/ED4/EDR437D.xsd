@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR437D" targetNamespace="http://tempuri.org/EDR437D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR437D.xsd" xmlns:mstns="http://tempuri.org/EDR437D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR437D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR437L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="CNT1" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT2" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT3" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT4" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT5" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT6" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT7" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT8" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT9" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT10" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT11" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT12" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EDR437L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="YEARMONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="CNT1_RCV" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT1_WAIT" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT2_RCV" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT2_WAIT" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT3_RCV" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT3_WAIT" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT4_RCV" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT4_WAIT" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT5_RCV" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT5_WAIT" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT6_RCV" type="xs:int" minOccurs="0" />
+							<xs:element name="CNT6_WAIT" type="xs:int" minOccurs="0" />
+							<xs:element name="CNTTotal_RCV" type="xs:int" minOccurs="0" />
+							<xs:element name="CNTTotal_WAIT" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

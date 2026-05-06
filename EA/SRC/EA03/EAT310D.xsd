@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAT310D" targetNamespace="http://tempuri.org/EAT310D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EAT310D.xsd" xmlns:mstns="http://tempuri.org/EAT310D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAT310D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EAT310L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="BOR_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="BOR_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="BDUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="BDEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="BEMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_NO0" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_DATE0" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_REASON0" type="xs:string" minOccurs="0" />
+							<xs:element name="REBOR_COUNT" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_DATA" type="xs:string" minOccurs="0" />
+							<xs:element name="BOR_APPLY_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_EXT" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_NO1" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_NO2" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_DATE1" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_DATE2" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_REASON1" type="xs:string" minOccurs="0" />
+							<xs:element name="APPLY_REASON2" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EAT310L1_1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SEQ_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_ATTACH" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="BOR_REASON" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_NO" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

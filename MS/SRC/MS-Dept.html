@@ -1,0 +1,494 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<!--meta name="viewport" content="width=device-width">
+	<meta name="scale" content="1.0"-->
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<title>受文者設定頁面</title>
+	<!-- 1061125, Eric Peng - 移除jQuery css/js參照 -->
+  <!--1140819 Joe 1140857 支援自造字-->
+  <link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.045"/>
+</head>
+<body>
+<section id="receiverSetting" data-role="page" style="overflow:hidden">
+	<style>
+	  .ui-autocomplete {
+		max-height: 400px;
+		overflow-y: auto;
+		/* prevent horizontal scrollbar */
+		overflow-x: hidden;
+		text-align: justify;
+	  }
+	</style>
+	<div class="ui-slide-pane-left ui-slide-pane-active" style="width:98%; height:100%">
+		<header data-role="header" style="color: #000;background-color: #CBEBFF;">
+		<!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script-->
+			<h1 style="display:inline">受文者編輯子視窗</h1>
+			<iframe name="I1" height="0" width="0" style="display:none"></iframe>
+			<div style="text-align: center; width:98%">
+				<div data-role="controlgroup" data-type="horizontal" style="display:inline-block; margin-top:0">
+					<input id="Dept_btSave" class="sbttn" title="儲存" value="儲存" type="button" data-mini="true">
+					<input id="Dept_btExit" class="sbttn" title="離開" value="離開" type="button" data-theme="c" data-icon="delete" style="color:#222">
+					<input id="Dept_btPrint" class="sbttn" title="預覽受文者清單" value="預覽受文者清單" type="button" data-theme="c" data-icon="delete" style="color:#222">
+				</div>
+			</div>
+			<div style="text-shadow: 0px 0px 0px #000;">發文方式設定</div>
+			<div style="border: 2px ridge #abaaaa;height: 45px;">
+				<div data-role="controlgroup" data-type="horizontal" style="display:inline-block; margin-top:0.5em">
+					<div data-role="navbar" style="display: inline-block;">
+					<a>發文方式：</a>
+					<select id="Dept_dlSendType" data-theme="e">
+						<option value="紙本公文">紙本</option>
+						<option value="電子交換">電子交換</option>
+						<option value="電子公布欄">電子公布欄</option>
+					</select>
+					<select id="Dept_dlSendDetailType" width="20%"></select>
+					<select id="Dept_H_dlSendDetailType" style="display: none;"></select>					
+					</div>
+					<div data-role="navbar" style="display: inline-block;" id="Dept_div_CantEIssueReason">
+					<a style="color:#000" id="Dept_aCantEIssueReason">無法電子交換原因：</a>
+					<select id="Dept_dlCantEIssueReason" ></select>
+					</div>
+				</div>
+			</div>
+			<div id="Dept_PasteTBSpan" style="height: 70px;">
+				<div>張貼公布欄：</div>
+				<div style="border: 2px ridge #abaaaa;height: 45px;">
+					<div data-role="controlgroup" data-type="horizontal" style="display:inline-block; margin-top:0.5em">
+						<div data-role="navbar" >
+							<div style="display: inline-block;" id="Dept_cbInsideTBdiv"><input id="Dept_InsideTB" type="checkbox" data-theme="c" data-mini="true"></input>內部(<div style="display: inline-block;" id="Dept_cbAllOrgdiv"><input id="Dept_AllOrg" disabled  type="checkbox" data-theme="c" data-mini="true"></input>全機關週知)</div></div>
+							<div style="display: inline-block;" id="Dept_cbOutsideTBdiv"><input id="Dept_OutsideTB" type="checkbox" data-theme="c" data-mini="true"></input>外部(<div style="display: inline-block;" id="Dept_cbPublicdiv"><input id="Dept_Public" disabled  type="checkbox" data-theme="c" data-mini="true"></input>發布至民眾)</div></div>
+							<div style="display: inline-block;" id="Dept_divpasteday">張貼日期：
+								<INPUT id="Dept_pasteday" maxLength="2" style="width:1.5em">天
+								<INPUT id="Dept_txTBPasteDays" tabIndex="-1" readOnly size="2" name="txTBPasteDays">
+							</div>
+							<div style="display: inline-block;" id="Dept_divTBEmail">
+								<INPUT id="Dept_TBEmail" type="checkbox" name="Email">輔以EMAIL通知公布欄受文者
+								<INPUT id="Dept_EmailToOD17" disabled type="checkbox" >僅通知登記桌 
+							</div>
+						</div>
+						<div data-role="navbar" >
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>受文機關</div>
+			<div style="border: 2px ridge #abaaaa;height: 100px;">
+				<div data-role="controlgroup" data-type="horizontal" >
+					<div data-role="navbar" data-type="horizontal" style="display: inline-block;WIDTH: 10%">
+						<select id="Dept_dlDocType" data-mini="true">
+							<option selected value="正本">正本</option>
+							<option value="副本">副本</option>
+							<option value="抄本">抄本</option>
+						</select>
+					</div>
+					<div data-role="navbar" data-type="horizontal" style="display: inline-block;text-align: center;WIDTH: 80%;text-shadow: 0px 0px 0px #000;">
+						<input id="Dept_btSymbol"  accessKey="J" class="sbttn" title="加入分隔符號" value="分隔字元(J)" type="button" name="Dept_btSymbol" data-mini="true">
+                        <input id="Dept_btSearch" class="sbttn" title="常用機關查詢" value="常用機關查詢(F2)" type="button" data-mini="true">
+						<input id="Dept_btWEI001" class="sbttn" title="單位/人員" value="單位/人員" type="button" data-mini="true">
+                        <input id="Dept_btOutclude" class="sbttn" value="匯出全部" type="button" name="Dept_btOutclude" data-mini="true">
+						<input id="Dept_btOpenSample" style="display:none" class="sbttn" value="操作方法" type="button" name="Dept_btOpenSample" data-mini="true">
+						<input id="Dept_btInclude" class="sbttn" value="匯入" type="button" data-mini="true">
+						<input id="Dept_fileInput" type="file" style="DISPLAY:NONE"  multiple="true" accept=".csv">
+						<div style="display: inline-block;" id="Dept_cbAutoGroupdiv"><input id="Dept_cbAutoGroup" type="checkbox" data-theme="c" data-mini="true"></input>匯入至一群組</div>
+					</div>
+				</div>
+				<div data-role="controlgroup" data-type="horizontal" style="text-align: center;text-shadow: 0px 0px 0px #000;">
+					<div style="display: inline-block;WIDTH: 36%" id="areaSearch">
+					<div id="TitleOrg">受文者(機關/單位)</div>
+					<input list="Dept_txOrgNames" id="Dept_txOrgName" style="WIDTH: 100%" class="normal" data-mini="true">
+					<!--<datalist id="Dept_txOrgNames" style="width: 100px; height: 100px; overflow: scroll;"></datalist>-->
+					</div>
+					<div style="display: inline-block;WIDTH: 18%">
+					<div id="TitleName">姓名</div>
+					<input id="Dept_txDeptSysId" style="display:none" class="normal" data-mini="true">
+					<input id="Dept_txEmpName" style="WIDTH: 100%" class="normal" title="請輸入受文者姓名" size="25" name="Dept_txEmpName" data-mini="true">
+					</div>
+					<div style="display: inline-block;WIDTH: 7%">
+					<input id="Dept_btAddNew" style="WIDTH: 100%" class="sbttn" title="加入受文者" value="新增(F9)" type="button" data-mini="true">
+					</div>
+					<div style="display: inline-block;WIDTH: 36%">正副本稱謂
+					<input style="WIDTH: 100%" id="Dept_txOrgFullName" class="normal" title="請輸入受文者正副本稱謂" data-mini="true">
+					</div>
+				</div>
+				<div data-role="controlgroup" data-type="horizontal" style="text-align: center;text-shadow: 0px 0px 0px #000;">
+					<div style="display: inline-block;WIDTH: 5em">輸入方式：</div>
+					<input name="rgIsSplit" value="單筆" checked type="radio" id="Dept_rgNoSplit" data-theme="c" data-mini="true">
+					<div style="display: inline-block;WIDTH: 2em">單筆</div>
+					<input name="rgIsSplit" value="多筆" type="radio" id="Dept_rgIsSplit"  data-theme="c" data-mini="true">
+					<div style="display: inline-block;WIDTH: 2em">多筆</div>
+					<div style="display: inline-block;" id="Dept_divcbExpGroup"><input id="Dept_cbExpGroup" type="checkbox" name="Dept_cbExpGroup" data-theme="c" data-mini="true"></input>新增時展開群組</div>
+				</div>
+			</div>
+			<div class="ui-btn-center">
+				<div data-role="navbar">
+					<input style="WIDTH: 3em;" id="Dept_btDelete" class="sbttn" title="刪除選取的受文者欄位" value="刪除" type="button" name="Dept_btDelete" data-mini="true">
+					<input style="WIDTH: 5em; display:none" id="Dept_btCelDelete" class="sbttn" title="取消刪除選取的受文者欄位" value="取消刪除" type="button" name="Dept_btCelDelete" data-mini="true">
+					<input style="WIDTH: 5em;" id="Dept_btEdit" class="sbttn" title="修正選取的受文者欄位資訊" value="批次修正" type="button" name="Dept_btEdit" data-mini="true">
+					<input style="WIDTH: 5em;" id="Dept_btCheckBatch" class="sbttn" title="檢核選取的受文者欄位資訊" value="批次檢核" type="button" name="Dept_btCheckBatch" data-mini="true">
+					<input style="WIDTH: 5em;" id="Dept_btQueryZip" class="sbttn" title="郵遞區號查詢" value="郵遞區號" type="button" name="Dept_btQueryZip" data-mini="true">
+					<input style="WIDTH: 7em;" id="Dept_btCopyHasAtt" class="sbttn" title="副本均含附件" value="副本均含附件" type="button" name="Dept_btCopyHasAtt" data-mini="true">
+					<input style="WIDTH: 8em;" id="Dept_btDeleteRepeat" class="sbttn" title="刪除重複受文者"  value="刪除重複受文者" type="button" name="Dept_btDeleteRepeat" data-mini="true">
+					<!--input id="btMoveUp" class="sbttn" title="將選取的受文者順序往上移" value="↑" type="button" name="btMoveUp" data-mini="true"-->
+					<!--input id="btMoveDown" class="sbttn" title="將選取的受文者順序往下移" value="↓" type="button" name="btMoveDown" data-mini="true"-->
+					<input style="WIDTH: 5em;" id="Dept_btMergeGrp" class="sbttn" title="合併群組"  value="合併群組" type="button" name="Dept_btMergeGrp" data-mini="true">
+					<input style="WIDTH: 5em;" id="Dept_btGrpDisband" class="sbttn" title="展開群組"  value="展開群組" type="button" name="Dept_btGrpDisband" data-mini="true">
+					<br>
+					<input style="WIDTH: 3em;" id="Dept_btCheckAll" class="sbttn" title="全部選取" value="全選" type="button" data-mini="true">
+					<input style="WIDTH: 3em;" id="Dept_btReverse" class="sbttn" title="反向選取" value="反向" type="button" data-mini="true">
+					<input id="Detp_btMoveTo" class="sbttn" title="將勾選的受文者移動" value="移動到" type="button" name="btMoveTo" data-mini="true" style="WIDTH: 4em;">
+					<input id="Dept_rbFirst" title="將勾選的受文者移到最前處"  value="Radio1" type="radio" name="InsertPoint" data-mini="true">
+					<a for="rbFirst">最前</a>
+                    <input id="Dept_rbLast" title="將勾選的受文者移到最末處"  checked type="radio" name="InsertPoint" data-mini="true">
+					<a for="rbLast">最後</a>
+                    <input id="Dept_rbAfter" title="將勾選的受文者移到指定位置之前"  type="radio" name="InsertPoint" data-mini="true">
+					<a for="rbAfter">序</a>
+					<input id="Dept_txSeq" disabled data-mini="true" style="width: 1.5em;">
+					<a>後</a>
+					<input id="Dept_btSort" class="sbttn" title="排序" value="排序" type="button" name="btMoveTo" data-mini="true" style="WIDTH: 3em;">
+					<select id="Dept_orderBy" data-theme="e">
+						<option value="本別">本別</option>
+						<option value="發文方式">發文方式</option>
+					</select>
+				</div>
+			</div>
+		</header>
+		<textarea id="receiverTemp" style="display:none;resize:none;overflow:hidden;"></textarea>
+		<div class="content" data-role="content" data-theme="c">
+			<div id="receiverTable">
+				<div class="ui-table-header-PC" style="text-shadow: 0px 0px 0px #000;">
+					<div class="ui-table-column-header" style="width:2.5%;line-height: 40px;">序</div>
+					<div class="ui-table-column-header" style="width:1.5%;line-height: 40px;text-align:center;">選</div>
+					<div class="ui-table-column-header" id="DeptOrgName" style="width:13%;line-height: 40px;">受文者</div>
+					<div class="ui-table-column-header" style="width:6%;line-height: 40px;">姓名</div>
+					<div class="ui-table-column-header" id="DeptOrgTitle" style="width:13%;line-height: 40px;">正副本稱謂</div>
+					<div class="ui-table-column-header" style="width:1.5%;line-height: 40px;text-align:center;">上</div>
+					<div class="ui-table-column-header" style="width:1.5%;line-height: 40px;text-align:center;">下</div>
+					<div class="ui-table-column-header" style="width:5%;line-height: 40px;">本別</div>
+					<div class="ui-table-column-header" style="width:2.5%">附<br/>件</div>
+					<div class="ui-table-column-header" style="width:7.5%;line-height: 40px;" id="DEPT_IssueTitle">發文方式</div>
+					<div class="ui-table-column-header" style="width:5%">郵遞<br/>區號</div>
+					<div class="ui-table-column-header" style="width:24%;line-height: 40px;" id="DEPT_Address">地址</div>
+					<div class="ui-table-column-header" id="DEPT_Emiailtile" style="width:13%;line-height: 40px;">電子郵件</div>
+					<div class="ui-table-column-header" id="NameAddress" style="width:8%;line-height: 40px;">名址條名稱</div>
+					<div class="ui-table-column-header" id="JobTitle" style="width:6%;line-height: 40px;">職稱</div>
+					<div class="ui-table-column-header" id="FaxNo" style="width:6%;line-height: 40px;">傳真</div>
+				</div>
+				<div class="ui-table-body-container" style="height:580px; overflow-y:auto; color: #000;background-color: #CBEBFF;">
+					<ul class="ui-table-body" id="receiverList">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<footer data-role="footer" style="position:absolute; width:100%; bottom:0px;">
+		</footer>
+	</div>
+	<div class="ui-slide-pane-GRP" style="width:100%; height:900px">
+		<header id="GrpHeader" data-role="header" style="height: 100px; color: #000;background-color: #CBEBFF;">
+			<h1 style="display:inline">群組編輯子視窗</h1>
+			<div style="text-align: center; width:98%">
+				<div data-role="controlgroup" data-type="horizontal" style="display:inline-block; margin-top:0">
+					<input id="Grp_btGrpSave" class="sbttn" title="確認" value="確認" type="button" data-mini="true">
+					<input id="Grp_btGrpExit" class="sbttn" title="放棄" value="放棄" type="button" data-theme="c" data-icon="delete" style="color:#222">
+					<input id="Grp_btGrpPrint" class="sbttn" title="預覽群組清單" value="預覽群組清單" type="button" data-theme="c" data-icon="delete" style="color:#222">
+				</div>
+			</div>
+			<div data-role="controlgroup" data-type="horizontal" style="text-shadow: 0px 0px 0px #000;display:inline-block; text-align: center; width:98%">
+				<div style="display:inline-block;">
+					<INPUT class="sbttn" id="Grp_btGrpCheckAll"  type="button" value="全部選取" >
+					<INPUT class="sbttn" id="Grp_btGrpReverse"  type="button" value="反向選取" >
+				</div>
+				<div style="display:inline-block;">
+					<a>發文方式：</a>
+					<SELECT id="Grp_dlGrpIssueType" NAME="dlIssueType">
+						<OPTION value="人工傳遞">人工傳遞</OPTION>
+						<OPTION value="郵寄">郵寄</OPTION>
+						<OPTION value="電子交換">電子交換</OPTION>
+						<OPTION value="電子郵件">電子郵件</OPTION>
+						<OPTION value="內部電子公布欄">內部電子公布欄</OPTION>
+						<OPTION value="海外發文">海外發文</OPTION>
+					</SELECT>
+				</div>
+				<div style="display:inline-block;">
+					<a>附件：</a>
+					<SELECT id="Grp_dlGrpIsAttch" name="dlIsAttch">
+						<OPTION value="" selected></OPTION>
+						<OPTION value="是">是</OPTION>
+						<OPTION value="否">否</OPTION>
+					</SELECT>
+				</div>
+				<div style="display:inline-block;">
+					<INPUT class="sbttn" type="button" id="Grp_btGrpFixBatch"  value="批次修正" name="btFixBatch">
+				</div>	
+				<div style="display:inline-block;">
+					<INPUT class="sbttn" type="button" id="Grp_btZip" value="郵遞區號" name="btZipCode">
+				</div>
+			</div>
+			<div id="divGrpPage" style="display:none; width:98%">
+				<a>第</a>
+				<INPUT id="GrpPagr_txPageNow" type="text" style="width:2em; background-color: lightgray;" readonly>
+				<a>/</a>
+				<INPUT id="GrpPagr_txPageAll" type="text" style="width:2em; background-color: lightgray;" readonly>
+				<a>頁</a>
+				<INPUT class="sbttn" type="button" id="Grp_btPagePrev" value="<<"  style="width: 2em;">
+				<INPUT class="sbttn" type="button" id="Grp_btPageNext" value=">>"  style="width: 2em;">
+				<INPUT class="sbttn" type="button" id="Grp_btPageTo" value="跳至"  style="width: 3em;">
+				<INPUT id="GrpPagr_txPageTo"  type="text" style="width:1.5em;" maxLength="2">
+				<a>頁</a>
+			</div>
+		</header>
+		<div class="content" data-role="content" data-theme="c">
+			<div id="receiverTable-GRP">
+				<div class="ui-table-header-PC-GRP" style="text-shadow: 0px 0px 0px #000;">
+					<div class="ui-table-column-header" style="width:2.5%;line-height: 40px;">序</div>
+					<div class="ui-table-column-header" style="width:1.5%;line-height: 40px;">選</div>
+					<div class="ui-table-column-header" style="width:1.5%;line-height: 40px;">刪</div>
+					<div class="ui-table-column-header" id="Grp_DeptOrgName" style="width:14%;line-height: 40px;">受文者</div>
+					<div class="ui-table-column-header" style="width:6.5%;line-height: 40px;">姓名</div>
+					<div class="ui-table-column-header" id="Grp_DeptOrgTitle" style="width:14%;line-height: 40px;">正副本稱謂</div>
+					<div class="ui-table-column-header" style="width:3%;line-height: 40px;">附件</div>
+					<div class="ui-table-column-header" style="width:7.5%;line-height: 40px;" id="DEPT_GrpIssueTitle">發文方式</div>
+					<div class="ui-table-column-header" style="width:6%;line-height: 40px;">郵遞區號</div>
+					<div class="ui-table-column-header" style="width:26%;line-height: 40px;" id="DEPT_GrpAddress">地址</div>
+					<div class="ui-table-column-header" id="Grp_Emiailtile" style="width:12.5%;line-height: 40px;">電子郵件</div>
+					<div class="ui-table-column-header" id="Grp_NameAddress" style="width:8%;line-height: 40px;">名址條名稱</div>
+					<div class="ui-table-column-header" id="Grp_JobTitle" style="width:6%;line-height: 40px;">職稱</div>
+					<div class="ui-table-column-header" id="Grp_FaxNo" style="width:6%;line-height: 40px;">傳真</div>
+				</div>
+				<div class="ui-table-body-container" id="GrpDiv" style="height:770px; overflow-y:auto; color: #000;background-color: #CBEBFF;">
+					<ul class="ui-table-body" id="receiverList-GRP">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<footer data-role="footer" style="position:absolute; width:100%; bottom:0px;">
+		</footer>
+	</div>
+	<div class="ui-slide-pane-ModeOrg" style="width:100%;height:40%;margin-left:20%">
+		<header id="ModeOrgHeader" data-role="header" style="color: #000;background-color: #CBEBFF;border: outset;">
+			<h1 style="display:inline">受文者修正子視窗(單筆)</h1>
+			<div data-role="controlgroup" data-type="horizontal" style="display:inline-block;text-shadow: 0px 0px 0px #000; margin-top:0;text-align: center;WIDTH:100%">
+					<input id="Mode_btModeOrgSave" class="sbttn" title="儲存" value="儲存" type="button" data-mini="true">
+					<input id="Mode_btModeOrgExit" class="sbttn" title="放棄" value="放棄" type="button" data-theme="c" data-icon="delete" style="color:#222">
+					<div style="display: inline-block;text-shadow: 0px 0px 0px #000;" id="Mode_cbKeepNamediv"><input id="Mode_KeepName" checked="" type="checkbox" data-theme="c" data-mini="true">保留姓名及正副本稱謂</div>
+			</div>
+			<div data-role="controlgroup" data-type="horizontal" style="text-align: center;">
+				<div style="display: inline-block;WIDTH: 35%">
+					<div id="ModeareaSearch">受文者</div>
+					<div><textarea id="Mode_txOrgName" style="WIDTH:100%;resize:none;overflow:hidden;" name="正式名稱"></textarea></div>
+				</div>
+				<div style="display: inline-block;WIDTH: 10%">
+					<div>姓名</div>
+					<div><textarea id="Mode_txEmpName" style="WIDTH:100%;resize:none;overflow:hidden;" name="txEmpName"></textarea></div>
+				</div>
+				<div style="display: inline-block;WIDTH: 50%">
+					<div>正副本稱謂 機關代碼
+						<input id="Mode_txOrgNo" style="color: #0a0a0a;background-color: gray;width:6em" class="ReadOnly" readonly=""  tabindex="-1"><input id="Mode_txDeptNo" style="color: #0a0a0a;background-color: gray;width:3.5em" class="ReadOnly" readonly="" tabindex="-1">
+					</div>
+					<div><textarea id="Mode_txFullName" style="WIDTH: 100%;resize:none;overflow:hidden;"></textarea></div>
+				</div>
+			</div>
+				<div data-role="controlgroup" data-type="horizontal" style="WIDTH: 100%;">
+					<div style="display: inline-block;WIDTH: 30%;text-align: right;">本別：</div>
+					<div style="display: inline-block;">
+						<select id="Mode_dlDocType" style="WIDTH: 5em" data-mini="true">
+							<option selected="">正本</option>
+							<option>副本</option>
+							<option>抄本</option>
+						</select>
+					</div>
+					<div style="display: inline-block;">
+						<div style="display: inline-block;">發文方式：</div>
+						<select id="Mode_dlDocIssueType" style="WIDTH: 6.5em" data-mini="true"></select>
+					</div>
+					<div style="display: inline-block;">
+						<div style="display: inline-block;">附件：</div>
+						<div style="display: inline-block;">含</div>
+						<div style="display: inline-block;"><input id="Mode_rbAttachYes" value="含" checked type="radio" data-theme="c" data-mini="true" name="Mode_Attach"></div>
+						<div style="display: inline-block;">不含</div>
+						<div style="display: inline-block;"><input id="Mode_rbAttachNo" value="不含" type="radio" data-theme="c" data-mini="true" name="Mode_Attach"></div>
+					</div>
+				</div>
+				<div data-role="controlgroup" data-type="horizontal" style="width: 100%;">
+						<div style="display: inline-block;WIDTH: 30%;text-align: right;">郵遞區號／地址：</div>
+						<div style="display: inline-block;"><textarea id="Mode_txZip" style="WIDTH:3.5em;resize:none;overflow:hidden;" maxlength="6" name="Zip"></textarea></div>
+						<div style="display: inline-block;WIDTH: 40%"><textarea id="Mode_txaddress" style="WIDTH:100%;resize:none;overflow:hidden;" name="address"></textarea></div>
+						<div style="display: inline-block;"><input class="sbttn" id="Mode_btQueryZip" title="3碼郵遞區號查詢" type="button" value="郵遞區號" style="WIDTH:5em"></div>
+				</div>
+				<div data-role="controlgroup" data-type="horizontal" id="Mode_Email_info">
+					<div style="display: inline-block;WIDTH: 100%;">
+						<div style="display: inline-block;width: 30%;text-align: right;">電子郵件：</div>
+						<div style="display: inline-block;WIDTH: 48%"><textarea id="Mode_txEmail" style="WIDTH:100%;resize:none;overflow:hidden;" name="txEmail"></textarea></div>
+					</div>
+				</div>
+			<div data-role="controlgroup" data-type="horizontal">
+				<input type="hidden" id="txModiCabinetNo">
+				<input type="hidden" id="txModiGateWay">
+				<input id="txModiSysId" type="hidden">
+			</div>
+		</header>
+	</div>
+	<div class="ui-slide-pane-ModeOrg-Muit" style="width:100%;height:40%;margin-left:35%">
+		<header data-role="header" style="color: #000;background-color: #CBEBFF;border: outset;">
+			<h1 style="display:inline">受文者修正子視窗(批次)</h1>
+			<div data-role="controlgroup" data-type="horizontal">
+				<div style="text-align: center; display: inline-block; width:10%">&nbsp;</div>
+				<div style="text-align: center; display: inline-block; width:80%">
+					<input id="Muit_btOrgSave" class="sbttn" title="儲存" value="儲存" type="button" data-mini="true">
+					<input id="Muit_btOrgExit" class="sbttn" title="放棄" value="放棄" type="button" data-theme="c" data-icon="delete" style="color:#222">
+				</div>		
+			</div>
+			<div data-role="controlgroup" data-type="horizontal">
+				<div style="display: inline-block; width:100%">
+					<div style="display: inline-block;WIDTH: 5em;text-align: right;" id="Muit_diveditDocType">本別</div>
+					<INPUT id="Muit_editDocType" type="checkbox" CHECKED value="" name="cbG1"></INPUT>
+					<div style="display: inline-block;">
+						<select id="Muit_dlDocType" style="WIDTH: 5em" data-mini="true" >
+							<OPTION selected>正本</OPTION>
+							<OPTION>副本</OPTION>
+							<OPTION>抄本</OPTION>
+						</select>
+					</div>
+					<div data-role="controlgroup" data-type="horizontal">								
+						<div style="display: inline-block;WIDTH: 5em;text-align: right;" id="Muit_divAttach">附件</div>
+						<INPUT id="Muit_editAttach" type="checkbox" CHECKED value="" name="cbG1"></INPUT>
+						<div style="display: inline-block;"><INPUT id="Muit_editAttach" type="radio" value="是" name="rbG3"></INPUT></div>
+						<div style="display: inline-block;">含</div>
+						<div style="display: inline-block;"><INPUT id="Muit_rbAttachNo" type="radio" value="否" name="rbG3" checked></INPUT></div>
+						<div style="display: inline-block;">不含</div>
+						<div style="display: inline-block;" id="Muit_diveditGrp"><INPUT id="Muit_editGrp" type="checkbox" value="" >修改群組內所有機關</INPUT></div>
+					</div>
+					<div data-role="controlgroup" data-type="horizontal">
+					<div style="display: inline-block;WIDTH: 5em;text-align: right;" id="Muit_divDocIssue">發文方式</div>
+						<INPUT id="Muit_DocIssue" type="checkbox" CHECKED value="" ></INPUT>
+						<div style="display: inline-block;">
+							<select id="Muit_dlDocIssueType" style="WIDTH: 6.5em" data-mini="true" >
+								<OPTION value="人工傳遞">人工傳遞</OPTION>
+								<OPTION value="郵寄">郵寄</OPTION>
+								<OPTION value="電子交換">電子交換</OPTION>
+								<OPTION value="電子郵件">電子郵件</OPTION>
+								<OPTION value="內部電子公布欄">內部電子公布欄</OPTION>
+								<OPTION value="海外發文">海外發文</OPTION>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<footer data-role="footer" style="position:absolute; width:100%; bottom:0px;">
+		</footer>
+	</div>
+	<div class="ui-slide-pane-ModeOrg-GRP" style="width:100%;height:40%;margin-left:35%;">
+		<header data-role="header" style="color: #000;background-color: #CBEBFF;border: outset;">
+			<h1 style="display:inline">受文者修正子視窗(群組)</h1>
+			<div data-role="controlgroup" data-type="horizontal">
+				<div style="text-align: center; display: inline-block; width:10%">&nbsp;</div>
+				<div style="text-align: center; display: inline-block; width:80%">
+					<div data-role="controlgroup" data-type="horizontal" style="display:inline-block; margin-top:0">
+						<input id="ModeGrp_btSave" class="sbttn" title="儲存" value="儲存" type="button" data-mini="true">
+						<input id="ModeGrp_btExit" class="sbttn" title="放棄" value="放棄" type="button" data-theme="c" data-icon="delete" style="color:#222">
+					</div>
+				</div>
+			</div>
+			<div data-role="controlgroup" data-type="horizontal">
+				<div style="display: inline-block; width:100%">
+					<div data-role="controlgroup" data-type="horizontal">
+						<div style="display: inline-block;width:8em;text-align: right;">受文者：</div>
+						<div style="display: inline-block;"><input id="ModeGrp_OrgName" class="normal" data-mini="true"></input></div>
+					</div>
+					<div data-role="controlgroup" data-type="horizontal">	
+						<div style="display: inline-block;width:8em;text-align: right;">正副本稱謂：</div>
+						<div style="display: inline-block;"><input id="ModeGrp_FullName" class="normal" title="請輸入受文者正副本稱謂" data-mini="true"></input></div>
+					</div>
+					<div data-role="controlgroup" data-type="horizontal">
+						<div style="display: inline-block;width:8em;text-align: right;">本別：</div>
+						<div style="display: inline-block;">
+							<select id="ModeGrp_dlDocType" data-mini="true" >
+								<OPTION selected>正本</OPTION>
+								<OPTION>副本</OPTION>
+								<OPTION>抄本</OPTION>
+							</select>
+						</div>
+					</div>
+					<div data-role="controlgroup" data-type="horizontal">
+					<div style="display: inline-block;width:8em;text-align: right;">發文方式：</div>
+						<div style="display: inline-block;">
+							<select id="ModeGrp_dlDocIssueType" style="WIDTH: 6.5em" data-mini="true" >
+								<OPTION value="人工傳遞">人工傳遞</OPTION>
+								<OPTION value="郵寄">郵寄</OPTION>
+								<OPTION value="電子交換">電子交換</OPTION>
+								<OPTION value="電子郵件">電子郵件</OPTION>
+								<OPTION value="內部電子公布欄">內部電子公布欄</OPTION>
+								<OPTION value="海外發文">海外發文</OPTION>
+							</select>
+						</div>
+					</div>
+					<div data-role="controlgroup" data-type="horizontal">
+						<div style="display: inline-block;width:8em;text-align: right;">附件：</div>
+						<div style="display: inline-block;"><INPUT id="ModeGrp_rbAttachSrc" type="radio" CHECKED value="" name="rbG3"></INPUT></div>
+						<div style="display: inline-block;">依個別設定</div>
+						<div style="display: inline-block;"><INPUT id="ModeGrp_AttachYes" type="radio"  value="是" name="rbG3"></INPUT></div>
+						<div style="display: inline-block;">含</div>
+						<div style="display: inline-block;"><INPUT id="ModeGrp_AttachNo" type="radio" value="否" name="rbG3"></INPUT></div>
+						<div style="display: inline-block;">不含</div>
+					</div>
+				</div>
+			<div style="text-align: center; display: inline-block; width:10%">&nbsp;</div>
+			</div>
+		</header>
+		<footer data-role="footer" style="position:absolute; width:100%; bottom:0px;">
+		</footer>
+	</div>
+	<div class="ui-slide-pane-Choose-Org" style="width:60%;height:80%;margin-left:40%;border: outset;" id='ui-slide-pane-Choose-Org'>
+		<header data-role="header" style="color: #000;background-color: #CBEBFF;">
+			<h1 style="display:inline">機關選擇子視窗</h1>
+			<div id='Cho_lbInfo'></div>
+		</header>
+			<div class="content" data-role="content" data-theme="c">
+				<div id="receiverTable-Choose-Org">
+					<div class="ui-table-header-PC-Choose-Org">
+						<div class="ui-table-column-header" style="width:3%;line-height: 35px;">序</div>
+						<div class="ui-table-column-header" style="width:40%;line-height: 35px;">受文者(建立者)</div>
+						<div class="ui-table-column-header" style="width:40%;line-height: 35px;">地址</div>
+					</div>
+					<div class="ui-table-body-container" style="height:580px; overflow-y:auto; color: #000;background-color: #CBEBFF;">
+						<ul class="ui-table-body" id="receiverList-Choose-Org">
+						</ul>
+					</div>
+				</div>
+				<div id="receiverTable-Choose-Emp">
+					<div class="ui-table-header-PC-Choose-Emp">
+						<div class="ui-table-column-header" style="width:3%;line-height: 35px;">序</div>
+						<div class="ui-table-column-header" style="width:40%;line-height: 35px;">單位</div>
+						<div class="ui-table-column-header" style="width:20%;line-height: 35px;">姓名</div>
+						<div class="ui-table-column-header" style="width:20%;line-height: 35px;">電子信箱</div>
+					</div>
+					<div class="ui-table-body-container" style="height:580px; overflow-y:auto; color: #000;background-color: #CBEBFF;">
+						<ul class="ui-table-body" id="receiverList-Choose-Emp">
+						</ul>
+					</div>
+				</div>
+			</div>
+		<footer data-role="footer" style="position:absolute; width:100%; bottom:0px;">
+		</footer>
+	</div>
+	<div id="WEM010C1_DIV" class="ui-slide-pane-right" style="width:100%; height:100%; position:absolute; left:0px; top:0px; z-index:1900;">
+		<iframe></iframe>
+		<a id="searchDlg_close_btn" style="display:none"></a>
+		<input id="lbRtnValue" style="display:none"></input>
+		<input id="RtnIsExpand" style="display:none"></input>
+		<input id="WEM010C3VALUE" style="display:none"></input>
+		<a id="differentDlg_close_btn" style="display:none"></a>
+	</div>
+	<div id="WEI001_DIV" class="ui-slide-pane-right" style="display: none;">
+		<iframe></iframe>
+		<a id="WEI001Dlg_close_btn" style="display:none"></a>
+		<input id="txWEI001RtnValue" style="display:none"></input>
+	</div>
+</section>
+</body>
+</html>

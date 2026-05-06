@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetLastAgtData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastAgtDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastAgtDataResult" type="tns:UtyRtnAgentData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnAgentData">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Rtn" type="tns:AgentData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UtyRtnRoot">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_bRedirect" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrPageQueryStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrStack" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgentData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetLastAgtDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastAgtData" />
+  </wsdl:message>
+  <wsdl:message name="GetLastAgtDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastAgtDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AgtSyncSoap">
+    <wsdl:operation name="GetLastAgtData">
+      <wsdl:input message="tns:GetLastAgtDataSoapIn" />
+      <wsdl:output message="tns:GetLastAgtDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AgtSyncSoap" type="tns:AgtSyncSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetLastAgtData">
+      <soap:operation soapAction="http://tempuri.org/GetLastAgtData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AgtSync">
+    <wsdl:port name="AgtSyncSoap" binding="tns:AgtSyncSoap">
+      <soap:address location="http://localhost/AgentSync/AgtSync.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

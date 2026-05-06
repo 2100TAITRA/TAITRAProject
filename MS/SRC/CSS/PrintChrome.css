@@ -1,0 +1,322 @@
+﻿@media all {
+	.pg {
+		width: 210mm;
+		height: 297mm;
+		margin-top: 5mm;
+		border: 1px solid #888;
+		-webkit-box-shadow: 8px 8px 4px #888;
+		box-shadow: 8px 8px 4px #888;
+		position: relative;
+		overflow: hidden;			/* 2016.12.8 add */
+	}
+	.pgBody {
+		margin: 25mm;
+		font-family:'黑體';
+	}
+	.sender {
+		font-size: 24pt;
+		text-align: center;
+	}
+	.senderDetail {
+		font-size: 12pt;
+		position: absolute;
+		left: 120mm;
+	}
+	.sendDate input {
+		position: absolute;
+		clip: rect(0px, 0px, 0px, 0px);
+	}
+	.sendDate > div {
+		outline: 1px solid gray;
+		min-width: 100px;
+		display: inline-block;
+		font-family: inherit;
+		font-size: inherit;
+	}
+	.outdent3 {
+		padding-left: 3em;
+		text-indent: -3em;
+	}
+	.outdent4 {
+		padding-left: 4em;
+		text-indent: -4em;
+	}
+	.receiver {
+		font-size: 16pt;
+	}
+	.static, .sendDate, .sendNo, .speed, .secret, .attach, recipient {
+		font-size: 12pt;
+	}
+	.attach {
+		min-height: 24pt;
+	}
+	.para, .subject {
+		font-size: 16pt;
+		margin: 0;
+		line-height: 1.5;
+		-webkit-text-align: justify;
+		text-align: justify;
+		text-justify: distribute;	/* 2016.11.17 IE分散對齊 */
+		padding-left: 0em;
+		text-indent: 0em;
+		word-wrap: break-word;
+		word-break: break-word;
+		font-kerning: none;	/* 1120208 Raymond 1111090 由於匯出頁面不會計算英數字體之間的kerning(例:Times New Roman的"111"字距比"101"窄), 故網頁也不要用kerning, 以避造成匯出頁面與簽核頁面排版的差異 */
+	}
+	/* 1150203 Raymond 1150101 新增署名也要套字元寬度的修正, 以配合用全形空白控制折成兩行時, 匯出頁面與列印頁面折行位置一致 */
+	.para.segment, .para.sign {
+		/*letter-spacing: 0.03em;	1100827 Raymond 1100925 由於修正了匯出頁面的英數字寬, 故恢復 */
+		/*letter-spacing: 0.02em;	1091225 Raymond 信保序122 修正Chrome與IE顯示段落條列為普通16級字型大小時, 折行與歷史檢視不一致問題 */
+		/*letter-spacing: 0.016em;	1120208 Raymond 1111090 因考試院序308及取消字型的kerning功能調整縮小字距 */
+		letter-spacing: 0.4px;		/* 1120908 Raymond 鐵道局序183 修正當顯示器比例設為125%時, 預覽分頁的條列的斷行位置不同於100%時(設150%及175%時反而會與100%相同)的問題 */
+	}
+	/* 1091229 Raymond 信保序122 修正段落條列14級字型大小時, 折行與歷史檢視不一致問題 */
+	.para.segment.smallerfont {
+		/*letter-spacing: -0.052px;*/
+		letter-spacing: 0.007em;	/* 1110816 Raymond 考試院序200 修正段落條列12級字型大小時, 折行與歷史檢視不一致問題 */
+	}
+	/*.para.segment .plain {	 1080215 Raymond 1080169 修正主旨/段落/條列因字距加大導致計算首行標題寬度比縮排距離大, 而使首行突出左邊界, 在Chrome新版(72.0.3626.109)WIN10下預覽列印會發生第一個字消失的問題 */
+	.para.segment > .plain {	/* 1081129 Raymond 1081043 修正主旨/段落/條列文字若有追蹤修訂標籤, 在列印時因都標記成.plain而被調成0字距, 造成與簽核頁面折行位置不一致的問題 */
+		letter-spacing: 0px;
+	}
+	/* 1091214 Raymond 1090931 修正主旨、段落的段名冒號部分未對齊問題 */
+	.para.segment > span.a {
+		display: inline-block;
+		width: 100%;
+		box-sizing: border-box;	/* 1100226 Raymond 1090931 修正人事令函的條列對齊冒號時span.a的100%寬度會導致下移一行的問題 */
+		white-space: break-spaces;	/* 1111028 Raymond 考試院序308 修正用全形空白控制折行加次行要縮排時, 連續的全形空白會變成超出本文區範圍而使下邊界上面多一條水平捲動軸的問題, PS: IE不支援此break-spaces設定值 */
+		text-decoration-skip-ink: none;	/* 1121030 Raymond 領務局序293 修正設定底線樣式後, 部分英文字母gjpqy未顯示底線, 導致底線未連成一線的問題 */
+	}
+	span.a {
+		text-indent: 0em;
+		vertical-align: top;	/* 1090422 Raymond 1090293 修正IE不設top在特定情形下會使整個條列的高度略高度內容約1px, 可能導致末行被截一半 */
+		/*white-space: pre-wrap;	 1060531 Raymond 1060337 新增保持半形空白顯示功能; 1060609 設定此屬性後, IE會行為異常, 包括無法分散對齊、標號與第1行文字會間隔空白, 因此取消 */
+	}
+	/* 1110817 Raymond 考試院序206 修正主旨在簽核頁面與列印分頁時, 標題寬度不一致造成折行不一致的問題 */
+	span.plain {
+		text-align: inherit;	/* 2013.9.24 - Raymond, 修正套用Para的text-align */
+		text-indent: 0em;	/* 2016.4.19 避免inherit到div.para的text-indent */
+	}
+	span.a:empty {	/* 1070326 - Raymond 1061249 修正Chrome下文字節點沒有任何內容時整行高度變0的問題 */
+		display: inline-block;
+	}
+	.signature {
+		margin-top: 12pt;
+	}
+	.numbering {
+		/*background: lightgray;*/
+		display: inline-block;	/* 2017.3.20 修正序號會跟著文字分散對齊問題, 航港1060155 */
+		text-indent: 0px;
+		vertical-align: top;	/* 1060104 Raymond 1061176 標號調成inline-block + top, 才會與排版(testbody)結果一致 */
+	}
+	.numbering.even::before {	/* 2016.6.1 新增偶數階的序列有"()"要調整左邊界寬度(1050477) */
+		content: "";
+		display: inline-block;
+		margin-left: .3em;
+	}
+	img {
+		/*-webkit-transform-origin: left top;
+		-webkit-transform: scale(0.5);*/
+		width: 100%;
+
+		/* 1110513 Raymond 1110486 修正Chrome/Edge下某些電腦(不是很舊)啟用瀏覽器的硬體加速功能後, 影像會變模糊的問題 */
+		image-rendering: -webkit-optimize-contrast;
+	}
+	/* 1090825 Raymond 1090620 新增文字型核示語詞應設margin為0, 以避免列印時核示語詞文字偏離所在位置 */
+	.so-stamp p {
+		margin: 0;
+	}
+	.marker {
+		position: absolute;
+		font-size: 72pt;
+		color: cyan;
+	}
+	.paper {
+		width: 210mm;
+		margin-top: 8px;
+		border: 1px solid #888;
+		-webkit-box-shadow: 8px 8px 4px #888;
+		box-shadow: 8px 8px 4px #888;
+	}
+	ins {
+		position: absolute;
+		left: 188mm;
+		width: 23mm;
+		padding-left: 0;
+		text-indent: 0;
+		outline: 1px dashed green;
+	}
+	.insLine {
+		display: inline-block;
+		width: 0px;
+	}
+	.insLineBody {
+		position: relative;
+		top: -20px;
+		padding-left: 0;
+		text-indent: 0;
+		border-top: 1px dashed green;
+		float: left;
+	}
+	iframe {
+		width: 100%;
+		height: 80%;
+		background: white;
+	}
+	.token-input-list-facebook {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		clear: left;
+		word-break: break-all;	/* 2015.6.25 受文者可字間折行 */
+		/*outline: 1px dotted blue;		for debug */
+		text-indent: 0em;	/* 2016.4.19 避免inherit到div.para的text-indent */
+	}
+	.token-input-input-token-facebook {
+		display: none;
+	}
+	.tb {
+		-webkit-transform: rotate(90deg) translate(0px, -94px);
+		-webkit-transform-origin: left top;
+		-moz-transform: rotate(90deg) translate(0px, -94px);
+		-moz-transform-origin: left top;
+		transform: rotate(90deg) translate(0px, -94px);
+		transform-origin: left top;
+	}
+	/* 1140410 Raymond 1140481 新增雙面列印時, 偶數頁的裝訂線顯示於右邊界時的位置微調 */
+	.tb.even-page {
+		transform: rotate(90deg) translate(0px, -81px);
+	}
+	.att-po {
+		position: absolute;
+		bottom: 1em;
+		text-align: center;
+		left: 50%;
+		margin-left: -3em;
+	}
+	.sign-area {	/* 2016.9.8 FIX */
+		position: absolute;
+	}
+	/* 1101122 Raymond 修正航港局報修簽稿會核單列印時章戳位置與簽核頁面不一致的問題 */
+	.table-cell {
+		vertical-align: top;	/* 2013.9.24 - Raymond, 與舊版一致, 儲存格內容預設齊上 */
+		box-sizing: border-box;	/* 1100618 Raymond 1100715 修正Chrome升級至91版後, 表格的儲存格寬度會增加造成超過外層元素寬度而出現水平捲動條及右邊框未顯示問題 */
+	}
+
+	/* 1110617 Raymond 1110416 合併一代1030961功能, 新增浮水印樣式 */
+	div.watermark {
+		position: absolute;
+		left: 2.5%;	/* 1120110 Raymond 1111441 修正在套印密件浮水印後, Chrome列印預覽會縮小的問題 50%->2.5% */
+		top: calc(50% - 4em);	/* 1120110 Raymond 1111441 修正在套印密件浮水印後, Chrome列印預覽會縮小的問題 50%->calc(50% - 4em) */
+		font-size: 32pt;
+		width: 95%;
+		font-family: "Times New Roman", 標楷體, STKaiTi-TC-Regular, STKaiTiTC-Regular, sans-serif;
+		opacity: 0.2;
+		text-align: center;
+		line-height: 1;
+		/*color: white;	IE與Chrome一樣列印出來後不會有中空效果
+		text-shadow: 0px 0px 1pt black;*/
+	}
+	/*div.watermark > div {	1120110 Raymond 1111441 修正在套印密件浮水印後, Chrome列印預覽會縮小的問題
+		position: relative;
+		left: -50%;
+		top: -4em;
+	}*/
+	div.watermark div.watermark-nm {
+		line-height: 1.5;
+	}
+	div.watermark div.watermark-docno {
+		line-height: 1.5;
+	}
+	div.watermark div.watermark-sec {
+		line-height: 1.5;
+	}
+	div.watermark div.watermark-warn {
+		border: 0px solid black;
+		display: inline-block;
+	}
+	div.watermark div.watermark-warn > div {
+		/*writing-mode: tb;	1110829 Raymond 1110416 修改為橫式書寫方向, 因為Chrome的列印預覽功能有直式書寫方向功能+table-cell會壞掉變成字元向左倒90度的問題 */
+		display: table-cell;
+		vertical-align: middle;
+	}
+	div.attachwatermark {
+		position: absolute;
+		left: 20px;	/* 1110916 Raymond 序290 修改0px->20px */
+		top: 20px;	/* 1110916 Raymond 序290 修改0px->20px */
+	}
+	/* 1120210 Raymond 1111035 新增簽核物件資訊頁的文字意見/簽核意見樣式 */
+	div.comment {
+		display: inline-block;
+		white-space: pre-wrap;
+		vertical-align: top;
+		width: calc(100% - 6em);
+	}
+	/* 1120809 Raymond 1120503 新增文稿中自訂表格的樣式 */
+	table.custom-table {
+		border-spacing: 0px;
+		width: 100%;
+		border-collapse: collapse;
+	}
+	table.custom-table tbody:focus {
+		outline: none;
+	}
+	table.custom-table th {
+		user-select: none;
+	}
+	table.custom-table td {
+		border: 1px solid black;
+		box-sizing: border-box;
+		vertical-align: top;
+	}
+	table.custom-table td.selected {
+		background-color: lightblue;
+	}
+	table.custom-table p {
+		margin: 0;
+		text-align: left;
+		font-size: inherit;
+		line-height: 1.0;
+		min-height: 1em;
+		min-width: .5em;
+	}
+}
+
+@font-face {
+	font-family: fixkai-1;
+	src: local("MingLiU");	/* Chrome可指定"標楷體", 但IE不行, 只能指定標楷體的英文名稱"DFKai-sb" */
+	unicode-range: U+7063, U+5F4E, U+737B, U+881F, U+9435, U+8B70;
+}
+@media print {
+	.pg {
+		width: 210mm;
+		height: 297mm;
+		margin-top: 0mm;
+		border-style: none;
+		border-width: 0px;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		page-break-before: always;	/* 2016.12.8 fix */
+		/*outline: 1px solid green;		for debug */
+	}
+	.pg:first-child {	/* 2016.12.8 add */
+		page-break-before: avoid;
+	}
+	.pgBody {
+		margin: 0mm 22.5mm;
+		padding: 25mm 0mm;
+	}
+	.sys, .marker {
+		display: none;
+	}
+	body {
+		/*overflow-x: visible;		2016.12.8 fix */
+	}
+	.static > table {	/* 1060502 Raymond 1060286 修正Chrome 47+列印/預覽時, table margin-top無效問題 */
+		/*position: absolute; 1060515 FDA樣版的靜態區域有TABLE後面跟著PARA的情況(頁碼), 會導致PARA疊在TABLE上 */
+	}
+}
+
+/*1110222	Leslie[1101532]	[考試院]新增可顯示自造字的WebFont設定*/
+/*1110817 Kevin 1101532 移動至CSS_CONFIG.css*/
+/*1110222	Leslie[1101532]	[考試院]新增可顯示自造字的WebFont設定	==END== */

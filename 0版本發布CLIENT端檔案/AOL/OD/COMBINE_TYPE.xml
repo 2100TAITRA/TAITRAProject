@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="big5"?>
+<root>
+	<item>
+		<value>1</value>
+		<text>併辦</text>
+	</item>
+	<item>
+		<value>2</value>
+		<text>彙辦</text>
+	</item>
+	<item>
+		<value>3</value>
+		<text>併案陳核</text>
+	</item>
+</root>

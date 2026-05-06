@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ODR265D" targetNamespace="http://tempuri.org/ODR265D.xsd" xmlns:mstns="http://tempuri.org/ODR265D.xsd" xmlns="http://tempuri.org/ODR265D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ODR265D" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="ODR265D" msprop:Generator_UserDSName="ODR265D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ODR265L1" msprop:Generator_TableClassName="ODR265L1DataTable" msprop:Generator_TableVarName="tableODR265L1" msprop:Generator_TablePropName="ODR265L1" msprop:Generator_RowDeletingName="ODR265L1RowDeleting" msprop:Generator_RowChangingName="ODR265L1RowChanging" msprop:Generator_RowEvHandlerName="ODR265L1RowChangeEventHandler" msprop:Generator_RowDeletedName="ODR265L1RowDeleted" msprop:Generator_UserTableName="ODR265L1" msprop:Generator_RowChangedName="ODR265L1RowChanged" msprop:Generator_RowEvArgName="ODR265L1RowChangeEvent" msprop:Generator_RowClassName="ODR265L1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="LVL1_TYPE3" msprop:Generator_ColumnVarNameInTable="columnLVL1_TYPE3" msprop:Generator_ColumnPropNameInRow="LVL1_TYPE3" msprop:Generator_ColumnPropNameInTable="LVL1_TYPE3Column" msprop:Generator_UserColumnName="LVL1_TYPE3" type="xs:int" minOccurs="0" />
+              <xs:element name="LVL1_TYPE1" msprop:Generator_ColumnVarNameInTable="columnLVL1_TYPE1" msprop:Generator_ColumnPropNameInRow="LVL1_TYPE1" msprop:Generator_ColumnPropNameInTable="LVL1_TYPE1Column" msprop:Generator_UserColumnName="LVL1_TYPE1" type="xs:int" minOccurs="0" />
+              <xs:element name="LVL1_TYPE2" msprop:Generator_ColumnVarNameInTable="columnLVL1_TYPE2" msprop:Generator_ColumnPropNameInRow="LVL1_TYPE2" msprop:Generator_ColumnPropNameInTable="LVL1_TYPE2Column" msprop:Generator_UserColumnName="LVL1_TYPE2" type="xs:int" minOccurs="0" />
+              <xs:element name="LVL2_TYPE3" msprop:Generator_ColumnVarNameInTable="columnLVL2_TYPE3" msprop:Generator_ColumnPropNameInRow="LVL2_TYPE3" msprop:Generator_ColumnPropNameInTable="LVL2_TYPE3Column" msprop:Generator_UserColumnName="LVL2_TYPE3" type="xs:int" minOccurs="0" />
+              <xs:element name="LVL2_TYPE1" msprop:Generator_ColumnVarNameInTable="columnLVL2_TYPE1" msprop:Generator_ColumnPropNameInRow="LVL2_TYPE1" msprop:Generator_ColumnPropNameInTable="LVL2_TYPE1Column" msprop:Generator_UserColumnName="LVL2_TYPE1" type="xs:int" minOccurs="0" />
+              <xs:element name="LVL2_TYPE2" msprop:Generator_ColumnVarNameInTable="columnLVL2_TYPE2" msprop:Generator_ColumnPropNameInRow="LVL2_TYPE2" msprop:Generator_ColumnPropNameInTable="LVL2_TYPE2Column" msprop:Generator_UserColumnName="LVL2_TYPE2" type="xs:int" minOccurs="0" />
+              <xs:element name="LVL3_TYPE3" msprop:Generator_ColumnVarNameInTable="columnLVL3_TYPE3" msprop:Generator_ColumnPropNameInRow="LVL3_TYPE3" msprop:Generator_ColumnPropNameInTable="LVL3_TYPE3Column" msprop:Generator_UserColumnName="LVL3_TYPE3" type="xs:int" minOccurs="0" />
+              <xs:element name="LVL3_TYPE1" msprop:Generator_ColumnVarNameInTable="columnLVL3_TYPE1" msprop:Generator_ColumnPropNameInRow="LVL3_TYPE1" msprop:Generator_ColumnPropNameInTable="LVL3_TYPE1Column" msprop:Generator_UserColumnName="LVL3_TYPE1" type="xs:int" minOccurs="0" />
+              <xs:element name="LVL3_TYPE2" msprop:Generator_ColumnVarNameInTable="columnLVL3_TYPE2" msprop:Generator_ColumnPropNameInRow="LVL3_TYPE2" msprop:Generator_ColumnPropNameInTable="LVL3_TYPE2Column" msprop:Generator_UserColumnName="LVL3_TYPE2" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

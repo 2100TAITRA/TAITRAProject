@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<script language="javascript">
+window.onload = fnOnLoad;
+function GetAllParamStr()
+{
+	var strParam = "";
+	var pUrl = unescape(this.location);
+	if( pUrl != -1 )
+	{
+		var i = pUrl.indexOf("?");
+		if(i != -1)
+			strParam = pUrl.substr(i); 
+	}
+	return strParam;
+}
+
+function fnOnLoad()
+{
+	//1100526 Zen 1100610 ®z±½Client DOM XSS­×¥¿
+    //embeddedFrame.location = "TBT150.aspx" + GetAllParamStr();
+    embeddedFrame.location = "TBT150.aspx" + EncodeURI(GetAllParamStr());
+}
+</script>
+
+<HTML>
+	<HEAD>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+		<TITLE></TITLE>
+	</HEAD>
+	<FRAMESET>
+		<frame src="" name="embeddedFrame" width="100%" height="100%" />
+	</FRAMESET>
+</HTML>

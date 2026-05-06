@@ -1,0 +1,542 @@
+@charset "utf-8";
+/* CSS Document */
+
+#workarea .work_pane {
+    width: calc(100% - 3.2em);
+    height: 100%;
+    margin-left: 3.2em;
+}
+
+/* Begin of 線上簽核公文預覽窗格 */
+.work_pane .preview_left_band {
+    width: 25em;
+    float: left;
+}
+
+.work_pane .preview_content {
+  display: block;
+  height: 100%;
+  width: calc(100% - 25em);
+  
+  overflow: hidden;
+  position: relative;
+  float: right;
+}
+
+#eDocPreviewPane .ui-subpage {
+	border-left: 1px solid gray;
+    -webkit-box-shadow: 0px 0px 0px 0px #888;
+    -moz-box-shadow: 0px 0px 0px 0px #888;
+    -o-box-shadow: 0px 0px 0px 0px #888;
+    -ms-box-shadow: 0px 0px 0px 0px #888;
+    box-shadow: 0px 0px 0px 0px #888;
+}
+
+/* 2012.8.27 - for FolioPreview */
+.work_pane .folio_cntr {
+	position: relative;
+}
+
+/* 2016.3*/
+.work_pane div.folio_pane {
+	height: 100%;
+	width: 100%;
+	margin-top: 15px; /* 2016.3 */
+}
+
+.work_pane div.folio_content {
+	height: 600px;
+	width: 450px;
+	margin: 10px auto;
+	border: 1px solid #eee;
+	
+	background-color: #eee;
+	
+	/*margin-left: -50px;*/
+	overflow: hidden;
+	
+	position: relative;
+	-webkit-perspective: 800;
+
+	/*-webkit-box-shadow: 0 2px 5px #ccc;*/
+	-webkit-box-shadow: 3px 3px 2px rgba(0, 0, 0, .3);
+	box-shadow: 3px 3px 2px rgba(0, 0, 0, .3);
+	
+	z-index: 10;
+}
+
+.work_pane .folio_content .flip_content { /* 單份公文預覽內容 */
+	position: absolute;
+	height: 600px;
+	width: 450px;
+	/*left: 0px;*/
+	top: 0px;
+	
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform .8s;
+}
+
+.work_pane .flip_content .flip_side {
+	position: absolute;
+	
+	-webkit-backface-visibility: hidden;
+	/*-webkit-box-shadow: 0 2px 5px #ccc;*/
+}
+
+.work_pane .flip_content .page {
+	height: 600px;
+	width: 450px;
+	
+	/*border: 1px dashed #eee;*/
+	box-sizing: border-box;
+	background-size: contain;
+	background-position: center;
+	background-color: #fff;
+	z-index: 50;
+	
+	position: relative;
+}
+
+/* 2016.4 - Eric Peng, iPad landscape 暫時方案 for 二代layout */
+@media screen and (max-width: 1300px) and (orientation: landscape) {
+    #work_apne div.folio_pane  {
+		margin-top: 15px;
+	}
+	.work_pane div.folio_content {
+		margin-left: 20px;	
+	}
+	
+	.work_pane .folio_cntr .cmdForDoc {
+		left: 470px;
+	}
+}
+
+/* 2016.2.1 - Eric Peng, 暫行顯示方案 for iPad Pro - Landscape */
+@media screen and (min-width: 1250px) and (min-height: 900px) and (orientation: landscape) { /* 2017.5.5 - Eric, modify for 1280X1024 */
+/*@media screen and (min-width: 1300px) and (min-height: 900px) and (orientation: landscape) {*/
+	#eDocPreviewPane div.folio_pane {
+		margin-top: 30px;
+	}
+	
+	#eDocPreviewPane div.folio_content {
+		height: 840px;
+		width: 630px;
+		margin: 15px auto;
+	}
+	
+	#eDocPreviewPane .folio_content .flip_content { /* 單份公文預覽內容 */
+		height: 840px;
+		width: 630px;
+	}
+	
+	#eDocPreviewPane .flip_content .page {
+		height: 840px;
+		width: 630px;
+	}
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    #eDocPreviewPane div.folio_pane  {
+		margin-top: 15px;
+	}
+    
+    #eDocPreviewPane div.folio_content {
+		height: 600px;
+        width: 450px;
+		/*margin: 10px auto;*/
+        margin-top: 10px;
+        margin-left: 4em;
+	}
+	
+	#eDocPreviewPane .folio_content .flip_content { /* 單份公文預覽內容 */
+		height: 600px;
+        width: 450px;
+	}
+	
+	#eDocPreviewPane .flip_content .page {
+		height: 600px;
+        width: 450px;
+	}
+    
+    #eDocPreviewPane .folio_cntr .cmdForDoc {
+		/*left: calc(50% + (450px/2) - 3px);*/
+        left: calc(50% + (450px/2) - 1.3em - 3px);
+	}
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Portrait 
+   2021.2.23 - 1090927 Eric, min-width 7680->900 (for iPad Pro 11") */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+	#eDocPreviewPane div.folio_pane  {
+		margin-top: 160px;
+	}
+    
+    #eDocPreviewPane div.folio_content {
+		height: 600px;
+        width: 450px;
+		margin: 10px auto;
+	}
+	
+	#eDocPreviewPane .folio_content .flip_content { /* 單份公文預覽內容 */
+		height: 600px;
+        width: 450px;
+	}
+	
+	#eDocPreviewPane .flip_content .page {
+		height: 600px;
+        width: 450px;
+	}
+}
+
+/* 2016.2.1 - Eric Peng, 暫行顯示方案 for iPad Pro - Portrait */
+@media screen and (min-width: 1000px) and (orientation: portrait) {
+	#eDocPreviewPane div.folio_pane {
+		margin-top: 200px;
+	}
+	
+	#eDocPreviewPane div.folio_content {
+		height: 750px;
+		width: 550px;
+		margin: 30px auto;
+	}
+	
+	#eDocPreviewPane .folio_content .flip_content { /* 單份公文預覽內容 */
+		height: 750px;
+		width: 550px;
+	}
+	
+	#eDocPreviewPane .flip_content .page {
+		height: 750px;
+		width: 550px;
+	}
+}
+
+.work_pane .flip_content .page_inner {
+	display: block;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: auto;
+	height: 97%;
+	
+	background: transparent;
+}
+
+.work_pane .flip_content .yellow-one {
+	background-color: #ff0;
+}
+
+.work_pane .flip_content .red-one {
+	background-color: #f88;
+}
+
+.work_pane .flip_content .green-one {
+	background-color: #8f8;
+}
+
+.work_pane .flip_content .doc_info {
+	background-color: #FCF;
+	height: 600px;
+	width: 450px;
+	z-index: 10;
+	-webkit-transform: rotateY(-180deg);
+}
+
+.flip_content .docNo_left,
+.flip_content .docNo_right
+{
+	position: absolute;
+	top:2px;
+}
+
+.flip_content .docNo_left {
+	left: 10px;
+}
+
+.flip_content .docNo_right {
+	right: 10px;
+}
+
+/* folio preview nav bar */
+#eDocPreviewPane .folio_preview_nav {
+	position: absolute;
+	width: 	180px; /* (7*25) - 5 [最後一個button沒有gap] */
+	bottom: 65px;
+	left: 300px;
+
+	text-shadow: none;
+	z-index: 11;
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Portrait 
+   2021.2.23 - 1090927 Eric, min-width 768->900 (for iPad Pro 11") */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+	#eDocPreviewPane .folio_preview_nav {
+		bottom: 190px;
+	}
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Pro - Landscape */
+@media screen and (min-width: 1300px) and (min-height: 900px) and (orientation: landscape) {
+	#eDocPreviewPane .folio_preview_nav {
+		bottom: 60px;
+	}
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Pro - Portrait */
+@media screen and (min-width: 1000px) and (orientation: portrait) {
+	#eDocPreviewPane .folio_preview_nav {
+		bottom: 250px;
+	}
+}
+
+#eDocPreviewPane .folio_preview_nav > div {
+	position: relative;
+}
+
+#eDocPreviewPane .folio_preview_nav > div.bkg {
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	background: #88C;
+	opacity: 0.4;
+	top:-10px;
+}
+
+#eDocPreviewPane .folio_preview_nav .folio_nav_btn {
+	cursor: pointer;
+	
+	position: absolute;
+	display: inline-block;
+	
+	width: 20px;
+	height: 40px;
+	top: 0px;
+	
+	background-color: #fff;
+	border-radius: 2px;
+	
+	line-height: 40px;
+	text-align: center;
+	
+	-webkit-box-shadow: rgba(0, 0, 0, 0.699219) 0px 0px 2px 0px;
+}
+
+#eDocPreviewPane .folio_preview_nav .folio_btn_prev {
+	left: 5px;
+	
+	background-image: url(../IMAGE/SSO/folio_nav_icons.png);
+	background-position: -20px 50%;
+	background-repeat: no-repeat;
+	
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#eDocPreviewPane .folio_preview_nav .folio_btn_1 {
+	left: 35px;
+}
+
+#eDocPreviewPane .folio_preview_nav .folio_btn_2 {
+	left: 65px;
+}
+
+#eDocPreviewPane .folio_preview_nav .folio_btn_3 {
+	left: 95px;
+}
+
+#eDocPreviewPane .folio_preview_nav .folio_btn_4 {
+	left: 125px;
+}
+#eDocPreviewPane .folio_preview_nav .folio_btn_5 {
+	left: 155px;
+}
+
+#eDocPreviewPane .folio_preview_nav .folio_btn_next {
+	left: 185px;
+	
+	background-image: url(../IMAGE/SSO/folio_nav_icons.png);
+	background-position: -80px 50%;
+	background-repeat: no-repeat;
+}
+
+#eDocPreviewPane .folio_preview_nav .selected {
+	background-color: #F8F;
+}
+  /* folio preview nav bar */
+
+/* Document Commands - 顯示於Content窗格右上方  */
+.work_pane .folio_cntr .cmdForDoc {
+  position: absolute;
+  top: 5px;
+  /*right: 50px;*/
+  left: calc(50% + (450px/2) - 3px);
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Portrait 
+   2021.2.23 - 1090927 Eric, min-width 768->900 (for iPad Pro 11")*/
+@media screen and (max-width: 900px) and (orientation: portrait) {
+	/* DocCommands - 顯示於Content窗格右上方, iPad直式layout, 須在preview影像上方  */
+	#eDocPreviewPane .folio_cntr .cmdForDoc {
+		z-index: 51;
+		/*right: 10px;*/
+		left: calc(50% + (450px/2) - 3px);
+	}
+}
+
+/* 2016.4 - Eric Peng, iPad landscape 暫時方案 for 二代layout */
+@media screen and (max-width: 1300px) and (orientation: landscape) {
+	.work_pane .folio_cntr .cmdForDoc {
+		left: 480px;
+	}
+}
+
+/* 2016.2.1 - Eric Peng, 暫行顯示方案 for iPad Pro Landscape */
+@media screen and (min-width: 1200px) and (min-height: 900px) and (orientation: landscape)  {
+	/* Document Commands - 顯示於Content窗格右上方  */
+	#eDocPreviewPane .folio_cntr .cmdForDoc {
+	  /*right: 130px;*/
+	  left: calc(50% + (630px/2) - 3px);
+	}
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Pro Portrait */
+@media screen and (min-width: 1000px) and (orientation: portrait) {
+    #eDocPreviewPane div.folio_pane {
+		margin-top: 200px;
+	}
+	
+	#eDocPreviewPane div.folio_content {
+		height: 750px;
+		width: 550px;
+		margin: 30px auto;
+	}
+	
+	.folio_content .flip_content { /* 單份公文預覽內容 */
+		height: 750px;
+		width: 550px;
+	}
+	
+	.flip_content .page {
+		height: 750px;
+		width: 550px;
+	}
+    
+	/* Document Commands - 顯示於Content窗格右上方  */
+	#eDocPreviewPane .folio_cntr .cmdForDoc {
+	  z-index: 51;
+	  left: calc(50% + (550px/2) - 3px);
+	}
+}
+
+.work_pane .cmdForDoc .cmdItem {
+  width: 100px;
+  height: 36px;
+  line-height: 36px;
+  text-indent: 5px;
+  padding-left: 7px;
+
+  font-size: 14px;
+  font-weight: 800;
+  text-shadow: none;
+  color: #eee;
+	
+  cursor: pointer;
+  
+  border-radius: 0/*top-left*/ 0/*top-right*/ 0/*bottom-right*/ 0/*bottom-left*/;
+	
+  -webkit-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+	
+  background-image: -webkit-linear-gradient(#5F9CC5 /*{b-bup-background-start}*/, #396B9E /*{b-bup-background-end}*/);
+}
+
+.work_pane .cmdForDoc .cmdItem:first-child {
+	border-top-right-radius: 0.5em;
+}
+
+.work_pane .cmdForDoc .cmdItem:last-child {
+	border-bottom-right-radius: 0.5em;
+}
+
+.work_pane .cmdForDoc .cmdDocInfo {
+	background-image: gradient(linear, left top, left bottom, color-stop(0, #74B042), color-stop(1, #56A00E));
+}
+
+.work_pane .cmdForDoc .cmdOpenDoc {
+	background-image: linear-gradient(#FCEDA7 /*{e-bup-background-start}*/, #FADB4E /*{e-bup-background-end}*/);
+	position: relative;
+	color: #444;
+	height: 50px;
+	line-height: 50px;
+}
+
+/*20170413*/
+.work_pane .cmdForDoc .cmdOpenDoc .icon{
+    background-image: url(../IMAGE/NEW/公文標籤-簽辦公文.png);
+    height: 24px;
+    width: 24px;
+    float: left;
+    position: absolute;
+    right: 8px;
+    top: 14px;
+}
+
+.work_pane .cmdForDoc .cmdNewDoc {
+	background-image: linear-gradient(#FCEDA7 /*{e-bup-background-start}*/, #FADB4E /*{e-bup-background-end}*/);
+	position: relative;
+	color: #444;
+	height: 50px;
+	line-height: 50px;
+}
+
+.work_pane .cmdForDoc .cmdSumitDocForPaper {
+	background-image: linear-gradient(#74B042 /*{e-bup-background-start}*/, #56A00E /*{e-bup-background-end}*/);
+	position: relative;
+	color: #444;
+	height: 50px;
+	line-height: 50px;
+}
+
+.work_pane .cmdForDoc .cmdOpenDoc > span
+{
+	background-color: #888;
+	width:18px;
+	height: 36px;
+}
+
+/* 20170413 改為Div並使用自定義圖檔
+.work_pane .cmdForDoc .cmdItem > span > span {
+	position: absolute;
+	top: 50%;
+	margin-top: -9px;
+	right: 9px;
+
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	border-radius: 9px;
+}
+*/
+
+/* 20170413 改為Div並使用自定義圖檔
+.work_pane .cmdForDoc .cmdOpenDoc > span > span {
+	background-image: url(../IMAGE/SSO/icons-18-white.png); /{global-icon-set}/
+	background-color: #888;
+    background-repeat: no-repeat;
+	background-position: -108px 50%;
+}
+*/
+
+.work_pane .cmdForDoc .cmdNewDoc > span > span{
+	background-image: url(../IMAGE/SSO/icons-18-white.png) /*{global-icon-set}*/;
+	background-color: #888;
+    background-repeat: no-repeat;
+	background-position: -108px 50%;
+}
+
+/* End of 線上簽核公文預覽窗格 */

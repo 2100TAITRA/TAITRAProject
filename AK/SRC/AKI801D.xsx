@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--此檔案是由 XML 結構描述設計工具自動產生。它儲存元件在設計工具介面上的版面配置資訊。-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="-1500" viewPortTop="0" zoom="100">
+    <MainTable_XmlElement left="-654" top="1561" width="11272" height="8970" selected="0" zOrder="0" index="0" expanded="1" />
+    <DetailTable_XmlElement left="10769" top="1720" width="11959" height="9419" selected="0" zOrder="2" index="1" expanded="1" />
+</XSDDesignerLayout>

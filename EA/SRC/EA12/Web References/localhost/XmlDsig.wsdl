@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SignEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SignEnvelopeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCertStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argCert" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCertStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCertStatusResult" type="s0:UtyRtnBool" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnBool">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RtnBool" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="s0:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsErr" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrName" type="s0:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrType" type="s0:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrCode" type="s0:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMessage" type="s0:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTrace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TargetSite" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRedirect" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTSA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSignature" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RET_TSA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strTSA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strHashAlgorithm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strHashedMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strVersion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strGenTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strAccuracy" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTSAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTSAResult" type="s0:RET_TSA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAnnotationSign">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnvFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAnnotationSignResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddAnnotationSignResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFolderPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argResultFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyFolderResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyMediaEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMediaPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argResultFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyMediaEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyMediaEnvelopeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileHash">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileArr" type="s0:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFileHashResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileHashResult" type="s0:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplaceKeyEnv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCertFile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnveFileArr" type="s0:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplaceKeyEnvResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReplaceKeyEnvResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildEnveloped">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWorkFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildEnvelopedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuildEnvelopedResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildTransferEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWorkFilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildTransferEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuildTransferEnvelopeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTimeStamp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnveFilePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argTagName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTimeStampResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddTimeStampResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSignByGCA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnvelopePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSignByGCAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckSignByGCAResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyDocValidation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWorkFilePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argResultPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyDocValidationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyDocValidationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildMediaEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWorkFilePath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argSign" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildMediaEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BuildMediaEnvelopeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToBase64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToBase64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ToBase64Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCanonicalXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argBase64XML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCanonicalXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCanonicalXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyEnve">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnvePath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argStatus" type="s0:EnumEnveStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="EnumEnveStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="ENVE_WAITSIGN" />
+          <s:enumeration value="ENVE_WAITADD" />
+          <s:enumeration value="ENVE_FULL" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="VerifyEnveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyEnveResult" type="s0:RET_VERIFY" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RET_VERIFY">
+        <s:complexContent mixed="false">
+          <s:extension base="s0:UtyRtnBool">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="bPassVerify" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="arrNotPassList" type="s0:ArrayOfString" />
+              <s:element minOccurs="0" maxOccurs="1" name="arrNotPassListMsg" type="s0:ArrayOfString" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="VerifyMedia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMediaEnvePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyMediaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyMediaResult" type="s0:RET_VERIFY" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyTransMedia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argTransferMedia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyTransMediaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyTransMediaResult" type="s0:RET_VERIFY" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </types>
+  <message name="SignEnvelopeSoapIn">
+    <part name="parameters" element="s0:SignEnvelope" />
+  </message>
+  <message name="SignEnvelopeSoapOut">
+    <part name="parameters" element="s0:SignEnvelopeResponse" />
+  </message>
+  <message name="CheckCertStatusSoapIn">
+    <part name="parameters" element="s0:CheckCertStatus" />
+  </message>
+  <message name="CheckCertStatusSoapOut">
+    <part name="parameters" element="s0:CheckCertStatusResponse" />
+  </message>
+  <message name="GetTSASoapIn">
+    <part name="parameters" element="s0:GetTSA" />
+  </message>
+  <message name="GetTSASoapOut">
+    <part name="parameters" element="s0:GetTSAResponse" />
+  </message>
+  <message name="AddAnnotationSignSoapIn">
+    <part name="parameters" element="s0:AddAnnotationSign" />
+  </message>
+  <message name="AddAnnotationSignSoapOut">
+    <part name="parameters" element="s0:AddAnnotationSignResponse" />
+  </message>
+  <message name="VerifyFolderSoapIn">
+    <part name="parameters" element="s0:VerifyFolder" />
+  </message>
+  <message name="VerifyFolderSoapOut">
+    <part name="parameters" element="s0:VerifyFolderResponse" />
+  </message>
+  <message name="VerifyMediaEnvelopeSoapIn">
+    <part name="parameters" element="s0:VerifyMediaEnvelope" />
+  </message>
+  <message name="VerifyMediaEnvelopeSoapOut">
+    <part name="parameters" element="s0:VerifyMediaEnvelopeResponse" />
+  </message>
+  <message name="GetFileHashSoapIn">
+    <part name="parameters" element="s0:GetFileHash" />
+  </message>
+  <message name="GetFileHashSoapOut">
+    <part name="parameters" element="s0:GetFileHashResponse" />
+  </message>
+  <message name="ReplaceKeyEnvSoapIn">
+    <part name="parameters" element="s0:ReplaceKeyEnv" />
+  </message>
+  <message name="ReplaceKeyEnvSoapOut">
+    <part name="parameters" element="s0:ReplaceKeyEnvResponse" />
+  </message>
+  <message name="BuildEnvelopedSoapIn">
+    <part name="parameters" element="s0:BuildEnveloped" />
+  </message>
+  <message name="BuildEnvelopedSoapOut">
+    <part name="parameters" element="s0:BuildEnvelopedResponse" />
+  </message>
+  <message name="BuildTransferEnvelopeSoapIn">
+    <part name="parameters" element="s0:BuildTransferEnvelope" />
+  </message>
+  <message name="BuildTransferEnvelopeSoapOut">
+    <part name="parameters" element="s0:BuildTransferEnvelopeResponse" />
+  </message>
+  <message name="AddTimeStampSoapIn">
+    <part name="parameters" element="s0:AddTimeStamp" />
+  </message>
+  <message name="AddTimeStampSoapOut">
+    <part name="parameters" element="s0:AddTimeStampResponse" />
+  </message>
+  <message name="CheckSignByGCASoapIn">
+    <part name="parameters" element="s0:CheckSignByGCA" />
+  </message>
+  <message name="CheckSignByGCASoapOut">
+    <part name="parameters" element="s0:CheckSignByGCAResponse" />
+  </message>
+  <message name="VerifyDocValidationSoapIn">
+    <part name="parameters" element="s0:VerifyDocValidation" />
+  </message>
+  <message name="VerifyDocValidationSoapOut">
+    <part name="parameters" element="s0:VerifyDocValidationResponse" />
+  </message>
+  <message name="BuildMediaEnvelopeSoapIn">
+    <part name="parameters" element="s0:BuildMediaEnvelope" />
+  </message>
+  <message name="BuildMediaEnvelopeSoapOut">
+    <part name="parameters" element="s0:BuildMediaEnvelopeResponse" />
+  </message>
+  <message name="ToBase64SoapIn">
+    <part name="parameters" element="s0:ToBase64" />
+  </message>
+  <message name="ToBase64SoapOut">
+    <part name="parameters" element="s0:ToBase64Response" />
+  </message>
+  <message name="GetCanonicalXMLSoapIn">
+    <part name="parameters" element="s0:GetCanonicalXML" />
+  </message>
+  <message name="GetCanonicalXMLSoapOut">
+    <part name="parameters" element="s0:GetCanonicalXMLResponse" />
+  </message>
+  <message name="VerifyEnveSoapIn">
+    <part name="parameters" element="s0:VerifyEnve" />
+  </message>
+  <message name="VerifyEnveSoapOut">
+    <part name="parameters" element="s0:VerifyEnveResponse" />
+  </message>
+  <message name="VerifyMediaSoapIn">
+    <part name="parameters" element="s0:VerifyMedia" />
+  </message>
+  <message name="VerifyMediaSoapOut">
+    <part name="parameters" element="s0:VerifyMediaResponse" />
+  </message>
+  <message name="VerifyTransMediaSoapIn">
+    <part name="parameters" element="s0:VerifyTransMedia" />
+  </message>
+  <message name="VerifyTransMediaSoapOut">
+    <part name="parameters" element="s0:VerifyTransMediaResponse" />
+  </message>
+  <portType name="Service1Soap">
+    <operation name="SignEnvelope">
+      <input message="s0:SignEnvelopeSoapIn" />
+      <output message="s0:SignEnvelopeSoapOut" />
+    </operation>
+    <operation name="CheckCertStatus">
+      <input message="s0:CheckCertStatusSoapIn" />
+      <output message="s0:CheckCertStatusSoapOut" />
+    </operation>
+    <operation name="GetTSA">
+      <input message="s0:GetTSASoapIn" />
+      <output message="s0:GetTSASoapOut" />
+    </operation>
+    <operation name="AddAnnotationSign">
+      <input message="s0:AddAnnotationSignSoapIn" />
+      <output message="s0:AddAnnotationSignSoapOut" />
+    </operation>
+    <operation name="VerifyFolder">
+      <input message="s0:VerifyFolderSoapIn" />
+      <output message="s0:VerifyFolderSoapOut" />
+    </operation>
+    <operation name="VerifyMediaEnvelope">
+      <input message="s0:VerifyMediaEnvelopeSoapIn" />
+      <output message="s0:VerifyMediaEnvelopeSoapOut" />
+    </operation>
+    <operation name="GetFileHash">
+      <input message="s0:GetFileHashSoapIn" />
+      <output message="s0:GetFileHashSoapOut" />
+    </operation>
+    <operation name="ReplaceKeyEnv">
+      <input message="s0:ReplaceKeyEnvSoapIn" />
+      <output message="s0:ReplaceKeyEnvSoapOut" />
+    </operation>
+    <operation name="BuildEnveloped">
+      <input message="s0:BuildEnvelopedSoapIn" />
+      <output message="s0:BuildEnvelopedSoapOut" />
+    </operation>
+    <operation name="BuildTransferEnvelope">
+      <input message="s0:BuildTransferEnvelopeSoapIn" />
+      <output message="s0:BuildTransferEnvelopeSoapOut" />
+    </operation>
+    <operation name="AddTimeStamp">
+      <input message="s0:AddTimeStampSoapIn" />
+      <output message="s0:AddTimeStampSoapOut" />
+    </operation>
+    <operation name="CheckSignByGCA">
+      <input message="s0:CheckSignByGCASoapIn" />
+      <output message="s0:CheckSignByGCASoapOut" />
+    </operation>
+    <operation name="VerifyDocValidation">
+      <input message="s0:VerifyDocValidationSoapIn" />
+      <output message="s0:VerifyDocValidationSoapOut" />
+    </operation>
+    <operation name="BuildMediaEnvelope">
+      <input message="s0:BuildMediaEnvelopeSoapIn" />
+      <output message="s0:BuildMediaEnvelopeSoapOut" />
+    </operation>
+    <operation name="ToBase64">
+      <input message="s0:ToBase64SoapIn" />
+      <output message="s0:ToBase64SoapOut" />
+    </operation>
+    <operation name="GetCanonicalXML">
+      <input message="s0:GetCanonicalXMLSoapIn" />
+      <output message="s0:GetCanonicalXMLSoapOut" />
+    </operation>
+    <operation name="VerifyEnve">
+      <input message="s0:VerifyEnveSoapIn" />
+      <output message="s0:VerifyEnveSoapOut" />
+    </operation>
+    <operation name="VerifyMedia">
+      <input message="s0:VerifyMediaSoapIn" />
+      <output message="s0:VerifyMediaSoapOut" />
+    </operation>
+    <operation name="VerifyTransMedia">
+      <input message="s0:VerifyTransMediaSoapIn" />
+      <output message="s0:VerifyTransMediaSoapOut" />
+    </operation>
+  </portType>
+  <binding name="Service1Soap" type="s0:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="SignEnvelope">
+      <soap:operation soapAction="http://tempuri.org/SignEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckCertStatus">
+      <soap:operation soapAction="http://tempuri.org/CheckCertStatus" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetTSA">
+      <soap:operation soapAction="http://tempuri.org/GetTSA" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddAnnotationSign">
+      <soap:operation soapAction="http://tempuri.org/AddAnnotationSign" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="VerifyFolder">
+      <soap:operation soapAction="http://tempuri.org/VerifyFolder" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="VerifyMediaEnvelope">
+      <soap:operation soapAction="http://tempuri.org/VerifyMediaEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetFileHash">
+      <soap:operation soapAction="http://tempuri.org/GetFileHash" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ReplaceKeyEnv">
+      <soap:operation soapAction="http://tempuri.org/ReplaceKeyEnv" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="BuildEnveloped">
+      <soap:operation soapAction="http://tempuri.org/BuildEnveloped" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="BuildTransferEnvelope">
+      <soap:operation soapAction="http://tempuri.org/BuildTransferEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddTimeStamp">
+      <soap:operation soapAction="http://tempuri.org/AddTimeStamp" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CheckSignByGCA">
+      <soap:operation soapAction="http://tempuri.org/CheckSignByGCA" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="VerifyDocValidation">
+      <soap:operation soapAction="http://tempuri.org/VerifyDocValidation" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="BuildMediaEnvelope">
+      <soap:operation soapAction="http://tempuri.org/BuildMediaEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ToBase64">
+      <soap:operation soapAction="http://tempuri.org/ToBase64" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetCanonicalXML">
+      <soap:operation soapAction="http://tempuri.org/GetCanonicalXML" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="VerifyEnve">
+      <soap:operation soapAction="http://tempuri.org/VerifyEnve" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="VerifyMedia">
+      <soap:operation soapAction="http://tempuri.org/VerifyMedia" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="VerifyTransMedia">
+      <soap:operation soapAction="http://tempuri.org/VerifyTransMedia" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Service1">
+    <port name="Service1Soap" binding="s0:Service1Soap">
+      <soap:address location="http://localhost/EnvelopeWS/XmlDsig.asmx" />
+    </port>
+  </service>
+</definitions>

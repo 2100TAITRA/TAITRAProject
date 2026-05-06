@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ODR266D" targetNamespace="http://tempuri.org/ODR266D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/ODR266D.xsd" xmlns:mstns="http://tempuri.org/ODR266D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="ODR266D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="MONTH" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="GROUP_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="NEW_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_01" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_02" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_03" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_04" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_05" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_06" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_07" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_08" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_09" type="xs:string" minOccurs="0" />
+							<xs:element name="VAL_10" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="RptTable2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="COL_01" type="xs:string" minOccurs="0" />
+							<xs:element name="COL_02" type="xs:string" minOccurs="0" />
+							<xs:element name="COL_03" type="xs:string" minOccurs="0" />
+							<xs:element name="COL_04" type="xs:string" minOccurs="0" />
+							<xs:element name="COL_05" type="xs:string" minOccurs="0" />
+							<xs:element name="COL_06" type="xs:string" minOccurs="0" />
+							<xs:element name="COL_07" type="xs:string" minOccurs="0" />
+							<xs:element name="COL_08" type="xs:string" minOccurs="0" />
+							<xs:element name="COL_09" type="xs:string" minOccurs="0" />
+							<xs:element name="COL_10" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

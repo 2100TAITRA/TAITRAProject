@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR455D" targetNamespace="http://tempuri.org/EDR455D.xsd" elementFormDefault="qualified"
+	xmlns="http://tempuri.org/EDR455D.xsd" xmlns:mstns="http://tempuri.org/EDR455D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="EDR455L1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="OU_ID" type="xs:string" />
+				<xs:element name="OU_NAME" type="xs:string" />
+				<xs:element name="DOC_PROPERTY" type="xs:string" />
+				<xs:element name="B_TYPE_NO" type="xs:string" />
+				<xs:element name="CLASS_NAME" type="xs:string" />
+				<xs:element name="RCV_SUM" type="xs:int" />
+				<xs:element name="NEWRCV_CNT" type="xs:int" />
+				<xs:element name="NEW_CNT" type="xs:int" />
+				<xs:element name="LASTMONTH" type="xs:int" />
+				<xs:element name="CLOSE_SUM" type="xs:int" />
+				<xs:element name="CLOSE_TYPE_12" type="xs:int" />
+				<xs:element name="CLOSE_TYPE_3" type="xs:int" />
+				<xs:element name="CLOSE_OF_TOTAL" type="xs:double" />
+				<xs:element name="WAIT_SUM" type="xs:int" />
+				<xs:element name="WAIT_NODELAY" type="xs:int" />
+				<xs:element name="WAIT_DELAY" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

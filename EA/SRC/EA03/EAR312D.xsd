@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EAR312D" targetNamespace="http://tempuri.org/EAR312D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EAR312D.xsd" xmlns:mstns="http://tempuri.org/EAR312D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EAR312D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EAR312L">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="BOR_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="BOR_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NO" minOccurs="0" type="xs:string" />
+							<xs:element name="CountGroup" type="xs:int" minOccurs="0" />
+							<xs:element name="CountBorNo" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

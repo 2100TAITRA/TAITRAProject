@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR795D" targetNamespace="http://tempuri.org/AKR795D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR795D.xsd" xmlns:mstns="http://tempuri.org/AKR795D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR795D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="UNINP_last_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="File_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="UNINP_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="INP_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="NoTret_last_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="Bor_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="RET_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="NoTret_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="LY_FILE_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="LY_BOR_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="LY_RET_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="LY_UNINP_NUM" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NAME" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

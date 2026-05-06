@@ -1,0 +1,81 @@
+html{
+	font-size:1em !important;
+	overflow:hidden;
+}
+
+form.FormCenter {
+	margin: 0 auto;
+    max-width: 70vw;
+    margin-top: 20vh;
+}
+
+#todoTitle{
+	background-color: #5f9cc5;
+	border-radius: 8px 8px 0px 0px;
+}
+
+.nosee {DISPLAY: none}
+
+
+.TreeTopBottom ,#divTree{
+    width: calc(100% - 68px);
+}
+
+#divTree{
+	overflow: auto;
+	background-color: white;
+    border: 3px solid #eeee58;
+    width: 90%;
+    margin: 20px 20px;
+    border-radius: 8px;
+	max-height:70vh;
+}
+
+.bgCenter{
+	width: calc(100vw - 62px);
+	background-repeat: no-repeat;
+}
+
+.bg49{
+	background-image: url("../images/index_49.gif");
+}
+
+.bg44{
+	background-image: url("../images/index_44.gif");
+}
+
+#TodoList table,#dg0{
+	width:80vw !important;
+	max-width:800px;
+}
+
+#TodoList table[id*="dg"]{
+	/* width: calc(80vw - 17px) !important; */
+	width: 80vw !important;
+	/* height: 30vh !important; */
+	max-width:783px;
+}
+
+/* #TodoList table[id$="head"]{ */
+	/* height: 1em !important; */
+/* } */
+
+#TodoList>table{
+	margin-left:10vw;
+}
+
+#dlActiveRole{
+	float:left;
+	margin:10px 5px 5px 10px;
+}
+
+#btLogout{
+	margin:5px 10px 5px 10px;
+}
+
+table.dghead {
+    position: absolute;
+    z-index: 1;
+    background-color: #5f9cc5;
+    text-align: center;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--		104_envelope.ent     信封表單     2015.05.01    -->
+<!ELEMENT	 orgid 	(#PCDATA)>
+<!ELEMENT 	unitid	 (#PCDATA)>
+<!ELEMENT	 orgname 	(#PCDATA)>
+<!ELEMENT 	note 	((文字)|(doctype,docdate,docword,docpriority))>
+<!ELEMENT  doctype 	(#PCDATA)>
+<!ELEMENT  docdate 	(#PCDATA)>
+<!ELEMENT  docword 	(#PCDATA)>
+<!ELEMENT  docpriority 	(#PCDATA)>
+<!ELEMENT 	serviceid	 (#PCDATA)>
+<!ELEMENT 	applicationid 	(#PCDATA)>
+<!ELEMENT 	subject	 (#PCDATA)>
+<!ELEMENT 	expiredate	 (#PCDATA)>
+<!ELEMENT 	contactinfo	 (#PCDATA)>
+<!ELEMENT 	filename 	(#PCDATA)>
+<!ELEMENT	 hash 	(#PCDATA)>
+<!ATTLIST	 hash  algorithm	(sha256|sha384|sha512)  "sha256">
+<!ELEMENT 	object 	(orgid,unitid,orgname,note?)>
+<!ATTLIST 	object  type 	(addressbook)  "addressbook">
+<!ELEMENT 	senderinfo		 (object)>
+<!ELEMENT 	receiverlist	 (object+)>
+<!ELEMENT 	file 	(filename,hash,note?)>
+<!ATTLIST	file  needsig 	(true|false)  "false">
+<!ELEMENT 	print 	(file)>
+<!ELEMENT 	description 	(file)>
+<!ELEMENT others	 (file+)>
+<!ELEMENT 	filelist	 (print?,description?,others?)>
+<!ELEMENT	cardnum 	(#PCDATA)> 
+<!ELEMENT 	 CipherData 	(#PCDATA)>
+<!ELEMENT 	 EncryptedData  (CipherData )> 
+<!ATTLIST 	 	EncryptedData Method  (RSA | DSA)  "RSA">
+<!ATTLIST 	 	EncryptedData MimeType  (base64) "base64">
+<!ELEMENT 	cardlist	 (cardnum, EncryptedData) > 
+<!ATTLIST 	cardlist  type  (GCA | MOEACA  | XCA | MOICA | HCA)  "GCA"  >
+<!ELEMENT 	receiverobject 	(orgid,unitid, cardlist+)>
+<!ELEMENT 	receivercardlist 	(receiverobject+)>
+<!ELEMENT 	exchangeid 	(#PCDATA)>
+<!ELEMENT	 processid	 (#PCDATA)>
+<!ELEMENT 	msgtime 	(#PCDATA)>
+<!ELEMENT	 msgcode 	(#PCDATA)>
+<!ELEMENT 	msgnote 	(#PCDATA)>
+<!ELEMENT	 receiverinfo 		(object)>

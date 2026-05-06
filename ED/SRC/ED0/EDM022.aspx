@@ -1,0 +1,57 @@
+<%@ Page Language="c#" CodeBehind="EDM022.aspx.cs" AutoEventWireup="false" Inherits="ED0.EDM022" %>
+
+<%@ Register TagPrefix="cc1" Namespace="T2100.Web.UI.WebControls" Assembly="WebControl" %>
+<%@ Register TagPrefix="iewc" Namespace="Microsoft.Web.UI.WebControls" Assembly="Microsoft.Web.UI.WebControls" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>EDM022 核決層級清單主檔維護作業</title>
+    <meta content="Microsoft Visual Studio 8.0" name="GENERATOR">
+    <meta content="C#" name="CODE_LANGUAGE">
+    <meta content="JavaScript" name="vs_defaultClientScript">
+    <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+    <link href="../../../STDN/LIB/SYS.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <asp:Literal ID="LiteralCSS" runat="server"></asp:Literal>
+</head>
+<body ms_positioning="GridLayout">
+    <form id="EDM022" onkeyup="jf_CheckFull();" method="post" runat="server">
+        <!--Template V3 Generated WebForm-->
+        <!--#include file="../EDLIB/GenericBanner.htm"-->
+        <div id="hiddenDiv" style="z-index: -100; left: 0px; visibility: hidden; width: 100px; position: absolute; top: 0px; height: 100px">
+            <asp:CustomValidator ID="Validator" runat="server" ErrorMessage="CustomValidator"></asp:CustomValidator>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server"></asp:ValidationSummary>
+            <asp:ListBox ID="lbReturnValue" runat="server" Width="80px"></asp:ListBox>
+        </div>
+        <div class="DivBaseTable" id="BaseTable">
+            <div class="DivTable" id="MainTable">
+                <div class="dTR">
+                    <div class="dTDTitle" style="width:9.5em">
+                        <asp:Label ID="lbListNo" runat="server" CssClass="KeyField">核決層級清單代碼：</asp:Label>
+                    </div>
+                    <div class="dTD">
+                        <asp:TextBox ID="txListNo" TabIndex="0" onkeyup="ED_jf_CheckFull()" runat="server" Width="1.5em" CssClass="KeyUpperField" MaxLength="2"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="dTR">
+                    <div class="dTDTitle" style="width:9.5em">
+                        <asp:Label ID="lbListName" runat="server" CssClass="RequireField">核決層級清單名稱：</asp:Label>
+                    </div>
+                    <div class="dTD">
+                        <asp:TextBox ID="txListName" TabIndex="1" runat="server" Width="20em" CssClass="RequireField" MaxLength="20"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <asp:Panel ID="tbTool" runat="server" CssClass="V3_GenericBannerToolBar" EnableViewState="False">
+            <asp:Button runat="server" style="display:none" Text="開啟" ID="btOpen" DefaultStyle="newmode:block;modifymode:none;"></asp:Button>
+            <asp:Button runat="server" style="display:none" Text="儲存" ID="btSave" DefaultStyle ="newmode:block;modifymode:block;"></asp:Button>
+            <asp:Button runat="server" style="display:none" Text="清除" ID="btClean" DefaultStyle="newmode:block;modifymode:none;"></asp:Button>
+            <asp:Button runat="server" style="display:none" Text="刪除" ID="btDelete" DefaultStyle="newmode:none;modifymode:block;"></asp:Button>
+            <asp:Button runat="server" style="display:none" Text="取消" ID="btCancel" DefaultStyle="newmode:none;modifymode:block;"></asp:Button>
+            <asp:Button runat="server" style="display:none" Text="查詢" ID="btSearch" DefaultStyle="newmode:block;modifymode:none;"></asp:Button>
+        </asp:Panel>
+    </form>
+</body>
+</html>

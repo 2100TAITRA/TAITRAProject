@@ -1,0 +1,21 @@
+<script>
+	window.onload = fnOnLoad;
+	function fnOnLoad()
+	{
+		window.moveTo(10000,10000);
+		var screenWidth = screen.availWidth-100;
+		var screenHeight = screen.availHeight-140;
+		//var screenWidth = 500;
+		//var screenHeight = 300;
+		var argWinStyle = "fullscreen=no,menubar=no,titlebar=no,toolbar=no,resizable=yes,status=yes";
+		argWinStyle = argWinStyle + ",width="+screenWidth;
+		strLeft = (screen.width-screenWidth)/2;
+		argWinStyle = argWinStyle + ", left="+strLeft;
+		argWinStyle = argWinStyle + ",height="+screenHeight;		
+		strTop = (screen.height-screenHeight)/2-30;
+		argWinStyle = argWinStyle + ", top="+strTop;
+		window.open("TB1/TBT000.aspx", "", argWinStyle);
+		window.opener=null;
+		window.close();
+	}
+</script>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKM850D1" targetNamespace="http://tempuri.org/AKM850D1.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKM850D1.xsd" xmlns:mstns="http://tempuri.org/AKM850D1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKM850D1" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="CHARGE_MAIN">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SOURCE_ORGNO" type="xs:string" minOccurs="0" />
+							<xs:element name="CHARGE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CHARGE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="CHARGE_UNFT" type="xs:string" minOccurs="0" />
+							<xs:element name="UNIT_COST" type="xs:string" minOccurs="0" />
+							<xs:element name="ENTRY_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="ENTRY_USER" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

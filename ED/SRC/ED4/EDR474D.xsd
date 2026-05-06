@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR474D" targetNamespace="http://tempuri.org/EDR474D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR474D.xsd" xmlns:mstns="http://tempuri.org/EDR4740D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR474D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR474LTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="MONTH01" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH02" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH03" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH04" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH05" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH06" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH07" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH08" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH09" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH10" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH11" type="xs:float" minOccurs="0" />
+							<xs:element name="MONTH12" type="xs:float" minOccurs="0" />
+							<xs:element name="OU_TOTAL" type="xs:float" minOccurs="0" />
+							<xs:element name="SUB_OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="IS_CONTAIN_SUB" type="xs:boolean" minOccurs="0" />
+							<xs:element name="COUNT01" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT02" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT03" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT04" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT05" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT06" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT07" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT08" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT09" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT10" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT11" type="xs:int" minOccurs="0" />
+							<xs:element name="COUNT12" type="xs:int" minOccurs="0" />
+							<xs:element name="OU_COUNT" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

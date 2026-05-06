@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR800D" targetNamespace="http://tempuri.org/AKR800D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR800D.xsd" xmlns:mstns="http://tempuri.org/AKR800D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR800D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Borrows">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SEQ_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="NUM_PAGES" type="xs:string" minOccurs="0" />
+							<xs:element name="GP" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="REASON" type="xs:string" minOccurs="0" />
+							<xs:element name="STOCK_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="ATT_SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="BOR_NO" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

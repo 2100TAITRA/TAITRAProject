@@ -1,0 +1,18 @@
+[version]
+    signature="$CHICAGO$"
+    AdvancedINF=2.0
+
+[Add.Code]
+    UDL2.ocx=UDL2.ocx
+
+[Deployment]
+    InstallScope=user|machine
+    RegistrationScope=Optional
+    RedirectToHKCU=yes
+
+[UDL2.ocx]
+    file=thiscab
+    clsid={350D3743-0C1A-44ED-981F-48A1B4F2CF26}
+    FileVersion=2,1,0,2
+    RegisterServer=yes
+    RedirectToHKCU=yes

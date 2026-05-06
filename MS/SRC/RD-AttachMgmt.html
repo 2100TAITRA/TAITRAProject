@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<title>新增附件</title>
+</head>
+
+<body>
+
+	<div data-role="page" id="attachMgmt">
+		<header data-role="header" data-theme="b">
+			<h1>附件管理</h1>
+			<a data-role="button" id="btnAddNew" data-inline="true">新增</a>
+			<a data-role="button" id="btnRemoveAll" data-inline="true">清除</a>
+			<a data-role="button" id="btnRecover" data-inline="true">復原</a>
+			<!-- 1070503	Leslie[1070179]	新增多選功能鍵 -->
+			<a data-role="button" id="btnMultiMode" data-inline="true">多選</a>
+			<!-- 1140722	Leslie[1140381]	新增匯出分繕表功能 -->
+			<a data-role="button" id="btnExportMailMerge" data-inline="true">匯出分繕表</a>
+			<label><span class="inlineB" style="text-align-last: justify;width:110px;vertical-align:top;margin-top:15px">附件文字：</span><input id="attTxt" data-inline="true">
+				<!-- 1070503	Leslie[1070179]	新增附件文字選單 -->
+				<div class="inlineB" style="vertical-align:top;"><select id="dlAttTextDefault" data-theme="c">
+					<option value=""></option>
+					<option value="如文">如文</option>
+					<option value="附件隨文">附件隨文</option>
+				</select></div>
+				<label><input type="checkbox" id="chkUploadToDL">上傳至附件下載區</label></label>
+			<!-- 1070503	Leslie[1070179]	新增來文電子檔預設選單 --><!-- 1100326 Raymond 1090927 fix for iOS Safari 新增下拉選單寬度依子視窗寬度計算 -->
+			<label id="lbRcvAttArea">來文電子清單：<div class="inlineB" style="width:calc(100% - 253px)"><select id="dlRcvAtt" data-theme="c"><option value="0">來文附件</option></select></div><a data-role="button" id="btAddRcvAtt" class="inlineB" style="margin: 0 0 0 5px">加入來文附件</a></label>
+			<input id="newAtt" type="file" multiple style="display:none" data-role="none">
+			<input id="repAtt" type="file" multiple style="display:none" data-role="none">
+		</header>
+		<div data-role="content" id="attachMgmtContent" style="background-color:lightgray; overflow-y:scroll; overflow-x:hidden;">
+			<div class="ui-table-header" id="attachMgmtHeader" style="display:none;">
+				<div class="ui-table-column-header" style="width:8em"></div>
+				<div class="ui-table-column-header" style="left:8em; width:calc(100% - 545px);">標籤名稱</div>
+				<div class="ui-table-column-header" style="left:calc(9em + 100% - 545px); width:calc(100% - 545px);">附件摘要</div>
+				<div class="ui-table-column-header" style=""></div>
+			</div>
+			<ol data-role="listview" data-theme="c" data-inset="false" id="divUl" style="margin:0px;">
+				<!--附件清單區塊-->
+			</ol>
+		</div>
+		<div data-role="navbar">
+			<ul>
+				<li><button href="" id="btnN" data-icon="delete" data-iconpos="top" data-theme="c" data-transition="slide" data-corners="false">取消</button></li>
+				<li><button href="" id="btnY" data-icon="check" data-iconpos="top" data-theme="b" data-transition="slide" data-corners="false">儲存</button></li>
+			</ul>
+		</div>
+		<!-- 1070525	Leslie[1070183]	附件分繕，受文者區 -->
+		<div id="receiverSetting" style="display:none;">
+			<div style="background-color: black;width: 100%;height: 100%;position: absolute;top: 0px;left: 0px;z-index: 5;opacity: 0.4;"></div>
+			<div class="ui-slide-pane-ModeOrg" style="width:65%;height:40%;margin-left:20%;top:10px;z-index:10;">
+				<div id="receiverTable">					
+					<div class="ui-table-header-PC" style="text-shadow: 0px 0px 0px #000;text-align:center;">
+					<div data-role="controlgroup" data-type="horizontal" style="display:inline;text-shadow: 0px 0px 0px #000; margin-top:0;position: absolute; left: 10px;">
+							<input id="btAttSelectAll" class="sbttn" title="全選" value="全選" type="button" data-mini="true">
+							<input id="btAttSelectNone" class="sbttn" title="清除" value="清除" type="button" data-mini="true">
+					</div>
+					<h2 style="display:inline">附件分繕受文者設定</h2>
+					<div data-role="controlgroup" data-type="horizontal" style="display:inline;text-shadow: 0px 0px 0px #000; margin-top:0;position: absolute; right: 10px;">
+							<input id="btAttMailMergeSave" class="sbttn" title="確定" value="確定" type="button" data-mini="true">
+							<input id="btAttMailMergeCancel" class="sbttn" title="取消" value="取消" type="button" data-mini="true">
+					</div>
+					</div>
+					<div class="ui-table-header-PC" style="text-shadow: 0px 0px 0px #000;">
+						<div class="ui-table-column-header" style="width:6.5%;line-height: 40px;">序</div>
+						<div class="ui-table-column-header" style="width:3%;line-height: 40px;">選</div>
+						<div class="ui-table-column-header" style="width:31%;line-height: 40px;">受文者</div>
+						<div class="ui-table-column-header" style="width:14%;line-height: 40px;">姓名</div>
+						<div class="ui-table-column-header" style="width:31%;line-height: 40px;">正副本稱謂</div>
+						<div class="ui-table-column-header" style="width:6%;line-height: 40px;">附件</div>
+					</div>
+					<div class="ui-table-body-container" style="height:460px; overflow-y:auto; color: #000;background-color: #CBEBFF;">
+						<ul class="ui-table-body" id="receiverList">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 1111221	Leslie[1111238]	新增檔案拖拉加入附件功能 -->
+		<div class="FileDrop">
+			<h1>將檔案拖放到這裡</h1>
+		</div>
+	</div>
+</body>
+</html>

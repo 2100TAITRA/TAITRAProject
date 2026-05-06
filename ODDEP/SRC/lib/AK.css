@@ -1,0 +1,12 @@
+.ErrorField
+{
+	color:black;
+	background-color: #E0E0E0;
+}
+
+.PopUp
+{
+	border-style:none;
+	background-color:Transparent;
+	behavior:url(LIB/PopUpMessage.htc);
+}

@@ -1,0 +1,121 @@
+<ATTACH   EVENT="ondocumentready" HANDLER="DoInit"/>
+
+
+<script language="javascript">
+
+element.attachEvent("onmouseover",fnOnMouseOver);
+element.attachEvent("onmouseout",fnOnMouseOut);
+element.attachEvent("onmousedown",fnOnMouseDown);
+
+//-------------------------------------------------------
+// Global Variables
+//-------------------------------------------------------
+
+var PageNum;
+var PageCount;
+
+//-------------------------------------------------------
+// §PÂ_element ¬O ImageButton ©Î¬O Button
+//-------------------------------------------------------
+function DoInit()
+{
+	PageNum = element.id.substr(3);
+	var divObj = element.document.all.tags("div");
+	var pCnt = 0;
+	for(i=0;i<divObj.length;i++)
+	{
+		if(divObj[i].type=="multiPage")
+			pCnt ++;
+	}
+	PageCount = pCnt;
+	TabInit();
+}
+
+function TabInit()
+{
+	var activeTab = element.document.all["ActiveTab"].value;
+	if(activeTab =="")
+	{
+		ChangeTab("Tab1");
+	}
+	else
+	{
+		ChangeTab(activeTab);
+	}
+}
+
+//----------------------------------------------------------
+//
+//  Function:  fnOnMouseOver()
+//
+//----------------------------------------------------------
+
+function fnOnMouseOver()
+{
+  if(element.state != "clicked")
+  {
+	if(element.hoverSrc)
+	{
+		element.src = element.hoverSrc;
+	}
+  }
+}
+
+//----------------------------------------------------------
+//
+//  Function:  fnOnMouseOut()
+//
+//----------------------------------------------------------
+
+function fnOnMouseOut()
+{
+  if(element.state != "clicked")
+  {
+	element.src = element.originalSrc;
+  }
+}
+
+//----------------------------------------------------------
+//
+//  Function:  fnOnMouseDown()
+//
+//----------------------------------------------------------
+
+function fnOnMouseDown()
+{
+	ChangeTab(element.id);  
+    element.document.all["ActiveTab"].value = element.id;
+    ChangePage();
+}
+
+function ChangeTab(ID)
+{
+	for(i=1;i<=PageCount;i++)
+	{
+		var TabId = "Tab"+i;
+		if(TabId == ID)
+		{
+			element.document.all[TabId].state = "clicked";
+			element.document.all[TabId].src = element.document.all[TabId].pressedSrc;
+		}
+		else
+		{
+			element.document.all[TabId].state = "normal";
+			element.document.all[TabId].src = element.document.all[TabId].originalSrc;
+		}
+	}
+}
+
+function ChangePage()
+{
+	for(i=1;i<=PageCount;i++)
+	{
+		if(i == PageNum)
+			element.document.all["Page"+i].className = "";
+		else
+			element.document.all["Page"+i].className = "hide";
+	}
+}
+
+
+</script>

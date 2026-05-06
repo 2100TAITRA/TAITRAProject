@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:WellChoose" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:WellChoose" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:WellChoose">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xsd:complexType name="ArrayOfstring">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="wsdl:anyType[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfArrayOfstring">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:ArrayOfstring[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="SuccessReturn">
+        <xsd:all>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="msgtxt" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="SrcfilesData">
+        <xsd:all>
+          <xsd:element name="name" type="xsd:string" />
+          <xsd:element name="content" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="SrcfilesDataArray">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:SrcfilesData[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayMsgtxtReturn">
+        <xsd:all>
+          <xsd:element name="msgtxt" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="DataListReturn">
+        <xsd:all>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="msgtxt" type="xsd:string" />
+          <xsd:element name="content" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="SrcFileReturn">
+        <xsd:all>
+          <xsd:element name="success" type="xsd:boolean" />
+          <xsd:element name="msgtxt" type="xsd:string" />
+          <xsd:element name="content" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getSubGovDataListRequest">
+    <wsdl:part name="dpno" type="xsd:string" />
+    <wsdl:part name="code" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getSubGovDataListResponse">
+    <wsdl:part name="return" type="tns:DataListReturn" />
+  </wsdl:message>
+  <wsdl:message name="setReceiveRequest">
+    <wsdl:part name="dpno" type="xsd:string" />
+    <wsdl:part name="code" type="xsd:string" />
+    <wsdl:part name="inno" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="setReceiveResponse">
+    <wsdl:part name="return" type="tns:SuccessReturn" />
+  </wsdl:message>
+  <wsdl:message name="getSrcFileRequest">
+    <wsdl:part name="dpno" type="xsd:string" />
+    <wsdl:part name="code" type="xsd:string" />
+    <wsdl:part name="inno" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getSrcFileResponse">
+    <wsdl:part name="return" type="tns:SrcFileReturn" />
+  </wsdl:message>
+  <wsdl:portType name="WellChoosePortType">
+    <wsdl:operation name="getSubGovDataList">
+      <wsdl:input message="tns:getSubGovDataListRequest" />
+      <wsdl:output message="tns:getSubGovDataListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setReceive">
+      <wsdl:input message="tns:setReceiveRequest" />
+      <wsdl:output message="tns:setReceiveResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getSrcFile">
+      <wsdl:input message="tns:getSrcFileRequest" />
+      <wsdl:output message="tns:getSrcFileResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WellChooseBinding" type="tns:WellChoosePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getSubGovDataList">
+      <soap:operation soapAction="urn:WellChoose#getSubGovDataList" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setReceive">
+      <soap:operation soapAction="urn:WellChoose#setReceive" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSrcFile">
+      <soap:operation soapAction="urn:WellChoose#getSrcFile" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:WellChoose" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WellChoose">
+    <wsdl:port name="WellChoosePort" binding="tns:WellChooseBinding">
+      <soap:address location="http://203.65.100.20/iftdc/soap/subgov_soapserver.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1352 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* 2011.11.8 - for full screen width dialog style (jQM 1.0) */
+.ui-dialog .ui-header,
+.ui-dialog .ui-dialog-contain,
+.ui-dialog .ui-footer { 
+	max-width: 100%; 
+}
+
+
+
+#dlgProcessFlow .ui-header,
+#dlgProcessFlow .ui-content,
+#dlgProcessFlow .ui-footer {
+	/*max-width: 95%;*/
+}
+
+/* 2021.11.21 - 1101291 Eric */
+@media screen and (orientation: landscape) {
+	#dlgProcessFlow {
+		overflow-y: hidden;
+		height: 100%;
+	}
+
+	#dlgProcessFlow .ui-dialog-contain {
+		height: 96%;
+		overflow-y: auto;
+	}
+}
+
+#dlgProcessFlow .ui-dialog-contain {
+	margin-top: 2%; /* 2021.11.16 - 1101291 Eric, 3% -> 2% */
+}
+
+#dlgProcessFlow .ui-header {
+	margin-top: 15px;
+}
+
+/*
+ 流程設定子視窗
+*/
+
+/* 2021.2.17 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height: 450px) and (orientation: landscape) {
+	#dlgProcessFlow {
+		height: 99%;	
+	}
+
+	#dlgProcessFlow .ui-dialog-contain {
+		height: 100%;
+		overflow-y: scroll;
+	}
+}
+
+#dlgProcessFlow .ui-header .ui-btn-right {
+  margin-top: 2px;
+  top: 2px;
+}
+
+#dlgProcessFlow .ui-header .ui-btn-right .ui-btn-inner {
+  padding: 3px 8px;
+}
+
+#dlgProcessFlow .ui-header .ui-btn-right .ui-btn-text {
+  font-size: 12px;
+}
+
+/* 2012.5.21 */
+#dlgProcessFlow .ui-header fieldset.ui-btn-right label.ui-btn-active {
+	border: 1px solid #F7C942;
+	background: #FADB4E;
+	color: black;
+	text-shadow: 0 /*{e-bup-shadow-x}*/ 1px /*{e-bup-shadow-y}*/ 0 /*{e-bup-shadow-radius}*/ white /*{e-bup-shadow-color}*/;
+}
+
+#dlgProcessFlow .ui-content {
+   /*background-image: url(./images/px-ccc.gif);
+   background-repeat: repeat-y;
+   background-position: 34.5%;*/
+}
+
+#dlgProcessFlow .ui-footer > a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: .5em;
+  float: right;
+  /*border-radius: 10px; 2016.5 */
+}
+
+#dlgProcessFlow .ui-footer > a.leftside_btn > span {
+    width: 50px;
+}
+
+#dlgProcessFlow .dlg-process-content {
+  position: relative;  
+}
+
+#dlgProcessFlow .flow-chart-settings {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /*background-color: #ffc;*/
+  background: none;
+  z-index: 10;
+  margin-top: -8px;
+  padding: 5px;
+  background-color: #ff8;
+  -webkit-box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5);
+  -moz-box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5);
+  box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5);
+}
+
+#dlgProcessFlow .content-secondary {
+ border-top: none;
+}
+
+.flow-chart-settings > p {
+  display: inline;
+}
+
+#dlgProcessFlow .flow-chart-grid {
+  width: 100%;
+  position: relative;
+  top: 5px;
+	max-height: 515px;
+  /*border: 1px solid black;*/
+  /*overflow: auto;*/
+  background-color: #fff;
+}
+
+#dlgProcessFlow .flow-chart-grid .manipulate_cmd {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 20;
+  background-color: #bbb; /*white;*/
+  border-radius: 3px;
+  padding: 5px 10px 5px 5px;
+}
+
+.manipulate_cmd .bk_panel {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width:123px;
+	height:66px;
+	border-radius: 3px;
+	background-color: #bbb;
+	opacity: .35;
+}
+
+#dlgProcessFlow .flow-chart-grid .manipulate_cmd .insert_flow_cmd {
+  width: 50px;
+  height: 50px;
+  border: 1px dashed #00f;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  
+	display: inline-block;
+}
+
+/*#draw_canvas, #draw_canvas .draw_inner {*/
+#draw_canvas {
+  /*overflow: hidden;*/
+  width: 100%;
+  /*height:100%;*/
+
+	max-height: 515px;
+	/*width: 870px;*/
+	/*2012.9.7 - iOS native scroll*/
+	overflow-x: scroll;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+#draw_canvas > * {
+	/* 2013.2.1 - debug */
+	/*-webkit-transform: translateZ(0px);*/
+}
+
+.flow_canvas {
+  position: relative;
+  width: 1200px;
+  /* 2012.2.6 - Eric for testing...
+  height: 300px;*/
+  height: 700px;
+  /*overflow: auto;*/
+	/*background-color: #ffe*/
+}
+
+#dlgProcessFlow .flow-chart-item {
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  background-color: #ff0;
+  border: 1px dotted red;
+}
+
+.flow_canvas .flow_set {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+}
+
+.plus_btn, .cross_btn, .edit_btn {
+  cursor: pointer;
+}
+
+.flow_canvas .plus_btn {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+}
+
+.flow_arrow .connect_line {
+	width: 100%;
+	height: 100%;
+}
+
+.flow_arrow .plus_sign {
+	display: none;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	opacity: 1;
+}
+
+.flow_item, .flow_group {
+  position: absolute;
+  width: 120px;
+  padding: 2px;
+  border-radius: 5px; /* 2012.2.16 - 8px; */
+	border-top-left-radius: 0px;
+	cursor: crosshair;
+}
+
+.flow_item {
+  height: 85px;
+}
+
+.flow_item_content > div.unit, .flow_item_content > div.person, .flow_item_content > div.time_t
+{
+  margin-bottom: 6px;
+	font-size: smaller;
+}
+
+.flow_item > div.flow_item_contet
+{
+  position: relative;	
+}
+
+.flow_group {
+  height: 60px;	
+}
+
+.flow_group_unfinished .flow_item_info, .flow_item_unfinished .flow_item_content {
+	font-size: smaller;	
+}
+
+.flow_item .drop_area_left, .flow_item .drop_area_right {
+	position: absolute;
+	width: 25px;
+	height: 90px;
+	top: 0px;
+}
+
+.drop_area_left .bk_panel, .drop_area_right .bk_panel {
+	width: 100%;
+	height: 100%;
+	background: #888;
+	opacity: .45;
+}
+
+.flow_item .drop_area_left {
+	left: -5px;
+}
+
+.flow_item .drop_area_right {
+	right: -5px;
+}
+
+.drop_area_left img, .drop_area_right img {
+	position: absolute;
+	left: 0px;
+	top: 35px;
+}
+
+.flow_item_unfinished .swap_icon {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 122px;
+	height: 87px;
+	display: none;
+	background: #eee url('../IMAGE/WORKFLOW/swap.png') 50% 50% no-repeat;
+	opacity: .5;
+}
+
+.minimized_flow_set {
+  position: absolute;
+  width: 113px;
+  padding: 2px;
+  height: 1.2em;
+  border-radius: 0px;
+}
+
+.flow_set_inner {
+	position: relative;
+	width: 200px;
+	height: 180px;
+	background-color: #fd8;
+}
+
+/* (前簽)收折時隱藏內容 */
+.minimized_flow_set .flow_set_inner {
+	/*display: none;*/
+}
+
+.flow_set .sign_comment {
+	display: block;
+}
+
+.minimized_flow_set .sign_comment {
+	display: none;
+}
+
+.flow_set div.title {
+  float: left;
+	line-height: 24px;
+	padding-left: 3px;
+}
+
+/* 前簽流折疊時顯示 */
+.flow_canvas .flow_set .mini_show {
+	position: absolute;
+	width: 125px;
+	height: 24px;
+	z-index: 5;
+	background-color: #fd8;
+	
+	-webkit-user-select: none;
+}
+
+.flow_set .mini_show .mini_show_icon {
+	background: transparent url('../IMAGE/WORKFLOW/fullscreen_minimize.png');
+	width:18px;
+	height:18px;
+	float:right;
+	margin-top:3px;
+	margin-right:3px;
+}
+
+.minimized_flow_set .mini_show .mini_show_icon {
+	background: transparent url('../IMAGE/WORKFLOW/minimize_fullscreen.png');
+}
+
+.flow_set .mini_show > img {
+	cursor: pointer;
+}
+
+/*.minimized_flow_set img {
+  float: right;
+}*/
+
+.flow_item {
+	-webkit-user-select: none;
+}
+
+
+.flow_item_finished {
+  background-color: #8ff;
+  height: 95px;
+  padding: 1px 1px;
+}
+
+.flow_item_current {
+	background-color: #8ff;
+  height: 95px;
+  padding: 1px 1px;
+	border: 2px solid blue;	
+}
+
+.flow_item_unfinished {
+	background:#fff;
+	padding: 0;
+}
+
+.flow_item_unfinished .flow_item_content {
+  background-color: #0ff;
+  opacity: 0.5;
+  border: 1px dashed red;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+
+.flow_group_unfinished {
+  background-color: #088;
+  opacity: 0.5;
+  border: 1px dotted red;
+}
+
+.flow_group_finished {
+  background-color: #088;
+}
+
+.flow_item_finished, .flow_item_current, .flow_group_finished {
+  -webkit-box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5);
+  -moz-box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5);
+  box-shadow: 4px 4px 2px rgba(0,0, 0, 0.5);
+}
+
+.flow_item_unfinished, .flow_group_unfinished {
+  -webkit-box-shadow: 2px 2px 1px rgba(0,0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 1px rgba(0,0, 0, 0.3);
+  box-shadow: 2px 2px 1px rgba(0,0, 0, 0.3);
+}
+
+#flow_canvas .flow_item_info {
+  width: 100%;
+  padding: 0px 5px;
+  margin-top: -.4em;
+}
+
+.flow_item_content .portrait {
+	position: absolute;
+	right: 1px;
+	top: -12px;
+	width: 32px;
+	height: 32px;
+	background: #ddd url('../IMAGE/WORKFLOW/portrait_empty.png');
+	border: 1px solid #f8f;
+}
+
+.flow_item_info > img {
+	-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	background-color: #ffd;
+	padding: 1px 1px;
+	cursor: pointer;
+	border-radius: 2px;
+	margin-right: 2px; /* 2013.1.4 - 右方間隔 */
+}
+
+.flow_item_info > img.lighting,  .flow_item_info > img:active {
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  background-color: #ff0;  
+}
+
+.sign_comment {
+  position: absolute;
+  top: 100px;
+  width: 110px;
+  /*height: 102px;*/
+	height: 50px;
+  background: #ff8; /*url('../IMAGE/WORKFLOW/opinion_dlg.png') no-repeat;*/
+  /*display: none;*/ /*預設顯示*/
+	font-size: smaller;
+	border: 1px solid black;
+	border-radius: 0 3px 3px 3px;
+}
+
+.flow_item_current .sign_comment {
+	/*background: #fCC;*/ /*url('../IMAGE/WORKFLOW/opinion_dlg.png') no-repeat;*/
+	background: linear-gradient(#333 0%,#999 10%,white 30%,white 70%,#999 90%,#333 100%);
+  background: -webkit-gradient(linear,left bottom,left top,from(#FF8),color-stop(0.10, #FFC),color-stop(0.30, #FFF),color-stop(0.70, #FFF),color-stop(0.90, #FFC),to(#FF8));
+	height: 120px;
+	width: 140px;
+	left: -15px;
+	border: 2px solid red;
+}
+
+.sign_comment > div {
+  padding: 2px 2px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch; /* for mobile safari's native scroll solution */
+}
+
+.sign_comment > div.edit-icon {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 16px;
+	height: 16px;
+	background: transparent url('../IMAGE/WORKFLOW/edit_icon.png') center no-repeat;
+	background-size: 16px 16px;
+}
+
+.sign_comment textarea {
+	font-size: medium;
+	background-color: transparent;
+	-webkit-box-shadow: none;
+	border: none;
+	width: 130px;
+	height: 108px;
+	left: -15px;
+	margin: 3px;
+	resize: none;
+}
+
+.sign_comment textarea:focus {
+	-moz-box-shadow: 0px 0px 12px   #387bbe /*{active-background-color}*/;
+	-webkit-box-shadow: 0px 0px 12px 		#387bbe /*{active-background-color}*/;
+	box-shadow: 0px 0px 12px 					#387bbe /*{active-background-color}*/;	
+}
+
+.sign_comment > div.pointer {
+	position: absolute;
+	left: 10px;
+	top: -5px;
+	width: 6px;
+	height: 5px;
+	background: transparent url('../IMAGE/WORKFLOW/up_triangle.png') no-repeat;
+}
+
+.flow_item_current .sign_comment > div.pointer {
+	left: 25px;
+}
+
+.sign_elapse {
+  position: absolute;
+  top: 90px;
+	left: 32px;
+  width: 115px;
+  padding: 5px 0px;
+  /*height: 62px;*/
+  background-color: #ffd;
+  border: 1px solid #880;
+  margin-top: 10px;
+  display:none;
+}
+
+.flow_arrow {
+  position: absolute;
+	z-index: 4;
+}
+
+.flow_canvas .droppable {
+	/*border: 1px dotted red;*/
+}
+
+	/* 會辦流程 */
+.flow_cowork {
+	position: absolute;
+	background-color: #fee;
+}
+
+.flow_cowork .coworkflow_header {
+	background-color: black;
+	color: white;
+	text-align: left;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	padding-left: 5px;
+	box-sizing: border-box;
+}
+
+.flow_cowork .coworkflow_header fieldset {
+	margin: 1px 0 0 4px;	
+}
+
+.flow_cowork .coworkflow_header span.ui-btn-inner {
+	padding: 2px 3px;
+}
+
+.flow_cowork .coworkflow_header span.ui-btn-text {
+	font-size: smaller;
+	height: 18px;
+	line-height: 18px;
+	display: block;
+}
+
+	/* End of 會辦流程 */
+	
+	/* 底圖格線 */
+.flow_canvas .grid_pane {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	
+	background-color: #ffe;
+	position: relative;
+}
+
+.grid_pane .vert_line {
+	background-color: #eee;
+	height: 100%;
+	width: 1px;
+	position: absolute;
+	top: 0px;
+}
+
+.grid_pane .horz_line {
+	background-color: #eee;
+	height: 1px;
+	width: 100%;
+	left: 0px;
+	position: absolute;
+}
+	/* End of 底圖格線 */
+	
+	/* dragged object manipulate */
+#dndshadow {
+	position:absolute;
+	left:0;
+	top:0;
+	display:none;
+	float:none;
+	opacity:0.7;
+	pointer-events:none;
+	z-index:1000
+}
+	/* End of dragged object manipulate */
+
+.flow_txname {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+	font-size: small;
+}
+
+.flow_canvas .highlight {
+	display: block;
+	border: 2px solid red;
+}
+
+	/* 已簽核明細 */
+#workflowTable {
+  border-collapse:collapse;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow:  2px 3px 1px rgba(0,0,0,0.5);
+}
+
+#workflowTable thead > tr a {
+  text-decoration: none;
+  cursor: default;
+}
+
+#workflowTable thead, #workflowTable thead tr, #workflowTable thead th {
+ border-right: 1px solid #fff;
+ /*border-top-left-radius: 5px;
+ border-top-right-radius: 5px;*/
+}
+
+#workflowTable thead th {
+  padding: 1px 5px;
+  margin: 0 2px 3px 0;
+  background: #e4f5fc; /* Old browsers */
+  border: 1px solid #088;
+}
+
+#workflowTable tbody tr {
+ cursor: default;
+}
+
+#workflowTable tbody tr:last-child {
+	background-color: #fcf;
+}
+
+#workflowTable tbody td {
+ border: 1px solid #888;
+ height: 2em;
+}
+
+#workflowTable tbody tr:hover {
+  background-color: #ff8;    
+}
+
+#workflowTable tbody > tr > td:first-child > div {
+  text-align: center;
+}
+
+#workflowTable tbody img {
+ margin-left: auto;
+ margin-right: auto;
+ display: block;
+}
+	/* End of 已簽核明細 */
+	
+	/* 簽核意見 */
+.flow-comment-list {
+	max-height: 500px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch; /* for mobile safari's native scroll solution */
+}
+
+.flow-comment-list > * {
+	-webkit-transform: translateZ(0px);
+}
+
+.flow-comment-list .ui-listview {
+	margin: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch; /* for mobile safari's native scroll solution */
+}
+
+.flow-comment-list ul li
+{
+	background-image: -webkit-linear-gradient(white /*{e-body-background-start}*/, #FAEB9E /*{e-body-background-end}*/);
+	background-image: -ms-linear-gradient(top, white 0%, #FAEB9E 100%); /* W3C */
+	background: linear-gradient(top, white 0%, #FAEB9E 100%); /* W3C */
+	padding: .5em 0;
+}
+
+.flow-comment-list .comments li:first-child {
+	border-top-left-radius: .5em;
+	border-top-right-radius: .5em;
+}
+
+.flow-comment-list .comments li:last-child {
+	border-bottom-left-radius: .5em;
+	border-bottom-right-radius: .5em;
+}
+
+.flow-comment-list .comments .flowsite_info {
+	/*display: -webkit-box;
+	-webkit-box-align: stretch;
+    -webkit-box-orient: horizontal;*/
+	/* 2016.5 - for IE11 support */
+	display: -webkit-inline-flex;
+    align-items: -webkit-flex-end;
+    display: inline-flex;
+    align-items: flex-end;
+	
+	width: 75%;
+	margin-left: 50px;
+}
+
+	/* date_time, unit, role, name */
+.flowsite_info .date_time {
+	 width: 120px;
+}
+
+.flowsite_info .unit {
+	 -webkit-box-flex: 1;
+}
+
+.flowsite_info .role {
+	 width: 5em;
+}
+
+.flowsite_info .name {
+	 width: 6em;
+}
+
+.flow-comment-list .comments .comment_text {
+	position: relative;
+	padding-left: 1em;
+	margin-top: .5em;
+	margin-left: 50px;
+	/*background-color: #ff8;*/
+	font-size: larger;
+	color: #00f;
+}
+
+.comments li .portrait {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 36px;
+	height: 36px;
+	background: #ddd url('../IMAGE/WORKFLOW/portrait_empty.png');
+	border: 1px solid #f8f;
+}
+
+.comments .editable {
+	/*border: 1px dotted blue;*/
+}
+
+.comment_text .comment_edit {
+	display: none;
+	min-width: 20em;
+	font-size: larger;
+	color: #00f;
+}
+
+.comment_text .edit_icon {
+	position: absolute;
+	right: 25px;
+	top: -10px;
+	width: 24px;
+	height: 24px;
+	background: transparent url('../IMAGE/WORKFLOW/edit_icon.png');
+}
+	/* End of 簽核意見 */
+
+/* PopupMenu 指令列 */
+.popupMenu {
+    position: absolute;
+    display: none;
+    overflow: visible;
+    width: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    z-index: 10;
+}
+
+.popupMenu > div {
+    background: -webkit-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7d7d7d), color-stop(50%, #4e4e4e), color-stop(51%, #0e0e0e), color-stop(100%, #1d1d1d));
+    background: -moz-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+    background: -o-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+    background: -ms-linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+    background: linear-gradient(top, #7d7d7d 0%, #4e4e4e 50%, #0e0e0e 51%, #1d1d1d 100%);
+    border-radius: 6px;
+    -webkit-box-shadow: 2px 2px 2px gray;
+    -moz-box-shadow: 2px 2px 2px gray;
+    -o-box-shadow: 2px 2px 2px gray;
+    -ms-box-shadow: 2px 2px 2px gray;
+    box-shadow: 2px 2px 2px gray;
+}
+.popupMenu > canvas {
+    position: relative;
+    /*left: 0px;*/
+    /*top: -1px;*/
+    width: 16px;
+    height: 16px;
+    background: url('../IMAGE/WORKFLOW/Up-Gray-Arrow.png') transparent;
+}
+.popupMenu .ui-btn {
+    margin: 0;
+    display: inline-block;
+    font-size: 12pt;
+	font-weight: 800;
+    color: white;
+    text-shadow: 0px 1px 0px gray;
+    padding: 6px 4px;
+    background: transparent;
+    border-width: 0px;
+}
+
+.popupMenu .ui-btn:hover {
+  color: #ff0;  
+}
+
+.popupMenu .ui-btn:active {
+    background: -webkit-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffb76b), color-stop(50%, #ffa73d), color-stop(51%, #ff7c00), color-stop(100%, #ff7f04));
+    background: -moz-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+    background: -o-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+    background: -ms-linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+    background: linear-gradient(top, #ffb76b 0%, #ffa73d 50%, #ff7c00 51%, #ff7f04 100%);
+}
+.popupMenu .ui-btn:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    padding-left: 8px;
+}
+.popupMenu .ui-btn:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding-right: 8px;
+}
+
+/* 傳送設定子視窗 */
+
+/* 共議/預排流程/ 設定button */
+
+/* 2021.3.26 - Eric, fix Firefox 86.0 display problem */
+#aol #dlgDocSendTarget .approve_setting fieldset {
+	display: block; 
+}
+
+#dlgDocSendTarget .approve_setting > .ui-grid-a > .ui-block-a {
+	width: 60%;
+}
+
+#dlgDocSendTarget .approve_setting > .ui-grid-a > .ui-block-b {
+	width: 40%;
+}
+
+#dlgDocSendTarget .approve_setting .ui-block-a > a {
+  float:left;
+  margin: 5px 2px;
+  width: 4.2em;
+  display:inline-block;
+  color:#222;
+}
+
+#dlgDocSendTarget .approve_options .ui-controlgroup-controls {
+    width: 60%;
+}
+
+/*新增/異動傳送對象設定 */
+#dlgDocSendTarget .trans_target_toolbar {
+	/*background-color: #ff0;*/
+	height: 32px;
+	margin-bottom: 5px;
+}
+
+#dlgDocSendTarget .trans_target_toolbar .selector_wrapper {
+  position: relative;
+	margin-top: 3px;
+	margin-right: -50px;
+	width: 70%;
+	text-align: center;
+	color: black;
+}
+
+#dlgDocSendTarget .selector_wrapper a.ui-btn {
+	width: 180px;
+	overflow: hidden;
+	color: #000;
+}
+
+#dlgDocSendTarget .trans_target_toolbar ui-block-a {
+	width: 30%;
+}
+
+#dlgDocSendTarget .trans_target_toolbar ui-block-b {
+	width: 69%;
+}
+
+#dlgDocSendTarget .selector_wrapper .ui-btn-inner {
+	padding: 4px 45px 4px 25px;
+}
+
+#dlgDocSendTarget .selector_wrapper div.ui-select {
+	position: absolute;
+	right: -95px;
+	top: -11px;
+}
+
+#dlgDocSendTarget .ios {
+  padding-top: 10px;
+}
+
+#dlgDocSendTarget .ios  > div {
+  margin-left: 20px;
+}
+
+#dlgDocSendTarget a.footer_btn, #dlgFlowSet a.footer_btn, #dlgDraftCoworkSync a.footer_btn {
+  color: #000;
+}
+
+/* 2012.12 - mobiscroll's value edit control css */
+#dlgDocSendTarget .mobiscroll-txt {
+	display: none;
+}
+
+	/* 2013.1 - Eric Peng, 傳送mobiscorll ios style, scroller上方之title空間(預設不顯示title) */
+#dlgDocSendTarget .ios .dwwl {
+	font-size: medium;
+	margin-top: 20px;
+}
+	
+	/* 2013.1 - 顥示 title */
+#dlgDocSendTarget .ios .dwwl .dwl {
+	display: block;
+}
+
+#dlgDocSendTarget .ios .dww .dw-li {
+	font-size: smaller;
+}
+
+#dlgDocSendTarget .dwwc table {
+	width: 125px;
+}
+
+#dlgDocSendTarget .trans_target {
+	margin-top: 1.2em;
+}
+
+#dlgDocSendTarget .selectNextOptions {
+	height: 10em;
+}
+
+#dlgDocSendTarget .selectNextOptions .ui-grid-a .ui-select {
+	margin-left: 0.1em;
+}
+
+#dlgDocSendTarget .selectNextOptions .ui-grid-b .ui-select {
+	margin-left: 0.1em;
+	margin-right: 0.1em;
+}
+
+#dlgDocSendTarget .selectNextOptions .txSelect {
+	min-width: 10em;
+}
+
+	/* 2014.10 - 核決設定panel 開啟/關閉 鈕 */
+#dlgDocSendTarget div.approve_setting a.app_opt_show {
+  background:url(../image/sso/icons-18-white.png) no-repeat;
+  background-position: -288px 0;
+  background-color: #194b7e;
+  border-radius: 9px;
+  width:18px;
+  height:18px;
+  display:inline;
+  z-index: 1999;/*3200;*/
+  position:absolute;
+  bottom:22px; /* 2016.5.26 */
+  /*right:38px;*/ /* 2015.8.28 - hide reject button. */
+  cursor:pointer;
+  float: right; /* 2015.8.28 */
+  right: 12px; /* 2016.5.26 */
+}
+
+#dlgDocSendTarget div.approve_options a.panel_close_img {
+  background: url(../image/sso/icons-18-black.png) no-repeat;
+  background-position: -72px 0;
+  width:18px;
+  height:18px;
+  display:inline;
+  z-index: 1999;/*3200;*/
+  position:absolute;
+  top:2px;
+  right:2px;
+  cursor:pointer;
+}
+
+#dlgDocSendTarget div.approve_options label.ui-btn-active {
+	border: 1px solid 		#044062 /*{b-bup-border}*/;
+	background: 			#396b9e /*{b-bup-background-color}*/;
+	font-weight: bold;
+	color: 					#fff /*{b-bup-color}*/;
+	text-shadow: 0 /*{b-bup-shadow-x}*/ 1px /*{b-bup-shadow-y}*/ 1px /*{b-bup-shadow-radius}*/ #194b7e /*{b-bup-shadow-color}*/;
+	background-image: linear-gradient( #5f9cc5 /*{b-bup-background-start}*/, #396b9e /*{b-bup-background-end}*/);
+}
+
+/* 2015.9 - 共辦設定子視窗container */
+#dlgDocSendTarget div#docSysSettingDlgContainer
+{
+	top: 0px; 
+	left: 0px; 
+	display: block; 
+	position: absolute; 
+	z-index: 2000; 
+}
+
+/* 2015.9 - 共辦設定子視窗container */
+#dlgDocSendTarget iframe#docSysSettingPage
+{
+	width:100%;
+	height:100%;
+	background-color:#ffc
+}
+
+/* 2017.6.2 - 分會設定子視窗 */
+#dlgDocSendTarget div#docAdvancedSettingDlgContainer
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transform: translateX(1024px);
+	-moz-transition-duration: 0.3s;
+	-moz-transition-timing-function: ease-out;
+	-moz-transform: translateX(1024px);
+	transistion-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transform: translateX(1024px);
+}
+
+#dlgDocSendTarget div#docAdvancedSettingDlgContainer.ui-slide-pane-active
+{
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+	z-index: 100;
+}
+/* End Of 新增/異動傳送對象設定*/
+
+/*文稿會稿單位設定子視窗 */
+
+/* 會辦語詞 */
+#dlgDraftCoworkSync div.desc_wrapper {
+	position: absolute;
+	/*right:15px;
+	top:15px;*/
+	right: 25px;
+	top: -5px;
+	width: 200px;
+}
+/* 會辦語詞 */
+#dlgDraftCoworkSync div.desc_wrapper label {
+	width: 45%;
+	top: 10px;
+}
+/* 會辦語詞 */
+#dlgDraftCoworkSync #coworkText {
+	width: 53%;
+}
+
+#dlgDraftCoworkSync a.desc_setting {
+	display: inline-block;
+}
+
+#dlgDraftCoworkSync div.table_content {
+	max-height: 260px;
+	overflow: auto;
+	border: solid 2px #ddd;
+}
+
+#dlgDraftCoworkSync table {
+	border-collapse: collapse;
+	margin: 0 auto;
+	border: none;
+}
+
+#dlgDraftCoworkSync table thead th {
+	padding:2px 5px;
+}
+
+#dlgDraftCoworkSync table div.unit_head {
+	font-weight: bold;
+	padding-top: 15px;
+}
+
+#dlgDraftCoworkSync table div[data-role=fieldcontain] {
+	width: 150px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-size: smaller;
+}
+
+#dlgDraftCoworkSync table select {
+	font-size: smaller;
+}
+
+#dlgDraftCoworkSync table div.ui-select {
+	width: 95%;
+}
+
+#dlgDraftCoworkSync table .ui-checkbox {
+}
+
+#dlgDraftCoworkSync table .ui-checkbox .ui-icon {
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+#dlgDraftCoworkSync table a.display_setting,
+#dlgDraftCoworkSync a.desc_setting
+{
+	font-size: smaller;
+	color: #000;
+	min-width: 100px;
+}
+
+#dlgDraftCoworkSync table a.display_setting {
+	min-width: 160px;
+	margin: 0 5px;
+}
+/* 2012.7.18 */
+#dlgDraftCoworkSync table a.display_setting span.ui-btn-inner,
+#dlgDraftCoworkSync a.desc_setting span.ui-btn-inner{
+	padding: 8px 35px 8px 8px;
+}
+
+#dlgDraftCoworkSync table select span.ui-btn-inner
+{
+	padding: 3px 3px;
+}
+
+.dwo {
+	z-index: 1100;
+}
+
+.dw {
+	z-index: 1101;
+}
+
+/*#dlgDraftCoworkSync table a[data-role=button]{
+	font-size: smaller;
+	color: #000;
+}*/
+
+/* "全選"按鈕 */
+/*#dlgDraftCoworkSync table a[class~=sel_all] span {
+	padding: 3px 3px;
+}*/
+/* "全不選"按鈕 */
+/*#dlgDraftCoworkSync table a[class~=sel_none] span {
+	padding: 3px 3px;
+}*/
+
+#dlgDraftCoworkSync table div.unit_head > div:last-child {
+	margin-left: 3px;
+	top: -18px;
+}
+
+#dlgDraftCoworkSync .dlgCDS_overlay {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width:1024px;
+	height:768px;
+	background-color: black;
+	cursor: wait;
+	opacity: .5;
+	z-index: 2000;
+	display: none;
+}
+
+/*#simplemodal-container #dlgDraftCoworkSync*/
+
+/* 2012.12.2 - 顯示按鈕 */
+#dlgDraftCoworkSync a.adv_demo span.ui-icon {
+	z-index: 2001;
+}
+
+	/* 2012.7.18 - 文稿會稿單位設定-文面顯示( */
+#dlgCoworkDisplaySetting .header {
+	width:100%;
+	padding: 5px 0;
+	
+	font-size:larger;
+	font-weight: 800;
+	color:white;
+	text-align:center;
+	text-shadow: 0 /*{b-bar-shadow-x}*/ -1px /*{b-bar-shadow-y}*/ 1px /*{b-bar-shadow-radius}*/ #5393C5 /*{b-bar-shadow-color}*/;
+	
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-image:-webkit-linear-gradient(#81A8CE, #5393C5);
+}
+
+#dlgCoworkDisplaySetting .ui-content {
+	margin-top: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+#dlgCoworkDisplaySetting div.ui-select,
+#dlgCoworkDisplaySetting div.target_section span.ui-btn-text {
+	font-size: smaller;
+}
+
+#dlgCoworkDisplaySetting fieldset div.ui-controlgroup-controls {
+	width: 100%;
+}
+/* 上方箭頭 */
+#dlgCoworkDisplaySetting .up_pointer {
+	position: absolute;
+	top: -15px;
+	right: 50px;
+	width: 25px;
+	height: 15px;
+	background: transparent url('../IMAGE/WORKFLOW/up_triangle2.png') no-repeat;
+}
+
+.ui_setup .up_pointer {
+	position: absolute;
+	top: -30px;
+	right: 50px;
+	width: 25px;
+	height: 15px;
+	background: transparent url('../IMAGE/WORKFLOW/up_triangle2.png') no-repeat;
+}
+	/* End of  文面顯示設定 dialog */
+	
+/* End of 文稿會稿單位設定子視窗 */
+
+	/* Drag and Drop css */
+#dlgProcessFlow .ui-dialog .ui-footer .ui-block-a .ui-btn,
+#dlgProcessFlow .ui-dialog .ui-footer .ui-block-b .ui-btn {
+	display: block;
+}
+
+#dndshadow {
+	-webkit-box-shadow: 2px 2px 2px #888;
+	-moz-box-shadow: 2px 2px 2px #888;
+	-o-box-shadow: 2px 2px 2px #888;
+	-ms-box-shadow: 2px 2px 2px #888;
+	box-shadow: 2px 2px 2px #888;
+}
+
+#dndshadow .pointer {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	left: -2px;
+	top: -2px;
+	border-left:2px solid red;border-top:2px solid red; /* default: red pointer */
+}
+
+#dndshadow .pointer_blue {
+	border-left:2px solid red;border-top:2px solid red;
+}
+	/* End of Drag and Drop css */
+
+/* Debug panel */
+#log-panel {
+	display: none; /* show/hide log panel */
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	width: 500px;
+	height: 200px;
+	opacity: .90;
+	background: #fdf;
+	
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch; /* for mobile safari's native scroll solution */
+	
+	border: 1px solid #888;
+	box-shadow: 3px 3px 2px rgba(0,0,0,.5);
+	z-index: 100;
+}
+        
+#log-panel .log {
+	width: 800px;
+}
+
+/* End of debug panel */
+
+/* End of 流程設定子視窗 */
+
+/* Begin of 核決設定子視窗 */
+#aol #dlgApproveConfirm .ui-controlgroup-label {
+	width: 20%;
+}
+
+#aol #dlgApproveConfirm .ui-controlgroup-controls{    /*list與右方與覽列印的block顯示為inline*/ 
+  width: 68%;
+  display: inline-block;
+}
+
+/* 2021.3.26 - Eric, fix Firefox 86.0 display problem */
+#aol #dlgApproveConfirm fieldset {
+	display: block; 
+}
+
+/* 2021.2.18 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height:450px) and (orientation: landscape) {
+	#aol #dlgApproveConfirm {
+		height: 100%;
+	}
+
+	#aol #dlgApproveConfirm #targetDlgOK, #aol #dlgApproveConfirm #targetDlgCancel {
+		padding-top: .5em;
+		padding-bottom: .5em;
+	}
+}
+
+/* END of 核決設定子視窗 */

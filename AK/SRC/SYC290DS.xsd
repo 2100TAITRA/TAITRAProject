@@ -1,0 +1,25 @@
+<xsd:schema id="SYC290DS" targetNamespace="http://www.tempuri.org/SYC290DS.xsd" xmlns="http://www.tempuri.org/SYC290DS.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xsd:element name="SYC290DS" msdata:IsDataSet="true">
+    <xsd:complexType>
+      <xsd:choice maxOccurs="unbounded">
+        <xsd:element name="REL_PERSON_M">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="PSN_NO" type="xsd:string" minOccurs="0" />
+              <xsd:element name="PSN_NAME" type="xsd:string" minOccurs="0" />
+              <xsd:element name="Expr1" type="xsd:string" minOccurs="0" />
+              <xsd:element name="SEQ_NO" type="xsd:decimal" minOccurs="0" />
+              <xsd:element name="PSN_ALIAS" type="xsd:string" minOccurs="0" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:choice>
+    </xsd:complexType>
+    <xsd:unique name="Constraint1">
+      <xsd:selector xpath=".//REL_PERSON_M" />
+      <xsd:field xpath="PSN_NO" />
+      <xsd:field xpath="Expr1" />
+      <xsd:field xpath="SEQ_NO" />
+    </xsd:unique>
+  </xsd:element>
+</xsd:schema>

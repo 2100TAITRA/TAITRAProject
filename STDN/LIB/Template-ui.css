@@ -1,0 +1,83 @@
+﻿
+.custom-combobox {
+    position: relative ;
+    display: inline-block ;
+}
+
+input[type='text'] 
+{
+	border-width: 1px;
+}
+		
+/* 預設初始化區	END */
+
+select
+{
+	height: 1.3em;
+}
+
+.custom-combobox-toggle {
+    position: absolute ;
+	height: 1.35em ;
+    top: 0px ;
+    bottom: 0px ;
+    margin-left: -1px ;
+    padding: 0 ;
+	background: white ;
+}
+
+a.custom-combobox-toggle.ui-button-disable {
+
+    height: 1.35em ;
+}
+
+.custom-combobox-input {
+    margin: 0 ;
+    /*padding: 1px 2px ;*/
+	font-weight:normal ;
+	color: Navy ;
+	background: white ;
+	height: 1.2em ;
+}
+
+.ui-widget{
+	font-size:1em ;
+}
+
+.ui-autocomplete {
+max-height: 10em ;
+overflow-y: auto ;
+/* prevent horizontal scrollbar */
+overflow-x: hidden ;
+  }
+
+/*修正升級jQueryUI後，ComboBox的空白選項僅能顯示半形空白的高度*/
+ul.ui-autocomplete div.ui-menu-item-wrapper{
+	height:1em ;
+}
+
+.ui-menu .ui-menu-item {
+	list-style-image: none ;
+}
+
+/* 1110818 Kevin 1101532 新增背景主題切換 */
+
+.ColorSwitch{
+	width: 50px;
+	height: 40px;
+	margin-right: 5px;
+	margin-left: 5px;
+	float: left;
+	border-width: 2px;
+    border-style: solid;
+	border-color: white;
+	border-radius: 3px;
+}
+
+#ColorSwitchLB{
+	background-color: #8FD5FD;
+}
+
+#ColorSwitchLW{
+	background-color: #c9f3f5;
+}

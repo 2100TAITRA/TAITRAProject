@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ApproveDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argWsUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMoiGroupCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSections" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIssueDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPDFBase64" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApproveDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApproveDocResult" type="tns:CMoiGroupWs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CMoiGroupWs">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ApproveNoDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argWsUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMoiGroupCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApproveNoDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApproveNoDocResult" type="tns:CMoiGroupWs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendPaperDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argWsUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFromOrg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubject" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendPaperDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendPaperDocResult" type="tns:CMoiGroupWs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendElectronicDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argWsUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMoiGroupCaseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendElectronicDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendElectronicDocResult" type="tns:CMoiGroupWs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CMoiGroupWs" nillable="true" type="tns:CMoiGroupWs" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ApproveDocSoapIn">
+    <wsdl:part name="parameters" element="tns:ApproveDoc" />
+  </wsdl:message>
+  <wsdl:message name="ApproveDocSoapOut">
+    <wsdl:part name="parameters" element="tns:ApproveDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApproveNoDocSoapIn">
+    <wsdl:part name="parameters" element="tns:ApproveNoDoc" />
+  </wsdl:message>
+  <wsdl:message name="ApproveNoDocSoapOut">
+    <wsdl:part name="parameters" element="tns:ApproveNoDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendPaperDocSoapIn">
+    <wsdl:part name="parameters" element="tns:SendPaperDoc" />
+  </wsdl:message>
+  <wsdl:message name="SendPaperDocSoapOut">
+    <wsdl:part name="parameters" element="tns:SendPaperDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendElectronicDocSoapIn">
+    <wsdl:part name="parameters" element="tns:SendElectronicDoc" />
+  </wsdl:message>
+  <wsdl:message name="SendElectronicDocSoapOut">
+    <wsdl:part name="parameters" element="tns:SendElectronicDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApproveDocHttpGetIn">
+    <wsdl:part name="argWsUrl" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argMoiGroupCaseNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argSubject" type="s:string" />
+    <wsdl:part name="argSections" type="s:string" />
+    <wsdl:part name="argIssueDate" type="s:string" />
+    <wsdl:part name="argPDFBase64" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ApproveDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:CMoiGroupWs" />
+  </wsdl:message>
+  <wsdl:message name="ApproveNoDocHttpGetIn">
+    <wsdl:part name="argWsUrl" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argMoiGroupCaseNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ApproveNoDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:CMoiGroupWs" />
+  </wsdl:message>
+  <wsdl:message name="SendPaperDocHttpGetIn">
+    <wsdl:part name="argWsUrl" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argFromOrg" type="s:string" />
+    <wsdl:part name="argSubject" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendPaperDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:CMoiGroupWs" />
+  </wsdl:message>
+  <wsdl:message name="SendElectronicDocHttpGetIn">
+    <wsdl:part name="argWsUrl" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argMoiGroupCaseNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendElectronicDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:CMoiGroupWs" />
+  </wsdl:message>
+  <wsdl:message name="ApproveDocHttpPostIn">
+    <wsdl:part name="argWsUrl" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argMoiGroupCaseNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argSubject" type="s:string" />
+    <wsdl:part name="argSections" type="s:string" />
+    <wsdl:part name="argIssueDate" type="s:string" />
+    <wsdl:part name="argPDFBase64" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ApproveDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:CMoiGroupWs" />
+  </wsdl:message>
+  <wsdl:message name="ApproveNoDocHttpPostIn">
+    <wsdl:part name="argWsUrl" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argMoiGroupCaseNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ApproveNoDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:CMoiGroupWs" />
+  </wsdl:message>
+  <wsdl:message name="SendPaperDocHttpPostIn">
+    <wsdl:part name="argWsUrl" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+    <wsdl:part name="argFromOrg" type="s:string" />
+    <wsdl:part name="argSubject" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendPaperDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:CMoiGroupWs" />
+  </wsdl:message>
+  <wsdl:message name="SendElectronicDocHttpPostIn">
+    <wsdl:part name="argWsUrl" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argMoiGroupCaseNo" type="s:string" />
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendElectronicDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:CMoiGroupWs" />
+  </wsdl:message>
+  <wsdl:portType name="MoiGroupWSSoap">
+    <wsdl:operation name="ApproveDoc">
+      <wsdl:input message="tns:ApproveDocSoapIn" />
+      <wsdl:output message="tns:ApproveDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveNoDoc">
+      <wsdl:input message="tns:ApproveNoDocSoapIn" />
+      <wsdl:output message="tns:ApproveNoDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPaperDoc">
+      <wsdl:input message="tns:SendPaperDocSoapIn" />
+      <wsdl:output message="tns:SendPaperDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendElectronicDoc">
+      <wsdl:input message="tns:SendElectronicDocSoapIn" />
+      <wsdl:output message="tns:SendElectronicDocSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MoiGroupWSHttpGet">
+    <wsdl:operation name="ApproveDoc">
+      <wsdl:input message="tns:ApproveDocHttpGetIn" />
+      <wsdl:output message="tns:ApproveDocHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveNoDoc">
+      <wsdl:input message="tns:ApproveNoDocHttpGetIn" />
+      <wsdl:output message="tns:ApproveNoDocHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPaperDoc">
+      <wsdl:input message="tns:SendPaperDocHttpGetIn" />
+      <wsdl:output message="tns:SendPaperDocHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendElectronicDoc">
+      <wsdl:input message="tns:SendElectronicDocHttpGetIn" />
+      <wsdl:output message="tns:SendElectronicDocHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MoiGroupWSHttpPost">
+    <wsdl:operation name="ApproveDoc">
+      <wsdl:input message="tns:ApproveDocHttpPostIn" />
+      <wsdl:output message="tns:ApproveDocHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveNoDoc">
+      <wsdl:input message="tns:ApproveNoDocHttpPostIn" />
+      <wsdl:output message="tns:ApproveNoDocHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendPaperDoc">
+      <wsdl:input message="tns:SendPaperDocHttpPostIn" />
+      <wsdl:output message="tns:SendPaperDocHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendElectronicDoc">
+      <wsdl:input message="tns:SendElectronicDocHttpPostIn" />
+      <wsdl:output message="tns:SendElectronicDocHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MoiGroupWSSoap" type="tns:MoiGroupWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ApproveDoc">
+      <soap:operation soapAction="http://tempuri.org/ApproveDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveNoDoc">
+      <soap:operation soapAction="http://tempuri.org/ApproveNoDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPaperDoc">
+      <soap:operation soapAction="http://tempuri.org/SendPaperDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendElectronicDoc">
+      <soap:operation soapAction="http://tempuri.org/SendElectronicDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MoiGroupWSSoap12" type="tns:MoiGroupWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ApproveDoc">
+      <soap12:operation soapAction="http://tempuri.org/ApproveDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveNoDoc">
+      <soap12:operation soapAction="http://tempuri.org/ApproveNoDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPaperDoc">
+      <soap12:operation soapAction="http://tempuri.org/SendPaperDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendElectronicDoc">
+      <soap12:operation soapAction="http://tempuri.org/SendElectronicDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MoiGroupWSHttpGet" type="tns:MoiGroupWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ApproveDoc">
+      <http:operation location="/ApproveDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveNoDoc">
+      <http:operation location="/ApproveNoDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPaperDoc">
+      <http:operation location="/SendPaperDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendElectronicDoc">
+      <http:operation location="/SendElectronicDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MoiGroupWSHttpPost" type="tns:MoiGroupWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ApproveDoc">
+      <http:operation location="/ApproveDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveNoDoc">
+      <http:operation location="/ApproveNoDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendPaperDoc">
+      <http:operation location="/SendPaperDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendElectronicDoc">
+      <http:operation location="/SendElectronicDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MoiGroupWS">
+    <wsdl:port name="MoiGroupWSSoap" binding="tns:MoiGroupWSSoap">
+      <soap:address location="http://sys2013/MOIGROUP/MOIGROUPWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MoiGroupWSSoap12" binding="tns:MoiGroupWSSoap12">
+      <soap12:address location="http://sys2013/MOIGROUP/MOIGROUPWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MoiGroupWSHttpGet" binding="tns:MoiGroupWSHttpGet">
+      <http:address location="http://sys2013/MOIGROUP/MOIGROUPWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MoiGroupWSHttpPost" binding="tns:MoiGroupWSHttpPost">
+      <http:address location="http://sys2013/MOIGROUP/MOIGROUPWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,583 @@
+/* jshint -W100 */
+
+/* 2016.8 - change classname of UniView Model
+ * #mainContent2 => #uvMainContent
+ * #leftPart2 -> #uvLeftPart
+ *    #zoomControl2 -> #uvZoomControl
+         #zoomSelect2 -> #uvZoomSelect
+         #zoomOut2 -> #uvZoomOut
+         #zoomIn2 -> #uvZoomIn
+      #inspectTitle => #uvTitle
+      #grpSubmit2 => #uvGrpSubmit
+         #btnClose2 => #uvBtnClose
+         
+      #sidebar3 => #uvSideBar
+      #tabbar3 => #uvTabBar
+      #folio1 => #uvFolio
+      #refView2 => #uvRefView
+      #iso => #uvISO
+         .contentPane => .uvContentPane
+            .viewPort => .uvViewPort
+            .pages => .uvPages
+               #pgFlippedOut => #uvpgFlippedOut
+               #pgFlippedIn => #uvpgFlippedIn
+               #pgBackBuffer => #uvpgBackBuffer
+               #pgFrontFace => #uvpgFrontFace [=>公文基資頁!]
+                 => 目前公文顯示頁面(or公文基資頁)內容
+            .tages
+               .tags-group
+                  .tags-item
+                     #docInfo => #uvDocInfo (公文基資標籤)
+               #cmdFloat => #uvCmdFloat
+         .btnFlipLeft"=> .uvBtnFlipLeft (上一頁)
+         .btnFlipRight => .uvBtnFlipRight (下一頁)
+         
+   => 設定div.uvContentPane之height值, 可讓模組高度佔滿視窗高度     
+         
+ */
+
+/* 歷史/檢索-公文檢閱UI (原UniView) */
+#mainPageContainer #mpContainer #pDocInspectPane.work_pane {
+    /*display: block; 2016.4 - 暫時顯示紙本歸檔檢閱UI */
+    height: 100%;
+}
+
+#uniView {
+   overflow:hidden; /* 2016.11.17 - x,y => hidden */
+   width:100%;
+}
+
+/* 1110513 Raymond 1110486 修正Chrome/Edge下某些電腦(不是很舊)啟用瀏覽器的硬體加速功能後, 影像會變模糊的問題 */
+#uniView img {
+	image-rendering: -webkit-optimize-contrast;
+}
+
+#pDocInspectPane #uniView {
+   overflow-y: hidden;
+   height:100%;
+}
+
+#uniView #uvMainContent {
+   padding: 0px;
+   background-color: transparent; /*#333; 2017.4.27 - Eric 美工 */
+}
+
+#uvLeftPart {
+   /*height: 40px;*/
+   width: 100%;
+}
+
+#uvLeftPart .top_tool_bar {
+    /*margin-left: .6em;*/
+    height: 2.8em;
+    
+    /* 20170427 - Eric, 美工 */
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 3px;
+    border-color: #888;
+	display: flex; /* 1120601	Leslie[1120071]	配合增加Title資訊欄位，調整排列方式 */
+}
+
+#uvLeftPart #uvZoomControl {
+	/* 1120601	Leslie[1120071]	配合增加Title資訊欄位，調整排列方式 
+    position: absolute;
+    left: 50px;
+    top: -4px; */
+	margin-left: 50px;
+    margin-top: 4px;
+}    
+    
+#uvLeftPart .top_tool_bar .ui-controlgroup-controls {
+    width: 100%;
+    display: inline-block;
+}
+
+#uvLeftPart .top_tool_bar .ui-controlgroup-horizontal .ui-select .ui-btn-inner {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    padding-right: 32px;
+}
+
+#uvLeftPart .top_tool_bar .ui-header .ui-select {
+    display: inline-block;
+}
+
+#uvLeftPart .top_tool_bar .ui-controlgroup-horizontal .ui-select .ui-btn-icon-right .ui-icon {
+    right: 11px;
+}
+
+#uvLeftPart .top_tool_bar .btnGroup .ui-btn-icon-notext {
+    padding: .18em;	/* 1120601	Leslie[1120071]	配合增加Title資訊欄位，0.15em > 0.18em */
+}
+
+#uvLeftPart #uvGoToPanel {
+	/* 1120601	Leslie[1120071]	配合增加Title資訊欄位，調整排列方式 
+    position: absolute;
+    left: 14em; */
+	margin-left: 6px;
+}
+
+#uvLeftPart .btnGroup a.ui-btn {
+	/* 1120601	Leslie[1120071]	配合增加Title資訊欄位，調整排列方式 
+    margin-top: .3em; */
+}
+
+#uvLeftPart #uvRotatePanel {
+	/* 1120601	Leslie[1120071]	配合增加Title資訊欄位，調整排列方式 
+    position: absolute;
+    left: 21.5em; */
+	margin-left: 5px;
+}
+/*1100325	Leslie[1090869]	新增另存PDF功能鍵*/
+#uvLeftPart #uvExBtnPanel {
+	/* 1120601	Leslie[1120071]	配合增加Title資訊欄位，調整排列方式 
+    position: absolute;
+    left: 26.5em;
+	top:1px; */
+	margin-top: -2px;
+    margin-left: 5px;
+}
+    
+/*#uvLeftPart #tcControl2 {
+    position: absolute;
+    left: 229px;
+    top: -4px;
+}*/
+
+/* 1120601	Leslie[1120071]	增加Title資訊欄位，整個刪掉重寫 */
+#uvLeftPart .uvInspectTitle,
+#uvLeftPart .uvPageInfo{
+    font-size: larger;
+    margin-top: 0.5em;
+    color: #00F;
+    font-weight: 800;
+    text-shadow: 0 /*{b-page-shadow-x}*/ 1px /*{b-page-shadow-y}*/ 0 /*{b-page-shadow-radius}*/ #fff /*{b-page-shadow-color}*/;
+    margin-left: 10px;
+}
+
+#uvLeftPart #uvGrpSubmit {
+    position: absolute;
+    right: 20px;
+    top: -4px;
+    -webkit-transition-duration: 0.5s;
+    -webkit-transition-property: top;
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-duration: 0.5s;
+    -moz-transition-property: top;
+    -moz-transition-timing-function: ease-in;
+    transition-duration: 0.5s;
+    transition-property: top;
+    transition-timing-function: ease-in;
+}
+
+#uvLeftPart #uvGrpSubmit img, #uvLeftPart #transPanel img {
+    margin-top: -0.4em;
+    margin-bottom: -0.4em;
+    width: 18px;
+    height: 18px;
+    background-color: rgba(0, 0, 0, .4);
+    -webkit-border-radius: 9px;
+    -webkit-box-shadow: 0px 1px 0 rgba(255, 255, 255, .4);
+    -moz-border-radius: 9px;
+    -moz-box-shadow: 0px 1px 0 rgba(255, 255, 255, .4);
+    border-radius: 9px;
+    box-shadow: 0px 1px 0 rgba(255, 255, 255, .4);
+}
+
+#uvLeftPart .top_tool_bar #uvGrpSubmit .ui-btn {
+    display: inline-block;
+}
+
+/* 2017.1.12 - 右上角顯示頁次資訊 */
+#uvLeftPart #pageInfo {
+    position: absolute;
+    right: 6em;
+    top: 1em;
+    display: none;
+}
+
+/* for left side bar DOC_NO tab , reference view open/close */
+
+/* 2017.4.7 - add */
+#uvLeftPart #uvSideBarPane {
+    margin-left: 2.3em;
+    overflow-x: visible;
+    position: relative;
+}
+
+#uvLeftPart #uvSideBar {
+    width: 2.5em; /* 50px; 2017.4.7 - modify */
+    height: 100%; /* 578px; 20170427 - Eric, 美工 */
+    background-color: rgba(255,255,255,0.4); /*#333; 20170427 - Eric, 美工 */
+    overflow-x: hidden;
+    position: absolute;
+    left: -2.2em; /*-50px;  2017.4.7 - modify */
+    top: 0px;
+}
+
+#uvLeftPart #uvTabBar {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#uvTabBar .ui-tabs-bar li {
+    overflow: visible;
+    width: auto;
+    clear: left;
+    display: block;
+    padding-left: 0px;
+}
+
+#uvLeftPart .ui-tabs-bar .ui-block-a, #uvLeftPart .ui-tabs-bar .ui-block-b, #uvLeftPart .ui-tabs-bar .ui-block-c, #uvLeftPart .ui-tabs-bar .ui-block-d, #uvLeftPart .ui-tabs-bar .ui-block-e {
+    width: 40px;
+    height: 142px;
+    /* border: 1px solid green; */
+}
+
+#uvLeftPart .ui-tabs-bar a {
+    width: 140px;
+    height: auto;
+    border-left-width: 0;
+    -webkit-transform-origin: left top;
+    -webkit-transform: rotate(270deg) translateX(-142px);
+    -moz-transform-origin: left top;
+    -moz-transform: rotate(270deg) translateX(-142px);
+    -o-transform-origin: left top;
+    -o-transform: rotate(270deg) translateX(-142px);
+    -ms-transform-origin: left top;
+    -ms-transform: rotate(270deg) translateX(-142px);
+    transform-origin: left top;
+    transform: rotate(270deg) translateX(-142px);
+    margin-right: 0px;
+}
+
+#uvLeftPart .ui-tabs-bar li:first-child .ui-btn {
+    border-right-width: 1px;
+}
+
+#uvLeftPart .ui-tabs-bar .ui-btn-active {
+    background: #fadb4e;
+    text-shadow: 0 1px 0 #fff;
+    border: 1px solid #CCC;
+}
+
+#uvLeftPart .ui-btn-active:visited, #uvLeftPart .ui-btn-active:hover, #uvLeftPart .ui-btn-active a.ui-link-inherit {
+    color: #000;
+}
+
+#uvLeftPart .ui-tabs-bar .ui-btn-inner {
+    overflow: visible;
+    text-align: center;
+	padding: 0.6em 0px;
+	color: #00F; /* 2017.5.3 - Eric */
+}
+
+#uvLeftPart .ui-tabs-bar li a {
+    border-left-width: 1px;
+}
+
+#uvLeftPart .ui-tabs-bar {
+    float: right;
+    height: calc(100% - 60px);
+}
+
+#uvLeftPart #uvRefView {
+    position: absolute;
+    bottom: 0px;
+    margin-left: 0px;
+}
+
+#pDocInspectPane .ui-pane-a, #pDocInspectPane .ui-pane-b, #pDocInspectPane .ui-pane-splitter {
+    height: calc(100% - 50px);
+    display: inline-block;
+    transition-duration: 0.5s;
+    transition-property: width;
+    transition-timing-function: ease-in;
+}
+
+/* doc content */
+#uvLeftPart .uvContentPane {
+    /* width: 945px; */
+    width: 100%;
+    height: 578px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    /*background: #ccc; 20170427 - Eric - 美工 */
+}
+
+#uvLeftPart .uvViewPort {
+    /* height: 400px; */
+    -webkit-transform-origin: left top;
+    -webkit-transform: scale(1.0) translateZ(0);
+    -moz-transform-origin: left top;
+    -moz-transform: scale(1.0) translateZ(0);
+    transform-origin: left top;
+    transform: scale(1.0) translateZ(0);
+}
+
+#uvLeftPart .uvPages {
+    width: 250mm;
+    height: 320mm;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-image: -webkit-linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+    background-image: -moz-linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+    background-image: -ms-linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+    background-image: -o-linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+    background-image: linear-gradient(left, #FFF 0%, #FFF 95%, #DDD 95.5%, #555 96%, rgba(240,240,240,0) 96.2%, rgba(240,240,240,0) 100%);
+    position: relative;
+    -webkit-perspective: none; /* 1100506 Raymond 1100498 修正文稿頁面包括影像在放大顯示比例時, Chrome/Edge會顯得模糊的問題 1900px->none */
+    -webkit-perspective-origin: bottom;
+    -webkit-transform-style: preserve-3d;
+    -moz-perspective: none; /* 1100506 Raymond 1100498 修正文稿頁面包括影像在放大顯示比例時, Chrome/Edge會顯得模糊的問題 1900px->none */
+    -moz-perspective-origin: bottom;
+    -moz-transform-style: preserve-3d;
+    perspective: none; /* 1100506 Raymond 1100498 修正文稿頁面包括影像在放大顯示比例時, Chrome/Edge會顯得模糊的問題 1900px->none */
+    perspective-origin: bottom;
+    transform-style: preserve-3d;
+}
+
+#uvLeftPart .pg {
+    position: relative;
+}
+
+/*#aol #pgBackBuffer, #aol #pgFrontFace, #aol #pgFlippedOut, #aol #pgFlippedIn*/
+#uvLeftPart #uvpgFrontFace {
+    position: absolute;
+    margin: 10mm 10px;
+    border: 1px solid #888;
+    -webkit-box-shadow: 8px 8px 4px #888;
+    -moz-box-shadow: 8px 8px 4px #888;
+    box-shadow: 8px 8px 4px #888;
+    background: white;
+    z-index: 100;
+    -webkit-transform: translateZ(1px);
+    -moz-transform: translateZ(1px);
+    transform: translateZ(1px);
+}
+
+/* 2017.2.21 - 頁面旋轉 */
+#uvLeftPart div.uvViewPort.dir_landscape {
+    width: 1209.45px;
+    height: 944.882px;
+}
+
+#uvLeftPart div#uvViewPort .uvPages {
+    width: 946.6px;
+    height: 1275.4px;
+}
+
+#uvLeftPart div#uvViewPort.dir_landscape .uvPages {
+    width: 1275.4px;
+    height: 946.6px;
+}
+
+#uvViewPort #uvpgFrontFace .pg {
+    width: 211mm;
+}
+
+#uvViewPort.dir_landscape #uvpgFrontFace .pg {
+    width: 298mm;
+}
+
+#uvViewPort #uvpgFrontFace .pg {
+    width: 210mm;
+    height: 297mm; 
+}
+
+#uvViewPort #uvpgFrontFace .pg img {
+    width: 210mm;
+    height: 297mm;
+}
+
+/* 2017.4.20 - 原影像寬>高之項目 */
+#uvViewPort #uvpgFrontFace .pg img.ls {
+    width: 297mm;
+    height: 210mm;
+}
+
+#uvViewPort.dir_landscape #uvpgFrontFace .pg {
+    width: 297mm;
+    height: 210mm;
+}
+
+#uvViewPort div.tags {
+    left: 806px;
+}
+
+#uvViewPort.dir_landscape div.tags {
+    left: 1134px;
+}
+/* 2017.2.21 - END of 頁面旋轉 */
+
+#uvLeftPart div.cover-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    /* opacity: 0.2; */
+}
+
+#uvLeftPart .tags {
+    overflow-x: hidden;
+    z-index: 100;
+    position: absolute;
+    left: 213mm;
+    top: 15mm;
+    width: 160px;
+    -webkit-transform: translateZ(2px);
+    -moz-transform: translateZ(2px);
+    transform: translateZ(2px);
+}
+
+#uvLeftPart .tags .tags-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
+}
+
+#uvLeftPart .tags-group .tags-item {
+    border: 1px solid #ccc /*{c-bup-border}*/;
+    background: #eee /*{c-bup-background-color}*/;
+    font-weight: bold;
+    color: #222 /*{c-bup-color}*/;
+    text-shadow: 0 /*{c-bup-shadow-x}*/ 1px /*{c-bup-shadow-y}*/ 0 /*{c-bup-shadow-radius}*/ #fff /*{c-bup-shadow-color}*/;
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #fff /*{c-bup-background-start}*/), to( #f1f1f1 /*{c-bup-background-end}*/));
+    background-image: -webkit-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+    background-image: -moz-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+    background-image: -ms-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+    background-image: -o-linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+    background-image: linear-gradient( #fff /*{c-bup-background-start}*/, #f1f1f1 /*{c-bup-background-end}*/);
+    padding: .6em 2em .6em 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+#uvLeftPart .tags-group .tags-item:first-child {
+    -webkit-border-top-right-radius: .6em;
+    -moz-border-top-right-radius: .6em;
+    border-top-right-radius: .6em;
+}
+
+#uvLeftPart .tags-group .tags-item:last-child {
+    -webkit-border-bottom-right-radius: .6em;
+    -moz-border-bottom-right-radius: .6em;
+    border-bottom-right-radius: .6em;
+}
+
+#uvLeftPart .tags-group .tags-item-active {
+    border: 1px solid #f4c63f /*{e-bup-border}*/;
+    background: #fadb4e /*{e-bup-background-color}*/;
+    font-weight: bold;
+    color: #222 /*{e-bup-color}*/;
+    text-shadow: 0 /*{e-bup-shadow-x}*/ 1px /*{e-bup-shadow-y}*/ 0 /*{e-bup-shadow-radius}*/ #fff /*{e-bup-shadow-color}*/;
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #ffefaa /*{e-bup-background-start}*/), to( #ffe155 /*{e-bup-background-end}*/));
+    background-image: -webkit-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/);
+    background-image: -moz-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/);
+    background-image: -ms-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/);
+    background-image: -o-linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/);
+    background-image: linear-gradient( #ffefaa /*{e-bup-background-start}*/, #ffe155 /*{e-bup-background-end}*/);
+}
+
+#uvLeftPart .tags-group .tags-item.tags-no-icon {
+    padding: .6em 10px;
+}
+
+#uvLeftPart .tags .ui-btn-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#uvLeftPart .tags .ui-btn-text img {
+    float: left;
+}
+
+#uvLeftPart .tags-group .tags-item .ui-btn-text {
+    color: inherit;
+}
+
+#uvLeftPart .tags-item .ui-li-count {
+    background-color: white;
+    -webkit-border-radius: .6em;
+    -moz-border-radius: .6em;
+    border-radius: .6em;
+    color: inherit;
+    min-width: 1.2em;
+    text-align: center;
+    font-size: 9pt;
+    font-family: inherit;
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 6px;
+    /*top: 12px;*/
+}
+
+#uvLeftPart .ui-li-count {
+    float: right;
+}
+
+/* left-click popup menu */
+#unLeftPart #uvCmdFloat {
+   position: absolute;
+   display: none;
+}
+
+/* 上/下頁 */
+#uvLeftPart a.uvBtnFlipLeft, #uvLeftPart a.uvBtnFlipRight {
+    padding: 0;   
+    position: absolute;
+    top: 50%;
+    background-color: gray;
+    opacity: 0.5;
+    border-radius: 4px;
+    width: 64px;
+    height: 64px;
+    display: none;
+    z-index: 50;
+}
+
+#uvLeftPart a.uvBtnFlipLeft {
+    left: 0px;
+    background-image: url("../IMAGE/AOL/prev64.png");
+}
+
+#uvLeftPart a.uvBtnFlipRight {
+    right: 0px;
+    background-image: url("../IMAGE/AOL/next64.png");
+}
+
+/* 107.1.12 跳頁子視窗 */
+#uvGoToPageDialog .input-range div.ui-input-text ,
+#uvGoToPageDialog .input-range span {
+    display: inline-block;
+}
+
+/* 1120601	Leslie[1120071]	配合增加Title資訊欄位，調整排列方式 */
+div.top_tool_bar .btnGroup {
+    margin-top: -3.6px;
+}
+
+
+/* 1131017	Leslie[中榮序232]	新增AKT116待點收多文瀏覽模式 */
+#viewDoc.mutliDoc>#docContent{
+	position: absolute;
+	width: 9em;
+	height:100%;
+	z-index: 1106;
+	background: #ffffff;
+	border: solid 2px #787878;
+	overflow: auto;
+}
+
+#viewDoc.mutliDoc>.viewModule{
+	position: absolute;
+	left: 9em;
+	width: calc(100% - 9em);
+}
+
+#viewDoc.mutliDoc>#popupAdvance-popup{
+	left: calc(9.3em + 15px) !important;
+}

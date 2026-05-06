@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://2100T.com.tw" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://2100T.com.tw" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://2100T.com.tw">
+      <s:element name="WebFileIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileCollection" type="tns:ArrayOfArgFile" />
+            <s:element minOccurs="1" maxOccurs="1" name="argDeleteSource" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argOverWrite" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRemoteService" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArgFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="argFile" nillable="true" type="tns:argFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="argFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToPath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebFileIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebFileIOResult" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfErr">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Err" nillable="true" type="tns:Err" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Err">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrIdx" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebFileIoCopyFilesForCowrok">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSrcPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDestPath" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WebFileIoCopyFilesForCowrokResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebFileIoCopyFilesForCowrokResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MergeFilesForCoworkDocInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDestEnvFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCoworkDataInfo" type="tns:ArrayOfArgCoworkFlowData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArgCoworkFlowData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="argCoworkFlowData" nillable="true" type="tns:argCoworkFlowData" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="argCoworkFlowData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PathName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgIdList" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreviousMsgId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Thread" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MergeFilesForCoworkDocInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MergeFilesForCoworkDocInfoResult" type="tns:ArrayOfErr" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WebFileIOSoapIn">
+    <wsdl:part name="parameters" element="tns:WebFileIO" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIOSoapOut">
+    <wsdl:part name="parameters" element="tns:WebFileIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokSoapIn">
+    <wsdl:part name="parameters" element="tns:WebFileIoCopyFilesForCowrok" />
+  </wsdl:message>
+  <wsdl:message name="WebFileIoCopyFilesForCowrokSoapOut">
+    <wsdl:part name="parameters" element="tns:WebFileIoCopyFilesForCowrokResponse" />
+  </wsdl:message>
+  <wsdl:message name="MergeFilesForCoworkDocInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:MergeFilesForCoworkDocInfo" />
+  </wsdl:message>
+  <wsdl:message name="MergeFilesForCoworkDocInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:MergeFilesForCoworkDocInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="T2100FileIoServiceSoap">
+    <wsdl:operation name="WebFileIO">
+      <wsdl:input message="tns:WebFileIOSoapIn" />
+      <wsdl:output message="tns:WebFileIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <wsdl:input message="tns:WebFileIoCopyFilesForCowrokSoapIn" />
+      <wsdl:output message="tns:WebFileIoCopyFilesForCowrokSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MergeFilesForCoworkDocInfo">
+      <wsdl:input message="tns:MergeFilesForCoworkDocInfoSoapIn" />
+      <wsdl:output message="tns:MergeFilesForCoworkDocInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="T2100FileIoServiceSoap" type="tns:T2100FileIoServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="WebFileIO">
+      <soap:operation soapAction="http://2100T.com.tw/WebFileIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebFileIoCopyFilesForCowrok">
+      <soap:operation soapAction="http://2100T.com.tw/WebFileIoCopyFilesForCowrok" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MergeFilesForCoworkDocInfo">
+      <soap:operation soapAction="http://2100T.com.tw/MergeFilesForCoworkDocInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="T2100FileIoService">
+    <wsdl:port name="T2100FileIoServiceSoap" binding="tns:T2100FileIoServiceSoap">
+      <soap:address location="http://localhost/webfileio/T2100FileIoService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

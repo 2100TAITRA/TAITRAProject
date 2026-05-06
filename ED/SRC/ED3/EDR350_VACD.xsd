@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR350_VACD" targetNamespace="http://tempuri.org/EDR350_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR350_VACD.xsd" xmlns="http://tempuri.org/EDR350_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR350_VACD" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR350_VACD" msprop:Generator_UserDSName="EDR350_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR350_VACL1" msprop:Generator_TableClassName="EDR350_VACL1DataTable" msprop:Generator_TableVarName="tableEDR350_VACL1" msprop:Generator_TablePropName="EDR350_VACL1" msprop:Generator_RowDeletingName="EDR350_VACL1RowDeleting" msprop:Generator_RowChangingName="EDR350_VACL1RowChanging" msprop:Generator_RowEvHandlerName="EDR350_VACL1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR350_VACL1RowDeleted" msprop:Generator_UserTableName="EDR350_VACL1" msprop:Generator_RowChangedName="EDR350_VACL1RowChanged" msprop:Generator_RowEvArgName="EDR350_VACL1RowChangeEvent" msprop:Generator_RowClassName="EDR350_VACL1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="TX_TIME" msprop:Generator_ColumnVarNameInTable="columnTX_TIME" msprop:Generator_ColumnPropNameInRow="TX_TIME" msprop:Generator_ColumnPropNameInTable="TX_TIMEColumn" msprop:Generator_UserColumnName="TX_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="TX_REASON" msprop:Generator_ColumnVarNameInTable="columnTX_REASON" msprop:Generator_ColumnPropNameInRow="TX_REASON" msprop:Generator_ColumnPropNameInTable="TX_REASONColumn" msprop:Generator_UserColumnName="TX_REASON" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

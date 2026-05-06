@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAT812D" targetNamespace="http://tempuri.org/EAT812D.xsd" xmlns:mstns="http://tempuri.org/EAT812D.xsd" xmlns="http://tempuri.org/EAT812D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAT812D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EAT812D" msprop:Generator_UserDSName="EAT812D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EAT812L1" msprop:Generator_TableClassName="EAT812L1DataTable" msprop:Generator_TableVarName="tableEAT812L1" msprop:Generator_RowChangedName="EAT812L1RowChanged" msprop:Generator_TablePropName="EAT812L1" msprop:Generator_RowDeletingName="EAT812L1RowDeleting" msprop:Generator_RowChangingName="EAT812L1RowChanging" msprop:Generator_RowEvHandlerName="EAT812L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EAT812L1RowDeleted" msprop:Generator_RowClassName="EAT812L1Row" msprop:Generator_UserTableName="EAT812L1" msprop:Generator_RowEvArgName="EAT812L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="APPLY_NO" msprop:Generator_ColumnVarNameInTable="columnAPPLY_NO" msprop:Generator_ColumnPropNameInRow="APPLY_NO" msprop:Generator_ColumnPropNameInTable="APPLY_NOColumn" msprop:Generator_UserColumnName="APPLY_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_DATE" msprop:Generator_ColumnVarNameInTable="columnAPPLY_DATE" msprop:Generator_ColumnPropNameInRow="APPLY_DATE" msprop:Generator_ColumnPropNameInTable="APPLY_DATEColumn" msprop:Generator_UserColumnName="APPLY_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_DEPT_SNAME" msprop:Generator_ColumnVarNameInTable="columnAPPLY_DEPT_SNAME" msprop:Generator_ColumnPropNameInRow="APPLY_DEPT_SNAME" msprop:Generator_ColumnPropNameInTable="APPLY_DEPT_SNAMEColumn" msprop:Generator_UserColumnName="APPLY_DEPT_SNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnAPPLY_EMP_NAME" msprop:Generator_ColumnPropNameInRow="APPLY_EMP_NAME" msprop:Generator_ColumnPropNameInTable="APPLY_EMP_NAMEColumn" msprop:Generator_UserColumnName="APPLY_EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLY_REASON" msprop:Generator_ColumnVarNameInTable="columnAPPLY_REASON" msprop:Generator_ColumnPropNameInRow="APPLY_REASON" msprop:Generator_ColumnPropNameInTable="APPLY_REASONColumn" msprop:Generator_UserColumnName="APPLY_REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="TRAN_DEPT_SNAME" msprop:Generator_ColumnVarNameInTable="columnTRAN_DEPT_SNAME" msprop:Generator_ColumnPropNameInRow="TRAN_DEPT_SNAME" msprop:Generator_ColumnPropNameInTable="TRAN_DEPT_SNAMEColumn" msprop:Generator_UserColumnName="TRAN_DEPT_SNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="TRAN_EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnTRAN_EMP_NAME" msprop:Generator_ColumnPropNameInRow="TRAN_EMP_NAME" msprop:Generator_ColumnPropNameInTable="TRAN_EMP_NAMEColumn" msprop:Generator_UserColumnName="TRAN_EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="TX_REASON" msprop:Generator_ColumnVarNameInTable="columnTX_REASON" msprop:Generator_ColumnPropNameInRow="TX_REASON" msprop:Generator_ColumnPropNameInTable="TX_REASONColumn" msprop:Generator_UserColumnName="TX_REASON" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

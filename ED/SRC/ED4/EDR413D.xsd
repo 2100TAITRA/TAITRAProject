@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR413D" targetNamespace="http://tempuri.org/EDR413D.xsd" xmlns:mstns="http://tempuri.org/EDR413D.xsd" xmlns="http://tempuri.org/EDR413D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR413D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR413D" msprop:Generator_UserDSName="EDR413D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR413L1" msprop:Generator_TableClassName="EDR413L1DataTable" msprop:Generator_TableVarName="tableEDR413L1" msprop:Generator_RowChangedName="EDR413L1RowChanged" msprop:Generator_TablePropName="EDR413L1" msprop:Generator_RowDeletingName="EDR413L1RowDeleting" msprop:Generator_RowChangingName="EDR413L1RowChanging" msprop:Generator_RowEvHandlerName="EDR413L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR413L1RowDeleted" msprop:Generator_RowClassName="EDR413L1Row" msprop:Generator_UserTableName="EDR413L1" msprop:Generator_RowEvArgName="EDR413L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="NEW_BY_OU" msprop:Generator_ColumnVarNameInTable="columnNEW_BY_OU" msprop:Generator_ColumnPropNameInRow="NEW_BY_OU" msprop:Generator_ColumnPropNameInTable="NEW_BY_OUColumn" msprop:Generator_UserColumnName="NEW_BY_OU" type="xs:string" minOccurs="0" />
+              <xs:element name="NEW_BY_UNIT" msprop:Generator_ColumnVarNameInTable="columnNEW_BY_UNIT" msprop:Generator_ColumnPropNameInRow="NEW_BY_UNIT" msprop:Generator_ColumnPropNameInTable="NEW_BY_UNITColumn" msprop:Generator_UserColumnName="NEW_BY_UNIT" type="xs:string" minOccurs="0" />
+              <xs:element name="DELI_TIME" msprop:Generator_ColumnVarNameInTable="columnDELI_TIME" msprop:Generator_ColumnPropNameInRow="DELI_TIME" msprop:Generator_ColumnPropNameInTable="DELI_TIMEColumn" msprop:Generator_UserColumnName="DELI_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="CHECK_TIME" msprop:Generator_ColumnVarNameInTable="columnCHECK_TIME" msprop:Generator_ColumnPropNameInRow="CHECK_TIME" msprop:Generator_ColumnPropNameInTable="CHECK_TIMEColumn" msprop:Generator_UserColumnName="CHECK_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="TIME_AFTER_CHECK" msprop:Generator_ColumnVarNameInTable="columnTIME_AFTER_CHECK" msprop:Generator_ColumnPropNameInRow="TIME_AFTER_CHECK" msprop:Generator_ColumnPropNameInTable="TIME_AFTER_CHECKColumn" msprop:Generator_UserColumnName="TIME_AFTER_CHECK" type="xs:string" minOccurs="0" />
+              <xs:element name="SUBJECT" msprop:Generator_ColumnVarNameInTable="columnSUBJECT" msprop:Generator_ColumnPropNameInRow="SUBJECT" msprop:Generator_ColumnPropNameInTable="SUBJECTColumn" msprop:Generator_UserColumnName="SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="ALL_TIMES" msprop:Generator_ColumnVarNameInTable="columnALL_TIMES" msprop:Generator_ColumnPropNameInRow="ALL_TIMES" msprop:Generator_ColumnPropNameInTable="ALL_TIMESColumn" msprop:Generator_UserColumnName="ALL_TIMES" type="xs:string" minOccurs="0" />
+              <xs:element name="OU_SIGN" msprop:Generator_ColumnVarNameInTable="columnOU_SIGN" msprop:Generator_ColumnPropNameInRow="OU_SIGN" msprop:Generator_ColumnPropNameInTable="OU_SIGNColumn" msprop:Generator_UserColumnName="OU_SIGN" type="xs:string" minOccurs="0" />
+              <xs:element name="COW_OU_SIGN" msprop:Generator_ColumnVarNameInTable="columnCOW_OU_SIGN" msprop:Generator_ColumnPropNameInRow="COW_OU_SIGN" msprop:Generator_ColumnPropNameInTable="COW_OU_SIGNColumn" msprop:Generator_UserColumnName="COW_OU_SIGN" type="xs:string" minOccurs="0" />
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EDR413L2" msprop:Generator_TableClassName="EDR413L2DataTable" msprop:Generator_TableVarName="tableEDR413L2" msprop:Generator_TablePropName="EDR413L2" msprop:Generator_RowDeletingName="EDR413L2RowDeleting" msprop:Generator_RowChangingName="EDR413L2RowChanging" msprop:Generator_RowEvHandlerName="EDR413L2RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR413L2RowDeleted" msprop:Generator_UserTableName="EDR413L2" msprop:Generator_RowChangedName="EDR413L2RowChanged" msprop:Generator_RowEvArgName="EDR413L2RowChangeEvent" msprop:Generator_RowClassName="EDR413L2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="MAIN_OU_USE_TIME" msprop:Generator_ColumnVarNameInTable="columnMAIN_OU_USE_TIME" msprop:Generator_ColumnPropNameInRow="MAIN_OU_USE_TIME" msprop:Generator_ColumnPropNameInTable="MAIN_OU_USE_TIMEColumn" msprop:Generator_UserColumnName="MAIN_OU_USE_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="MAIN_OU_DELI_TIME" msprop:Generator_ColumnVarNameInTable="columnMAIN_OU_DELI_TIME" msprop:Generator_ColumnPropNameInRow="MAIN_OU_DELI_TIME" msprop:Generator_ColumnPropNameInTable="MAIN_OU_DELI_TIMEColumn" msprop:Generator_UserColumnName="MAIN_OU_DELI_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="COWORK_OU_USE_TIME" msprop:Generator_ColumnVarNameInTable="columnCOWORK_OU_USE_TIME" msprop:Generator_ColumnPropNameInRow="COWORK_OU_USE_TIME" msprop:Generator_ColumnPropNameInTable="COWORK_OU_USE_TIMEColumn" msprop:Generator_UserColumnName="COWORK_OU_USE_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="COWORK_OU_DELI_TIME" msprop:Generator_ColumnVarNameInTable="columnCOWORK_OU_DELI_TIME" msprop:Generator_ColumnPropNameInRow="COWORK_OU_DELI_TIME" msprop:Generator_ColumnPropNameInTable="COWORK_OU_DELI_TIMEColumn" msprop:Generator_UserColumnName="COWORK_OU_DELI_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="SUPERIOR_OU_USE_TIME" msprop:Generator_ColumnVarNameInTable="columnSUPERIOR_OU_USE_TIME" msprop:Generator_ColumnPropNameInRow="SUPERIOR_OU_USE_TIME" msprop:Generator_ColumnPropNameInTable="SUPERIOR_OU_USE_TIMEColumn" msprop:Generator_UserColumnName="SUPERIOR_OU_USE_TIME" type="xs:string" minOccurs="0" />
+              <xs:element name="SUPERIOR_OU_DELI_TIME" msprop:Generator_ColumnVarNameInTable="columnSUPERIOR_OU_DELI_TIME" msprop:Generator_ColumnPropNameInRow="SUPERIOR_OU_DELI_TIME" msprop:Generator_ColumnPropNameInTable="SUPERIOR_OU_DELI_TIMEColumn" msprop:Generator_UserColumnName="SUPERIOR_OU_DELI_TIME" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

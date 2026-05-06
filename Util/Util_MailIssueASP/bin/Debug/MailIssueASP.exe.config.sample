@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+      <section name="MailIssueASP.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <appSettings>
+    <!--POP3主機位址 公司用"mail.2100t.com.tw" or "msa.hinet.net"不能寄信時可換MailServer測試 -->
+    <add key="MAIL_SERVER" value="msa.hinet.net" />
+    <!--寄件者信箱-->
+    <add key="MAIL_ADDRESS" value="David@2100t.com.tw" />
+    <!--設定寄件者名稱，寄件者顯示結果為「寄件者名稱<寄件者信箱>」-->
+    <add key="SENDER_NAME" value="系統管理" />
+    <!--暫存工作目錄-->
+    <add key="WORK_PATH" value="C:\TEMP\MAILWORK\" />
+    <!--LOG存放路徑-->
+    <add key="LOG_PATH" value="C:\TEMP\" />
+    <!--是否將附件一併轉入PDF檔中(Y是,N否)-->
+    <add key="HANDLE_ATTACH" value="Y" />
+    <!--資料庫型態-->
+    <add key="DB_TYPE" value="OLE" />
+    <!--連線字串-->
+	  <add key="ConnString" value="Provider=SQLNCLI11;user id=2100sa;password=2100@WSX5tgb;initial catalog=MDSN_T;data source=DOCAP01.FDAT.COM.TW;Connect Timeout=45;" />
+    <add key="RootDSE" value="CN=ii,DC=nfa,DC=com,DC=tw" />
+    <!-- AccountType=1表示Schema用user, 2表示Schema用gipPerson -->
+    <add key="AccountType" value="1" />
+    <add key="OrgSchemaName" value="organization" />
+    <add key="UnitSchemaName" value="organizationalUnit" />
+    <!--<add key="OrgPath" value="DC=icdf,DC=org,DC=tw"/>-->
+    <add key="OrgPath" value="CN=OrgInfo,CN=ii,DC=nfa,DC=com,DC=tw" />
+    <add key="MsspWebService" value="http://docvip.fdat.com.tw/ODMSSP/ODMSSP.asmx" />
+    <!--EDR350所在虛擬目錄-->
+    <add key="VirtualDir" value="ED" />
+    <!--信件最後的說明文字-->
+    <add key="ExpWord" value="收文信箱" />
+    <!--公文郵件說明文字檔路徑及檔名，空白表示檔案為ODP042.exe同一目錄下之Content.txt-->
+    <add key="DiscPath" value="" />
+    <!--LOG內容(3較詳細)-->
+    <add key="LogLevel" value="3" />
+    <!--國合會專屬，整合傳真機-->
+    <add key="EmailKeyWord" value="fax:" />
+    <!-- 以下是為了WebFileIO而加的 -->
+    <add key="SSOServer" value="docvip.fdat.com.tw" />
+    <!-- 發送EMAIL內容模式 0:夾帶公文PDF方式(預設)；1:於EMAIL內容呈現公文(陸委會使用) -->
+    <add key="EmailContentMode" value="0" />
+    <!-- 副本受文者電子郵件，多組時用「;」分隔 -->
+    <add key="MAIL_CC_ADDRESS" value="" />
+    <!-- EAMIL內容是否要顯示承辦人資訊，N：不顯示，Y：顯示(CDC請設定為Y) -->
+    <add key="SHOW_USERINFO" value="Y" />
+    <!-- 是否啟用EMAIL發文功能，預設Y -->
+    <add key="USE_EMAIL_ISSUE" value="Y" />
+    <!-- 是否啟用外陳外會寄送功能，預設N -->
+    <add key="USE_CO_ISSUE" value="N" />
+    <!-- 外陳外會發文路徑，預設空 -->
+    <add key="CO_ISSUE_PATH" value="C:\TESTODP042W" />
+    <!-- 外陳外會對象機關收文EMAIL -->
+    <add key="CO_ISSUE_EMAIL" value="301060000C:eric_chang@2100t.com.tw" />
+    <!-- SMTP驗證已不使用Config設定SMTP_USERNAME、SMTP_PASSWORD，改以同名稱系統參數執行驗證 -->
+    <!-- 新增可設定多組共通EMAIL網域，預設為空 設定值為Email，符號@之後的值，EX:yahoo.com.tw;2100t.com.tw -->
+    <add key="ShareEMail" value="" />
+    <!-- 海外單位增加轉出DI檔，新增機關別稱-->
+    <add key="OrgNickName" value="CDC" />
+    <!-- 海外單位增加轉出DI檔，新增轉出DI版本-->
+    <add key="TranDiType" value="104U" />
+    <!-- 寄件者信箱-->
+    <add key="FromEmail" value="kevin@2100t.com.tw" />
+    <!-- 寄件者名稱-->
+    <add key="FromEmailName" value="Util" />
+    <!-- 錯誤通知對象，以,分隔-->
+    <add key="ErrNotifyMail" value="" />
+    <!-- Log層級，因應Log正規化，未有參數請補上-->
+    <add key="LogPath" value="C:\TEMP\" />
+    <!-- Log層級，因應Log正規化，未有參數請補上-->
+    <add key="WRITE_LOG_TYPE" value="0EWID" />
+    <!-- 加上附件下載區資訊文字，請用環境變數WE_DLG_ATTACH_DEFAULT_STR的值進行設定(問題版請勿設定)-->
+    <add key="ATTACH_DEFAULT_STR" value="(附件請至附件下載區 https://docvip.fdat.com.tw/DL/DL1/DLI100.aspx 以發文字號及發文日期下載。)" />
+    <!-- 設定不需處理內部行文的單位-->
+    <add key="NOT_NOTIFY_DEPT" value="95|96|97|98|99" />
+    <!-- 若寄件者及收件者名稱因中文變成問號則設為Y，將中文進行編碼，若無此問題可不設定-->
+    <add key="ENCODE" value="" />
+    <!-- 是否啟用SSL，Y/N，預設N-->
+    <add key="USE_SSL" value="N" />
+    <!-- 新增支援自訂信件主旨Header，設定值為「機關代碼;主旨開頭」，多組設定以|分隔-->
+    <add key="MailSubjectSetting" value="A21020000I;考試院公文：|A21020001I;監理會公文：" />
+    <!-- 轉檔工作站等待時間，單位：秒-->
+    <add key="CONVERT_TIMEOUT" value="30" />
+    <!-- AP WebFileIO路徑，依各主機設定，供轉檔後呼叫檔案搬移回負責主機-->
+    <add key="AP_WEBFILEIO" value="https://docvip.fdat.com.tw/webfileio/T2100FileIOService.asmx" />
+    <!-- PrinXSL本機端存放路徑-->
+    <add key="PrintXSLPath" value="C:\\2100\\公文製作\\PrintXSL\\" />
+    <add key="XslMap" value="函=2201函(橫式).xsl;書函=2211書函(橫式).xsl;簽=5101簽(橫式).xsl;便簽=5211便簽(橫式).xsl" />
+    <!-- 工作站作業路徑-->
+    <add key="WorkStPath" value="C:\Temp\MailIssue\" />
+  </appSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8" />
+  </startup>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
+  <applicationSettings>
+    <MailIssueASP.Properties.Settings>
+      <setting name="MailIssueASP_ImgConvertWS_T2100FileIoService"
+        serializeAs="String">
+        <value>https://win10test01.fdat.com.tw/ImgConvert/ImgConvertWS.asmx</value>
+      </setting>
+    </MailIssueASP.Properties.Settings>
+  </applicationSettings>
+</configuration>

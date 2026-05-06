@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR895D" targetNamespace="http://tempuri.org/AKR895D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR895D.xsd" xmlns:mstns="http://tempuri.org/AKR895D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR895D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CLS_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="CLS_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="APPROVE_01" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_02" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_03" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_04" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_05" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_06" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_07" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_08" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_09" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_10" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_11" type="xs:int" minOccurs="0" />
+							<xs:element name="APPROVE_12" type="xs:int" minOccurs="0" />
+							<xs:element name="SUM_APPROVE" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

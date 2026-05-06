@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ODR420D" targetNamespace="http://tempuri.org/ODR420D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/ODR420D.xsd" xmlns:mstns="http://tempuri.org/ODR420D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="ODR420D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="ODR420L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="OWN_USER_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="WORK_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="PDUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="OVERDAYS" type="xs:string" minOccurs="0" />
+							<xs:element name="DODAYS" type="xs:string" minOccurs="0" />
+							<xs:element name="SEXT_TIMES" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="CURRENT_LOCATION" type="xs:string" minOccurs="0" />
+							<xs:element name="PREFIX" type="xs:string" minOccurs="0" />
+							<xs:element name="SPROCESS_AUDIT" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ODR420L1_313050000G">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USER_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="USER_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_SOURCE" type="xs:string" minOccurs="0" />
+							<xs:element name="SRC_RCV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="POSITION" type="xs:string" minOccurs="0" />
+							<xs:element name="NEXT_DEPTNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DELAY_DAY" type="xs:string" minOccurs="0" />
+							<xs:element name="TOTAL_DAYS" type="xs:string" minOccurs="0" />
+							<xs:element name="OWN_OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="TX_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SIGN_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="TX_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="WORK_DAY" type="xs:string" minOccurs="0" />
+							<xs:element name="PDUE_DATE" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ODR420L2_313050000G">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="SEXT_TIMES" type="xs:string" minOccurs="0" />
+							<xs:element name="OVERDAYS" type="xs:string" minOccurs="0" />
+							<xs:element name="DODAYS" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="WORK_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="SRC_RCV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="SPROCESS_AUDIT" type="xs:string" minOccurs="0" />
+							<xs:element name="PDUE_DATE" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ODR420L1_354010000J">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="DEPT_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="OWN_USER_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="RCV_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="CLOSE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="SEXT_TIMES" type="xs:string" minOccurs="0" />
+							<xs:element name="SPROCESS_AUDIT" type="xs:string" minOccurs="0" />
+							<xs:element name="OVERDAYS" type="xs:string" minOccurs="0" />
+							<xs:element name="DODAYS" type="xs:string" minOccurs="0" />
+							<xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+							<xs:element name="WORK_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="FROMORG_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="T_DAYS" type="xs:string" minOccurs="0" />
+							<xs:element name="T_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="T_STATE_1" type="xs:string" minOccurs="0" />
+							<xs:element name="T_STATE_2" type="xs:string" minOccurs="0" />
+							<xs:element name="COL1" type="xs:string" minOccurs="0" />
+							<xs:element name="COL2" type="xs:string" minOccurs="0" />
+							<xs:element name="COL3" type="xs:string" minOccurs="0" />
+							<xs:element name="COL4" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USER_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="USER_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="COWORK_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="REBOR_COUNT" type="xs:string" minOccurs="0" />
+							<xs:element name="POSITION" type="xs:string" minOccurs="0" />
+							<xs:element name="WORK_DAY" type="xs:string" minOccurs="0" />
+							<xs:element name="SRC_RCV_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="DUE_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="PREFIX" type="xs:string" minOccurs="0" />
+							<xs:element name="PDUE_DATE" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

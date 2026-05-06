@@ -1,0 +1,2496 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TemplateV2</name>
+    </assembly>
+    <members>
+        <member name="T:T2100.Template.V2.SystemUtil.T2100Exception">
+            <summary>
+            Summary description for T2100Exception
+            </summary>
+            
+        </member>
+        <member name="T:T2100.Template.V2.SystemUtil.ErrMsgClass">
+            <summary>
+            Summary description for ErrMsg.
+            </summary>
+            
+        </member>
+        <member name="M:T2100.Template.V2.SystemUtil.ErrorClass.AddErrorMessage(System.String,T2100.Template.V2.SystemUtil.ErrName,System.String,System.String,System.String,System.String)">
+            <summary>
+            加入錯誤訊息
+            </summary>
+            <param name="argErrLevel">錯誤層級</param>
+            <param name="argErrName">錯誤名稱</param>
+            <param name="argErrType">錯誤類型</param>
+            <param name="argErrCode">錯誤碼</param>
+            <param name="argErrMessage">錯誤訊息</param>
+            <param name="argSessionId">SessionID</param>
+        </member>
+        <member name="M:T2100.Template.V2.SystemUtil.ErrorClass.AddErrorMessage(T2100.DB.DBException,System.String)">
+            <summary>
+            加入錯誤訊息 (DB層級錯誤)
+            </summary>
+            <param name="argDBException">T2100.DBException 物件</param>
+            
+        </member>
+        <member name="M:T2100.Template.V2.SystemUtil.ErrorClass.AddErrorMessage(System.Exception,System.String)">
+            <summary>
+            加入錯誤訊息 (SYSTEM層級錯誤)
+            </summary>
+            <param name="argException">Exception 物件</param>
+        </member>
+        <member name="T:T2100.Template.V2.SaveMode">
+            <summary>
+            Summary description for Template.
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.GetCustomErrPageUrl(System.Exception)">
+            <summary>
+            處理Exception資訊後以傳網頁參數方式呼叫CustomErrPage
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.GetExContainDBEx(System.Exception)">
+            <summary>
+            取出T2100.DB產生錯誤所傳出之Exception
+            (此Exception包含所記錄SQL字串及一個型別為T2100.DB.DBException之InnerException)
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.GetAllStackTrace(System.Exception,System.String)">
+            <summary>
+            取出所有層級之Exception之堆疊追蹤
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.MultiPageDisplay(System.Int32,System.Web.UI.Page)">
+            <summary>
+            設定MultiPage的畫面數量
+            </summary>
+            <param name="PageCnt">畫面數量</param>
+            <param name="argPage">頁面物件</param>
+        </member>
+        <member name="M:T2100.Template.V2.Template.GetTreeViewLicenseKey">
+            <summary>
+            取得VisualASP TreeView元件之註冊碼
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.GetTreeViewImgPath">
+            <summary>
+            取得VisualASP TreeView元件所使用影像路徑
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.GetCurrentServerName">
+            <summary>
+            取得連線電腦名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:T2100.Template.V2.Template.GetNumericValue(System.Object)">
+            <summary>
+            由物件取出數字，若物件內容無法轉換為數字，則回傳0
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.GetStringValue(System.Object)">
+            <summary>
+            由物件取出字串內容並去掉頭尾空白，若物件為null，則回傳空字串
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.GetDoubleValue(System.Object)">
+            <summary>
+            由物件取出浮點數字，若物件內容無法轉換為浮點數字，則回傳0.0f
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.ChangeDataGridStyleColor(System.Web.UI.Page,System.Web.UI.Control)">
+            <summary>
+            0951213 Stella 新增根據web.config設定DataGrid之顏色
+            </summary>
+        </member>
+        <member name="M:T2100.Template.V2.Template.SetDataGridColumnWidthEM(System.Web.UI.Page,System.Web.UI.Control,System.String[])">
+            <summary>
+            透過寫出CSS語法，用以設定捲動區各欄位寬度 1050105 Leslie
+            </summary>
+            <param name="page"></param>
+            <param name="argControl"></param>
+            <param name="argGridWidth"></param>
+        </member>
+        <member name="T:T2100.Template.V2.WebServiceProxy.FileIoServiceProxy">
+            <remarks/>
+        </member>
+        <member name="M:T2100.Template.V2.WebServiceProxy.FileIoServiceProxy.#ctor(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:T2100.Template.V2.WebServiceProxy.FileIoServiceProxy.WebFileIO(System.String,System.String,T2100.Template.V2.WebServiceProxy.argFile[],System.Boolean,System.Boolean,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:T2100.Template.V2.WebServiceProxy.FileIoServiceProxy.BeginWebFileIO(System.String,System.String,T2100.Template.V2.WebServiceProxy.argFile[],System.Boolean,System.Boolean,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:T2100.Template.V2.WebServiceProxy.FileIoServiceProxy.EndWebFileIO(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:T2100.Template.V2.WebServiceProxy.FileIoServiceProxy.CreateDimedImage(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:T2100.Template.V2.WebServiceProxy.FileIoServiceProxy.BeginCreateDimedImage(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:T2100.Template.V2.WebServiceProxy.FileIoServiceProxy.EndCreateDimedImage(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="T:T2100.Template.V2.WebServiceProxy.argFile">
+            <remarks/>
+        </member>
+        <member name="F:T2100.Template.V2.WebServiceProxy.argFile.sFilePath">
+            <remarks/>
+        </member>
+        <member name="F:T2100.Template.V2.WebServiceProxy.argFile.sFileName">
+            <remarks/>
+        </member>
+        <member name="F:T2100.Template.V2.WebServiceProxy.argFile.sToPath">
+            <remarks/>
+        </member>
+        <member name="F:T2100.Template.V2.WebServiceProxy.argFile.sToName">
+            <remarks/>
+        </member>
+        <member name="T:T2100.Template.V2.WebServiceProxy.Err">
+            <remarks/>
+        </member>
+        <member name="F:T2100.Template.V2.WebServiceProxy.Err.ErrIdx">
+            <remarks/>
+        </member>
+        <member name="F:T2100.Template.V2.WebServiceProxy.Err.ErrNo">
+            <remarks/>
+        </member>
+        <member name="F:T2100.Template.V2.WebServiceProxy.Err.ErrMsg">
+            <remarks/>
+        </member>
+        <member name="M:ExcelExportTool.ExcelExport.SendExcelToClient(System.String)">
+            <summary>
+            Only for WebForm
+            </summary>
+            <param name="strExcelFile"></param>
+        </member>
+        <member name="M:ExcelExportTool.ExcelExport.MergeColumnForTitle(System.String,System.Int32)">
+            <summary>
+            合併前幾列作為標題列
+            </summary>
+            <param name="argFilePathName">以ExcelExport轉換的Excel檔全徑名</param>
+            <param name="argMergeRowNum">欲處理幾列</param>
+            <param name="argRowColumnNum">每列的合併欄位數</param>
+        </member>
+        <member name="M:ExcelExportTool.ExcelExport.MergeRowForSeqColumn(System.String,System.Int32,System.Int32[])">
+            <summary>
+            將第一個欄位視為序號行來合併，例如:Row1與Row2都是同一筆資料，
+            則Row1與Row2的第一個欄位需合併
+            </summary>
+            <param name="argFilePathName">以ExcelExport轉換的Excel檔全徑名</param>
+            <param name="argStartIndex">序編號的起始列數</param>
+            <param name="argRowNumOfEverySeq">每一個序列的合併列數</param>
+        </member>
+        <member name="T:TemplateV2.AuthWS.AuthWS">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.#ctor(System.String)">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetArtifactByIPCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetAccountMappedByArtifactCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.UpdateCertMapCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.RemoveCertFromMapCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.LogonByCertCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.ChangeActiveRoleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetActiveRoleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.LogonByPasswordWithLimitsAndOrgNoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.LogonByPasswordWithLimitsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.LogonByPasswordCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.ServerStatusCheckCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.LogoutCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUserBulletinCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUserBulletinNewCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetSpotLightMsgCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUserProgramsCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUserProgramsWithAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.ResetAAsCacheCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.ResetURCacheCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.ResetAllURCacheCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetSOURCE_ORGNOCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetEnvSettingCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUserShortcutCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUserShortcutNewCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUserAddressCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetRoleAddressCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetAllUserAddressCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.ChangePasswordWithOrgNoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.ChangePasswordCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.DownloadUserStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.DownloadUnitStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.DownloadOrgStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.UploadUserStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.UploadUnitStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.UploadOrgStampBoxCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.WinLogonCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetRoleMailCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUserEmailCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.WriteAccessLogCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetMOICAMapAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.QueryMOICACertStatusCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUserInfo2Completed">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.ResetAPPMapCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetAccountNameCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetAccountNameWithOrgNoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUpLevelUnitOfAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.GetUpLevelFirstUnitOfAccountCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.ResetServerDispCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.CheckCertificateValidityCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.AuthWS.AuthWS.UpdateUserEnvSetCompleted">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetArtifactByIP(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetArtifactByIP(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetArtifactByIP(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetArtifactByIPAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetArtifactByIPAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAccountMappedByArtifact(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetAccountMappedByArtifact(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetAccountMappedByArtifact(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAccountMappedByArtifactAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAccountMappedByArtifactAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UpdateCertMap(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginUpdateCertMap(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndUpdateCertMap(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UpdateCertMapAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UpdateCertMapAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.RemoveCertFromMap(System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginRemoveCertFromMap(System.String,System.Byte[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndRemoveCertFromMap(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.RemoveCertFromMapAsync(System.String,System.Byte[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.RemoveCertFromMapAsync(System.String,System.Byte[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByCert(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginLogonByCert(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndLogonByCert(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByCertAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByCertAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ChangeActiveRole(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginChangeActiveRole(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndChangeActiveRole(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ChangeActiveRoleAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ChangeActiveRoleAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetActiveRole(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetActiveRole(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetActiveRole(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetActiveRoleAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetActiveRoleAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByPasswordWithLimitsAndOrgNo(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginLogonByPasswordWithLimitsAndOrgNo(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndLogonByPasswordWithLimitsAndOrgNo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByPasswordWithLimitsAndOrgNoAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByPasswordWithLimitsAndOrgNoAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByPasswordWithLimits(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginLogonByPasswordWithLimits(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndLogonByPasswordWithLimits(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByPasswordWithLimitsAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByPasswordWithLimitsAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByPassword(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginLogonByPassword(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndLogonByPassword(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByPasswordAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogonByPasswordAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ServerStatusCheck">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginServerStatusCheck(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndServerStatusCheck(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ServerStatusCheckAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ServerStatusCheckAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.Logout(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginLogout(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndLogout(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogoutAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.LogoutAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserBulletin(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUserBulletin(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUserBulletin(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserBulletinAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserBulletinAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserBulletinNew(System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUserBulletinNew(System.String,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUserBulletinNew(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserBulletinNewAsync(System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserBulletinNewAsync(System.String,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetSpotLightMsg(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetSpotLightMsg(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetSpotLightMsg(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetSpotLightMsgAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetSpotLightMsgAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserPrograms(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUserPrograms(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUserPrograms(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserProgramsAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserProgramsAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserProgramsWithAccount(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUserProgramsWithAccount(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUserProgramsWithAccount(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserProgramsWithAccountAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserProgramsWithAccountAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetAAsCache">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginResetAAsCache(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndResetAAsCache(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetAAsCacheAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetAAsCacheAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetURCache">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginResetURCache(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndResetURCache(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetURCacheAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetURCacheAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetAllURCache">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginResetAllURCache(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndResetAllURCache(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetAllURCacheAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetAllURCacheAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetSOURCE_ORGNO(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetSOURCE_ORGNO(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetSOURCE_ORGNO(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetSOURCE_ORGNOAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetSOURCE_ORGNOAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetEnvSetting(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetEnvSetting(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetEnvSetting(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetEnvSettingAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetEnvSettingAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserShortcut(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUserShortcut(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUserShortcut(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserShortcutAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserShortcutAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserShortcutNew(System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUserShortcutNew(System.String,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUserShortcutNew(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserShortcutNewAsync(System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserShortcutNewAsync(System.String,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserAddress(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUserAddress(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUserAddress(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserAddressAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserAddressAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetRoleAddress(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetRoleAddress(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetRoleAddress(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetRoleAddressAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetRoleAddressAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAllUserAddress">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetAllUserAddress(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetAllUserAddress(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAllUserAddressAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAllUserAddressAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ChangePasswordWithOrgNo(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginChangePasswordWithOrgNo(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndChangePasswordWithOrgNo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ChangePasswordWithOrgNoAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ChangePasswordWithOrgNoAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ChangePassword(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginChangePassword(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndChangePassword(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ChangePasswordAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ChangePasswordAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.DownloadUserStampBox(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginDownloadUserStampBox(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndDownloadUserStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.DownloadUserStampBoxAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.DownloadUserStampBoxAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.DownloadUnitStampBox(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginDownloadUnitStampBox(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndDownloadUnitStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.DownloadUnitStampBoxAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.DownloadUnitStampBoxAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.DownloadOrgStampBox(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginDownloadOrgStampBox(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndDownloadOrgStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.DownloadOrgStampBoxAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.DownloadOrgStampBoxAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UploadUserStampBox(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginUploadUserStampBox(System.String,System.String,System.String[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndUploadUserStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UploadUserStampBoxAsync(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UploadUserStampBoxAsync(System.String,System.String,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UploadUnitStampBox(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginUploadUnitStampBox(System.String,System.String,System.String[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndUploadUnitStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UploadUnitStampBoxAsync(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UploadUnitStampBoxAsync(System.String,System.String,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UploadOrgStampBox(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginUploadOrgStampBox(System.String,System.String,System.String[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndUploadOrgStampBox(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UploadOrgStampBoxAsync(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UploadOrgStampBoxAsync(System.String,System.String,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.WinLogon(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginWinLogon(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndWinLogon(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.WinLogonAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.WinLogonAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetRoleMail(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetRoleMail(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetRoleMail(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetRoleMailAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetRoleMailAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserEmail(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUserEmail(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUserEmail(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserEmailAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserEmailAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.WriteAccessLog(TemplateV2.AuthWS.AccessCategory,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginWriteAccessLog(TemplateV2.AuthWS.AccessCategory,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndWriteAccessLog(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.WriteAccessLogAsync(TemplateV2.AuthWS.AccessCategory,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.WriteAccessLogAsync(TemplateV2.AuthWS.AccessCategory,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetMOICAMapAccount(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetMOICAMapAccount(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetMOICAMapAccount(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetMOICAMapAccountAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetMOICAMapAccountAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.QueryMOICACertStatus(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginQueryMOICACertStatus(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndQueryMOICACertStatus(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.QueryMOICACertStatusAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.QueryMOICACertStatusAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserInfo2(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUserInfo2(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUserInfo2(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserInfo2Async(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUserInfo2Async(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetAPPMap">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginResetAPPMap(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndResetAPPMap(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetAPPMapAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetAPPMapAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAccountName(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetAccountName(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetAccountName(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAccountNameAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAccountNameAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAccountNameWithOrgNo(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetAccountNameWithOrgNo(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetAccountNameWithOrgNo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAccountNameWithOrgNoAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetAccountNameWithOrgNoAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUpLevelUnitOfAccount(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUpLevelUnitOfAccount(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUpLevelUnitOfAccount(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUpLevelUnitOfAccountAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUpLevelUnitOfAccountAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUpLevelFirstUnitOfAccount(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginGetUpLevelFirstUnitOfAccount(System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndGetUpLevelFirstUnitOfAccount(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUpLevelFirstUnitOfAccountAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.GetUpLevelFirstUnitOfAccountAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetServerDisp">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginResetServerDisp(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndResetServerDisp(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetServerDispAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.ResetServerDispAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.CheckCertificateValidity(System.String,System.Int32,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginCheckCertificateValidity(System.String,System.Int32,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndCheckCertificateValidity(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.CheckCertificateValidityAsync(System.String,System.Int32,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.CheckCertificateValidityAsync(System.String,System.Int32,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UpdateUserEnvSet(System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.BeginUpdateUserEnvSet(System.String,System.String,System.String,System.Boolean,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.EndUpdateUserEnvSet(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UpdateUserEnvSetAsync(System.String,System.String,System.String,System.Boolean)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.UpdateUserEnvSetAsync(System.String,System.String,System.String,System.Boolean,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.AuthWS.AuthWS.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UtyRtnBulletin">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnBulletin.m_bSuccess">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnBulletin.m_bRedirect">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnBulletin.m_strErrPageQueryStr">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnBulletin.m_strErrSource">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnBulletin.m_strErrMsg">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnBulletin.m_strErrStack">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnBulletin.m_strMsg">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnBulletin.Rtn">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnBulletin.nTotal">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.BulletinInfo">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.BulletinInfo.PublishDate">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.BulletinInfo.Path">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.BulletinInfo.Subject">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.BulletinInfo.AttachFile">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.RetMsg">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.RetMsg.m_bSuccess">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.RetMsg.m_strErrMsg">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.RetMsg.m_enumMsgStatus">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.EnumMsgStatus">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.EnumMsgStatus.DocStatusRead">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.EnumMsgStatus.DocStatusNone">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.EnumMsgStatus.DocStatusOffline">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ShortcutInfo">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.ShortcutInfo.ShortcutLink">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UtyRtnShortcut">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnShortcut.m_bSuccess">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnShortcut.m_bRedirect">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnShortcut.m_strErrPageQueryStr">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnShortcut.m_strErrSource">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnShortcut.m_strErrMsg">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnShortcut.m_strErrStack">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnShortcut.m_strMsg">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnShortcut.Rtn">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UtyRtnShortcut.nTotal">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.AccessCategory">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.LogonByPassword">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.LogonByCert">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.WrongPassword">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.DisableAccount">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.LockAccount">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.WrongSetting">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.InitEnveFail">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.VerifySigFail">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.BindFail">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.Logout">
+            <remarks/>
+        </member>
+        <member name="F:TemplateV2.AuthWS.AccessCategory.AccessTarget">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetArtifactByIPCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetArtifactByIPCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetArtifactByIPCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetAccountMappedByArtifactCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetAccountMappedByArtifactCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetAccountMappedByArtifactCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UpdateCertMapCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UpdateCertMapCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UpdateCertMapCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.RemoveCertFromMapCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.RemoveCertFromMapCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.RemoveCertFromMapCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogonByCertCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogonByCertCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.LogonByCertCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ChangeActiveRoleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ChangeActiveRoleCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.ChangeActiveRoleCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetActiveRoleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetActiveRoleCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetActiveRoleCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogonByPasswordWithLimitsAndOrgNoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogonByPasswordWithLimitsAndOrgNoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.LogonByPasswordWithLimitsAndOrgNoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogonByPasswordWithLimitsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogonByPasswordWithLimitsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.LogonByPasswordWithLimitsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogonByPasswordCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogonByPasswordCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.LogonByPasswordCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ServerStatusCheckCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ServerStatusCheckCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.ServerStatusCheckCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogoutCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.LogoutCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.LogoutCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserBulletinCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserBulletinCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUserBulletinCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserBulletinNewCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserBulletinNewCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUserBulletinNewCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetSpotLightMsgCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetSpotLightMsgCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetSpotLightMsgCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserProgramsCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserProgramsCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUserProgramsCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserProgramsWithAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserProgramsWithAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUserProgramsWithAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ResetAAsCacheCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ResetAAsCacheCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.ResetAAsCacheCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ResetURCacheCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ResetURCacheCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.ResetURCacheCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ResetAllURCacheCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ResetAllURCacheCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.ResetAllURCacheCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetSOURCE_ORGNOCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetSOURCE_ORGNOCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetSOURCE_ORGNOCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetEnvSettingCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetEnvSettingCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetEnvSettingCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserShortcutCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserShortcutCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUserShortcutCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserShortcutNewCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserShortcutNewCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUserShortcutNewCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserAddressCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserAddressCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUserAddressCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetRoleAddressCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetRoleAddressCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetRoleAddressCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetAllUserAddressCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetAllUserAddressCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetAllUserAddressCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ChangePasswordWithOrgNoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ChangePasswordWithOrgNoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.ChangePasswordWithOrgNoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ChangePasswordCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ChangePasswordCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.ChangePasswordCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.DownloadUserStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.DownloadUserStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.DownloadUserStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.DownloadUnitStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.DownloadUnitStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.DownloadUnitStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.DownloadOrgStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.DownloadOrgStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.DownloadOrgStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UploadUserStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UploadUserStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UploadUserStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UploadUnitStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UploadUnitStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UploadUnitStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UploadOrgStampBoxCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UploadOrgStampBoxCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UploadOrgStampBoxCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.WinLogonCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.WinLogonCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.WinLogonCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetRoleMailCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetRoleMailCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetRoleMailCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserEmailCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserEmailCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUserEmailCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.WriteAccessLogCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.WriteAccessLogCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.WriteAccessLogCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetMOICAMapAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetMOICAMapAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetMOICAMapAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.QueryMOICACertStatusCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.QueryMOICACertStatusCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.QueryMOICACertStatusCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserInfo2CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUserInfo2CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUserInfo2CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ResetAPPMapCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetAccountNameCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetAccountNameCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetAccountNameCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetAccountNameWithOrgNoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetAccountNameWithOrgNoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetAccountNameWithOrgNoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUpLevelUnitOfAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUpLevelUnitOfAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUpLevelUnitOfAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUpLevelFirstUnitOfAccountCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.GetUpLevelFirstUnitOfAccountCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.GetUpLevelFirstUnitOfAccountCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.ResetServerDispCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.CheckCertificateValidityCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.CheckCertificateValidityCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.CheckCertificateValidityCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UpdateUserEnvSetCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.AuthWS.UpdateUserEnvSetCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.AuthWS.UpdateUserEnvSetCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.T2100FileIoService">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.WebFileIOCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.WebFileIO2Completed">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.GetPartialSizeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.WebFileIoCopyFilesForCowrokCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.MergeFilesForCoworkDocInfoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.GetWebFileDirPathCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.QueryFPTStateCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.PDFConvertCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.QueryStateCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.ImgConvertCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.ODFConvertCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.ClearPrintQeueCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.KillAgentConsoleCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.ImgConvertTestCompleted">
+            <remarks/>
+        </member>
+        <member name="E:TemplateV2.ImgConvert.T2100FileIoService.SetQueryStateIdleCompleted">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.WebFileIO(System.String,System.String,TemplateV2.ImgConvert.argFile[],System.Boolean,System.Boolean,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginWebFileIO(System.String,System.String,TemplateV2.ImgConvert.argFile[],System.Boolean,System.Boolean,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndWebFileIO(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.WebFileIOAsync(System.String,System.String,TemplateV2.ImgConvert.argFile[],System.Boolean,System.Boolean,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.WebFileIOAsync(System.String,System.String,TemplateV2.ImgConvert.argFile[],System.Boolean,System.Boolean,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.WebFileIO2(System.String,System.String,TemplateV2.ImgConvert.argFile[],System.Boolean,System.Boolean,System.String,System.Boolean,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginWebFileIO2(System.String,System.String,TemplateV2.ImgConvert.argFile[],System.Boolean,System.Boolean,System.String,System.Boolean,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndWebFileIO2(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.WebFileIO2Async(System.String,System.String,TemplateV2.ImgConvert.argFile[],System.Boolean,System.Boolean,System.String,System.Boolean,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.WebFileIO2Async(System.String,System.String,TemplateV2.ImgConvert.argFile[],System.Boolean,System.Boolean,System.String,System.Boolean,System.Int32,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.GetPartialSize">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginGetPartialSize(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndGetPartialSize(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.GetPartialSizeAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.GetPartialSizeAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.WebFileIoCopyFilesForCowrok(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginWebFileIoCopyFilesForCowrok(System.String,System.String,System.String[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndWebFileIoCopyFilesForCowrok(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.WebFileIoCopyFilesForCowrokAsync(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.WebFileIoCopyFilesForCowrokAsync(System.String,System.String,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.MergeFilesForCoworkDocInfo(System.String,System.String,System.String,TemplateV2.ImgConvert.argCoworkFlowData[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginMergeFilesForCoworkDocInfo(System.String,System.String,System.String,TemplateV2.ImgConvert.argCoworkFlowData[],System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndMergeFilesForCoworkDocInfo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.MergeFilesForCoworkDocInfoAsync(System.String,System.String,System.String,TemplateV2.ImgConvert.argCoworkFlowData[])">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.MergeFilesForCoworkDocInfoAsync(System.String,System.String,System.String,TemplateV2.ImgConvert.argCoworkFlowData[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.GetWebFileDirPath(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginGetWebFileDirPath(System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndGetWebFileDirPath(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.GetWebFileDirPathAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.GetWebFileDirPathAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.QueryFPTState">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginQueryFPTState(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndQueryFPTState(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.QueryFPTStateAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.QueryFPTStateAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.PDFConvert(System.String,System.String[],System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginPDFConvert(System.String,System.String[],System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndPDFConvert(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.PDFConvertAsync(System.String,System.String[],System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.PDFConvertAsync(System.String,System.String[],System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.QueryState">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginQueryState(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndQueryState(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.QueryStateAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.QueryStateAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ImgConvert(System.String,System.Boolean,System.String,System.String,System.Boolean,System.String,System.Boolean,System.String,System.String,System.Boolean,System.String,System.Int32,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginImgConvert(System.String,System.Boolean,System.String,System.String,System.Boolean,System.String,System.Boolean,System.String,System.String,System.Boolean,System.String,System.Int32,System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndImgConvert(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ImgConvertAsync(System.String,System.Boolean,System.String,System.String,System.Boolean,System.String,System.Boolean,System.String,System.String,System.Boolean,System.String,System.Int32,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ImgConvertAsync(System.String,System.Boolean,System.String,System.String,System.Boolean,System.String,System.Boolean,System.String,System.String,System.Boolean,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ODFConvert(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginODFConvert(System.String,System.String,System.String,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndODFConvert(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ODFConvertAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ODFConvertAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ClearPrintQeue">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginClearPrintQeue(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndClearPrintQeue(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ClearPrintQeueAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ClearPrintQeueAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.KillAgentConsole">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginKillAgentConsole(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndKillAgentConsole(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.KillAgentConsoleAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.KillAgentConsoleAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ImgConvertTest">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginImgConvertTest(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndImgConvertTest(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ImgConvertTestAsync">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.ImgConvertTestAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.SetQueryStateIdle(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.BeginSetQueryStateIdle(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.EndSetQueryStateIdle(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.SetQueryStateIdleAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.SetQueryStateIdleAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:TemplateV2.ImgConvert.T2100FileIoService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.argFile">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.argFile.FilePath">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.argFile.FileName">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.argFile.ToPath">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.argFile.ToName">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.RtnObj">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.RtnObj.rtnErr">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.RtnObj.FileList">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.RtnObj.FileSizeList">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.Err">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.Err.ErrIdx">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.Err.ErrNo">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.Err.ErrMsg">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.argCoworkFlowData">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.argCoworkFlowData.PathName">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.argCoworkFlowData.MsgIdList">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.argCoworkFlowData.PreviousMsgId">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.argCoworkFlowData.Thread">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.WebFileIOCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.WebFileIOCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.WebFileIOCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.WebFileIO2CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.WebFileIO2CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.WebFileIO2CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.GetPartialSizeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.GetPartialSizeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.GetPartialSizeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.WebFileIoCopyFilesForCowrokCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.WebFileIoCopyFilesForCowrokCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.WebFileIoCopyFilesForCowrokCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.MergeFilesForCoworkDocInfoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.MergeFilesForCoworkDocInfoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.MergeFilesForCoworkDocInfoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.GetWebFileDirPathCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.GetWebFileDirPathCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.GetWebFileDirPathCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.QueryFPTStateCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.QueryFPTStateCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.QueryFPTStateCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.PDFConvertCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.PDFConvertCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.PDFConvertCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.QueryStateCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.QueryStateCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.QueryStateCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.ImgConvertCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.ImgConvertCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.ImgConvertCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.ODFConvertCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.ODFConvertCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.ODFConvertCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.ClearPrintQeueCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.KillAgentConsoleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.ImgConvertTestCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.ImgConvertTestCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.ImgConvertTestCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.SetQueryStateIdleCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:TemplateV2.ImgConvert.SetQueryStateIdleCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:TemplateV2.ImgConvert.SetQueryStateIdleCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:SYS">
+            <summary>
+            log檔內容組成及寫入檔案
+            </summary>
+        </member>
+        <member name="M:SYS.Get_AutoNo(System.String,System.String,System.String,System.Int32,System.Int32,T2100.DB.DBCommand)">
+            <summary>
+            取得系統控制流水號
+            </summary>
+            <param name="argORG_NO">機關代碼</param>
+            <param name="argUSE_TYPE">號碼別,不可空白</param>
+            <param name="argUSE_YEAR">使用年度,可空白</param>
+            <param name="argNO_LEN">流水碼長度, 不可空白</param>
+            <param name="argADD_ZERO">不足碼是否前置零, 1:是, 0:否, 不可空白</param>
+            <param name="argCommand"></param>
+            <returns>系統控制流水號，錯誤傳回空字串</returns>
+        </member>
+        <member name="M:SYS.Get_AutoNo1(System.String,System.String,System.String,System.Int32,System.Int32,T2100.DB.DBCommand)">
+            <summary>
+            取得系統控制流水號 Get_AutoNo1(檢驗系統用)
+            </summary>
+            <param name="argORG_NO">機關代碼</param>
+            <param name="argUSE_TYPE">號碼別,不可空白</param>
+            <param name="argUSE_YEAR">使用年度,可空白</param>
+            <param name="argNO_LEN">流水碼長度, 不可空白</param>
+            <param name="argADD_ZERO">不足碼是否前置零, 1:是, 0:否, 不可空白</param>
+            <param name="argCommand"></param>
+            <returns>系統控制流水號，錯誤傳回空字串</returns>
+        </member>
+        <member name="M:SYS.Get_WorkDate(System.String,System.Int32,T2100.DB.DBConnection,T2100.DB.DBCommand,System.String,System.String[])">
+            <summary>
+            計算加減後的日期
+            </summary>
+            <param name="argSDATE">啟日期</param>
+            <param name="argDAY">欲加減的日期</param>
+            <param name="Conn">Connection物件</param>
+            <param name="CommandTemp">Command物件</param>
+            <param name="argType">日期種類:1.含假日2.不含假日</param>
+            <param name="argVal">此參數可傳可不傳，第一個為機關代碼</param>
+        </member>
+        <member name="M:SYS.Get_WorkDays(System.String,System.String,T2100.DB.DBConnection,T2100.DB.DBCommand,System.String,System.String[])">
+            <summary>
+            計算 啟迄日期 相差的天數
+            </summary>
+            <param name="argSDATE">啟日期</param>
+            <param name="argEDATE">迄日期</param>
+            <param name="Conn">Connection物件</param>
+            <param name="CommandTemp">Command物件</param>
+            <param name="argType">日期種類:1.含假日2.不含假日</param>
+            <param name="argVal">此參數可傳可不傳，第一個為機關代碼</param>	
+        </member>
+        <member name="M:SYS.uf_InitSEC_NO(System.Web.UI.WebControls.DropDownList,System.Boolean)">
+            <summary>
+            機密等級下拉選單初始化 ( 例： SYS.uf_InitSEC_NO(ddSecretNo,true);)
+            </summary>
+            <param name="argFillObject">物件ID</param>
+            <param name="argAddFirstEmptyRow">是否要在第一筆加一筆空白(true/false)</param>
+        </member>
+        <member name="M:SYS.CreateUnvFile(System.String,System.String,System.String,System.String[],System.String[][],T2100.DB.DBConnection,System.String,System.String,System.String,System.Data.DataTable)">
+            <summary>
+            For Oracle AKI801,AKI802
+            </summary>
+        </member>
+        <member name="M:SYS.CreateUnvFile(System.String,System.String,System.String,System.String[],System.String[][],T2100.DB.DBConnection,System.String,System.String,System.String)">
+            <summary>
+            UNVFILE 調閱電子檔, 供檢索程式AKI801,AKI802使用
+            </summary>
+            <param name="argFROM">invoke本函式的網頁程式編號</param>
+            <param name="argSEQ_NO">單文調閱時, 傳入調閱公文在Temp Table的序號</param>
+            <param name="argSESSIONID">SessionID</param>
+            <param name="argUSERINFO">Session["USERINFO"]</param>
+            <param name="argEMP_PRIV">Session["EMP_PRIV"]</param>
+            <param name="argCONNECT">建立Temp Table的Connection物件</param>
+            <param name="argCOOKIE">多筆調閱時, 傳入紀錄畫面CheckBox是否被勾選的隱藏欄位VALUE</param>
+            <param name="argCHKPRIV">是否檢查調閱權限,0:否 1:是</param>
+            <param name="argFILEPAGE">(本參數已沒有使用)</param>
+            <returns>程式執行正常時,回傳UNV FILE 的URL, 程式執行有誤時,回傳錯誤訊息</returns>
+        </member>
+        <member name="M:SYS.CreateUnvFileV3(System.String,System.String,System.String,System.String[],System.String[][],T2100.DB.DBConnection,System.String,System.String,System.String)">
+            <summary>
+            UNVFILE 調閱電子檔, 供檢索程式EAI301,EAI302,EAI303使用
+            </summary>
+            <param name="argFROM">invoke本函式的網頁程式編號</param>
+            <param name="argSEQ_NO">單文調閱時, 傳入調閱公文在Temp Table的序號</param>
+            <param name="argSESSIONID">SessionID</param>
+            <param name="argUSERINFO">Session["USERINFO"]</param>
+            <param name="argEMP_PRIV">Session["EMP_PRIV"]</param>
+            <param name="argCONNECT">建立Temp Table的Connection物件</param>
+            <param name="argCOOKIE">多筆調閱時, 傳入紀錄畫面CheckBox是否被勾選的隱藏欄位VALUE</param>
+            <param name="argCHKPRIV">是否檢查調閱權限,0:否 1:是</param>
+            <param name="argFILEPAGE">(本參數已沒有使用)</param>
+            <returns>程式執行正常時,回傳UNV FILE 的URL, 程式執行有誤時,回傳錯誤訊息</returns>
+        </member>
+        <member name="M:SYS.CreateUnvFile(System.String,System.String[],T2100.DB.DBConnection,System.Data.DataTable)">
+            <summary>
+            建立 UNVFILE 調閱電子檔, 調閱時不檢查權限, 供非檢索程式調檔使用
+            </summary>
+            <param name="argSessionId">SessionID</param>
+            <param name="argUserInfo">Session["USERINFO"]</param>
+            <param name="argConnection">DBConnection物件</param>
+            <param name="argDt">調閱公文清單, DataTable 必須有下列3個欄位: DOC_NO, FROM_SUBJECT, FILE_CLS</param>
+            <returns>程式執行正常時,回傳UNV FILE 的URL, 程式執行有誤時,回傳錯誤訊息</returns>
+        </member>
+        <member name="M:SYS.OutPutRpt(System.Web.UI.Page,CrystalDecisions.CrystalReports.Engine.ReportDocument,System.Data.DataSet,CrystalDecisions.Shared.ExportFormatType,System.String,System.Int32)">
+            <summary>
+            產生報表
+            </summary>
+            <param name="argPage">Page物件</param>
+            <param name="cr">CrystalReport物件</param>
+            <param name="ds">存放報表資料的 DataSet</param>
+            <param name="argFormat">報表檔案格式</param>
+            <param name="argWinName">開啟報表的視窗名稱</param>
+            <param name="argOpenState">0 = 預覽列印(依二代現行邏輯); 1 = 預覽列印(依CrystalReport標準格式)</param>
+            <returns>ErrorClass</returns>
+        </member>
+        <member name="M:SYS.OutPutRptFile(System.String,System.Web.UI.Page,System.String,System.Int32)">
+            <summary>
+            從既有檔案產生報表(PDF,DOC)
+            </summary>
+            <param name="argRptFilePath">報表檔案完整路徑</param>
+            <param name="argPage">Page物件</param>
+            <param name="argWinName">開啟報表的視窗名稱</param>
+            <param name="argOpenState">0 = 預覽列印; 1 = 列印</param>
+        </member>
+        <member name="M:SYS.SaveDimeToHd(Microsoft.Web.Services.Dime.DimeAttachment,System.String,System.String,System.Boolean)">
+            <summary>
+            將附件檔存至硬碟中
+            </summary>
+            <param name="argDime">單一附件物件</param>
+            <param name="argHdDir">欲存入之目錄位置</param>
+            <param name="argHdFile">欲存入之檔案名稱</param>
+            <param name="argOverWrite">存檔時是否覆蓋重複的檔案</param>
+        </member>
+        <member name="M:SYS.GetDBType">
+            <summary>
+            取得Web.Config中DB_TYPE的值(轉大寫)
+            </summary>
+        </member>
+        <member name="M:SYS.GetDocNoOnlyNum(System.String)">
+            <summary>
+            取得純數字的文號
+            </summary>
+        </member>
+        <member name="M:SYS.uf_InitLBTDocWord(System.Web.UI.WebControls.DropDownList@,System.String)">
+            <summary>
+            初始化字軌下拉式選單
+            </summary>
+            <param name="argFillObject">待處理之下拉式選單</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>字軌清單(無第一筆空白)</returns>
+        </member>
+        <member name="M:SYS.uf_LBTGetDisplayClsNo(System.String)">
+            <summary>
+            取得顯示用之分類號
+            </summary>
+            <param name="argClsKey">分類號鍵值</param>
+            <returns>土銀老家伙想看的分類號</returns>
+        </member>
+        <member name="M:SYS.uf_LBTGetDocNo(System.String,System.String)">
+            <summary>
+            土銀專用，取得查詢指令用之DOC_NO
+            </summary>
+            <param name="argDocNo">傳入文號或總號</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>程式執行邏輯所用之DOC_NO</returns>
+        </member>
+        <member name="M:SYS.uf_LBTDocNoAddWord(System.String,System.String)">
+            <summary>
+            土銀專用，文號補上字軌函式
+            </summary>
+            <param name="argDocNo">傳入文號</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>應顯示之字軌+文號</returns>
+        </member>
+        <member name="M:SYS.uf_LBTDocNoConvert(System.String,System.String)">
+            <summary>
+            土銀專用，文號轉換函式
+            </summary>
+            <param name="argDocNo">傳入文號或總號</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>應顯示之字軌+文號</returns>
+        </member>
+        <member name="M:SYS.uf_LBTDocNoConvert(System.Data.DataTable@,System.String,System.String)">
+            <summary>
+            土銀專用，文號轉換函式(整批)
+            </summary>
+            <param name="argDt">內含文號欄位之資料表</param>
+            <param name="argColumnName">文號欄位名稱</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>轉換後之資料表</returns>
+        </member>
+        <member name="M:SYS.SendMailPross(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            寄信共用函式
+            </summary>
+            <param name="argSourceNo">使用者機關代碼</param>
+            <param name="argMailServer">Mail主機</param>
+            <param name="argMailFrom">寄信人</param>
+            <param name="argMailSubject">主旨</param>
+            <param name="argMailTo">寄信對象(多對象時用分號區隔EX：XXX@GMAIL.COM,AAA@GMAIL.COM)</param>
+            <param name="argMailBody">信件內容</param>
+            <param name="araIsPassErrMail">是否略過不合法MAIL繼續寄信</param>
+            <param name="argArrMailAtt">附件SERVER端完整路徑</param>
+            <returns>錯誤時回傳錯誤訊息，正常時空白</returns>
+        </member>
+        <member name="M:SYS.SendMailPross(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            寄信共用函式
+            </summary>
+            <param name="argSourceNo">使用者機關代碼</param>
+            <param name="argMailServer">Mail主機</param>
+            <param name="argMailFrom">寄信人</param>
+            <param name="argMailSubject">主旨</param>
+            <param name="argMailTo">寄信對象(多對象時用分號區隔EX：XXX@GMAIL.COM,AAA@GMAIL.COM)</param>
+            <param name="argMailBody">信件內容</param>
+            <param name="araIsPassErrMail">是否略過不合法MAIL繼續寄信</param>
+            <param name="argArrMailAtt">附件SERVER端完整路徑</param>
+            <returns>錯誤時回傳錯誤訊息，正常時空白</returns>
+        </member>
+        <member name="T:T2100WebFileIOEx.CWebFileIOEx">
+            <summary>
+            Summary description for WebFileIOEx.
+            </summary>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileDownload(System.String,System.String[],System.String[],System.String[])">
+            <summary>
+            經由WebFileIO從FileServer下載檔案(複數來源 -> 複數目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">下載檔案檔名</param>
+            <param name="argServerPath">來源Server檔案路徑(複數來源)</param>
+            <param name="argClientPath">目的Client檔案路徑(複數目的)</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileDownload(System.String,System.String[],System.String[],System.String)">
+            <summary>
+            經由WebFileIO從FileServer下載檔案(複數來源 -> 單一目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">下載檔案檔名</param>
+            <param name="argServerPath">來源Server檔案路徑(複數來源)</param>
+            <param name="argClientPath">目的Client檔案路徑(單一目的)</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileDownload(System.String,System.String[],System.String,System.String[])">
+            <summary>
+            經由WebFileIO從FileServer下載檔案(單一來源 -> 複數目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">下載檔案檔名</param>
+            <param name="argServerPath">來源Server檔案路徑(單一來源)</param>
+            <param name="argClientPath">目的Client檔案路徑(複數目的)</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileDownload(System.String,System.String[],System.String,System.String)">
+            <summary>
+            經由WebFileIO從FileServer下載檔案(單一來源 -> 單一目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">下載檔案檔名</param>
+            <param name="argServerPath">來源Server檔案路徑(單一來源)</param>
+            <param name="argClientPath">目的Client檔案路徑(單一目的)</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileUpload(System.String,System.String[],System.String[],System.String[],System.Boolean)">
+            <summary>
+            經由WebFileIO上傳檔案至FileServer(複數來源 -> 複數目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">上傳檔案檔名</param>
+            <param name="argServerPath">目的Server檔案路徑(複數目的)</param>
+            <param name="argClientPath">來源Client檔案路徑(複數來源)</param>
+            <param name="argOverWrite">是否覆蓋Server上的檔案</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileUpload(System.String,System.String[],System.String,System.String[],System.Boolean)">
+            <summary>
+            經由WebFileIO上傳檔案至FileServer(複數來源 -> 單一目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">上傳檔案檔名</param>
+            <param name="argServerPath">目的Server檔案路徑(單一目的)</param>
+            <param name="argClientPath">來源Client檔案路徑(複數來源)</param>
+            <param name="argOverWrite">是否覆蓋Server上的檔案</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileUpload(System.String,System.String[],System.String[],System.String,System.Boolean)">
+            <summary>
+            經由WebFileIO上傳檔案至FileServer(單一來源 -> 複數目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">上傳檔案檔名</param>
+            <param name="argServerPath">目的Server檔案路徑(複數目的)</param>
+            <param name="argClientPath">來源Client檔案路徑(單一來源)</param>
+            <param name="argOverWrite">是否覆蓋Server上的檔案</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileUpload(System.String,System.String[],System.String,System.String,System.Boolean)">
+            <summary>
+            經由WebFileIO上傳檔案至FileServer(單一來源 -> 單一目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">上傳檔案檔名</param>
+            <param name="argServerPath">目的Server檔案路徑(單一目的)</param>
+            <param name="argClientPath">來源Client檔案路徑(單一來源)</param>
+            <param name="argOverWrite">是否覆蓋Server上的檔案</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileUpload(System.String,System.String[],System.IO.Stream[],System.String[],System.Boolean)">
+            <summary>
+            經由WebFileIO上傳資料流至FileServer生成檔案(複數來源 -> 複數目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">上傳檔案檔名</param>
+            <param name="argFileStreams">來源Client資料流(複數來源)</param>
+            <param name="argServerPath">目的Server檔案路徑(複數目的)</param>
+            <param name="argOverWrite">是否覆蓋Server上的檔案</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebFileDelete(System.String,System.String[],System.String[])">
+            <summary>
+            經由WebFileIO刪除FileServer檔案(複數目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argFileNames">刪除檔案檔名</param>
+            <param name="argServerPath">刪除Server檔案路徑(複數目的)</param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100WebFileIOEx.CWebFileIOEx.WebDirectoryDelete(System.String,System.String[])">
+            <summary>
+            經由WebFileIO刪除FileServer目錄(複數目的)
+            </summary>
+            <param name="argWebService">使用之WebFileIOService</param>
+            <param name="argServerDirectories">刪除Server目錄路徑(複數目的)</param>
+            <returns></returns>
+        </member>
+        <member name="T:T2100WebFileIOEx.WebIOFileCollection">
+            <summary>
+            紀錄WebFileIo檔案資訊之FileCollection
+            </summary>
+        </member>
+        <member name="T:T2100ZipClass.CZipClass">
+            <summary>
+            Summary description for ZipClass.
+            </summary>
+        </member>
+        <member name="M:T2100ZipClass.CZipClass.CompressDirectory(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            壓縮指定目錄
+            </summary>
+            <param name="argZipFileName">zip檔全徑名</param>
+            <param name="argFolder">欲壓縮的目錄路徑</param>
+            <param name="argRecursive">子目錄是否一併壓縮</param>
+            <param name="argIncludeRoot">壓縮時，是否包含根目錄(即argFolder所指的目錄)</param>
+        </member>
+        <member name="M:T2100ZipClass.CZipClass.CompressFiles(System.String,System.String[])">
+            <summary>
+            壓縮指定檔案
+            </summary>
+            <param name="argZipFileName">zip檔全徑名</param>
+            <param name="argFiles">欲壓縮的檔案全徑名</param>
+        </member>
+    </members>
+</doc>

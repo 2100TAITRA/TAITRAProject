@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AccountSyncToCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argMode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSex" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPosition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCardId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEmpNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOfficeTel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argHomeTel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAddr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWeb" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountSyncToCustomerResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AccSyncFromCustomer">
+        <s:complexType />
+      </s:element>
+      <s:element name="AccSyncFromCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AccSyncFromCustomerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AccountSyncToCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountSyncToCustomer" />
+  </wsdl:message>
+  <wsdl:message name="AccountSyncToCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountSyncToCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccSyncFromCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:AccSyncFromCustomer" />
+  </wsdl:message>
+  <wsdl:message name="AccSyncFromCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:AccSyncFromCustomerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CustomizeWSSoap">
+    <wsdl:operation name="AccountSyncToCustomer">
+      <wsdl:input message="tns:AccountSyncToCustomerSoapIn" />
+      <wsdl:output message="tns:AccountSyncToCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccSyncFromCustomer">
+      <wsdl:input message="tns:AccSyncFromCustomerSoapIn" />
+      <wsdl:output message="tns:AccSyncFromCustomerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomizeWSSoap" type="tns:CustomizeWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="AccountSyncToCustomer">
+      <soap:operation soapAction="http://tempuri.org/AccountSyncToCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccSyncFromCustomer">
+      <soap:operation soapAction="http://tempuri.org/AccSyncFromCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomizeWS">
+    <wsdl:port name="CustomizeWSSoap" binding="tns:CustomizeWSSoap">
+      <soap:address location="http://localhost/customize/customizews.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,134 @@
+﻿<script language="javascript">
+
+element.attachEvent("onmouseover",fnOnMouseOver);
+element.attachEvent("onmouseout",fnOnMouseOut);
+
+//----------------------------------------------------------
+//
+//  Function:  fnOnMouseOver()
+//
+//----------------------------------------------------------
+
+function fnOnMouseOver()
+{
+	if(element.document.all["lbToolTip"] == null)
+		return;
+	var Msg = "";
+	if(element.value != null)
+		Msg = element.value;
+	else
+	{
+		Msg = element.innerHTML;
+	}
+	if(Msg == "")
+		return;
+	element.style.cursor = "hand";
+	ShowPopUp(element.document.all["lbToolTip"],Msg);
+}
+
+//----------------------------------------------------------
+//
+//  Function:  fnOnMouseOut()
+//
+//----------------------------------------------------------
+
+function fnOnMouseOut()
+{
+	if(element.document.all["lbToolTip"] == null)
+		return;
+	element.style.cursor = "auto";
+	element.document.all["lbToolTip"].style.display = "none";
+}
+
+
+function ShowPopUp(Obj,argMessage)
+{
+	Obj.innerHTML = ReplaceSpecialChar(argMessage);
+	Obj.style.display = "";
+	Obj.style.width = parseInt(element.style.width) - 20;
+	Obj.style.pisition = "absolute";
+	var arrPosition = GetElementScreenPos(element);
+	if((arrPosition[0] + parseInt(element.offsetHeight)) >  parseInt(screen.height))
+		Obj.style.top = arrPosition[0] - (parseInt(element.offsetHeight) + 16);
+	else
+		Obj.style.top = arrPosition[0] + parseInt(element.offsetHeight) + 8;
+	Obj.style.left = arrPosition[1] + 20;
+}
+
+function GetElementScreenPos()
+{
+	var HasDiv = false;
+	var ElementScreenPos = new Array();
+	ElementScreenPos[0] = 0;
+	ElementScreenPos[1] = 0;
+	var ElementPos = GetObjPosition(element);
+	pScrollTop = 0;
+	pScrollLeft = 0;
+	var Obj = element;
+	while((Obj.tagName.toUpperCase() != "BODY" && Obj != null))
+	{
+		if(Obj.tagName.toUpperCase() == "DIV")
+		{
+			if(Obj.style.overflow != "")
+			{
+				HasDiv = true;
+				pScrollTop = parseInt(Obj.scrollTop);
+				pScrollLeft = parseInt(Obj.scrollLeft);
+				break;
+			}
+		}
+		if(Obj.offsetParent != null)
+			Obj = Obj.offsetParent;
+		else
+			break;
+	}
+	
+	if(HasDiv)
+	{
+		ElementScreenPos[0] = ElementPos[0] - pScrollTop;
+		ElementScreenPos[1] = ElementPos[1] - pScrollLeft;
+	}
+	else
+	{
+		ElementScreenPos[0] = ElementPos[0];
+		ElementScreenPos[1] = ElementPos[1];
+	}
+	
+	return ElementScreenPos;	
+}
+
+function GetObjPosition(Obj)
+{
+	var arrPosition = new Array();
+	arrPosition[0] = 0;	// Top
+	arrPosition[1] = 0;	// Left
+	
+	if(Obj.style.position.toLowerCase() == "absolute")
+	{
+		arrPosition[0] = parseInt(Obj.style.top);
+		arrPosition[1] = parseInt(Obj.style.left);
+	}
+	else if(Obj.tagName.toUpperCase() == "BODY" || Obj.offsetParent ==null)
+	{
+		arrPosition[0] = parseInt(Obj.offsetTop);
+		arrPosition[1] = parseInt(Obj.offsetLeft);
+	}
+	else
+	{
+		var arrParentPosition = GetObjPosition(Obj.offsetParent);
+		arrPosition[0] = arrParentPosition[0] + parseInt(Obj.offsetTop);
+		arrPosition[1] = arrParentPosition[1] + parseInt(Obj.offsetLeft);
+	}
+	return arrPosition;	
+}
+
+function ReplaceSpecialChar(inpString)
+{
+	var outString = inpString;
+	while(outString.indexOf("\n")!=-1)
+	{
+		outString = outString.replace("\n","<br>");
+	}	
+	return outString;
+}
+</script>

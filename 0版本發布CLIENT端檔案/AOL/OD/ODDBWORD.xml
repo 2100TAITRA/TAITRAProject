@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="big5"?>
+<root>
+	<item>
+		<value>001</value>
+		<text>請以傳真函至 </text>
+	</item>
+	<item>
+		<value>002</value>
+		<text>請以電話聯絡 </text>
+	</item>
+	<item>
+		<value>003</value>
+		<text>請在上班時間通知 </text>
+	</item>
+</root>

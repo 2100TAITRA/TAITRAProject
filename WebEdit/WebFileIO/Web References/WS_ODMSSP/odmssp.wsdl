@@ -1,0 +1,3543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.2100t.com.tw/webservices/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.2100t.com.tw/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Message Store WebService</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.2100t.com.tw/webservices/">
+      <s:element name="ProcDraftToMain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDraftMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argProxyAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcDraftToMainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcDraftToMainResult" type="tns:DraftToMainObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DraftToMainObj">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RtnObject">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="sMsgId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sWebService" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sSrvNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sStoragePath" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="sSubDir" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RtnObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strRetStr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_ErrCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_flowItem" type="tns:ArrayOfFlowItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFlowItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FlowItem" nillable="true" type="tns:FlowItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FlowItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strOWN_USER_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strOWN_USER_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strOWN_OU_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strOWN_OU_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strOWN_ROLE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strOWN_ROLE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCREATE_BY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSEND_BY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSEND_TIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strADDBY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strRADIO_SELECTED_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSIGN_F" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTX_NAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendTimeOutNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendTimeOutNotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendTimeOutNotifyResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetMsg">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strRetStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_docToDoList">
+            <s:complexType mixed="true">
+              <s:sequence>
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="m_CheckDataErr" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastUpdateProg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastUpdateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AlertWaitResign" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDocFlowTarget">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argChargeUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocFlowTargetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocFlowTargetResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EventNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argData" type="tns:EventNotifyData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EventNotifyData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="m_strOrgCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strUnitCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strRoleCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strUserCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSendEmail" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_EmailSubject" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EventNotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EventNotifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fnTestMsgReply">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argDraft" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="argSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAddr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fnTestMsgReplyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="BulletinNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argData" type="tns:BulletinNotifyData" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BulletinNotifyData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="m_strContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strUserCodeArr" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_enumTargetType" type="tns:EnumTargetType" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EnumTargetType">
+        <s:restriction base="s:string">
+          <s:enumeration value="All" />
+          <s:enumeration value="Specific" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="BulletinNotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BulletinNotifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplyToWithAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAddressArray" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="argIsSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDesc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplyToWithAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplyToWithAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplyToOwner">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argIsSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReplyToOwnerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReplyToOwnerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTC_Reply">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argMSG_ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argIsSuccess" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDesc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RTC_ReplyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RTC_ReplyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProxyUserList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProxyUserListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProxyUserListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyByMsgId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argIsPopup" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyByMsgIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifyByMsgIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyByMsgIdList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgIdList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNotifyType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argPopUpMsg" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyByMsgIdListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifyByMsgIdListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgE2P">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRemotePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWebFileIOWS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCRuleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCRuleReason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgE2PResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMsgE2PResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgE2PForDraft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCRuleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCRuleReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgE2PForDraftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMsgE2PForDraftResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgOffline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgOfflineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMsgOfflineResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetMsgOffline">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetMsgOfflineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetMsgOfflineResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTodoListTmpCerState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argState" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTodoListTmpCerStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetTodoListTmpCerStateResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCancelReason" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelDocResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BatchSubmit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCancelReason" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BatchSubmitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BatchSubmitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MenuSubmit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMenuSetting" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRemotePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWebFileIOWS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MenuSubmitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MenuSubmitResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyByMsgIdForNM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argIsPopup" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyByMsgIdForNMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifyByMsgIdForNMResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetComNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argComNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrDelMsgId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetComNotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetComNotifyResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetComNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argComNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrCancelDocNoList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrShowMsgId" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetComNotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetComNotifyResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyReplaceDocNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="arrDelMsgId" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argIsPopup" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyReplaceDocNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifyReplaceDocNoResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNotifyURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNotifyURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNotifyURLResult" type="tns:UtyRtnString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RtnStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorClass" type="tns:ErrorClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ErrorClass">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsErr" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrLevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrName" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrType" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrCode" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMessage" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StackTrace" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TargetSite" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRedirect" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NotifyProxy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argReason" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NotifyProxyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NotifyProxyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocTodoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocTodoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocTodoListResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocTodoList2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocTodoList2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocTodoList2Result" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestNewDraftMsgId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestNewDraftMsgIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestNewDraftMsgIdResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcAOL_WWKF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWWKFSet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAuto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcAOL_WWKFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcAOL_WWKFResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fnGetMsgStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argComNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fnGetMsgStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fnGetMsgStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSysTemSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argParaType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argParaVal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSysTemSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSysTemSetResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDueDateInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DueDateInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LEAD_TIME" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LT_UOM" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDueDateInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDueDateInfoResult" type="tns:DueDateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAuditDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAuditDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsAuditDocResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMsgInValid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMsgInValidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsMsgInValidResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPerSonalWWKF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWWKFSet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonWWKF">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="arrValue" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="arrText" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPerSonalWWKFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPerSonalWWKFResult" type="tns:PersonWWKF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcPeraonalWWKF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlowSetSeq" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcPeraonalWWKFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcPeraonalWWKFResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendGroupDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendGroupDocInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="strErrMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendGroupDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendGroupDocResult" type="tns:SendGroupDocInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetODWDCMstr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetODWDCMstrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetODWDCMstrResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoginMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLoginMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLoginMsgResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcAppLvL_WWKF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAppLevelNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcAppLvL_WWKFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcAppLvL_WWKFResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetThreadFlowInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RtnThreadFlowInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDraftSourceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThreadOuObj" type="tns:ArrayOfThreadOuInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfThreadOuInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ThreadOuInfo" nillable="true" type="tns:ThreadOuInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ThreadOuInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OuId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OuName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DocPath" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetThreadFlowInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetThreadFlowInfoResult" type="tns:RtnThreadFlowInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewDraftBySmeg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEmpName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCRuleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNesrReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDraftSourceType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAppLvl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewDraftBySmegResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewDraftBySmegResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewDraft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEmpName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCRuleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNesrReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewDraftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewDraftResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDraftLastUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDraftMsgid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argXml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckDraftLastUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckDraftLastUpdateResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDraftMsgStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDraftMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDraftMsgStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetDraftMsgStatusResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenCoPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCoPDFName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenCoPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenCoPDFResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcAppLvlWWKF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAppLvl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSignType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcAppLvlWWKFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcAppLvlWWKFResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocTodoListNow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocTodoListNowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocTodoListNowResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonalPWWKF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonalPWWKFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonalPWWKFResult" type="tns:PersonWWKF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcPeraonalPWWKF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argFlowSetSeq" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcPeraonalPWWKFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProcPeraonalPWWKFResult" type="tns:RtnObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MethodName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWebMethodInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebMethodInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Dummy1">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="CFlowUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Dummy1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Dummy1Result" type="tns:CFlowUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Dummy2">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="CFlow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strSEQ_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSTEP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strOU_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strOU_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCAN_AVOID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strROLE_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strROLE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAPP_ENABLE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="users" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Dummy2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Dummy2Result" type="tns:CFlow" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMsgODWMSG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgIdList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMsgODWMSGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMsgODWMSGResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNotifyFailMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNotifyFailMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNotifyFailMsgResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewApplyMsg3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubFolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToOuName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToRoleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToEmpName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPopupMsg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argIsPopup" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgFromId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argParams" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewApplyMsg3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewApplyMsg3Result" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewApplyMsgEx3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnvSetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSubFolder" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToOuName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToRoleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argToEmpName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPopupMsg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argIsPopup" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgFromId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argParams" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewApplyMsgEx3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewApplyMsgEx3Result" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFlowNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argStep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argStepOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argStepRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argStepUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCond" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetNextFlow">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strSOURCE_ORGNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strFLOW_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strFLOW_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strCurrUserId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strCurrUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="flowArr" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNextFlowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextFlowResult" type="tns:RetNextFlow" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextFlow2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFlowNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSeqNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNextFlow2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNextFlow2Result" type="tns:RetNextFlow" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRemotePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argWebFileIOWS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitMsgResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMsg2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMsg2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelMsg2Result" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelMsgResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelDraftMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelDraftMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelDraftMsgResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveMsgResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDraftMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveDraftMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveDraftMsgResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewMsgResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argMsgId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMsgStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMsgStatusResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentInfoResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentInfo2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDocumentInfo2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDocumentInfo2Result" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTodoListJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTodoListJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTodoListJSONResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToDoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToDoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetToDoListResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToDoListSort">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToDoListSortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetToDoListSortResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProcDraftToMainSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcDraftToMain" />
+  </wsdl:message>
+  <wsdl:message name="ProcDraftToMainSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcDraftToMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendTimeOutNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:SendTimeOutNotify" />
+  </wsdl:message>
+  <wsdl:message name="SendTimeOutNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:SendTimeOutNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocFlowTargetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocFlowTarget" />
+  </wsdl:message>
+  <wsdl:message name="GetDocFlowTargetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocFlowTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="EventNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:EventNotify" />
+  </wsdl:message>
+  <wsdl:message name="EventNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:EventNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="fnTestMsgReplySoapIn">
+    <wsdl:part name="parameters" element="tns:fnTestMsgReply" />
+  </wsdl:message>
+  <wsdl:message name="fnTestMsgReplySoapOut">
+    <wsdl:part name="parameters" element="tns:fnTestMsgReplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="BulletinNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:BulletinNotify" />
+  </wsdl:message>
+  <wsdl:message name="BulletinNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:BulletinNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplyToWithAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplyToWithAddress" />
+  </wsdl:message>
+  <wsdl:message name="ReplyToWithAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplyToWithAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReplyToOwnerSoapIn">
+    <wsdl:part name="parameters" element="tns:ReplyToOwner" />
+  </wsdl:message>
+  <wsdl:message name="ReplyToOwnerSoapOut">
+    <wsdl:part name="parameters" element="tns:ReplyToOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="RTC_ReplySoapIn">
+    <wsdl:part name="parameters" element="tns:RTC_Reply" />
+  </wsdl:message>
+  <wsdl:message name="RTC_ReplySoapOut">
+    <wsdl:part name="parameters" element="tns:RTC_ReplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProxyUserListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProxyUserList" />
+  </wsdl:message>
+  <wsdl:message name="GetProxyUserListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProxyUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyByMsgIdSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyByMsgId" />
+  </wsdl:message>
+  <wsdl:message name="NotifyByMsgIdSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyByMsgIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyByMsgIdListSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyByMsgIdList" />
+  </wsdl:message>
+  <wsdl:message name="NotifyByMsgIdListSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyByMsgIdListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgE2PSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMsgE2P" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgE2PSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMsgE2PResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgE2PForDraftSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMsgE2PForDraft" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgE2PForDraftSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMsgE2PForDraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgOfflineSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMsgOffline" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgOfflineSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMsgOfflineResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetMsgOfflineSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetMsgOffline" />
+  </wsdl:message>
+  <wsdl:message name="ResetMsgOfflineSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetMsgOfflineResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTodoListTmpCerStateSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTodoListTmpCerState" />
+  </wsdl:message>
+  <wsdl:message name="SetTodoListTmpCerStateSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTodoListTmpCerStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelDocSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelDoc" />
+  </wsdl:message>
+  <wsdl:message name="CancelDocSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="BatchSubmitSoapIn">
+    <wsdl:part name="parameters" element="tns:BatchSubmit" />
+  </wsdl:message>
+  <wsdl:message name="BatchSubmitSoapOut">
+    <wsdl:part name="parameters" element="tns:BatchSubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="MenuSubmitSoapIn">
+    <wsdl:part name="parameters" element="tns:MenuSubmit" />
+  </wsdl:message>
+  <wsdl:message name="MenuSubmitSoapOut">
+    <wsdl:part name="parameters" element="tns:MenuSubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyByMsgIdForNMSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyByMsgIdForNM" />
+  </wsdl:message>
+  <wsdl:message name="NotifyByMsgIdForNMSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyByMsgIdForNMResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetComNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:SetComNotify" />
+  </wsdl:message>
+  <wsdl:message name="SetComNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:SetComNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetComNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:ResetComNotify" />
+  </wsdl:message>
+  <wsdl:message name="ResetComNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:ResetComNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyReplaceDocNoSoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyReplaceDocNo" />
+  </wsdl:message>
+  <wsdl:message name="NotifyReplaceDocNoSoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyReplaceDocNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNotifyURLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNotifyURL" />
+  </wsdl:message>
+  <wsdl:message name="GetNotifyURLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNotifyURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="NotifyProxySoapIn">
+    <wsdl:part name="parameters" element="tns:NotifyProxy" />
+  </wsdl:message>
+  <wsdl:message name="NotifyProxySoapOut">
+    <wsdl:part name="parameters" element="tns:NotifyProxyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocTodoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocTodoList" />
+  </wsdl:message>
+  <wsdl:message name="GetDocTodoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocTodoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocTodoList2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocTodoList2" />
+  </wsdl:message>
+  <wsdl:message name="GetDocTodoList2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocTodoList2Response" />
+  </wsdl:message>
+  <wsdl:message name="RequestNewDraftMsgIdSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestNewDraftMsgId" />
+  </wsdl:message>
+  <wsdl:message name="RequestNewDraftMsgIdSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestNewDraftMsgIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcAOL_WWKFSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcAOL_WWKF" />
+  </wsdl:message>
+  <wsdl:message name="ProcAOL_WWKFSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcAOL_WWKFResponse" />
+  </wsdl:message>
+  <wsdl:message name="fnGetMsgStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:fnGetMsgStatus" />
+  </wsdl:message>
+  <wsdl:message name="fnGetMsgStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:fnGetMsgStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSysTemSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSysTemSet" />
+  </wsdl:message>
+  <wsdl:message name="GetSysTemSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSysTemSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDueDateInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDueDateInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDueDateInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDueDateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsAuditDocSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAuditDoc" />
+  </wsdl:message>
+  <wsdl:message name="IsAuditDocSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAuditDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsMsgInValidSoapIn">
+    <wsdl:part name="parameters" element="tns:IsMsgInValid" />
+  </wsdl:message>
+  <wsdl:message name="IsMsgInValidSoapOut">
+    <wsdl:part name="parameters" element="tns:IsMsgInValidResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPerSonalWWKFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPerSonalWWKF" />
+  </wsdl:message>
+  <wsdl:message name="GetPerSonalWWKFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPerSonalWWKFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcPeraonalWWKFSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcPeraonalWWKF" />
+  </wsdl:message>
+  <wsdl:message name="ProcPeraonalWWKFSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcPeraonalWWKFResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendGroupDocSoapIn">
+    <wsdl:part name="parameters" element="tns:SendGroupDoc" />
+  </wsdl:message>
+  <wsdl:message name="SendGroupDocSoapOut">
+    <wsdl:part name="parameters" element="tns:SendGroupDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetODWDCMstrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetODWDCMstr" />
+  </wsdl:message>
+  <wsdl:message name="GetODWDCMstrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetODWDCMstrResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLoginMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLoginMsg" />
+  </wsdl:message>
+  <wsdl:message name="GetLoginMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLoginMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcAppLvL_WWKFSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcAppLvL_WWKF" />
+  </wsdl:message>
+  <wsdl:message name="ProcAppLvL_WWKFSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcAppLvL_WWKFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetThreadFlowInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetThreadFlowInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetThreadFlowInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetThreadFlowInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewDraftBySmegSoapIn">
+    <wsdl:part name="parameters" element="tns:NewDraftBySmeg" />
+  </wsdl:message>
+  <wsdl:message name="NewDraftBySmegSoapOut">
+    <wsdl:part name="parameters" element="tns:NewDraftBySmegResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewDraftSoapIn">
+    <wsdl:part name="parameters" element="tns:NewDraft" />
+  </wsdl:message>
+  <wsdl:message name="NewDraftSoapOut">
+    <wsdl:part name="parameters" element="tns:NewDraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDraftLastUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDraftLastUpdate" />
+  </wsdl:message>
+  <wsdl:message name="CheckDraftLastUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDraftLastUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDraftMsgStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDraftMsgStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetDraftMsgStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDraftMsgStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenCoPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:GenCoPDF" />
+  </wsdl:message>
+  <wsdl:message name="GenCoPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:GenCoPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcAppLvlWWKFSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcAppLvlWWKF" />
+  </wsdl:message>
+  <wsdl:message name="ProcAppLvlWWKFSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcAppLvlWWKFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocTodoListNowSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocTodoListNow" />
+  </wsdl:message>
+  <wsdl:message name="GetDocTodoListNowSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocTodoListNowResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonalPWWKFSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonalPWWKF" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonalPWWKFSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonalPWWKFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcPeraonalPWWKFSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcPeraonalPWWKF" />
+  </wsdl:message>
+  <wsdl:message name="ProcPeraonalPWWKFSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcPeraonalPWWKFResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetWebMethodInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebMethodInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Dummy1SoapIn">
+    <wsdl:part name="parameters" element="tns:Dummy1" />
+  </wsdl:message>
+  <wsdl:message name="Dummy1SoapOut">
+    <wsdl:part name="parameters" element="tns:Dummy1Response" />
+  </wsdl:message>
+  <wsdl:message name="Dummy2SoapIn">
+    <wsdl:part name="parameters" element="tns:Dummy2" />
+  </wsdl:message>
+  <wsdl:message name="Dummy2SoapOut">
+    <wsdl:part name="parameters" element="tns:Dummy2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetMsgODWMSGSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMsgODWMSG" />
+  </wsdl:message>
+  <wsdl:message name="GetMsgODWMSGSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMsgODWMSGResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNotifyFailMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNotifyFailMsg" />
+  </wsdl:message>
+  <wsdl:message name="GetNotifyFailMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNotifyFailMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewApplyMsg3SoapIn">
+    <wsdl:part name="parameters" element="tns:NewApplyMsg3" />
+  </wsdl:message>
+  <wsdl:message name="NewApplyMsg3SoapOut">
+    <wsdl:part name="parameters" element="tns:NewApplyMsg3Response" />
+  </wsdl:message>
+  <wsdl:message name="NewApplyMsgEx3SoapIn">
+    <wsdl:part name="parameters" element="tns:NewApplyMsgEx3" />
+  </wsdl:message>
+  <wsdl:message name="NewApplyMsgEx3SoapOut">
+    <wsdl:part name="parameters" element="tns:NewApplyMsgEx3Response" />
+  </wsdl:message>
+  <wsdl:message name="GetNextFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNextFlow" />
+  </wsdl:message>
+  <wsdl:message name="GetNextFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNextFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextFlow2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetNextFlow2" />
+  </wsdl:message>
+  <wsdl:message name="GetNextFlow2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetNextFlow2Response" />
+  </wsdl:message>
+  <wsdl:message name="SubmitMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitMsg" />
+  </wsdl:message>
+  <wsdl:message name="SubmitMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelMsg2SoapIn">
+    <wsdl:part name="parameters" element="tns:DelMsg2" />
+  </wsdl:message>
+  <wsdl:message name="DelMsg2SoapOut">
+    <wsdl:part name="parameters" element="tns:DelMsg2Response" />
+  </wsdl:message>
+  <wsdl:message name="DelMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:DelMsg" />
+  </wsdl:message>
+  <wsdl:message name="DelMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:DelMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelDraftMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:DelDraftMsg" />
+  </wsdl:message>
+  <wsdl:message name="DelDraftMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:DelDraftMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMsg" />
+  </wsdl:message>
+  <wsdl:message name="SaveMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveDraftMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveDraftMsg" />
+  </wsdl:message>
+  <wsdl:message name="SaveDraftMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveDraftMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:NewMsg" />
+  </wsdl:message>
+  <wsdl:message name="NewMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:NewMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMsgStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetMsgStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMsgStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentInfo2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetDocumentInfo2" />
+  </wsdl:message>
+  <wsdl:message name="GetDocumentInfo2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetDocumentInfo2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetTodoListJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTodoListJSON" />
+  </wsdl:message>
+  <wsdl:message name="GetTodoListJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTodoListJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetToDoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetToDoList" />
+  </wsdl:message>
+  <wsdl:message name="GetToDoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetToDoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetToDoListSortSoapIn">
+    <wsdl:part name="parameters" element="tns:GetToDoListSort" />
+  </wsdl:message>
+  <wsdl:message name="GetToDoListSortSoapOut">
+    <wsdl:part name="parameters" element="tns:GetToDoListSortResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ODMSSPSoap">
+    <wsdl:operation name="ProcDraftToMain">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">供紙本草稿公文取號後，轉為正式公文功能</wsdl:documentation>
+      <wsdl:input message="tns:ProcDraftToMainSoapIn" />
+      <wsdl:output message="tns:ProcDraftToMainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTimeOutNotify">
+      <wsdl:input message="tns:SendTimeOutNotifySoapIn" />
+      <wsdl:output message="tns:SendTimeOutNotifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocFlowTarget">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">供MP取得RULE.TO_OU=Q1、Q2的傳送對象資訊</wsdl:documentation>
+      <wsdl:input message="tns:GetDocFlowTargetSoapIn" />
+      <wsdl:output message="tns:GetDocFlowTargetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EventNotify">
+      <wsdl:input message="tns:EventNotifySoapIn" />
+      <wsdl:output message="tns:EventNotifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fnTestMsgReply">
+      <wsdl:input message="tns:fnTestMsgReplySoapIn" />
+      <wsdl:output message="tns:fnTestMsgReplySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BulletinNotify">
+      <wsdl:input message="tns:BulletinNotifySoapIn" />
+      <wsdl:output message="tns:BulletinNotifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplyToWithAddress">
+      <wsdl:input message="tns:ReplyToWithAddressSoapIn" />
+      <wsdl:output message="tns:ReplyToWithAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReplyToOwner">
+      <wsdl:input message="tns:ReplyToOwnerSoapIn" />
+      <wsdl:output message="tns:ReplyToOwnerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RTC_Reply">
+      <wsdl:input message="tns:RTC_ReplySoapIn" />
+      <wsdl:output message="tns:RTC_ReplySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProxyUserList">
+      <wsdl:input message="tns:GetProxyUserListSoapIn" />
+      <wsdl:output message="tns:GetProxyUserListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyByMsgId">
+      <wsdl:input message="tns:NotifyByMsgIdSoapIn" />
+      <wsdl:output message="tns:NotifyByMsgIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyByMsgIdList">
+      <wsdl:input message="tns:NotifyByMsgIdListSoapIn" />
+      <wsdl:output message="tns:NotifyByMsgIdListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgE2P">
+      <wsdl:input message="tns:SetMsgE2PSoapIn" />
+      <wsdl:output message="tns:SetMsgE2PSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgE2PForDraft">
+      <wsdl:input message="tns:SetMsgE2PForDraftSoapIn" />
+      <wsdl:output message="tns:SetMsgE2PForDraftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgOffline">
+      <wsdl:input message="tns:SetMsgOfflineSoapIn" />
+      <wsdl:output message="tns:SetMsgOfflineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetMsgOffline">
+      <wsdl:input message="tns:ResetMsgOfflineSoapIn" />
+      <wsdl:output message="tns:ResetMsgOfflineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTodoListTmpCerState">
+      <wsdl:input message="tns:SetTodoListTmpCerStateSoapIn" />
+      <wsdl:output message="tns:SetTodoListTmpCerStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelDoc">
+      <wsdl:input message="tns:CancelDocSoapIn" />
+      <wsdl:output message="tns:CancelDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BatchSubmit">
+      <wsdl:input message="tns:BatchSubmitSoapIn" />
+      <wsdl:output message="tns:BatchSubmitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MenuSubmit">
+      <wsdl:input message="tns:MenuSubmitSoapIn" />
+      <wsdl:output message="tns:MenuSubmitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyByMsgIdForNM">
+      <wsdl:input message="tns:NotifyByMsgIdForNMSoapIn" />
+      <wsdl:output message="tns:NotifyByMsgIdForNMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetComNotify">
+      <wsdl:input message="tns:SetComNotifySoapIn" />
+      <wsdl:output message="tns:SetComNotifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetComNotify">
+      <wsdl:input message="tns:ResetComNotifySoapIn" />
+      <wsdl:output message="tns:ResetComNotifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyReplaceDocNo">
+      <wsdl:input message="tns:NotifyReplaceDocNoSoapIn" />
+      <wsdl:output message="tns:NotifyReplaceDocNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifyURL">
+      <wsdl:input message="tns:GetNotifyURLSoapIn" />
+      <wsdl:output message="tns:GetNotifyURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyProxy">
+      <wsdl:input message="tns:NotifyProxySoapIn" />
+      <wsdl:output message="tns:NotifyProxySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTodoList">
+      <wsdl:input message="tns:GetDocTodoListSoapIn" />
+      <wsdl:output message="tns:GetDocTodoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTodoList2">
+      <wsdl:input message="tns:GetDocTodoList2SoapIn" />
+      <wsdl:output message="tns:GetDocTodoList2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestNewDraftMsgId">
+      <wsdl:input message="tns:RequestNewDraftMsgIdSoapIn" />
+      <wsdl:output message="tns:RequestNewDraftMsgIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcAOL_WWKF">
+      <wsdl:input message="tns:ProcAOL_WWKFSoapIn" />
+      <wsdl:output message="tns:ProcAOL_WWKFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fnGetMsgStatus">
+      <wsdl:input message="tns:fnGetMsgStatusSoapIn" />
+      <wsdl:output message="tns:fnGetMsgStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSysTemSet">
+      <wsdl:input message="tns:GetSysTemSetSoapIn" />
+      <wsdl:output message="tns:GetSysTemSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDueDateInfo">
+      <wsdl:input message="tns:GetDueDateInfoSoapIn" />
+      <wsdl:output message="tns:GetDueDateInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAuditDoc">
+      <wsdl:input message="tns:IsAuditDocSoapIn" />
+      <wsdl:output message="tns:IsAuditDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMsgInValid">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">判斷公文目前流程是否有效</wsdl:documentation>
+      <wsdl:input message="tns:IsMsgInValidSoapIn" />
+      <wsdl:output message="tns:IsMsgInValidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerSonalWWKF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">供線上簽核流程設定頁面取得目前個人預排流程選項</wsdl:documentation>
+      <wsdl:input message="tns:GetPerSonalWWKFSoapIn" />
+      <wsdl:output message="tns:GetPerSonalWWKFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcPeraonalWWKF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">提供給預排流程頁面取得指定的個人化預排流程設定</wsdl:documentation>
+      <wsdl:input message="tns:ProcPeraonalWWKFSoapIn" />
+      <wsdl:output message="tns:ProcPeraonalWWKFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendGroupDoc">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">供內政部人團系統將公文傳送流程至承辦人</wsdl:documentation>
+      <wsdl:input message="tns:SendGroupDocSoapIn" />
+      <wsdl:output message="tns:SendGroupDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetODWDCMstr">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">供CLIENT元件取得ODWDCM的XML字串</wsdl:documentation>
+      <wsdl:input message="tns:GetODWDCMstrSoapIn" />
+      <wsdl:output message="tns:GetODWDCMstrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginMsg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">使用者登入時，依據不同的使用者提供提示訊息</wsdl:documentation>
+      <wsdl:input message="tns:GetLoginMsgSoapIn" />
+      <wsdl:output message="tns:GetLoginMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcAppLvL_WWKF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">供AOL依公文製作內的決行層級帶出對應的預排流程</wsdl:documentation>
+      <wsdl:input message="tns:ProcAppLvL_WWKFSoapIn" />
+      <wsdl:output message="tns:ProcAppLvL_WWKFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThreadFlowInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">供元件取得分會會畢資訊</wsdl:documentation>
+      <wsdl:input message="tns:GetThreadFlowInfoSoapIn" />
+      <wsdl:output message="tns:GetThreadFlowInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewDraftBySmeg">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">信保匯入稿件創稿處理WS</wsdl:documentation>
+      <wsdl:input message="tns:NewDraftBySmegSoapIn" />
+      <wsdl:output message="tns:NewDraftBySmegSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewDraft">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">二代公文創稿WS</wsdl:documentation>
+      <wsdl:input message="tns:NewDraftSoapIn" />
+      <wsdl:output message="tns:NewDraftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDraftLastUpdate">
+      <wsdl:input message="tns:CheckDraftLastUpdateSoapIn" />
+      <wsdl:output message="tns:CheckDraftLastUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDraftMsgStatus">
+      <wsdl:input message="tns:SetDraftMsgStatusSoapIn" />
+      <wsdl:output message="tns:SetDraftMsgStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenCoPDF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">呈現檔產出</wsdl:documentation>
+      <wsdl:input message="tns:GenCoPDFSoapIn" />
+      <wsdl:output message="tns:GenCoPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcAppLvlWWKF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">決行層級預排流程處理WS</wsdl:documentation>
+      <wsdl:input message="tns:ProcAppLvlWWKFSoapIn" />
+      <wsdl:output message="tns:ProcAppLvlWWKFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTodoListNow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取得公文最新流程點MSG_ID資訊</wsdl:documentation>
+      <wsdl:input message="tns:GetDocTodoListNowSoapIn" />
+      <wsdl:output message="tns:GetDocTodoListNowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalPWWKF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">供紙本簽核流程設定頁面取得目前個人預排流程選項</wsdl:documentation>
+      <wsdl:input message="tns:GetPersonalPWWKFSoapIn" />
+      <wsdl:output message="tns:GetPersonalPWWKFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcPeraonalPWWKF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">提供給紙本預排流程頁面取得指定的個人化預排流程</wsdl:documentation>
+      <wsdl:input message="tns:ProcPeraonalPWWKFSoapIn" />
+      <wsdl:output message="tns:ProcPeraonalPWWKFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <wsdl:input message="tns:GetWebMethodInfoSoapIn" />
+      <wsdl:output message="tns:GetWebMethodInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Dummy1">
+      <wsdl:input message="tns:Dummy1SoapIn" />
+      <wsdl:output message="tns:Dummy1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Dummy2">
+      <wsdl:input message="tns:Dummy2SoapIn" />
+      <wsdl:output message="tns:Dummy2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMsgODWMSG">
+      <wsdl:input message="tns:GetMsgODWMSGSoapIn" />
+      <wsdl:output message="tns:GetMsgODWMSGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifyFailMsg">
+      <wsdl:input message="tns:GetNotifyFailMsgSoapIn" />
+      <wsdl:output message="tns:GetNotifyFailMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewApplyMsg3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">argParams字串陣列，[0]→TARGET_NO，[1]→FROM_MSG_ID，[2]→TX_NAME，[3]→SOURCE_ORGNO</wsdl:documentation>
+      <wsdl:input message="tns:NewApplyMsg3SoapIn" />
+      <wsdl:output message="tns:NewApplyMsg3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewApplyMsgEx3">
+      <wsdl:input message="tns:NewApplyMsgEx3SoapIn" />
+      <wsdl:output message="tns:NewApplyMsgEx3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextFlow">
+      <wsdl:input message="tns:GetNextFlowSoapIn" />
+      <wsdl:output message="tns:GetNextFlowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextFlow2">
+      <wsdl:input message="tns:GetNextFlow2SoapIn" />
+      <wsdl:output message="tns:GetNextFlow2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitMsg">
+      <wsdl:input message="tns:SubmitMsgSoapIn" />
+      <wsdl:output message="tns:SubmitMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMsg2">
+      <wsdl:input message="tns:DelMsg2SoapIn" />
+      <wsdl:output message="tns:DelMsg2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelMsg">
+      <wsdl:input message="tns:DelMsgSoapIn" />
+      <wsdl:output message="tns:DelMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelDraftMsg">
+      <wsdl:input message="tns:DelDraftMsgSoapIn" />
+      <wsdl:output message="tns:DelDraftMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMsg">
+      <wsdl:input message="tns:SaveMsgSoapIn" />
+      <wsdl:output message="tns:SaveMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDraftMsg">
+      <wsdl:input message="tns:SaveDraftMsgSoapIn" />
+      <wsdl:output message="tns:SaveDraftMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewMsg">
+      <wsdl:input message="tns:NewMsgSoapIn" />
+      <wsdl:output message="tns:NewMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgStatus">
+      <wsdl:input message="tns:SetMsgStatusSoapIn" />
+      <wsdl:output message="tns:SetMsgStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentInfo">
+      <wsdl:input message="tns:GetDocumentInfoSoapIn" />
+      <wsdl:output message="tns:GetDocumentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentInfo2">
+      <wsdl:input message="tns:GetDocumentInfo2SoapIn" />
+      <wsdl:output message="tns:GetDocumentInfo2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTodoListJSON">
+      <wsdl:input message="tns:GetTodoListJSONSoapIn" />
+      <wsdl:output message="tns:GetTodoListJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoList">
+      <wsdl:input message="tns:GetToDoListSoapIn" />
+      <wsdl:output message="tns:GetToDoListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoListSort">
+      <wsdl:input message="tns:GetToDoListSortSoapIn" />
+      <wsdl:output message="tns:GetToDoListSortSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ODMSSPSoap" type="tns:ODMSSPSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcDraftToMain">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ProcDraftToMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTimeOutNotify">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SendTimeOutNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocFlowTarget">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetDocFlowTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventNotify">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/EventNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnTestMsgReply">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/fnTestMsgReply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BulletinNotify">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/BulletinNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplyToWithAddress">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ReplyToWithAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplyToOwner">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ReplyToOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTC_Reply">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/RTC_Reply" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProxyUserList">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetProxyUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyByMsgId">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NotifyByMsgId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyByMsgIdList">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NotifyByMsgIdList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgE2P">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SetMsgE2P" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgE2PForDraft">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SetMsgE2PForDraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgOffline">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SetMsgOffline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetMsgOffline">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ResetMsgOffline" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTodoListTmpCerState">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SetTodoListTmpCerState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDoc">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/CancelDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchSubmit">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/BatchSubmit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuSubmit">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/MenuSubmit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyByMsgIdForNM">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NotifyByMsgIdForNM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetComNotify">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SetComNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetComNotify">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ResetComNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyReplaceDocNo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NotifyReplaceDocNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifyURL">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetNotifyURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyProxy">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NotifyProxy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTodoList">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetDocTodoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTodoList2">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetDocTodoList2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestNewDraftMsgId">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/RequestNewDraftMsgId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcAOL_WWKF">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ProcAOL_WWKF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnGetMsgStatus">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/fnGetMsgStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysTemSet">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetSysTemSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDueDateInfo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetDueDateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAuditDoc">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/IsAuditDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMsgInValid">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/IsMsgInValid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerSonalWWKF">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetPerSonalWWKF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcPeraonalWWKF">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ProcPeraonalWWKF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendGroupDoc">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SendGroupDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetODWDCMstr">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetODWDCMstr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginMsg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetLoginMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcAppLvL_WWKF">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ProcAppLvL_WWKF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThreadFlowInfo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetThreadFlowInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDraftBySmeg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NewDraftBySmeg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDraft">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NewDraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDraftLastUpdate">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/CheckDraftLastUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDraftMsgStatus">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SetDraftMsgStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenCoPDF">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GenCoPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcAppLvlWWKF">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ProcAppLvlWWKF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTodoListNow">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetDocTodoListNow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalPWWKF">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetPersonalPWWKF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcPeraonalPWWKF">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ProcPeraonalPWWKF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dummy1">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/Dummy1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dummy2">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/Dummy2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMsgODWMSG">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetMsgODWMSG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifyFailMsg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetNotifyFailMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewApplyMsg3">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NewApplyMsg3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewApplyMsgEx3">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NewApplyMsgEx3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextFlow">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetNextFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextFlow2">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetNextFlow2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitMsg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SubmitMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMsg2">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/DelMsg2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMsg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/DelMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelDraftMsg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/DelDraftMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMsg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SaveMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDraftMsg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SaveDraftMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewMsg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/NewMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgStatus">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/SetMsgStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentInfo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetDocumentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentInfo2">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetDocumentInfo2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodoListJSON">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetTodoListJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoList">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetToDoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoListSort">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetToDoListSort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ODMSSPSoap12" type="tns:ODMSSPSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcDraftToMain">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ProcDraftToMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTimeOutNotify">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SendTimeOutNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocFlowTarget">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetDocFlowTarget" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventNotify">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/EventNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnTestMsgReply">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/fnTestMsgReply" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BulletinNotify">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/BulletinNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplyToWithAddress">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ReplyToWithAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReplyToOwner">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ReplyToOwner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RTC_Reply">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/RTC_Reply" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProxyUserList">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetProxyUserList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyByMsgId">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NotifyByMsgId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyByMsgIdList">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NotifyByMsgIdList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgE2P">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SetMsgE2P" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgE2PForDraft">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SetMsgE2PForDraft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgOffline">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SetMsgOffline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetMsgOffline">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ResetMsgOffline" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTodoListTmpCerState">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SetTodoListTmpCerState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelDoc">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/CancelDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BatchSubmit">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/BatchSubmit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MenuSubmit">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/MenuSubmit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyByMsgIdForNM">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NotifyByMsgIdForNM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetComNotify">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SetComNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetComNotify">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ResetComNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyReplaceDocNo">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NotifyReplaceDocNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifyURL">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetNotifyURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyProxy">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NotifyProxy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTodoList">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetDocTodoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTodoList2">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetDocTodoList2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestNewDraftMsgId">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/RequestNewDraftMsgId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcAOL_WWKF">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ProcAOL_WWKF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fnGetMsgStatus">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/fnGetMsgStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSysTemSet">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetSysTemSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDueDateInfo">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetDueDateInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAuditDoc">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/IsAuditDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMsgInValid">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/IsMsgInValid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerSonalWWKF">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetPerSonalWWKF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcPeraonalWWKF">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ProcPeraonalWWKF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendGroupDoc">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SendGroupDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetODWDCMstr">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetODWDCMstr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoginMsg">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetLoginMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcAppLvL_WWKF">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ProcAppLvL_WWKF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThreadFlowInfo">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetThreadFlowInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDraftBySmeg">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NewDraftBySmeg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewDraft">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NewDraft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDraftLastUpdate">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/CheckDraftLastUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDraftMsgStatus">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SetDraftMsgStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenCoPDF">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GenCoPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcAppLvlWWKF">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ProcAppLvlWWKF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocTodoListNow">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetDocTodoListNow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalPWWKF">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetPersonalPWWKF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcPeraonalPWWKF">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/ProcPeraonalPWWKF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebMethodInfo">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetWebMethodInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dummy1">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/Dummy1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Dummy2">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/Dummy2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMsgODWMSG">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetMsgODWMSG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotifyFailMsg">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetNotifyFailMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewApplyMsg3">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NewApplyMsg3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewApplyMsgEx3">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NewApplyMsgEx3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextFlow">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetNextFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextFlow2">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetNextFlow2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitMsg">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SubmitMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMsg2">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/DelMsg2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelMsg">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/DelMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelDraftMsg">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/DelDraftMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMsg">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SaveMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDraftMsg">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SaveDraftMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewMsg">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/NewMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMsgStatus">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/SetMsgStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentInfo">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetDocumentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentInfo2">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetDocumentInfo2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodoListJSON">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetTodoListJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoList">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetToDoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoListSort">
+      <soap12:operation soapAction="http://www.2100t.com.tw/webservices/GetToDoListSort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ODMSSP">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Message Store WebService</wsdl:documentation>
+    <wsdl:port name="ODMSSPSoap" binding="tns:ODMSSPSoap">
+      <soap:address location="http://docvip.fdat.com.tw/odmssp/odmssp.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ODMSSPSoap12" binding="tns:ODMSSPSoap12">
+      <soap12:address location="http://docvip.fdat.com.tw/odmssp/odmssp.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

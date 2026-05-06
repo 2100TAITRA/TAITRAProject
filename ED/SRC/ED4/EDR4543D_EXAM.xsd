@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4543_EXAMD" targetNamespace="http://tempuri.org/EDR4543_EXAMD.xsd" xmlns:mstns="http://tempuri.org/EDR4543_EXAMD.xsd" xmlns="http://tempuri.org/EDR4543_EXAMD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4543_EXAMD" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR4543_EXAMD" msprop:Generator_UserDSName="EDR4543_EXAMD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4543_EXAML1" msprop:Generator_TableClassName="EDR4543_EXAML1DataTable" msprop:Generator_TableVarName="tableEDR4543_EXAML1" msprop:Generator_TablePropName="EDR4543_EXAML1" msprop:Generator_RowDeletingName="EDR4543_EXAML1RowDeleting" msprop:Generator_RowChangingName="EDR4543_EXAML1RowChanging" msprop:Generator_RowEvHandlerName="EDR4543_EXAML1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4543_EXAML1RowDeleted" msprop:Generator_UserTableName="EDR4543_EXAML1" msprop:Generator_RowChangedName="EDR4543_EXAML1RowChanged" msprop:Generator_RowEvArgName="EDR4543_EXAML1RowChangeEvent" msprop:Generator_RowClassName="EDR4543_EXAML1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OU_ID" msprop:Generator_ColumnVarNameInTable="columnOU_ID" msprop:Generator_ColumnPropNameInRow="OU_ID" msprop:Generator_ColumnPropNameInTable="OU_IDColumn" msprop:Generator_UserColumnName="OU_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="USER_NAME" msprop:Generator_ColumnVarNameInTable="columnUSER_NAME" msprop:Generator_ColumnPropNameInRow="USER_NAME" msprop:Generator_ColumnPropNameInTable="USER_NAMEColumn" msprop:Generator_UserColumnName="USER_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="TOTAL_CNT" msprop:Generator_ColumnVarNameInTable="columnTOTAL_CNT" msprop:Generator_ColumnPropNameInRow="TOTAL_CNT" msprop:Generator_ColumnPropNameInTable="TOTAL_CNTColumn" msprop:Generator_UserColumnName="TOTAL_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_NORMAL_CNT" msprop:Generator_ColumnVarNameInTable="columnSUM_NORMAL_CNT" msprop:Generator_ColumnPropNameInRow="SUM_NORMAL_CNT" msprop:Generator_ColumnPropNameInTable="SUM_NORMAL_CNTColumn" msprop:Generator_UserColumnName="SUM_NORMAL_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="AVG_ISSUE_DAYS" msprop:Generator_ColumnVarNameInTable="columnAVG_ISSUE_DAYS" msprop:Generator_ColumnPropNameInRow="AVG_ISSUE_DAYS" msprop:Generator_ColumnPropNameInTable="AVG_ISSUE_DAYSColumn" msprop:Generator_UserColumnName="AVG_ISSUE_DAYS" type="xs:double" minOccurs="0" />
+              <xs:element name="SUM_ISSUE_DAYS" msprop:Generator_ColumnVarNameInTable="columnSUM_ISSUE_DAYS" msprop:Generator_ColumnPropNameInRow="SUM_ISSUE_DAYS" msprop:Generator_ColumnPropNameInTable="SUM_ISSUE_DAYSColumn" msprop:Generator_UserColumnName="SUM_ISSUE_DAYS" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSE_INTIME_NORMAL" msprop:Generator_ColumnVarNameInTable="columnCLOSE_INTIME_NORMAL" msprop:Generator_ColumnPropNameInRow="CLOSE_INTIME_NORMAL" msprop:Generator_ColumnPropNameInTable="CLOSE_INTIME_NORMALColumn" msprop:Generator_UserColumnName="CLOSE_INTIME_NORMAL" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSE_INTIME_UNNORMAL" msprop:Generator_ColumnVarNameInTable="columnCLOSE_INTIME_UNNORMAL" msprop:Generator_ColumnPropNameInRow="CLOSE_INTIME_UNNORMAL" msprop:Generator_ColumnPropNameInTable="CLOSE_INTIME_UNNORMALColumn" msprop:Generator_UserColumnName="CLOSE_INTIME_UNNORMAL" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_CLOSE_INTIME" msprop:Generator_ColumnVarNameInTable="columnSUM_CLOSE_INTIME" msprop:Generator_ColumnPropNameInRow="SUM_CLOSE_INTIME" msprop:Generator_ColumnPropNameInTable="SUM_CLOSE_INTIMEColumn" msprop:Generator_UserColumnName="SUM_CLOSE_INTIME" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSE_OVERTIME_NORMAL" msprop:Generator_ColumnVarNameInTable="columnCLOSE_OVERTIME_NORMAL" msprop:Generator_ColumnPropNameInRow="CLOSE_OVERTIME_NORMAL" msprop:Generator_ColumnPropNameInTable="CLOSE_OVERTIME_NORMALColumn" msprop:Generator_UserColumnName="CLOSE_OVERTIME_NORMAL" type="xs:int" minOccurs="0" />
+              <xs:element name="CLOSE_OVERTIME_UNNORMAL" msprop:Generator_ColumnVarNameInTable="columnCLOSE_OVERTIME_UNNORMAL" msprop:Generator_ColumnPropNameInRow="CLOSE_OVERTIME_UNNORMAL" msprop:Generator_ColumnPropNameInTable="CLOSE_OVERTIME_UNNORMALColumn" msprop:Generator_UserColumnName="CLOSE_OVERTIME_UNNORMAL" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_CLOSE_OVERTIME" msprop:Generator_ColumnVarNameInTable="columnSUM_CLOSE_OVERTIME" msprop:Generator_ColumnPropNameInRow="SUM_CLOSE_OVERTIME" msprop:Generator_ColumnPropNameInTable="SUM_CLOSE_OVERTIMEColumn" msprop:Generator_UserColumnName="SUM_CLOSE_OVERTIME" type="xs:int" minOccurs="0" />
+              <xs:element name="WAIT_NORMAL" msprop:Generator_ColumnVarNameInTable="columnWAIT_NORMAL" msprop:Generator_ColumnPropNameInRow="WAIT_NORMAL" msprop:Generator_ColumnPropNameInTable="WAIT_NORMALColumn" msprop:Generator_UserColumnName="WAIT_NORMAL" type="xs:int" minOccurs="0" />
+              <xs:element name="WAIT_UNNORMAL" msprop:Generator_ColumnVarNameInTable="columnWAIT_UNNORMAL" msprop:Generator_ColumnPropNameInRow="WAIT_UNNORMAL" msprop:Generator_ColumnPropNameInTable="WAIT_UNNORMALColumn" msprop:Generator_UserColumnName="WAIT_UNNORMAL" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_WAIT" msprop:Generator_ColumnVarNameInTable="columnSUM_WAIT" msprop:Generator_ColumnPropNameInRow="SUM_WAIT" msprop:Generator_ColumnPropNameInTable="SUM_WAITColumn" msprop:Generator_UserColumnName="SUM_WAIT" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_NEWRCV_CNT" msprop:Generator_ColumnVarNameInTable="columnSUM_NEWRCV_CNT" msprop:Generator_ColumnPropNameInRow="SUM_NEWRCV_CNT" msprop:Generator_ColumnPropNameInTable="SUM_NEWRCV_CNTColumn" msprop:Generator_UserColumnName="SUM_NEWRCV_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_NEWOURCV_CNT" msprop:Generator_ColumnVarNameInTable="columnSUM_NEWOURCV_CNT" msprop:Generator_ColumnPropNameInRow="SUM_NEWOURCV_CNT" msprop:Generator_ColumnPropNameInTable="SUM_NEWOURCV_CNTColumn" msprop:Generator_UserColumnName="SUM_NEWOURCV_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_NEW_CNT" msprop:Generator_ColumnVarNameInTable="columnSUM_NEW_CNT" msprop:Generator_ColumnPropNameInRow="SUM_NEW_CNT" msprop:Generator_ColumnPropNameInTable="SUM_NEW_CNTColumn" msprop:Generator_UserColumnName="SUM_NEW_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_LASTMONTH_CNT" msprop:Generator_ColumnVarNameInTable="columnSUM_LASTMONTH_CNT" msprop:Generator_ColumnPropNameInRow="SUM_LASTMONTH_CNT" msprop:Generator_ColumnPropNameInTable="SUM_LASTMONTH_CNTColumn" msprop:Generator_UserColumnName="SUM_LASTMONTH_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_DOCFROM" msprop:Generator_ColumnVarNameInTable="columnSUM_DOCFROM" msprop:Generator_ColumnPropNameInRow="SUM_DOCFROM" msprop:Generator_ColumnPropNameInTable="SUM_DOCFROMColumn" msprop:Generator_UserColumnName="SUM_DOCFROM" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_ISSUE" msprop:Generator_ColumnVarNameInTable="columnSUM_ISSUE" msprop:Generator_ColumnPropNameInRow="SUM_ISSUE" msprop:Generator_ColumnPropNameInTable="SUM_ISSUEColumn" msprop:Generator_UserColumnName="SUM_ISSUE" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_OUISSUE" msprop:Generator_ColumnVarNameInTable="columnSUM_OUISSUE" msprop:Generator_ColumnPropNameInRow="SUM_OUISSUE" msprop:Generator_ColumnPropNameInTable="SUM_OUISSUEColumn" msprop:Generator_UserColumnName="SUM_OUISSUE" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_STORED" msprop:Generator_ColumnVarNameInTable="columnSUM_STORED" msprop:Generator_ColumnPropNameInRow="SUM_STORED" msprop:Generator_ColumnPropNameInTable="SUM_STOREDColumn" msprop:Generator_UserColumnName="SUM_STORED" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM_PROCESS" msprop:Generator_ColumnVarNameInTable="columnSUM_PROCESS" msprop:Generator_ColumnPropNameInRow="SUM_PROCESS" msprop:Generator_ColumnPropNameInTable="SUM_PROCESSColumn" msprop:Generator_UserColumnName="SUM_PROCESS" type="xs:int" minOccurs="0" />
+              <xs:element name="COWORK_COUNT" msprop:Generator_ColumnVarNameInTable="columnCOWORK_COUNT" msprop:Generator_ColumnPropNameInRow="COWORK_COUNT" msprop:Generator_ColumnPropNameInTable="COWORK_COUNTColumn" msprop:Generator_UserColumnName="COWORK_COUNT" type="xs:int" minOccurs="0" />
+              <xs:element name="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO" msprop:Generator_ColumnPropNameInRow="DEPT_NO" msprop:Generator_ColumnPropNameInTable="DEPT_NOColumn" msprop:Generator_UserColumnName="DEPT_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

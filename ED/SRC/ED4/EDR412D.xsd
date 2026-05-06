@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR412D" targetNamespace="http://tempuri.org/EDR412D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR412D.xsd" xmlns:mstns="http://tempuri.org/EDR412D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="EDR412D" msdata:IsDataSet="true">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="EDR412L1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="P2E1" type="xs:int" minOccurs="0" />
+                            <xs:element name="P2E2" type="xs:int" minOccurs="0" />
+                            <xs:element name="P2E3" type="xs:int" minOccurs="0" />
+                            <xs:element name="P2P" type="xs:int" minOccurs="0" />
+                            <xs:element name="P1E1" type="xs:int" minOccurs="0" />
+                            <xs:element name="P1E2" type="xs:int" minOccurs="0" />
+                            <xs:element name="P1E3" type="xs:int" minOccurs="0" />
+                            <xs:element name="P1P" type="xs:int" minOccurs="0" />
+                            <xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+                            <xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="EDR412L2">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ISSUE_DATE" type="xs:string" minOccurs="0" />
+                            <xs:element name="DOC_NO" type="xs:string" minOccurs="0" />
+                            <xs:element name="DEPT_NAME" type="xs:string" minOccurs="0" />
+                            <xs:element name="TYPE_NAME" type="xs:string" minOccurs="0" />
+                            <xs:element name="APP_LVL" type="xs:string" minOccurs="0" />
+                            <xs:element name="DELAMINATE_LVL" type="xs:string" minOccurs="0" />
+                            <xs:element name="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+                            <xs:element name="ISSUE_TYPE" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

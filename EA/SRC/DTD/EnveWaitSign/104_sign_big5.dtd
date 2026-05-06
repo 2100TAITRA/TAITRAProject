@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="BIG5"?>
+<!-- 104_sign_big5.dtd 線上簽核(簽核電子檔) 2015.05.01  -->
+<!ENTITY  % 基本標籤  SYSTEM "104_basic_big5.ent" >
+%基本標籤;
+<!ENTITY  % 線上簽核標籤  SYSTEM "104_sign_big5.ent" >
+%線上簽核標籤;
+<!ELEMENT 線上簽核 (線上簽核流程, 線上簽核資訊) >
+<!ATTLIST 線上簽核
+Id ID #REQUIRED
+ >
+<!-- /線上簽核(簽核電子檔) -->

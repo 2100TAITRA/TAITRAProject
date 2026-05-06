@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ODTSPService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ODTSPService_DocLinkMoi_MoiGroupWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://sys2013/MOIGROUP/MOIGROUPWS.asmx</Value>
+    </Setting>
+    <Setting Name="ODTSPService_MTNET_MtnetWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://docvip.fdat.com.tw/MTnetWS/MTnetWS.asmx</Value>
+    </Setting>
+    <Setting Name="ODTSPService_SMEGWS_SmegWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://docvip.fdat.com.tw/SMEG/SmegWS.asmx</Value>
+    </Setting>
+    <Setting Name="ODTSPService_PetitionWS_PetitionWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docvip.fdat.com.tw/TA/PetitionWS.asmx</Value>
+    </Setting>
+    <Setting Name="ODTSPService_TAWS_TAWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docvip.fdat.com.tw/TA/TAWS.asmx</Value>
+    </Setting>
+    <Setting Name="ODTSPService_HCWSI_DocToWish" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://docvip.fdat.com.tw/HCWSI/DocToHosp.asmx</Value>
+    </Setting>
+    <Setting Name="ODTSPService_WebSFolder_T2100WebSFolder" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://win10test01.fdat.com.tw/WEBSFOLDER/WebSFolder.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

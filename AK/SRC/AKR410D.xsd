@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="AKR410D" targetNamespace="http://tempuri.org/AKR410D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/AKR410D.xsd" xmlns:mstns="http://tempuri.org/AKR410D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="AKR410D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="AKR410L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="STORENO" type="xs:string" minOccurs="0" />
+							<xs:element name="FILEVOL" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="DOC_NO" minOccurs="0" type="xs:string" />
+							<xs:element name="MICRO_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="ATT_SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_STATE" type="xs:string" minOccurs="0" />
+							<xs:element name="DUE_DESTROY" type="xs:string" />
+							<xs:element name="DUE_TRANSFER" type="xs:string" minOccurs="0" />
+							<xs:element name="STORE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="SEC_NO" type="xs:string" minOccurs="0" />
+							<xs:element name="KEEP_YEAR" type="xs:string" minOccurs="0" />
+							<xs:element name="IS_DESTROY" type="xs:string" minOccurs="0" />
+							<xs:element name="DUE_REPOSITED" type="xs:string" minOccurs="0" />
+							<xs:element name="CASE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DUE_DATE" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AKR410L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="STORENO" type="xs:string" minOccurs="0" />
+							<xs:element name="FILEVOL" type="xs:string" minOccurs="0" />
+							<xs:element name="ATT_SEQ" minOccurs="0" type="xs:string" />
+							<xs:element name="FILE_DESC" type="xs:string" minOccurs="0" />
+							<xs:element name="MEDIA_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="FILE_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="DUE_DESTROY" type="xs:string" />
+							<xs:element name="DUE_TRANSFER" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="STORE_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="DUE_DATE" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

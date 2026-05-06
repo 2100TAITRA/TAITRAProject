@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="big5"?>
+<root>
+	<item>
+		<value>01</value>
+		<text>未辦畢</text>
+	</item>
+	<item>
+		<value>02</value>
+		<text>已核決</text>
+	</item>
+	<item>
+		<value>09</value>
+		<text>續辦未歸檔</text>
+	</item>
+	<item>
+		<value>09</value>
+		<text>續辦未歸檔</text>
+	</item>
+	<item>
+		<value>10</value>
+		<text>辦畢未歸檔</text>
+	</item>
+	<item>
+		<value>13</value>
+		<text>辦畢已歸檔</text>
+	</item>
+</root>

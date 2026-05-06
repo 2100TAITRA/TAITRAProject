@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4901_VACD" targetNamespace="http://tempuri.org/EDR4901_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR4901_VACD.xsd" xmlns="http://tempuri.org/EDR4901_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4901_VACD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR4901_VACD" msprop:Generator_UserDSName="EDR4901_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4901_VACL1" msprop:Generator_TableClassName="EDR4901_VACL1DataTable" msprop:Generator_TableVarName="tableEDR4901_VACL1" msprop:Generator_RowChangedName="EDR4901_VACL1RowChanged" msprop:Generator_TablePropName="EDR4901_VACL1" msprop:Generator_RowDeletingName="EDR4901_VACL1RowDeleting" msprop:Generator_RowChangingName="EDR4901_VACL1RowChanging" msprop:Generator_RowEvHandlerName="EDR4901_VACL1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4901_VACL1RowDeleted" msprop:Generator_RowClassName="EDR4901_VACL1Row" msprop:Generator_UserTableName="EDR4901_VACL1" msprop:Generator_RowEvArgName="EDR4901_VACL1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO" msprop:Generator_ColumnPropNameInRow="DEPT_NO" msprop:Generator_ColumnPropNameInTable="DEPT_NOColumn" msprop:Generator_UserColumnName="DEPT_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPTMENT" msprop:Generator_ColumnVarNameInTable="columnDEPTMENT" msprop:Generator_ColumnPropNameInRow="DEPTMENT" msprop:Generator_ColumnPropNameInTable="DEPTMENTColumn" msprop:Generator_UserColumnName="DEPTMENT" type="xs:string" minOccurs="0" />
+              <xs:element name="CNT_COMMISSION" msprop:Generator_ColumnVarNameInTable="columnCNT_COMMISSION" msprop:Generator_ColumnPropNameInRow="CNT_COMMISSION" msprop:Generator_ColumnPropNameInTable="CNT_COMMISSIONColumn" msprop:Generator_UserColumnName="CNT_COMMISSION" type="xs:string" minOccurs="0" />
+              <xs:element name="DAYS_COMMISSION" msprop:Generator_ColumnVarNameInTable="columnDAYS_COMMISSION" msprop:Generator_ColumnPropNameInRow="DAYS_COMMISSION" msprop:Generator_ColumnPropNameInTable="DAYS_COMMISSIONColumn" msprop:Generator_UserColumnName="DAYS_COMMISSION" type="xs:string" minOccurs="0" />
+              <xs:element name="OVER_COMMISSION" msprop:Generator_ColumnVarNameInTable="columnOVER_COMMISSION" msprop:Generator_ColumnPropNameInRow="OVER_COMMISSION" msprop:Generator_ColumnPropNameInTable="OVER_COMMISSIONColumn" msprop:Generator_UserColumnName="OVER_COMMISSION" type="xs:string" minOccurs="0" />
+              <xs:element name="CNT_DEAN" msprop:Generator_ColumnVarNameInTable="columnCNT_DEAN" msprop:Generator_ColumnPropNameInRow="CNT_DEAN" msprop:Generator_ColumnPropNameInTable="CNT_DEANColumn" msprop:Generator_UserColumnName="CNT_DEAN" type="xs:string" minOccurs="0" />
+              <xs:element name="DAYS_DEAN" msprop:Generator_ColumnVarNameInTable="columnDAYS_DEAN" msprop:Generator_ColumnPropNameInRow="DAYS_DEAN" msprop:Generator_ColumnPropNameInTable="DAYS_DEANColumn" msprop:Generator_UserColumnName="DAYS_DEAN" type="xs:string" minOccurs="0" />
+              <xs:element name="OVER_DEAN" msprop:Generator_ColumnVarNameInTable="columnOVER_DEAN" msprop:Generator_ColumnPropNameInRow="OVER_DEAN" msprop:Generator_ColumnPropNameInTable="OVER_DEANColumn" msprop:Generator_UserColumnName="OVER_DEAN" type="xs:string" minOccurs="0" />
+              <xs:element name="CNT_CY" msprop:Generator_ColumnVarNameInTable="columnCNT_CY" msprop:Generator_ColumnPropNameInRow="CNT_CY" msprop:Generator_ColumnPropNameInTable="CNT_CYColumn" msprop:Generator_UserColumnName="CNT_CY" type="xs:string" minOccurs="0" />
+              <xs:element name="DAYS_CY" msprop:Generator_ColumnVarNameInTable="columnDAYS_CY" msprop:Generator_ColumnPropNameInRow="DAYS_CY" msprop:Generator_ColumnPropNameInTable="DAYS_CYColumn" msprop:Generator_UserColumnName="DAYS_CY" type="xs:string" minOccurs="0" />
+              <xs:element name="OVER_CY" msprop:Generator_ColumnVarNameInTable="columnOVER_CY" msprop:Generator_ColumnPropNameInRow="OVER_CY" msprop:Generator_ColumnPropNameInTable="OVER_CYColumn" msprop:Generator_UserColumnName="OVER_CY" type="xs:string" minOccurs="0" />
+              <xs:element name="CNT_TOTAL" msprop:Generator_ColumnVarNameInTable="columnCNT_TOTAL" msprop:Generator_ColumnPropNameInRow="CNT_TOTAL" msprop:Generator_ColumnPropNameInTable="CNT_TOTALColumn" msprop:Generator_UserColumnName="CNT_TOTAL" type="xs:string" minOccurs="0" />
+              <xs:element name="DAYS_TOTAL" msprop:Generator_ColumnVarNameInTable="columnDAYS_TOTAL" msprop:Generator_ColumnPropNameInRow="DAYS_TOTAL" msprop:Generator_ColumnPropNameInTable="DAYS_TOTALColumn" msprop:Generator_UserColumnName="DAYS_TOTAL" type="xs:string" minOccurs="0" />
+              <xs:element name="OVER_TOTAL" msprop:Generator_ColumnVarNameInTable="columnOVER_TOTAL" msprop:Generator_ColumnPropNameInRow="OVER_TOTAL" msprop:Generator_ColumnPropNameInTable="OVER_TOTALColumn" msprop:Generator_UserColumnName="OVER_TOTAL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EDR4901_VACL2" msprop:Generator_TableClassName="EDR4901_VACL2DataTable" msprop:Generator_TableVarName="tableEDR4901_VACL2" msprop:Generator_RowChangedName="EDR4901_VACL2RowChanged" msprop:Generator_TablePropName="EDR4901_VACL2" msprop:Generator_RowDeletingName="EDR4901_VACL2RowDeleting" msprop:Generator_RowChangingName="EDR4901_VACL2RowChanging" msprop:Generator_RowEvHandlerName="EDR4901_VACL2RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4901_VACL2RowDeleted" msprop:Generator_RowClassName="EDR4901_VACL2Row" msprop:Generator_UserTableName="EDR4901_VACL2" msprop:Generator_RowEvArgName="EDR4901_VACL2RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO" msprop:Generator_ColumnPropNameInRow="DEPT_NO" msprop:Generator_ColumnPropNameInTable="DEPT_NOColumn" msprop:Generator_UserColumnName="DEPT_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPTMENT" msprop:Generator_ColumnVarNameInTable="columnDEPTMENT" msprop:Generator_ColumnPropNameInRow="DEPTMENT" msprop:Generator_ColumnPropNameInTable="DEPTMENTColumn" msprop:Generator_UserColumnName="DEPTMENT" type="xs:string" minOccurs="0" />
+              <xs:element name="CASE_TYPE_NAME" msprop:Generator_ColumnVarNameInTable="columnCASE_TYPE_NAME" msprop:Generator_ColumnPropNameInRow="CASE_TYPE_NAME" msprop:Generator_ColumnPropNameInTable="CASE_TYPE_NAMEColumn" msprop:Generator_UserColumnName="CASE_TYPE_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CNT_6" msprop:Generator_ColumnVarNameInTable="columnCNT_6" msprop:Generator_ColumnPropNameInRow="CNT_6" msprop:Generator_ColumnPropNameInTable="CNT_6Column" msprop:Generator_UserColumnName="CNT_6" type="xs:double" minOccurs="0" />
+              <xs:element name="DAYS_6" msprop:Generator_ColumnVarNameInTable="columnDAYS_6" msprop:Generator_ColumnPropNameInRow="DAYS_6" msprop:Generator_ColumnPropNameInTable="DAYS_6Column" msprop:Generator_UserColumnName="DAYS_6" type="xs:double" minOccurs="0" />
+              <xs:element name="CNT_15" msprop:Generator_ColumnVarNameInTable="columnCNT_15" msprop:Generator_ColumnPropNameInRow="CNT_15" msprop:Generator_ColumnPropNameInTable="CNT_15Column" msprop:Generator_UserColumnName="CNT_15" type="xs:double" minOccurs="0" />
+              <xs:element name="DAYS_15" msprop:Generator_ColumnVarNameInTable="columnDAYS_15" msprop:Generator_ColumnPropNameInRow="DAYS_15" msprop:Generator_ColumnPropNameInTable="DAYS_15Column" msprop:Generator_UserColumnName="DAYS_15" type="xs:double" minOccurs="0" />
+              <xs:element name="CNT_30" msprop:Generator_ColumnVarNameInTable="columnCNT_30" msprop:Generator_ColumnPropNameInRow="CNT_30" msprop:Generator_ColumnPropNameInTable="CNT_30Column" msprop:Generator_UserColumnName="CNT_30" type="xs:double" minOccurs="0" />
+              <xs:element name="DAYS_30" msprop:Generator_ColumnVarNameInTable="columnDAYS_30" msprop:Generator_ColumnPropNameInRow="DAYS_30" msprop:Generator_ColumnPropNameInTable="DAYS_30Column" msprop:Generator_UserColumnName="DAYS_30" type="xs:double" minOccurs="0" />
+              <xs:element name="CNT_30UP" msprop:Generator_ColumnVarNameInTable="columnCNT_30UP" msprop:Generator_ColumnPropNameInRow="CNT_30UP" msprop:Generator_ColumnPropNameInTable="CNT_30UPColumn" msprop:Generator_UserColumnName="CNT_30UP" type="xs:double" minOccurs="0" />
+              <xs:element name="DAYS_30UP" msprop:Generator_ColumnVarNameInTable="columnDAYS_30UP" msprop:Generator_ColumnPropNameInRow="DAYS_30UP" msprop:Generator_ColumnPropNameInTable="DAYS_30UPColumn" msprop:Generator_UserColumnName="DAYS_30UP" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTAL_CNT" msprop:Generator_ColumnVarNameInTable="columnTOTAL_CNT" msprop:Generator_ColumnPropNameInRow="TOTAL_CNT" msprop:Generator_ColumnPropNameInTable="TOTAL_CNTColumn" msprop:Generator_UserColumnName="TOTAL_CNT" type="xs:double" minOccurs="0" />
+              <xs:element name="AVG_DAYS" msprop:Generator_ColumnVarNameInTable="columnAVG_DAYS" msprop:Generator_ColumnPropNameInRow="AVG_DAYS" msprop:Generator_ColumnPropNameInTable="AVG_DAYSColumn" msprop:Generator_UserColumnName="AVG_DAYS" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTAL_OVER" msprop:Generator_ColumnVarNameInTable="columnTOTAL_OVER" msprop:Generator_ColumnPropNameInRow="TOTAL_OVER" msprop:Generator_ColumnPropNameInTable="TOTAL_OVERColumn" msprop:Generator_UserColumnName="TOTAL_OVER" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

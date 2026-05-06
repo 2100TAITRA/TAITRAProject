@@ -1,0 +1,4063 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s1="http://www.2100t.com.tw/webservices/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.2100t.com.tw/webservices/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.2100t.com.tw/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.2100t.com.tw/webservices/">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="GetArtifactByIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetArtifactByIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetArtifactByIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountMappedByArtifact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountMappedByArtifactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountMappedByArtifactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCertMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCertMapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCertMapResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCertFromMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCert" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveCertFromMapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveCertFromMapResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonByCert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argCert" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEncrypted" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argTimeStamp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonByCertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogonByCertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeActiveRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSuperiorOU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeActiveRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeActiveRoleResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveRoleResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LogonByPasswordWithLimitsAndOrgNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonByPasswordWithLimitsAndOrgNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogonByPasswordWithLimitsAndOrgNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonByPasswordWithLimits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonByPasswordWithLimitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogonByPasswordWithLimitsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonByPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogonByPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogonByPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CDCSSocheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ssokey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CDCSSocheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CDCSSocheckResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServerStatusCheck">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServerStatusCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServerStatusCheckResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogoutResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserBulletin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserBulletinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserBulletinResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserBulletinNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserBulletinNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserBulletinNewResult" type="tns:UtyRtnBulletin" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnBulletin">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_bRedirect" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrPageQueryStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrStack" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rtn" type="tns:ArrayOfBulletinInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="nTotal" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBulletinInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BulletinInfo" nillable="true" type="tns:BulletinInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BulletinInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PublishDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttachFile" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSpotLightMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpotLightMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpotLightMsgResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPrograms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProgramsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProgramsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProgramsWithAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProgramsWithAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProgramsWithAccountResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetAAsCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetAAsCacheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetAAsCacheResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetURCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetURCacheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetURCacheResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetAllURCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetAllURCacheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetAllURCacheResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSOURCE_ORGNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argUserCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSOURCE_ORGNOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSOURCE_ORGNOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnvSetting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argUserCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnvSettingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnvSettingResult" type="tns:ArrayOfArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserShortcut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserShortcutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserShortcutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserShortcutNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserShortcutNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserShortcutNewResult" type="tns:UtyRtnShortcut" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UtyRtnShortcut">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_bRedirect" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrPageQueryStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrStack" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rtn" type="tns:ArrayOfShortcutInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="nTotal" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfShortcutInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ShortcutInfo" nillable="true" type="tns:ShortcutInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ShortcutInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ShortcutLink" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserAddressResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleAddressResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserAddress">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllUserAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUserAddressResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProxyUserAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProxyUserAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProxyUserAddressResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordWithOrgNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordWithOrgNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePasswordWithOrgNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadUserStampBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadUserStampBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadUserStampBoxResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadUnitStampBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadUnitStampBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadUnitStampBoxResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadOrgStampBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadOrgStampBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadOrgStampBoxResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadUserStampBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argNewGuid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadUserStampBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadUserStampBoxResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadUnitStampBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadUnitStampBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadUnitStampBoxResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadOrgStampBox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFileName" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadOrgStampBoxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadOrgStampBoxResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WinLogon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argDomain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WinLogonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WinLogonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRoleMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRoleMailResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSourceOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUnitCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRoleCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argUserCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserEmailResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteAccessLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="argCategory" type="tns:AccessCategory" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argActiveUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argActiveRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccessTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argImportant" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccessTarget" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argActionDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argFlag" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="AccessCategory">
+        <s:restriction base="s:string">
+          <s:enumeration value="LogonByPassword" />
+          <s:enumeration value="LogonByCert" />
+          <s:enumeration value="WrongPassword" />
+          <s:enumeration value="DisableAccount" />
+          <s:enumeration value="LockAccount" />
+          <s:enumeration value="WrongSetting" />
+          <s:enumeration value="InitEnveFail" />
+          <s:enumeration value="VerifySigFail" />
+          <s:enumeration value="BindFail" />
+          <s:enumeration value="Logout" />
+          <s:enumeration value="AccessTarget" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="WriteAccessLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WriteAccessLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMOICAMapAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argCert" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMOICAMapAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMOICAMapAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMOICACertStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCert" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryMOICACertStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="QueryMOICACertStatusResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfo2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfo2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInfo2Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetAPPMap">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetAPPMapResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAccountName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountNameWithOrgNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOrgNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountNameWithOrgNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountNameWithOrgNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpLevelUnitOfAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpLevelUnitOfAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUpLevelUnitOfAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpLevelFirstUnitOfAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUpLevelFirstUnitOfAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUpLevelFirstUnitOfAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetServerDisp">
+        <s:complexType />
+      </s:element>
+      <s:element name="ResetServerDispResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckCertificateValidity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="X509Cert" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Usage" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SOURCE_ORGNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCertificateValidityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckCertificateValidityResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserEnvSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnvName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argEnvValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="argRemove" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserEnvSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUserEnvSetResult" type="tns:RetMsg" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetMsg">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_enumMsgStatus" type="tns:EnumMsgStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EnumMsgStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="DocStatusRead" />
+          <s:enumeration value="DocStatusNone" />
+          <s:enumeration value="DocStatusOffline" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetCardLoanInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argArtifact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardLoanInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardLoanInfoResult" type="tns:RetMsgBorrowCard" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RetMsgBorrowCard">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RetMsg">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="m_DsRet">
+                <s:complexType>
+                  <s:sequence>
+                    <s:element ref="s:schema" />
+                    <s:any />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="UtyRtnBulletin" nillable="true" type="tns:UtyRtnBulletin" />
+      <s:element name="ArrayOfArrayOfString" nillable="true" type="tns:ArrayOfArrayOfString" />
+      <s:element name="UtyRtnShortcut" nillable="true" type="tns:UtyRtnShortcut" />
+      <s:element name="int" type="s:int" />
+      <s:element name="long" type="s:long" />
+      <s:element name="RetMsg" nillable="true" type="tns:RetMsg" />
+      <s:element name="RetMsgBorrowCard" nillable="true" type="tns:RetMsgBorrowCard" />
+    </s:schema>
+    <s:schema targetNamespace="http://www.2100t.com.tw/webservices/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetArtifactByIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetArtifactByIP" />
+  </wsdl:message>
+  <wsdl:message name="GetArtifactByIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetArtifactByIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMappedByArtifactSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountMappedByArtifact" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMappedByArtifactSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountMappedByArtifactResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCertMapSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCertMap" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCertMapSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCertMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCertFromMapSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveCertFromMap" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCertFromMapSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveCertFromMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogonByCertSoapIn">
+    <wsdl:part name="parameters" element="tns:LogonByCert" />
+  </wsdl:message>
+  <wsdl:message name="LogonByCertSoapOut">
+    <wsdl:part name="parameters" element="tns:LogonByCertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeActiveRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeActiveRole" />
+  </wsdl:message>
+  <wsdl:message name="ChangeActiveRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeActiveRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveRole" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsAndOrgNoSoapIn">
+    <wsdl:part name="parameters" element="tns:LogonByPasswordWithLimitsAndOrgNo" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsAndOrgNoSoapOut">
+    <wsdl:part name="parameters" element="tns:LogonByPasswordWithLimitsAndOrgNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsSoapIn">
+    <wsdl:part name="parameters" element="tns:LogonByPasswordWithLimits" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsSoapOut">
+    <wsdl:part name="parameters" element="tns:LogonByPasswordWithLimitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:LogonByPassword" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:LogonByPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="CDCSSocheckSoapIn">
+    <wsdl:part name="parameters" element="tns:CDCSSocheck" />
+  </wsdl:message>
+  <wsdl:message name="CDCSSocheckSoapOut">
+    <wsdl:part name="parameters" element="tns:CDCSSocheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServerStatusCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:ServerStatusCheck" />
+  </wsdl:message>
+  <wsdl:message name="ServerStatusCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:ServerStatusCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserBulletin" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserBulletinResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserBulletinNew" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserBulletinNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpotLightMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpotLightMsg" />
+  </wsdl:message>
+  <wsdl:message name="GetSpotLightMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpotLightMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserPrograms" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserProgramsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsWithAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserProgramsWithAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsWithAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserProgramsWithAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetAAsCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetAAsCache" />
+  </wsdl:message>
+  <wsdl:message name="ResetAAsCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetAAsCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetURCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetURCache" />
+  </wsdl:message>
+  <wsdl:message name="ResetURCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetURCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetAllURCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetAllURCache" />
+  </wsdl:message>
+  <wsdl:message name="ResetAllURCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetAllURCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSOURCE_ORGNOSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSOURCE_ORGNO" />
+  </wsdl:message>
+  <wsdl:message name="GetSOURCE_ORGNOSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSOURCE_ORGNOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvSettingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnvSetting" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvSettingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnvSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserShortcut" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserShortcutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutNewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserShortcutNew" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutNewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserShortcutNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUserAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUserAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProxyUserAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProxyUserAddress" />
+  </wsdl:message>
+  <wsdl:message name="GetProxyUserAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProxyUserAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordWithOrgNoSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePasswordWithOrgNo" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordWithOrgNoSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordWithOrgNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUserStampBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadUserStampBox" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUserStampBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadUserStampBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUnitStampBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadUnitStampBox" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUnitStampBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadUnitStampBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadOrgStampBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadOrgStampBox" />
+  </wsdl:message>
+  <wsdl:message name="DownloadOrgStampBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadOrgStampBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadUserStampBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadUserStampBox" />
+  </wsdl:message>
+  <wsdl:message name="UploadUserStampBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadUserStampBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadUnitStampBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadUnitStampBox" />
+  </wsdl:message>
+  <wsdl:message name="UploadUnitStampBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadUnitStampBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadOrgStampBoxSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadOrgStampBox" />
+  </wsdl:message>
+  <wsdl:message name="UploadOrgStampBoxSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadOrgStampBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="WinLogonSoapIn">
+    <wsdl:part name="parameters" element="tns:WinLogon" />
+  </wsdl:message>
+  <wsdl:message name="WinLogonSoapOut">
+    <wsdl:part name="parameters" element="tns:WinLogonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleMailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRoleMail" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleMailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRoleMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserEmail" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteAccessLogSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteAccessLog" />
+  </wsdl:message>
+  <wsdl:message name="WriteAccessLogSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteAccessLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMOICAMapAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMOICAMapAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetMOICAMapAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMOICAMapAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryMOICACertStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryMOICACertStatus" />
+  </wsdl:message>
+  <wsdl:message name="QueryMOICACertStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryMOICACertStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfo2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo2" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfo2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfo2Response" />
+  </wsdl:message>
+  <wsdl:message name="ResetAPPMapSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetAPPMap" />
+  </wsdl:message>
+  <wsdl:message name="ResetAPPMapSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetAPPMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountName" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameWithOrgNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountNameWithOrgNo" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameWithOrgNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountNameWithOrgNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelUnitOfAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUpLevelUnitOfAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelUnitOfAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUpLevelUnitOfAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelFirstUnitOfAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUpLevelFirstUnitOfAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelFirstUnitOfAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUpLevelFirstUnitOfAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetServerDispSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetServerDisp" />
+  </wsdl:message>
+  <wsdl:message name="ResetServerDispSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetServerDispResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCertificateValiditySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCertificateValidity" />
+  </wsdl:message>
+  <wsdl:message name="CheckCertificateValiditySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCertificateValidityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserEnvSetSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserEnvSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserEnvSetSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserEnvSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLoanInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardLoanInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLoanInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardLoanInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetArtifactByIPHttpGetIn">
+    <wsdl:part name="argIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetArtifactByIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMappedByArtifactHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMappedByArtifactHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCertMapHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCertMapHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCertFromMapHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argCert" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCertFromMapHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="LogonByCertHttpGetIn">
+    <wsdl:part name="argCert" type="s:string" />
+    <wsdl:part name="strEncrypted" type="s:string" />
+    <wsdl:part name="argTimeStamp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByCertHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeActiveRoleHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argSuperiorOU" type="s:string" />
+    <wsdl:part name="argRoleNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeActiveRoleHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveRoleHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveRoleHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsAndOrgNoHttpGetIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsAndOrgNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsHttpGetIn">
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordHttpGetIn">
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CDCSSocheckHttpGetIn">
+    <wsdl:part name="ssokey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CDCSSocheckHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServerStatusCheckHttpGetIn" />
+  <wsdl:message name="ServerStatusCheckHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="LogoutHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogoutHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinNewHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinNewHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnBulletin" />
+  </wsdl:message>
+  <wsdl:message name="GetSpotLightMsgHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSpotLightMsgHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsWithAccountHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsWithAccountHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ResetAAsCacheHttpGetIn" />
+  <wsdl:message name="ResetAAsCacheHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetURCacheHttpGetIn" />
+  <wsdl:message name="ResetURCacheHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetAllURCacheHttpGetIn" />
+  <wsdl:message name="ResetAllURCacheHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSOURCE_ORGNOHttpGetIn">
+    <wsdl:part name="argUserCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSOURCE_ORGNOHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvSettingHttpGetIn">
+    <wsdl:part name="argUserCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvSettingHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutNewHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutNewHttpGetOut">
+    <wsdl:part name="Body" element="tns:UtyRtnShortcut" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAddressHttpGetIn">
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+    <wsdl:part name="argUserCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleAddressHttpGetIn">
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserAddressHttpGetIn" />
+  <wsdl:message name="GetAllUserAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetProxyUserAddressHttpGetIn">
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProxyUserAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordWithOrgNoHttpGetIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argOldPassword" type="s:string" />
+    <wsdl:part name="argNewPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordWithOrgNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpGetIn">
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argOldPassword" type="s:string" />
+    <wsdl:part name="argNewPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUserStampBoxHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUserStampBoxHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUnitStampBoxHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUnitStampBoxHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="DownloadOrgStampBoxHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadOrgStampBoxHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="UploadUserStampBoxHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argNewGuid" type="s:string" />
+    <wsdl:part name="argFileName" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadUserStampBoxHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UploadUnitStampBoxHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argFileName" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadUnitStampBoxHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UploadOrgStampBoxHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgCode" type="s:string" />
+    <wsdl:part name="argFileName" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadOrgStampBoxHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WinLogonHttpGetIn">
+    <wsdl:part name="argDomain" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WinLogonHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleMailHttpGetIn">
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleMailHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailHttpGetIn">
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+    <wsdl:part name="argUserCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="WriteAccessLogHttpGetIn">
+    <wsdl:part name="argCategory" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argActiveUnit" type="s:string" />
+    <wsdl:part name="argActiveRole" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argAccessTime" type="s:string" />
+    <wsdl:part name="argIP" type="s:string" />
+    <wsdl:part name="argImportant" type="s:string" />
+    <wsdl:part name="argAccessTarget" type="s:string" />
+    <wsdl:part name="argActionDesc" type="s:string" />
+    <wsdl:part name="argFlag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteAccessLogHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMOICAMapAccountHttpGetIn">
+    <wsdl:part name="argCert" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMOICAMapAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryMOICACertStatusHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argCert" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryMOICACertStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfo2HttpGetIn">
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfo2HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ResetAPPMapHttpGetIn" />
+  <wsdl:message name="ResetAPPMapHttpGetOut" />
+  <wsdl:message name="GetAccountNameHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameWithOrgNoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameWithOrgNoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelUnitOfAccountHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelUnitOfAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelFirstUnitOfAccountHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelFirstUnitOfAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetServerDispHttpGetIn" />
+  <wsdl:message name="ResetServerDispHttpGetOut" />
+  <wsdl:message name="CheckCertificateValidityHttpGetIn">
+    <wsdl:part name="X509Cert" type="s:string" />
+    <wsdl:part name="Usage" type="s:string" />
+    <wsdl:part name="SOURCE_ORGNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCertificateValidityHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserEnvSetHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argEnvName" type="s:string" />
+    <wsdl:part name="argEnvValue" type="s:string" />
+    <wsdl:part name="argRemove" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserEnvSetHttpGetOut">
+    <wsdl:part name="Body" element="tns:RetMsg" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLoanInfoHttpGetIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLoanInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:RetMsgBorrowCard" />
+  </wsdl:message>
+  <wsdl:message name="GetArtifactByIPHttpPostIn">
+    <wsdl:part name="argIP" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetArtifactByIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMappedByArtifactHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMappedByArtifactHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCertMapHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCertMapHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCertFromMapHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argCert" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="RemoveCertFromMapHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="LogonByCertHttpPostIn">
+    <wsdl:part name="argCert" type="s:string" />
+    <wsdl:part name="strEncrypted" type="s:string" />
+    <wsdl:part name="argTimeStamp" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByCertHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeActiveRoleHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argSuperiorOU" type="s:string" />
+    <wsdl:part name="argRoleNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeActiveRoleHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveRoleHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveRoleHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsAndOrgNoHttpPostIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsAndOrgNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsHttpPostIn">
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordWithLimitsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordHttpPostIn">
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogonByPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CDCSSocheckHttpPostIn">
+    <wsdl:part name="ssokey" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CDCSSocheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ServerStatusCheckHttpPostIn" />
+  <wsdl:message name="ServerStatusCheckHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="LogoutHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LogoutHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinNewHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserBulletinNewHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnBulletin" />
+  </wsdl:message>
+  <wsdl:message name="GetSpotLightMsgHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSpotLightMsgHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsWithAccountHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProgramsWithAccountHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ResetAAsCacheHttpPostIn" />
+  <wsdl:message name="ResetAAsCacheHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetURCacheHttpPostIn" />
+  <wsdl:message name="ResetURCacheHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetAllURCacheHttpPostIn" />
+  <wsdl:message name="ResetAllURCacheHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSOURCE_ORGNOHttpPostIn">
+    <wsdl:part name="argUserCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSOURCE_ORGNOHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvSettingHttpPostIn">
+    <wsdl:part name="argUserCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEnvSettingHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutNewHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argCount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserShortcutNewHttpPostOut">
+    <wsdl:part name="Body" element="tns:UtyRtnShortcut" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAddressHttpPostIn">
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+    <wsdl:part name="argUserCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleAddressHttpPostIn">
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserAddressHttpPostIn" />
+  <wsdl:message name="GetAllUserAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetProxyUserAddressHttpPostIn">
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProxyUserAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordWithOrgNoHttpPostIn">
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argOldPassword" type="s:string" />
+    <wsdl:part name="argNewPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordWithOrgNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpPostIn">
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argOldPassword" type="s:string" />
+    <wsdl:part name="argNewPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUserStampBoxHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUserStampBoxHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUnitStampBoxHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadUnitStampBoxHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="DownloadOrgStampBoxHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadOrgStampBoxHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="UploadUserStampBoxHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argNewGuid" type="s:string" />
+    <wsdl:part name="argFileName" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadUserStampBoxHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UploadUnitStampBoxHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argFileName" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadUnitStampBoxHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UploadOrgStampBoxHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argOrgCode" type="s:string" />
+    <wsdl:part name="argFileName" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadOrgStampBoxHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WinLogonHttpPostIn">
+    <wsdl:part name="argDomain" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WinLogonHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleMailHttpPostIn">
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetRoleMailHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailHttpPostIn">
+    <wsdl:part name="argSourceOrgNo" type="s:string" />
+    <wsdl:part name="argUnitCode" type="s:string" />
+    <wsdl:part name="argRoleCode" type="s:string" />
+    <wsdl:part name="argUserCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="WriteAccessLogHttpPostIn">
+    <wsdl:part name="argCategory" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+    <wsdl:part name="argActiveUnit" type="s:string" />
+    <wsdl:part name="argActiveRole" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argAccessTime" type="s:string" />
+    <wsdl:part name="argIP" type="s:string" />
+    <wsdl:part name="argImportant" type="s:string" />
+    <wsdl:part name="argAccessTarget" type="s:string" />
+    <wsdl:part name="argActionDesc" type="s:string" />
+    <wsdl:part name="argFlag" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WriteAccessLogHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMOICAMapAccountHttpPostIn">
+    <wsdl:part name="argCert" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMOICAMapAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryMOICACertStatusHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argCert" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryMOICACertStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfo2HttpPostIn">
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfo2HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ResetAPPMapHttpPostIn" />
+  <wsdl:message name="ResetAPPMapHttpPostOut" />
+  <wsdl:message name="GetAccountNameHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameWithOrgNoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+    <wsdl:part name="argOrgNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountNameWithOrgNoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelUnitOfAccountHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelUnitOfAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelFirstUnitOfAccountHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argAccount" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpLevelFirstUnitOfAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ResetServerDispHttpPostIn" />
+  <wsdl:message name="ResetServerDispHttpPostOut" />
+  <wsdl:message name="CheckCertificateValidityHttpPostIn">
+    <wsdl:part name="X509Cert" type="s:string" />
+    <wsdl:part name="Usage" type="s:string" />
+    <wsdl:part name="SOURCE_ORGNO" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCertificateValidityHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserEnvSetHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+    <wsdl:part name="argEnvName" type="s:string" />
+    <wsdl:part name="argEnvValue" type="s:string" />
+    <wsdl:part name="argRemove" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserEnvSetHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetMsg" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLoanInfoHttpPostIn">
+    <wsdl:part name="argArtifact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCardLoanInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:RetMsgBorrowCard" />
+  </wsdl:message>
+  <wsdl:portType name="AuthWSSoap">
+    <wsdl:operation name="GetArtifactByIP">
+      <wsdl:input message="tns:GetArtifactByIPSoapIn" />
+      <wsdl:output message="tns:GetArtifactByIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountMappedByArtifact">
+      <wsdl:input message="tns:GetAccountMappedByArtifactSoapIn" />
+      <wsdl:output message="tns:GetAccountMappedByArtifactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCertMap">
+      <wsdl:input message="tns:UpdateCertMapSoapIn" />
+      <wsdl:output message="tns:UpdateCertMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCertFromMap">
+      <wsdl:input message="tns:RemoveCertFromMapSoapIn" />
+      <wsdl:output message="tns:RemoveCertFromMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByCert">
+      <wsdl:input message="tns:LogonByCertSoapIn" />
+      <wsdl:output message="tns:LogonByCertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeActiveRole">
+      <wsdl:input message="tns:ChangeActiveRoleSoapIn" />
+      <wsdl:output message="tns:ChangeActiveRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveRole">
+      <wsdl:input message="tns:GetActiveRoleSoapIn" />
+      <wsdl:output message="tns:GetActiveRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimitsAndOrgNo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">支援多機關架構與ASP架構</documentation>
+      <wsdl:input message="tns:LogonByPasswordWithLimitsAndOrgNoSoapIn" />
+      <wsdl:output message="tns:LogonByPasswordWithLimitsAndOrgNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimits">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">不支援ASP架構</documentation>
+      <wsdl:input message="tns:LogonByPasswordWithLimitsSoapIn" />
+      <wsdl:output message="tns:LogonByPasswordWithLimitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPassword">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">不支援ASP架構</documentation>
+      <wsdl:input message="tns:LogonByPasswordSoapIn" />
+      <wsdl:output message="tns:LogonByPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CDCSSocheck">
+      <wsdl:input message="tns:CDCSSocheckSoapIn" />
+      <wsdl:output message="tns:CDCSSocheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServerStatusCheck">
+      <wsdl:input message="tns:ServerStatusCheckSoapIn" />
+      <wsdl:output message="tns:ServerStatusCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input message="tns:LogoutSoapIn" />
+      <wsdl:output message="tns:LogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletin">
+      <wsdl:input message="tns:GetUserBulletinSoapIn" />
+      <wsdl:output message="tns:GetUserBulletinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletinNew">
+      <wsdl:input message="tns:GetUserBulletinNewSoapIn" />
+      <wsdl:output message="tns:GetUserBulletinNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpotLightMsg">
+      <wsdl:input message="tns:GetSpotLightMsgSoapIn" />
+      <wsdl:output message="tns:GetSpotLightMsgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrograms">
+      <wsdl:input message="tns:GetUserProgramsSoapIn" />
+      <wsdl:output message="tns:GetUserProgramsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProgramsWithAccount">
+      <wsdl:input message="tns:GetUserProgramsWithAccountSoapIn" />
+      <wsdl:output message="tns:GetUserProgramsWithAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAAsCache">
+      <wsdl:input message="tns:ResetAAsCacheSoapIn" />
+      <wsdl:output message="tns:ResetAAsCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetURCache">
+      <wsdl:input message="tns:ResetURCacheSoapIn" />
+      <wsdl:output message="tns:ResetURCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAllURCache">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">通知所有站台清cache</documentation>
+      <wsdl:input message="tns:ResetAllURCacheSoapIn" />
+      <wsdl:output message="tns:ResetAllURCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSOURCE_ORGNO">
+      <wsdl:input message="tns:GetSOURCE_ORGNOSoapIn" />
+      <wsdl:output message="tns:GetSOURCE_ORGNOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvSetting">
+      <wsdl:input message="tns:GetEnvSettingSoapIn" />
+      <wsdl:output message="tns:GetEnvSettingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcut">
+      <wsdl:input message="tns:GetUserShortcutSoapIn" />
+      <wsdl:output message="tns:GetUserShortcutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcutNew">
+      <wsdl:input message="tns:GetUserShortcutNewSoapIn" />
+      <wsdl:output message="tns:GetUserShortcutNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAddress">
+      <wsdl:input message="tns:GetUserAddressSoapIn" />
+      <wsdl:output message="tns:GetUserAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleAddress">
+      <wsdl:input message="tns:GetRoleAddressSoapIn" />
+      <wsdl:output message="tns:GetRoleAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserAddress">
+      <wsdl:input message="tns:GetAllUserAddressSoapIn" />
+      <wsdl:output message="tns:GetAllUserAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProxyUserAddress">
+      <wsdl:input message="tns:GetProxyUserAddressSoapIn" />
+      <wsdl:output message="tns:GetProxyUserAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordWithOrgNo">
+      <wsdl:input message="tns:ChangePasswordWithOrgNoSoapIn" />
+      <wsdl:output message="tns:ChangePasswordWithOrgNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUserStampBox">
+      <wsdl:input message="tns:DownloadUserStampBoxSoapIn" />
+      <wsdl:output message="tns:DownloadUserStampBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUnitStampBox">
+      <wsdl:input message="tns:DownloadUnitStampBoxSoapIn" />
+      <wsdl:output message="tns:DownloadUnitStampBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadOrgStampBox">
+      <wsdl:input message="tns:DownloadOrgStampBoxSoapIn" />
+      <wsdl:output message="tns:DownloadOrgStampBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadUserStampBox">
+      <wsdl:input message="tns:UploadUserStampBoxSoapIn" />
+      <wsdl:output message="tns:UploadUserStampBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadUnitStampBox">
+      <wsdl:input message="tns:UploadUnitStampBoxSoapIn" />
+      <wsdl:output message="tns:UploadUnitStampBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadOrgStampBox">
+      <wsdl:input message="tns:UploadOrgStampBoxSoapIn" />
+      <wsdl:output message="tns:UploadOrgStampBoxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WinLogon">
+      <wsdl:input message="tns:WinLogonSoapIn" />
+      <wsdl:output message="tns:WinLogonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleMail">
+      <wsdl:input message="tns:GetRoleMailSoapIn" />
+      <wsdl:output message="tns:GetRoleMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmail">
+      <wsdl:input message="tns:GetUserEmailSoapIn" />
+      <wsdl:output message="tns:GetUserEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteAccessLog">
+      <wsdl:input message="tns:WriteAccessLogSoapIn" />
+      <wsdl:output message="tns:WriteAccessLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMOICAMapAccount">
+      <wsdl:input message="tns:GetMOICAMapAccountSoapIn" />
+      <wsdl:output message="tns:GetMOICAMapAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMOICACertStatus">
+      <wsdl:input message="tns:QueryMOICACertStatusSoapIn" />
+      <wsdl:output message="tns:QueryMOICACertStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo2">
+      <wsdl:input message="tns:GetUserInfo2SoapIn" />
+      <wsdl:output message="tns:GetUserInfo2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAPPMap">
+      <wsdl:input message="tns:ResetAPPMapSoapIn" />
+      <wsdl:output message="tns:ResetAPPMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountName">
+      <wsdl:input message="tns:GetAccountNameSoapIn" />
+      <wsdl:output message="tns:GetAccountNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNameWithOrgNo">
+      <wsdl:input message="tns:GetAccountNameWithOrgNoSoapIn" />
+      <wsdl:output message="tns:GetAccountNameWithOrgNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelUnitOfAccount">
+      <wsdl:input message="tns:GetUpLevelUnitOfAccountSoapIn" />
+      <wsdl:output message="tns:GetUpLevelUnitOfAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelFirstUnitOfAccount">
+      <wsdl:input message="tns:GetUpLevelFirstUnitOfAccountSoapIn" />
+      <wsdl:output message="tns:GetUpLevelFirstUnitOfAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetServerDisp">
+      <wsdl:input message="tns:ResetServerDispSoapIn" />
+      <wsdl:output message="tns:ResetServerDispSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCertificateValidity">
+      <wsdl:input message="tns:CheckCertificateValiditySoapIn" />
+      <wsdl:output message="tns:CheckCertificateValiditySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserEnvSet">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">新增、修改、刪除指定使用者帳號之環境變數</documentation>
+      <wsdl:input message="tns:UpdateUserEnvSetSoapIn" />
+      <wsdl:output message="tns:UpdateUserEnvSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLoanInfo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">傳入使用者權杖後，取得該使用者之借卡資訊</documentation>
+      <wsdl:input message="tns:GetCardLoanInfoSoapIn" />
+      <wsdl:output message="tns:GetCardLoanInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AuthWSHttpGet">
+    <wsdl:operation name="GetArtifactByIP">
+      <wsdl:input message="tns:GetArtifactByIPHttpGetIn" />
+      <wsdl:output message="tns:GetArtifactByIPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountMappedByArtifact">
+      <wsdl:input message="tns:GetAccountMappedByArtifactHttpGetIn" />
+      <wsdl:output message="tns:GetAccountMappedByArtifactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCertMap">
+      <wsdl:input message="tns:UpdateCertMapHttpGetIn" />
+      <wsdl:output message="tns:UpdateCertMapHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCertFromMap">
+      <wsdl:input message="tns:RemoveCertFromMapHttpGetIn" />
+      <wsdl:output message="tns:RemoveCertFromMapHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByCert">
+      <wsdl:input message="tns:LogonByCertHttpGetIn" />
+      <wsdl:output message="tns:LogonByCertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeActiveRole">
+      <wsdl:input message="tns:ChangeActiveRoleHttpGetIn" />
+      <wsdl:output message="tns:ChangeActiveRoleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveRole">
+      <wsdl:input message="tns:GetActiveRoleHttpGetIn" />
+      <wsdl:output message="tns:GetActiveRoleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimitsAndOrgNo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">支援多機關架構與ASP架構</documentation>
+      <wsdl:input message="tns:LogonByPasswordWithLimitsAndOrgNoHttpGetIn" />
+      <wsdl:output message="tns:LogonByPasswordWithLimitsAndOrgNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimits">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">不支援ASP架構</documentation>
+      <wsdl:input message="tns:LogonByPasswordWithLimitsHttpGetIn" />
+      <wsdl:output message="tns:LogonByPasswordWithLimitsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPassword">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">不支援ASP架構</documentation>
+      <wsdl:input message="tns:LogonByPasswordHttpGetIn" />
+      <wsdl:output message="tns:LogonByPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CDCSSocheck">
+      <wsdl:input message="tns:CDCSSocheckHttpGetIn" />
+      <wsdl:output message="tns:CDCSSocheckHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServerStatusCheck">
+      <wsdl:input message="tns:ServerStatusCheckHttpGetIn" />
+      <wsdl:output message="tns:ServerStatusCheckHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input message="tns:LogoutHttpGetIn" />
+      <wsdl:output message="tns:LogoutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletin">
+      <wsdl:input message="tns:GetUserBulletinHttpGetIn" />
+      <wsdl:output message="tns:GetUserBulletinHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletinNew">
+      <wsdl:input message="tns:GetUserBulletinNewHttpGetIn" />
+      <wsdl:output message="tns:GetUserBulletinNewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpotLightMsg">
+      <wsdl:input message="tns:GetSpotLightMsgHttpGetIn" />
+      <wsdl:output message="tns:GetSpotLightMsgHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrograms">
+      <wsdl:input message="tns:GetUserProgramsHttpGetIn" />
+      <wsdl:output message="tns:GetUserProgramsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProgramsWithAccount">
+      <wsdl:input message="tns:GetUserProgramsWithAccountHttpGetIn" />
+      <wsdl:output message="tns:GetUserProgramsWithAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAAsCache">
+      <wsdl:input message="tns:ResetAAsCacheHttpGetIn" />
+      <wsdl:output message="tns:ResetAAsCacheHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetURCache">
+      <wsdl:input message="tns:ResetURCacheHttpGetIn" />
+      <wsdl:output message="tns:ResetURCacheHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAllURCache">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">通知所有站台清cache</documentation>
+      <wsdl:input message="tns:ResetAllURCacheHttpGetIn" />
+      <wsdl:output message="tns:ResetAllURCacheHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSOURCE_ORGNO">
+      <wsdl:input message="tns:GetSOURCE_ORGNOHttpGetIn" />
+      <wsdl:output message="tns:GetSOURCE_ORGNOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvSetting">
+      <wsdl:input message="tns:GetEnvSettingHttpGetIn" />
+      <wsdl:output message="tns:GetEnvSettingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcut">
+      <wsdl:input message="tns:GetUserShortcutHttpGetIn" />
+      <wsdl:output message="tns:GetUserShortcutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcutNew">
+      <wsdl:input message="tns:GetUserShortcutNewHttpGetIn" />
+      <wsdl:output message="tns:GetUserShortcutNewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAddress">
+      <wsdl:input message="tns:GetUserAddressHttpGetIn" />
+      <wsdl:output message="tns:GetUserAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleAddress">
+      <wsdl:input message="tns:GetRoleAddressHttpGetIn" />
+      <wsdl:output message="tns:GetRoleAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserAddress">
+      <wsdl:input message="tns:GetAllUserAddressHttpGetIn" />
+      <wsdl:output message="tns:GetAllUserAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProxyUserAddress">
+      <wsdl:input message="tns:GetProxyUserAddressHttpGetIn" />
+      <wsdl:output message="tns:GetProxyUserAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordWithOrgNo">
+      <wsdl:input message="tns:ChangePasswordWithOrgNoHttpGetIn" />
+      <wsdl:output message="tns:ChangePasswordWithOrgNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordHttpGetIn" />
+      <wsdl:output message="tns:ChangePasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUserStampBox">
+      <wsdl:input message="tns:DownloadUserStampBoxHttpGetIn" />
+      <wsdl:output message="tns:DownloadUserStampBoxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUnitStampBox">
+      <wsdl:input message="tns:DownloadUnitStampBoxHttpGetIn" />
+      <wsdl:output message="tns:DownloadUnitStampBoxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadOrgStampBox">
+      <wsdl:input message="tns:DownloadOrgStampBoxHttpGetIn" />
+      <wsdl:output message="tns:DownloadOrgStampBoxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadUserStampBox">
+      <wsdl:input message="tns:UploadUserStampBoxHttpGetIn" />
+      <wsdl:output message="tns:UploadUserStampBoxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadUnitStampBox">
+      <wsdl:input message="tns:UploadUnitStampBoxHttpGetIn" />
+      <wsdl:output message="tns:UploadUnitStampBoxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadOrgStampBox">
+      <wsdl:input message="tns:UploadOrgStampBoxHttpGetIn" />
+      <wsdl:output message="tns:UploadOrgStampBoxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WinLogon">
+      <wsdl:input message="tns:WinLogonHttpGetIn" />
+      <wsdl:output message="tns:WinLogonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleMail">
+      <wsdl:input message="tns:GetRoleMailHttpGetIn" />
+      <wsdl:output message="tns:GetRoleMailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmail">
+      <wsdl:input message="tns:GetUserEmailHttpGetIn" />
+      <wsdl:output message="tns:GetUserEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteAccessLog">
+      <wsdl:input message="tns:WriteAccessLogHttpGetIn" />
+      <wsdl:output message="tns:WriteAccessLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMOICAMapAccount">
+      <wsdl:input message="tns:GetMOICAMapAccountHttpGetIn" />
+      <wsdl:output message="tns:GetMOICAMapAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMOICACertStatus">
+      <wsdl:input message="tns:QueryMOICACertStatusHttpGetIn" />
+      <wsdl:output message="tns:QueryMOICACertStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo2">
+      <wsdl:input message="tns:GetUserInfo2HttpGetIn" />
+      <wsdl:output message="tns:GetUserInfo2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAPPMap">
+      <wsdl:input message="tns:ResetAPPMapHttpGetIn" />
+      <wsdl:output message="tns:ResetAPPMapHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountName">
+      <wsdl:input message="tns:GetAccountNameHttpGetIn" />
+      <wsdl:output message="tns:GetAccountNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNameWithOrgNo">
+      <wsdl:input message="tns:GetAccountNameWithOrgNoHttpGetIn" />
+      <wsdl:output message="tns:GetAccountNameWithOrgNoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelUnitOfAccount">
+      <wsdl:input message="tns:GetUpLevelUnitOfAccountHttpGetIn" />
+      <wsdl:output message="tns:GetUpLevelUnitOfAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelFirstUnitOfAccount">
+      <wsdl:input message="tns:GetUpLevelFirstUnitOfAccountHttpGetIn" />
+      <wsdl:output message="tns:GetUpLevelFirstUnitOfAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetServerDisp">
+      <wsdl:input message="tns:ResetServerDispHttpGetIn" />
+      <wsdl:output message="tns:ResetServerDispHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCertificateValidity">
+      <wsdl:input message="tns:CheckCertificateValidityHttpGetIn" />
+      <wsdl:output message="tns:CheckCertificateValidityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserEnvSet">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">新增、修改、刪除指定使用者帳號之環境變數</documentation>
+      <wsdl:input message="tns:UpdateUserEnvSetHttpGetIn" />
+      <wsdl:output message="tns:UpdateUserEnvSetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLoanInfo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">傳入使用者權杖後，取得該使用者之借卡資訊</documentation>
+      <wsdl:input message="tns:GetCardLoanInfoHttpGetIn" />
+      <wsdl:output message="tns:GetCardLoanInfoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="AuthWSHttpPost">
+    <wsdl:operation name="GetArtifactByIP">
+      <wsdl:input message="tns:GetArtifactByIPHttpPostIn" />
+      <wsdl:output message="tns:GetArtifactByIPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountMappedByArtifact">
+      <wsdl:input message="tns:GetAccountMappedByArtifactHttpPostIn" />
+      <wsdl:output message="tns:GetAccountMappedByArtifactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCertMap">
+      <wsdl:input message="tns:UpdateCertMapHttpPostIn" />
+      <wsdl:output message="tns:UpdateCertMapHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCertFromMap">
+      <wsdl:input message="tns:RemoveCertFromMapHttpPostIn" />
+      <wsdl:output message="tns:RemoveCertFromMapHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByCert">
+      <wsdl:input message="tns:LogonByCertHttpPostIn" />
+      <wsdl:output message="tns:LogonByCertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeActiveRole">
+      <wsdl:input message="tns:ChangeActiveRoleHttpPostIn" />
+      <wsdl:output message="tns:ChangeActiveRoleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveRole">
+      <wsdl:input message="tns:GetActiveRoleHttpPostIn" />
+      <wsdl:output message="tns:GetActiveRoleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimitsAndOrgNo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">支援多機關架構與ASP架構</documentation>
+      <wsdl:input message="tns:LogonByPasswordWithLimitsAndOrgNoHttpPostIn" />
+      <wsdl:output message="tns:LogonByPasswordWithLimitsAndOrgNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimits">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">不支援ASP架構</documentation>
+      <wsdl:input message="tns:LogonByPasswordWithLimitsHttpPostIn" />
+      <wsdl:output message="tns:LogonByPasswordWithLimitsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPassword">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">不支援ASP架構</documentation>
+      <wsdl:input message="tns:LogonByPasswordHttpPostIn" />
+      <wsdl:output message="tns:LogonByPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CDCSSocheck">
+      <wsdl:input message="tns:CDCSSocheckHttpPostIn" />
+      <wsdl:output message="tns:CDCSSocheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServerStatusCheck">
+      <wsdl:input message="tns:ServerStatusCheckHttpPostIn" />
+      <wsdl:output message="tns:ServerStatusCheckHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input message="tns:LogoutHttpPostIn" />
+      <wsdl:output message="tns:LogoutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletin">
+      <wsdl:input message="tns:GetUserBulletinHttpPostIn" />
+      <wsdl:output message="tns:GetUserBulletinHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletinNew">
+      <wsdl:input message="tns:GetUserBulletinNewHttpPostIn" />
+      <wsdl:output message="tns:GetUserBulletinNewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpotLightMsg">
+      <wsdl:input message="tns:GetSpotLightMsgHttpPostIn" />
+      <wsdl:output message="tns:GetSpotLightMsgHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrograms">
+      <wsdl:input message="tns:GetUserProgramsHttpPostIn" />
+      <wsdl:output message="tns:GetUserProgramsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProgramsWithAccount">
+      <wsdl:input message="tns:GetUserProgramsWithAccountHttpPostIn" />
+      <wsdl:output message="tns:GetUserProgramsWithAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAAsCache">
+      <wsdl:input message="tns:ResetAAsCacheHttpPostIn" />
+      <wsdl:output message="tns:ResetAAsCacheHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetURCache">
+      <wsdl:input message="tns:ResetURCacheHttpPostIn" />
+      <wsdl:output message="tns:ResetURCacheHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAllURCache">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">通知所有站台清cache</documentation>
+      <wsdl:input message="tns:ResetAllURCacheHttpPostIn" />
+      <wsdl:output message="tns:ResetAllURCacheHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSOURCE_ORGNO">
+      <wsdl:input message="tns:GetSOURCE_ORGNOHttpPostIn" />
+      <wsdl:output message="tns:GetSOURCE_ORGNOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvSetting">
+      <wsdl:input message="tns:GetEnvSettingHttpPostIn" />
+      <wsdl:output message="tns:GetEnvSettingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcut">
+      <wsdl:input message="tns:GetUserShortcutHttpPostIn" />
+      <wsdl:output message="tns:GetUserShortcutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcutNew">
+      <wsdl:input message="tns:GetUserShortcutNewHttpPostIn" />
+      <wsdl:output message="tns:GetUserShortcutNewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAddress">
+      <wsdl:input message="tns:GetUserAddressHttpPostIn" />
+      <wsdl:output message="tns:GetUserAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleAddress">
+      <wsdl:input message="tns:GetRoleAddressHttpPostIn" />
+      <wsdl:output message="tns:GetRoleAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserAddress">
+      <wsdl:input message="tns:GetAllUserAddressHttpPostIn" />
+      <wsdl:output message="tns:GetAllUserAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProxyUserAddress">
+      <wsdl:input message="tns:GetProxyUserAddressHttpPostIn" />
+      <wsdl:output message="tns:GetProxyUserAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordWithOrgNo">
+      <wsdl:input message="tns:ChangePasswordWithOrgNoHttpPostIn" />
+      <wsdl:output message="tns:ChangePasswordWithOrgNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordHttpPostIn" />
+      <wsdl:output message="tns:ChangePasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUserStampBox">
+      <wsdl:input message="tns:DownloadUserStampBoxHttpPostIn" />
+      <wsdl:output message="tns:DownloadUserStampBoxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUnitStampBox">
+      <wsdl:input message="tns:DownloadUnitStampBoxHttpPostIn" />
+      <wsdl:output message="tns:DownloadUnitStampBoxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadOrgStampBox">
+      <wsdl:input message="tns:DownloadOrgStampBoxHttpPostIn" />
+      <wsdl:output message="tns:DownloadOrgStampBoxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadUserStampBox">
+      <wsdl:input message="tns:UploadUserStampBoxHttpPostIn" />
+      <wsdl:output message="tns:UploadUserStampBoxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadUnitStampBox">
+      <wsdl:input message="tns:UploadUnitStampBoxHttpPostIn" />
+      <wsdl:output message="tns:UploadUnitStampBoxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadOrgStampBox">
+      <wsdl:input message="tns:UploadOrgStampBoxHttpPostIn" />
+      <wsdl:output message="tns:UploadOrgStampBoxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WinLogon">
+      <wsdl:input message="tns:WinLogonHttpPostIn" />
+      <wsdl:output message="tns:WinLogonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleMail">
+      <wsdl:input message="tns:GetRoleMailHttpPostIn" />
+      <wsdl:output message="tns:GetRoleMailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmail">
+      <wsdl:input message="tns:GetUserEmailHttpPostIn" />
+      <wsdl:output message="tns:GetUserEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteAccessLog">
+      <wsdl:input message="tns:WriteAccessLogHttpPostIn" />
+      <wsdl:output message="tns:WriteAccessLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMOICAMapAccount">
+      <wsdl:input message="tns:GetMOICAMapAccountHttpPostIn" />
+      <wsdl:output message="tns:GetMOICAMapAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMOICACertStatus">
+      <wsdl:input message="tns:QueryMOICACertStatusHttpPostIn" />
+      <wsdl:output message="tns:QueryMOICACertStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo2">
+      <wsdl:input message="tns:GetUserInfo2HttpPostIn" />
+      <wsdl:output message="tns:GetUserInfo2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAPPMap">
+      <wsdl:input message="tns:ResetAPPMapHttpPostIn" />
+      <wsdl:output message="tns:ResetAPPMapHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountName">
+      <wsdl:input message="tns:GetAccountNameHttpPostIn" />
+      <wsdl:output message="tns:GetAccountNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNameWithOrgNo">
+      <wsdl:input message="tns:GetAccountNameWithOrgNoHttpPostIn" />
+      <wsdl:output message="tns:GetAccountNameWithOrgNoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelUnitOfAccount">
+      <wsdl:input message="tns:GetUpLevelUnitOfAccountHttpPostIn" />
+      <wsdl:output message="tns:GetUpLevelUnitOfAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelFirstUnitOfAccount">
+      <wsdl:input message="tns:GetUpLevelFirstUnitOfAccountHttpPostIn" />
+      <wsdl:output message="tns:GetUpLevelFirstUnitOfAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetServerDisp">
+      <wsdl:input message="tns:ResetServerDispHttpPostIn" />
+      <wsdl:output message="tns:ResetServerDispHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCertificateValidity">
+      <wsdl:input message="tns:CheckCertificateValidityHttpPostIn" />
+      <wsdl:output message="tns:CheckCertificateValidityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserEnvSet">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">新增、修改、刪除指定使用者帳號之環境變數</documentation>
+      <wsdl:input message="tns:UpdateUserEnvSetHttpPostIn" />
+      <wsdl:output message="tns:UpdateUserEnvSetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLoanInfo">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">傳入使用者權杖後，取得該使用者之借卡資訊</documentation>
+      <wsdl:input message="tns:GetCardLoanInfoHttpPostIn" />
+      <wsdl:output message="tns:GetCardLoanInfoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AuthWSSoap" type="tns:AuthWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetArtifactByIP">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetArtifactByIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountMappedByArtifact">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetAccountMappedByArtifact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCertMap">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/UpdateCertMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCertFromMap">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/RemoveCertFromMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByCert">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/LogonByCert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeActiveRole">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ChangeActiveRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveRole">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetActiveRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimitsAndOrgNo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/LogonByPasswordWithLimitsAndOrgNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimits">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/LogonByPasswordWithLimits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPassword">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/LogonByPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CDCSSocheck">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/CDCSSocheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerStatusCheck">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ServerStatusCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletin">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserBulletin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletinNew">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserBulletinNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpotLightMsg">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetSpotLightMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrograms">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserPrograms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProgramsWithAccount">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserProgramsWithAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAAsCache">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ResetAAsCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetURCache">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ResetURCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAllURCache">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ResetAllURCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSOURCE_ORGNO">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetSOURCE_ORGNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvSetting">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetEnvSetting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcut">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserShortcut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcutNew">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserShortcutNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAddress">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleAddress">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetRoleAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserAddress">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetAllUserAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProxyUserAddress">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetProxyUserAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordWithOrgNo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ChangePasswordWithOrgNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUserStampBox">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/DownloadUserStampBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUnitStampBox">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/DownloadUnitStampBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadOrgStampBox">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/DownloadOrgStampBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadUserStampBox">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/UploadUserStampBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadUnitStampBox">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/UploadUnitStampBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadOrgStampBox">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/UploadOrgStampBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WinLogon">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/WinLogon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleMail">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetRoleMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmail">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteAccessLog">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/WriteAccessLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMOICAMapAccount">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetMOICAMapAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMOICACertStatus">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/QueryMOICACertStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo2">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUserInfo2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAPPMap">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ResetAPPMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountName">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetAccountName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNameWithOrgNo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetAccountNameWithOrgNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelUnitOfAccount">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUpLevelUnitOfAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelFirstUnitOfAccount">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetUpLevelFirstUnitOfAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetServerDisp">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/ResetServerDisp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCertificateValidity">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/CheckCertificateValidity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserEnvSet">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/UpdateUserEnvSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLoanInfo">
+      <soap:operation soapAction="http://www.2100t.com.tw/webservices/GetCardLoanInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AuthWSHttpGet" type="tns:AuthWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetArtifactByIP">
+      <http:operation location="/GetArtifactByIP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountMappedByArtifact">
+      <http:operation location="/GetAccountMappedByArtifact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCertMap">
+      <http:operation location="/UpdateCertMap" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCertFromMap">
+      <http:operation location="/RemoveCertFromMap" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByCert">
+      <http:operation location="/LogonByCert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeActiveRole">
+      <http:operation location="/ChangeActiveRole" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveRole">
+      <http:operation location="/GetActiveRole" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimitsAndOrgNo">
+      <http:operation location="/LogonByPasswordWithLimitsAndOrgNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimits">
+      <http:operation location="/LogonByPasswordWithLimits" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPassword">
+      <http:operation location="/LogonByPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CDCSSocheck">
+      <http:operation location="/CDCSSocheck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerStatusCheck">
+      <http:operation location="/ServerStatusCheck" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <http:operation location="/Logout" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletin">
+      <http:operation location="/GetUserBulletin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletinNew">
+      <http:operation location="/GetUserBulletinNew" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpotLightMsg">
+      <http:operation location="/GetSpotLightMsg" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrograms">
+      <http:operation location="/GetUserPrograms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProgramsWithAccount">
+      <http:operation location="/GetUserProgramsWithAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAAsCache">
+      <http:operation location="/ResetAAsCache" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetURCache">
+      <http:operation location="/ResetURCache" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAllURCache">
+      <http:operation location="/ResetAllURCache" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSOURCE_ORGNO">
+      <http:operation location="/GetSOURCE_ORGNO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvSetting">
+      <http:operation location="/GetEnvSetting" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcut">
+      <http:operation location="/GetUserShortcut" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcutNew">
+      <http:operation location="/GetUserShortcutNew" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAddress">
+      <http:operation location="/GetUserAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleAddress">
+      <http:operation location="/GetRoleAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserAddress">
+      <http:operation location="/GetAllUserAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProxyUserAddress">
+      <http:operation location="/GetProxyUserAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordWithOrgNo">
+      <http:operation location="/ChangePasswordWithOrgNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <http:operation location="/ChangePassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUserStampBox">
+      <http:operation location="/DownloadUserStampBox" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUnitStampBox">
+      <http:operation location="/DownloadUnitStampBox" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadOrgStampBox">
+      <http:operation location="/DownloadOrgStampBox" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadUserStampBox">
+      <http:operation location="/UploadUserStampBox" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadUnitStampBox">
+      <http:operation location="/UploadUnitStampBox" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadOrgStampBox">
+      <http:operation location="/UploadOrgStampBox" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WinLogon">
+      <http:operation location="/WinLogon" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleMail">
+      <http:operation location="/GetRoleMail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmail">
+      <http:operation location="/GetUserEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteAccessLog">
+      <http:operation location="/WriteAccessLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMOICAMapAccount">
+      <http:operation location="/GetMOICAMapAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMOICACertStatus">
+      <http:operation location="/QueryMOICACertStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo2">
+      <http:operation location="/GetUserInfo2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAPPMap">
+      <http:operation location="/ResetAPPMap" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountName">
+      <http:operation location="/GetAccountName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNameWithOrgNo">
+      <http:operation location="/GetAccountNameWithOrgNo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelUnitOfAccount">
+      <http:operation location="/GetUpLevelUnitOfAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelFirstUnitOfAccount">
+      <http:operation location="/GetUpLevelFirstUnitOfAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetServerDisp">
+      <http:operation location="/ResetServerDisp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCertificateValidity">
+      <http:operation location="/CheckCertificateValidity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserEnvSet">
+      <http:operation location="/UpdateUserEnvSet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLoanInfo">
+      <http:operation location="/GetCardLoanInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AuthWSHttpPost" type="tns:AuthWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetArtifactByIP">
+      <http:operation location="/GetArtifactByIP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountMappedByArtifact">
+      <http:operation location="/GetAccountMappedByArtifact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCertMap">
+      <http:operation location="/UpdateCertMap" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveCertFromMap">
+      <http:operation location="/RemoveCertFromMap" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByCert">
+      <http:operation location="/LogonByCert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeActiveRole">
+      <http:operation location="/ChangeActiveRole" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveRole">
+      <http:operation location="/GetActiveRole" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimitsAndOrgNo">
+      <http:operation location="/LogonByPasswordWithLimitsAndOrgNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPasswordWithLimits">
+      <http:operation location="/LogonByPasswordWithLimits" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogonByPassword">
+      <http:operation location="/LogonByPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CDCSSocheck">
+      <http:operation location="/CDCSSocheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServerStatusCheck">
+      <http:operation location="/ServerStatusCheck" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <http:operation location="/Logout" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletin">
+      <http:operation location="/GetUserBulletin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBulletinNew">
+      <http:operation location="/GetUserBulletinNew" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpotLightMsg">
+      <http:operation location="/GetSpotLightMsg" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPrograms">
+      <http:operation location="/GetUserPrograms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProgramsWithAccount">
+      <http:operation location="/GetUserProgramsWithAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAAsCache">
+      <http:operation location="/ResetAAsCache" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetURCache">
+      <http:operation location="/ResetURCache" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAllURCache">
+      <http:operation location="/ResetAllURCache" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSOURCE_ORGNO">
+      <http:operation location="/GetSOURCE_ORGNO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnvSetting">
+      <http:operation location="/GetEnvSetting" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcut">
+      <http:operation location="/GetUserShortcut" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserShortcutNew">
+      <http:operation location="/GetUserShortcutNew" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAddress">
+      <http:operation location="/GetUserAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleAddress">
+      <http:operation location="/GetRoleAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserAddress">
+      <http:operation location="/GetAllUserAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProxyUserAddress">
+      <http:operation location="/GetProxyUserAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordWithOrgNo">
+      <http:operation location="/ChangePasswordWithOrgNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <http:operation location="/ChangePassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUserStampBox">
+      <http:operation location="/DownloadUserStampBox" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadUnitStampBox">
+      <http:operation location="/DownloadUnitStampBox" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadOrgStampBox">
+      <http:operation location="/DownloadOrgStampBox" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadUserStampBox">
+      <http:operation location="/UploadUserStampBox" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadUnitStampBox">
+      <http:operation location="/UploadUnitStampBox" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadOrgStampBox">
+      <http:operation location="/UploadOrgStampBox" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WinLogon">
+      <http:operation location="/WinLogon" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleMail">
+      <http:operation location="/GetRoleMail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserEmail">
+      <http:operation location="/GetUserEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteAccessLog">
+      <http:operation location="/WriteAccessLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMOICAMapAccount">
+      <http:operation location="/GetMOICAMapAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryMOICACertStatus">
+      <http:operation location="/QueryMOICACertStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo2">
+      <http:operation location="/GetUserInfo2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAPPMap">
+      <http:operation location="/ResetAPPMap" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountName">
+      <http:operation location="/GetAccountName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountNameWithOrgNo">
+      <http:operation location="/GetAccountNameWithOrgNo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelUnitOfAccount">
+      <http:operation location="/GetUpLevelUnitOfAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpLevelFirstUnitOfAccount">
+      <http:operation location="/GetUpLevelFirstUnitOfAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetServerDisp">
+      <http:operation location="/ResetServerDisp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCertificateValidity">
+      <http:operation location="/CheckCertificateValidity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserEnvSet">
+      <http:operation location="/UpdateUserEnvSet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardLoanInfo">
+      <http:operation location="/GetCardLoanInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthWS">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">使用者身份認證</documentation>
+    <wsdl:port name="AuthWSSoap" binding="tns:AuthWSSoap">
+      <soap:address location="http://localhost/iiws/authws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AuthWSHttpGet" binding="tns:AuthWSHttpGet">
+      <http:address location="http://localhost/iiws/authws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AuthWSHttpPost" binding="tns:AuthWSHttpPost">
+      <http:address location="http://localhost/iiws/authws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+	<title>附件下載子視窗</title>
+</head>
+<body>
+	<div id="dlgViewTmp" data-role="page" data-transition="slidedown">
+		<header>
+			<h2 style="margin-top:-8px;margin-bottom:10px;">附件下載子視窗</h2>
+		</header>
+		<div data-role="content" data-theme="b"  style="background-color:lightgray; height:400px; width:98%;">
+			<!-- 1141021	Leslie[序310]	修正因採用DOMPurify套件後，全選及清除鍵異常問題 -->
+			<!-- <a id="all" data-role="button"  data-theme="b" data-inline="true">全選</a> -->
+			<a id="exportAll" data-role="button"  data-theme="b" data-inline="true">全選</a>
+			<a id="obverse" data-role="button" data-theme="b" data-inline="true">反向</a>
+			<!-- <a id="clear" data-role="button"  data-theme="b" data-inline="true">清除</a> -->
+			<a id="exportClear" data-role="button"  data-theme="b" data-inline="true">清除</a>
+			<div style="width:100%; clear:both;">
+				<div id="dlAttTable">
+					<div class="ui-table-header">
+						<div class="ui-table-column-header" style="width:30px">序</div>
+						<div class="ui-table-column-header" style="width:540px">名稱</div>
+					</div>
+					<div class="ui-table-body-container" style="height:300px; overflow-y:auto">
+						<ol data-role="listview" class="ui-table-body" id="DLAttList" style="margin:0px;"></ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-role="navbar" style="max-width:98%">
+			<ul>
+				<li><button href="" id="btnN" data-icon="delete" data-iconpos="top" data-theme="c" data-transition="slide" data-corners="false">取消</button></li>
+				<li><button href="" id="btnY" data-icon="check" data-iconpos="top" data-theme="b" data-transition="slide" data-corners="false">打包下載</button></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

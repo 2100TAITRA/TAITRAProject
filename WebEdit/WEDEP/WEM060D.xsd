@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="WEM060D" targetNamespace="http://tempuri.org/WEM060D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/WEM060D.xsd" xmlns:mstns="http://tempuri.org/WEM060D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="WEM060D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="WEM060L">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TRAN_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="ORGNO" type="xs:string" minOccurs="0" />
+							<xs:element name="ORGNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="FLD_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="OLD_VALUE" type="xs:string" minOccurs="0" />
+							<xs:element name="NEW_VALUE" type="xs:string" minOccurs="0" />
+							<xs:element name="TRAN_TYPE" type="xs:string" minOccurs="0" />
+							<xs:element name="UPD_DATE" type="xs:string" minOccurs="0" />
+							<xs:element name="UPD_TIME" type="xs:string" minOccurs="0" />
+							<xs:element name="SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="ORGNONAME" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

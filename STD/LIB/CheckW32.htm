@@ -1,0 +1,23 @@
+<HTML>
+	<HEAD>
+		<TITLE>¤U¸üActiveX</TITLE>
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+		
+	</HEAD>
+<BODY onUnload="window.opener.location.reload();">
+<OBJECT style="DISPLAY: none" codeBase=W32.CAB#Version=1,0,0,5 classid=CLSID:E9D1CF41-2EC6-4E06-88E9-43E9235F086E VIEWASTEXT>
+	</OBJECT>
+	<script>
+		try
+		{
+			var objTest = new ActiveXObject("W32.Thread");
+			window.history.back();
+		}
+		catch(ex)
+		{
+			var winRef = window.open('W32Fail.htm','_self','location=0');
+		}
+	</script>
+</body>
+
+</HTML>

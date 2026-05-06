@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="ODT386D" targetNamespace="http://tempuri.org/ODT386D.xsd" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns="http://tempuri.org/ODT386D.xsd" xmlns:mstns="http://tempuri.org/ODT386D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="ODT386D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="RptTable1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="POSTAGE_SEQ" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_01" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_02" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_03" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_04" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_05" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_06" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_07" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_08" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_09" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_10" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_11" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_12" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_13" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_14" type="xs:string" minOccurs="0" />
+							<xs:element name="COLUMN_15" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_01" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_02" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_03" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_04" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_05" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_06" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_07" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_08" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_09" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_10" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_11" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_12" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_13" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_14" type="xs:string" minOccurs="0" />
+							<xs:element name="COUNT_15" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_01" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_02" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_03" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_04" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_05" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_06" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_07" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_08" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_09" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_10" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_11" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_12" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_13" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_14" type="xs:string" minOccurs="0" />
+							<xs:element name="VALUE_15" type="xs:string" minOccurs="0" />
+							<xs:element name="LAST_PROGRESSIVE" type="xs:string" minOccurs="0" />
+							<xs:element name="LAST_DIMINISH" type="xs:string" minOccurs="0" />
+							<xs:element name="THIS_PROGRESSIVE" type="xs:string" minOccurs="0" />
+							<xs:element name="THIS_DIMINISH" type="xs:string" minOccurs="0" />
+							<xs:element name="POSTAGE_TOTAL" type="xs:string" minOccurs="0" />
+							<xs:element name="USE_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="CANCEL_CNT" type="xs:string" minOccurs="0" />
+							<xs:element name="REAL_CNT" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

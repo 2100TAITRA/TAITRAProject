@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR152D" targetNamespace="http://tempuri.org/EDR152D.xsd" xmlns:mstns="http://tempuri.org/EDR152D.xsd" xmlns="http://tempuri.org/EDR152D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR152D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR152D" msprop:Generator_UserDSName="EDR152D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR152L1" msprop:Generator_TableClassName="EDR152L1DataTable" msprop:Generator_TableVarName="tableEDR152L1" msprop:Generator_RowChangedName="EDR152L1RowChanged" msprop:Generator_TablePropName="EDR152L1" msprop:Generator_RowDeletingName="EDR152L1RowDeleting" msprop:Generator_RowChangingName="EDR152L1RowChanging" msprop:Generator_RowEvHandlerName="EDR152L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR152L1RowDeleted" msprop:Generator_RowClassName="EDR152L1Row" msprop:Generator_UserTableName="EDR152L1" msprop:Generator_RowEvArgName="EDR152L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RCV_TYPE" msprop:Generator_ColumnVarNameInTable="columnRCV_TYPE" msprop:Generator_ColumnPropNameInRow="RCV_TYPE" msprop:Generator_ColumnPropNameInTable="RCV_TYPEColumn" msprop:Generator_UserColumnName="RCV_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_1" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_1" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_1" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_1Column" msprop:Generator_UserColumnName="DOC_PROPERTY_1" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_7" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_7" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_7" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_7Column" msprop:Generator_UserColumnName="DOC_PROPERTY_7" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_6" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_6" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_6" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_6Column" msprop:Generator_UserColumnName="DOC_PROPERTY_6" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_5" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_5" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_5" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_5Column" msprop:Generator_UserColumnName="DOC_PROPERTY_5" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_3" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_3" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_3" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_3Column" msprop:Generator_UserColumnName="DOC_PROPERTY_3" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_4" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_4" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_4" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_4Column" msprop:Generator_UserColumnName="DOC_PROPERTY_4" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_D" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_D" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_D" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_DColumn" msprop:Generator_UserColumnName="DOC_PROPERTY_D" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_E" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_E" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_E" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_EColumn" msprop:Generator_UserColumnName="DOC_PROPERTY_E" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_F" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_F" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_F" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_FColumn" msprop:Generator_UserColumnName="DOC_PROPERTY_F" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_H" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_H" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_H" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_HColumn" msprop:Generator_UserColumnName="DOC_PROPERTY_H" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_G" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_G" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_G" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_GColumn" msprop:Generator_UserColumnName="DOC_PROPERTY_G" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="DOC_PROPERTY_SUM" msprop:Generator_ColumnVarNameInTable="columnDOC_PROPERTY_SUM" msprop:Generator_ColumnPropNameInRow="DOC_PROPERTY_SUM" msprop:Generator_ColumnPropNameInTable="DOC_PROPERTY_SUMColumn" msprop:Generator_UserColumnName="DOC_PROPERTY_SUM" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

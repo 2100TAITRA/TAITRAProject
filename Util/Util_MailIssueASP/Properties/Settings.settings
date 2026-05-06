@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MailIssueASP.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MailIssueASP_ImgConvertWS_T2100FileIoService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://win10test01.fdat.com.tw/ImgConvert/ImgConvertWS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

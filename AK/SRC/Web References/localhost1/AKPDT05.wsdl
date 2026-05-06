@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://www.2100.com.tw/webservices/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.2100.com.tw/webservices/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.2100.com.tw/webservices/">
+      <s:element name="ReadRcvData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSOURCE_ORGNO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadRcvDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReadRcvDataResult" type="s0:RunInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RunInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RunCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RunDesp" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RunInfo" type="s0:RunInfo" />
+    </s:schema>
+  </types>
+  <message name="ReadRcvDataSoapIn">
+    <part name="parameters" element="s0:ReadRcvData" />
+  </message>
+  <message name="ReadRcvDataSoapOut">
+    <part name="parameters" element="s0:ReadRcvDataResponse" />
+  </message>
+  <message name="ReadRcvDataHttpGetIn">
+    <part name="argSOURCE_ORGNO" type="s:string" />
+  </message>
+  <message name="ReadRcvDataHttpGetOut">
+    <part name="Body" element="s0:RunInfo" />
+  </message>
+  <message name="ReadRcvDataHttpPostIn">
+    <part name="argSOURCE_ORGNO" type="s:string" />
+  </message>
+  <message name="ReadRcvDataHttpPostOut">
+    <part name="Body" element="s0:RunInfo" />
+  </message>
+  <portType name="AKPDT05Soap">
+    <operation name="ReadRcvData">
+      <documentation>讀取已結案待掃描公文暫存資料</documentation>
+      <input message="s0:ReadRcvDataSoapIn" />
+      <output message="s0:ReadRcvDataSoapOut" />
+    </operation>
+  </portType>
+  <portType name="AKPDT05HttpGet">
+    <operation name="ReadRcvData">
+      <documentation>讀取已結案待掃描公文暫存資料</documentation>
+      <input message="s0:ReadRcvDataHttpGetIn" />
+      <output message="s0:ReadRcvDataHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="AKPDT05HttpPost">
+    <operation name="ReadRcvData">
+      <documentation>讀取已結案待掃描公文暫存資料</documentation>
+      <input message="s0:ReadRcvDataHttpPostIn" />
+      <output message="s0:ReadRcvDataHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="AKPDT05Soap" type="s0:AKPDT05Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="ReadRcvData">
+      <soap:operation soapAction="http://www.2100.com.tw/webservices/ReadRcvData" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="AKPDT05HttpGet" type="s0:AKPDT05HttpGet">
+    <http:binding verb="GET" />
+    <operation name="ReadRcvData">
+      <http:operation location="/ReadRcvData" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="AKPDT05HttpPost" type="s0:AKPDT05HttpPost">
+    <http:binding verb="POST" />
+    <operation name="ReadRcvData">
+      <http:operation location="/ReadRcvData" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AKPDT05">
+    <documentation>結案公文資料轉入作業</documentation>
+    <port name="AKPDT05Soap" binding="s0:AKPDT05Soap">
+      <soap:address location="http://localhost/AK/AKPDT05.asmx" />
+    </port>
+    <port name="AKPDT05HttpGet" binding="s0:AKPDT05HttpGet">
+      <http:address location="http://localhost/AK/AKPDT05.asmx" />
+    </port>
+    <port name="AKPDT05HttpPost" binding="s0:AKPDT05HttpPost">
+      <http:address location="http://localhost/AK/AKPDT05.asmx" />
+    </port>
+  </service>
+</definitions>

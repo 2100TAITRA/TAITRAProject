@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EDLIB.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EDLIB_AKLIB_WSAK_LIB" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/ODDEP/lib/AK_LIB.asmx</Value>
+    </Setting>
+    <Setting Name="EDLIB_CommonWS_CommonWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/iiws/CommonWS.asmx</Value>
+    </Setting>
+    <Setting Name="EDLIB_ODMSSP_ODMSSP" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/odmssp/odmssp.asmx</Value>
+    </Setting>
+    <Setting Name="EDLIB_ImgConvertWS_T2100FileIoService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://win10test01/ImgConvert/ImgConvertWS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

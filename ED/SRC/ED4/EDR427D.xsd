@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR427D" targetNamespace="http://tempuri.org/EDR427D.xsd" elementFormDefault="qualified"
+	attributeFormDefault="qualified" xmlns="http://tempuri.org/EDR427D.xsd" xmlns:mstns="http://tempuri.org/EDR427D.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+	<xs:element name="EDR427D" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="EDR427L1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="N_NEWRCV" type="xs:int" minOccurs="0" />
+							<xs:element name="N_LASTMON" type="xs:int" minOccurs="0" />
+							<xs:element name="N_NEWBYOU" type="xs:int" minOccurs="0" />
+							<xs:element name="N_ALL" type="xs:int" minOccurs="0" />
+							<xs:element name="C_CLOSE13" type="xs:int" minOccurs="0" />
+							<xs:element name="C_CLOSE1" type="xs:int" minOccurs="0" />
+							<xs:element name="C_CLOSE3" type="xs:int" minOccurs="0" />
+							<xs:element name="LV99_1" type="xs:int" minOccurs="0" />
+							<xs:element name="LV99_3" type="xs:int" minOccurs="0" />
+							<xs:element name="LV98_1" type="xs:int" minOccurs="0" />
+							<xs:element name="LV98_3" type="xs:int" minOccurs="0" />
+							<xs:element name="LV97_1" type="xs:int" minOccurs="0" />
+							<xs:element name="LV97_3" type="xs:int" minOccurs="0" />
+							<xs:element name="LV95_1" type="xs:int" minOccurs="0" />
+							<xs:element name="LV95_3" type="xs:int" minOccurs="0" />
+							<xs:element name="LV02_1" type="xs:int" minOccurs="0" />
+							<xs:element name="LV02_3" type="xs:int" minOccurs="0" />
+							<xs:element name="LV03_1" type="xs:int" minOccurs="0" />
+							<xs:element name="LV03_3" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EDR427L2">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OU_ID" type="xs:string" minOccurs="0" />
+							<xs:element name="OU_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="USERNAME" type="xs:string" minOccurs="0" />
+							<xs:element name="EMP_NAME" type="xs:string" minOccurs="0" />
+							<xs:element name="N_NEWRCV" type="xs:int" minOccurs="0" />
+							<xs:element name="N_LASTMON" type="xs:int" minOccurs="0" />
+							<xs:element name="N_NEWBYOU" type="xs:int" minOccurs="0" />
+							<xs:element name="N_ALL" type="xs:int" minOccurs="0" />
+							<xs:element name="C_CLOSE1" type="xs:int" minOccurs="0" />
+							<xs:element name="C_CLOSE3" type="xs:int" minOccurs="0" />
+							<xs:element name="C_CLOSE13" type="xs:int" minOccurs="0" />
+							<xs:element name="C_UDISSUE1" type="xs:double" minOccurs="0" />
+							<xs:element name="C_UDISSUE3" type="xs:double" minOccurs="0" />
+							<xs:element name="C_UDISSUE313" type="xs:double" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

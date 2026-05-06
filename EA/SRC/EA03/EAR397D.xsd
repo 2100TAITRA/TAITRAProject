@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR397D" targetNamespace="http://tempuri.org/EAR397D.xsd" xmlns:mstns="http://tempuri.org/EAR397D.xsd" xmlns="http://tempuri.org/EAR397D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR397D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EAR397D" msprop:Generator_UserDSName="EAR397D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RptTable" msprop:Generator_TableClassName="RptTableDataTable" msprop:Generator_TableVarName="tableRptTable" msprop:Generator_TablePropName="RptTable" msprop:Generator_RowDeletingName="RptTableRowDeleting" msprop:Generator_RowChangingName="RptTableRowChanging" msprop:Generator_RowEvHandlerName="RptTableRowChangeEventHandler" msprop:Generator_RowDeletedName="RptTableRowDeleted" msprop:Generator_UserTableName="RptTable" msprop:Generator_RowChangedName="RptTableRowChanged" msprop:Generator_RowEvArgName="RptTableRowChangeEvent" msprop:Generator_RowClassName="RptTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="USE_YEAR" msprop:Generator_ColumnVarNameInTable="columnUSE_YEAR" msprop:Generator_ColumnPropNameInRow="USE_YEAR" msprop:Generator_ColumnPropNameInTable="USE_YEARColumn" msprop:Generator_UserColumnName="USE_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO" msprop:Generator_ColumnPropNameInRow="DEPT_NO" msprop:Generator_ColumnPropNameInTable="DEPT_NOColumn" msprop:Generator_UserColumnName="DEPT_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_NUM01" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM01" msprop:Generator_ColumnPropNameInRow="FILE_NUM01" msprop:Generator_ColumnPropNameInTable="FILE_NUM01Column" msprop:Generator_UserColumnName="FILE_NUM01" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM02" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM02" msprop:Generator_ColumnPropNameInRow="FILE_NUM02" msprop:Generator_ColumnPropNameInTable="FILE_NUM02Column" msprop:Generator_UserColumnName="FILE_NUM02" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM03" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM03" msprop:Generator_ColumnPropNameInRow="FILE_NUM03" msprop:Generator_ColumnPropNameInTable="FILE_NUM03Column" msprop:Generator_UserColumnName="FILE_NUM03" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM04" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM04" msprop:Generator_ColumnPropNameInRow="FILE_NUM04" msprop:Generator_ColumnPropNameInTable="FILE_NUM04Column" msprop:Generator_UserColumnName="FILE_NUM04" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM05" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM05" msprop:Generator_ColumnPropNameInRow="FILE_NUM05" msprop:Generator_ColumnPropNameInTable="FILE_NUM05Column" msprop:Generator_UserColumnName="FILE_NUM05" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM06" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM06" msprop:Generator_ColumnPropNameInRow="FILE_NUM06" msprop:Generator_ColumnPropNameInTable="FILE_NUM06Column" msprop:Generator_UserColumnName="FILE_NUM06" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM07" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM07" msprop:Generator_ColumnPropNameInRow="FILE_NUM07" msprop:Generator_ColumnPropNameInTable="FILE_NUM07Column" msprop:Generator_UserColumnName="FILE_NUM07" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM08" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM08" msprop:Generator_ColumnPropNameInRow="FILE_NUM08" msprop:Generator_ColumnPropNameInTable="FILE_NUM08Column" msprop:Generator_UserColumnName="FILE_NUM08" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM09" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM09" msprop:Generator_ColumnPropNameInRow="FILE_NUM09" msprop:Generator_ColumnPropNameInTable="FILE_NUM09Column" msprop:Generator_UserColumnName="FILE_NUM09" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM10" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM10" msprop:Generator_ColumnPropNameInRow="FILE_NUM10" msprop:Generator_ColumnPropNameInTable="FILE_NUM10Column" msprop:Generator_UserColumnName="FILE_NUM10" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM11" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM11" msprop:Generator_ColumnPropNameInRow="FILE_NUM11" msprop:Generator_ColumnPropNameInTable="FILE_NUM11Column" msprop:Generator_UserColumnName="FILE_NUM11" type="xs:int" minOccurs="0" />
+              <xs:element name="FILE_NUM12" msprop:Generator_ColumnVarNameInTable="columnFILE_NUM12" msprop:Generator_ColumnPropNameInRow="FILE_NUM12" msprop:Generator_ColumnPropNameInTable="FILE_NUM12Column" msprop:Generator_UserColumnName="FILE_NUM12" type="xs:int" minOccurs="0" />
+              <xs:element name="EXTFILE_NUM" msprop:Generator_ColumnVarNameInTable="columnEXTFILE_NUM" msprop:Generator_ColumnPropNameInRow="EXTFILE_NUM" msprop:Generator_ColumnPropNameInTable="EXTFILE_NUMColumn" msprop:Generator_UserColumnName="EXTFILE_NUM" type="xs:int" minOccurs="0" />
+              <xs:element name="WAITOVER_NUM" msprop:Generator_ColumnVarNameInTable="columnWAITOVER_NUM" msprop:Generator_ColumnPropNameInRow="WAITOVER_NUM" msprop:Generator_ColumnPropNameInTable="WAITOVER_NUMColumn" msprop:Generator_UserColumnName="WAITOVER_NUM" type="xs:int" minOccurs="0" />
+              <xs:element name="DEPT_NO_BY_GROUP" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO_BY_GROUP" msprop:Generator_ColumnPropNameInRow="DEPT_NO_BY_GROUP" msprop:Generator_ColumnPropNameInTable="DEPT_NO_BY_GROUPColumn" msprop:Generator_UserColumnName="DEPT_NO_BY_GROUP" type="xs:string" minOccurs="0" />
+              <xs:element name="STORE_TYPE" msprop:Generator_ColumnVarNameInTable="columnSTORE_TYPE" msprop:Generator_ColumnPropNameInRow="STORE_TYPE" msprop:Generator_ColumnPropNameInTable="STORE_TYPEColumn" msprop:Generator_UserColumnName="STORE_TYPE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="EDR132D" targetNamespace="http://tempuri.org/EDR132D.xsd" elementFormDefault="qualified"
+	xmlns="http://tempuri.org/EDR132D.xsd" xmlns:mstns="http://tempuri.org/EDR132D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="EDR132L1">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SEQ_NO" type="xs:string" />
+				<xs:element name="DOC_NO" type="xs:string" />
+				<xs:element name="SAVE_TIME" type="xs:string" />
+				<xs:element name="EMP_NAME" type="xs:string" />
+				<xs:element name="RCV_DATE" type="xs:string" />
+				<xs:element name="DUE_DATE" type="xs:string" />
+				<xs:element name="LEAD_TIME" type="xs:string" />
+				<xs:element name="WORK_TYPE" type="xs:string" />
+				<xs:element name="PROPETRY" type="xs:string" />
+				<xs:element name="SPEED" type="xs:string" />
+				<xs:element name="SEC_NO" type="xs:string" />
+				<xs:element name="RMVSEC_COND" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

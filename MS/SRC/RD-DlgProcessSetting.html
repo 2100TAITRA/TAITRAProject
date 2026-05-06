@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>公文簽辦意見子視窗</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <!-- 公文流程設定子視窗 -->
+  <div data-role="page" id="dlgProcessFlow" data-dialog="true" data-history="false" data-transition='slidedown' data-close-btn="none" data-theme="c">
+    <div data-role="header" data-theme="b">
+      <!--h1>公文辦理流程及設定</h1-->
+	  <h1>公文簽辦意見</h1>
+      <fieldset data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
+        <!--input type="radio" name="radio-flowview" id="radio-flowview-a" value="chart" checked="checked" />
+        <label for="radio-flowview-a">檢視及設定</label-->
+        <input type="radio" name="radio-flowview" id="radio-flowview-c" value="commentlist"  checked="checked" />
+        <label for="radio-flowview-c">簽核意見</label>
+        <input type="radio" name="radio-flowview" id="radio-flowview-b" value="list" />
+        <label for="radio-flowview-b">流程明細</label>
+      </fieldset>
+    </div>
+    <div data-role="content" class="dlg-process-content type-interior" data-theme="c">
+      <div data-theme="c">
+          <div id="flowChart">
+              <div id="flow_chart_grid" class="flow-chart-grid" style="display:none">
+                  <!--div><p>預排流程有預設flow set, 分會?</p></div-->
+                  <div id="draw_canvas" class="draw_canvas"> <!--div class="draw_inner" data-scroll="true"-->                         
+                      <div id="flow_canvas" class="flow_canvas">
+                          <div class="grid_pane"> <!-- 底圖格線 -->
+                            </div>
+                          <!--div class="flow_set" data-flowId="current" style="left:180px;top:0px;"-->
+                          <div class="flow_set" data-flowId="current" style="left:0px;top:0px;">
+                          </div> <!--div class="flow_set" /-->
+                      </div><!--div id="flow_canvas"--> <!--/div--><!--div class="draw_inner"-->
+                      <canvas id="exCanvas" width="100" height="100" style="display:none;position:absolute;left:0px;top:0px;width:100px;height:100px;background-color:#aaf"></canvas>
+                  </div><!--div class="draw_canvas"-->
+              </div><!--div class="flow-chart-grid"-->
+              <div class="flow-comment-list">
+                <div>
+                  <ul class="comments" data-role="listview" data-theme="e">
+                  </ul>
+                </div>
+              </div> <!--div class="flow-comment-list"-->
+              <div class="flow-list" style="display:none;">
+                <div class="toolbar">
+                  <div class="ui-grid-b">
+                    <div class="ui-block-a"></div>
+                    <div class="ui-block-b"></div>
+                    <div class="ui-block-c"><a href="#" id="btn_verifyEnvelope" class="ui-btn ui-btn-e ui-icon-gear ui-btn-icon-right" style="display:none;">公文封裝內容及簽章驗證</a></div>
+                  </div>
+                </div>
+                <table id="workflowTable"> <!-- 條列式流程點清單 -->
+                  <thead><!-- doc_todolist 標題列 -->
+                    <tr>
+                      <th><a href="#">序</a></th>
+                      <th><a href="#">狀態</a></th>
+                      <th><a href="#">單位</a></th>
+                      <th><a href="#">人員</a></th>
+                      <th style="width:3.5em"><a href="#">接收<br>時間</a></th> <!-- yyy/mm/dd hh:MM -->
+                      <th style="width:3.5em" ><a href="#">送出<br>時間</a></th> <!-- yyy/mm/dd hh:MM -->
+                      <!--th style="width:2.5em"><a href="#">處理<br>時間</a></th--> <!-- hh:MM -->
+                      <!--th><a href="#" style="min-width: 4em;font-size: smaller;">工時<br>實際/標準</a></th-->
+                      <th><a href="#">異動別</a></th>
+                      <th style="min-width:3.5em"><a href="#">臨時<br>憑證</a></th>
+                      <th style="min-width:10em"><a href="#">簽核意見</a></th>
+                      <th><a href="#">核決</a></th>
+                      <th><a href="#">彙併辦<br>公文</a></th> <!-- 2021.5 - 1100093 - merge: 1081168 -->
+                    </tr>
+                  </thead>
+                  <tbody> <!-- 條列式流程點內容 -->
+                  </tbody>
+                </table>
+              </div> <!--div class="flow-list" -->
+          </div><!--div id="flowChart"-->
+          <div id="setNextTarget" style="display:none"> <!-- 指定傳送對象 -->
+              <h2>指定傳送</h2>
+              <div></div>
+          </div> <!--div id="setNextTarget"-->
+      </div> <!-- primary viewport -->
+      <div id="log-panel"> <!-- for track log -->
+        <div class='log'></div>
+      </div>
+    </div> <!-- data-role="content" -->
+    <div data-role="footer" class="ui-bar" data-theme="b">
+      <a id="btn_ProcSettingCancel" class="leftside_btn ui-btn ui-btn-c ui-corner-all" href="#home">取消</a>
+	  <a id="btn_ProcSettingOK" class="leftside_btn ui-btn ui-btn-e ui-corner-all" href="#home">確定</a>
+      <!--a id="btn_DraftSync" class="rightside_btn" href="#" data-role="button" data-theme="e" style="float:right;">文稿會辦同步設定</a-->
+    </div>
+    <div id="dlgTransTarget" style="display:none;">
+        <!--div class="dlg-title" data-role="header"-->
+          <h1 class="new_flow_title">新增簽辦流程</h1>
+          <h1 class="edit_flow_title" style="display:none">修改簽辦流程內容</h1>
+        <!--/div-->
+        <div data-role="content">
+          <div class="inline-title"></div>
+          <!-- 加入單一流程點或預設流程組 -->
+          <div class="choice-flow-type ui-field-contain" data-theme="c" style="display:none">
+            <fieldset data-role="controlgroup" data-type="horizontal" data-theme="c">
+            </fieldset>
+          </div>
+          <div class="trans_target">
+            <ul id="nextOptions" style="display:none">
+            </ul>
+          </div><!--div class="trans_target"-->
+          <div class="flow_set" style="display:none;">
+            <!--div><p>流程名稱</p></div-->
+            <div class="ui-field-contain">
+              <fieldset data-role="controlgroup">
+              </fieldset>
+            </div>
+          </div><!--div class="flow_set"-->
+          <div class="ui-grid-a">
+            <div class="ui-block-b"><a id="targetDlgCancel" class="footer_btn" href="#" data-role="button" data-theme="d">取消</a></div>
+			<div class="ui-block-a"><a id="targetDlgOK" class="footer_btn" href="#" data-role="button" data-theme="e">確定</a></div>
+          </div>
+        </div> 
+    </div><!-- div id="dlgTransTarget" ... -->
+    <div id="dlgFlowSet" style="display:none;">
+        <!--div class="dlg-title" data-role="header"-->
+          <h1>新增流程組</h1>
+        <!--/div-->
+        <div data-role="content">
+          <div class="flow_set">
+            <!--div><p>流程名稱</p></div-->
+            <div class="ui-field-contain">
+              <fieldset data-role="controlgroup">
+              </fieldset>
+            </div>
+          </div><!--div class="flow_set"-->
+          <div class="ui-grid-a">
+			<div class="ui-block-b"><a id="targetDlgCancel" class="footer_btn" href="#" data-role="button" data-theme="d">取消</a></div>
+            <div class="ui-block-a"><a id="targetDlgOK" class="footer_btn" href="#" data-role="button" data-theme="e">確定</a></div>
+          </div>
+        </div> 
+    </div><!-- div id="dlgTransTarget" ... -->
+    <div id="dlgDraftCoworkSync" style="display:none;" data-role="none">
+        <!--div class="dlg-title" data-role="header"-->
+        <h1>文稿會稿單位設定</h1>
+        <!--/div-->
+        <div id="dlg_content" style="position:relative;" data-role="content">
+        </div>
+        <div class="dlgCDS_overlay"></div>
+        <div id="dlgCoworkDisplaySetting" style="right:-156px;top:120px;display:none;position:absolute;z-index: 2001;min-width:350px;"> <!-- 文面顯示設定子視窗 -->
+          <div data-role="content">
+            <div style="margin-top:10px;">文稿頁面會稿對象顯示：</div>
+            <div class="target_section ui-field-contain">
+            </div>
+          </div>
+          <div class="up_pointer"></div>
+        </div> <!--div id="dlgCoworkDisplaySetting" 文面顯示設定子視窗 -->
+    </div><!-- div id="dlgDraftCoworkSync" ... -->
+  </div> <!-- End of 公文流程設定子視窗 -->
+</body>
+</html>

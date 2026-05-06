@@ -1,0 +1,279 @@
+﻿
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+
+The uninstall is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The uninstall has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+An exception occurred during the Install phase.
+System.ComponentModel.Win32Exception: 指定的服務已標註刪除。
+
+The Rollback phase of the installation is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Rollback phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+
+The uninstall is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The uninstall has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+
+The uninstall is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The uninstall has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+An exception occurred during the Install phase.
+System.ComponentModel.Win32Exception: 指定的服務已標註刪除。
+
+The Rollback phase of the installation is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Rollback phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+
+The uninstall is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The uninstall has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+
+The uninstall is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The uninstall has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+
+The uninstall is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The uninstall has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+
+The uninstall is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The uninstall has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+
+The uninstall is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The uninstall has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the d:\project\odtspservice\bin\release\odtspservice.exe assembly's progress.
+The file is located at d:\project\odtspservice\bin\release\odtspservice.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+
+正開始解除安裝。
+請參閱 d:\project\odtspservice\bin\release\odtspservice.exe 組件進度的記錄檔內容。
+檔案是位於 d:\project\odtspservice\bin\release\odtspservice.InstallLog。
+
+已經完成解除安裝。
+
+正在執行交易性的安裝。
+
+正在開始安裝程式的安裝階段。
+請參閱 d:\project\odtspservice\bin\release\odtspservice.exe 組件進度的記錄檔內容。
+檔案是位於 d:\project\odtspservice\bin\release\odtspservice.InstallLog。
+
+安裝階段已經成功完成，正在開始認可階段。
+請參閱 d:\project\odtspservice\bin\release\odtspservice.exe 組件進度的記錄檔內容。
+檔案是位於 d:\project\odtspservice\bin\release\odtspservice.InstallLog。
+
+已經成功完成認可階段。
+
+已經完成交易性的安裝。
+
+
+正開始解除安裝。
+請參閱 D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe 組件進度的記錄檔內容。
+檔案是位於 D:\Project2013\ODTSPService\bin\Release\ODTSPService.InstallLog。
+
+已經完成解除安裝。
+
+正在執行交易性的安裝。
+
+正在開始安裝程式的安裝階段。
+請參閱 D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe 組件進度的記錄檔內容。
+檔案是位於 D:\Project2013\ODTSPService\bin\Release\ODTSPService.InstallLog。
+
+安裝階段已經成功完成，正在開始認可階段。
+請參閱 D:\Project2013\ODTSPService\bin\Release\ODTSPService.exe 組件進度的記錄檔內容。
+檔案是位於 D:\Project2013\ODTSPService\bin\Release\ODTSPService.InstallLog。
+
+已經成功完成認可階段。
+
+已經完成交易性的安裝。
+
+
+正開始解除安裝。
+請參閱 D:\Project\ODTSPService\bin\Release\ODTSPService.exe 組件進度的記錄檔內容。
+檔案是位於 D:\Project\ODTSPService\bin\Release\ODTSPService.InstallLog。
+
+已經完成解除安裝。
+
+正在執行交易性的安裝。
+
+正在開始安裝程式的安裝階段。
+請參閱 D:\Project\ODTSPService\bin\Release\ODTSPService.exe 組件進度的記錄檔內容。
+檔案是位於 D:\Project\ODTSPService\bin\Release\ODTSPService.InstallLog。
+
+安裝階段已經成功完成，正在開始認可階段。
+請參閱 D:\Project\ODTSPService\bin\Release\ODTSPService.exe 組件進度的記錄檔內容。
+檔案是位於 D:\Project\ODTSPService\bin\Release\ODTSPService.InstallLog。
+
+已經成功完成認可階段。
+
+已經完成交易性的安裝。

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LOG_CONFIG>
+	<!-- <WriteLog>: 是否寫出 Log，0:不寫出，1:寫出 -->
+	<!-- attr: logLevel: 可設定SFolderUtil/EnvelopeCOM的log level, 有效值:1~4, 預設值:1 -->
+	<WriteLog logLevel="3" logType="E;W;I;" instantErrLog="1">1</WriteLog>
+</LOG_CONFIG>

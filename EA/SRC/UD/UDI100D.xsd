@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="UDI100D" targetNamespace="http://tempuri.org/UDI100D.xsd" xmlns:mstns="http://tempuri.org/UDI100D.xsd" xmlns="http://tempuri.org/UDI100D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UDI100D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="UDI100D" msprop:Generator_UserDSName="UDI100D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UDI100L" msprop:Generator_TableClassName="UDI100LDataTable" msprop:Generator_TableVarName="tableUDI100L" msprop:Generator_TablePropName="UDI100L" msprop:Generator_RowDeletingName="UDI100LRowDeleting" msprop:Generator_RowChangingName="UDI100LRowChanging" msprop:Generator_RowEvHandlerName="UDI100LRowChangeEventHandler" msprop:Generator_RowDeletedName="UDI100LRowDeleted" msprop:Generator_UserTableName="UDI100L" msprop:Generator_RowChangedName="UDI100LRowChanged" msprop:Generator_RowEvArgName="UDI100LRowChangeEvent" msprop:Generator_RowClassName="UDI100LRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ITEM_NO" msprop:Generator_ColumnVarNameInTable="columnITEM_NO" msprop:Generator_ColumnPropNameInRow="ITEM_NO" msprop:Generator_ColumnPropNameInTable="ITEM_NOColumn" msprop:Generator_UserColumnName="ITEM_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CLS" msprop:Generator_ColumnVarNameInTable="columnFILE_CLS" msprop:Generator_ColumnPropNameInRow="FILE_CLS" msprop:Generator_ColumnPropNameInTable="FILE_CLSColumn" msprop:Generator_UserColumnName="FILE_CLS" type="xs:string" minOccurs="0" />
+              <xs:element name="KEEP_YEAR" msprop:Generator_ColumnVarNameInTable="columnKEEP_YEAR" msprop:Generator_ColumnPropNameInRow="KEEP_YEAR" msprop:Generator_ColumnPropNameInTable="KEEP_YEARColumn" msprop:Generator_UserColumnName="KEEP_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_NAME" msprop:Generator_ColumnVarNameInTable="columnITEM_NAME" msprop:Generator_ColumnPropNameInRow="ITEM_NAME" msprop:Generator_ColumnPropNameInTable="ITEM_NAMEColumn" msprop:Generator_UserColumnName="ITEM_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_TYPE" msprop:Generator_ColumnVarNameInTable="columnMEDIA_TYPE" msprop:Generator_ColumnPropNameInRow="MEDIA_TYPE" msprop:Generator_ColumnPropNameInTable="MEDIA_TYPEColumn" msprop:Generator_UserColumnName="MEDIA_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT" msprop:Generator_ColumnPropNameInRow="FILE_CNT" msprop:Generator_ColumnPropNameInTable="FILE_CNTColumn" msprop:Generator_UserColumnName="FILE_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_FORMAT" msprop:Generator_ColumnVarNameInTable="columnITEM_FORMAT" msprop:Generator_ColumnPropNameInRow="ITEM_FORMAT" msprop:Generator_ColumnPropNameInTable="ITEM_FORMATColumn" msprop:Generator_UserColumnName="ITEM_FORMAT" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_DESC" msprop:Generator_ColumnVarNameInTable="columnITEM_DESC" msprop:Generator_ColumnPropNameInRow="ITEM_DESC" msprop:Generator_ColumnPropNameInTable="ITEM_DESCColumn" msprop:Generator_UserColumnName="ITEM_DESC" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_MAKER" msprop:Generator_ColumnVarNameInTable="columnITEM_MAKER" msprop:Generator_ColumnPropNameInRow="ITEM_MAKER" msprop:Generator_ColumnPropNameInTable="ITEM_MAKERColumn" msprop:Generator_UserColumnName="ITEM_MAKER" type="xs:string" minOccurs="0" />
+              <xs:element name="CRT_DATE" msprop:Generator_ColumnVarNameInTable="columnCRT_DATE" msprop:Generator_ColumnPropNameInRow="CRT_DATE" msprop:Generator_ColumnPropNameInTable="CRT_DATEColumn" msprop:Generator_UserColumnName="CRT_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_NO2" msprop:Generator_ColumnVarNameInTable="columnITEM_NO2" msprop:Generator_ColumnPropNameInRow="ITEM_NO2" msprop:Generator_ColumnPropNameInTable="ITEM_NO2Column" msprop:Generator_UserColumnName="ITEM_NO2" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CLS2" msprop:Generator_ColumnVarNameInTable="columnFILE_CLS2" msprop:Generator_ColumnPropNameInRow="FILE_CLS2" msprop:Generator_ColumnPropNameInTable="FILE_CLS2Column" msprop:Generator_UserColumnName="FILE_CLS2" type="xs:string" minOccurs="0" />
+              <xs:element name="KEEP_YEAR2" msprop:Generator_ColumnVarNameInTable="columnKEEP_YEAR2" msprop:Generator_ColumnPropNameInRow="KEEP_YEAR2" msprop:Generator_ColumnPropNameInTable="KEEP_YEAR2Column" msprop:Generator_UserColumnName="KEEP_YEAR2" type="xs:string" minOccurs="0" />
+              <xs:element name="ITEM_NAME2" msprop:Generator_ColumnVarNameInTable="columnITEM_NAME2" msprop:Generator_ColumnPropNameInRow="ITEM_NAME2" msprop:Generator_ColumnPropNameInTable="ITEM_NAME2Column" msprop:Generator_UserColumnName="ITEM_NAME2" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_TYPE2" msprop:Generator_ColumnVarNameInTable="columnMEDIA_TYPE2" msprop:Generator_ColumnPropNameInRow="MEDIA_TYPE2" msprop:Generator_ColumnPropNameInTable="MEDIA_TYPE2Column" msprop:Generator_UserColumnName="MEDIA_TYPE2" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT2" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT2" msprop:Generator_ColumnPropNameInRow="FILE_CNT2" msprop:Generator_ColumnPropNameInTable="FILE_CNT2Column" msprop:Generator_UserColumnName="FILE_CNT2" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR479_EXAMD" targetNamespace="http://tempuri.org/EDR479_EXAMD.xsd" xmlns:mstns="http://tempuri.org/EDR479_EXAMD.xsd" xmlns="http://tempuri.org/EDR479_EXAMD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR479_EXAMD" msdata:IsDataSet="true" msdata:Locale="en-US" msprop:Generator_DataSetName="EDR479_EXAMD" msprop:Generator_UserDSName="EDR479_EXAMD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR479_EXAML1" msprop:Generator_TableClassName="EDR479_EXAML1DataTable" msprop:Generator_TableVarName="tableEDR479_EXAML1" msprop:Generator_RowChangedName="EDR479_EXAML1RowChanged" msprop:Generator_TablePropName="EDR479_EXAML1" msprop:Generator_RowDeletingName="EDR479_EXAML1RowDeleting" msprop:Generator_RowChangingName="EDR479_EXAML1RowChanging" msprop:Generator_RowEvHandlerName="EDR479_EXAML1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR479_EXAML1RowDeleted" msprop:Generator_RowClassName="EDR479_EXAML1Row" msprop:Generator_UserTableName="EDR479_EXAML1" msprop:Generator_RowEvArgName="EDR479_EXAML1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="OD01" msprop:Generator_ColumnVarNameInTable="columnOD01" msprop:Generator_ColumnPropNameInRow="OD01" msprop:Generator_ColumnPropNameInTable="OD01Column" msprop:Generator_UserColumnName="OD01" type="xs:int" minOccurs="0" />
+              <xs:element name="OD02" msprop:Generator_ColumnVarNameInTable="columnOD02" msprop:Generator_ColumnPropNameInRow="OD02" msprop:Generator_ColumnPropNameInTable="OD02Column" msprop:Generator_UserColumnName="OD02" type="xs:int" minOccurs="0" />
+              <xs:element name="OD03" msprop:Generator_ColumnVarNameInTable="columnOD03" msprop:Generator_ColumnPropNameInRow="OD03" msprop:Generator_ColumnPropNameInTable="OD03Column" msprop:Generator_UserColumnName="OD03" type="xs:int" minOccurs="0" />
+              <xs:element name="OD04" msprop:Generator_ColumnVarNameInTable="columnOD04" msprop:Generator_ColumnPropNameInRow="OD04" msprop:Generator_ColumnPropNameInTable="OD04Column" msprop:Generator_UserColumnName="OD04" type="xs:int" minOccurs="0" />
+              <xs:element name="OD11" msprop:Generator_ColumnVarNameInTable="columnOD11" msprop:Generator_ColumnPropNameInRow="OD11" msprop:Generator_ColumnPropNameInTable="OD11Column" msprop:Generator_UserColumnName="OD11" type="xs:int" minOccurs="0" />
+              <xs:element name="SUM" msprop:Generator_ColumnVarNameInTable="columnSUM" msprop:Generator_ColumnPropNameInRow="SUM" msprop:Generator_ColumnPropNameInTable="SUMColumn" msprop:Generator_UserColumnName="SUM" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

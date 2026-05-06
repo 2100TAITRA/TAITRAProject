@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="LoadUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoadUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppChk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppChkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AppChkResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppSelAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppSelAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AppSelAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkPass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkPassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChkPassResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetPassResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUserCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrPrincipalStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrCRTTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChkPrincipalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewPrincipal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUserCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrPrincipalStr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewPrincipalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NewPrincipalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkSessionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkSessionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChkSessionIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FunChk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrFunItemID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrSession" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrActionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FunChkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FunChkResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsOnLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="vintBeforeMin" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrSessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsOnLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsOnLineResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FunSelAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrDisplayType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrFunItemKind" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrFunItemType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrActionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FunSelAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FunSelAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParseLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParseLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParseLoginResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rstrSessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginAppResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="rstrSessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrUsrCompID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrSessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogoutResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifySessionValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPConnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrAPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrBSessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vstrSourceIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifySessionValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifySessionValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoadUserSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadUser" />
+  </wsdl:message>
+  <wsdl:message name="LoadUserSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AppChkSoapIn">
+    <wsdl:part name="parameters" element="tns:AppChk" />
+  </wsdl:message>
+  <wsdl:message name="AppChkSoapOut">
+    <wsdl:part name="parameters" element="tns:AppChkResponse" />
+  </wsdl:message>
+  <wsdl:message name="AppSelAllSoapIn">
+    <wsdl:part name="parameters" element="tns:AppSelAll" />
+  </wsdl:message>
+  <wsdl:message name="AppSelAllSoapOut">
+    <wsdl:part name="parameters" element="tns:AppSelAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkPassSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkPass" />
+  </wsdl:message>
+  <wsdl:message name="ChkPassSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPassSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPass" />
+  </wsdl:message>
+  <wsdl:message name="SetPassSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="ChkPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewPrincipalSoapIn">
+    <wsdl:part name="parameters" element="tns:NewPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="NewPrincipalSoapOut">
+    <wsdl:part name="parameters" element="tns:NewPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkSessionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkSessionID" />
+  </wsdl:message>
+  <wsdl:message name="ChkSessionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkSessionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="FunChkSoapIn">
+    <wsdl:part name="parameters" element="tns:FunChk" />
+  </wsdl:message>
+  <wsdl:message name="FunChkSoapOut">
+    <wsdl:part name="parameters" element="tns:FunChkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsOnLineSoapIn">
+    <wsdl:part name="parameters" element="tns:IsOnLine" />
+  </wsdl:message>
+  <wsdl:message name="IsOnLineSoapOut">
+    <wsdl:part name="parameters" element="tns:IsOnLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="FunSelAllSoapIn">
+    <wsdl:part name="parameters" element="tns:FunSelAll" />
+  </wsdl:message>
+  <wsdl:message name="FunSelAllSoapOut">
+    <wsdl:part name="parameters" element="tns:FunSelAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParseLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:ParseLogin" />
+  </wsdl:message>
+  <wsdl:message name="ParseLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:ParseLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginAppSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginApp" />
+  </wsdl:message>
+  <wsdl:message name="LoginAppSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifySessionValueSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifySessionValue" />
+  </wsdl:message>
+  <wsdl:message name="VerifySessionValueSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifySessionValueResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ScUserSoap">
+    <wsdl:operation name="LoadUser">
+      <wsdl:input message="tns:LoadUserSoapIn" />
+      <wsdl:output message="tns:LoadUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AppChk">
+      <wsdl:input message="tns:AppChkSoapIn" />
+      <wsdl:output message="tns:AppChkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AppSelAll">
+      <wsdl:input message="tns:AppSelAllSoapIn" />
+      <wsdl:output message="tns:AppSelAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPass">
+      <wsdl:input message="tns:ChkPassSoapIn" />
+      <wsdl:output message="tns:ChkPassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPass">
+      <wsdl:input message="tns:SetPassSoapIn" />
+      <wsdl:output message="tns:SetPassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkPrincipal">
+      <wsdl:input message="tns:ChkPrincipalSoapIn" />
+      <wsdl:output message="tns:ChkPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewPrincipal">
+      <wsdl:input message="tns:NewPrincipalSoapIn" />
+      <wsdl:output message="tns:NewPrincipalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkSessionID">
+      <wsdl:input message="tns:ChkSessionIDSoapIn" />
+      <wsdl:output message="tns:ChkSessionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FunChk">
+      <wsdl:input message="tns:FunChkSoapIn" />
+      <wsdl:output message="tns:FunChkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsOnLine">
+      <wsdl:input message="tns:IsOnLineSoapIn" />
+      <wsdl:output message="tns:IsOnLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FunSelAll">
+      <wsdl:input message="tns:FunSelAllSoapIn" />
+      <wsdl:output message="tns:FunSelAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParseLogin">
+      <wsdl:input message="tns:ParseLoginSoapIn" />
+      <wsdl:output message="tns:ParseLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginApp">
+      <wsdl:input message="tns:LoginAppSoapIn" />
+      <wsdl:output message="tns:LoginAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input message="tns:LogoutSoapIn" />
+      <wsdl:output message="tns:LogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifySessionValue">
+      <wsdl:input message="tns:VerifySessionValueSoapIn" />
+      <wsdl:output message="tns:VerifySessionValueSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ScUserSoap" type="tns:ScUserSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="LoadUser">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/LoadUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppChk">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/AppChk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppSelAll">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/AppSelAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPass">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/ChkPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPass">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/SetPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkPrincipal">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/ChkPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPrincipal">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/NewPrincipal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkSessionID">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/ChkSessionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FunChk">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/FunChk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsOnLine">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/IsOnLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FunSelAll">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/FunSelAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseLogin">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/ParseLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginApp">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/LoginApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifySessionValue">
+      <soap:operation soapAction="http://tempuri.org/GSS.Stirrup.Scorpio30.SC30WebService/ScUser/VerifySessionValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ScUser">
+    <wsdl:port name="ScUserSoap" binding="tns:ScUserSoap">
+      <soap:address location="http://web11/WebServices/ScUser.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

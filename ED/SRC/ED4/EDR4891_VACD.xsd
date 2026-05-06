@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4891_VACD" targetNamespace="http://tempuri.org/EDR4891_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR4891_VACD.xsd" xmlns="http://tempuri.org/EDR4891_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4891_VACD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR4891_VACD" msprop:Generator_UserDSName="EDR4891_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4891_VAC" msprop:Generator_TableClassName="EDR4891_VACDataTable" msprop:Generator_TableVarName="tableEDR4891_VAC" msprop:Generator_TablePropName="EDR4891_VAC" msprop:Generator_RowDeletingName="EDR4891_VACRowDeleting" msprop:Generator_RowChangingName="EDR4891_VACRowChanging" msprop:Generator_RowEvHandlerName="EDR4891_VACRowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4891_VACRowDeleted" msprop:Generator_UserTableName="EDR4891_VAC" msprop:Generator_RowChangedName="EDR4891_VACRowChanged" msprop:Generator_RowEvArgName="EDR4891_VACRowChangeEvent" msprop:Generator_RowClassName="EDR4891_VACRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ELEC_R" msprop:Generator_ColumnVarNameInTable="columnELEC_R" msprop:Generator_ColumnPropNameInRow="ELEC_R" msprop:Generator_ColumnPropNameInTable="ELEC_RColumn" msprop:Generator_UserColumnName="ELEC_R" type="xs:double" minOccurs="0" />
+              <xs:element name="ELEC_SR" msprop:Generator_ColumnVarNameInTable="columnELEC_SR" msprop:Generator_ColumnPropNameInRow="ELEC_SR" msprop:Generator_ColumnPropNameInTable="ELEC_SRColumn" msprop:Generator_UserColumnName="ELEC_SR" type="xs:double" minOccurs="0" />
+              <xs:element name="ELEC_STOR" msprop:Generator_ColumnVarNameInTable="columnELEC_STOR" msprop:Generator_ColumnPropNameInRow="ELEC_STOR" msprop:Generator_ColumnPropNameInTable="ELEC_STORColumn" msprop:Generator_UserColumnName="ELEC_STOR" type="xs:double" minOccurs="0" />
+              <xs:element name="ELEC_PERCENT" msprop:Generator_ColumnVarNameInTable="columnELEC_PERCENT" msprop:Generator_ColumnPropNameInRow="ELEC_PERCENT" msprop:Generator_ColumnPropNameInTable="ELEC_PERCENTColumn" msprop:Generator_UserColumnName="ELEC_PERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="PUB_MAIL" msprop:Generator_ColumnVarNameInTable="columnPUB_MAIL" msprop:Generator_ColumnPropNameInRow="PUB_MAIL" msprop:Generator_ColumnPropNameInTable="PUB_MAILColumn" msprop:Generator_UserColumnName="PUB_MAIL" type="xs:double" minOccurs="0" />
+              <xs:element name="PUB_MAILSIGN" msprop:Generator_ColumnVarNameInTable="columnPUB_MAILSIGN" msprop:Generator_ColumnPropNameInRow="PUB_MAILSIGN" msprop:Generator_ColumnPropNameInTable="PUB_MAILSIGNColumn" msprop:Generator_UserColumnName="PUB_MAILSIGN" type="xs:double" minOccurs="0" />
+              <xs:element name="PUB_MAIL_PERCENT" msprop:Generator_ColumnVarNameInTable="columnPUB_MAIL_PERCENT" msprop:Generator_ColumnPropNameInRow="PUB_MAIL_PERCENT" msprop:Generator_ColumnPropNameInTable="PUB_MAIL_PERCENTColumn" msprop:Generator_UserColumnName="PUB_MAIL_PERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="MEET" msprop:Generator_ColumnVarNameInTable="columnMEET" msprop:Generator_ColumnPropNameInRow="MEET" msprop:Generator_ColumnPropNameInTable="MEETColumn" msprop:Generator_UserColumnName="MEET" type="xs:double" minOccurs="0" />
+              <xs:element name="MEET_SIGN" msprop:Generator_ColumnVarNameInTable="columnMEET_SIGN" msprop:Generator_ColumnPropNameInRow="MEET_SIGN" msprop:Generator_ColumnPropNameInTable="MEET_SIGNColumn" msprop:Generator_UserColumnName="MEET_SIGN" type="xs:double" minOccurs="0" />
+              <xs:element name="MEET_PERCENT" msprop:Generator_ColumnVarNameInTable="columnMEET_PERCENT" msprop:Generator_ColumnPropNameInRow="MEET_PERCENT" msprop:Generator_ColumnPropNameInTable="MEET_PERCENTColumn" msprop:Generator_UserColumnName="MEET_PERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="CREATE_SIGN" msprop:Generator_ColumnVarNameInTable="columnCREATE_SIGN" msprop:Generator_ColumnPropNameInRow="CREATE_SIGN" msprop:Generator_ColumnPropNameInTable="CREATE_SIGNColumn" msprop:Generator_UserColumnName="CREATE_SIGN" type="xs:double" minOccurs="0" />
+              <xs:element name="ALL_PERCENT" msprop:Generator_ColumnVarNameInTable="columnALL_PERCENT" msprop:Generator_ColumnPropNameInRow="ALL_PERCENT" msprop:Generator_ColumnPropNameInTable="ALL_PERCENTColumn" msprop:Generator_UserColumnName="ALL_PERCENT" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnDEPT_NAME" msprop:Generator_ColumnPropNameInRow="DEPT_NAME" msprop:Generator_ColumnPropNameInTable="DEPT_NAMEColumn" msprop:Generator_UserColumnName="DEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" msprop:Generator_UserColumnName="EMP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="DEPT_NO" msprop:Generator_ColumnVarNameInTable="columnDEPT_NO" msprop:Generator_ColumnPropNameInRow="DEPT_NO" msprop:Generator_ColumnPropNameInTable="DEPT_NOColumn" msprop:Generator_UserColumnName="DEPT_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

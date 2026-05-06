@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EAR152D" targetNamespace="http://tempuri.org/EAR152D.xsd" xmlns:mstns="http://tempuri.org/EAR152D.xsd" xmlns="http://tempuri.org/EAR152D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EAR152D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EAR152D" msprop:Generator_UserDSName="EAR152D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EAR152L" msprop:Generator_TableClassName="EAR152LDataTable" msprop:Generator_TableVarName="tableEAR152L" msprop:Generator_TablePropName="EAR152L" msprop:Generator_RowDeletingName="EAR152LRowDeleting" msprop:Generator_RowChangingName="EAR152LRowChanging" msprop:Generator_RowEvHandlerName="EAR152LRowChangeEventHandler" msprop:Generator_RowDeletedName="EAR152LRowDeleted" msprop:Generator_UserTableName="EAR152L" msprop:Generator_RowChangedName="EAR152LRowChanged" msprop:Generator_RowEvArgName="EAR152LRowChangeEvent" msprop:Generator_RowClassName="EAR152LRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SEQ_NO" msprop:Generator_ColumnVarNameInTable="columnSEQ_NO" msprop:Generator_ColumnPropNameInRow="SEQ_NO" msprop:Generator_ColumnPropNameInTable="SEQ_NOColumn" msprop:Generator_UserColumnName="SEQ_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_YEAR" msprop:Generator_ColumnVarNameInTable="columnFILE_YEAR" msprop:Generator_ColumnPropNameInRow="FILE_YEAR" msprop:Generator_ColumnPropNameInTable="FILE_YEARColumn" msprop:Generator_UserColumnName="FILE_YEAR" type="xs:string" minOccurs="0" />
+              <xs:element name="REMARK" msprop:Generator_ColumnVarNameInTable="columnREMARK" msprop:Generator_ColumnPropNameInRow="REMARK" msprop:Generator_ColumnPropNameInTable="REMARKColumn" msprop:Generator_UserColumnName="REMARK" type="xs:string" minOccurs="0" />
+              <xs:element name="DOC_NO" msprop:Generator_ColumnVarNameInTable="columnDOC_NO" msprop:Generator_ColumnPropNameInRow="DOC_NO" msprop:Generator_ColumnPropNameInTable="DOC_NOColumn" msprop:Generator_UserColumnName="DOC_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_NO" msprop:Generator_ColumnVarNameInTable="columnFILE_NO" msprop:Generator_ColumnPropNameInRow="FILE_NO" msprop:Generator_ColumnPropNameInTable="FILE_NOColumn" msprop:Generator_UserColumnName="FILE_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="FROM_SUBJECT" msprop:Generator_ColumnVarNameInTable="columnFROM_SUBJECT" msprop:Generator_ColumnPropNameInRow="FROM_SUBJECT" msprop:Generator_ColumnPropNameInTable="FROM_SUBJECTColumn" msprop:Generator_UserColumnName="FROM_SUBJECT" type="xs:string" minOccurs="0" />
+              <xs:element name="RPSDEPT_NAME" msprop:Generator_ColumnVarNameInTable="columnRPSDEPT_NAME" msprop:Generator_ColumnPropNameInRow="RPSDEPT_NAME" msprop:Generator_ColumnPropNameInTable="RPSDEPT_NAMEColumn" msprop:Generator_UserColumnName="RPSDEPT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="RPSSECT_NAME" msprop:Generator_ColumnVarNameInTable="columnRPSSECT_NAME" msprop:Generator_ColumnPropNameInRow="RPSSECT_NAME" msprop:Generator_ColumnPropNameInTable="RPSSECT_NAMEColumn" msprop:Generator_UserColumnName="RPSSECT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="MEDIA_DESP" msprop:Generator_ColumnVarNameInTable="columnMEDIA_DESP" msprop:Generator_ColumnPropNameInRow="MEDIA_DESP" msprop:Generator_ColumnPropNameInTable="MEDIA_DESPColumn" msprop:Generator_UserColumnName="MEDIA_DESP" type="xs:string" minOccurs="0" />
+              <xs:element name="FILE_CNT" msprop:Generator_ColumnVarNameInTable="columnFILE_CNT" msprop:Generator_ColumnPropNameInRow="FILE_CNT" msprop:Generator_ColumnPropNameInTable="FILE_CNTColumn" msprop:Generator_UserColumnName="FILE_CNT" type="xs:string" minOccurs="0" />
+              <xs:element name="BOX_NO" msprop:Generator_ColumnVarNameInTable="columnBOX_NO" msprop:Generator_ColumnPropNameInRow="BOX_NO" msprop:Generator_ColumnPropNameInTable="BOX_NOColumn" msprop:Generator_UserColumnName="BOX_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

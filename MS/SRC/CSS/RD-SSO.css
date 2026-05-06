@@ -1,0 +1,1530 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*.ui-grid-a
+{
+  background-color: #ff0;
+}
+.ui-grid-a > .ui-block-a, .ui-grid-a > .ui-block-b
+{
+  background-color: #0ff;
+}*/
+
+/* 2011.11.8 - for full screen width dialog style (jQM 1.0) */
+.ui-dialog .ui-header,
+.ui-dialog .ui-content,
+.ui-dialog .ui-footer { 
+	max-width: 100%; 
+}
+
+/*img {
+	-webkit-user-drag:none;
+}*/
+
+/* 2016.10.26 - Eric Peng, 解決chrome FileIO可能會在瀏覽器下方顯示檔案資訊,
+   造成layout異常問題 (拉出的側桌, 右方關閉控制項被scrollbar遮住, 無法關閉) */
+body.ui-mobile-viewport, div.ui-mobile-viewport {
+	overflow-y: hidden;
+}
+
+#header { /* Header */
+  background:#c4dcfb;
+  height:5%;
+}
+
+/*2012.9.3*/
+#mainPageContainer { 
+	position: relative;
+	overflow: hidden; /* 2016.4 */
+	/* 20170321 Kevin 套美工 */
+	margin-left:39px;
+}
+
+/*2012.9.3*/
+#mainPageContainer .sso_subpage { 
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*-webkit-transform: translateZ(0);*/
+}
+
+#mainPageContainer .mp_desktop {
+  position: absolute;
+  height:100%;
+  width:100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* 20170321 Kevin 套美工
+  background-image: linear-gradient(to left, #8e9eab, #eef2f3); 20170321*/
+  /*background-image: linear-gradient(#4cade5, #eef2f3); 20170411*/
+  /*background: #ffffff url(../IMAGE/ART/SSO-Base.png) 100% 100% no-repeat; /*20170411*/
+}
+
+/* 2017.4 - color scheme */
+.cs-ly #mainPageContainer .mp_desktop {
+	/*background-image: linear-gradient(#e5c565, #f2f3ee); 20170411 */
+	/*background: #ffffff url(../IMAGE/ART/CS-LY/SSO-Base.png) 100% 100% no-repeat; /*20170411*/
+}
+.cs-lg #mainPageContainer .mp_desktop {
+	/*background-image: linear-gradient(#97b531, #f8f3ee); 20170411 */
+	/*background: #ffffff url(../IMAGE/ART/CS-LG/SSO-Base.png) 100% 100% no-repeat; /*20170411*/
+}
+.cs-lp #mainPageContainer .mp_desktop {
+	/*background-image: linear-gradient(#e88bc2, #f2eef3); 20170411 */
+	/*background: #ffffff url(../IMAGE/ART/CS-LP/SSO-Base.png) 100% 100% no-repeat; /*20170411*/
+}
+
+#mainPageContainer #mpContainer .work_pane {
+	display: none;
+}
+
+#mpContainer .mp_desktop:first-child {
+	display: block;
+}
+
+/* 20170321 Kevin 套美工 */
+#imgDownDrawer{
+	background: #ffffff url("../IMAGE/ART/SSO-DrawerDown.png") 100% 100% no-repeat;
+	width:39px;
+	float:left;
+	margin:0;
+	background-size: cover;
+}
+
+/* 2017.4 - color scheme */
+.cs-ly #imgDownDrawer {
+	background: #ffffff url("../IMAGE/ART/CS-LY/SSO-DrawerDown.png") 100% 100% no-repeat;
+	background-size: cover;
+}
+.cs-lg #imgDownDrawer {
+	background: #ffffff url("../IMAGE/ART/CS-LG/SSO-DrawerDown.png") 100% 100% no-repeat;
+	background-size: cover;
+}
+.cs-lp #imgDownDrawer {
+	background: #ffffff url("../IMAGE/ART/CS-LP/SSO-DrawerDown.png") 100% 100% no-repeat;
+	background-size: cover;
+}
+
+
+/* 20170321 Kevin 套美工 */
+#imgUpDrawer{
+	background: #4cade5 url("../IMAGE/ART/SSO-DrawerUp.png") no-repeat;
+	width:50px;
+	float:left;
+	margin:0;
+	height:48px;
+	background-position: right bottom;
+}
+
+/* 2017.4 - color scheme */
+.cs-ly #imgUpDrawer {
+	background: #e5c565 url("../IMAGE/ART/CS-LY/SSO-DrawerUp.png") no-repeat;
+	background-position: right bottom;
+}
+.cs-lg #imgUpDrawer {
+	background: #97b531 url("../IMAGE/ART/CS-LG/SSO-DrawerUp.png") no-repeat;
+	background-position: right bottom;
+}
+.cs-lp #imgUpDrawer {
+	background: #e88bc2 url("../IMAGE/ART/CS-LP/SSO-DrawerUp.png") no-repeat;
+	background-position: right bottom;
+}
+
+#imgUpDrawer .underline {
+	position: absolute;
+	background-color: #F0F0F0;
+	left: 0px;
+	bottom: -1px;
+	width: 38px;
+	height: 1px;
+}
+
+/* 20170321 Kevin 套美工 */
+#Logo
+{
+	margin-top: calc( 100vh / 100 - 7px); /* 4px; 2017.4 - modify */ /* 1110314	Leslie[1110167]	[考試院]UI調整，-2px > 5px */ /* 1110810 Leslie 調整Logo上緣 */
+    float: left;
+    width: calc(108px  + 10vw);	/* 1110314	Leslie[1110167]	[考試院]UI調整，200px> 289px > calc(100px + 10vw) > calc(108px  + 10vw); */
+    height: 40px;
+    background: url("../IMAGE/ART/SSO-Logo.svg") 100% 100% no-repeat;	/* 1110314	Leslie[1110167]	[考試院]UI調整，png > svg */
+    background-size: contain;
+    /* 1110314	Leslie[1110167]	[考試院]UI調整 */
+	cursor: pointer;
+	/*margin-left: 60px;*/	/* 1110809	Leslie	考試院UI用客製化設定 */
+}
+
+#todolistContainer {/* todolist container element */
+  height:100%;
+  /* 20170321 Kevin 套美工
+  width:100%;*/
+  width:90%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  /* 2016.5.12 */
+  background: transparent;
+}
+
+#billboard, #startContainer {
+	width: 100%; /*1024px; 2012.9.3 */
+  background-color: #ddd;
+  overflow: hidden;
+}
+
+  /* for page transition */
+.vSlideContainer
+{
+	-webkit-transition: -webkit-transform .8s ease-in-out;
+	-moz-transition: -moz-tranfrom .8s ease-in-out;
+	transition: transform .8s ease-in-out;
+}
+
+.sso_subpage {
+	transform: translateY(-100%) translateY(-2em);
+	-ms-transform: translateY(-100%) translateY(-4em); /* 8/24, Eric-解決IE11首頁上方殘留MP內容問題*/
+}
+
+.sso_subpage.slidedown_page {
+	transform: translateX(0px);
+	/*z-index: 1;*/
+}
+  /* End of page transition */
+
+#startContainer ul .ui-right-coner-ctrl {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -9px;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#tdlPane{
+  float:left;
+  width: 100%; /* 25em; */ /* 256px; 2016.3.30 */
+  height:100%;
+  /*border-top:solid 1px #9cbdff;*/
+  
+  /* 2016.5.12
+  background:#c4dcfb; */
+  background: transparent;
+  
+  /*overflow-x: auto;
+  overflow-y:hidden;*/
+}
+
+#rightPane{	/*Contains toolbar and horizontal splitter*/
+  float:right;
+  height: 100%;
+  position: relative;
+  background: #ddd;
+  overflow-y: auto;
+}
+
+#tdlPane_dummy1{/*horizontal splitter*/	
+  width:100%;
+  /*width: calc(100% - 3.5em); 2016.4 */
+  /*margin-left: 3.5em; 2016.4 */
+  height:100%;
+  
+  /* 2016.5.12
+  background:#FFFFFF; */
+  background: transparent;
+  
+  border-top:solid 1px #9cbdff;
+  position: relative;
+  overflow: hidden;
+} 
+
+#listPane { /*Top nested tdlPane */
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  background: #ddd; /*#f4f4f4; 2011.11.11*/
+}
+
+#iconPane {/* todolist - icon mode */
+  background:#ddd; /* 2011.9.30 */
+  width:100%;
+  height: 100%;
+  overflow-y:auto;
+  /* 2016.5.12 */
+  overflow-x: hidden;
+}
+
+#home #mainContent {
+  padding: 0;
+  /*margin-top: -1px; 2017.4 - remove*/
+  position: relative;
+  background: #ffffff url(../IMAGE/ART/SSO-Base.png); /*20170411*/
+  background-size: contain; /*20170411*/
+}
+
+/* 2017.4 - color scheme */
+.cs-ly #home #mainContent {
+	background: #ffffff url(../IMAGE/ART/CS-LY/SSO-Base.png); /*20170411*/
+	background-size: contain; /*20170411*/
+}
+.cs-lg #home #mainContent {
+	background: #ffffff url(../IMAGE/ART/CS-LG/SSO-Base.png); /*20170411*/
+	background-size: contain; /*20170411*/
+}
+.cs-lp #home #mainContent {
+	background: #ffffff url(../IMAGE/ART/CS-LP/SSO-Base.png); /*20170411*/
+	background-size: contain; /*20170411*/
+}
+
+/* 公文製作及線上簽核窗格 */
+
+/*#referenceView {
+    float: left;
+    height: 100%;
+    border: 1px dotted #0ff;
+    background-color: #ff8;
+    display: none;
+}*/
+
+#folderListExtra, #folderListExtra > .ui-select > div {
+  width: 240px;
+  margin: 0;    
+}
+
+/* 文件夾清單控制項 @iconPane*/
+.dragableContent ul {
+  list-style:none;
+  margin: auto;
+  padding:0;
+  width:205px;
+}
+
+.dragableContent li {
+  float: none;
+  text-indent:0;
+  padding:0;
+  margin:10px 6px;
+  list-style-image:none !important;
+}
+
+/* @製作/簽核窗格 - 公文夾圖示樣式 */
+.dragableContent li > .item .content {
+  position: relative;
+  overflow: hidden;
+  /*border: 1px solid black;*/
+  width: 200px;
+  height: 135px;
+  margin: auto;
+}
+
+.dragbar {
+  width: 242px;
+  height: 8px;
+  border-top:solid 1px #9cbdff;
+  background: transparent url(../IMAGE/SSO/paneh.gif) 50% 0;
+  cursor: none;
+  font-size: 0;
+  line-height: 0;
+  position: relative;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 4px 4px 3px rgba(0,0, 0, 0.3);
+  -moz-box-shadow: 4px 4px 3px rgba(0,0, 0, 0.3);
+  box-shadow: 4px 4px 3px rgba(0,0, 0, 0.3);
+}
+
+.dragBtn_closed {
+   background:transparent url(../IMAGE/SSO/panehc.gif) 50% 0px no-repeat;
+}
+
+.dragBtn_opened {
+   margin-top:-4px;
+    background:transparent url(../IMAGE/SSO/panehc.gif) 50% -10px no-repeat;
+}
+/* End of 線上簽核窗格上方公文夾控制項 */
+
+#referenceView {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #ff0;
+}
+
+.refViewNormal, .mergedFolioViewNormal {
+  width: 0%;
+  display: none;
+}
+
+.mergedFolioViewNormal {
+  width: 100%;
+}
+
+.refViewFull, mergedFolioViewFull {
+  width: 50%;
+  float: left;
+}
+
+/* End of 公文製作及線上簽核窗格 */
+
+.searchViewContent
+{
+  width: 24em; /*25em; 2017.3.31 */
+  height: 100%;
+  display: block;
+  float: right;
+}
+
+.searchViewContent .search-list {
+  margin: 2px;
+}
+
+.searchViewContent .searchView_Folder > label
+{
+  margin-left: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.searchViewContent .searchView_Folder > .ui-select
+{
+    width: 95%;
+    text-align: center;
+}
+
+.searchViewContent > form {
+  margin: 0px;
+}
+
+.home_toolbar {
+  /*margin-left: -15px;
+  margin-top: -3px;*/
+  width: 105%;
+  text-align: center;
+}
+.home_toolbar fieldset {
+  margin-bottom: 5px;
+}
+
+.first_para {
+  clear: both;
+}
+
+/* 上方標題列 */
+#home > div:first-child {
+  z-index: 51; /*10; 2016.4 */
+  background-color: #4cade5; /* 20170321 Kevin 套美工 */
+}
+
+/* 2017.4.10 - @Chrome, 放大顯示比例時會佔用下方左側空間問題!
+ * 待解決: 設定overflow: hidden;時放大時不會佔用, 但會造成上方工具列的下邊界一律顯示(左方側屜版及首頁/公文夾下方多一條黑線!)
+#home > #home_header {
+	overflow: hidden;
+}*/
+
+/* 2017.4 - color scheme */
+.cs-ly #home > div:first-child {
+	background-color: #e5c565;
+}
+.cs-lg #home > div:first-child {
+	background-color: #97b531;
+}
+.cs-lp #home > div:first-child {
+	background-color: #e88bc2;
+}
+
+#mainMenu {
+  margin-left: .5em; /* 0px; 2016.3.30 */
+  
+  /* 20170321 Kevin 套美工 */
+  height: 48px;
+  width: 10em;	/* 1110314	Leslie[1110167]	[考試院]UI調整，11em > 2em */ /* 1110809	Leslie	考試院UI用客製化設定，2em > 10em */
+  float: left;
+}
+
+
+#mainMenu > div {
+  width: 60px;
+  border: 1px solid #444;
+  padding-left: 6px;
+  padding-right: 6px;
+  cursor: pointer;
+  line-height: 2.2em; /* 46px; 2017.4 - modify */
+  text-align:center;
+  background-color: #4CC;
+  float: left;
+  border-top-left-radius: 10px; /*2011.11.11*/
+  border-top-right-radius: 10px; /*2017.4 - add */
+  letter-spacing: 3px;
+	-webkit-user-select: none;
+	user-select: none;
+  height: calc(100% - 1em - 1px); /* 2017.4 - add */
+  margin-top: 1em; /* 2017.4 - add */
+  color: #444; /* 2017.4 - add */
+  text-shadow: 0 1px 0 #bbb; /* 2017.4 - add */
+}
+
+#mainMenu > div:first-child {
+  /*border-right: 0px; 2017.4 - remove */
+}
+
+#mainMenu > div:last-child {
+  /*border-left: 0px; 2017.4 - remove */
+}
+
+#mainMenu > div:active {
+  color: #00f;
+  /*background-color: #f8f; 2017.4 - remove */
+}
+
+#mainMenu >div.selected {
+  color: #00f;
+  /*background-color: #ddd; 2017.4 - remove */ /*#ee4; 2011.11.10*/
+  /*background-image: -webkit-gradient(linear, left top, left bottom, from(#a8ce81), to(#87b05e)); *//* Saf4+, Chrome */
+  /*background-image: -webkit-linear-gradient(top, #cece81, #b0b05e); *//* Chrome 10+, Saf5.1+ */
+  /*background-image:    -moz-linear-gradient(top, #a8ce81, #87b05e); *//* FF3.6 */
+  /*background-image:     -ms-linear-gradient(top, #a8ce81, #87b05e); *//* IE10 */
+  /*background-image:      -o-linear-gradient(top, #a8ce81, #87b05e); *//* Opera 11.10+ */
+  /*background-image:         linear-gradient(top, #a8ce81, #87b05e); */
+  
+  border: 2px solid #444; /* 2017.4 - add */
+  border-bottom: 0px; /* 2017.4 - add */
+}
+
+/* 2017.4 - 美工 */
+#mainMenu #btn_start {
+	background-image: linear-gradient(#dc9fe5, #fff 75%);
+}
+#mainMenu #btn_mp {
+	background-image: linear-gradient(#8cc1e1, #fff 75%);
+}
+
+/* 選擇項目下方之bordoer */
+#bottom-line {
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  top: 48px;
+  left: 1px;
+  background-color: #ddd;
+  z-index: 10;
+}
+
+/* 20170321 Kevin 套美工 */
+#MainButton
+{
+	position: absolute;
+	width: 13em;	/* 1110314	Leslie[1110167]	[考試院]UI調整，11em > 10em *//* 1110809	Leslie	考試院UI用客製化設定，10em > 13em */
+	right: 4px;
+	top:0px;
+	border-radius: 0 10px 10px 0;
+    height: 40px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    /* 1110314	Leslie[1110167]	[考試院]UI調整 */
+    /* background-image: linear-gradient(#999999, #eef2f3); */
+}
+
+/* 1110809	Leslie	考試院UI用客製化設定 */
+#MainButton.EXAM{
+	width: 10em;
+}
+
+/* 2016.3 選單先移到旁邊 */
+div#home_header a#popupPanel {
+  position: absolute;
+  left: 450px;	
+}
+
+a#btn_Drawer {
+	position: absolute;
+	width: 36px;
+	height: 36px;
+	background-image:url(../IMAGE/SSO/icons-36-white.png);
+	background-position:-866px 50%;
+	margin: 10px 0 0 5px;
+	cursor: pointer;
+}
+
+#mainTitle {
+
+	/* 2014.10.17 - 暫時隱藏工具列左方[首頁]/[文件夾]/[公布欄]切換buttons */
+	position: relative;
+	/* 20170321 Kevin 套美工
+	height: 48px;
+	margin-left: 12em; 
+	width: calc(100% - 23em); */
+	/* 1110420	Leslie[1110167]	[考試院]UI調整 
+	margin-left: 34em; 
+	width: calc(100% - 45em - 4px);*/
+	margin-left: calc(33% + 40px); 
+	width: calc(66% - 10em);
+	border-radius: 10px 0 0 10px;
+	height: 40px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    /* 1110314	Leslie[1110167]	[考試院]UI調整 */
+	/* background-image: linear-gradient(#999999, #eef2f3); */
+}
+
+
+/* 2020.6.16 - 1090452 Eric, fix iPad orientationchange, delete */
+/* 2016.4 - Eric Peng, iPad landscape 暫時方案 for 二代layout */
+/*@media screen and (max-width: 1300px) and (orientation: landscape) { */
+	/* 20170321 Kevin 套美工 - DELETE */
+	/*#mainTitle  {
+		
+		margin-left: 200px;
+	}
+}*/
+
+/* 2020.6.16 - 1090452 Eric, fix iPad orientationchange, delete */
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Portrait */
+/*@media screen and (max-width: 768px) and (orientation: portrait) {
+	#mainTitle  {
+		margin-left: 80px;
+	}
+}*/
+
+/*Start of 暫時隱藏工具列左方[首頁]/[文件夾]/[公布欄]修改CSS以調整版面*/
+#mainTitle div.title > span.app_name {
+	position: absolute;
+	left: 20px;
+	top: 0px;
+}
+/* End of暫時隱藏工具列左方[首頁]/[文件夾]/[公布欄]修改CSS以調整版面*/
+
+#mainTitle .title {
+  /* 20170321 Kevin 套美工
+  margin: 0.3em 1em; */
+  margin-top: 0.3em;
+  margin-right: 1em;
+  margin-bottom: 0.3em;
+  margin-left: 3em;
+
+  font-size: 18pt;
+}
+
+#mainTitle .date_and_user {
+	position: absolute;
+	/* 20170321 Kevin 套美工
+	Height: 3em;
+	width: 50%;
+	height: 48px; */
+	height: 40px;
+	width: 50%;
+	/*Start of 暫時隱藏工具列左方[首頁]/[文件夾]/[公布欄]修改CSS以調整版面*/
+  /*left: 240px;*/
+    /* 20170321 Kevin 套美工
+	right: 30.2%; */
+	/* End of暫時隱藏工具列左方[首頁]/[文件夾]/[公布欄]修改CSS以調整版面*/
+	/* 20170321 Kevin 套美工
+    top: -2px; */ /* 2012.12.6 - modify for jQM 1.2 & mobiscroller */
+  font-size: small;
+  color: #ff8;
+	overflow-y: hidden;
+}
+
+/* 2020.6.16 - 1090452 Eric Peng, 顯示 for iPad Portrait 
+   2021.2.23 - 1090927 Eric, min-width 768->900 (for iPad Pro 11") */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+	#mainTitle  {
+		margin-left: 15.5em;
+		width: calc(100% - 26.5em - 4px); 
+	}
+
+	#mainTitle .date_and_user {
+		left: .2em;
+		width: calc(40% - .2em);
+	}
+	
+	#mainTitle .last_notification {
+		width: 60%;
+	}
+}
+
+#roleid_wrapper {
+	margin-top: 3px;
+	/* 20170321 Kevin 套美工 */
+    margin-bottom: 0px;
+}
+
+#roleid_wrapper a.ui-btn {
+	width: 180px;
+	overflow: hidden;
+}
+
+#roleid_input {
+	width: 100%;
+	text-indent: 5px;
+	border-radius: .3em;
+	/* 1110314	Leslie[1110167]	[考試院]UI調整 */
+	font-size: 1.5em;
+    margin-top: -3px;
+}
+
+#roleid_wrapper .ui-input-text {
+	margin-top: 0;
+	border-radius: .3em;
+}
+
+div#roleid_wrapper span {
+	right: 10px;
+	/* 1110314	Leslie[1110167]	[考試院]UI調整 */
+	margin: -12px 4px;
+}
+
+.date_and_user a.ui-btn span.ui-btn-text {
+	/*font-size: smaller;*/
+}
+
+.title > .date_and_user > .date_info {
+  margin-left: 1em;
+	margin-bottom: 5px;
+  font-size: 10pt;
+}
+
+.title > .date_and_user > .user_info {
+	margin-left: .5em;
+	font-size: 12pt;
+	color: #ff0;
+	width: 150;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+div.last_notification {
+	position: absolute;
+	/* 20170321 Kevin 套美工
+	width: 30%; */
+	width: 40%;	/* 1110809	Leslie	考試院UI用客製化設定，50% > 40% */
+	top: 0px;
+	
+	/*Start of 暫時隱藏工具列左方[首頁]/[文件夾]/[公布欄]修改CSS以調整版面*/
+	/*right: 60px;*/
+	right: 55px;	/* 1110809	Leslie	考試院UI用客製化設定，0px > 55px */
+	/*End of 暫時隱藏工具列左方[首頁]/[文件夾]/[公布欄]修改CSS以調整版面*/
+	
+	font-size:smaller;
+    /* 20170321 Kevin 套美工
+	color: #ff8; */
+	/* 1110314	Leslie[1110167]	[考試院]UI調整 */
+	/* color: #555; */
+	text-shadow: none;
+	cursor: pointer;
+}
+
+/* 1110809	Leslie	考試院UI用客製化設定 */
+div.last_notification.EXAM{
+	width: 50%;
+	right: 0px;
+}
+
+.last_notification > marquee {
+	font-size: small;
+	/*margin-bottom: 3px;*/
+	overflow-x: -webkit-marquee;
+	-webkit-marquee-direction: backwards;
+	-webkit-marquee-style: scroll;
+	-webkit-marquee-speed: 150;
+	/*-webkit-marquee-increment: small;*/
+	-webkit-marquee-repetition: infinite;
+	text-align: right;
+	/*width: 85%;*/
+	width: 95%;	
+	margin-left: -15px; /*1110812	Leslie	調整寬度*/
+}
+
+.last_notification > div {
+	/*width: 85%;*/
+	/* 1110420	Leslie[1110167]	[考試院]UI調整 
+	width: 95%;*/
+	width: calc(100% - 40px);
+	text-align: right;
+}
+/* 1110420	Leslie[1110167]	[考試院]UI調整 //1110809	Leslie	考試院UI用客製化設定，改ExamUI > EXAM*/
+.date_info.EXAM{
+	font-size: 1.5em;
+    margin-top: 5px;
+}
+
+#btn_logout, #btn_reload, #btn_upmenu {
+    /* 20170321 Kevin 套美工
+	top: .4em; */
+	border-radius: .3em;
+	background-image: linear-gradient(#eef2f3, #ffeaa3);
+    height: 20px;
+    color: #555;
+    text-shadow: none;
+	
+	margin-top: 4px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#btn_reload {
+	/* 20170321 Kevin 套美工
+	right: 5em; */
+}
+
+#btn_upmenu {
+	/* 20170321 Kevin 套美工
+	right: 9.5em; */
+}
+
+#btn_logout > span, #btn_reload > span {
+	border-radius: .3em;
+}
+
+/* 2016.6 - 支援 w=1024 解析度 */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+	#mainTitle  {
+		/* 1110420	Leslie[1110167]	[考試院]UI調整 */
+		/*margin-left: 27.5em;*/ /*12em; 2017.4.7 - modify */
+		/*width: calc(100% - 38.5em - 4px);*/ /* 2017.4.7 - new */
+		margin-left: calc(33% + 6px);
+	}
+	
+	#mainTitle .date_and_user {
+		/*right: 15em; 2017.4.7 - delete */
+		left: .2em; /* 2017.4.6 - add */
+		width: calc(60% - .2em); /*20em; 2017.4.7 - modify */ /* 2016.10.11 */
+	}
+	
+	#mainTitle .last_notification {
+		width: 40%; /* 50%; 2017.4.7 - modify */
+	}
+	
+	.last_notification > div {
+		width: calc(100% - -1px);
+	}
+}
+
+/* 2021.2.17 - 1090927 Eric Peng, 顯示 for iPhone Landscape */
+@media screen and (max-width: 1000px) and (max-height:450px) and (orientation: landscape) {
+	#mainTitle  {
+		margin-left: 11.5em; /*12em; 2017.4.7 - modify */
+		width: calc(100% - 22.5em - 4px); /* 2017.4.7 - new */
+	}
+}
+
+/* 2017.4 - 美工套用-左方側屜邊框 */
+@media screen and (max-width: 1200px) and (orientation: landscape) {
+	#imgUpDrawer {
+		width: 16px;
+	}
+	#imgUpDrawer .underline {
+		width: 4px;
+	}
+	#imgDownDrawer {
+		width: 5px;
+	}
+	#mainPageContainer {
+		margin-left: 5px;
+	}
+}
+
+/* todolist 清單模式 */
+.todolist_no_toolbar {
+  margin-top: 0px;
+}
+
+.todolist .doc_no, .todolist .doc_subject {
+  font-size: larger;
+}
+
+.todolist .doc_subject {
+  width: 100%;
+  font-weight: bold;
+}
+
+.todolist .msg_id {
+  display: none;
+}
+
+.todolist .ui-li-aside {
+  display: block;
+  width: 30%;
+  margin-top: -0.5em;
+}
+
+.todolist .doc_extra {
+  width: 105%;
+}
+
+.todolist .doc_extra div {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+ .list_mode .ui-btn-inner, .sort_mode .ui-btn-inner {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.list_mode .ui-btn-inner {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* End of todolist 清單模式 */
+
+.ui-li-btn {
+  position: absolute;
+  padding: 5px 5px;
+  top: 45%;
+  margin-top: -.9em;
+  height: 20px;
+  right: 20px;
+}
+
+.ui-li-btn > a {
+  text-decoration: none;  
+}
+
+.ui-li-btn span {
+  margin-top: -1.5em;
+}
+
+
+#dlgTransTarget .inline-title h2 {
+  text-align: center;
+  background-color: #8ff;
+}
+
+/* 2011.11.14 */
+#dlgTransTarget label.ui-select {
+  margin-top: 15px;
+  text-align: right;
+}
+
+/* 2012.2.20 */
+.trans_target .dwwc {
+	/*left: 150px;*/
+}
+
+#setNextTarget h2 {
+  margin-top: 5px;
+}
+
+/* 公文傳送介面 */
+#rightPane .submit_settings
+{
+  width: 300px;
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  z-index: 100;
+  background-color: #eee;
+  -webkit-box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+#rightPane .submit_settings p {
+    padding: 0 5px;
+    font-weight: bold;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+#rightPane .submit_settings label.ui-select {
+  width: 30%;
+  margin-left: 5px;
+  margin-top: 15px;
+  text-align: right;
+}
+
+.submit_settings p.submit_setting_title {
+  background-color: #333;
+  color: #eee;
+  text-shadow: 1px 1px 2px #ccc;
+  height: 32px;
+  margin-top: 0;
+  line-height: 32px;
+  text-align: center;
+}
+
+/* 公布欄  - 2012.4.13, 移至mBoard.css */
+
+
+/* 工具箱 - 2012.4.13, 移至mStart.css */
+#toolboxCtxt {
+	height: 100%;
+}
+
+#startContainer div.note_list,  #toolboxCtxt div.note_list {
+  float: left;
+  width: 55%;
+  height: 100%;
+  margin-top: 1em;
+}
+
+#startContainer div.note_list ul,
+#toolboxCtxt div.note_list ul {
+  margin-left: 20px;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+#startContainer div.billboard,
+#toolboxCtxt div.billboard {
+  width: 100%;
+  height: 48%;
+}
+
+#startContainer div.note_list span.date,
+#toolboxCtxt div.note_list span.date
+{
+  font-size: 12px;
+  font-weight: normal;
+  margin-right: 5px;
+}
+
+#startContainer div.notes,
+#toolboxCtxt div.notes
+{
+  width: 100%;
+  height: 48%;
+}
+
+#startContainer div.app_shortcuts,
+#toolboxCtxt div.app_shortcuts
+{
+  padding-left: 10px;
+  padding-right: 10px;
+  float: left;
+  width: 39.5%;
+  height: 100%;
+  border-right: 1px solid #fff;
+}
+
+/* End of 工具箱 */
+
+
+/* 文件夾清單控制項 */
+
+/*.ui-content .ui-listview {
+  margin-left: 15px;
+}
+
+.type-interior .content-secondary {
+  margin: 16px 15px 15px 15px;
+  padding-top: 2px;
+  padding-right: 0;
+}
+
+.content-secondary ul {
+  margin-top: 0;
+  padding-top: 2px;
+}
+
+.type-interior .content-primary ul {
+  margin-right: 0;
+}*/
+
+/* mobiscroll integrated test */
+/* Datewheel overlay */
+.dw_a {
+	padding-top: 10px;
+    padding-bottom: 20px;
+	/*position: absolute;*/
+    top: 5%;
+    left: 0;
+    z-index: 1001;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    /*background: #fff;*/
+    color: #000;
+}
+
+.folio_content .flip_content { /* 單份公文預覽內容 */
+	position: absolute;
+	height: 600px;
+	width: 450px;
+	/*left: 0px;*/
+	top: 0px;
+	
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform .8s;
+}
+
+.flip_content .flip_side {
+	position: absolute;
+	
+	-webkit-backface-visibility: hidden;
+	/*-webkit-box-shadow: 0 2px 5px #ccc;*/
+}
+
+.flip_content .page {
+	height: 600px;
+	width: 450px;
+	
+	/*border: 1px dashed #eee;*/
+	box-sizing: border-box;
+	background-size: contain;
+	background-position: center;
+	background-color: #fff;
+	z-index: 50;
+	
+	position: relative;
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Portrait 
+   2021.2.23 - 1090927 Eric, min-width 768->900 (for iPad Pro 11") */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+	#eDocPreviewPane div.folio_pane  {
+		margin-top: 160px;
+	}
+}
+
+/* 2016.4 - Eric Peng, iPad landscape 暫時方案 for 二代layout */
+@media screen and (max-width: 1300px) and (orientation: landscape) {
+	#eDocPreviewPane div.folio_content {
+		margin-left: 30px;	
+	}
+	
+	.folio_cntr .cmdForDoc {
+		left: 470px;
+	}
+}
+
+/* 2016.2.1 - Eric Peng, 暫行顯示方案 for iPad Pro - Landscape */
+@media screen and (min-width: 1300px) and (min-height: 900px) and (orientation: landscape) {
+	#eDocPreviewPane div.folio_pane {
+		margin-top: 30px;
+	}
+	
+	#eDocPreviewPane div.folio_content {
+		height: 840px;
+		width: 630px;
+		margin: 15px auto;
+	}
+	
+	.folio_content .flip_content { /* 單份公文預覽內容 */
+		height: 840px;
+		width: 630px;
+	}
+	
+	.flip_content .page {
+		height: 840px;
+		width: 630px;
+	}
+}
+
+	/* Slider animation */
+.slider_target {
+	-webkit-transition-property: left;
+	-webkit-transition-duration: .8s;
+	-webkit-transition-timing-function: ease-in-out;
+	
+	-moz-transition-property: left;
+	-moz-transition-duration: .8s;
+	-moz-transition-timing-function: ease-in-out;
+	
+	transition-property: left;
+	transition-duration: .8s;
+	transition-timing-function: ease-in-out;
+}
+
+.slide_in {
+	left: 0px;
+}
+
+.slide_left_out {
+	left: -450px;
+}
+
+.slide_right_out {
+	left: 450px;
+}
+
+.slide_out {
+	left: -900px;
+}
+
+	/* End of slider animation */
+
+  /* folio preview nav bar */
+.folio_preview_nav {
+	position: absolute;
+	width: 	180px; /* (7*25) - 5 [最後一個button沒有gap] */
+	bottom: 65px;
+	left: 300px;
+
+	text-shadow: none;
+	z-index:100;
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Portrait
+   2021.2.23 - 1090927 Eric, min-width 768->900 (for iPad Pro 11")  */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+	.folio_preview_nav {
+		bottom: 190px;
+	}
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Pro - Landscape */
+@media screen and (min-width: 1300px) and (min-height: 900px) and (orientation: landscape) {
+	.folio_preview_nav {
+		bottom: 60px;
+	}
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Pro - Portrait */
+@media screen and (min-width: 1000px) and (orientation: portrait) {
+	.folio_preview_nav {
+		bottom: 250px;
+	}
+}
+
+.folio_preview_nav > div {
+	position: relative;
+}
+
+.folio_preview_nav > div.bkg {
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	background: #88C;
+	opacity: 0.4;
+	top:-10px;
+}
+
+.folio_preview_nav .folio_nav_btn {
+	cursor: pointer;
+	
+	position: absolute;
+	display: inline-block;
+	
+	width: 20px;
+	height: 40px;
+	top: 0px;
+	
+	background-color: #fff;
+	border-radius: 2px;
+	
+	line-height: 40px;
+	text-align: center;
+	
+	-webkit-box-shadow: rgba(0, 0, 0, 0.699219) 0px 0px 2px 0px;
+}
+
+.folio_preview_nav .folio_btn_prev {
+	left: 5px;
+	
+	background-image: url(../IMAGE/SSO/folio_nav_icons.png);
+	background-position: -20px 50%;
+	background-repeat: no-repeat;
+	
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.folio_preview_nav .folio_btn_1 {
+	left: 35px;
+}
+.folio_preview_nav .folio_btn_2 {
+	left: 65px;
+}
+.folio_preview_nav .folio_btn_3 {
+	left: 95px;
+}
+.folio_preview_nav .folio_btn_4 {
+	left: 125px;
+}
+.folio_preview_nav .folio_btn_5 {
+	left: 155px;
+}
+
+.folio_preview_nav .folio_btn_next {
+	left: 185px;
+	
+	background-image: url(../IMAGE/SSO/folio_nav_icons.png);
+	background-position: -80px 50%;
+	background-repeat: no-repeat;
+}
+
+.folio_preview_nav .selected {
+	background-color: #F8F;
+}
+  /* folio preview nav bar */
+
+/* Document Commands - 顯示於Content窗格右上方  */
+.folio_cntr .cmdForDoc {
+  position: absolute;
+  top: 5px;
+  /*right: 50px;*/
+  left: calc(50% + (450px/2) - 3px);
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Portrait 
+   2021.2.23 - 1090927 Eric, min-width 768->900 (for iPad Pro 11") */
+@media screen and (max-width: 900px) and (orientation: portrait) {
+	/* DocCommands - 顯示於Content窗格右上方, iPad直式layout, 須在preview影像上方  */
+	.folio_cntr .cmdForDoc {
+		z-index: 51;
+		/*right: 10px;*/
+		left: calc(50% + (450px/2) - 3px);
+	}
+}
+
+/* 2016.4 - Eric Peng, iPad landscape 暫時方案 for 二代layout */
+@media screen and (max-width: 1300px) and (orientation: landscape) {
+	.folio_cntr .cmdForDoc {
+		left: 470px;
+	}
+}
+
+/* 2016.2.1 - Eric Peng, 暫行顯示方案 for iPad Pro Landscape */
+@media screen and (min-width: 1200px) and (min-height: 900px) and (orientation: landscape)  {
+	/* Document Commands - 顯示於Content窗格右上方  */
+	.folio_cntr .cmdForDoc {
+	  /*right: 130px;*/
+	  left: calc(50% + (630px/2) - 3px);
+	}
+}
+
+/* 2016.3.10 - Eric Peng, 暫行顯示方案 for iPad Pro Portrait */
+@media screen and (min-width: 1000px) and (orientation: portrait) {
+	/* Document Commands - 顯示於Content窗格右上方  */
+	.folio_cntr .cmdForDoc {
+	  z-index: 51;
+	  left: calc(50% + (550px/2) - 3px);
+	}
+}
+
+.cmdForDoc .cmdItem {
+  width: 100px;
+  height: 36px;
+  line-height: 36px;
+  text-indent: 5px;
+  padding-left: 7px;
+
+  font-size: 14px;
+  font-weight: 800;
+  text-shadow: none;
+  color: #eee;
+	
+  cursor: pointer;
+  
+  border-radius: 0/*top-left*/ 0/*top-right*/ 0/*bottom-right*/ 0/*bottom-left*/;
+	
+  -webkit-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  -moz-box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+  box-shadow: 3px 3px 3px rgba(0,0, 0, 0.3);
+	
+  background-image: -webkit-linear-gradient(#5F9CC5 /*{b-bup-background-start}*/, #396B9E /*{b-bup-background-end}*/);
+}
+
+.cmdForDoc .cmdItem:first-child {
+	border-radius: 0/*top-left*/ 0.5em/*top-right*/ 0/*bottom-right*/ 0/*bottom-left*/;
+}
+
+.cmdForDoc .cmdItem:last-child {
+	border-radius: 0/*top-left*/ 0/*top-right*/ 0.5em/*bottom-right*/ 0/*bottom-left*/;
+}
+
+.cmdForDoc .cmdDocInfo {
+	background-image: gradient(linear,left top,left bottom, color-stop(0, #74B042), color-stop(1, #56A00E));
+}
+
+.cmdForDoc .cmdOpenDoc {
+	background-image: linear-gradient(#FCEDA7 /*{e-bup-background-start}*/, #FADB4E /*{e-bup-background-end}*/);
+	position: relative;
+	color: #444;
+	height: 50px;
+	line-height: 50px;
+}
+
+.cmdForDoc .cmdSumitDocForPaper {
+	background-image: linear-gradient(#74B042 /*{e-bup-background-start}*/, #56A00E /*{e-bup-background-end}*/);
+	position: relative;
+	color: #444;
+	height: 50px;
+	line-height: 50px;
+}
+
+.cmdForDoc .cmdOpenDoc > span
+{
+	background-color: #888;
+	width:18px;
+	height: 36px;
+}
+
+.cmdForDoc .cmdOpenDoc > span > span{
+	position: absolute;
+	top: 50%;
+	margin-top: -9px;
+	right: 9px;
+
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	border-radius: 9px;
+	
+	background-image: url(../IMAGE/SSO/icons-18-white.png) /*{global-icon-set}*/;
+	background-color: #888;
+  background-repeat: no-repeat;
+	background-position: -108px 50%;
+}
+
+.background_factory {
+	/* theme: b, navy-blue, top->bottom */
+	background-image: -webkit-linear-gradient(#5F9CC5 /*{b-bup-background-start}*/, #396B9E /*{b-bup-background-end}*/);
+	/* theme: e  yellow, top->bottom */
+	background-image: -webkit-linear-gradient(#FCEDA7 /*{e-bup-background-start}*/, #FADB4E /*{e-bup-background-end}*/);
+	
+	/* theme: f, green, lt -> rb */
+	background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #74B042), color-stop(1, #56A00E));
+}
+
+	/* End of Document Commands  */
+/* End of FolioPreview */
+
+#dlgPincode .ui-dialog-contain
+{
+	max-width: 500px;
+}
+
+/* for 傳送選單 */
+#chooseA-listbox-popup, #chooseB-listbox-popup,
+#chooseC-listbox-popup, #chooseD-listbox-popup {
+	max-height: 90% !important;
+    overflow-y: auto;
+}
+
+#chooseC-listbox, #chooseC-listbox,
+#chooseC-listbox, #chooseC-listbox {
+	height: 100%;
+	/*overflow-y: auto;*/
+}
+
+#home ul#chooseA-menu, #home ul#chooseB-menu,
+#home ul#chooseC-menu, #home ul#chooseD-menu {
+	border-radius: 5px;
+}
+
+#home ul#chooseA-menu > li a, #home ul#chooseB-menu > li a,
+#home ul#chooseC-menu > li a, #home ul#chooseD-menu > li a {
+	padding-top: .2em;
+	padding-bottom: .2em;
+}
+
+/* 2016.10.25 - prevent AOL content scorll */
+#PDoc_CoWWKFDialog {
+	overflow-y:hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+#PDoc_CoWWKFDialog div.ui-field-contain{
+	overflow-y:hidden;
+}
+
+#PDoc_CoWWKFDialog.iOS {
+	overflow-y: scroll;
+}
+
+#PDoc_CoWWKFDialog.iOS div.ui-field-contain {
+	overflow: auto;
+}
+
+/* 2021.2.22 - 1090927 Eric, 支援iPhone 橫式螢幕
+*/
+#SDPMode_curtain {
+	display: none;
+}
+
+#home.ui-page.sd_portrait_mode,
+#dlgProcessFlow.ui-page.sd_portrait_mode {
+	display: none;
+}
+
+/* 2021.2.22 - 1090927 Eric Peng, for iPhone Portrait */
+#SDPMode_curtain.sd_portrait_mode {
+	display: block;
+	width:100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: #EEE;
+	z-index: 9999;
+}
+/* 2021.2.22 - 1090927 Eric Peng, for iPhone Portrait */
+#SDPMode_curtain span {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: block;
+	margin-top: 3em;
+}
+/* 2021.2.24 - 1090927 Eric, 測試另行宣告一組css是否可在旋轉後重新套用! */
+#SDPMode_curtain.sd_landscape_mode span {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: block;
+	margin-top: 2em;
+}
+/* 2021.2.22 - 1090927 Eric Peng, for iPhone Portrait */
+#SDPMode_curtain.sd_portrait_mode span {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: block;
+	margin-top: 4em;
+}
+
+/* 1110420	Leslie[1110069]	客製化首頁Logo */
+#Logo.SMEG_Logo{
+	background: url("../IMAGE/ART/SSO-Logo-SMEG.svg") 100% 100% no-repeat;	
+	background-size: contain;
+}
+
+/* 1110607	Leslie	信保UI調整 。  1110809	Leslie	取消無用設定*/
+/*.last_notification.SMEG_UI{
+	right: 60px;
+	width: 40%;
+}
+
+#MainButton.SMEG_UI{
+	width: 13em;
+}*/
+
+/* 1110809	Leslie	考試院UI用客製化設定 */
+#mainMenu.EXAM {
+	width: 2em;
+}
+#mainMenu.EXAM > div{
+	display: none;
+}
+#Logo.EXAM_Logo{
+	background: url("../IMAGE/ART/SSO-Logo-EXAM.svg") 100% 100% no-repeat;	
+	width: calc(110px  + 14vw);
+}
+
+/* 1141027	Leslie[1140845]	新增密碼欄位顯示功能 */
+.eye{
+    position:absolute;
+	background-size:1em;
+	height:1em;
+	width:1em;
+    cursor: pointer;
+    top:0.5em;
+}
+
+.hidePW{
+	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAACxAAAAsQHGLUmNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAbZJREFUSInt1MtKlGEYB/DfzEAX0AipJa7CchfhorF21eA2qFWHq4ic8So63IhCtehA0CDdQNusxCzTgoxEQ78W7/Mx08c3MkbUxj88i/c5H18O8b9RGUDnCC5jEuPBe4fXeIKdPw0+igfYQBa0E5S/N3AfIwdxXEMb37GHh7iO46gGncANPAqdTcyG7b4YwYvI7iXOBH8Ic1gIaqMesrPohM1zDPdzfgpvsYs7kSlMYz0cfAnK8BmN0KmiFbZLmCg6n8QafuBKD38onH+QBp2jidUIUu/hX8UWPkXCSL1dkfrY8DvmIttLJRU3Q9Yq8M+Hr2VpUXSwXcgwx4LUkrJ1roRsvk/wbXSqBYO/jYxUxrJU1nRBoR1KzRLjmZDNFvgXpBV/r+c+TkuD2ZIGlaMuDXI1glSCZoK3hqM9+tfCx0clmzQhrdiuNNz8aBoRJMPXoCycnwudWtjs4Q1OllSMdCTPwsEipnoqaUkDnZfakmc+FboZnuJYP+c5atKhbYbRY9zEmO5XMYZbIcvwDbd1j3MgDOOe7hWXfXbruLtf1oN+1xelfo8GbwWvpO/650GyPsS/xy+t13lHPffbsAAAAABJRU5ErkJggg==);
+}
+
+.showPW{
+	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAsQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHQSURBVEiJ7dU7axRRGMbxX4y3GCKC1a6FFwSN0WoRomBroxgUt7EQBG20UbwhfgIjJHYiIiKInUUQohY2guIFNYWiH0ERLyDeNt6K8w67nt3BtUmVBw7DPDPvnzPPec8ZZjXDOoOpVmNuF0ULsAmDWBzeR7zEQ3wPbwxHcLbb2WzB1YD9LhkfcBmX4n68G/AqTETBW5zHDqxGf4w1GMFF/Pgf+EjM6hOOBazQsBTBIdTCG8vgu7GtDH4AP/EIK1v8JZjUHs/zDD4PjzGN/Tl8D37hBhZlzyalhTyBKpbiqc6x9ON2TLRemBvwBXexMCsYDtDJFi+PJe/EPtwP5iCp1V6jkn8WjgasWgKv42CHumV4gwdzUIz5HV78FteGZp+fi2sF16R9UqYeGMJnKdc8/1rMuFPmp8PbmNX04V4whwqzLvXzHQxkBS8yeCXgDWm/tKoft2SLXGhvPHiGdeGNa898OrwJzaODtBGfBGNfDi+0VVqcr7iZwXulBT3s71gGcEqK5D22l8ELVaWuaoWvx3KpjYujYicu4F28ex0r/gWnvRV3acbS6bC7gs1lsJ7sfhTHNVuR1L41rJV2ca8UxStpDzW6mXWhKemnMauZ0x9mRYWupdinogAAAABJRU5ErkJggg==);
+}
+
+/* 隱藏Edge原生密碼顯示功能 */
+input[type="password"]::-ms-reveal {
+        display: none;
+}

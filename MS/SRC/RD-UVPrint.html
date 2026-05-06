@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <title>公文列印</title>
+    <!--1110816 Kevin 1101532 支援自造字-->
+	<link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.045"/>
+    <link rel="stylesheet" href="CSS/PrintChrome.css?ver=5.0.105.045" />
+	
+	<!--1070907 Kevin 因應弱掃不使用版號-->
+    <script src="lib/jquery.js?ver=5.0.105.045"></script>
+     <!--20191021 - 1080339 Eric 測試jquery 3-->
+    <script src="Lib/jquery-migrate-3.3.2.js?ver=5.0.105.045"></script>
+    <script src="lib/base64.js?ver=5.0.105.045"></script> <!-- 2017.1.16 新增 -->
+    <!-- 2019.10.21 - 1080338 Eric jQuery 3 upgrade -->
+	<!-- 1110331 Raymond 1110164 弱掃修正, 移除含程式碼的<script>
+    <script>
+        window.theLogger = console;
+    </script> -->
+    <script src="lib/RD-Utility.js?ver=.js?ver=5.0.105.045"></script> <!-- 2018.1.18 新增, 1060406強制式浮水印功能 -->
+    <script src="lib/RD-SysUtil.js?ver=5.0.105.045"></script>
+    <script src="lib/RD-UVPrint.js?ver=5.0.105.045"></script>
+    <script src="lib/RD-watermark.jquery.js?ver=5.0.105.045"></script> <!-- 2018.1.18 新增, 1060406強制式浮水印功能 -->
+	<!-- 1110331 Raymond 1110164 弱掃修正, 移除含程式碼的<script>
+    <script>
+        function imgloadError() { // 2016.12.22 - [bug-trace] img error handling
+            alert("img load error, src=\"" + this.src + "\"");
+        }
+        window.theUVPrint = {};
+    </script> -->
+</head>
+<body style="margin:0mm">
+    <div class="pages"></div>
+    <input id="validateImages" type="button" style="position:absolute;right:0px;top:0px;display:none;" value="checkImages">
+    <div class="holdon_mask" style="width:100%; height:100%; position:absolute; right:0px; top:0px; background-color: #FFF; opacity: 0.5; background-image: url('./IMAGE/SSO/Loading.gif'); background-position: center; background-repeat: no-repeat;"></div>
+</body>
+</html>

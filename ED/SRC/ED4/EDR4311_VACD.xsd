@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR4311_VACD" targetNamespace="http://tempuri.org/EDR4311_VACD.xsd" xmlns:mstns="http://tempuri.org/EDR4311_VACD.xsd" xmlns="http://tempuri.org/EDR4311_VACD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR4311_VACD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR4311_VACD" msprop:Generator_UserDSName="EDR4311_VACD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR4311_VACL1" msprop:Generator_TableClassName="EDR4311_VACL1DataTable" msprop:Generator_TableVarName="tableEDR4311_VACL1" msprop:Generator_RowChangedName="EDR4311_VACL1RowChanged" msprop:Generator_TablePropName="EDR4311_VACL1" msprop:Generator_RowDeletingName="EDR4311_VACL1RowDeleting" msprop:Generator_RowChangingName="EDR4311_VACL1RowChanging" msprop:Generator_RowEvHandlerName="EDR4311_VACL1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR4311_VACL1RowDeleted" msprop:Generator_RowClassName="EDR4311_VACL1Row" msprop:Generator_UserTableName="EDR4311_VACL1" msprop:Generator_RowEvArgName="EDR4311_VACL1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GRP_NAME" msprop:Generator_ColumnVarNameInTable="columnGRP_NAME" msprop:Generator_ColumnPropNameInRow="GRP_NAME" msprop:Generator_ColumnPropNameInTable="GRP_NAMEColumn" msprop:Generator_UserColumnName="GRP_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="LAST_MONTHCNT" msprop:Generator_ColumnVarNameInTable="columnLAST_MONTHCNT" msprop:Generator_ColumnPropNameInRow="LAST_MONTHCNT" msprop:Generator_ColumnPropNameInTable="LAST_MONTHCNTColumn" msprop:Generator_UserColumnName="LAST_MONTHCNT" type="xs:int" minOccurs="0" />
+              <xs:element name="NEW_RCVCNT" msprop:Generator_ColumnVarNameInTable="columnNEW_RCVCNT" msprop:Generator_ColumnPropNameInRow="NEW_RCVCNT" msprop:Generator_ColumnPropNameInTable="NEW_RCVCNTColumn" msprop:Generator_UserColumnName="NEW_RCVCNT" type="xs:int" minOccurs="0" />
+              <xs:element name="NEW_CNT" msprop:Generator_ColumnVarNameInTable="columnNEW_CNT" msprop:Generator_ColumnPropNameInRow="NEW_CNT" msprop:Generator_ColumnPropNameInTable="NEW_CNTColumn" msprop:Generator_UserColumnName="NEW_CNT" type="xs:int" minOccurs="0" />
+              <xs:element name="Sum_Todo" msprop:Generator_ColumnVarNameInTable="columnSum_Todo" msprop:Generator_ColumnPropNameInRow="Sum_Todo" msprop:Generator_ColumnPropNameInTable="Sum_TodoColumn" msprop:Generator_UserColumnName="Sum_Todo" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_6" msprop:Generator_ColumnVarNameInTable="columnISSUE_6" msprop:Generator_ColumnPropNameInRow="ISSUE_6" msprop:Generator_ColumnPropNameInTable="ISSUE_6Column" msprop:Generator_UserColumnName="ISSUE_6" type="xs:int" minOccurs="0" />
+              <xs:element name="Percent6" msprop:Generator_ColumnVarNameInTable="columnPercent6" msprop:Generator_ColumnPropNameInRow="Percent6" msprop:Generator_ColumnPropNameInTable="Percent6Column" msprop:Generator_UserColumnName="Percent6" type="xs:double" minOccurs="0" />
+              <xs:element name="ISSUE_6TO30" msprop:Generator_ColumnVarNameInTable="columnISSUE_6TO30" msprop:Generator_ColumnPropNameInRow="ISSUE_6TO30" msprop:Generator_ColumnPropNameInTable="ISSUE_6TO30Column" msprop:Generator_UserColumnName="ISSUE_6TO30" type="xs:int" minOccurs="0" />
+              <xs:element name="Percent6TO30" msprop:Generator_ColumnVarNameInTable="columnPercent6TO30" msprop:Generator_ColumnPropNameInRow="Percent6TO30" msprop:Generator_ColumnPropNameInTable="Percent6TO30Column" msprop:Generator_UserColumnName="Percent6TO30" type="xs:double" minOccurs="0" />
+              <xs:element name="ISSUE_31" msprop:Generator_ColumnVarNameInTable="columnISSUE_31" msprop:Generator_ColumnPropNameInRow="ISSUE_31" msprop:Generator_ColumnPropNameInTable="ISSUE_31Column" msprop:Generator_UserColumnName="ISSUE_31" type="xs:int" minOccurs="0" />
+              <xs:element name="Percent31" msprop:Generator_ColumnVarNameInTable="columnPercent31" msprop:Generator_ColumnPropNameInRow="Percent31" msprop:Generator_ColumnPropNameInTable="Percent31Column" msprop:Generator_UserColumnName="Percent31" type="xs:double" minOccurs="0" />
+              <xs:element name="AVG_ISSUE_DAYS" msprop:Generator_ColumnVarNameInTable="columnAVG_ISSUE_DAYS" msprop:Generator_ColumnPropNameInRow="AVG_ISSUE_DAYS" msprop:Generator_ColumnPropNameInTable="AVG_ISSUE_DAYSColumn" msprop:Generator_UserColumnName="AVG_ISSUE_DAYS" type="xs:double" minOccurs="0" />
+              <xs:element name="ISSUE_NEW" msprop:Generator_ColumnVarNameInTable="columnISSUE_NEW" msprop:Generator_ColumnPropNameInRow="ISSUE_NEW" msprop:Generator_ColumnPropNameInTable="ISSUE_NEWColumn" msprop:Generator_UserColumnName="ISSUE_NEW" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_ORG" msprop:Generator_ColumnVarNameInTable="columnISSUE_ORG" msprop:Generator_ColumnPropNameInRow="ISSUE_ORG" msprop:Generator_ColumnPropNameInTable="ISSUE_ORGColumn" msprop:Generator_UserColumnName="ISSUE_ORG" type="xs:int" minOccurs="0" />
+              <xs:element name="ISSUE_DEPT" msprop:Generator_ColumnVarNameInTable="columnISSUE_DEPT" msprop:Generator_ColumnPropNameInRow="ISSUE_DEPT" msprop:Generator_ColumnPropNameInTable="ISSUE_DEPTColumn" msprop:Generator_UserColumnName="ISSUE_DEPT" type="xs:int" minOccurs="0" />
+              <xs:element name="Sum_Issue" msprop:Generator_ColumnVarNameInTable="columnSum_Issue" msprop:Generator_ColumnPropNameInRow="Sum_Issue" msprop:Generator_ColumnPropNameInTable="Sum_IssueColumn" msprop:Generator_UserColumnName="Sum_Issue" type="xs:int" minOccurs="0" />
+              <xs:element name="STORE_ORG" msprop:Generator_ColumnVarNameInTable="columnSTORE_ORG" msprop:Generator_ColumnPropNameInRow="STORE_ORG" msprop:Generator_ColumnPropNameInTable="STORE_ORGColumn" msprop:Generator_UserColumnName="STORE_ORG" type="xs:int" minOccurs="0" />
+              <xs:element name="STORE_DEPT" msprop:Generator_ColumnVarNameInTable="columnSTORE_DEPT" msprop:Generator_ColumnPropNameInRow="STORE_DEPT" msprop:Generator_ColumnPropNameInTable="STORE_DEPTColumn" msprop:Generator_UserColumnName="STORE_DEPT" type="xs:int" minOccurs="0" />
+              <xs:element name="Sum_Close" msprop:Generator_ColumnVarNameInTable="columnSum_Close" msprop:Generator_ColumnPropNameInRow="Sum_Close" msprop:Generator_ColumnPropNameInTable="Sum_CloseColumn" msprop:Generator_UserColumnName="Sum_Close" type="xs:int" minOccurs="0" />
+              <xs:element name="Sum_Close_Indue" msprop:Generator_ColumnVarNameInTable="columnSum_Close_Indue" msprop:Generator_ColumnPropNameInRow="Sum_Close_Indue" msprop:Generator_ColumnPropNameInTable="Sum_Close_IndueColumn" msprop:Generator_UserColumnName="Sum_Close_Indue" type="xs:int" minOccurs="0" />
+              <xs:element name="Percent_Close_Indue" msprop:Generator_ColumnVarNameInTable="columnPercent_Close_Indue" msprop:Generator_ColumnPropNameInRow="Percent_Close_Indue" msprop:Generator_ColumnPropNameInTable="Percent_Close_IndueColumn" msprop:Generator_UserColumnName="Percent_Close_Indue" type="xs:double" minOccurs="0" />
+              <xs:element name="WAITNODELAY_CNT" msprop:Generator_ColumnVarNameInTable="columnWAIT_NODELAY" msprop:Generator_ColumnPropNameInRow="WAIT_NODELAY" msprop:Generator_ColumnPropNameInTable="WAIT_NODELAYColumn" msprop:Generator_UserColumnName="WAIT_NODELAY" type="xs:int" minOccurs="0" />
+              <xs:element name="WAITDELAY_CNT" msprop:Generator_ColumnVarNameInTable="columnWAIT_DELAY" msprop:Generator_ColumnPropNameInRow="WAIT_DELAY" msprop:Generator_ColumnPropNameInTable="WAIT_DELAYColumn" msprop:Generator_UserColumnName="WAIT_DELAY" type="xs:int" minOccurs="0" />
+              <xs:element name="Sum_Wait" msprop:Generator_ColumnVarNameInTable="columnSum_Wait" msprop:Generator_ColumnPropNameInRow="Sum_Wait" msprop:Generator_ColumnPropNameInTable="Sum_WaitColumn" msprop:Generator_UserColumnName="Sum_Wait" type="xs:int" minOccurs="0" />
+              <xs:element name="PercentWait" msprop:Generator_ColumnVarNameInTable="columnPercentWait" msprop:Generator_ColumnPropNameInRow="PercentWait" msprop:Generator_ColumnPropNameInTable="PercentWaitColumn" msprop:Generator_UserColumnName="PercentWait" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

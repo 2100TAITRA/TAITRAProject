@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="chkidno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sys_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chkidnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chkidnoResult" type="s0:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </types>
+  <message name="chkidnoSoapIn">
+    <part name="parameters" element="s0:chkidno" />
+  </message>
+  <message name="chkidnoSoapOut">
+    <part name="parameters" element="s0:chkidnoResponse" />
+  </message>
+  <portType name="FACOASoap">
+    <operation name="chkidno">
+      <input message="s0:chkidnoSoapIn" />
+      <output message="s0:chkidnoSoapOut" />
+    </operation>
+  </portType>
+  <binding name="FACOASoap" type="s0:FACOASoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="chkidno">
+      <soap:operation soapAction="http://tempuri.org/chkidno" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="FACOA">
+    <port name="FACOASoap" binding="s0:FACOASoap">
+      <soap:address location="http://justin1/FACOA/FACOA.asmx" />
+    </port>
+  </service>
+</definitions>

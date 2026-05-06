@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://Webservice.naer.edu.tw" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="OdcDataServiceImplService" targetNamespace="http://Webservice.naer.edu.tw" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://Webservice.naer.edu.tw" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="doImportXml" type="tns:doImportXml" />
+      <xs:element name="doImportXmlResponse" type="tns:doImportXmlResponse" />
+      <xs:element name="getTokenKey" type="tns:getTokenKey" />
+      <xs:element name="getTokenKeyResponse" type="tns:getTokenKeyResponse" />
+      <xs:complexType name="doImportXml">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="tokenKey" type="xs:string" />
+          <xs:element minOccurs="0" name="xmlStr" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doImportXmlResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTokenKey">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sys" type="xs:string" />
+          <xs:element minOccurs="0" name="now" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTokenKeyResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="doImportXmlResponse">
+    <wsdl:part name="parameters" element="tns:doImportXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="doImportXml">
+    <wsdl:part name="parameters" element="tns:doImportXml" />
+  </wsdl:message>
+  <wsdl:message name="getTokenKey">
+    <wsdl:part name="parameters" element="tns:getTokenKey" />
+  </wsdl:message>
+  <wsdl:message name="getTokenKeyResponse">
+    <wsdl:part name="parameters" element="tns:getTokenKeyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OdcDataService">
+    <wsdl:operation name="doImportXml">
+      <wsdl:input name="doImportXml" message="tns:doImportXml" />
+      <wsdl:output name="doImportXmlResponse" message="tns:doImportXmlResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTokenKey">
+      <wsdl:input name="getTokenKey" message="tns:getTokenKey" />
+      <wsdl:output name="getTokenKeyResponse" message="tns:getTokenKeyResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OdcDataServiceImplServiceSoapBinding" type="tns:OdcDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="doImportXml">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="doImportXml">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="doImportXmlResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTokenKey">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTokenKey">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTokenKeyResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OdcDataServiceImplService">
+    <wsdl:port name="OdcDataServiceImplPort" binding="tns:OdcDataServiceImplServiceSoapBinding">
+      <soap:address location="http://localhost:8080/GTFP/NAER/services/OdcDataService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

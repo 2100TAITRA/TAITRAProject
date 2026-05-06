@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RevokeOfficialCert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argClientip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argApplyNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RevokeOfficialCertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RevokeOfficialCertResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CCertRtn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MajorRetCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Issuer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EffectDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpireDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertBase64" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PfxByte" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChkCertStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argReason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argClientip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argApplyNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChkCertStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChkCertStatusResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOfficialCert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCsr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argClientip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argApplyNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOfficialCertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOfficialCertResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOfficialPfx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argClientip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argApplyNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOfficialPfxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOfficialPfxResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTempCert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strArtifact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrgName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmpName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTempCertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTempCertResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPfxFromStore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cCertRtn" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPfxFromStoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPfxFromStoreResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RevokeOfficialCertSoapIn">
+    <wsdl:part name="parameters" element="tns:RevokeOfficialCert" />
+  </wsdl:message>
+  <wsdl:message name="RevokeOfficialCertSoapOut">
+    <wsdl:part name="parameters" element="tns:RevokeOfficialCertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChkCertStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ChkCertStatus" />
+  </wsdl:message>
+  <wsdl:message name="ChkCertStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ChkCertStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficialCertSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOfficialCert" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficialCertSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOfficialCertResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficialPfxSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOfficialPfx" />
+  </wsdl:message>
+  <wsdl:message name="GetOfficialPfxSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOfficialPfxResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTempCertSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTempCert" />
+  </wsdl:message>
+  <wsdl:message name="GetTempCertSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTempCertResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPfxFromStoreSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPfxFromStore" />
+  </wsdl:message>
+  <wsdl:message name="GetPfxFromStoreSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPfxFromStoreResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RAWSSoap">
+    <wsdl:operation name="RevokeOfficialCert">
+      <wsdl:input message="tns:RevokeOfficialCertSoapIn" />
+      <wsdl:output message="tns:RevokeOfficialCertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkCertStatus">
+      <wsdl:input message="tns:ChkCertStatusSoapIn" />
+      <wsdl:output message="tns:ChkCertStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficialCert">
+      <wsdl:input message="tns:GetOfficialCertSoapIn" />
+      <wsdl:output message="tns:GetOfficialCertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficialPfx">
+      <wsdl:input message="tns:GetOfficialPfxSoapIn" />
+      <wsdl:output message="tns:GetOfficialPfxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTempCert">
+      <wsdl:input message="tns:GetTempCertSoapIn" />
+      <wsdl:output message="tns:GetTempCertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPfxFromStore">
+      <wsdl:input message="tns:GetPfxFromStoreSoapIn" />
+      <wsdl:output message="tns:GetPfxFromStoreSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RAWSSoap" type="tns:RAWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RevokeOfficialCert">
+      <soap:operation soapAction="http://tempuri.org/RevokeOfficialCert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkCertStatus">
+      <soap:operation soapAction="http://tempuri.org/ChkCertStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficialCert">
+      <soap:operation soapAction="http://tempuri.org/GetOfficialCert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficialPfx">
+      <soap:operation soapAction="http://tempuri.org/GetOfficialPfx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTempCert">
+      <soap:operation soapAction="http://tempuri.org/GetTempCert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPfxFromStore">
+      <soap:operation soapAction="http://tempuri.org/GetPfxFromStore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RAWSSoap12" type="tns:RAWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RevokeOfficialCert">
+      <soap12:operation soapAction="http://tempuri.org/RevokeOfficialCert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkCertStatus">
+      <soap12:operation soapAction="http://tempuri.org/ChkCertStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficialCert">
+      <soap12:operation soapAction="http://tempuri.org/GetOfficialCert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficialPfx">
+      <soap12:operation soapAction="http://tempuri.org/GetOfficialPfx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTempCert">
+      <soap12:operation soapAction="http://tempuri.org/GetTempCert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPfxFromStore">
+      <soap12:operation soapAction="http://tempuri.org/GetPfxFromStore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RAWS">
+    <wsdl:port name="RAWSSoap" binding="tns:RAWSSoap">
+      <soap:address location="http://localhost/T2100RA/RAWS.ASMX" />
+    </wsdl:port>
+    <wsdl:port name="RAWSSoap12" binding="tns:RAWSSoap12">
+      <soap12:address location="http://localhost/T2100RA/RAWS.ASMX" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

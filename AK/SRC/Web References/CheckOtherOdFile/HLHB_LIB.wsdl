@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HasOtherOdFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argDocNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HasOtherOdFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="HasOtherOdFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HasOtherOdFileSoapIn">
+    <wsdl:part name="parameters" element="tns:HasOtherOdFile" />
+  </wsdl:message>
+  <wsdl:message name="HasOtherOdFileSoapOut">
+    <wsdl:part name="parameters" element="tns:HasOtherOdFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="HasOtherOdFileHttpGetIn">
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HasOtherOdFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="HasOtherOdFileHttpPostIn">
+    <wsdl:part name="argDocNo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HasOtherOdFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="HLHB_LIB1Soap">
+    <wsdl:operation name="HasOtherOdFile">
+      <wsdl:input message="tns:HasOtherOdFileSoapIn" />
+      <wsdl:output message="tns:HasOtherOdFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="HLHB_LIB1HttpGet">
+    <wsdl:operation name="HasOtherOdFile">
+      <wsdl:input message="tns:HasOtherOdFileHttpGetIn" />
+      <wsdl:output message="tns:HasOtherOdFileHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="HLHB_LIB1HttpPost">
+    <wsdl:operation name="HasOtherOdFile">
+      <wsdl:input message="tns:HasOtherOdFileHttpPostIn" />
+      <wsdl:output message="tns:HasOtherOdFileHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HLHB_LIB1Soap" type="tns:HLHB_LIB1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="HasOtherOdFile">
+      <soap:operation soapAction="http://tempuri.org/HasOtherOdFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HLHB_LIB1HttpGet" type="tns:HLHB_LIB1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HasOtherOdFile">
+      <http:operation location="/HasOtherOdFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HLHB_LIB1HttpPost" type="tns:HLHB_LIB1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HasOtherOdFile">
+      <http:operation location="/HasOtherOdFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HLHB_LIB1">
+    <wsdl:port name="HLHB_LIB1Soap" binding="tns:HLHB_LIB1Soap">
+      <soap:address location="http://devb/HLHB/HLHBLIB/HLHB_LIB.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HLHB_LIB1HttpGet" binding="tns:HLHB_LIB1HttpGet">
+      <http:address location="http://devb/HLHB/HLHBLIB/HLHB_LIB.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HLHB_LIB1HttpPost" binding="tns:HLHB_LIB1HttpPost">
+      <http:address location="http://devb/HLHB/HLHBLIB/HLHB_LIB.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

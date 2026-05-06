@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTimeCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOrg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTimeCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckTimeCountResult" type="tns:RtnDataSetObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RtnDataSetObj">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:UtyRtnRoot">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="cDsObj" type="tns:CDataSetObj" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="UtyRtnRoot">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="m_bSuccess" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="m_bRedirect" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrPageQueryStr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrSource" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strErrStack" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="m_strMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CDataSetObj">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="m_dsObj">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EDM610C1SearchProcData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSearchValues" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EDM610C1SearchProcDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EDM610C1SearchProcDataResult" type="tns:RtnDataSetObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EDC691SearchProcData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSearchValues" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EDC691SearchProcDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EDC691SearchProcDataResult" type="tns:RtnDataSetObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenProcDataMain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="u_strKeyValues_MainTable" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenProcDataMainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OpenProcDataMainResult" type="tns:RtnDataSetObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMapplyExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="u_strKeyValues_MainTable" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckMapplyExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckMapplyExistResult" type="tns:RtnDataSetObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenProcDataDetail1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="u_strKeyValues_MainTable" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenProcDataDetail1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OpenProcDataDetail1Result" type="tns:RtnDataSetObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenProcDataDetail2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="u_strKeyValues_MainTable" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenProcDataDetail2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OpenProcDataDetail2Result" type="tns:RtnDataSetObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EDI620SearchProcData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argKeyValues" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EDI620SearchProcDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EDI620SearchProcDataResult" type="tns:RtnDataSetObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSSAVE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="argNew" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="cDsObjDetail" type="tns:CDataSetObj" />
+            <s:element minOccurs="0" maxOccurs="1" name="u_strKeyValues_MainTable" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="txWt1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txWt2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="txWt3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cTDR" type="tns:CTaskDetailRow" />
+            <s:element minOccurs="0" maxOccurs="1" name="uComNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strtxPermitNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CTaskDetailRow">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DOC_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DOC_NO1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EXT_SEQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OTHER_TASK_REASON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RESENT_DUEDATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RESUPPLY_SEQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOURCE_ORGNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASK_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASK_DESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASK_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASK_REASON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASK_REL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASK_SEQ" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIME_COUNT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IS_EXTEND" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TX_OU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OUT_STATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OUT_OU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OUT_USER" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WSSAVEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSSAVEResult" type="tns:UtyRtnRoot" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="RtnDataSetObj" nillable="true" type="tns:RtnDataSetObj" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTimeCountSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTimeCount" />
+  </wsdl:message>
+  <wsdl:message name="CheckTimeCountSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTimeCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="EDM610C1SearchProcDataSoapIn">
+    <wsdl:part name="parameters" element="tns:EDM610C1SearchProcData" />
+  </wsdl:message>
+  <wsdl:message name="EDM610C1SearchProcDataSoapOut">
+    <wsdl:part name="parameters" element="tns:EDM610C1SearchProcDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="EDC691SearchProcDataSoapIn">
+    <wsdl:part name="parameters" element="tns:EDC691SearchProcData" />
+  </wsdl:message>
+  <wsdl:message name="EDC691SearchProcDataSoapOut">
+    <wsdl:part name="parameters" element="tns:EDC691SearchProcDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataMainSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenProcDataMain" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataMainSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenProcDataMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckMapplyExistSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckMapplyExist" />
+  </wsdl:message>
+  <wsdl:message name="CheckMapplyExistSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckMapplyExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail1SoapIn">
+    <wsdl:part name="parameters" element="tns:OpenProcDataDetail1" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail1SoapOut">
+    <wsdl:part name="parameters" element="tns:OpenProcDataDetail1Response" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail2SoapIn">
+    <wsdl:part name="parameters" element="tns:OpenProcDataDetail2" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail2SoapOut">
+    <wsdl:part name="parameters" element="tns:OpenProcDataDetail2Response" />
+  </wsdl:message>
+  <wsdl:message name="EDI620SearchProcDataSoapIn">
+    <wsdl:part name="parameters" element="tns:EDI620SearchProcData" />
+  </wsdl:message>
+  <wsdl:message name="EDI620SearchProcDataSoapOut">
+    <wsdl:part name="parameters" element="tns:EDI620SearchProcDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSSAVESoapIn">
+    <wsdl:part name="parameters" element="tns:WSSAVE" />
+  </wsdl:message>
+  <wsdl:message name="WSSAVESoapOut">
+    <wsdl:part name="parameters" element="tns:WSSAVEResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckTimeCountHttpGetIn">
+    <wsdl:part name="strOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckTimeCountHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="EDM610C1SearchProcDataHttpGetIn">
+    <wsdl:part name="argSearchValues" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="EDM610C1SearchProcDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="EDC691SearchProcDataHttpGetIn">
+    <wsdl:part name="argSearchValues" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="EDC691SearchProcDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataMainHttpGetIn">
+    <wsdl:part name="u_strKeyValues_MainTable" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataMainHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="CheckMapplyExistHttpGetIn">
+    <wsdl:part name="u_strKeyValues_MainTable" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="CheckMapplyExistHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail1HttpGetIn">
+    <wsdl:part name="u_strKeyValues_MainTable" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail1HttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail2HttpGetIn">
+    <wsdl:part name="u_strKeyValues_MainTable" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail2HttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="EDI620SearchProcDataHttpGetIn">
+    <wsdl:part name="argKeyValues" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="EDI620SearchProcDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckTimeCountHttpPostIn">
+    <wsdl:part name="strOrg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckTimeCountHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="EDM610C1SearchProcDataHttpPostIn">
+    <wsdl:part name="argSearchValues" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="EDM610C1SearchProcDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="EDC691SearchProcDataHttpPostIn">
+    <wsdl:part name="argSearchValues" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="EDC691SearchProcDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataMainHttpPostIn">
+    <wsdl:part name="u_strKeyValues_MainTable" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataMainHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="CheckMapplyExistHttpPostIn">
+    <wsdl:part name="u_strKeyValues_MainTable" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="CheckMapplyExistHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail1HttpPostIn">
+    <wsdl:part name="u_strKeyValues_MainTable" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail1HttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail2HttpPostIn">
+    <wsdl:part name="u_strKeyValues_MainTable" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="OpenProcDataDetail2HttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:message name="EDI620SearchProcDataHttpPostIn">
+    <wsdl:part name="argKeyValues" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="EDI620SearchProcDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:RtnDataSetObj" />
+  </wsdl:message>
+  <wsdl:portType name="EDT690WSSoap">
+    <wsdl:operation name="HelloWorld">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">測試用WebMethod</documentation>
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTimeCount">
+      <wsdl:input message="tns:CheckTimeCountSoapIn" />
+      <wsdl:output message="tns:CheckTimeCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDM610C1SearchProcData">
+      <wsdl:input message="tns:EDM610C1SearchProcDataSoapIn" />
+      <wsdl:output message="tns:EDM610C1SearchProcDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDC691SearchProcData">
+      <wsdl:input message="tns:EDC691SearchProcDataSoapIn" />
+      <wsdl:output message="tns:EDC691SearchProcDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataMain">
+      <wsdl:input message="tns:OpenProcDataMainSoapIn" />
+      <wsdl:output message="tns:OpenProcDataMainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMapplyExist">
+      <wsdl:input message="tns:CheckMapplyExistSoapIn" />
+      <wsdl:output message="tns:CheckMapplyExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail1">
+      <wsdl:input message="tns:OpenProcDataDetail1SoapIn" />
+      <wsdl:output message="tns:OpenProcDataDetail1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail2">
+      <wsdl:input message="tns:OpenProcDataDetail2SoapIn" />
+      <wsdl:output message="tns:OpenProcDataDetail2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDI620SearchProcData">
+      <wsdl:input message="tns:EDI620SearchProcDataSoapIn" />
+      <wsdl:output message="tns:EDI620SearchProcDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSSAVE">
+      <wsdl:input message="tns:WSSAVESoapIn" />
+      <wsdl:output message="tns:WSSAVESoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EDT690WSHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">測試用WebMethod</documentation>
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTimeCount">
+      <wsdl:input message="tns:CheckTimeCountHttpGetIn" />
+      <wsdl:output message="tns:CheckTimeCountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDM610C1SearchProcData">
+      <wsdl:input message="tns:EDM610C1SearchProcDataHttpGetIn" />
+      <wsdl:output message="tns:EDM610C1SearchProcDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDC691SearchProcData">
+      <wsdl:input message="tns:EDC691SearchProcDataHttpGetIn" />
+      <wsdl:output message="tns:EDC691SearchProcDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataMain">
+      <wsdl:input message="tns:OpenProcDataMainHttpGetIn" />
+      <wsdl:output message="tns:OpenProcDataMainHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMapplyExist">
+      <wsdl:input message="tns:CheckMapplyExistHttpGetIn" />
+      <wsdl:output message="tns:CheckMapplyExistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail1">
+      <wsdl:input message="tns:OpenProcDataDetail1HttpGetIn" />
+      <wsdl:output message="tns:OpenProcDataDetail1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail2">
+      <wsdl:input message="tns:OpenProcDataDetail2HttpGetIn" />
+      <wsdl:output message="tns:OpenProcDataDetail2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDI620SearchProcData">
+      <wsdl:input message="tns:EDI620SearchProcDataHttpGetIn" />
+      <wsdl:output message="tns:EDI620SearchProcDataHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="EDT690WSHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">測試用WebMethod</documentation>
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTimeCount">
+      <wsdl:input message="tns:CheckTimeCountHttpPostIn" />
+      <wsdl:output message="tns:CheckTimeCountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDM610C1SearchProcData">
+      <wsdl:input message="tns:EDM610C1SearchProcDataHttpPostIn" />
+      <wsdl:output message="tns:EDM610C1SearchProcDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDC691SearchProcData">
+      <wsdl:input message="tns:EDC691SearchProcDataHttpPostIn" />
+      <wsdl:output message="tns:EDC691SearchProcDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataMain">
+      <wsdl:input message="tns:OpenProcDataMainHttpPostIn" />
+      <wsdl:output message="tns:OpenProcDataMainHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMapplyExist">
+      <wsdl:input message="tns:CheckMapplyExistHttpPostIn" />
+      <wsdl:output message="tns:CheckMapplyExistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail1">
+      <wsdl:input message="tns:OpenProcDataDetail1HttpPostIn" />
+      <wsdl:output message="tns:OpenProcDataDetail1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail2">
+      <wsdl:input message="tns:OpenProcDataDetail2HttpPostIn" />
+      <wsdl:output message="tns:OpenProcDataDetail2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EDI620SearchProcData">
+      <wsdl:input message="tns:EDI620SearchProcDataHttpPostIn" />
+      <wsdl:output message="tns:EDI620SearchProcDataHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EDT690WSSoap" type="tns:EDT690WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTimeCount">
+      <soap:operation soapAction="http://tempuri.org/CheckTimeCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDM610C1SearchProcData">
+      <soap:operation soapAction="http://tempuri.org/EDM610C1SearchProcData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDC691SearchProcData">
+      <soap:operation soapAction="http://tempuri.org/EDC691SearchProcData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataMain">
+      <soap:operation soapAction="http://tempuri.org/OpenProcDataMain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMapplyExist">
+      <soap:operation soapAction="http://tempuri.org/CheckMapplyExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail1">
+      <soap:operation soapAction="http://tempuri.org/OpenProcDataDetail1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail2">
+      <soap:operation soapAction="http://tempuri.org/OpenProcDataDetail2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDI620SearchProcData">
+      <soap:operation soapAction="http://tempuri.org/EDI620SearchProcData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSSAVE">
+      <soap:operation soapAction="http://tempuri.org/WSSAVE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EDT690WSHttpGet" type="tns:EDT690WSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTimeCount">
+      <http:operation location="/CheckTimeCount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDM610C1SearchProcData">
+      <http:operation location="/EDM610C1SearchProcData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDC691SearchProcData">
+      <http:operation location="/EDC691SearchProcData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataMain">
+      <http:operation location="/OpenProcDataMain" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMapplyExist">
+      <http:operation location="/CheckMapplyExist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail1">
+      <http:operation location="/OpenProcDataDetail1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail2">
+      <http:operation location="/OpenProcDataDetail2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDI620SearchProcData">
+      <http:operation location="/EDI620SearchProcData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EDT690WSHttpPost" type="tns:EDT690WSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTimeCount">
+      <http:operation location="/CheckTimeCount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDM610C1SearchProcData">
+      <http:operation location="/EDM610C1SearchProcData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDC691SearchProcData">
+      <http:operation location="/EDC691SearchProcData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataMain">
+      <http:operation location="/OpenProcDataMain" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMapplyExist">
+      <http:operation location="/CheckMapplyExist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail1">
+      <http:operation location="/OpenProcDataDetail1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenProcDataDetail2">
+      <http:operation location="/OpenProcDataDetail2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDI620SearchProcData">
+      <http:operation location="/EDI620SearchProcData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EDT690WS">
+    <documentation xmlns="http://schemas.xmlsoap.org/wsdl/" />
+    <wsdl:port name="EDT690WSSoap" binding="tns:EDT690WSSoap">
+      <soap:address location="http://localhost/ED/ED6/EDT690WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EDT690WSHttpGet" binding="tns:EDT690WSHttpGet">
+      <http:address location="http://localhost/ED/ED6/EDT690WS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EDT690WSHttpPost" binding="tns:EDT690WSHttpPost">
+      <http:address location="http://localhost/ED/ED6/EDT690WS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

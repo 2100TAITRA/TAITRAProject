@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCertByCsr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCsr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCertByCsrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCertByCsrResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CCertRtn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Msg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Issuer" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EffectDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpireDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertBase64" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PfxByte" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RaCertRevoke">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argClientip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RaCertRevokeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RaCertRevokeResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RaRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argFunc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argImei" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argCsr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argSn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argClientip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RaRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RaRequestResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCertByP7B">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strP7B" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCertByP7BResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCertByP7BResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strOrgName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOrgNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmpName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCertResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPFXFromRA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UseT2100CA" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPFXFromRAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPFXFromRAResult" type="tns:CCertRtn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="CCertRtn" nillable="true" type="tns:CCertRtn" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByCsrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCertByCsr" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByCsrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCertByCsrResponse" />
+  </wsdl:message>
+  <wsdl:message name="RaCertRevokeSoapIn">
+    <wsdl:part name="parameters" element="tns:RaCertRevoke" />
+  </wsdl:message>
+  <wsdl:message name="RaCertRevokeSoapOut">
+    <wsdl:part name="parameters" element="tns:RaCertRevokeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RaRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:RaRequest" />
+  </wsdl:message>
+  <wsdl:message name="RaRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:RaRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByP7BSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCertByP7B" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByP7BSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCertByP7BResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCertSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCert" />
+  </wsdl:message>
+  <wsdl:message name="GetCertSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCertResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPFXFromRASoapIn">
+    <wsdl:part name="parameters" element="tns:GetPFXFromRA" />
+  </wsdl:message>
+  <wsdl:message name="GetPFXFromRASoapOut">
+    <wsdl:part name="parameters" element="tns:GetPFXFromRAResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByCsrHttpGetIn">
+    <wsdl:part name="strCsr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByCsrHttpGetOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:message name="RaCertRevokeHttpGetIn">
+    <wsdl:part name="argSn" type="s:string" />
+    <wsdl:part name="argClientip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RaCertRevokeHttpGetOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:message name="RaRequestHttpGetIn">
+    <wsdl:part name="argFunc" type="s:string" />
+    <wsdl:part name="argId" type="s:string" />
+    <wsdl:part name="argCn" type="s:string" />
+    <wsdl:part name="argImei" type="s:string" />
+    <wsdl:part name="argCid" type="s:string" />
+    <wsdl:part name="argCsr" type="s:string" />
+    <wsdl:part name="argSn" type="s:string" />
+    <wsdl:part name="argClientip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RaRequestHttpGetOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByP7BHttpGetIn">
+    <wsdl:part name="strP7B" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByP7BHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCertHttpGetIn">
+    <wsdl:part name="strOrgName" type="s:string" />
+    <wsdl:part name="strOrgNo" type="s:string" />
+    <wsdl:part name="strUserName" type="s:string" />
+    <wsdl:part name="strEmpName" type="s:string" />
+    <wsdl:part name="strPW" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCertHttpGetOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetPFXFromRAHttpGetIn">
+    <wsdl:part name="strID" type="s:string" />
+    <wsdl:part name="strPW" type="s:string" />
+    <wsdl:part name="UseT2100CA" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPFXFromRAHttpGetOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByCsrHttpPostIn">
+    <wsdl:part name="strCsr" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByCsrHttpPostOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:message name="RaCertRevokeHttpPostIn">
+    <wsdl:part name="argSn" type="s:string" />
+    <wsdl:part name="argClientip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RaCertRevokeHttpPostOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:message name="RaRequestHttpPostIn">
+    <wsdl:part name="argFunc" type="s:string" />
+    <wsdl:part name="argId" type="s:string" />
+    <wsdl:part name="argCn" type="s:string" />
+    <wsdl:part name="argImei" type="s:string" />
+    <wsdl:part name="argCid" type="s:string" />
+    <wsdl:part name="argCsr" type="s:string" />
+    <wsdl:part name="argSn" type="s:string" />
+    <wsdl:part name="argClientip" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RaRequestHttpPostOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByP7BHttpPostIn">
+    <wsdl:part name="strP7B" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCertByP7BHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCertHttpPostIn">
+    <wsdl:part name="strOrgName" type="s:string" />
+    <wsdl:part name="strOrgNo" type="s:string" />
+    <wsdl:part name="strUserName" type="s:string" />
+    <wsdl:part name="strEmpName" type="s:string" />
+    <wsdl:part name="strPW" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCertHttpPostOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:message name="GetPFXFromRAHttpPostIn">
+    <wsdl:part name="strID" type="s:string" />
+    <wsdl:part name="strPW" type="s:string" />
+    <wsdl:part name="UseT2100CA" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPFXFromRAHttpPostOut">
+    <wsdl:part name="Body" element="tns:CCertRtn" />
+  </wsdl:message>
+  <wsdl:portType name="SCWSSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByCsr">
+      <wsdl:input message="tns:GetCertByCsrSoapIn" />
+      <wsdl:output message="tns:GetCertByCsrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RaCertRevoke">
+      <wsdl:input message="tns:RaCertRevokeSoapIn" />
+      <wsdl:output message="tns:RaCertRevokeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RaRequest">
+      <wsdl:input message="tns:RaRequestSoapIn" />
+      <wsdl:output message="tns:RaRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByP7B">
+      <wsdl:input message="tns:GetCertByP7BSoapIn" />
+      <wsdl:output message="tns:GetCertByP7BSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCert">
+      <wsdl:input message="tns:GetCertSoapIn" />
+      <wsdl:output message="tns:GetCertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPFXFromRA">
+      <wsdl:input message="tns:GetPFXFromRASoapIn" />
+      <wsdl:output message="tns:GetPFXFromRASoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SCWSHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByCsr">
+      <wsdl:input message="tns:GetCertByCsrHttpGetIn" />
+      <wsdl:output message="tns:GetCertByCsrHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RaCertRevoke">
+      <wsdl:input message="tns:RaCertRevokeHttpGetIn" />
+      <wsdl:output message="tns:RaCertRevokeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RaRequest">
+      <wsdl:input message="tns:RaRequestHttpGetIn" />
+      <wsdl:output message="tns:RaRequestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByP7B">
+      <wsdl:input message="tns:GetCertByP7BHttpGetIn" />
+      <wsdl:output message="tns:GetCertByP7BHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCert">
+      <wsdl:input message="tns:GetCertHttpGetIn" />
+      <wsdl:output message="tns:GetCertHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPFXFromRA">
+      <wsdl:input message="tns:GetPFXFromRAHttpGetIn" />
+      <wsdl:output message="tns:GetPFXFromRAHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SCWSHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByCsr">
+      <wsdl:input message="tns:GetCertByCsrHttpPostIn" />
+      <wsdl:output message="tns:GetCertByCsrHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RaCertRevoke">
+      <wsdl:input message="tns:RaCertRevokeHttpPostIn" />
+      <wsdl:output message="tns:RaCertRevokeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RaRequest">
+      <wsdl:input message="tns:RaRequestHttpPostIn" />
+      <wsdl:output message="tns:RaRequestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByP7B">
+      <wsdl:input message="tns:GetCertByP7BHttpPostIn" />
+      <wsdl:output message="tns:GetCertByP7BHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCert">
+      <wsdl:input message="tns:GetCertHttpPostIn" />
+      <wsdl:output message="tns:GetCertHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPFXFromRA">
+      <wsdl:input message="tns:GetPFXFromRAHttpPostIn" />
+      <wsdl:output message="tns:GetPFXFromRAHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SCWSSoap" type="tns:SCWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByCsr">
+      <soap:operation soapAction="http://tempuri.org/GetCertByCsr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaCertRevoke">
+      <soap:operation soapAction="http://tempuri.org/RaCertRevoke" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaRequest">
+      <soap:operation soapAction="http://tempuri.org/RaRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByP7B">
+      <soap:operation soapAction="http://tempuri.org/GetCertByP7B" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCert">
+      <soap:operation soapAction="http://tempuri.org/GetCert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPFXFromRA">
+      <soap:operation soapAction="http://tempuri.org/GetPFXFromRA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SCWSSoap12" type="tns:SCWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByCsr">
+      <soap12:operation soapAction="http://tempuri.org/GetCertByCsr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaCertRevoke">
+      <soap12:operation soapAction="http://tempuri.org/RaCertRevoke" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaRequest">
+      <soap12:operation soapAction="http://tempuri.org/RaRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByP7B">
+      <soap12:operation soapAction="http://tempuri.org/GetCertByP7B" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCert">
+      <soap12:operation soapAction="http://tempuri.org/GetCert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPFXFromRA">
+      <soap12:operation soapAction="http://tempuri.org/GetPFXFromRA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SCWSHttpGet" type="tns:SCWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByCsr">
+      <http:operation location="/GetCertByCsr" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaCertRevoke">
+      <http:operation location="/RaCertRevoke" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaRequest">
+      <http:operation location="/RaRequest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByP7B">
+      <http:operation location="/GetCertByP7B" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCert">
+      <http:operation location="/GetCert" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPFXFromRA">
+      <http:operation location="/GetPFXFromRA" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SCWSHttpPost" type="tns:SCWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByCsr">
+      <http:operation location="/GetCertByCsr" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaCertRevoke">
+      <http:operation location="/RaCertRevoke" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RaRequest">
+      <http:operation location="/RaRequest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertByP7B">
+      <http:operation location="/GetCertByP7B" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCert">
+      <http:operation location="/GetCert" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPFXFromRA">
+      <http:operation location="/GetPFXFromRA" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SCWS">
+    <wsdl:port name="SCWSSoap" binding="tns:SCWSSoap">
+      <soap:address location="http://localhost/sc/scws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SCWSSoap12" binding="tns:SCWSSoap12">
+      <soap12:address location="http://localhost/sc/scws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SCWSHttpGet" binding="tns:SCWSHttpGet">
+      <http:address location="http://localhost/sc/scws.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SCWSHttpPost" binding="tns:SCWSHttpPost">
+      <http:address location="http://localhost/sc/scws.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

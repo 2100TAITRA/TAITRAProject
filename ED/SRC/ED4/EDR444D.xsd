@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDR444D" targetNamespace="http://tempuri.org/EDR444D.xsd" xmlns:mstns="http://tempuri.org/EDR444D.xsd" xmlns="http://tempuri.org/EDR444D.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDR444D" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDR444D" msprop:Generator_UserDSName="EDR444D">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDR444L1" msprop:Generator_TableClassName="EDR444L1DataTable" msprop:Generator_TableVarName="tableEDR444L1" msprop:Generator_RowChangedName="EDR444L1RowChanged" msprop:Generator_TablePropName="EDR444L1" msprop:Generator_RowDeletingName="EDR444L1RowDeleting" msprop:Generator_RowChangingName="EDR444L1RowChanging" msprop:Generator_RowEvHandlerName="EDR444L1RowChangeEventHandler" msprop:Generator_RowDeletedName="EDR444L1RowDeleted" msprop:Generator_RowClassName="EDR444L1Row" msprop:Generator_UserTableName="EDR444L1" msprop:Generator_RowEvArgName="EDR444L1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OU_NAME" msprop:Generator_ColumnVarNameInTable="columnOU_NAME" msprop:Generator_ColumnPropNameInRow="OU_NAME" msprop:Generator_ColumnPropNameInTable="OU_NAMEColumn" msprop:Generator_UserColumnName="OU_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CO_IN_DUE" msprop:Generator_ColumnVarNameInTable="columnCO_IN_DUE" msprop:Generator_ColumnPropNameInRow="CO_IN_DUE" msprop:Generator_ColumnPropNameInTable="CO_IN_DUEColumn" msprop:Generator_UserColumnName="CO_IN_DUE" type="xs:int" minOccurs="0" />
+              <xs:element name="CO_OVER_DUE" msprop:Generator_ColumnVarNameInTable="columnCO_OVER_DUE" msprop:Generator_ColumnPropNameInRow="CO_OVER_DUE" msprop:Generator_ColumnPropNameInTable="CO_OVER_DUEColumn" msprop:Generator_UserColumnName="CO_OVER_DUE" type="xs:int" minOccurs="0" />
+              <xs:element name="CO_HOUR" msprop:Generator_ColumnVarNameInTable="columnCO_HOUR" msprop:Generator_ColumnPropNameInRow="CO_HOUR" msprop:Generator_ColumnPropNameInTable="CO_HOURColumn" msprop:Generator_UserColumnName="CO_HOUR" type="xs:double" minOccurs="0" />
+              <xs:element name="LAST_CO_COUNT" msprop:Generator_ColumnVarNameInTable="columnLAST_CO_COUNT" msprop:Generator_ColumnPropNameInRow="LAST_CO_COUNT" msprop:Generator_ColumnPropNameInTable="LAST_CO_COUNTColumn" msprop:Generator_UserColumnName="LAST_CO_COUNT" type="xs:int" minOccurs="0" />
+              <xs:element name="LAST_CO_HOUR" msprop:Generator_ColumnVarNameInTable="columnLAST_CO_HOUR" msprop:Generator_ColumnPropNameInRow="LAST_CO_HOUR" msprop:Generator_ColumnPropNameInTable="LAST_CO_HOURColumn" msprop:Generator_UserColumnName="LAST_CO_HOUR" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,182 @@
+﻿/* Example tokeninput style #2: Facebook style */
+.token-input-list-facebook {
+    overflow: visible/*hidden*/;
+    height: auto !important; 
+    /*height: 1%;*/
+    width: auto;
+    /*border: 1px solid #8496ba*/;
+    cursor: text;
+    font-size: inherit;
+    font-family: inherit;
+    min-height: 1px;
+    z-index: 299/*999*/;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    list-style-type: none;
+    clear: left;
+	word-break: break-all;	/* 2015.6.25 受文者可字間折行 */
+	/*outline: 1px dotted blue;		for debug */
+	text-indent: 0em;	/* 2016.4.19 避免inherit到div.para的text-indent */
+}
+
+.token-input-list-facebook input {
+    border: 0;
+    width: .5em;	/* 1090428 Raymond 1090308 從100px改為.5em */
+    padding: 0;
+    background-color: white;
+    margin: 0;
+    -webkit-appearance: caret;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.token-input-token-facebook {
+    overflow: hidden; 
+    height: auto !important; 
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: #eff2f7;
+    color: #000;
+    cursor: default;
+    /*border: 1px solid #ccd5e4;*/
+    font-size: inherit;
+    font-family: inherit;
+    /*border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    float: left;
+    white-space: nowrap;*/
+}
+
+.token-input-token-facebook::after,
+.token-input-input-token-facebook::before {
+    content: "、";
+    font-family: inherit;
+    font-size: inherit;
+    background-color: white;
+    color: black;
+    display: none;
+	white-space: nowrap;	/* 1081227 Raymond 1081135 修正Chrome下, 正副抄本受文者後方的頓號會出現在次行行首的問題 */
+}
+
+/* 1110809 Raymond 考試院序170 正副本受文者有<已刪除>時, 倒數第2個元素無法對應到最後一個可見受文者 */
+/*.token-input-token-facebook:not(:nth-last-child(2))::after,*/
+.token-input-token-facebook:not(.last-visible)::after,
+.token-input-input-token-facebook:focus {
+    display: inline;
+}
+
+.layout-complete-mode .token-input-token-markasdeleted,
+.layout-complete-tc-mode .token-input-token-markasdeleted {
+	display: none;
+}
+
+/*.token-input-token-facebook p {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.token-input-token-facebook span {
+    color: #a6b3cf;
+    margin-left: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+}*/
+
+.token-input-selected-token-facebook {
+    background-color: #5670a6;
+    border: 0px solid #3b5998;
+    color: #fff;
+}
+
+.token-input-input-token-facebook {
+    overflow: hidden; 
+    height: auto !important; 
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #000;
+    cursor: default;
+    border: 0px solid #ccd5e4;
+    font-size: inherit;
+    font-family: inherit;
+    /*border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;*/
+    /*float: left;
+    white-space: nowrap;*/
+	/*outline: 1px solid green;		for debug */
+}
+
+.token-input-input-focused-facebook::before {
+    display: inline;
+}
+
+.token-input-token-lackofinfo {
+	color: red;
+}
+
+div.token-input-dropdown-container-facebook {
+    position: absolute;
+    z-index: 1;
+    box-shadow: 2px 2px 4px #888;
+}
+
+div.token-input-dropdown-facebook {
+    width: auto;
+    max-height: 100px;
+    background-color: #fff;
+    overflow-y: scroll;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    cursor: default;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+div.token-input-dropdown-facebook p {
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    color: #777;
+}
+
+div.token-input-dropdown-facebook ul {
+    margin: 0;
+    padding: 0;
+}
+
+div.token-input-dropdown-facebook ul li {
+    background-color: #fff;
+    padding: 3px;
+    margin: 0;
+    list-style-type: none;
+}
+
+div.token-input-dropdown-facebook ul li.token-input-dropdown-item-facebook {
+    background-color: #fff;
+}
+
+div.token-input-dropdown-facebook ul li.token-input-dropdown-item2-facebook {
+    background-color: #fff;
+}
+
+div.token-input-dropdown-facebook ul li em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-facebook {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.token-input-dragging-token-facebook {
+	color: rgba(192,192,192,.5);
+}
