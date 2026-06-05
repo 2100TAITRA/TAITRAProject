@@ -13,7 +13,7 @@
     <meta http-equiv="pragma" content="no-cache" />
 	<title>DocView模組</title>
 	<!--1110816 Kevin 1101532 支援自造字-->
-	<link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.045"/>
+	<link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.04801"/>
 
 	<link rel="stylesheet" href="Lib/JQM/classic-theme.css" />
 	<link rel="stylesheet" href="Lib/JQM/jquery.mobile.icons-1.4.5.css" />
@@ -21,15 +21,15 @@
 
 	<link rel="stylesheet" href="CSS/jquery-simplemodal.basic.css" />
 	<link rel="stylesheet" href="Lib/context-menu/jquery.contextMenu.css" />
-	<link rel="stylesheet" href="CSS/RD-AOL.css?ver=5.0.105.045" />
+	<link rel="stylesheet" href="CSS/RD-AOL.css?ver=5.0.105.04801" />
 	
-	<link rel="stylesheet" href="CSS/RD-token-input.css?ver=5.0.105.045" />
-	<link rel="stylesheet" href="CSS/RD-token-input-facebook.css?ver=5.0.105.045" />
-	<link rel="stylesheet" href="CSS/RD-DlgProcessSetting.css?ver=5.0.105.045" />
+	<link rel="stylesheet" href="CSS/RD-token-input.css?ver=5.0.105.04801" />
+	<link rel="stylesheet" href="CSS/RD-token-input-facebook.css?ver=5.0.105.04801" />
+	<link rel="stylesheet" href="CSS/RD-DlgProcessSetting.css?ver=5.0.105.04801" />
 
-	<link rel="stylesheet" href="CSS/RD-UniView.css?ver=5.0.105.045" />
+	<link rel="stylesheet" href="CSS/RD-UniView.css?ver=5.0.105.04801" />
   <!-- 2022.11.4 - Joe, AutoComplete(自動完成)功能模組(for AKI800開啟受文者編輯子視窗) -->
-  <link rel="stylesheet" href="CSS/jquery-ui-autocomplete.css?ver=5.0.105.045" />
+  <link rel="stylesheet" href="CSS/jquery-ui-autocomplete.css?ver=5.0.105.04801" />
 	
 	<style>
 		#viewDoc {
@@ -41,8 +41,8 @@
 	</style>
 	
 	<!--1070907 Kevin 因應弱掃不使用版號-->
-	<script src="lib/jquery.js?ver=5.0.105.045"></script>
-	<script src="lib/jquery-migrate-3.5.0.js?ver=5.0.105.045"></script>
+	<script src="lib/jquery.js?ver=5.0.105.04801"></script>
+	<script src="lib/jquery-migrate-3.5.0.js?ver=5.0.105.04801"></script>
 	<!-- 1080910 Raymond 1080817 修正RD-ViewDoc.html沒有調整jQM預設值導致selectmenu、popup等widget行為異常問題 -->
 	<!-- 1110331 Raymond 1110164 弱掃修正, 移除含程式碼的<script>
 	<script>
@@ -97,14 +97,14 @@
 	</script>
 	-->
 	<!-- 1120824 Raymond 中興序172 新增RD-JQMInitForViewDoc.js, 將原本寫在RD-ViewDoc.js的mobileinit事件處理功能移到此JS, 此事件處理函式須宣告在jQM載入之前才會被執行到 -->
-	<script src="Lib/RD-JQMInitForViewDoc.js?ver=5.0.105.045"></script>
-	<script src="Lib/jQM/jQM.js?ver=5.0.105.045"></script>
+	<script src="Lib/RD-JQMInitForViewDoc.js?ver=5.0.105.04801"></script>
+	<script src="Lib/jQM/jQM.js?ver=5.0.105.04801"></script>
 
-	<script src="Lib/jquery.mobile.tabs.js?ver=5.0.105.045"></script>
+	<script src="Lib/jquery.mobile.tabs.js?ver=5.0.105.04801"></script>
 
 	<!-- 2016.6.22 - 使用jQueryUI的Datepicker元件 & jQM wrapper -->
-	<script src="Lib/jquery-ui.js?ver=5.0.105.045"></script>
-	<script src="Lib/jquery.mobile.datepicker.js?ver=5.0.105.045"></script>
+	<script src="Lib/jquery-ui.js?ver=5.0.105.04801"></script>
+	<script src="Lib/jquery.mobile.datepicker.js?ver=5.0.105.04801"></script>
 	<!-- 1110331 Raymond 1110164 弱掃修正, 移除含程式碼的<script>
 	<script>
 	_devMode = false;
@@ -113,28 +113,28 @@
 	}
 	</script>
 	-->
-	<script src="lib/jquery.simplemodal-1.4.4.js?ver=5.0.105.045"></script>	<!-- 子(對話)視窗元件 (mSSO / DemoMP 皆使用), 2016.12 - upgrade to 1.4.4 -->
-	<!--script src="lib/jquery.mobile.tabs.js?ver=5.0.105.045"></script--><!-- 1090131 Raymond 1090055 前面有重複宣告 -->
-	<script src="lib/RD-soapclient.js?ver=5.0.105.045"></script>
-	<!-- <script src="lib/RD-jdataview.js?ver=5.0.105.045"></script>	 -->	 <!-- 1140109	Leslie[1131229]	升級第三方套件 -->
-	<script type="module"  src="Lib/BoundsJDataView.js?ver=5.0.105.045"></script>	<!-- 1140109	Leslie[1131229]	升級第三方套件，用這個負責以Module方式載入jdataview(2.5.0) -->
-	<script src="lib/base64.js?ver=5.0.105.045"></script>
-	<script src="lib/utf7.js?ver=5.0.105.045"></script>
-	<!--script src="Lib/code39.js?ver=5.0.105.045"></script--><!-- for 條碼支援 -->
-	<!-- <script src="Lib/JsBarcode/JsBarcode.code39.min.js?ver=5.0.105.045"></script> <!-- 1090401 Raymond 1090231 移除GPL授權的code39.js改用PNG條碼 --> -->
-	<script src="Lib/Barcode39/Barcode39.min.js?ver=5.0.105.045"></script> <!-- 1140109	Leslie[1130733、1131229]	升級第三方套件 -->
+	<script src="lib/jquery.simplemodal-1.4.4.js?ver=5.0.105.04801"></script>	<!-- 子(對話)視窗元件 (mSSO / DemoMP 皆使用), 2016.12 - upgrade to 1.4.4 -->
+	<!--script src="lib/jquery.mobile.tabs.js?ver=5.0.105.04801"></script--><!-- 1090131 Raymond 1090055 前面有重複宣告 -->
+	<script src="lib/RD-soapclient.js?ver=5.0.105.04801"></script>
+	<!-- <script src="lib/RD-jdataview.js?ver=5.0.105.04801"></script>	 -->	 <!-- 1140109	Leslie[1131229]	升級第三方套件 -->
+	<script type="module"  src="Lib/BoundsJDataView.js?ver=5.0.105.04801"></script>	<!-- 1140109	Leslie[1131229]	升級第三方套件，用這個負責以Module方式載入jdataview(2.5.0) -->
+	<script src="lib/base64.js?ver=5.0.105.04801"></script>
+	<script src="lib/utf7.js?ver=5.0.105.04801"></script>
+	<!--script src="Lib/code39.js?ver=5.0.105.04801"></script--><!-- for 條碼支援 -->
+	<!-- <script src="Lib/JsBarcode/JsBarcode.code39.min.js?ver=5.0.105.04801"></script> <!-- 1090401 Raymond 1090231 移除GPL授權的code39.js改用PNG條碼 --> -->
+	<script src="Lib/Barcode39/Barcode39.min.js?ver=5.0.105.04801"></script> <!-- 1140109	Leslie[1130733、1131229]	升級第三方套件 -->
 	<!--1070907 Kevin 因應弱掃調整資料夾名稱-->
-	<script src="2100Rsrc/SSO_CONFIG_EDOC.js?ver=5.0.105.045"></script>
-	<script src="lib/escapeXml.js?ver=5.0.105.045"></script> <!-- 2015.12.14 - Raymond added, for XML char escaping -->
+	<script src="2100Rsrc/SSO_CONFIG_EDOC.js?ver=5.0.105.04801"></script>
+	<script src="lib/escapeXml.js?ver=5.0.105.04801"></script> <!-- 2015.12.14 - Raymond added, for XML char escaping -->
 
-	<script src="Lib/RD-SysUtil.js?ver=5.0.105.045"></script> <!-- Eric Added, 儲存系統設定資訊 -->
-	<script src="Lib/RD-Utility.js?ver=5.0.105.045"></script>
-	<script src="Lib/RD-AlternativeLogger.js?ver=5.0.105.045"></script><!-- 2015.12.15 Raymond Added -->
+	<script src="Lib/RD-SysUtil.js?ver=5.0.105.04801"></script> <!-- Eric Added, 儲存系統設定資訊 -->
+	<script src="Lib/RD-Utility.js?ver=5.0.105.04801"></script>
+	<script src="Lib/RD-AlternativeLogger.js?ver=5.0.105.04801"></script><!-- 2015.12.15 Raymond Added -->
 
-	<!--script src="Lib/RD-soapclient.js?ver=5.0.105.045"></script--><!-- 1090131 Raymond 1090055 前面有重複宣告 -->
-	<script src="Lib/RD-WebServices.js?ver=5.0.105.045"></script>
-	<script src="Lib/RD-ModuleMgr.js?ver=5.0.105.045"></script> <!-- Leslie[1110920] 客製化架構功能模組 -->
-	<script src="Lib/RD-CustomMgr.js?ver=5.0.105.045"></script> <!-- Leslie[1110920] 客製化架構功能模組 -->
+	<!--script src="Lib/RD-soapclient.js?ver=5.0.105.04801"></script--><!-- 1090131 Raymond 1090055 前面有重複宣告 -->
+	<script src="Lib/RD-WebServices.js?ver=5.0.105.04801"></script>
+	<script src="Lib/RD-ModuleMgr.js?ver=5.0.105.04801"></script> <!-- Leslie[1110920] 客製化架構功能模組 -->
+	<script src="Lib/RD-CustomMgr.js?ver=5.0.105.04801"></script> <!-- Leslie[1110920] 客製化架構功能模組 -->
 	<!-- 1110331 Raymond 1110164 弱掃修正, 移除含程式碼的<script>
 	<script>
 	
@@ -146,60 +146,60 @@
 		theWebServices.url(SSO_CONFIG.WS_URLs);
 	</script>
 	-->
-	<script src="Lib/RD-UserInfo.js?ver=5.0.105.045"></script> <!-- 儲存使用者資訊 -->
-	<script src="Lib/RD-SignFolder.js?ver=5.0.105.045"></script> <!-- 2013.4 - for 簽核文件夾內容載入 -->
-	<script src="Lib/RD-ParseStampMgmt.js?ver=5.0.105.045"></script> <!-- 2016.11.14 fix for解析章戳匣資訊功能模組 -->
-	<script src="Lib/RD-SignWork.js?ver=5.0.105.045"></script> <!-- 簽核暫存檔功能模組 -->
-	<script src="Lib/RD-CanvasUtil.js?ver=5.0.105.045"></script>
+	<script src="Lib/RD-UserInfo.js?ver=5.0.105.04801"></script> <!-- 儲存使用者資訊 -->
+	<script src="Lib/RD-SignFolder.js?ver=5.0.105.04801"></script> <!-- 2013.4 - for 簽核文件夾內容載入 -->
+	<script src="Lib/RD-ParseStampMgmt.js?ver=5.0.105.04801"></script> <!-- 2016.11.14 fix for解析章戳匣資訊功能模組 -->
+	<script src="Lib/RD-SignWork.js?ver=5.0.105.04801"></script> <!-- 簽核暫存檔功能模組 -->
+	<script src="Lib/RD-CanvasUtil.js?ver=5.0.105.04801"></script>
 
-	<script src="Lib/RD-Layout.js?ver=5.0.105.045"></script> <!-- Eric Peng, for $.fn.flip() -->
-	<!--script src="Lib/RD-Login.js?ver=5.0.105.045"></script-->
+	<script src="Lib/RD-Layout.js?ver=5.0.105.04801"></script> <!-- Eric Peng, for $.fn.flip() -->
+	<!--script src="Lib/RD-Login.js?ver=5.0.105.04801"></script-->
 	
-	<script src="Lib/RD-ToDoList.js?ver=5.0.105.045"></script> <!-- Eric Peng, for WebFileIO.GetDocUnvDataByJSON -->
-	<script src="Lib/RD-watermark.jquery.js?ver=5.0.105.045"></script> <!-- 2018.1.19 - Eric Peng, merge 1060406強制型浮水印功能 -->
-	<script src="Lib/RD-UniView.js?ver=5.0.105.045"></script>
-	<script src="Lib/RD-RndrAtt.js?ver=5.0.105.045"></script> <!-- 匯出附件頁面功能模組 -->
-	<script src="Lib/RD-AOL.js?ver=5.0.105.045"></script>
-	<script src="Lib/MS-Common.js?ver=5.0.105.045"></script> <!-- 欄位連動功能通用模組 -->
-	<script src="Lib/RD-CacheMgr.js?ver=5.0.105.045"></script> <!-- 暫存功能模組 -->
-	<script src="Lib/RD-RsrcMgr.js?ver=5.0.105.045"></script> <!-- (文稿編輯)資源管理模組 -->
-	<!--script src="Lib/RD-Layout.js?ver=5.0.105.045"></script--> <!-- 排版功能模組 1090131 Raymond 1090055 前面有重複宣告 -->
-	<script src="Lib/RD-Zoom.js?ver=5.0.105.045"></script> <!-- 縮放功能模組 -->
-	<script src="Lib/RD-Edit.js?ver=5.0.105.045"></script> <!-- 編輯功能模組 -->
-	<script src="Lib/RD-EditSO.js?ver=5.0.105.045"></script> <!-- 線上簽核功能模組 -->
-	<script src="Lib/RD-DraftModel.js?ver=5.0.105.045"></script> <!-- 文稿模型模組 -->
-	<script src="Lib/RD-DraftMgmt.js?ver=5.0.105.045"></script> <!-- 文稿管理模組 -->
-	<script src="Lib/RD-FolioModel.js?ver=5.0.105.045"></script> <!-- 公文模型模組 -->
-	<script src="Lib/RD-FolioView.js?ver=5.0.105.045"></script> <!-- 公文檢視模組 -->
-	<script src="Lib/RD-TCControl.js?ver=5.0.105.045"></script> <!-- 追蹤修訂功能模組 -->
-	<script src="Lib/RD-ObserverPattern.js?ver=5.0.105.045"></script> <!-- Observer模式相關操作 -->
-	<script src="Lib/RD-RefView.js?ver=5.0.105.045"></script> <!-- 參照檢視功能模組 -->
-	<script src="Lib/RD-PrintFolio.js?ver=5.0.105.045"></script> <!-- 列印公文模組 -->
-	<script src="Lib/RD-PrintRefDoc.js?ver=5.0.105.045"></script> <!-- 1100823 Raymond 1100626 列印參照窗格的歷史檢視公文模組 -->
-	<script src="Lib/RD-ExportFile.js?ver=5.0.105.045"></script> <!-- 另存新檔模組 -->
-	<script src="Lib/RD-DraftCmds.js?ver=5.0.105.045"></script> <!-- 2016.5.5 - Raymond, 文稿指令列功能模組 -->
-	<script src="Lib/MS-Dept.js?ver=5.0.105.045" async></script> <!-- 受文者編輯子視窗模組 -->
-	<script src="Lib/MS-GRP.js?ver=5.0.105.045" async></script> <!-- 群組編輯子視窗模組 -->
-	<script src="Lib/MS-ModeOrg.js?ver=5.0.105.045" async></script> <!-- 受文者修改子視窗-->
-	<script src="Lib/MS-Choose.js?ver=5.0.105.045" async></script> <!-- 受文者選擇子視窗-->
-	<script src="Lib/RD-jquery.tokenEdit.js?ver=5.0.105.045"></script> <!-- 受文者輸入功能模組 -->
-	<script src="Lib/RD-RefAttachMgmt.js?ver=5.0.105.045" async></script> <!-- 2016.11.10 - Leslie, 參考附件管理檔模組 -->
-	<script src="Lib/RD-ViewRefAtt.js?ver=5.0.105.045"></script> <!-- 2016.11.10 - Leslie, 參考附件模組 -->
-	<script src="Lib/RD-ViewDoc.js?ver=5.0.105.045"></script>
-	<script src="Lib/RD-QueryDoc.js?ver=5.0.105.045"></script> <!-- Leslie, for PrintFolio.UpdateUserEnvSet -->
-	<script src="Lib/RD-jquery.confirm.js?ver=5.0.105.045" async></script> <!-- 確認功能 -->
-	<script src="Lib/RD-FolioCmds.js?ver=5.0.105.045" async></script> <!-- Raymond, 1060844 新增流程資訊功能選單 -->
-	<script src="Lib/RD-AttachMgmt.js?ver=5.0.105.045" async></script> <!-- 2018.02.22 - Leslie, 附件管理子視窗模組 -->
-	<script src="Lib/jszip.js?ver=5.0.105.045" async></script> <!-- 1110120 Raymond 1101417 另存整份公文改成打包成一個ZIP壓縮檔下載, 新增ZIP功能函式庫 -->
-	<script src="Lib/RD-ViewTmpAtt.js?ver=5.0.105.045"></script> <!-- 1111128 - Leslie, 簽閱附件模組 -->
-	<script src="Lib/RD-TmpAttachMgmt.js?ver=5.0.105.045"></script>
-	<script src="Lib/RD-ExportAtt.js?ver=5.0.105.045"></script> <!-- 1111128 - Leslie,下載所有附件模組 -->
-	<script src="Lib/jquery.resizableColumns.js?ver=5.0.105.045"></script> <!-- 1120808 Raymond 1120503 用滑鼠拖拉儲存格間框線調整欄寬的功能 -->
-	<script src="Lib/RD-CompoundFolio.js?ver=5.0.105.045" async></script>  <!-- 母子文功能模組 -->
-	<script src="Lib/CryptoJS/crypto-js.js?ver=5.0.105.045"></script>  <!-- 1140625 Raymond 1131303 錯別字校正資料物件要用的算Hash值模組 -->
-	<script src="Lib/RD-FixWordData.js?ver=5.0.105.045"></script>  <!-- 1140625 Raymond 1131303 錯別字校正資料物件 -->
-	<script src="Lib/RD-ErrorCorrection.js?ver=5.0.105.045"></script>  <!-- 1140625 Raymond 1131303 錯別字校正功能 -->
-	<script type="module" src="Lib/DOMPurify/purify.js?ver=5.0.105.045"></script> <!-- 20210421 -->
+	<script src="Lib/RD-ToDoList.js?ver=5.0.105.04801"></script> <!-- Eric Peng, for WebFileIO.GetDocUnvDataByJSON -->
+	<script src="Lib/RD-watermark.jquery.js?ver=5.0.105.04801"></script> <!-- 2018.1.19 - Eric Peng, merge 1060406強制型浮水印功能 -->
+	<script src="Lib/RD-UniView.js?ver=5.0.105.04801"></script>
+	<script src="Lib/RD-RndrAtt.js?ver=5.0.105.04801"></script> <!-- 匯出附件頁面功能模組 -->
+	<script src="Lib/RD-AOL.js?ver=5.0.105.04801"></script>
+	<script src="Lib/MS-Common.js?ver=5.0.105.04801"></script> <!-- 欄位連動功能通用模組 -->
+	<script src="Lib/RD-CacheMgr.js?ver=5.0.105.04801"></script> <!-- 暫存功能模組 -->
+	<script src="Lib/RD-RsrcMgr.js?ver=5.0.105.04801"></script> <!-- (文稿編輯)資源管理模組 -->
+	<!--script src="Lib/RD-Layout.js?ver=5.0.105.04801"></script--> <!-- 排版功能模組 1090131 Raymond 1090055 前面有重複宣告 -->
+	<script src="Lib/RD-Zoom.js?ver=5.0.105.04801"></script> <!-- 縮放功能模組 -->
+	<script src="Lib/RD-Edit.js?ver=5.0.105.04801"></script> <!-- 編輯功能模組 -->
+	<script src="Lib/RD-EditSO.js?ver=5.0.105.04801"></script> <!-- 線上簽核功能模組 -->
+	<script src="Lib/RD-DraftModel.js?ver=5.0.105.04801"></script> <!-- 文稿模型模組 -->
+	<script src="Lib/RD-DraftMgmt.js?ver=5.0.105.04801"></script> <!-- 文稿管理模組 -->
+	<script src="Lib/RD-FolioModel.js?ver=5.0.105.04801"></script> <!-- 公文模型模組 -->
+	<script src="Lib/RD-FolioView.js?ver=5.0.105.04801"></script> <!-- 公文檢視模組 -->
+	<script src="Lib/RD-TCControl.js?ver=5.0.105.04801"></script> <!-- 追蹤修訂功能模組 -->
+	<script src="Lib/RD-ObserverPattern.js?ver=5.0.105.04801"></script> <!-- Observer模式相關操作 -->
+	<script src="Lib/RD-RefView.js?ver=5.0.105.04801"></script> <!-- 參照檢視功能模組 -->
+	<script src="Lib/RD-PrintFolio.js?ver=5.0.105.04801"></script> <!-- 列印公文模組 -->
+	<script src="Lib/RD-PrintRefDoc.js?ver=5.0.105.04801"></script> <!-- 1100823 Raymond 1100626 列印參照窗格的歷史檢視公文模組 -->
+	<script src="Lib/RD-ExportFile.js?ver=5.0.105.04801"></script> <!-- 另存新檔模組 -->
+	<script src="Lib/RD-DraftCmds.js?ver=5.0.105.04801"></script> <!-- 2016.5.5 - Raymond, 文稿指令列功能模組 -->
+	<script src="Lib/MS-Dept.js?ver=5.0.105.04801" async></script> <!-- 受文者編輯子視窗模組 -->
+	<script src="Lib/MS-GRP.js?ver=5.0.105.04801" async></script> <!-- 群組編輯子視窗模組 -->
+	<script src="Lib/MS-ModeOrg.js?ver=5.0.105.04801" async></script> <!-- 受文者修改子視窗-->
+	<script src="Lib/MS-Choose.js?ver=5.0.105.04801" async></script> <!-- 受文者選擇子視窗-->
+	<script src="Lib/RD-jquery.tokenEdit.js?ver=5.0.105.04801"></script> <!-- 受文者輸入功能模組 -->
+	<script src="Lib/RD-RefAttachMgmt.js?ver=5.0.105.04801" async></script> <!-- 2016.11.10 - Leslie, 參考附件管理檔模組 -->
+	<script src="Lib/RD-ViewRefAtt.js?ver=5.0.105.04801"></script> <!-- 2016.11.10 - Leslie, 參考附件模組 -->
+	<script src="Lib/RD-ViewDoc.js?ver=5.0.105.04801"></script>
+	<script src="Lib/RD-QueryDoc.js?ver=5.0.105.04801"></script> <!-- Leslie, for PrintFolio.UpdateUserEnvSet -->
+	<script src="Lib/RD-jquery.confirm.js?ver=5.0.105.04801" async></script> <!-- 確認功能 -->
+	<script src="Lib/RD-FolioCmds.js?ver=5.0.105.04801" async></script> <!-- Raymond, 1060844 新增流程資訊功能選單 -->
+	<script src="Lib/RD-AttachMgmt.js?ver=5.0.105.04801" async></script> <!-- 2018.02.22 - Leslie, 附件管理子視窗模組 -->
+	<script src="Lib/jszip.js?ver=5.0.105.04801" async></script> <!-- 1110120 Raymond 1101417 另存整份公文改成打包成一個ZIP壓縮檔下載, 新增ZIP功能函式庫 -->
+	<script src="Lib/RD-ViewTmpAtt.js?ver=5.0.105.04801"></script> <!-- 1111128 - Leslie, 簽閱附件模組 -->
+	<script src="Lib/RD-TmpAttachMgmt.js?ver=5.0.105.04801"></script>
+	<script src="Lib/RD-ExportAtt.js?ver=5.0.105.04801"></script> <!-- 1111128 - Leslie,下載所有附件模組 -->
+	<script src="Lib/jquery.resizableColumns.js?ver=5.0.105.04801"></script> <!-- 1120808 Raymond 1120503 用滑鼠拖拉儲存格間框線調整欄寬的功能 -->
+	<script src="Lib/RD-CompoundFolio.js?ver=5.0.105.04801" async></script>  <!-- 母子文功能模組 -->
+	<script src="Lib/CryptoJS/crypto-js.js?ver=5.0.105.04801"></script>  <!-- 1140625 Raymond 1131303 錯別字校正資料物件要用的算Hash值模組 -->
+	<script src="Lib/RD-FixWordData.js?ver=5.0.105.04801"></script>  <!-- 1140625 Raymond 1131303 錯別字校正資料物件 -->
+	<script src="Lib/RD-ErrorCorrection.js?ver=5.0.105.04801"></script>  <!-- 1140625 Raymond 1131303 錯別字校正功能 -->
+	<script type="module" src="Lib/DOMPurify/purify.js?ver=5.0.105.04801"></script> <!-- 20210421 -->
 </head>
 
 <body>

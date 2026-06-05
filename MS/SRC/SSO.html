@@ -10,26 +10,26 @@
   <meta http-equiv="pragma" content="no-cache" />
   <title>電子公文系統-登入</title>
   <!--1110816 Kevin 1101532 支援自造字-->
-  <link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.045"/>
+  <link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.04801"/>
   <!-- initial-scale, maximun-scale, user-scalable setting 可取消 Mobile Safari double-tap 上方工具列時自動縮放網頁的行為 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="apple-touch-icon" sizes="152x152" href="IMAGE/touch-icon-ipad-retina.png" /> <!-- 2017.1.17 - add for iPad desktop icon -->
     <link rel="apple-touch-icon" sizes="167x167" href="IMAGE/touch-icon-ipadpro-retina.png" /> <!-- 2017.1.17 - add for iPad desktop icon -->
-  <link rel="stylesheet" href="Lib/JQM/classic-theme.css?ver=5.0.105.045" />
-  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.icons-1.4.5.css?ver=5.0.105.045" />
-  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.structure-1.4.5.css?ver=5.0.105.045" /> 
+  <link rel="stylesheet" href="Lib/JQM/classic-theme.css?ver=5.0.105.04801" />
+  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.icons-1.4.5.css?ver=5.0.105.04801" />
+  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.structure-1.4.5.css?ver=5.0.105.04801" /> 
   
   <!-- SSO/AOL 3rdParty - simpleModal dialog -->
-  <link rel="stylesheet" href="CSS/jquery-simplemodal.basic.css?ver=5.0.105.045" />
+  <link rel="stylesheet" href="CSS/jquery-simplemodal.basic.css?ver=5.0.105.04801" />
   
-  <link rel="stylesheet" href="CSS/RD-jqm-docs.css?ver=5.0.105.045" /> <!-- demo公布欄 scheme & color -->
+  <link rel="stylesheet" href="CSS/RD-jqm-docs.css?ver=5.0.105.04801" /> <!-- demo公布欄 scheme & color -->
 
   <!-- 2015.7.14 - 使用 MobiScroll v2.9.5 -->
   <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
-  <!-- <link rel="stylesheet" href="Lib/mobiscroll/css/mobiscroll_wfh.css?ver=5.0.105.045"  rel="stylesheet" type="text/css" /> -->
+  <!-- <link rel="stylesheet" href="Lib/mobiscroll/css/mobiscroll_wfh.css?ver=5.0.105.04801"  rel="stylesheet" type="text/css" /> -->
   
-  <link rel="stylesheet" href="CSS/RD-Login.css?ver=5.0.105.045" /> <!-- 登入頁面 -->
-  <link rel="stylesheet" href="CSS/RD-SSO.css?ver=5.0.105.045" /> <!-- 訊息單一入口 -->
+  <link rel="stylesheet" href="CSS/RD-Login.css?ver=5.0.105.04801" /> <!-- 登入頁面 -->
+  <link rel="stylesheet" href="CSS/RD-SSO.css?ver=5.0.105.04801" /> <!-- 訊息單一入口 -->
   
   <style>
 	/**
@@ -46,20 +46,20 @@
    }
   </style>
   
-  <script src="Lib/jquery.min.js?ver=5.0.105.045"></script>
-  <script src="Lib/jquery_pack_wfh.js?ver=5.0.105.045"></script>
+  <script src="Lib/jquery.min.js?ver=5.0.105.04801"></script>
+  <script src="Lib/jquery_pack_wfh.js?ver=5.0.105.04801"></script>
   <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
-  <!-- <script src="Lib/mobiscroll/js/mobiscroll_wfh.js?ver=5.0.105.045"></script> -->
-  <script src="Lib/iScrollMenu_wfh.js?ver=5.0.105.045"></script> <!-- 1140908	Leslie[1141206]	補上缺漏的JS參照 -->
-  <script src="2100Rsrc/SSO_CONFIG.js?ver=5.0.105.045"></script> <!-- 2014.9 - 公文系統Config檔 --><!--1070907 Kevin 因應弱掃調整資料夾名稱-->
-  <script src="Lib/RD-SysUtilM.js?ver=5.0.105.045"></script> <!-- Eric Added, 儲存系統設定資訊 -->
-  <script src="Lib/RD-MSUtil_wfh.js?ver=5.0.105.045"></script>
-  <script src="Lib/RD-WebServicesM.js?ver=5.0.105.045"></script>
-  <script src="Lib/WFH_G4.js?ver=5.0.105.045"></script>
-  <script src="Lib/WFH_G2.js?ver=5.0.105.045"></script>
-  <script src="Lib/WFH_G5.js?ver=5.0.105.045"></script>
-  <script type="module" src="Lib/BoundsJDataView.js?ver=5.0.105.045"></script>	<!-- 1140109	Leslie[1131229]	升級第三方套件，用這個負責以Module方式載入jdataview(2.5.0) -->
-  <link rel="stylesheet" href="CSS/jquery-ui-autocomplete.css?ver=5.0.105.045" />
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll_wfh.js?ver=5.0.105.04801"></script> -->
+  <script src="Lib/iScrollMenu_wfh.js?ver=5.0.105.04801"></script> <!-- 1140908	Leslie[1141206]	補上缺漏的JS參照 -->
+  <script src="2100Rsrc/SSO_CONFIG.js?ver=5.0.105.04801"></script> <!-- 2014.9 - 公文系統Config檔 --><!--1070907 Kevin 因應弱掃調整資料夾名稱-->
+  <script src="Lib/RD-SysUtilM.js?ver=5.0.105.04801"></script> <!-- Eric Added, 儲存系統設定資訊 -->
+  <script src="Lib/RD-MSUtil_wfh.js?ver=5.0.105.04801"></script>
+  <script src="Lib/RD-WebServicesM.js?ver=5.0.105.04801"></script>
+  <script src="Lib/WFH_G4.js?ver=5.0.105.04801"></script>
+  <script src="Lib/WFH_G2.js?ver=5.0.105.04801"></script>
+  <script src="Lib/WFH_G5.js?ver=5.0.105.04801"></script>
+  <script type="module" src="Lib/BoundsJDataView.js?ver=5.0.105.04801"></script>	<!-- 1140109	Leslie[1131229]	升級第三方套件，用這個負責以Module方式載入jdataview(2.5.0) -->
+  <link rel="stylesheet" href="CSS/jquery-ui-autocomplete.css?ver=5.0.105.04801" />
 </head>
 <body>
   <span id="httpObject" style="display:none"></span>
@@ -85,7 +85,7 @@
 					  <label for="radio-choice-loginbyCert">智慧卡</label>
 					  <input type="radio" name="radio-choice-login-type" id="radio-choice-loginbyMobileMoica" value="login-choice-moica"  />
 					  <label for="radio-choice-loginbyMobileMoica">行動自然人憑證</label>
-					  <a href="RD-DlgResetPassword.html?ver=5.0.105.045"  data-rel="dialog" data-transition="slidedown"  id="lkResetPWD">忘記密碼</a>
+					  <a href="RD-DlgResetPassword.html?ver=5.0.105.04801"  data-rel="dialog" data-transition="slidedown"  id="lkResetPWD">忘記密碼</a>
 					  <a href="#" style="display:none" id="lkQRCode">QRCode驗證</a>
 					</fieldset>
 				  </div>
@@ -123,7 +123,7 @@
 			<a data-rel="back" href="#home" class="ui-btn ui-btn-inline ui-btn-c">back</a>
 		</div>
   </div>
-  <a id="lnkChagnePasswordDlg" href="RD-DlgChangePassword.html?ver=5.0.105.045" data-rel="dialog" data-transition="slidedown" style="display:none;"></a>
+  <a id="lnkChagnePasswordDlg" href="RD-DlgChangePassword.html?ver=5.0.105.04801" data-rel="dialog" data-transition="slidedown" style="display:none;"></a>
   <div id="SDPMode_curtain"><span>本系統不支援手機直式模式，<br>請轉為橫式後重載網頁．</span></div>
 </body>
 </html>

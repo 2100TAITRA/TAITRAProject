@@ -10,30 +10,30 @@
   <meta http-equiv="pragma" content="no-cache" />
   <title>離線版公文製作-登入</title>
   <!--1110816 Kevin 1101532 支援自造字-->
-  <link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.045"/>
+  <link rel="stylesheet" href="2100Rsrc\CSS_CONFIG.css?ver=5.0.105.04801"/>
   <!-- initial-scale, maximun-scale, user-scalable setting 可取消 Mobile Safari double-tap 上方工具列時自動縮放網頁的行為 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="apple-touch-icon" sizes="152x152" href="IMAGE/touch-icon-ipad-retina.png" /> <!-- 2017.1.17 - add for iPad desktop icon -->
     <link rel="apple-touch-icon" sizes="167x167" href="IMAGE/touch-icon-ipadpro-retina.png" /> <!-- 2017.1.17 - add for iPad desktop icon -->
-  <link rel="stylesheet" href="Lib/JQM/classic-theme.css?ver=5.0.105.045" />
-  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.icons-1.4.5.css?ver=5.0.105.045" />
-  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.structure-1.4.5.css?ver=5.0.105.045" /> 
+  <link rel="stylesheet" href="Lib/JQM/classic-theme.css?ver=5.0.105.04801" />
+  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.icons-1.4.5.css?ver=5.0.105.04801" />
+  <link rel="stylesheet" href="Lib/JQM/jquery.mobile.structure-1.4.5.css?ver=5.0.105.04801" /> 
   
   <!-- SSO/AOL 3rdParty - simpleModal dialog -->
-  <link rel="stylesheet" href="CSS/jquery-simplemodal.basic.css?ver=5.0.105.045" />
+  <link rel="stylesheet" href="CSS/jquery-simplemodal.basic.css?ver=5.0.105.04801" />
   
-  <link rel="stylesheet" href="CSS/RD-jqm-docs.css?ver=5.0.105.045" /> <!-- demo公布欄 scheme & color -->
+  <link rel="stylesheet" href="CSS/RD-jqm-docs.css?ver=5.0.105.04801" /> <!-- demo公布欄 scheme & color -->
 
   <!-- 2015.7.14 - 使用 MobiScroll v2.9.5 -->
   <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
-  <!-- <link href="Lib/mobiscroll/css/mobiscroll.scroller.css?ver=5.0.105.045" /> -->
-  <!-- <link href="Lib/mobiscroll/css/mobiscroll.animation.css?ver=5.0.105.045" /> -->
-  <!-- <link href="Lib/mobiscroll/css/mobiscroll.scroller.jqm.css?ver=5.0.105.045" /> -->
-  <!-- <link href="Lib/mobiscroll/css/mobiscroll.scroller.ios.css?ver=5.0.105.045" /> -->
-  <!-- <link href="Lib/mobiscroll/css/mobiscroll.scroller.wp.css?ver=5.0.105.045" /> -->
+  <!-- <link href="Lib/mobiscroll/css/mobiscroll.scroller.css?ver=5.0.105.04801" /> -->
+  <!-- <link href="Lib/mobiscroll/css/mobiscroll.animation.css?ver=5.0.105.04801" /> -->
+  <!-- <link href="Lib/mobiscroll/css/mobiscroll.scroller.jqm.css?ver=5.0.105.04801" /> -->
+  <!-- <link href="Lib/mobiscroll/css/mobiscroll.scroller.ios.css?ver=5.0.105.04801" /> -->
+  <!-- <link href="Lib/mobiscroll/css/mobiscroll.scroller.wp.css?ver=5.0.105.04801" /> -->
   
-  <link rel="stylesheet" href="CSS/RD-Login.css?ver=5.0.105.045" /> <!-- 登入頁面 -->
-  <link rel="stylesheet" href="CSS/RD-SSO.css?ver=5.0.105.045" /> <!-- 訊息單一入口 -->
+  <link rel="stylesheet" href="CSS/RD-Login.css?ver=5.0.105.04801" /> <!-- 登入頁面 -->
+  <link rel="stylesheet" href="CSS/RD-SSO.css?ver=5.0.105.04801" /> <!-- 訊息單一入口 -->
   
   <style>
 	/**
@@ -50,46 +50,46 @@
    }
   </style>
   
-  <script src="Lib/jquery.js?ver=5.0.105.045"></script><!--1070907 Kevin 因應弱掃不使用版號-->
-  <script src="Lib/jquery-migrate-3.5.0.js?ver=5.0.105.045"></script>
-  <script src="Lib/base64.js?ver=5.0.105.045"></script>
-  <script src="Lib/jquery.simplemodal-1.4.4.js?ver=5.0.105.045"></script> <!-- 子(對話)視窗元件 (mSSO / DemoMP 皆使用), 2016.5 - upgrade to 1.4.4 -->
-  <script src="Lib/escapeXml.js?ver=5.0.105.045"></script> <!-- 2015.12.14 - Raymond added, for XML char escaping -->
+  <script src="Lib/jquery.js?ver=5.0.105.04801"></script><!--1070907 Kevin 因應弱掃不使用版號-->
+  <script src="Lib/jquery-migrate-3.5.0.js?ver=5.0.105.04801"></script>
+  <script src="Lib/base64.js?ver=5.0.105.04801"></script>
+  <script src="Lib/jquery.simplemodal-1.4.4.js?ver=5.0.105.04801"></script> <!-- 子(對話)視窗元件 (mSSO / DemoMP 皆使用), 2016.5 - upgrade to 1.4.4 -->
+  <script src="Lib/escapeXml.js?ver=5.0.105.04801"></script> <!-- 2015.12.14 - Raymond added, for XML char escaping -->
   <!-- 2015.7.14 - 使用 MobiScroll v2.9.5, 撥動式捲軸元件 -->
   <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
-  <!-- <script src="Lib/mobiscroll/js/mobiscroll.core.js?ver=5.0.105.045"></script> -->
-  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.js?ver=5.0.105.045"></script> -->
-  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.jqm.js?ver=5.0.105.045"></script> -->
-  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.ios.js?ver=5.0.105.045"></script> -->
-  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.wp.js?ver=5.0.105.045"></script> -->
-  <!-- <script src="Lib/mobiscroll/js/mobiscroll.list.js?ver=5.0.105.045"></script> -->
-  <!-- <script src="Lib/mobiscroll/js/i18n/mobiscroll.i18n.zht.js?ver=5.0.105.045"></script> -->
-  <script src="Lib/iScroll-lite.js?ver=5.0.105.045"></script> <!-- 單指捲動(Single finger scroll)元件 (目前待辦清單[圖示]仍使用)-->
-  <script src="Lib/RD-VerifyMac.js?ver=5.0.105.045"></script><!-- 1110421 Kevin 1110164 弱掃移動IOS判定至RD-VerifyMac.js -->
-  <script src="2100Rsrc/SSO_CONFIG.js?ver=5.0.105.045"></script> <!-- 2014.9 - 公文系統Config檔 --><!--1070907 Kevin 因應弱掃調整資料夾名稱-->
-  <script src="Lib/RD-SysUtil.js?ver=5.0.105.045"></script> <!-- Eric Added, 儲存系統設定資訊 -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.core.js?ver=5.0.105.04801"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.js?ver=5.0.105.04801"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.jqm.js?ver=5.0.105.04801"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.ios.js?ver=5.0.105.04801"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.scroller.wp.js?ver=5.0.105.04801"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.list.js?ver=5.0.105.04801"></script> -->
+  <!-- <script src="Lib/mobiscroll/js/i18n/mobiscroll.i18n.zht.js?ver=5.0.105.04801"></script> -->
+  <script src="Lib/iScroll-lite.js?ver=5.0.105.04801"></script> <!-- 單指捲動(Single finger scroll)元件 (目前待辦清單[圖示]仍使用)-->
+  <script src="Lib/RD-VerifyMac.js?ver=5.0.105.04801"></script><!-- 1110421 Kevin 1110164 弱掃移動IOS判定至RD-VerifyMac.js -->
+  <script src="2100Rsrc/SSO_CONFIG.js?ver=5.0.105.04801"></script> <!-- 2014.9 - 公文系統Config檔 --><!--1070907 Kevin 因應弱掃調整資料夾名稱-->
+  <script src="Lib/RD-SysUtil.js?ver=5.0.105.04801"></script> <!-- Eric Added, 儲存系統設定資訊 -->
   <!--1110421 Kevin 1110164 弱掃移動Debug設定script至RD-eDoc.js-->
-  <script src="Lib/RD-UserInfo.js?ver=5.0.105.045"></script> <!-- 儲存使用者資訊 -->    
-  <script src="Lib/RD-Utility.js?ver=5.0.105.045"></script>
-  <script src="Lib/RD-soapclient.js?ver=5.0.105.045"></script>
-  <!-- <script src="Lib/RD-jdataview.js?ver=5.0.105.045"></script> -->  <!-- 1140815 Raymond 1141232 Merge[1131229]升級第三方套件 -->
-  <script type="module"  src="Lib/BoundsJDataView.js?ver=5.0.105.045"></script>	<!-- 1140815 Raymond 1141232 Merge[1131229]升級第三方套件，用這個負責以Module方式載入jdataview(2.5.0) -->
-  <script src="Lib/utf7.js?ver=5.0.105.045"></script>
-  <script src="Lib/md5.js?ver=5.0.105.045"></script><!-- for Hash計算 -->
-  <script src="Lib/RD-AlternativeLogger.js?ver=5.0.105.045"></script><!-- 2015.12.15 Raymond Added -->
-  <script src="Lib/RD-ModuleMgr.js?ver=5.0.105.045"></script>
-  <script src="Lib/RD-WebServices.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-UserInfo.js?ver=5.0.105.04801"></script> <!-- 儲存使用者資訊 -->    
+  <script src="Lib/RD-Utility.js?ver=5.0.105.04801"></script>
+  <script src="Lib/RD-soapclient.js?ver=5.0.105.04801"></script>
+  <!-- <script src="Lib/RD-jdataview.js?ver=5.0.105.04801"></script> -->  <!-- 1140815 Raymond 1141232 Merge[1131229]升級第三方套件 -->
+  <script type="module"  src="Lib/BoundsJDataView.js?ver=5.0.105.04801"></script>	<!-- 1140815 Raymond 1141232 Merge[1131229]升級第三方套件，用這個負責以Module方式載入jdataview(2.5.0) -->
+  <script src="Lib/utf7.js?ver=5.0.105.04801"></script>
+  <script src="Lib/md5.js?ver=5.0.105.04801"></script><!-- for Hash計算 -->
+  <script src="Lib/RD-AlternativeLogger.js?ver=5.0.105.04801"></script><!-- 2015.12.15 Raymond Added -->
+  <script src="Lib/RD-ModuleMgr.js?ver=5.0.105.04801"></script>
+  <script src="Lib/RD-WebServices.js?ver=5.0.105.04801"></script>
   <!--1110421 Kevin 1110164 弱掃移動SSO_CONFIG內的WS_URLs設定WebServices網址script至RD-WebServices.js-->
-  <script src="Lib/RD-Login_Offline.js?ver=5.0.105.045"></script><!-- 1130809 Raymond 1130313 合併1111007(1100394), 改成離線版登入 -->
-  <script src="Lib/RD-SSO.js?ver=5.0.105.045"></script>
-  <script src="Lib/jQM/jQM.js?ver=5.0.105.045"></script>
+  <script src="Lib/RD-Login_Offline.js?ver=5.0.105.04801"></script><!-- 1130809 Raymond 1130313 合併1111007(1100394), 改成離線版登入 -->
+  <script src="Lib/RD-SSO.js?ver=5.0.105.04801"></script>
+  <script src="Lib/jQM/jQM.js?ver=5.0.105.04801"></script>
   <!-- 2013.9.27 - 使用 MobiScroll v2.7.2, 撥動式捲軸元件 -->
   <!-- 1131101	Leslie[1130977]	移除MobiScroll -->
-  <!-- <script src="Lib/mobiscroll/js/mobiscroll.jqmwidget.js?ver=5.0.105.045"></script> -->
-  <script src="Lib/RD-HiCosSCard.js?ver=5.0.105.045"></script> <!-- 2016.7.10 - PC憑證智慧卡加簽模組 -->
-  <script src="Lib/CryptoJS/crypto-js.js?ver=5.0.105.045" async></script> <!-- 2019.1.22 - Leslie, 1080043 新增SHA256演算法函式庫 -->
-  <script src="Lib/jquery-ui.js?ver=5.0.105.045"></script> <!-- 2022.3.20	Leslie[1110167]	UI調整 -->
-  <link rel="stylesheet" href="CSS/jquery-ui-autocomplete.css?ver=5.0.105.045" />
+  <!-- <script src="Lib/mobiscroll/js/mobiscroll.jqmwidget.js?ver=5.0.105.04801"></script> -->
+  <script src="Lib/RD-HiCosSCard.js?ver=5.0.105.04801"></script> <!-- 2016.7.10 - PC憑證智慧卡加簽模組 -->
+  <script src="Lib/CryptoJS/crypto-js.js?ver=5.0.105.04801" async></script> <!-- 2019.1.22 - Leslie, 1080043 新增SHA256演算法函式庫 -->
+  <script src="Lib/jquery-ui.js?ver=5.0.105.04801"></script> <!-- 2022.3.20	Leslie[1110167]	UI調整 -->
+  <link rel="stylesheet" href="CSS/jquery-ui-autocomplete.css?ver=5.0.105.04801" />
 </head>
 <body>
   <span id="httpObject" style="display:none"></span>
@@ -113,7 +113,7 @@
 					  <label for="radio-choice-loginbyAccount">帳號密碼</label>
 					  <input type="radio" name="radio-choice-login-type" id="radio-choice-loginbyCert" value="login-choice-cert"  />
 					  <label for="radio-choice-loginbyCert">智慧卡</label>
-					  <!--a href="RD-DlgResetPassword.html?ver=5.0.105.045"  data-rel="dialog" data-transition="slidedown"  id="lkResetPWD">忘記密碼</a--><!-- 1130808 Raymond 1130313 合併1111007(1100394), 離線版不用密碼 -->
+					  <!--a href="RD-DlgResetPassword.html?ver=5.0.105.04801"  data-rel="dialog" data-transition="slidedown"  id="lkResetPWD">忘記密碼</a--><!-- 1130808 Raymond 1130313 合併1111007(1100394), 離線版不用密碼 -->
 					</fieldset>
 				  </div>
 				  <div class="userid_wrapper ui-field-contain" data-type="horizontal">
@@ -147,7 +147,7 @@
 			<a data-rel="back" href="#home" class="ui-btn ui-btn-inline ui-btn-c">back</a>
 		</div>
   </div>
-  <a id="lnkChagnePasswordDlg" href="RD-DlgChangePassword.html?ver=5.0.105.045" data-rel="dialog" data-transition="slidedown" style="display:none;"></a>
+  <a id="lnkChagnePasswordDlg" href="RD-DlgChangePassword.html?ver=5.0.105.04801" data-rel="dialog" data-transition="slidedown" style="display:none;"></a>
   <div id="SDPMode_curtain"><span>本系統不支援手機直式模式，<br>請轉為橫式後重載網頁．</span></div>
 </body>
 </html>
