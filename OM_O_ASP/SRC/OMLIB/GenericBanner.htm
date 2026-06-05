@@ -1,0 +1,37 @@
+<!--#include file="/STDN/Lib/Script.shtml"-->
+<DIV style="Z-INDEX: 104; BORDER: black 1px solid; POSITION: absolute; DISPLAY: none; TOP: 221px; LEFT: 783px;BACKGROUND-COLOR:#FFFFFF;"
+ id="lbToolTip" data-From=""></DIV>
+<script>
+  
+  //1110818 Kevin 1101532 新增背景主題
+  $('#ColorSwitchLB').on("click", function(){ 
+	jf_ColorSwitchClick('LB', '#DBF1FF', '#8FD5FD');
+  });
+  $('#ColorSwitchLW').on("click", function(){ 
+	jf_ColorSwitchClick('LW', '#fAfAfA', '#c9f3f5'); //F4FAFA
+  });
+	
+	
+
+function jf_ReadCookie(argCookieName)
+{
+	var namex = argCookieName + "=";
+
+	if (document.cookie.length == 0) { return null; }
+	nameat = document.cookie.indexOf(namex);
+	if (nameat == -1) { return null; } // 找不到 name 時
+	ValueAt = nameat + namex.length;
+	endPos = document.cookie.indexOf(";", ValueAt);
+	if (endPos == -1) { return document.cookie.substring(ValueAt); }
+	else { return document.cookie.substring(ValueAt, endPos); }
+}
+</script>
+<!-- 2015.1 - Eric Peng, ASPX網頁程式dlg框架 -->
+<div id="dlgASPXPage" style="display:none;width:99%;height:99%;padding:0px;">
+	<div class="pane" style="width:101%;height:101%;overflow-y: hidden;overflow-x:hidden; -webkit-overflow-scrolling:touch;">
+	  <iframe class="aspx_page_content" style="width:99%;height:99%;"></iframe>
+	</div>
+	<a class="closeBtn" style="display:none"></a>
+</div><!-- <div id="dlgASPXPage" ... -->
+<div class="footStatus"></div>
+<div id="dlgMessage" title=""><p></p></div>
