@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+	<system.webServer>
+		<httpProtocol>
+			<customHeaders>
+				<remove name="Content-Security-Policy"/>
+				<remove name="X-Powered-By"/>
+				<remove name="Access-Control-Allow-Credentials"/>
+				<remove name="Access-Control-Allow-Origin"/>
+				<remove name="Access-Control-Allow-Methods"/>
+				<remove name="Access-Control-Allow-Headers"/>
+				<add name="Access-Control-Allow-Headers" value="SOAPAction,Content-Type,Cache-Control,Accept"/>
+				<add name="Access-Control-Allow-Methods" value="POST,GET,OPTIONS"/>
+				<add name="Access-Control-Allow-Origin" value="*"/>
+				<add name="Access-Control-Allow-Credentials" value="true"/>
+				<add name="Content-Security-Policy" value="default-src 'self'; connect-src 'self' blob: http://localhost:61161 http://localhost:21001 http://localhost:16888 http://localhost:56445 ws://localhost:21001 https://localhost:56445 https://localhost:56545 https://localhost:56645 *.fdat.com.tw; frame-ancestors CertMgmt: http://localhost:61161 http://localhost:21001 http://localhost:16888 http://localhost:56445 ws://localhost:21001 https://localhost:56445 https://localhost:56545 https://localhost:56645 *.fdat.com.tw; frame-src CertMgmt: http://localhost:61161 http://localhost:21001 http://localhost:16888 http://localhost:56445 ws://localhost:21001 https://localhost:56445 https://localhost:56545 https://localhost:56645 *.fdat.com.tw; img-src 'self' data: http://localhost:61161 http://localhost:21001 http://localhost:16888 http://localhost:56445 ws://localhost:21001 https://localhost:56445 https://localhost:56545 https://localhost:56645 *.fdat.com.tw; form-action 'self'; font-src 'self'; media-src 'self'; manifest-src 'self'; object-src 'self'; worker-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval'; script-src-attr 'self' 'unsafe-inline' 'unsafe-eval'; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src-attr 'self' 'unsafe-inline' 'unsafe-eval'; style-src-elem 'self' 'unsafe-inline' 'unsafe-eval';"/>
+			</customHeaders>
+		</httpProtocol>
+	</system.webServer>
+</configuration>
