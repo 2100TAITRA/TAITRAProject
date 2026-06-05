@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DB</name>
+    </assembly>
+    <members>
+        <member name="M:T2100.DB.DBCommand.TrimForSQL(System.String)">
+            <summary>
+            針對加入SQL查詢條件的欄位值，去掉頭尾的單引號、減號、空格與字串中的危險指令(例：EXEC,DROP,DELETE,TRUNCATE...等)
+            </summary>
+            <param name="argValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:T2100.DB.DbLogFile.LogPath">
+            <summary>
+            log檔路徑
+            </summary>
+        </member>
+        <member name="P:T2100.DB.DbLogFile.LogFileName">
+            <summary>
+            Log檔檔名
+            </summary>
+        </member>
+        <member name="M:T2100.DB.DbLogFile.WriteLogFile">
+            <summary>
+            寫出Log檔案
+            </summary>
+            <returns>true,false</returns>
+        </member>
+        <member name="M:T2100.DB.DbLogFile.InsertLogString(System.String,System.String)">
+            <summary>
+            加一訊息字串至Log字串中
+            </summary>
+            <param name="type">訊息別:I(訊息),W(警告),E(錯誤)</param>
+            <param name="desp">訊息</param>
+            <returns>true,false</returns>
+        </member>
+        <member name="P:T2100.DB.DBConnection.Cryptor._key">
+            <summary>
+            金鑰
+            </summary>
+        </member>
+        <member name="P:T2100.DB.DBConnection.Cryptor._iv">
+            <summary>
+            向量值
+            </summary>
+        </member>
+        <member name="P:T2100.DB.DBConnection.Cryptor._Enc">
+            <summary>
+            加密檢核
+            </summary>
+        </member>
+        <member name="M:T2100.DB.DBConnection.Cryptor.CreateEncryptor(System.Byte[])">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100.DB.DBConnection.Cryptor.CreateDecryptor(System.Byte[])">
+            <summary>
+            解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="F:T2100.DB.DBConnection.AESCryptService._key">
+            <summary>
+            金鑰
+            </summary>
+        </member>
+        <member name="F:T2100.DB.DBConnection.AESCryptService._iv">
+            <summary>
+            向量值
+            </summary>
+        </member>
+        <member name="M:T2100.DB.DBConnection.AESCryptService.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100.DB.DBConnection.AESCryptService.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100.DB.DBConnection.AESCryptService.Encrypt(System.Byte[])">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100.DB.DBConnection.AESCryptService.Decrypt(System.Byte[])">
+            <summary>
+            解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:T2100.DB.DBConnection.AESCryptService.CheckEncrypted(System.Byte[])">
+            <summary>
+            檢核是否加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
