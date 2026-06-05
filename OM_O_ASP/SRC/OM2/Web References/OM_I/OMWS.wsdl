@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendOMRcvNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSysId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argRcvOuId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argOmOuName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIssueDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="argIssueNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendOMRcvNotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendOMRcvNotifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelOMRcvNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="argSysId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelOMRcvNotifyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DelOMRcvNotifyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendOMRcvNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:SendOMRcvNotify" />
+  </wsdl:message>
+  <wsdl:message name="SendOMRcvNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:SendOMRcvNotifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelOMRcvNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:DelOMRcvNotify" />
+  </wsdl:message>
+  <wsdl:message name="DelOMRcvNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:DelOMRcvNotifyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OMWSSoap">
+    <wsdl:operation name="SendOMRcvNotify">
+      <wsdl:input message="tns:SendOMRcvNotifySoapIn" />
+      <wsdl:output message="tns:SendOMRcvNotifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelOMRcvNotify">
+      <wsdl:input message="tns:DelOMRcvNotifySoapIn" />
+      <wsdl:output message="tns:DelOMRcvNotifySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OMWSSoap" type="tns:OMWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendOMRcvNotify">
+      <soap:operation soapAction="http://tempuri.org/SendOMRcvNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelOMRcvNotify">
+      <soap:operation soapAction="http://tempuri.org/DelOMRcvNotify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OMWSSoap12" type="tns:OMWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendOMRcvNotify">
+      <soap12:operation soapAction="http://tempuri.org/SendOMRcvNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelOMRcvNotify">
+      <soap12:operation soapAction="http://tempuri.org/DelOMRcvNotify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OMWS">
+    <wsdl:port name="OMWSSoap" binding="tns:OMWSSoap">
+      <soap:address location="https://docvip.fdat.com.tw/OM_I/OMLIB/OMWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OMWSSoap12" binding="tns:OMWSSoap12">
+      <soap12:address location="https://docvip.fdat.com.tw/OM_I/OMLIB/OMWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
