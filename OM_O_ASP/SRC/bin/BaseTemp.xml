@@ -1,0 +1,1361 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BaseTemp</name>
+    </assembly>
+    <members>
+        <member name="T:BaseTemp.BTIMG">
+            <summary>
+            檔管影像相關類別
+            </summary>
+        </member>
+        <member name="F:BaseTemp.BTIMG.uNickNameSMEG">
+            <summary>
+            信保基金
+            </summary>
+        </member>
+        <member name="F:BaseTemp.BTIMG.uNickNameNUK">
+            <summary>
+            高雄大學
+            </summary>
+        </member>
+        <member name="F:BaseTemp.BTIMG.uNickNameBSMI">
+            <summary>
+            標檢局
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTIMG.uf_InitSEC_NO(System.Web.UI.WebControls.DropDownList,System.Boolean)">
+            <summary>
+            機密等級下拉選單初始化 ( 例： uf_InitSEC_NO(ddSecretNo,true);)
+            </summary>
+            <param name="argFillObject">物件ID</param>
+            <param name="argAddFirstEmptyRow">是否要在第一筆加一筆空白(true/false)</param>
+        </member>
+        <member name="M:BaseTemp.BTIMG.CheckCoworkPriv(System.String,System.String,System.String[],LogFile)">
+            <summary>
+            會辦單位調檔權限檢核
+            </summary>
+            <param name="argDocNo">公文文號</param>
+            <param name="argAPPLY_LIMIT">應用限制</param>
+            <param name="argUSERINFO">使用者資訊</param>
+            <param name="log">Log物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.CheckEmpPriv(System.String,System.String,System.String,System.String[][])">
+            <summary>
+            特殊權限需 Select EMPL_PRIV
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTIMG.CheckPriv_327150000I(System.String,System.String[],System.String,System.String,System.String,System.String,LogFile)">
+            <summary>
+            0990653	調檔權限判斷，[疾管局]專用邏輯，依分類別與單位對應關係進行判別，並加上應用限制之判斷
+            </summary>
+            <param name="sDocNo"></param>
+            <param name="argUSERINFO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.CreateUnvFile(System.String,System.String,System.String,System.String[],System.String[][],T2100.DB.DBConnection,System.String,System.String,System.String,System.Data.DataTable)">
+            <summary>
+            For Oracle AKI801,AKI802
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTIMG.CreateUnvFile(System.String,System.String,System.String,System.String[],System.String[][],T2100.DB.DBConnection,System.String,System.String,System.String)">
+            <summary>
+            UNVFILE 調閱電子檔, 供檢索程式AKI801,AKI802使用
+            </summary>
+            <param name="argFROM">invoke本函式的網頁程式編號</param>
+            <param name="argSEQ_NO">單文調閱時, 傳入調閱公文在Temp Table的序號</param>
+            <param name="argSESSIONID">SessionID</param>
+            <param name="argUSERINFO">Session["USERINFO"]</param>
+            <param name="argEMP_PRIV">Session["EMP_PRIV"]</param>
+            <param name="argCONNECT">建立Temp Table的Connection物件</param>
+            <param name="argCOOKIE">多筆調閱時, 傳入紀錄畫面CheckBox是否被勾選的隱藏欄位VALUE</param>
+            <param name="argCHKPRIV">是否檢查調閱權限,0:否 1:是</param>
+            <param name="argFILEPAGE">(本參數已沒有使用)</param>
+            <returns>程式執行正常時,回傳UNV FILE 的URL, 程式執行有誤時,回傳錯誤訊息</returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.CreateUnvFileV3(System.String,System.String,System.String,System.String[],System.String[][],T2100.DB.DBConnection,System.String,System.String,System.String)">
+            <summary>
+            UNVFILE 調閱電子檔, 供檢索程式EAI301,EAI302,EAI303使用
+            </summary>
+            <param name="argFROM">invoke本函式的網頁程式編號</param>
+            <param name="argSEQ_NO">單文調閱時, 傳入調閱公文在Temp Table的序號</param>
+            <param name="argSESSIONID">SessionID</param>
+            <param name="argUSERINFO">Session["USERINFO"]</param>
+            <param name="argEMP_PRIV">Session["EMP_PRIV"]</param>
+            <param name="argCONNECT">建立Temp Table的Connection物件</param>
+            <param name="argCOOKIE">多筆調閱時, 傳入紀錄畫面CheckBox是否被勾選的隱藏欄位VALUE</param>
+            <param name="argCHKPRIV">是否檢查調閱權限,0:否 1:是</param>
+            <param name="argFILEPAGE">(本參數已沒有使用)</param>
+            <returns>程式執行正常時,回傳UNV FILE 的URL, 程式執行有誤時,回傳錯誤訊息</returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.CreateUnvFile(System.String,System.String[],T2100.DB.DBConnection,System.Data.DataTable)">
+            <summary>
+            建立 UNVFILE 調閱電子檔, 調閱時不檢查權限, 供非檢索程式調檔使用
+            </summary>
+            <param name="argSessionId">SessionID</param>
+            <param name="argUserInfo">Session["USERINFO"]</param>
+            <param name="argConnection">DBConnection物件</param>
+            <param name="argDt">調閱公文清單, DataTable 必須有下列3個欄位: DOC_NO, FROM_SUBJECT, FILE_CLS</param>
+            <returns>程式執行正常時,回傳UNV FILE 的URL, 程式執行有誤時,回傳錯誤訊息</returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.CreateUnvXml(System.String,System.String[],T2100.DB.DBCommand,System.Data.DataTable,System.Boolean,LogFile,System.Boolean)">
+            <summary>
+            建立 3.0 版的 UniView XML 介面檔 (for CreateUnvFile))
+            </summary>
+            <param name="argSessionID">SessionID</param>
+            <param name="argUserInfo">Session["USERINFO"]</param>
+            <param name="MainCommand">DBCommand物件</param>
+            <param name="argDt">DataTable物件,紀錄調閱公文資訊,DataTable 必須有下列3個欄位: DOC_NO, FROM_SUBJECT, FILE_CLS</param>
+            <param name="argInsSysDetail">是否寫入調閱紀錄檔 SYS_USE_DETAIL</param>
+            <returns>程式執行正常時,回傳UNV FILE 的URL, 程式執行有誤時,回傳錯誤訊息</returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.CreateTempTableGenUnv(System.String)">
+            <summary>
+            建立產生3.0 版 UNV檔所需的DataTable結構
+            </summary>
+            <param name="tableName">Table名稱</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.GetTempUnvTable(System.String,System.Data.DataTable,T2100.DB.DBCommand)">
+            <summary>
+            取得產生3.3 版 UNV檔所需的DataTable
+            </summary>
+            <param name="strOrgNo">機關代碼</param>
+            <param name="argDt">DataTable物件,紀錄調閱公文資訊,DataTable 必須有下列3個欄位: DOC_NO, FROM_SUBJECT, FILE_CLS</param>
+            <param name="MainCommand">DBCommand物件</param>
+            <returns>產生3.3 版 UNV檔所需的DataTable</returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.WriteAttTag(System.Xml.XmlTextWriter,System.Data.DataRow,T2100.DB.DBCommand,System.String,System.Int32,System.Int32,System.String,System.String,System.Boolean,System.String@,System.Boolean)">
+            <summary>
+            寫出UNV File 3.0版的定義檔中的ATT TAG (for CreateUnvFile)
+            </summary>
+            <param name="xtw">XmlTextWriter物件</param>
+            <param name="drow">DataRow物件</param>
+            <param name="nNum">使用者上傳附件的StartPO值</param>
+            <param name="nNumMax">使用者上傳附件數(TYPE=16)</param>
+            <param name="nNumMax">psEnablePrintScreen</param>
+        </member>
+        <member name="M:BaseTemp.BTIMG.fnWriteAttHead(System.Int32,System.String)">
+            <summary>
+            用來判斷是否需要新增〈Type〉、〈Alias〉、〈PrintEnable〉0980223 Leo 0971087
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTIMG.fnWriteTail(System.Int32,System.Int32,System.String)">
+            <summary>
+            判斷是否需要多加一個結尾的tag 0980223 Leo 0971087
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTIMG.WriteV1PageTag(System.Xml.XmlTextWriter,System.Data.DataRow,T2100.DB.DBCommand,System.String,System.String)">
+            <summary>
+            組出V1版用的PageTag
+            </summary>
+            <param name="xtw">UNV file xml textwriter</param>
+            <param name="drow">資料列</param>
+        </member>
+        <member name="M:BaseTemp.BTIMG.urlShortcut(System.String,System.String)">
+            <summary>
+            產生捷徑檔
+            </summary>
+            <param name="linkName"></param>
+            <param name="linkUrl"></param>
+        </member>
+        <member name="M:BaseTemp.BTIMG.UpLoad(System.String[],System.String[],System.Boolean,LogFile)">
+            <summary>
+            上傳檔案至伺服器上
+            </summary>
+            <param name="argFileName">檔名</param>
+            <param name="argClientPath">客戶端路徑</param>
+            <param name="argServerPath">伺服器擺放路徑</param>
+            <param name="OverWrite">是否複寫</param>
+        </member>
+        <member name="M:BaseTemp.BTIMG.AddDirSlash(System.String)">
+            <summary>
+            檢查目錄字串最後是否含有"\"，沒有則補加上去
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTIMG.GetAttCount(System.Data.DataTable,System.Int32)">
+            <summary>
+            取得附件個數 (for CreateUnvFile)
+            </summary>
+            <param name="argDt"></param>
+            <param name="argIdx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.PrepareFileType(BaseTemp.WebFileIO.T2100FileIoService,System.String,System.String,System.String)">
+            <summary>
+            新增叡揚歷史檔共通叫用的Type處理，同時處理路徑及Tif轉PNG及拆頁
+            </summary>
+            <param name="fileio"></param>
+            <param name="xtw"></param>
+            <param name="argArtifact"></param>
+            <param name="strFileName"></param>
+            <param name="strFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.BTIMG.PrepareType8DIFileByGSSFile(System.String,BaseTemp.BTIMG.PrepareImgList,LogFile,System.Boolean)">
+            <summary>
+            舊系統公文調閱前置處理服務，用於傳入DI檔的完整路徑
+            </summary>
+            <param name="DocNo"></param>
+            <param name="DiFileList">DI檔完整路徑清單</param>
+            <returns></returns>
+        </member>
+        <member name="T:BaseTemp.BTIMG.XmlNukWK">
+            <summary>
+            高雄大學特有的"康大系統"文稿簽核意見類別
+            </summary>
+        </member>
+        <member name="T:BaseTemp.BTIMG.PrepareImgList">
+            <summary>
+            待調閱影像處理類別
+            1.識別呈現檔優先序(PDF>Img>DI)
+            2.多頁TIF提供拆頁後結果
+            </summary>
+        </member>
+        <member name="T:BaseTemp.BTSYS">
+            <summary>
+            SYS共用函式
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTSYS.Get_AutoNo(System.String,System.String,System.String,System.Int32,System.Int32,T2100.DB.DBCommand)">
+            <summary>
+            取得系統控制流水號
+            </summary>
+            <param name="argORG_NO">機關代碼</param>
+            <param name="argUSE_TYPE">號碼別,不可空白</param>
+            <param name="argUSE_YEAR">使用年度,可空白</param>
+            <param name="argNO_LEN">流水碼長度, 不可空白</param>
+            <param name="argADD_ZERO">不足碼是否前置零, 1:是, 0:否, 不可空白</param>
+            <param name="argCommand"></param>
+            <returns>系統控制流水號，錯誤傳回空字串</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.Get_AutoNo1(System.String,System.String,System.String,System.Int32,System.Int32,T2100.DB.DBCommand)">
+            <summary>
+            取得系統控制流水號 Get_AutoNo1(檢驗系統用)
+            </summary>
+            <param name="argORG_NO">機關代碼</param>
+            <param name="argUSE_TYPE">號碼別,不可空白</param>
+            <param name="argUSE_YEAR">使用年度,可空白</param>
+            <param name="argNO_LEN">流水碼長度, 不可空白</param>
+            <param name="argADD_ZERO">不足碼是否前置零, 1:是, 0:否, 不可空白</param>
+            <param name="argCommand"></param>
+            <returns>系統控制流水號，錯誤傳回空字串</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.Get_WorkDate(System.String,System.Int32,T2100.DB.DBConnection,T2100.DB.DBCommand,System.String,System.String[])">
+            <summary>
+            計算加減後的日期
+            </summary>
+            <param name="argSDATE">啟日期</param>
+            <param name="argDAY">欲加減的日期</param>
+            <param name="Conn">Connection物件</param>
+            <param name="CommandTemp">Command物件</param>
+            <param name="argType">日期種類:1.含假日2.不含假日</param>
+            <param name="argVal">此參數可傳可不傳，第一個為機關代碼</param>
+        </member>
+        <member name="M:BaseTemp.BTSYS.Get_WorkDays(System.String,System.String,T2100.DB.DBConnection,T2100.DB.DBCommand,System.String,System.String[])">
+            <summary>
+            計算 啟迄日期 相差的天數
+            </summary>
+            <param name="argSDATE">啟日期</param>
+            <param name="argEDATE">迄日期</param>
+            <param name="Conn">Connection物件</param>
+            <param name="CommandTemp">Command物件</param>
+            <param name="argType">日期種類:1.含假日2.不含假日</param>
+            <param name="argVal">此參數可傳可不傳，第一個為機關代碼</param>	
+        </member>
+        <member name="M:BaseTemp.BTSYS.OutPutRptFile(System.String,System.Web.UI.Page,System.String,System.Int32)">
+            <summary>
+            從既有檔案產生報表(PDF,DOC)
+            </summary>
+            <param name="argRptFilePath">報表檔案完整路徑</param>
+            <param name="argPage">Page物件</param>
+            <param name="argWinName">開啟報表的視窗名稱</param>
+            <param name="argOpenState">0 = 預覽列印; 1 = 列印</param>
+        </member>
+        <member name="M:BaseTemp.BTSYS.SaveDimeToHd(Microsoft.Web.Services.Dime.DimeAttachment,System.String,System.String,System.Boolean)">
+            <summary>
+            將附件檔存至硬碟中
+            </summary>
+            <param name="argDime">單一附件物件</param>
+            <param name="argHdDir">欲存入之目錄位置</param>
+            <param name="argHdFile">欲存入之檔案名稱</param>
+            <param name="argOverWrite">存檔時是否覆蓋重複的檔案</param>
+        </member>
+        <member name="M:BaseTemp.BTSYS.GetDBType">
+            <summary>
+            取得Web.Config中DB_TYPE的值(轉大寫)
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTSYS.GetDocNoOnlyNum(System.String)">
+            <summary>
+            取得純數字的文號
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTSYS.uf_InitLBTDocWord(System.Web.UI.WebControls.DropDownList@,System.String)">
+            <summary>
+            初始化字軌下拉式選單
+            </summary>
+            <param name="argFillObject">待處理之下拉式選單</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>字軌清單(無第一筆空白)</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.uf_LBTGetDisplayClsNo(System.String)">
+            <summary>
+            取得顯示用之分類號
+            </summary>
+            <param name="argClsKey">分類號鍵值</param>
+            <returns>土銀老家伙想看的分類號</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.uf_LBTGetDocNo(System.String,System.String)">
+            <summary>
+            土銀專用，取得查詢指令用之DOC_NO
+            </summary>
+            <param name="argDocNo">傳入文號或總號</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>程式執行邏輯所用之DOC_NO</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.uf_LBTDocNoAddWord(System.String,System.String)">
+            <summary>
+            土銀專用，文號補上字軌函式
+            </summary>
+            <param name="argDocNo">傳入文號</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>應顯示之字軌+文號</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.uf_LBTDocNoConvert(System.String,System.String)">
+            <summary>
+            土銀專用，文號轉換函式
+            </summary>
+            <param name="argDocNo">傳入文號或總號</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>應顯示之字軌+文號</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.uf_LBTDocNoConvert(System.Data.DataTable@,System.String,System.String)">
+            <summary>
+            土銀專用，文號轉換函式(整批)
+            </summary>
+            <param name="argDt">內含文號欄位之資料表</param>
+            <param name="argColumnName">文號欄位名稱</param>
+            <param name="argOrgNo">所屬機關代碼</param>
+            <returns>轉換後之資料表</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.SendMailPross(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            寄信共用函式
+            </summary>
+            <param name="argSourceNo">使用者機關代碼</param>
+            <param name="argMailServer">Mail主機</param>
+            <param name="argMailFrom">寄信人</param>
+            <param name="argMailSubject">主旨</param>
+            <param name="argMailTo">寄信對象(多對象時用分號區隔EX：XXX@GMAIL.COM,AAA@GMAIL.COM)</param>
+            <param name="argMailBody">信件內容</param>
+            <param name="araIsPassErrMail">是否略過不合法MAIL繼續寄信</param>
+            <param name="argArrMailAtt">附件SERVER端完整路徑</param>
+            <returns>錯誤時回傳錯誤訊息，正常時空白</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.SendMailPross(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            寄信共用函式
+            </summary>
+            <param name="argSourceNo">使用者機關代碼</param>
+            <param name="argMailServer">Mail主機</param>
+            <param name="argMailFrom">寄信人</param>
+            <param name="argMailSubject">主旨</param>
+            <param name="argMailTo">寄信對象(多對象時用分號區隔EX：XXX@GMAIL.COM,AAA@GMAIL.COM)</param>
+            <param name="argMailBody">信件內容</param>
+            <param name="araIsPassErrMail">是否略過不合法MAIL繼續寄信</param>
+            <param name="argArrMailAtt">附件SERVER端完整路徑</param>
+            <returns>錯誤時回傳錯誤訊息，正常時空白</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.SendMailPross(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String[],System.Boolean,System.String[],System.Boolean)">
+            <summary>
+            寄信共用函式
+            </summary>
+            <param name="argSourceNo">使用者機關代碼</param>
+            <param name="argMailServer">Mail主機</param>
+            <param name="argMailFrom">寄信人</param>
+            <param name="argMailSubject">主旨</param>
+            <param name="argMailTo">寄信對象(多對象時用分號區隔EX：XXX@GMAIL.COM,AAA@GMAIL.COM)</param>
+            <param name="argMailBody">信件內容</param>
+            <param name="araIsPassErrMail">是否略過不合法MAIL繼續寄信</param>
+            <param name="argArrMailAtt">附件SERVER端完整路徑</param>
+            <param name="argIsAsync">同步：false、非同步：true</param>
+            <param name="argMailCC">副本對象EMAIL</param>
+            <returns>錯誤時回傳錯誤訊息，正常時空白</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.CreateMailMsg(LogFile,System.String,System.String[],System.Byte[]@)">
+            <summary>
+            產生待加簽的郵件主體(本文與附件)
+            </summary>
+            <param name="argMailBody"></param>
+            <param name="argArrMailAtt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.uf_GetOrgEnvSet(System.String,System.String,System.String)">
+            <summary>
+            取得機關環境變數 1031028 Kevin 1030836 新增
+            </summary>
+            <param name="argParaType">環境變數名稱</param>
+            <param name="argDefParaVal">無法取得設定值時或取得空值時之預設值</param>
+            <param name="argOrgNo">傳空值則取得主機關設定</param>
+            <returns>設定值</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.uf_UrlSslTran(System.String,System.String)">
+            <summary>
+            依照環境變數II_USE_SSL轉換網址列 1031028 Kevin 1030836 新增
+            </summary>
+            <param name="argParaType">轉換前網址</param>
+            <param name="argOrgNo">傳空值則取得主機關設定</param>
+            <returns>轉換後網址</returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.uf_GetCurrentServerName">
+            <summary>
+            取得連線電腦名稱 1031201 Kevin 新增
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTSYS.SetDateFormat(System.Object,System.Int32)">
+            <summary>
+            轉換日期格式 1040909 Kevin 1040712 新增
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTSYS.GetUserAddress">
+            <summary>
+            取得RequestIP 1041111 Kevin 1040936 
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTSYS.T2100Hash(System.String)">
+            <summary>
+            取得含Salt的 SHA512 雜湊值
+            </summary>
+            <param name="argpass"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.BTSYS.Next(System.Int32)">
+            <summary>
+            產生一個非負數且最大值 max 以下的亂數
+            </summary>
+            <param name="max">最大值</param>
+        </member>
+        <member name="M:BaseTemp.BTSYS.GetFileHash(System.String)">
+            <summary>
+            取得檔案的雜湊值，預設為 SHA512 演算法
+            </summary>
+            <param name="fileName">完整檔案路徑</param>
+            <returns></returns>
+        </member>
+        <member name="T:BaseTemp.BTFN">
+            <summary>
+            BaseTemp 的摘要描述。
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTFN.GetDBType">
+            <summary>
+            取得Web.Config中DB_TYPE的值(轉大寫)
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTFN.GetStringValue(System.Object)">
+            <summary>
+            由物件取出字串內容並去掉頭尾空白，若物件為null，則回傳空字串
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTFN.GetDoubleValue(System.Object)">
+            <summary>
+            由物件取出浮點數字，若物件內容無法轉換為浮點數字，則回傳0.0f
+            </summary>
+        </member>
+        <member name="M:BaseTemp.BTFN.GetNumericValue(System.Object)">
+            <summary>
+            由物件取出數字，若物件內容無法轉換為數字，則回傳0
+            </summary>
+        </member>
+        <member name="T:BaseTemp.T2100Extensions">
+            <summary>
+            新增全域擴充函式
+            </summary>
+        </member>
+        <member name="M:BaseTemp.T2100Extensions.AsString(System.Object)">
+            <summary>
+            轉換為字串，等同Template.GetStringValue()
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.T2100Extensions.AsInt(System.Object)">
+            <summary>
+            轉換為整數，等同Template.GetNumericValue()
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.T2100Extensions.AsDouble(System.Object)">
+            <summary>
+            轉換為Double，等同Template.GetDoubleValue()
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.T2100Extensions.GetFileName(System.String)">
+            <summary>
+            取得字串中檔名部分
+            </summary>
+            <param name="FullPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.T2100Extensions.GetPath(System.String)">
+            <summary>
+            取得字串中路徑部分，並含有最後的"\"
+            </summary>
+            <param name="FullPath"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BaseTemp.Cryptor._key">
+            <summary>
+            金鑰
+            </summary>
+        </member>
+        <member name="P:BaseTemp.Cryptor._iv">
+            <summary>
+            向量值
+            </summary>
+        </member>
+        <member name="P:BaseTemp.Cryptor._Enc">
+            <summary>
+            加密檢核
+            </summary>
+        </member>
+        <member name="M:BaseTemp.Cryptor.CreateEncryptor(System.Byte[])">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.Cryptor.CreateDecryptor(System.Byte[])">
+            <summary>
+            解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="F:BaseTemp.AESCryptService._key">
+            <summary>
+            金鑰
+            </summary>
+        </member>
+        <member name="F:BaseTemp.AESCryptService._iv">
+            <summary>
+            向量值
+            </summary>
+        </member>
+        <member name="M:BaseTemp.AESCryptService.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.AESCryptService.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.AESCryptService.Encrypt(System.Byte[])">
+            <summary>
+            加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.AESCryptService.Decrypt(System.Byte[])">
+            <summary>
+            解密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.AESCryptService.CheckEncrypted(System.Byte[])">
+            <summary>
+            檢核是否加密
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BaseTemp.MimeDetective">
+            <summary>
+            檢核檔案格式函式庫，支援以下格式
+            <para>MS-Office Document：Word、Excel、PowerPoint</para>
+            <para>OpenDocumentFormat(ODF)：ODT、ODS、ODG、ODP</para>
+            <para>通用文件格式：PDF、RTF</para>
+            <para>XML：XML、DI、SI、SW、DM、CO、ESW、CNS11643</para>
+            <para>文字檔：TXT、LOG、CSV、JSON、CER(Base64)</para>
+            <para>圖型檔：JPEG、JPEG2000、PNG、GIF、BMP、TIFF、SVG</para>
+            <para>壓縮檔：7z、ZIP、RAR</para>
+            <para>影音檔：MP4、MPEG、WMV、MP3、WAV</para>
+            <para>其他格式：EXE、DLL、TTF、TTE、WOFF、WOFF2、DXF、CER(Der)</para>
+            </summary>
+        </member>
+        <member name="M:BaseTemp.MimeDetective.GetFileMimeType(System.String)">
+            <summary>
+            取得檔案類型
+            </summary>
+            <param name="fileFullName">檔案全徑名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.MimeDetective.isFileMimeTypeMatch(System.String)">
+            <summary>
+            檢查傳入檔案是否與其副檔名格式一致
+            </summary>
+            <param name="FullPath">待查驗檔案全徑名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.MimeDetective.isFileMimeTypeMatch(System.IO.Stream,System.String)">
+            <summary>
+            檢查傳入檔案是否與其副檔名格式一致
+            </summary>
+            <param name="checkFileStream">檔案資料流</param>
+            <param name="FileName">檔名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.MimeDetective.GetFileMimeTypeByExtension(System.String)">
+            <summary>
+            傳入檔案路徑，取得檔案格式(副檔名)並檢核其格式是否一致
+            </summary>
+            <param name="FullPath">待查驗檔案全徑名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseTemp.MimeDetective.GetFileMimeTypeByExtension(System.IO.Stream,System.String)">
+            <summary>
+            傳入檔案資料流及檔名，取得檔案格式(副檔名)並檢核其格式是否一致
+            </summary>
+            <param name="checkFileStream">來源資料流</param>
+            <param name="FileName">檔名</param>
+            <returns></returns>
+        </member>
+        <member name="T:BaseTemp.FileMimeType">
+            <summary>
+            檔案類型類別定義
+            </summary>
+        </member>
+        <member name="T:BaseTemp.FileMimeTypeByExtension">
+            <summary>
+            FileMimeTypeByExtension回傳的檔案格式類別
+            </summary>
+        </member>
+        <member name="P:BaseTemp.FileMimeTypeByExtension.isFileMimeTypeMatch">
+            <summary>
+            檔案格式與副檔名是否一致
+            </summary>
+        </member>
+        <member name="P:BaseTemp.FileMimeTypeByExtension.Extension">
+            <summary>
+            副檔名，若比對格式不一致，以實際檢核的檔案格式副檔名回傳
+            </summary>
+        </member>
+        <member name="P:BaseTemp.FileMimeTypeByExtension.ErrorMsg">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="T:BaseTemp.MaliciousFileAlarmManager">
+            <summary>
+            寄送惡意檔案警告通知信-專用類別
+            </summary>
+        </member>
+        <member name="M:BaseTemp.MaliciousFileAlarmManager.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="argArtifact"></param>
+        </member>
+        <member name="M:BaseTemp.MaliciousFileAlarmManager.AddMaliciousFile(System.String)">
+            <summary>
+            加入惡意檔案通知清單
+            </summary>
+            <param name="strFileName"></param>
+        </member>
+        <member name="M:BaseTemp.MaliciousFileAlarmManager.SendMail">
+            <summary>
+            寄送惡意檔案警告通知信，使用前確認以下Config參數均已設定
+            <para>FromEmail、FromEmailName、ErrNotifyMail、MailServer</para>
+            </summary>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.T2100FileIoService">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.WebFileIOCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.WebFileIO2Completed">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.GetPartialSizeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.WebFileIObyFSCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.WebFileIoCopyFilesForCowrokCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.MergeFilesForCoworkDocInfoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.GetWebFileDirPathCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.UpdateDraftEnvelopeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.SignDraftEnvelopeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.UpdateEnvelopeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.SignEnvelopeCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.GetResignSignInfoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.UpdateResignInfoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.GetUserEnvSettingCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.GetDocInfoListByJSONCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.GetOnLineApplyDocUnvByJSONCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.GetDocUnvDataByJSONCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.ImgRotateCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.ImgSliceCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.CheckCalledBySelfCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.CheckFileExistCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.WriteExceptionLogCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.CheckTSV2FileCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BaseTemp.WebFileIO.T2100FileIoService.EnvelopedComTestCompleted">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIO(System.String,System.String,BaseTemp.WebFileIO.argFile[],System.Boolean,System.Boolean,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIOAsync(System.String,System.String,BaseTemp.WebFileIO.argFile[],System.Boolean,System.Boolean,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIOAsync(System.String,System.String,BaseTemp.WebFileIO.argFile[],System.Boolean,System.Boolean,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIO2(System.String,System.String,BaseTemp.WebFileIO.argFile[],System.Boolean,System.Boolean,System.String,System.Boolean,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIO2Async(System.String,System.String,BaseTemp.WebFileIO.argFile[],System.Boolean,System.Boolean,System.String,System.Boolean,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIO2Async(System.String,System.String,BaseTemp.WebFileIO.argFile[],System.Boolean,System.Boolean,System.String,System.Boolean,System.Int32,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetPartialSize">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetPartialSizeAsync">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetPartialSizeAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIObyFS(System.String,System.String,BaseTemp.WebFileIO.argFile[],System.Boolean,System.Boolean,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIObyFSAsync(System.String,System.String,BaseTemp.WebFileIO.argFile[],System.Boolean,System.Boolean,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIObyFSAsync(System.String,System.String,BaseTemp.WebFileIO.argFile[],System.Boolean,System.Boolean,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIoCopyFilesForCowrok(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIoCopyFilesForCowrokAsync(System.String,System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WebFileIoCopyFilesForCowrokAsync(System.String,System.String,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.MergeFilesForCoworkDocInfo(System.String,System.String,System.String,BaseTemp.WebFileIO.argCoworkFlowData[])">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.MergeFilesForCoworkDocInfoAsync(System.String,System.String,System.String,BaseTemp.WebFileIO.argCoworkFlowData[])">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.MergeFilesForCoworkDocInfoAsync(System.String,System.String,System.String,BaseTemp.WebFileIO.argCoworkFlowData[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetWebFileDirPath(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetWebFileDirPathAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetWebFileDirPathAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.UpdateDraftEnvelope(System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.UpdateDraftEnvelopeAsync(System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.UpdateDraftEnvelopeAsync(System.String,System.String,System.String,System.String,System.String,System.Int32,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.SignDraftEnvelope(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.SignDraftEnvelopeAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.SignDraftEnvelopeAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.UpdateEnvelope(System.String,System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.UpdateEnvelopeAsync(System.String,System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.UpdateEnvelopeAsync(System.String,System.String,System.String,System.String,System.Int32,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.SignEnvelope(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.SignEnvelopeAsync(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.SignEnvelopeAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetResignSignInfo(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetResignSignInfoAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetResignSignInfoAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.UpdateResignInfo(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.UpdateResignInfoAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.UpdateResignInfoAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetUserEnvSetting(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetUserEnvSettingAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetUserEnvSettingAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetDocInfoListByJSON(System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetDocInfoListByJSONAsync(System.String,System.String[])">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetDocInfoListByJSONAsync(System.String,System.String[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetOnLineApplyDocUnvByJSON(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetOnLineApplyDocUnvByJSONAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetOnLineApplyDocUnvByJSONAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetDocUnvDataByJSON(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetDocUnvDataByJSONAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.GetDocUnvDataByJSONAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.ImgRotate(System.String,System.String,System.String[],System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.ImgRotateAsync(System.String,System.String,System.String[],System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.ImgRotateAsync(System.String,System.String,System.String[],System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.ImgSlice(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.ImgSliceAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.ImgSliceAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CheckCalledBySelf(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CheckCalledBySelfAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CheckCalledBySelfAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CheckFileExist(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CheckFileExistAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CheckFileExistAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WriteExceptionLog(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WriteExceptionLogAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.WriteExceptionLogAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CheckTSV2File(BaseTemp.WebFileIO.FileInfoList[])">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CheckTSV2FileAsync(BaseTemp.WebFileIO.FileInfoList[])">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CheckTSV2FileAsync(BaseTemp.WebFileIO.FileInfoList[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.EnvelopedComTest(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.EnvelopedComTestAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.EnvelopedComTestAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BaseTemp.WebFileIO.T2100FileIoService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.argFile">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.argFile.FilePath">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.argFile.FileName">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.argFile.ToPath">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.argFile.ToName">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.ErrInfo">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.ErrInfo.DocNo">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.ErrInfo.ErrFile">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.RtnClass">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.RtnClass.bSuccess">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.RtnClass.ErrInfoList">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.FileInfoList">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.FileInfoList.DocNo">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.FileInfoList.PageCnt">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.FileInfoList.FilePath">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UtyRtnRoot">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnRoot.m_bSuccess">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnRoot.m_bRedirect">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnRoot.m_strErrPageQueryStr">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnRoot.m_strErrSource">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnRoot.m_strErrMsg">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnRoot.m_strErrStack">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnRoot.m_strMsg">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UtyRtnImgList">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnImgList.ImgList">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UtyRtnBool">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnBool.RtnBool">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UtyRtnDocInfos">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UtyRtnString">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UtyRtnString.RtnStr">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.argCoworkFlowData">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.argCoworkFlowData.PathName">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.argCoworkFlowData.MsgIdList">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.argCoworkFlowData.PreviousMsgId">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.argCoworkFlowData.Thread">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.Err">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.Err.ErrIdx">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.Err.ErrNo">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.Err.ErrMsg">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.WebFileIOCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.WebFileIOCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.WebFileIOCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.WebFileIO2CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.WebFileIO2CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.WebFileIO2CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetPartialSizeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetPartialSizeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.GetPartialSizeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.WebFileIObyFSCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.WebFileIObyFSCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.WebFileIObyFSCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.WebFileIoCopyFilesForCowrokCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.WebFileIoCopyFilesForCowrokCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.WebFileIoCopyFilesForCowrokCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.MergeFilesForCoworkDocInfoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.MergeFilesForCoworkDocInfoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.MergeFilesForCoworkDocInfoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetWebFileDirPathCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetWebFileDirPathCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.GetWebFileDirPathCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UpdateDraftEnvelopeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UpdateDraftEnvelopeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UpdateDraftEnvelopeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.SignDraftEnvelopeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.SignDraftEnvelopeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.SignDraftEnvelopeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UpdateEnvelopeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UpdateEnvelopeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UpdateEnvelopeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.SignEnvelopeCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.SignEnvelopeCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.SignEnvelopeCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetResignSignInfoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetResignSignInfoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.GetResignSignInfoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UpdateResignInfoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.UpdateResignInfoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.UpdateResignInfoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetUserEnvSettingCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetUserEnvSettingCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.GetUserEnvSettingCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetDocInfoListByJSONCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetDocInfoListByJSONCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.GetDocInfoListByJSONCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetOnLineApplyDocUnvByJSONCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetOnLineApplyDocUnvByJSONCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.GetOnLineApplyDocUnvByJSONCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetDocUnvDataByJSONCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.GetDocUnvDataByJSONCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.GetDocUnvDataByJSONCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.ImgRotateCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.ImgRotateCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.ImgRotateCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.ImgSliceCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.ImgSliceCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.ImgSliceCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.CheckCalledBySelfCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.CheckCalledBySelfCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.CheckCalledBySelfCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.CheckFileExistCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.CheckFileExistCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.CheckFileExistCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.WriteExceptionLogCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.CheckTSV2FileCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.CheckTSV2FileCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.CheckTSV2FileCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.EnvelopedComTestCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BaseTemp.WebFileIO.EnvelopedComTestCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BaseTemp.WebFileIO.EnvelopedComTestCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:LogFile">
+            <summary>
+            LOG檔內容組成及寫入檔案
+            </summary>
+        </member>
+        <member name="M:LogFile.#ctor(System.String)">
+            <summary>
+            用於追?來源的關鍵字
+            </summary>
+            <param name="strTraceKey"></param>
+        </member>
+        <member name="M:LogFile.#ctor(System.Boolean)">
+            <summary>
+            是否附加追?Log的隨機鍵值
+            </summary>
+            <param name="bEnableTrace"></param>
+        </member>
+        <member name="P:LogFile.LogPath">
+            <summary>
+            log檔路徑
+            </summary>
+        </member>
+        <member name="P:LogFile.LogFileName">
+            <summary>
+            Log檔檔名
+            </summary>
+        </member>
+        <member name="M:LogFile.WriteLogFile">
+            <summary>
+            寫出Log檔案
+            </summary>
+            <returns>true,false</returns>
+        </member>
+        <member name="M:LogFile.InsertLogString(System.String,System.String,System.Boolean)">
+            <summary>
+            加一訊息字串至Log字串中
+            </summary>
+            <param name="type">訊息別:I(訊息),W(警告),E(錯誤)</param>
+            <param name="desp">訊息</param>
+            <returns>true,false</returns>
+        </member>
+        <member name="T:EIPAudit">
+            <summary>
+            LOG檔內容組成及寫入檔案
+            </summary>
+        </member>
+        <member name="M:EIPAudit.WriteLogFile">
+            <summary>
+            寫出Log檔案
+            </summary>
+        </member>
+    </members>
+</doc>
