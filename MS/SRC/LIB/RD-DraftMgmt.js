@@ -66,6 +66,7 @@ DATE	MGRNO		SA		PG		Desc
 1141216	1141632		Raymond	Raymond	修正結案未歸檔的已核決公文, 在後會時因北榮邏輯而不能異動簽稿會核單造成自動新增簽稿會核單功能無法執行的問題
 1141218	北榮序453	Raymond	Raymond	因1140818禁止出組室過的非可發文文別異動內文, 但要對自動增高簽核區域功能允許異動
 1141224	北榮序469	Raymond	Raymond	未核決時, 流程點位於承辦同一級單位任一流程點的可發文文別文稿可刪除
+1150527	1150382		Raymond	Raymond	刪除文稿時, 新增判斷是否有傳入第3參數delOtherFlowDraft, 若刪除的文稿是別的流程點新增的, 則回傳時設定此參數為true
 */
 
 function DraftMgmt(readWrite) {	// 2016.2.1 開啟文稿管理檔會因不同條件(例如會辦)而設為可讀寫或唯讀
@@ -1590,6 +1591,9 @@ function DraftMgmt(readWrite) {	// 2016.2.1 開啟文稿管理檔會因不同條
 						_lastModifyTime = Util.padLeft(dt.getYear() - 11, 3) + Util.padLeft(dt.getMonth() + 1, 2) + Util.padLeft(dt.getDate(), 2) + Util.padLeft(dt.getHours(), 2) + Util.padLeft(dt.getMinutes(), 2) + Util.padLeft(dt.getSeconds(), 2);
 						_draftListChanged = true;	// 1080531 Raymond 1080433 新增文稿使文稿清單變成已異動
 						_lastModifyDraftListSN = _editSN;	// 1110322 Raymond 1101416 新增記錄最後異動文稿清單(新增、刪除稿件、調整稿序)的階段序號
+						// 1150527 Raymond 1150382 新增判斷是否有傳入第3參數delOtherFlowDraft, 若刪除的文稿是別的流程點新增的, 則回傳時設定此參數為true
+						if(arguments.length > 2)
+							arguments[2].delOtherFlowDraft = true;
 						return true;
 						//theLogger.warn("目前不支援標記刪除文稿");
 						//return false;
@@ -1621,6 +1625,9 @@ function DraftMgmt(readWrite) {	// 2016.2.1 開啟文稿管理檔會因不同條
 							_lastModifyTime = Util.padLeft(dt.getYear() - 11, 3) + Util.padLeft(dt.getMonth() + 1, 2) + Util.padLeft(dt.getDate(), 2) + Util.padLeft(dt.getHours(), 2) + Util.padLeft(dt.getMinutes(), 2) + Util.padLeft(dt.getSeconds(), 2);
 							_draftListChanged = true;	// 1080531 Raymond 1080433 新增文稿使文稿清單變成已異動
 							_lastModifyDraftListSN = _editSN;	// 1110322 Raymond 1101416 新增記錄最後異動文稿清單(新增、刪除稿件、調整稿序)的階段序號
+							// 1150527 Raymond 1150382 新增判斷是否有傳入第3參數delOtherFlowDraft, 若刪除的文稿是別的流程點新增的, 則回傳時設定此參數為true
+							if(arguments.length > 2)
+								arguments[2].delOtherFlowDraft = true;
 							return true;
 						}
 						else

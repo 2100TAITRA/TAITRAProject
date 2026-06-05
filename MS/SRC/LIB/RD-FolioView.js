@@ -144,6 +144,10 @@
 // 1141027	Raymond		Raymond		北榮序322	修正在邊界區的簽核區域蓋章並儲存後, 翻頁會轉圈圈問題
 // 1141110	Raymond		Raymond		1141113		新增顯示便利貼功能
 // 1141224	Raymond		Raymond		1141652		取消檢視其他流程點的便利貼條件限制, 開啟其他流程點的便利貼檢視子視窗新增刪除按鈕, 及修改便利貼顯示方式
+// 1150121	Raymond		Raymond		外貿序35	修正便利貼的日期變星期的問題
+// 1150311	Leslie		Leslie		彙整表序77	[1150146]配合DOCATT新增MS-OFFICE URL回應，增加傳入參數以識別是附件編輯模組開啟
+// 1150318	Raymond		Raymond		外貿序79	修正翻至附件首頁時, 會顯示便利貼的問題
+// 1150515	Raymond		Raymond		1150371		修正重新整理時, 若是因為切換追蹤修訂模式觸發的話, 額外傳入參數, 以避免標記文稿異動, 及異動內文後翻頁, 首頁邊界區的簽核區域無法由instanciateSOPages重新取回位置資訊, 導致儲存外部簽核記錄檔時位置資訊(left、top、right、bottom)會變成NaN的問題
 
 var nsEditor = nsEditor||{};
 function FolioView(model, $viewPort) {
@@ -2998,7 +3002,9 @@ function FolioView(model, $viewPort) {
 						
 						$dlg2.find("a#ok").on('click', function(evt2) {
 							var now = Util.now();
-							now = Util.padLeft(now.getYear() - 11, 3) + "/" + Util.padLeft(now.getMonth() + 1, 2) + "/" + Util.padLeft(now.getDay(), 2) + " " + Util.padLeft(now.getHours(), 2) + ":" + Util.padLeft(now.getMinutes(), 2) + ":" + Util.padLeft(now.getSeconds(), 2);
+							// 1150121 Raymond 外貿序35 修正日期變星期的問題
+							//now = Util.padLeft(now.getYear() - 11, 3) + "/" + Util.padLeft(now.getMonth() + 1, 2) + "/" + Util.padLeft(now.getDay(), 2) + " " + Util.padLeft(now.getHours(), 2) + ":" + Util.padLeft(now.getMinutes(), 2) + ":" + Util.padLeft(now.getSeconds(), 2);
+							now = Util.padLeft(now.getYear() - 11, 3) + "/" + Util.padLeft(now.getMonth() + 1, 2) + "/" + Util.padLeft(now.getDate(), 2) + " " + Util.padLeft(now.getHours(), 2) + ":" + Util.padLeft(now.getMinutes(), 2) + ":" + Util.padLeft(now.getSeconds(), 2);
 							var str = $dlg2.find("textarea").val().replace(/^ /, "\xA0").replace(/^[\r\n\t]+|[\r\n\t]+$/, "").replace(/^ /, "\xA0");	// 改為新增文字意見時, 立即排除首末行只有一個換行字元或數個TAB字元加一個換行字元的情況, 首行第一個字若是半形空白則替換為&nbsp;(\xA0), 以保留首行縮排的需要
 							note.dateTime = now;
 							if(str.length == 0) {
@@ -3171,9 +3177,11 @@ function FolioView(model, $viewPort) {
 			$slot.empty();
 			for(let i=0; i<n; i++) {
 				let note = _model.getNote(i);
+				// 1150318 Raymond 外貿序79 新增排除附件, 以避免翻至附件首頁時, 會顯示便利貼的問題
 				// 1141223 Raymond 1141652 取消原有檢視的限制規則
 				//if(pg.po == 0 && allowShow(note))
-				if(pg.po == 0)
+				//if(pg.po == 0)
+				if(pg.po == 0 && !pg.container.attType)
 					createNote(note, $slot);
 			}
 		}
@@ -3191,7 +3199,9 @@ function FolioView(model, $viewPort) {
 		hasPrevPage: function() {
 			return (_currPo.draftIdx >= 0);
 		},
-		reqPage: function($pg, fallback) {	// 2015.12.29 新增翻頁失敗的回呼函式參數
+		// 1150515 Raymond 1150371 新增額外參數exflag, 目前僅定義"tcmode", 代表觸發options="refresh"的原因是切換追蹤修訂模式顯示的關係
+		//reqPage: function($pg, fallback) {	// 2015.12.29 新增翻頁失敗的回呼函式參數
+		reqPage: function($pg, fallback, exflag) {
 			// 2019.7 - 1080654 Eric, performance log
 			if (typeof SSO_CONFIG.debugTime==='boolean' && SSO_CONFIG.debugTime===true) {
                 theLogger.time(SSOUtil.dev_getCurrentTimeStr() + ' -tm- FolioView.reqPage()) BEGIN...');
@@ -3493,11 +3503,30 @@ function FolioView(model, $viewPort) {
 										}
 
 										// 搜尋簽核區域
-										if("signAreas" in _memPPD[_currPo.draftIdx])
-											_memPPD[_currPo.draftIdx].signAreas.length = 0;
-										else
-											_memPPD[_currPo.draftIdx].signAreas = [];
+										// 1150515 Raymond 1150371 修正異動內文後翻頁, 首頁邊界區的簽核區域無法由instanciateSOPages重新取回位置資訊, 導致儲存外部簽核記錄檔時位置資訊(left、top、right、bottom)會變成NaN的問題
+										//if("signAreas" in _memPPD[_currPo.draftIdx])
+										//	_memPPD[_currPo.draftIdx].signAreas.length = 0;
+										//else
+										//	_memPPD[_currPo.draftIdx].signAreas = [];
+										var origSAs = _memPPD[_currPo.draftIdx].signAreas;
+										_memPPD[_currPo.draftIdx].signAreas = [];
 										fo.find("SignArea", _memPPD[_currPo.draftIdx].signAreas);
+										// 1150515 Raymond 1150371 若有origSA, 則先恢復為前次instanciateSOPages時取得的位置資訊
+										if(!!origSAs) {
+											for(let i=0; i<_memPPD[_currPo.draftIdx].signAreas.length; i++) {
+												let _sa = _memPPD[_currPo.draftIdx].signAreas[i];
+												for(let j=0; j<origSAs.length; j++) {
+													if(_sa.id == origSAs[j].id) {
+														theLogger.log(`恢復簽核區域(saType:${_sa.saType},id:${_sa.id})的位置資訊 - po:${_sa.po}->${origSAs[j].po}, left:${_sa.left}->${origSAs[j].left}, top:${_sa.top}->${origSAs[j].top}, width:${_sa.width}->${origSAs[j].width}, height:${_sa.height}->${origSAs[j].height}`);
+														_sa.po = origSAs[j].po;
+														_sa.left = origSAs[j].left;
+														_sa.top = origSAs[j].top;
+														_sa.width = origSAs[j].width;
+														_sa.height = origSAs[j].height;
+													}
+												}
+											}
+										}
 										// 2017.2.20 搜尋簽核區域(文稿) 航港-序477
 										if("signAreas" in dm)
 											dm.signAreas.length = 0;
@@ -3596,9 +3625,11 @@ function FolioView(model, $viewPort) {
 													theLogger.log("\tpages=" + _memPPD[_currPo.draftIdx].pages + ", draftPageCounts=" + _model.getDraftPageCounts(_currPo.draftIdx));
 													while(_memPPD[_currPo.draftIdx].pages > _model.getDraftPageCounts(_currPo.draftIdx)) {
 														theLogger.warn("首次分頁(" + _memPPD[_currPo.draftIdx].pages + ")產生了比封裝檔記錄多的頁次(" + _model.getDraftPageCounts(_currPo.draftIdx) + ")!");
+														// 1150515 Raymond 1150371 新增判斷傳入的額外參數exflag是否為"tcmode", 若是的話表示是因切換成追蹤修訂模式而產生比目前(封裝檔記錄)多的頁數, 不要設定異動旗標
 														// 1121006 Raymond 北大彙整表序255 修正在可編輯內文時, 因排版設定檔改變等原因, 導致動態排版的頁數大於封裝檔之前流程點匯出的頁數時, 要設定文稿為dirty狀態, 觸發重新匯出頁面, 才能避免在最末頁的簽核框外加蓋簽核物件後儲存時, 發生錯誤的問題
 														// 1090424 Raymond 1090305 初次分頁判斷比封裝檔頁數多時, 傳入第2參數true表示不要設定文稿為dirty狀態
-														if(dm.getEditable())
+														//if(dm.getEditable())
+														if(dm.getEditable() && exflag != "tcmode")
 															_model.newDraftPage(_currPo.draftIdx);
 														else
 															_model.newDraftPage(_currPo.draftIdx, true);
@@ -3607,7 +3638,9 @@ function FolioView(model, $viewPort) {
 													if(_memPPD[_currPo.draftIdx].pages < _model.getDraftPageCounts(_currPo.draftIdx)) {
 														theLogger.warn("首次分頁(" + _memPPD[_currPo.draftIdx].pages + ")產生了比封裝檔記錄還少的頁數(" + _model.getDraftPageCounts(_currPo.draftIdx) + ")! 設定此文稿有異動以更新簽核區域資訊");
 														if(pg) {	// 1060504 Raymond 修正簽核時若2頁變1頁, 但流程點不允許編輯內文時, 不要改到外部簽核記錄新增一個版本, 會導致跟暫存檔對不起來的問題
-															if(dm.getEditable())
+															// 1150515 Raymond 1150371 新增判斷傳入的額外參數exflag是否為"tcmode", 若是的話表示是因切換成完稿模式而產生比目前少的頁數, 不要設定異動旗標
+															//if(dm.getEditable())
+															if(dm.getEditable() && exflag != "tcmode")
 																pg.container.dirty(true);
 															// 1121113 Raymond 1120881 修正簽核區域及新增的簽核物件在第2頁時, 因執行文別轉換或貼上稿件(置換), 導致頁數變少, pg物件未更新為自動切換的前一頁, 進而發生簽核物件無法初始化的問題
 															if(pg && pg.po != _currPo.po)
@@ -7176,7 +7209,9 @@ function FolioView(model, $viewPort) {
 						else {
 							if(typeof blobOrUrl == "string") {
 								console.log("下載" + draftIdx + "-" + attIdx + "附件[" + blobOrUrl + "]...");
-								fetch(blobOrUrl + "&t=" + (new Date()).getTime())	// 下載超鏈結附件電子檔額外加上時間變數, 避免同一次登入不同次開啟公文附件, 因Cache而未下載到前一次儲存上傳的附件電子檔
+								//1150311	Leslie[彙整表序77]	[1150146]配合DOCATT新增MS-OFFICE URL回應，增加傳入參數以識別是附件編輯模組開啟
+								// fetch(blobOrUrl + "&t=" + (new Date()).getTime())	// 下載超鏈結附件電子檔額外加上時間變數, 避免同一次登入不同次開啟公文附件, 因Cache而未下載到前一次儲存上傳的附件電子檔
+								fetch(blobOrUrl + "&t=" + (new Date()).getTime() + "&ATTEDIT=Y")	// 下載超鏈結附件電子檔額外加上時間變數, 避免同一次登入不同次開啟公文附件, 因Cache而未下載到前一次儲存上傳的附件電子檔
 								.then(function(resp) {
 									console.log("下載結果:" + resp.statusText);
 									return resp.blob();

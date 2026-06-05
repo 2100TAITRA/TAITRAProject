@@ -110,6 +110,10 @@
 // 1141217	Leslie	Leslie	國合序451	修正因單號[1141255]改動附件匯出頁面的儲存流程，而影響的頁面轉向問題
 // 1141218	Raymond	Raymond	北榮序453	當因為自動增高簽核區域而異動內文時, 要能儲存外部簽核記錄檔
 // 1141229	Raymond	Raymond	1141693	新增判斷cachedDM.dirty(), 以避免因排版因素導致的簽核畫面頁數與封裝檔不一致時, 誤判為內文有異動, 而需要使用者加簽傳送的問題
+// 1150112	Leslie	Leslie	國合序451	修正因單號[1141255]改動附件匯出頁面的儲存流程，而影響的頁面轉向問題，增修傳入轉向Url
+// 1150318	Raymond	Raymond	外貿序79	載入封裝檔時新增(來文)頁面頁次資訊, 以避免翻至來文首頁時, 不會顯示便利貼的問題
+// 1150515	Raymond	Raymond	1150371	修正外部簽核記錄檔記錄的簽核區域位置記錄為異常的NaN時, 改用AOLProcessData.xml中記錄的位置取代, 以避免影響加蓋於該簽核區域的簽核物件的位置也變成NaN的問題
+// 1150527	Raymond	Raymond	1150382	啟用環境變數「AOL_ENABLE_DELETE_ALL_DRAFTS_TO_SIGN」時, 若公文有來文, 在儲存SignWork.xml時記錄「刪除其他流程點新增之文稿」及判斷若文稿數為0時, 記錄「已刪除全部文稿」屬性於根節點, 及新增新增setDelOtherFlowDraft方法, 供讀入SignWork.xml時, 若有註記「刪除其他流程點新增之文稿」屬性為'Y'時設回FolioModel的內部變數
 
 function SignFolder() {
 
@@ -804,6 +808,7 @@ function SignFolder() {
 								
 								$.each(fromDoc.pages, function(j, page) {
 									page.fileRef = getFileInfo(signDef.obj.signInfo.files, page.fileSN);// 來文頁面檔參照
+									page.po = j;	// 1150318 Raymond 外貿序79 新增(來文)頁面頁次
 									_lastid = Math.max(_lastid, Number(page.id));	// 1070315 Raymond 1061136 修正來文頁面ID未計入導致新增文稿、頁面、物件等動作可能造成ID重複衍生傳送時產生封裝檔異常的問題
 								});
 								
@@ -816,6 +821,7 @@ function SignFolder() {
 										if(attachment.draftPages) {
 											$.each(attachment.draftPages.pages, function(k, page) {
 												page.fileRef = getFileInfo(signDef.obj.signInfo.files, page.fileSN);// 附件頁面檔參照
+												page.po = k;	// 1150318 Raymond 外貿序79 新增(來文附件)頁面頁次
 												_lastid = Math.max(_lastid, Number(page.id));	// 1070315 Raymond 1061136 修正來文附件頁面ID未計入導致新增文稿、頁面、物件等動作可能造成ID重複衍生傳送時產生封裝檔異常的問題
 											});
 										}
@@ -1026,6 +1032,7 @@ function SignFolder() {
 								
 								$.each(fromDoc.pages, function(j, page) {
 									page.fileRef = getFileInfo(signDef.obj.signInfo.files, page.fileSN);// 來文頁面檔參照
+									page.po = j;	// 1150318 Raymond 外貿序79 新增(來文)頁面頁次
 									// 1131211 Raymond 1131110 修正某些99年版封裝檔的<簽核點定義>下的<簽核文件夾>的<檔案清單>中沒有<來文文件夾>下的<電子來文>、<頁面>的"原始檔序號"的<電子檔資訊>, 導致點擊來文頁籤時會轉圈圈的問題
 									if(!!page.fileSN && !page.fileRef)
 										page.fileRef = getOtherSignDefFileInfo(that.capsCntn.eFile.aol.aolInfo.signDefs, page.fileSN);
@@ -1041,6 +1048,7 @@ function SignFolder() {
 										if(attachment.draftPages) {
 											$.each(attachment.draftPages.pages, function(k, page) {
 												page.fileRef = getFileInfo(signDef.obj.signInfo.files, page.fileSN);// 附件頁面檔參照
+												page.po = k;	// 1150318 Raymond 外貿序79 新增(來文附件)頁面頁次
 												// 1131211 Raymond 1131110 修正某些99年版封裝檔的<簽核點定義>下的<簽核文件夾>的<檔案清單>中沒有<來文文件夾>下的<電子來文>、<頁面>的"原始檔序號"的<電子檔資訊>, 導致點擊來文頁籤時會轉圈圈的問題
 												if(!!page.fileSN && !page.fileRef)
 													page.fileRef = getOtherSignDefFileInfo(that.capsCntn.eFile.aol.aolInfo.signDefs, page.fileSN);
@@ -3785,6 +3793,23 @@ function SignFolder() {
 											theLogger.warn("更新簽核區域(saType:" + eSA.saType + ", saID:" + eSA.saID + ")頁面ID:" + eSA.pgId + "->" + param.pgId + ", 頁次pgIdx:" + eSA.pgIdx + "->" + param.pgIdx);
 											eSA.pgIdx = param.pgIdx;
 											eSA.pgId = param.pgId;
+											// 1150515 Raymond 1150371 修正外部簽核記錄檔記錄的簽核區域位置記錄為異常的NaN時, 改用AOLProcessData.xml中記錄的位置取代, 以避免影響加蓋於該簽核區域的簽核物件的位置也變成NaN的問題
+											if(isNaN(eSA.left)) {
+												theLogger.warn("修正簽核區域位置記錄異常: left:" + eSA.left + "->" + param.left);
+												eSA.left = param.left;
+											}
+											if(isNaN(eSA.right)) {
+												theLogger.warn("修正簽核區域位置記錄異常: right:" + eSA.right + "->" + param.right);
+												eSA.right = param.right;
+											}
+											if(isNaN(eSA.top)) {
+												theLogger.warn("修正簽核區域位置記錄異常: top:" + eSA.top + "->" + param.top);
+												eSA.top = param.top;
+											}
+											if(isNaN(eSA.bottom)) {
+												theLogger.warn("修正簽核區域位置記錄異常: bottom:" + eSA.bottom + "->" + param.bottom);
+												eSA.bottom = param.bottom;
+											}
 										}
 									}
 								}
@@ -5219,7 +5244,9 @@ function SignFolder() {
 							page.rotated = page.rotate;
 							//1141217	Leslie[國合序451]	修正因單號[1141255]改動附件匯出頁面的儲存流程，而影響的頁面轉向問題
 							if("content" in page)
-								dfd.resolve(page.content, 300, cbdata);	// 2016.11.1 直接回傳cbdata參數
+								//1150112	Leslie[國合序451]	修正因單號[1141255]改動附件匯出頁面的儲存流程，而影響的頁面轉向問題，增修傳入轉向Url
+								// dfd.resolve(page.content, 300, cbdata);	// 2016.11.1 直接回傳cbdata參數
+								dfd.resolve(page.content + (!!page.rotated?("&rotated=" + page.rotated):""), 300, cbdata);	// 2016.11.1 直接回傳cbdata參數
 							else
 							doGetPageImage();	// 1060607 Raymond 1060283 呼叫切出的獨立函式取得附件頁面影像的URL
 						}
@@ -5227,7 +5254,9 @@ function SignFolder() {
 				}
 			}
 			else if("content" in page) {	// 2016.7.19 新增匯出的附件影像在content
-				dfd.resolve(page.content, 300, cbdata);	// 2016.11.1 直接回傳cbdata參數
+				//1150112	Leslie[國合序451]	修正因單號[1141255]改動附件匯出頁面的儲存流程，而影響的頁面轉向問題，增修傳入轉向Url
+				// dfd.resolve(page.content, 300, cbdata);	// 2016.11.1 直接回傳cbdata參數
+				dfd.resolve(page.content+ (!!page.rotated?("&rotated=" + page.rotated):""), 300, cbdata);	// 2016.11.1 直接回傳cbdata參數
 			}
 			else if("fileRef" in page) {
 				doGetPageImage();	// 1060607 Raymond 1060283 改呼叫切出的獨立函式
@@ -6405,6 +6434,19 @@ function SignFolder() {
 			var si = _revs[_currRev].obj.signInfo;
 			if("fromFolder" in si) {
 				$signInfo.append(cloneNode(si.fromFolder.cachedDOM));  // 來文文件夾複製即可, 也不能異動	// for IE-compatible
+				
+				// 1150527 Raymond 1150382 啟用環境變數「AOL_ENABLE_DELETE_ALL_DRAFTS_TO_SIGN」時, 若公文有來文, 在儲存SignWork.xml時記錄「刪除其他流程點新增之文稿」及判斷若文稿數為0時, 記錄「已刪除全部文稿」屬性於根節點
+				if(theSSO.User.EnvSettings.get("AOL_ENABLE_DELETE_ALL_DRAFTS_TO_SIGN") == "Y" && fm.delOtherFlowDraft()) {
+					theLogger.log(`因本流程有執行刪除其他流程點之文稿的動作, 註記「刪除其他流程點新增之文稿」為'Y'`);
+					doc.documentElement.setAttribute("刪除其他流程點新增之文稿", "Y");
+					if(si.drafts.length == 0) {
+						theLogger.log(`因文稿數為0, 註記「已刪除全部文稿」屬性為'Y'`);
+						doc.documentElement.setAttribute("已刪除全部文稿", "Y");
+					}
+				}
+				else if(fm.delOtherFlowDraft() && si.drafts.length == 0) {
+					theLogger.log(`未啟用環境變數「AOL_ENABLE_DELETE_ALL_DRAFTS_TO_SIGN」, 故刪除全部文稿(非本流程所新增)的來文公文不會註記於SignWork.xml, 一般情況下會不允許傳送`);
+				}
 			}
 			
 			var now = new Date();
@@ -7830,6 +7872,10 @@ function SignFolder() {
 			else
 				theLogger.error("外部簽核物件記錄檔中找不到指定簽核物件(ID:" + so.id + ")的記錄, 無法取得分機資訊");
 			return "";
+		},
+		// 1150527 Raymond 1150382 新增setDelOtherFlowDraft方法, 供讀入SignWork.xml時, 若有註記「刪除其他流程點新增之文稿」屬性為'Y'時設定FolioModel的_delOtherFlowDraft內部變數為true
+		setDelOtherFlowDraft: function(b) {
+			_fm.delOtherFlowDraft(b);
 		}
 	};
 }

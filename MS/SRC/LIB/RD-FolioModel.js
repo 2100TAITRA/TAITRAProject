@@ -263,6 +263,8 @@
 // 1150109	Raymond		Raymond		北榮序14	1141632判斷公文內無任何簽稿會核單時要自動新增一筆簽稿會核單的功能, 新增的簽稿會核單的承辦單位欄位要改用原承辦單位的一級單位名稱(INCHARGE_OU前2碼的OrgInfo的UnitName), 承辦人欄位改用原承辦人(IC_USER_NAME), 聯絡電話、分機、傳真、EMail等欄位則清空
 // 1150121	Raymond		Raymond		外貿序35	修正便利貼的日期變星期的問題
 // 1150206	David		David		序57		新增允許紙本轉線上後封裝檔無資料情形，比照草稿公文狀態處理
+// 1150223	Raymond		Raymond		1150156		當SSO_CONFIG.OrgNickName為"TPVGH"(北榮)時, 開啟舊檔時清空署名2內容
+// 1150527	Raymond		Raymond		1150382		新增內部變數_delOtherFlowDraft, 當刪除文稿時, 新增判斷刪除的文稿是否為別的流程點新增的, 若是則將此內部變數設為true, 及新增對應的存取方法delOtherFlowDraft
 
 // 1100223 Raymond 1090864 新增客語難用字表, 設為全域陣列變數即可共用, 且避免重複下載
 window._difficultWords = [];
@@ -327,6 +329,9 @@ function FolioModel() {
 	// 1141107 Raymond 1141113 新增便利貼相關變數
 	var _lastNoteSN = 0;
 	var _noteData = {lastModifyMsgId: undefined, lastModifiedTime: undefined, list: []};
+	
+	// 1150527 Raymond 1150382 新增_delOtherFlowDraft變數, 若此流程點刪除了別的流程點新增的文稿, 則設為true
+	var _delOtherFlowDraft = false;
 	
 	// private methods
 	function _parseAPD(xmlDoc) {
@@ -8141,6 +8146,14 @@ function FolioModel() {
 					else {	// for Non-IE
 						try {
 							var xmlDoc = (new DOMParser()).parseFromString(str, "text/xml");
+							// 1150223 Raymond 1150156 當SSO_CONFIG.OrgNickName為"TPVGH"(北榮)時, 開啟舊檔時清空署名2內容
+							if(SSO_CONFIG.OrgNickName == "TPVGH") {
+								let $targ = $(xmlDoc.documentElement).find("署名");
+								if($targ.length > 1) {
+									theLogger.log("(北榮客製化)清空從開啟舊檔所匯入的署名2資訊'" + $targ.eq(1).text() + "'");
+									$targ.eq(1).text("");
+								}
+							}
 							// 從讀取本地檔匯入的文稿, 需要用Template補充節點
 							preprocessXML(xmlDoc);	// 2016.12.26 匯入DI時的前置處理
 							// 1140515 Raymond 1140198 新增檢核匯入舊檔的FromNo屬性是否與其它文稿一致, 若不一致則提示警告訊息並終止匯入
@@ -12099,11 +12112,20 @@ function FolioModel() {
 					var idx = index;
 				}
 				if(idx >= 0) {
+					// 1150527 Raymond 1150382 新增第3參數delOtherFlowDraft, 若刪除的文稿是別的流程點新增的, 則回傳時此參數會被設為true
 					// 1121005 Raymond 1111194 修正受會單位新增文稿後無法刪除的問題
 					// 1111021 Raymond 1110885 直接傳入新增的skipPrompt參數
 					//if(_draftMgmts[dir].deleteDraft(idx)) {
 					//if(_draftMgmts[dir].deleteDraft(index, skipPrompt)) {
-					if(_draftMgmts[dir].deleteDraft(idx, skipPrompt)) {
+					//if(_draftMgmts[dir].deleteDraft(idx, skipPrompt)) {
+					var extra = {delOtherFlowDraft: false};
+					if(_draftMgmts[dir].deleteDraft(idx, skipPrompt, extra)) {
+						// 1150527 Raymond 1150382 若回傳時delOtherFlowDraft為true, 則記錄在_delOtherFlowDraft變數中, 儲存時記錄在SignWork.xml中的"刪除非此流程所新增之文稿"屬性
+						if(extra.delOtherFlowDraft == true) {
+							theLogger.warn("刪除文稿管理檔的文稿(索引:" + idx + ", 非此流程點所新增之文稿)成功");
+							_delOtherFlowDraft = true;
+						}
+						else
 						theLogger.warn("刪除文稿管理檔的文稿(索引:" + idx + ")成功");
 						for(var i=0; i<_apd.length; i++) {
 							for(var j=0; j<_apd[i].versions.length; j++) {
@@ -13453,6 +13475,14 @@ function FolioModel() {
 			}
 			if(!found)
 				theLogger.error("便利貼記錄中找不到sn=" + note.sn + "的記錄, 無法刪除");
+		},
+		// 1150527 Raymond 1150382 新增delOtherFlowDraft方法, 讀取或設定內部變數_delOtherFlowDraft
+		delOtherFlowDraft: function() {
+			if(arguments.length > 0) {
+				theLogger.log(`設定「刪除其他流程點新增之文稿」旗標為${arguments[0]}`);
+				_delOtherFlowDraft = arguments[0];
+			}
+			return _delOtherFlowDraft;
 		}
 	};
 }

@@ -140,7 +140,7 @@ var _enableSignalRLog = true;
 var loadJS = [];
 //1100816	Leslie	配合QA作業，調整版號宣告型式(變數格式為[ver=版號])
 //var uJSVersion = '5.0.56.0';
-var uJSVersion = 'ver=5.0.105.045';
+var uJSVersion = 'ver=5.0.105.04801';
 
 //1120828	Leslie[1120195]	依載入頁面來判斷載入的JS檔
 var _currPage = location.pathname.split('/').pop();

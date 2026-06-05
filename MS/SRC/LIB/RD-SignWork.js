@@ -52,6 +52,7 @@
 // 1131115	Raymond	Raymond	北榮序378	修正在會核中-主辦或已送出-線上簽核資料夾開啟公文後, 因1101548需要載入目前OwnUser寫的工作檔SignWork.xml, 新增判斷載入的工作檔若為別的流程點所寫入, 則不載入此工作檔所記錄的簽核物件
 // 1141117	Raymond	Raymond	1141442	修正RegExp.$1可能是空值的問題
 // 1141128	Raymond	Raymond	1141255	新增附件頁面需要從工作站暫存路徑搬移到FileServer時(儲存), 全徑名的原始檔名要更名為僅有檔名, 備份時也是
+// 1150527	Raymond	Raymond	1150382	新增讀取SignWork.xml根節點的「刪除其他流程點新增之文稿」屬性, 並設回FolioModel的內部變數
 
 // 1120811 Raymond 1120503 新增callback3收集須上傳的預先匯出文稿頁面影像
 //function SignWork(fm, signFolder, callback, callback2) {	// 2016.7.20 新增callback收集須上傳的附件匯出頁面影像, 2016.12.15 新增fm(FolioModel)參數, 用來傳入prepareSignWork()
@@ -1037,6 +1038,13 @@ function SignWorkParser(signFolder, currMgmt) {
 			}
 			else
 				theLogger.log("SignWork.xml暫存工作檔中簽核文件夾的Id:'" + idOfSignFolder + "'與代表當前流程點應顯示的'" + thisFlowId + "'一致, 繼續載入此工作檔");
+			
+			// 1150527 Raymond 1150382 新增讀取SignWork.xml根節點的「刪除其他流程點新增之文稿」屬性, 並設回FolioModel
+			if(doc.documentElement.hasAttribute("刪除其他流程點新增之文稿")) {
+				var delOtherFlowDraft = doc.documentElement.getAttribute("刪除其他流程點新增之文稿");
+				theLogger.log(`SignWork.xml根節點註記了「刪除其他流程點新增之文稿」為'${delOtherFlowDraft}', 設回FolioModel`);
+				signFolder.setDelOtherFlowDraft(delOtherFlowDraft == "Y");
+			}
 			
 			// 2016.11.30 先過濾封裝檔中已刪除文稿(封裝檔有但SignWork.xml沒有的文稿)
 			var $keepDrafts = $sf.find("文稿");

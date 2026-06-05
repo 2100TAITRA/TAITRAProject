@@ -4,6 +4,7 @@
 // 1080924 1080339     Kevin   Eric    jQuery 3.0 upgrade
 // 1130812 1130313     Raymond Raymond 修正登入後第一次創稿(包括離線版公文製作), 若有出現選取樣版/排版設定檔的子視窗, 則點擊儲存、關閉等按鈕都會跳出「目前追蹤修訂非完稿模式，...」訊息的問題
 // 1141118 陸委會序360 Raymond Raymond 修正登入後第一次開啟公文若檢查到前次未正常關閉, 而出現詢問是否從自動備份的暫存檔回復的子視窗, 因尚未設定layout- class導致預設行為像追蹤修訂模式的問題
+// 1150515 1150371     Raymond Raymond 修正切換追蹤修訂模式時若產生比目前的頁數多, 或再由追蹤修訂模式切換成完稿模式產生比目前的頁數少時, 會標記文稿已異動的問題
 
 var TCControl = new function() {
 	
@@ -16,7 +17,9 @@ var TCControl = new function() {
 			unassoc: function(target) {},
 			assoc: function(target) {
 				theLogger.log("套用追蹤修訂模式...");
-				target.find(".pages").flip("refresh");	// 2016.12.3 fix for 切換模式時不會重整頁面的問題
+				// 1150515 Raymond 1150371 修正切換追蹤修訂模式時若產生比目前的頁數多時, 會標記文稿已異動的問題
+				//target.find(".pages").flip("refresh");	// 2016.12.3 fix for 切換模式時不會重整頁面的問題
+				target.find(".pages").flip("refresh", "tcmode");
 			}
 		}
 	}
@@ -40,7 +43,9 @@ var TCControl = new function() {
 				//target.find("ins span.fmt").each(function(i, elm) {
 				//	$(elm).css("color", "black");
 				//});
-				target.find(".pages").flip("refresh");	// 2016.12.3 fix for 切換模式時不會重整頁面的問題
+				// 1150515 Raymond 1150371 修正切換完稿模式時若產生比目前的頁數少時, 會標記文稿已異動的問題
+				//target.find(".pages").flip("refresh");	// 2016.12.3 fix for 切換模式時不會重整頁面的問題
+				target.find(".pages").flip("refresh", "tcmode");
 			}
 		}
 	}

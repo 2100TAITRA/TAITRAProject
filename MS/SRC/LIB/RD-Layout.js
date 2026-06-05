@@ -134,11 +134,14 @@
 // 1140711	Raymond		Raymond		1140958		新增會銜令也要比照令條列凸排方式
 // 1140718	Raymond		Raymond		屏東序1449	拖拉滑鼠移動時, 偵測若有選取文字, 不要觸發翻頁
 // 1150203	Raymond		Raymond		1150101		新增判斷為署名欄位時, 新增sign class
+// 1150515	Raymond		Raymond		1150371		修正重新整理時, 若是因為切換追蹤修訂模式觸發的話, 額外傳入參數, 以避免標記文稿異動, 及縮放比例非100%時取得的邊界區的簽核區域的位置座標與100%時取得的不一致的問題
 
 // flip plugin
+// 1150515 Raymond 1150371 新增額外參數exflag, 目前僅定義"tcmode", 代表觸發options="refresh"的原因是切換追蹤修訂模式顯示的關係
 //	2015.11.10 - Raymond, 增加對應SSO_CONFIG.logLevel的修改
 //  2015.12.15 - Raymond, 改用theLogger記錄LOG資訊
-$.fn.flip = function(options) {
+//$.fn.flip = function(options) {
+$.fn.flip = function(options, exflag) {
 	
 	return this.each(function() {
 		
@@ -423,7 +426,9 @@ $.fn.flip = function(options) {
 				}
 				ctx.flipping(true);
 				SSOUtil.loading("show"); //showPageLoadingMsg();
-				ctx.reqPage($pages.find("#pgBackBuffer, #uvpgBackBuffer"))
+				// 1150515 Raymond 1150371 新增傳入額外參數exflag, 目前僅定義"tcmode", 代表觸發options="refresh"的原因是切換追蹤修訂模式顯示的關係
+				//ctx.reqPage($pages.find("#pgBackBuffer, #uvpgBackBuffer"))
+				ctx.reqPage($pages.find("#pgBackBuffer, #uvpgBackBuffer"), undefined, exflag)
 					.done(function() {
 						//SSOUtil.loading("hide"); //hidePageLoadingMsg();
 						$pages.find("#pgFrontFace, #uvpgFrontFace").children().remove();
@@ -5554,6 +5559,20 @@ var Layout = function() {
 				// 2015.5.21 新增邊界區也有簽核區域
 				if(rgn && rgn.find(".sign-area").length) {	// 2016.7.19 樣版可能未設好邊界區static的flowName, 導致無rgn
 					var bd = $pg.position();
+					// 1150515 Raymond 1150371 修正縮放比例非100%時取得的邊界區的簽核區域的位置座標與100%時取得的不一致的問題
+					var scale = 100;
+					try {
+						scale = $pg.closest(".viewPort").data("zoomController").currScale;
+					} catch(e) {
+						// zoomContoller尚未初始化時, 改從localStorage取得預設縮放比
+						if($pg.closest("#leftPart").length > 0 &&
+							"zoomController_zoomControl1" in localStorage &&
+							typeof localStorage["zoomController_zoomControl1"] === "string" &&
+							localStorage["zoomController_zoomControl1"].match(/\d+/)) {
+							theLogger.warn("縮放比控制項未初始化完成, 從本地暫存區恢復上次記憶的縮放比[" + localStorage["zoomController_zoomControl1"] + "]");
+							scale = Math.max(50, Math.min(400, parseInt(localStorage["zoomController_zoomControl1"])));	// 縮放比應該在50~400之間
+						}
+					}
 					rgn.find(".sign-area").each(function(idx, sa) {
 						theLogger.debug(".sign-area: " + $(sa).attr("data-id") + "," + $(sa).position().left + "," + $(sa).position().top);
 						if(!("signAreas" in nfo))
@@ -5571,14 +5590,17 @@ var Layout = function() {
 								// 1091026 Raymond 1090735 修正簽核區域設定在首頁邊界區時, 文稿新增至2頁以上後簽核區域內的簽核物件翻頁再翻回首頁時會不見的問題
 								//signArea.po = nfo.pages - 1;
 								signArea.po = thisPo;
+								// 1150515 Raymond 1150371 修正縮放比例非100%時取得的邊界區的簽核區域的位置座標與100%時取得的不一致的問題
 								// 1100310 Raymond 1090602 修正邊界區的簽核區域若設定space-before或space-start為負值時, 會造成選用章戳連帶加蓋的職名章、代字章位置往上、左徧移的問題
 								// 1100126 Raymond 信保序188 修正簽核區域在下邊界區時, 列印時簽核區域內的簽核物件會跑到頁面上方問題
 								//signArea.left = $(sa).position().left - bd.left;
 								//signArea.top = $(sa).position().top - bd.top;
 								//signArea.left = $(sa).position().left + rgn.parent().position().left - bd.left;
 								//signArea.top = $(sa).position().top + rgn.parent().position().top - bd.top;
-								signArea.left = $(sa).position().left + parseFloat($(sa).css("margin-left")) + rgn.parent().position().left - bd.left;
-								signArea.top = $(sa).position().top + parseFloat($(sa).css("margin-top")) + rgn.parent().position().top - bd.top;
+								//signArea.left = $(sa).position().left + parseFloat($(sa).css("margin-left")) + rgn.parent().position().left - bd.left;
+								//signArea.top = $(sa).position().top + parseFloat($(sa).css("margin-top")) + rgn.parent().position().top - bd.top;
+								signArea.left = ($(sa).position().left + parseFloat($(sa).css("margin-left")) + rgn.parent().position().left) * 100 / scale;
+								signArea.top = ($(sa).position().top + parseFloat($(sa).css("margin-top")) + rgn.parent().position().top) * 100 / scale;
 								signArea.width = $(sa).width();
 								signArea.height = $(sa).height();
 								found = true;
@@ -5591,14 +5613,17 @@ var Layout = function() {
 								// 1091026 Raymond 1090735 修正簽核區域設定在首頁邊界區時, 文稿新增至2頁以上後簽核區域內的簽核物件翻頁再翻回首頁時會不見的問題
 								//po: nfo.pages - 1,
 								po: thisPo,
+								// 1150515 Raymond 1150371 修正縮放比例非100%時取得的邊界區的簽核區域的位置座標與100%時取得的不一致的問題
 								// 1100310 Raymond 1090602 修正邊界區的簽核區域若設定space-before或space-start為負值時, 會造成選用章戳連帶加蓋的職名章、代字章位置往上、左徧移的問題
 								// 1100126 Raymond 信保序188 修正簽核區域在下邊界區時, 列印時簽核區域內的簽核物件會跑到頁面上方問題
 								//left: $(sa).position().left - bd.left,
 								//top: $(sa).position().top - bd.top,
 								//left: $(sa).position().left + rgn.parent().position().left - bd.left,
 								//top: $(sa).position().top + rgn.parent().position().top - bd.top,
-								left: $(sa).position().left + parseFloat($(sa).css("margin-left")) + rgn.parent().position().left - bd.left,
-								top: $(sa).position().top + parseFloat($(sa).css("margin-top")) + rgn.parent().position().top - bd.top,
+								//left: $(sa).position().left + parseFloat($(sa).css("margin-left")) + rgn.parent().position().left - bd.left,
+								//top: $(sa).position().top + parseFloat($(sa).css("margin-top")) + rgn.parent().position().top - bd.top,
+								left: ($(sa).position().left + parseFloat($(sa).css("margin-left")) + rgn.parent().position().left) * 100 / scale,
+								top: ($(sa).position().top + parseFloat($(sa).css("margin-top")) + rgn.parent().position().top) * 100 / scale,
 								width: $(sa).width(),
 								height: $(sa).height()
 							});

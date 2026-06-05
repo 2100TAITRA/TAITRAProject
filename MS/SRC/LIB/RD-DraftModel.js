@@ -82,6 +82,7 @@
 // 1140910	Raymond		Raymond		1141254		修正若稿件無任何分繕變數, 但有設定分繕附件時, 列印發文用時, 附件文字變更不同受文者的下載區識別碼會變成改到原稿XML的問題
 // 1141218	Raymond		Raymond		北榮序453	因1140818禁止出組室過的非可發文文別異動內文, 但要對自動增高簽核區域功能允許異動
 // 1150108	Raymond		Raymond		1141307		儲存及備份時都寫最後儲存日期時間, 但備份不要記憶, 以避免備份過後直接關閉公文, 會誤判為已儲存過而沒跳出提示儲存的子視窗, 及修正記錄最後修改日期時間功能失效問題(北榮序453衍生問題)
+// 1150428	Raymond		Raymond		1150093		修正出組室過的非可發文文別, 自動增高簽核區域後儲存已異動, 但關閉後再開啟會變回未異動狀態, 導致不會匯出頁面的問題
 
 function DraftModel() {
 
@@ -3516,8 +3517,11 @@ function DraftModel() {
 				// 1070608 Raymond 1070197 不可異動文稿內容時, 透過setAllDraftText()等方法同步設定欄位內容的功能要擋掉
 				//if(!this.getEditable())
 				var purpose = (arguments.length > 2)?arguments[2]:undefined;
-				if(!this.getEditable(purpose))
+				if(!this.getEditable(purpose)) {
+					// 1150428 Raymond 1150093 修正出組室過的非可發文文別, 自動增高簽核區域後儲存已異動, 但關閉後再開啟會變回未異動狀態, 導致不會匯出頁面的問題
+					if(!_mgmt.changedForSALP(_index))
 					throw new Error("此文稿(" + _mgmt.getDraftName(_index) + ")禁止異動內容");
+				}
 				_dirty = arguments[0];
 				// 1120915 Raymond 1120574 新增記錄最後異動時間
 				if(_dirty && (arguments.length < 2 || arguments[1] == true)) {	// 若有傳入第2參數且非true, 則不要記錄最後異動時間
